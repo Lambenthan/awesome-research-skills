@@ -1,5 +1,4 @@
 import { Footer } from "@/components/Footer";
-import { HeroBall } from "@/components/HeroBall";
 import { NavBar } from "@/components/NavBar";
 import { Reveal } from "@/components/Reveal";
 import { SectionPreview } from "@/components/SectionPreview";
@@ -37,7 +36,6 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <HeroBall />
       <NavBar />
 
       <section className="border-b border-rule">

@@ -1,18 +1,24 @@
 import type { Metadata } from "next";
-import { Fraunces, Geist, Geist_Mono } from "next/font/google";
+import { Mona_Sans, Source_Serif_4, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
+// Anthropic uses proprietary Styrene B (sans) + Tiempos Text (serif). We
+// declare those names first in the font-family stack so users who happen to
+// have them installed get the real experience; everyone else falls back to
+// the closest free equivalents: Mona Sans (GitHub) and Source Serif 4 (Adobe).
+// next/font self-hosts these and exposes them as CSS variables we feed into
+// @theme inside globals.css.
+const monaSans = Mona_Sans({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-mona-sans",
   display: "swap",
-  axes: ["opsz"],
 });
 
-const geist = Geist({
+const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
-  variable: "--font-geist",
+  variable: "--font-source-serif",
   display: "swap",
+  axes: ["opsz"],
 });
 
 const geistMono = Geist_Mono({
@@ -33,8 +39,23 @@ export default function RootLayout({
   return (
     <html
       lang="zh-Hans"
-      className={`${fraunces.variable} ${geist.variable} ${geistMono.variable} antialiased`}
+      className={`${monaSans.variable} ${sourceSerif.variable} ${geistMono.variable} antialiased`}
     >
+      <head>
+        {/* LXGW WenKai (霞鹜文楷) — open-source Chinese serif, OFL. Sub-set
+            via unicode-range so only the needed glyphs download. If the
+            visitor already has LXGW installed locally (macOS/Windows), the
+            local copy wins and these files are never fetched. */}
+        <link
+          rel="preconnect"
+          href="https://cdn.jsdelivr.net"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont/lxgwwenkai-regular.css"
+        />
+      </head>
       <body className="min-h-screen">{children}</body>
     </html>
   );
