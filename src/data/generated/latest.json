@@ -1,21 +1,39 @@
 {
-  "fetchedAt": "2026-05-16T13:23:38.413Z",
+  "fetchedAt": "2026-05-16T19:06:10.635Z",
   "hn": [
+    {
+      "id": "48160807",
+      "title": "DeepSeek-V4-Flash means LLM steering is interesting again",
+      "url": "https://www.seangoedecke.com/steering-vectors/",
+      "points": 130,
+      "comments": 51,
+      "createdAt": "2026-05-16T14:58:16Z",
+      "author": "Brajeshwar"
+    },
     {
       "id": "48159528",
       "title": "A Meta employee gets real about the horror of working there",
       "url": "https://sfstandard.com/pacific-standard-time/2026/05/15/meta-employee-gets-real-horror-working-right-now/",
-      "points": 23,
-      "comments": 16,
+      "points": 85,
+      "comments": 82,
       "createdAt": "2026-05-16T12:19:46Z",
       "author": "forrestbrazeal"
+    },
+    {
+      "id": "48159445",
+      "title": "SANA-WM, a 2.6B open-source world model for 1-minute 720p video",
+      "url": "https://nvlabs.github.io/Sana/WM/",
+      "points": 231,
+      "comments": 96,
+      "createdAt": "2026-05-16T12:06:21Z",
+      "author": "mjgil"
     },
     {
       "id": "48159227",
       "title": "OpenClaw Creator Spent $1.3M on OpenAI Tokens in 30 Days",
       "url": "https://twitter.com/steipete/status/2055346265869721905",
-      "points": 57,
-      "comments": 62,
+      "points": 103,
+      "comments": 120,
       "createdAt": "2026-05-16T11:34:04Z",
       "author": "eamag"
     },
@@ -24,7 +42,7 @@
       "title": "The 52-Page Memo That Nearly Destroyed OpenAI: Ilya Sutskever's Deposition",
       "url": "https://medium.com/@prateekj24/the-52-page-memo-that-nearly-destroyed-openai-inside-ilya-sutskevers-deposition-acef91208a1c",
       "points": 35,
-      "comments": 7,
+      "comments": 6,
       "createdAt": "2026-05-15T19:55:32Z",
       "author": "SilverElfin"
     },
@@ -32,8 +50,8 @@
       "id": "48151058",
       "title": "Show HN: Sx – an open-source package manager for AI skills, MCPs, and commands",
       "url": "https://github.com/sleuth-io/sx",
-      "points": 44,
-      "comments": 24,
+      "points": 45,
+      "comments": 25,
       "createdAt": "2026-05-15T17:03:22Z",
       "author": "detkin"
     },
@@ -41,8 +59,8 @@
       "id": "48150723",
       "title": "OpenAI is connecting ChatGPT to bank accounts via Plaid",
       "url": "https://firethering.com/chatgpt-bank-account-plaid-openai/",
-      "points": 85,
-      "comments": 117,
+      "points": 95,
+      "comments": 127,
       "createdAt": "2026-05-15T16:38:50Z",
       "author": "steveharing1"
     },
@@ -60,7 +78,7 @@
       "title": "Show HN: Find the best local LLM for your hardware, ranked by benchmarks",
       "url": "https://github.com/Andyyyy64/whichllm",
       "points": 282,
-      "comments": 65,
+      "comments": 66,
       "createdAt": "2026-05-15T09:19:24Z",
       "author": "andyyyy64"
     },
@@ -86,7 +104,7 @@
       "id": "48144494",
       "title": "How Claude Code works in large codebases",
       "url": "https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start",
-      "points": 237,
+      "points": 239,
       "comments": 155,
       "createdAt": "2026-05-15T04:15:31Z",
       "author": "shenli3514"
@@ -95,8 +113,8 @@
       "id": "48143284",
       "title": "Access to frontier AI will soon be limited by economic and security constraints",
       "url": "https://writing.antonleicht.me/p/cut-off",
-      "points": 218,
-      "comments": 214,
+      "points": 219,
+      "comments": 215,
       "createdAt": "2026-05-15T01:08:04Z",
       "author": "thoughtpeddler"
     },
@@ -113,57 +131,39 @@
       "id": "48141234",
       "title": "Claude for Legal",
       "url": "https://github.com/anthropics/claude-for-legal",
-      "points": 207,
+      "points": 209,
       "comments": 189,
       "createdAt": "2026-05-14T21:05:05Z",
       "author": "Einenlum"
-    },
-    {
-      "id": "48141086",
-      "title": "Microsoft starts canceling Claude Code licenses",
-      "url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
-      "points": 23,
-      "comments": 1,
-      "createdAt": "2026-05-14T20:53:32Z",
-      "author": "speckx"
-    },
-    {
-      "id": "48140648",
-      "title": "Best \"Brain\" for Agents Is Just Versioned Folders of Markdown Files",
-      "url": "https://extency.com/blog/markdown-versioned-folders-agent-brain-2026",
-      "points": 39,
-      "comments": 12,
-      "createdAt": "2026-05-14T20:15:26Z",
-      "author": "murdockq"
     }
   ],
   "gh": [
-    {
-      "id": 614765452,
-      "fullName": "Significant-Gravitas/AutoGPT",
-      "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
-      "url": "https://github.com/Significant-Gravitas/AutoGPT",
-      "stars": 184348,
-      "pushedAt": "2026-05-16T13:18:49Z",
-      "createdAt": "2023-03-16T09:21:07Z",
-      "language": "Python"
-    },
     {
       "id": 1136590548,
       "fullName": "affaan-m/everything-claude-code",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "url": "https://github.com/affaan-m/everything-claude-code",
-      "stars": 184134,
-      "pushedAt": "2026-05-16T07:50:32Z",
+      "stars": 184438,
+      "pushedAt": "2026-05-16T18:56:05Z",
       "createdAt": "2026-01-18T00:51:51Z",
       "language": "JavaScript"
+    },
+    {
+      "id": 614765452,
+      "fullName": "Significant-Gravitas/AutoGPT",
+      "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+      "url": "https://github.com/Significant-Gravitas/AutoGPT",
+      "stars": 184356,
+      "pushedAt": "2026-05-16T17:50:58Z",
+      "createdAt": "2023-03-16T09:21:07Z",
+      "language": "Python"
     },
     {
       "id": 658928958,
       "fullName": "ollama/ollama",
       "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
       "url": "https://github.com/ollama/ollama",
-      "stars": 171505,
+      "stars": 171531,
       "pushedAt": "2026-05-15T23:23:55Z",
       "createdAt": "2023-06-26T19:39:32Z",
       "language": "Go"
@@ -173,7 +173,7 @@
       "fullName": "f/prompts.chat",
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
       "url": "https://github.com/f/prompts.chat",
-      "stars": 162333,
+      "stars": 162358,
       "pushedAt": "2026-05-16T04:17:15Z",
       "createdAt": "2022-12-05T13:54:13Z",
       "language": "HTML"
@@ -183,8 +183,8 @@
       "fullName": "huggingface/transformers",
       "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
       "url": "https://github.com/huggingface/transformers",
-      "stars": 160653,
-      "pushedAt": "2026-05-16T10:20:59Z",
+      "stars": 160664,
+      "pushedAt": "2026-05-16T18:07:44Z",
       "createdAt": "2018-10-29T13:56:00Z",
       "language": "Python"
     },
@@ -193,8 +193,8 @@
       "fullName": "NousResearch/hermes-agent",
       "description": "The agent that grows with you",
       "url": "https://github.com/NousResearch/hermes-agent",
-      "stars": 152821,
-      "pushedAt": "2026-05-16T09:59:09Z",
+      "stars": 153206,
+      "pushedAt": "2026-05-16T19:05:21Z",
       "createdAt": "2025-07-22T22:22:28Z",
       "language": "Python"
     },
@@ -203,8 +203,8 @@
       "fullName": "langgenius/dify",
       "description": "Production-ready platform for agentic workflow development.",
       "url": "https://github.com/langgenius/dify",
-      "stars": 141573,
-      "pushedAt": "2026-05-16T12:45:13Z",
+      "stars": 141598,
+      "pushedAt": "2026-05-16T16:49:01Z",
       "createdAt": "2023-04-12T07:40:24Z",
       "language": "TypeScript"
     },
@@ -213,7 +213,7 @@
       "fullName": "open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
       "url": "https://github.com/open-webui/open-webui",
-      "stars": 137302,
+      "stars": 137346,
       "pushedAt": "2026-05-15T00:34:23Z",
       "createdAt": "2023-10-06T22:08:27Z",
       "language": "Python"
@@ -223,7 +223,7 @@
       "fullName": "langchain-ai/langchain",
       "description": "The agent engineering platform.",
       "url": "https://github.com/langchain-ai/langchain",
-      "stars": 136866,
+      "stars": 136892,
       "pushedAt": "2026-05-16T08:35:38Z",
       "createdAt": "2022-10-17T02:58:36Z",
       "language": "Python"
@@ -233,7 +233,7 @@
       "fullName": "firecrawl/firecrawl",
       "description": "🔥 Search, scrape, and clean the web for AI agents.",
       "url": "https://github.com/firecrawl/firecrawl",
-      "stars": 120479,
+      "stars": 120581,
       "pushedAt": "2026-05-16T13:14:08Z",
       "createdAt": "2024-04-15T21:02:29Z",
       "language": "TypeScript"
@@ -243,7 +243,7 @@
       "fullName": "ChatGPTNextWeb/NextChat",
       "description": "✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android |  Linux | Windows",
       "url": "https://github.com/ChatGPTNextWeb/NextChat",
-      "stars": 88003,
+      "stars": 88006,
       "pushedAt": "2026-05-15T01:19:01Z",
       "createdAt": "2023-03-10T18:27:54Z",
       "language": "TypeScript"
@@ -253,7 +253,7 @@
       "fullName": "nextlevelbuilder/ui-ux-pro-max-skill",
       "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
       "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 79205,
+      "stars": 79303,
       "pushedAt": "2026-04-03T05:08:19Z",
       "createdAt": "2025-11-30T11:36:31Z",
       "language": "Python"
@@ -263,8 +263,8 @@
       "fullName": "lobehub/lobehub",
       "description": "The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
       "url": "https://github.com/lobehub/lobehub",
-      "stars": 77153,
-      "pushedAt": "2026-05-16T12:59:21Z",
+      "stars": 77160,
+      "pushedAt": "2026-05-16T17:34:03Z",
       "createdAt": "2023-05-21T07:19:12Z",
       "language": "TypeScript"
     },
@@ -273,7 +273,7 @@
       "fullName": "thedotmack/claude-mem",
       "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
       "url": "https://github.com/thedotmack/claude-mem",
-      "stars": 76096,
+      "stars": 76149,
       "pushedAt": "2026-05-15T04:07:15Z",
       "createdAt": "2025-08-31T20:50:03Z",
       "language": "TypeScript"
@@ -283,7 +283,7 @@
       "fullName": "bytedance/deer-flow",
       "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
       "url": "https://github.com/bytedance/deer-flow",
-      "stars": 67972,
+      "stars": 67997,
       "pushedAt": "2026-05-16T10:23:22Z",
       "createdAt": "2025-05-07T02:50:19Z",
       "language": "Python"
