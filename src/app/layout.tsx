@@ -32,9 +32,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Awesome Research Skills — 科研 skill 与开源项目集",
+  title: "Field Notes · 田野笔记",
   description:
-    "为科研挑选的 Claude Code skill 与开源项目；每条都来自公开仓库，直链 skills.sh 与 GitHub 源。",
+    "研究路上的随手笔记。收录用得上的 Claude Code skill、AI 与科研方向的开源项目、值得读的研究长文。",
 };
 
 export default function RootLayout({

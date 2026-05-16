@@ -25,7 +25,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_BASE_PATH: /awesome-research-skills
+      NEXT_PUBLIC_BASE_PATH: /field-notes
       # 5000 req/hr instead of unauth 60/hr — needed for the full repo list.
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

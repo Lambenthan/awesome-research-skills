@@ -1,4 +1,4 @@
-const REPO_URL = "https://github.com/Lambenthan/awesome-research-skills";
+const REPO_URL = "https://github.com/Lambenthan/field-notes";
 
 export function Footer() {
   return (

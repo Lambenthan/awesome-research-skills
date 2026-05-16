@@ -1,120 +1,107 @@
-# Awesome Research Skills
+# Field Notes · 田野笔记
 
-科研向 Claude Code skill 与开源项目的集散地。
+研究路上的随手笔记。
 
-线上版本：<https://lambenthan.github.io/awesome-research-skills/>
+线上：<https://lambenthan.github.io/field-notes/>
 
-## 为什么做这个
+## 这是什么
 
-平时跑科研项目要用的东西散得到处都是：Claude Code 里装了一堆 skill，
-但叫什么、能干什么、什么时候用得上，过两周就忘；GitHub 上的好仓库
-（Agent 框架、模型推理、单细胞、因果推断、Zotero 插件……）也是看到一个收藏一个，
-最后躺在浏览器书签里再也找不到。
+一个克制的研究目录站，把日常工作里翻到的好东西放在一个地方：
 
-这个站点用来集中收 **两类东西**：
+- **Claude Code skill**：来自 `anthropics/skills`、`obra/superpowers`、
+  `kepano/obsidian-skills`、`vercel-labs/skills` 等公开仓库，分 7 组整理
+- **AI 开源项目**：Agent 框架、编码 agent、模型推理、RAG、对话 UI、SDK
+- **科研生产力工具**：数据科学、统计因果、可视化、生信、写作发表、文献管理
+- **Reading**：Agent 工程、研究索引、LLM 与上下文工程相关的长文
+- **Latest**：HackerNews 与 GitHub Search 上最近的 AI 动向，每 6 小时由 cron 自动刷新
 
-1. 真正用得上、并且**已经在公开仓库发布**的 Claude Code skill。每条都标着
-   它的来源仓库（`anthropics/skills`、`obra/superpowers` 等），点卡片直接跳到
-   skills.sh 的详情页 + GitHub 源目录 —— 你能看到 SKILL.md 原文再决定要不要装。
-2. 高 star、还在活跃维护的 AI 与科研开源项目，按方向分组。
+每一条都直链到原始来源（skills.sh / GitHub / 文章页），加上中文导读说明这是什么、
+什么时候用得上。
 
-**只收公开来源**：站点本身不读你本地 `~/.claude/skills/`，也不会泄露你
-没发布的 skill 描述；想新增条目就在白名单 YAML 里加 `owner/repo/slug`。
+定位上偏个人记录：未来会逐步加入更长的笔记 / 思考 / 项目进展类内容。
 
-## 站点收的内容
+## 站点构成
 
-- **来自公开仓库的 Claude Code skill**：分 7 组 ——
-  Anthropic 官方文档处理 / 设计图形 / 开发与扩展、obra/superpowers 流程纪律、
-  kepano/obsidian-skills、找 skill 装 skill、UI 与终端体验。
-- **AI 方向高星开源项目**：Agent 框架 / 模型推理 / RAG 与检索 / 对话 UI。
-- **科研生产力工具**：数据科学 / 统计因果 / 可视化 / 生信 / 写作发表 /
-  Notebook 与轻应用 / 文献管理。
+数据在构建时抓取并生成静态 JSON，运行时没有后端：
 
-数据在 **构建时** 抓：
-
-- skill 描述从 `https://raw.githubusercontent.com/{owner}/{repo}/main/skills/{slug}/SKILL.md`
-  拉 frontmatter
+- skill 描述从 `https://raw.githubusercontent.com/{owner}/{repo}/main/skills/{slug}/SKILL.md` 拉 frontmatter
 - 仓库信息从 GitHub REST API 拉 star / 描述 / 语言 / topic / license
+- 文章手工维护在 `content/featured-articles.yml`
+- /latest 由 GitHub Actions cron 每 6 小时跑一次抓取脚本写入静态 JSON
+- 中文导读由 `scripts/fill-cn.mjs` 调 GitHub Models 上的 DeepSeek-V3 生成，存在
+  `content/cn-summaries.yml`，按 `~/.claude/skills/book-writing-default/SKILL.md`
+  的红线规则过滤
 
-站点本身是纯静态的 Next.js 导出，部署到 GitHub Pages，不调用任何后端。
-
-## 快速开始
+## 本地开发
 
 ```sh
 npm install
 npm run dev          # http://localhost:3000
 ```
 
-`predev` / `prebuild` 钩子会自动调 `npm run extract`：
+`predev` / `prebuild` 钩子会自动调 `npm run extract` 抓数据。
 
-- 读 `content/featured-skills.yml`，对每个公开 skill 拉 `SKILL.md` 的 frontmatter，
-  生成 `src/data/generated/skills.json`，并附上 `skills.sh` 详情页 + GitHub 源目录链接。
-- 读 `content/featured-repos.yml`，调 GitHub API 拉每个仓库的 star / 描述，
-  生成 `src/data/generated/repos.json`。响应缓存在 `scripts/.cache/`，24 小时内复用。
-
-未授权调用 GitHub API 限速 60 次/小时。本地批量抓取或 CI 部署请设
+未授权调用 GitHub API 限速 60 次/小时，本地批量抓取或 CI 部署请设
 `GITHUB_TOKEN`：
 
 ```sh
-export GITHUB_TOKEN=ghp_xxx
+export GITHUB_TOKEN=$(gh auth token)
 npm run extract
 ```
 
-## 添加 / 删除条目
+## 添加 / 编辑条目
 
-**添加新 skill**（必须是公开仓库里的）：编辑 `content/featured-skills.yml`，
-在对应分类下加一行：
+**新增 skill / repo / article**：编辑对应的 `content/featured-*.yml`，加一行
+`owner/repo/slug` 或文章元数据。再跑 `npm run extract` 验证抓得到。
 
-```yaml
-- { slug: pdf, repo: anthropics/skills }
+**重写 / 修改中文导读**：
+
+```sh
+# 单独重写某几条
+GITHUB_TOKEN=$(gh auth token) npm run fill-cn -- --overwrite \
+  --keys "anthropic-docs/pdf,coding-agents/anthropics-claude-code"
+
+# 全量重写
+GITHUB_TOKEN=$(gh auth token) npm run fill-cn -- --overwrite
+
+# 只补缺失的（cron 自动跑的就是这个）
+GITHUB_TOKEN=$(gh auth token) npm run fill-cn -- --missing
 ```
 
-只写 `slug` 和 `repo` 即可，路径默认按 `skills/<slug>/SKILL.md` 找。布局不同的可以加：
-
-```yaml
-- { slug: my-skill, repo: foo/bar, path: src/skills/my-skill, ref: dev }
-```
-
-跑一次 `npm run extract` 验证拉取成功，再 commit。
-
-**添加新仓库**：编辑 `content/featured-repos.yml`，把 `owner/name`
-加进 `ai` 或 `research` 下某个分组的 `repos` 列表。
+也可以直接编辑 `content/cn-summaries.yml`——`fill-cn` 下次不会覆盖已有 cn，
+除非显式 `--overwrite`。
 
 ## 部署
 
-仓库已带 `.github/workflows/deploy.yml`：
+仓库自带 `.github/workflows/deploy.yml`：
 
 - `push` 到 `main` 自动构建并发布到 GitHub Pages
-- 每天 UTC 4:00 也会跑一次，刷新 star 数 / SKILL.md 描述
-- CI 用 `GITHUB_TOKEN`（workflow 自动注入）调 API，不会撞 60/hr 限制
+- 每 6 小时 cron 跑一次刷新 star 数、HN/GH Search 最新条目，并自动给新增 item 补 cn
+- workflow 用 `GITHUB_TOKEN`（runner 自动注入）调 GitHub API 和 GitHub Models
 
-在 GitHub 仓库 Settings → Pages 把 Source 切到 “GitHub Actions” 即可生效。
-basePath 默认是 `/awesome-research-skills`，换仓库名要同步改 workflow 里的
-`NEXT_PUBLIC_BASE_PATH`。
+basePath 是 `/field-notes`，换仓库名要同步改 workflow 里的 `NEXT_PUBLIC_BASE_PATH`。
 
 ## 项目结构
 
 ```
-content/                  # 白名单 YAML（手动维护）
-  featured-skills.yml     # owner/repo/slug 三元组
-  featured-repos.yml      # owner/name
+content/                       # 手动维护的内容白名单
+  featured-skills.yml          # owner/repo/slug 三元组
+  featured-repos.yml           # AI 与科研仓库 owner/name
+  featured-articles.yml        # 文章 title/url/source/blurb
+  cn-summaries.yml             # 中文导读集中表
 scripts/
-  extract-content.mjs     # 拉公开 SKILL.md + GitHub API
+  extract-content.mjs          # 抓 SKILL.md + GitHub API
+  fill-cn.mjs                  # 用 DeepSeek-V3 生成 cn 导读
+  star-history.json            # 30 天 star 快照（用来算 7d delta）
 src/
   app/
-    layout.tsx
-    page.tsx              # 首页 + 三个 tab
-    globals.css
-  components/
-    Browser.tsx           # 客户端 tab + 搜索 + 分类过滤
-    SkillCard.tsx         # 卡片直链 skills.sh / GitHub
-    RepoCard.tsx
-  data/generated/         # 构建产物
-    skills.json
-    repos.json
-    meta.json
-  lib/
-    data.ts
-    types.ts
-next.config.ts            # static export + basePath
+    layout.tsx                 # 字体加载 + metadata
+    page.tsx                   # Home landing
+    skills,ai,research,reading,latest/   # 5 个顶级 section
+  components/                  # NavBar / Footer / SectionView / DetailShell ...
+  data/generated/              # build 产物（构建期生成）
+  lib/                         # types + sections meta + slugify
+.github/workflows/
+  deploy.yml                   # cron + build + commit-back
+next.config.ts                 # static export + basePath
 ```

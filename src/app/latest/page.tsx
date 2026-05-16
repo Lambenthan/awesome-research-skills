@@ -5,7 +5,7 @@ import { Reveal } from "@/components/Reveal";
 import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata = {
-  title: "Latest · AI 新动向 — Awesome Research Skills",
+  title: "Latest · AI 新动向 — Field Notes",
   description:
     "实时 AI 新闻与上升中开源项目，HackerNews 与 GitHub Search 直拉。",
 };

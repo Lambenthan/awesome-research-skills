@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SECTION_META } from "@/lib/sections";
 
-const REPO_URL = "https://github.com/Lambenthan/awesome-research-skills";
+const REPO_URL = "https://github.com/Lambenthan/field-notes";
 
 const NAV_LINKS = [
   { href: SECTION_META.skills.href, label: SECTION_META.skills.eyebrow },
@@ -19,7 +19,7 @@ export function NavBar() {
           href="/"
           className="font-serif text-[18px] italic leading-none text-ink transition hover:text-ember"
         >
-          Awesome Research Skills
+          Field Notes
         </Link>
         <nav className="hidden items-baseline gap-7 sm:flex">
           {NAV_LINKS.map((l) => (
