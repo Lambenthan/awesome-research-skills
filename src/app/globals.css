@@ -20,30 +20,35 @@
 
   /* Typography
      ─────────────────────────────────────────────────────────────────────
-     For Latin glyphs we try Anthropic's proprietary families first so any
-     visitor who has them installed gets the authentic look; otherwise we
-     fall back to Source Serif 4 (≈ Tiempos Text) and Geist (≈ Styrene B),
-     both self-hosted by next/font.
+     Latin: Anthropic's proprietary Tiempos Text + Styrene B first so any
+     visitor who has them installed gets the authentic look; otherwise
+     Source Serif 4 (≈ Tiempos) and Geist (≈ Styrene), both self-hosted
+     by next/font.
 
-     For CJK glyphs we use heiti-class (PingFang SC / Source Han Sans /
-     Noto Sans CJK SC). On a listing-heavy editorial site, heiti renders
-     sharper than kaiti at small sizes (UI labels, metadata, breadcrumbs)
-     while still pairing cleanly with the Latin serif body. Long-form
-     Chinese essays can opt back into LXGW WenKai via `--font-cn-serif`.
+     CJK: LXGW WenKai Screen — the screen-optimized variant of 霞鹜文楷.
+     Same kaiti aesthetic as the regular WenKai but with stroke widths
+     tuned to render crisply at small UI sizes. Browsers do per-glyph
+     font matching, so Latin chars come from the Latin stack and Han
+     chars come from LXGW WenKai Screen automatically.
      ───────────────────────────────────────────────────────────────────── */
   --font-serif:
     "Tiempos Text", "Tiempos Headline", var(--font-source-serif),
-    "PingFang SC", "Source Han Sans SC", "Noto Sans CJK SC",
-    "Microsoft YaHei", Georgia, serif;
+    "LXGW WenKai Screen", "LXGW WenKai", "霞鹜文楷",
+    "Songti SC", "STSong", Georgia, serif;
   --font-sans:
     "Styrene B Web", "Styrene B", "Söhne", var(--font-geist),
-    -apple-system, BlinkMacSystemFont, "PingFang SC", "Source Han Sans SC",
-    "Noto Sans CJK SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    -apple-system, BlinkMacSystemFont,
+    "LXGW WenKai Screen", "LXGW WenKai", "霞鹜文楷",
+    "PingFang SC", "Source Han Sans SC", "Noto Sans CJK SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --font-mono:
     var(--font-geist-mono), ui-monospace, "SF Mono", "JetBrains Mono",
     monospace;
-  --font-cn-serif:
-    "LXGW WenKai", "霞鹜文楷", "Songti SC", "STSong", serif;
+  /* For places that want extra-elegant kaiti (long-form prose maybe):
+     `font-family: var(--font-cn-display)` falls back through the Light
+     weight if you load it, else uses regular Screen. */
+  --font-cn-display:
+    "LXGW WenKai", "LXGW WenKai Screen", "霞鹜文楷", serif;
 }
 
 html,

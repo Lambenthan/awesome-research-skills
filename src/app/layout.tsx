@@ -45,13 +45,25 @@ export default function RootLayout({
       lang="zh-Hans"
       className={`${geist.variable} ${sourceSerif.variable} ${geistMono.variable} antialiased`}
     >
-      {/*
-        CJK text now uses system heiti (PingFang SC / Source Han Sans /
-        Noto Sans CJK SC), which all major OS ship with — no webfont needed.
-        Earlier we loaded LXGW WenKai from jsdelivr but it softened UI
-        elements too much for a listing site. The font stack still lists
-        --font-cn-serif so individual long-form essays can opt back in.
-      */}
+      <head>
+        {/*
+          LXGW WenKai Screen — screen-optimized variant of 霞鹜文楷.
+          Strokes adjusted for crispness at 10–16px, so we get the kaiti
+          aesthetic without the small-size fuzziness of the regular WenKai.
+          Subsetted by unicode-range, so only the glyphs used on the page
+          get downloaded. If a visitor has any LXGW WenKai variant installed
+          locally the local copy wins (no fetch).
+        */}
+        <link
+          rel="preconnect"
+          href="https://cdn.jsdelivr.net"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont/lxgwwenkaiscreen.css"
+        />
+      </head>
       <body className="min-h-screen">{children}</body>
     </html>
   );
