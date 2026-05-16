@@ -22,23 +22,28 @@
      ─────────────────────────────────────────────────────────────────────
      For Latin glyphs we try Anthropic's proprietary families first so any
      visitor who has them installed gets the authentic look; otherwise we
-     fall back to Source Serif 4 (≈ Tiempos Text) and Mona Sans (≈ Styrene
-     B), both self-hosted by next/font.
+     fall back to Source Serif 4 (≈ Tiempos Text) and Geist (≈ Styrene B),
+     both self-hosted by next/font.
 
-     For CJK glyphs we use LXGW WenKai (霞鹜文楷, OFL) loaded from jsdelivr.
-     Browsers do per-glyph font matching, so Latin chars come from the
-     Latin fonts and Han chars come from LXGW automatically.
+     For CJK glyphs we use heiti-class (PingFang SC / Source Han Sans /
+     Noto Sans CJK SC). On a listing-heavy editorial site, heiti renders
+     sharper than kaiti at small sizes (UI labels, metadata, breadcrumbs)
+     while still pairing cleanly with the Latin serif body. Long-form
+     Chinese essays can opt back into LXGW WenKai via `--font-cn-serif`.
      ───────────────────────────────────────────────────────────────────── */
   --font-serif:
     "Tiempos Text", "Tiempos Headline", var(--font-source-serif),
-    "LXGW WenKai", "霞鹜文楷", "Songti SC", "STSong", Georgia, serif;
+    "PingFang SC", "Source Han Sans SC", "Noto Sans CJK SC",
+    "Microsoft YaHei", Georgia, serif;
   --font-sans:
-    "Styrene B Web", "Styrene B", "Söhne", "Mona Sans", var(--font-geist),
-    "LXGW WenKai", "霞鹜文楷", -apple-system, BlinkMacSystemFont,
-    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    "Styrene B Web", "Styrene B", "Söhne", var(--font-geist),
+    -apple-system, BlinkMacSystemFont, "PingFang SC", "Source Han Sans SC",
+    "Noto Sans CJK SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
   --font-mono:
     var(--font-geist-mono), ui-monospace, "SF Mono", "JetBrains Mono",
     monospace;
+  --font-cn-serif:
+    "LXGW WenKai", "霞鹜文楷", "Songti SC", "STSong", serif;
 }
 
 html,

@@ -45,21 +45,13 @@ export default function RootLayout({
       lang="zh-Hans"
       className={`${geist.variable} ${sourceSerif.variable} ${geistMono.variable} antialiased`}
     >
-      <head>
-        {/* LXGW WenKai (霞鹜文楷) — open-source Chinese serif, OFL. Sub-set
-            via unicode-range so only the needed glyphs download. If the
-            visitor already has LXGW installed locally (macOS/Windows), the
-            local copy wins and these files are never fetched. */}
-        <link
-          rel="preconnect"
-          href="https://cdn.jsdelivr.net"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont/lxgwwenkai-regular.css"
-        />
-      </head>
+      {/*
+        CJK text now uses system heiti (PingFang SC / Source Han Sans /
+        Noto Sans CJK SC), which all major OS ship with — no webfont needed.
+        Earlier we loaded LXGW WenKai from jsdelivr but it softened UI
+        elements too much for a listing site. The font stack still lists
+        --font-cn-serif so individual long-form essays can opt back in.
+      */}
       <body className="min-h-screen">{children}</body>
     </html>
   );
