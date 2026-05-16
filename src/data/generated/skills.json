@@ -1,0 +1,355 @@
+[
+  {
+    "id": "anthropic-docs",
+    "label": "文档与办公格式（Anthropic 官方）",
+    "summary": "处理 PDF / Word / Excel / PPT 的官方 skill，论文写作流水线最常用。",
+    "items": [
+      {
+        "slug": "pdf",
+        "repo": "anthropics/skills",
+        "name": "pdf",
+        "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.",
+        "githubUrl": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+        "skillsShUrl": "https://skills.sh/anthropics/skills/pdf"
+      },
+      {
+        "slug": "docx",
+        "repo": "anthropics/skills",
+        "name": "docx",
+        "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation.",
+        "githubUrl": "https://github.com/anthropics/skills/tree/main/skills/docx",
+        "skillsShUrl": "https://skills.sh/anthropics/skills/docx"
+      },
+      {
+        "slug": "xlsx",
+        "repo": "anthropics/skills",
+        "name": "xlsx",
+        "description": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user references a spreadsheet file by name or path — even casually (like \"the xlsx in my downloads\") — and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved.",
+        "githubUrl": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+        "skillsShUrl": "https://skills.sh/anthropics/skills/xlsx"
+      },
+      {
+        "slug": "pptx",
+        "repo": "anthropics/skills",
+        "name": "pptx",
+        "description": "Use this skill any time a .pptx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates, layouts, speaker notes, or comments. Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx filename, regardless of what they plan to do with the content afterward. If a .pptx file needs to be opened, created, or touched, use this skill.",
+        "githubUrl": "https://github.com/anthropics/skills/tree/main/skills/pptx",
+        "skillsShUrl": "https://skills.sh/anthropics/skills/pptx"
+      },
+      {
+        "slug": "doc-coauthoring",
+        "repo": "anthropics/skills",
+        "name": "doc-coauthoring",
+        "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.",
+        "githubUrl": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring",
+        "skillsShUrl": "https://skills.sh/anthropics/skills/doc-coauthoring"
+      }
+    ]
+  },
+  {
+    "id": "anthropic-design",
+    "label": "设计与图形（Anthropic 官方）",
+    "summary": "画图、做设计稿、生成主题与品牌素材。",
+    "items": [
+      {
+        "slug": "frontend-design",
+        "repo": "anthropics/skills",
+        "name": "frontend-design",
+        "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.",
+        "githubUrl": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+        "skillsShUrl": "https://skills.sh/anthropics/skills/frontend-design"
+      },
+      {
+        "slug": "canvas-design",
+        "repo": "anthropics/skills",
+        "name": "canvas-design",
+        "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+        "githubUrl": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
+        "skillsShUrl": "https://skills.sh/anthropics/skills/canvas-design"
+      },
+      {
+        "slug": "algorithmic-art",
+        "repo": "anthropics/skills",
+        "name": "algorithmic-art",
+        "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations.",
+        "githubUrl": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
+        "skillsShUrl": "https://skills.sh/anthropics/skills/algorithmic-art"
+      },
+      {
+        "slug": "brand-guidelines",
+        "repo": "anthropics/skills",
+        "name": "brand-guidelines",
+        "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+        "githubUrl": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
+        "skillsShUrl": "https://skills.sh/anthropics/skills/brand-guidelines"
+      },
+      {
+        "slug": "theme-factory",
+        "repo": "anthropics/skills",
+        "name": "theme-factory",
+        "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+        "githubUrl": "https://github.com/anthropics/skills/tree/main/skills/theme-factory",
+        "skillsShUrl": "https://skills.sh/anthropics/skills/theme-factory"
+      },
+      {
+        "slug": "slack-gif-creator",
+        "repo": "anthropics/skills",
+        "name": "slack-gif-creator",
+        "description": "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.\"",
+        "githubUrl": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator",
+        "skillsShUrl": "https://skills.sh/anthropics/skills/slack-gif-creator"
+      },
+      {
+        "slug": "web-artifacts-builder",
+        "repo": "anthropics/skills",
+        "name": "web-artifacts-builder",
+        "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+        "githubUrl": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder",
+        "skillsShUrl": "https://skills.sh/anthropics/skills/web-artifacts-builder"
+      }
+    ]
+  },
+  {
+    "id": "anthropic-dev",
+    "label": "开发与扩展（Anthropic 官方）",
+    "summary": "建 MCP、写 skill、写 API、做测试、内部沟通。",
+    "items": [
+      {
+        "slug": "claude-api",
+        "repo": "anthropics/skills",
+        "name": "claude-api",
+        "description": "Build, debug, and optimize Claude API / Anthropic SDK apps. Apps built with this skill should include prompt caching. Also handles migrating existing Claude API code between Claude model versions (4.5 → 4.6, 4.6 → 4.7, retired-model replacements). TRIGGER when: code imports `anthropic`/`@anthropic-ai/sdk`; user asks for the Claude API, Anthropic SDK, or Managed Agents; user adds/modifies/tunes a Claude feature (caching, thinking, compaction, tool use, batch, files, citations, memory) or model (Opus/Sonnet/Haiku) in a file; questions about prompt caching / cache hit rate in an Anthropic SDK project. SKIP: file imports `openai`/other-provider SDK, filename like `*-openai.py`/`*-generic.py`, provider-neutral code, general programming/ML.",
+        "githubUrl": "https://github.com/anthropics/skills/tree/main/skills/claude-api",
+        "skillsShUrl": "https://skills.sh/anthropics/skills/claude-api"
+      },
+      {
+        "slug": "mcp-builder",
+        "repo": "anthropics/skills",
+        "name": "mcp-builder",
+        "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+        "githubUrl": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
+        "skillsShUrl": "https://skills.sh/anthropics/skills/mcp-builder"
+      },
+      {
+        "slug": "skill-creator",
+        "repo": "anthropics/skills",
+        "name": "skill-creator",
+        "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+        "githubUrl": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+        "skillsShUrl": "https://skills.sh/anthropics/skills/skill-creator"
+      },
+      {
+        "slug": "webapp-testing",
+        "repo": "anthropics/skills",
+        "name": "webapp-testing",
+        "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+        "githubUrl": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+        "skillsShUrl": "https://skills.sh/anthropics/skills/webapp-testing"
+      },
+      {
+        "slug": "internal-comms",
+        "repo": "anthropics/skills",
+        "name": "internal-comms",
+        "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
+        "githubUrl": "https://github.com/anthropics/skills/tree/main/skills/internal-comms",
+        "skillsShUrl": "https://skills.sh/anthropics/skills/internal-comms"
+      }
+    ]
+  },
+  {
+    "id": "superpowers-discipline",
+    "label": "流程纪律（obra/superpowers）",
+    "summary": "Brainstorm → 写计划 → TDD → 验证 → 代码评审一整套工程纪律。",
+    "items": [
+      {
+        "slug": "using-superpowers",
+        "repo": "obra/superpowers",
+        "name": "using-superpowers",
+        "description": "Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions",
+        "githubUrl": "https://github.com/obra/superpowers/tree/main/skills/using-superpowers",
+        "skillsShUrl": "https://skills.sh/obra/superpowers/using-superpowers"
+      },
+      {
+        "slug": "brainstorming",
+        "repo": "obra/superpowers",
+        "name": "brainstorming",
+        "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation.",
+        "githubUrl": "https://github.com/obra/superpowers/tree/main/skills/brainstorming",
+        "skillsShUrl": "https://skills.sh/obra/superpowers/brainstorming"
+      },
+      {
+        "slug": "writing-plans",
+        "repo": "obra/superpowers",
+        "name": "writing-plans",
+        "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
+        "githubUrl": "https://github.com/obra/superpowers/tree/main/skills/writing-plans",
+        "skillsShUrl": "https://skills.sh/obra/superpowers/writing-plans"
+      },
+      {
+        "slug": "executing-plans",
+        "repo": "obra/superpowers",
+        "name": "executing-plans",
+        "description": "Use when you have a written implementation plan to execute in a separate session with review checkpoints",
+        "githubUrl": "https://github.com/obra/superpowers/tree/main/skills/executing-plans",
+        "skillsShUrl": "https://skills.sh/obra/superpowers/executing-plans"
+      },
+      {
+        "slug": "test-driven-development",
+        "repo": "obra/superpowers",
+        "name": "test-driven-development",
+        "description": "Use when implementing any feature or bugfix, before writing implementation code",
+        "githubUrl": "https://github.com/obra/superpowers/tree/main/skills/test-driven-development",
+        "skillsShUrl": "https://skills.sh/obra/superpowers/test-driven-development"
+      },
+      {
+        "slug": "systematic-debugging",
+        "repo": "obra/superpowers",
+        "name": "systematic-debugging",
+        "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes",
+        "githubUrl": "https://github.com/obra/superpowers/tree/main/skills/systematic-debugging",
+        "skillsShUrl": "https://skills.sh/obra/superpowers/systematic-debugging"
+      },
+      {
+        "slug": "verification-before-completion",
+        "repo": "obra/superpowers",
+        "name": "verification-before-completion",
+        "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always",
+        "githubUrl": "https://github.com/obra/superpowers/tree/main/skills/verification-before-completion",
+        "skillsShUrl": "https://skills.sh/obra/superpowers/verification-before-completion"
+      },
+      {
+        "slug": "requesting-code-review",
+        "repo": "obra/superpowers",
+        "name": "requesting-code-review",
+        "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements",
+        "githubUrl": "https://github.com/obra/superpowers/tree/main/skills/requesting-code-review",
+        "skillsShUrl": "https://skills.sh/obra/superpowers/requesting-code-review"
+      },
+      {
+        "slug": "receiving-code-review",
+        "repo": "obra/superpowers",
+        "name": "receiving-code-review",
+        "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation",
+        "githubUrl": "https://github.com/obra/superpowers/tree/main/skills/receiving-code-review",
+        "skillsShUrl": "https://skills.sh/obra/superpowers/receiving-code-review"
+      },
+      {
+        "slug": "writing-skills",
+        "repo": "obra/superpowers",
+        "name": "writing-skills",
+        "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+        "githubUrl": "https://github.com/obra/superpowers/tree/main/skills/writing-skills",
+        "skillsShUrl": "https://skills.sh/obra/superpowers/writing-skills"
+      },
+      {
+        "slug": "subagent-driven-development",
+        "repo": "obra/superpowers",
+        "name": "subagent-driven-development",
+        "description": "Use when executing implementation plans with independent tasks in the current session",
+        "githubUrl": "https://github.com/obra/superpowers/tree/main/skills/subagent-driven-development",
+        "skillsShUrl": "https://skills.sh/obra/superpowers/subagent-driven-development"
+      },
+      {
+        "slug": "dispatching-parallel-agents",
+        "repo": "obra/superpowers",
+        "name": "dispatching-parallel-agents",
+        "description": "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies",
+        "githubUrl": "https://github.com/obra/superpowers/tree/main/skills/dispatching-parallel-agents",
+        "skillsShUrl": "https://skills.sh/obra/superpowers/dispatching-parallel-agents"
+      },
+      {
+        "slug": "using-git-worktrees",
+        "repo": "obra/superpowers",
+        "name": "using-git-worktrees",
+        "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - ensures an isolated workspace exists via native tools or git worktree fallback",
+        "githubUrl": "https://github.com/obra/superpowers/tree/main/skills/using-git-worktrees",
+        "skillsShUrl": "https://skills.sh/obra/superpowers/using-git-worktrees"
+      },
+      {
+        "slug": "finishing-a-development-branch",
+        "repo": "obra/superpowers",
+        "name": "finishing-a-development-branch",
+        "description": "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work - guides completion of development work by presenting structured options for merge, PR, or cleanup",
+        "githubUrl": "https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch",
+        "skillsShUrl": "https://skills.sh/obra/superpowers/finishing-a-development-branch"
+      }
+    ]
+  },
+  {
+    "id": "obsidian",
+    "label": "Obsidian 笔记（kepano/obsidian-skills）",
+    "summary": "Obsidian Markdown 方言、Canvas、Bases、命令行集成，配合 obsidian 笔记仓使用。",
+    "items": [
+      {
+        "slug": "obsidian-markdown",
+        "repo": "kepano/obsidian-skills",
+        "name": "obsidian-markdown",
+        "description": "Create and edit Obsidian Flavored Markdown with wikilinks, embeds, callouts, properties, and other Obsidian-specific syntax. Use when working with .md files in Obsidian, or when the user mentions wikilinks, callouts, frontmatter, tags, embeds, or Obsidian notes.",
+        "githubUrl": "https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-markdown",
+        "skillsShUrl": "https://skills.sh/kepano/obsidian-skills/obsidian-markdown"
+      },
+      {
+        "slug": "obsidian-bases",
+        "repo": "kepano/obsidian-skills",
+        "name": "obsidian-bases",
+        "description": "Create and edit Obsidian Bases (.base files) with views, filters, formulas, and summaries. Use when working with .base files, creating database-like views of notes, or when the user mentions Bases, table views, card views, filters, or formulas in Obsidian.",
+        "githubUrl": "https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-bases",
+        "skillsShUrl": "https://skills.sh/kepano/obsidian-skills/obsidian-bases"
+      },
+      {
+        "slug": "obsidian-cli",
+        "repo": "kepano/obsidian-skills",
+        "name": "obsidian-cli",
+        "description": "Interact with Obsidian vaults using the Obsidian CLI to read, create, search, and manage notes, tasks, properties, and more. Also supports plugin and theme development with commands to reload plugins, run JavaScript, capture errors, take screenshots, and inspect the DOM. Use when the user asks to interact with their Obsidian vault, manage notes, search vault content, perform vault operations from the command line, or develop and debug Obsidian plugins and themes.",
+        "githubUrl": "https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-cli",
+        "skillsShUrl": "https://skills.sh/kepano/obsidian-skills/obsidian-cli"
+      },
+      {
+        "slug": "json-canvas",
+        "repo": "kepano/obsidian-skills",
+        "name": "json-canvas",
+        "description": "Create and edit JSON Canvas files (.canvas) with nodes, edges, groups, and connections. Use when working with .canvas files, creating visual canvases, mind maps, flowcharts, or when the user mentions Canvas files in Obsidian.",
+        "githubUrl": "https://github.com/kepano/obsidian-skills/tree/main/skills/json-canvas",
+        "skillsShUrl": "https://skills.sh/kepano/obsidian-skills/json-canvas"
+      },
+      {
+        "slug": "defuddle",
+        "repo": "kepano/obsidian-skills",
+        "name": "defuddle",
+        "description": "Extract clean markdown content from web pages using Defuddle CLI, removing clutter and navigation to save tokens. Use instead of WebFetch when the user provides a URL to read or analyze, for online documentation, articles, blog posts, or any standard web page. Do NOT use for URLs ending in .md — those are already markdown, use WebFetch directly.",
+        "githubUrl": "https://github.com/kepano/obsidian-skills/tree/main/skills/defuddle",
+        "skillsShUrl": "https://skills.sh/kepano/obsidian-skills/defuddle"
+      }
+    ]
+  },
+  {
+    "id": "skill-discovery",
+    "label": "找 skill / 装 skill",
+    "summary": "通过 npx 命令搜索全网公开 skill 并一键安装。",
+    "items": [
+      {
+        "slug": "find-skills",
+        "repo": "vercel-labs/skills",
+        "name": "find-skills",
+        "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill.",
+        "githubUrl": "https://github.com/vercel-labs/skills/tree/main/skills/find-skills",
+        "skillsShUrl": "https://skills.sh/vercel-labs/skills/find-skills"
+      }
+    ]
+  },
+  {
+    "id": "ui-design",
+    "label": "UI / 设计（社区高分）",
+    "summary": "67 种 UI 风格、161 套配色、57 组字体配对，覆盖 15+ 技术栈的设计 skill。",
+    "items": [
+      {
+        "slug": "ui-ux-pro-max",
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "name": "ui-ux-pro-max",
+        "description": "UI/UX design intelligence for web and mobile. Includes 50+ styles, 161 color palettes, 57 font pairings, 161 product types, 99 UX guidelines, and 25 chart types across 10 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, and HTML/CSS). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, and check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, and mobile app. Elements: button, modal, navbar, sidebar, card, table, form, and chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, and flat design. Topics: color systems, accessibility, animation, layout, typography, font pairing, spacing, interaction states, shadow, and gradient. Integrations: shadcn/ui MCP for component search and examples.",
+        "githubUrl": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/main/.claude/skills/ui-ux-pro-max",
+        "skillsShUrl": "https://skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max"
+      }
+    ]
+  }
+]

@@ -1,0 +1,92 @@
+# Public-source skill whitelist.
+#
+# Every entry must point to a SKILL.md file in a PUBLIC GitHub repository.
+# Build script fetches the SKILL.md frontmatter (name / description) from
+# raw.githubusercontent.com and renders a card whose primary link goes to:
+#   https://skills.sh/{repo}/{slug}        (skills.sh detail page)
+# with a secondary link to the GitHub source.
+#
+# Schema per item:
+#   slug:  required. Skill name (matches SKILL.md `name:` and the directory).
+#   repo:  required. `owner/repo` on GitHub.
+#   path:  optional. Path inside the repo to the skill directory. Defaults to
+#          `skills/{slug}`. Override only if the repo lays things out differently.
+#   ref:   optional. Branch / tag to fetch from. Defaults to `main`.
+#
+# Do NOT list skills you wrote locally and have not published anywhere.
+
+categories:
+  - id: anthropic-docs
+    label: 文档与办公格式（Anthropic 官方）
+    summary: 处理 PDF / Word / Excel / PPT 的官方 skill，论文写作流水线最常用。
+    items:
+      - { slug: pdf,  repo: anthropics/skills }
+      - { slug: docx, repo: anthropics/skills }
+      - { slug: xlsx, repo: anthropics/skills }
+      - { slug: pptx, repo: anthropics/skills }
+      - { slug: doc-coauthoring, repo: anthropics/skills }
+
+  - id: anthropic-design
+    label: 设计与图形（Anthropic 官方）
+    summary: 画图、做设计稿、生成主题与品牌素材。
+    items:
+      - { slug: frontend-design, repo: anthropics/skills }
+      - { slug: canvas-design,   repo: anthropics/skills }
+      - { slug: algorithmic-art, repo: anthropics/skills }
+      - { slug: brand-guidelines, repo: anthropics/skills }
+      - { slug: theme-factory,   repo: anthropics/skills }
+      - { slug: slack-gif-creator, repo: anthropics/skills }
+      - { slug: web-artifacts-builder, repo: anthropics/skills }
+
+  - id: anthropic-dev
+    label: 开发与扩展（Anthropic 官方）
+    summary: 建 MCP、写 skill、写 API、做测试、内部沟通。
+    items:
+      - { slug: claude-api,      repo: anthropics/skills }
+      - { slug: mcp-builder,     repo: anthropics/skills }
+      - { slug: skill-creator,   repo: anthropics/skills }
+      - { slug: webapp-testing,  repo: anthropics/skills }
+      - { slug: internal-comms,  repo: anthropics/skills }
+
+  - id: superpowers-discipline
+    label: 流程纪律（obra/superpowers）
+    summary: Brainstorm → 写计划 → TDD → 验证 → 代码评审一整套工程纪律。
+    items:
+      - { slug: using-superpowers,            repo: obra/superpowers }
+      - { slug: brainstorming,                repo: obra/superpowers }
+      - { slug: writing-plans,                repo: obra/superpowers }
+      - { slug: executing-plans,              repo: obra/superpowers }
+      - { slug: test-driven-development,      repo: obra/superpowers }
+      - { slug: systematic-debugging,         repo: obra/superpowers }
+      - { slug: verification-before-completion, repo: obra/superpowers }
+      - { slug: requesting-code-review,       repo: obra/superpowers }
+      - { slug: receiving-code-review,        repo: obra/superpowers }
+      - { slug: writing-skills,               repo: obra/superpowers }
+      - { slug: subagent-driven-development,  repo: obra/superpowers }
+      - { slug: dispatching-parallel-agents,  repo: obra/superpowers }
+      - { slug: using-git-worktrees,          repo: obra/superpowers }
+      - { slug: finishing-a-development-branch, repo: obra/superpowers }
+
+  - id: obsidian
+    label: Obsidian 笔记（kepano/obsidian-skills）
+    summary: Obsidian Markdown 方言、Canvas、Bases、命令行集成，配合 obsidian 笔记仓使用。
+    items:
+      - { slug: obsidian-markdown, repo: kepano/obsidian-skills }
+      - { slug: obsidian-bases,    repo: kepano/obsidian-skills }
+      - { slug: obsidian-cli,      repo: kepano/obsidian-skills }
+      - { slug: json-canvas,       repo: kepano/obsidian-skills }
+      - { slug: defuddle,          repo: kepano/obsidian-skills }
+
+  - id: skill-discovery
+    label: 找 skill / 装 skill
+    summary: 通过 npx 命令搜索全网公开 skill 并一键安装。
+    items:
+      - { slug: find-skills, repo: vercel-labs/skills }
+
+  - id: ui-design
+    label: UI / 设计（社区高分）
+    summary: 67 种 UI 风格、161 套配色、57 组字体配对，覆盖 15+ 技术栈的设计 skill。
+    items:
+      - slug: ui-ux-pro-max
+        repo: nextlevelbuilder/ui-ux-pro-max-skill
+        path: .claude/skills/ui-ux-pro-max

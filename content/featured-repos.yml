@@ -1,0 +1,135 @@
+# Curated GitHub repos shown on the site. At build time the extract script
+# calls https://api.github.com/repos/{owner}/{name} for each entry and writes
+# stars/forks/description/language/topics to JSON.
+#
+# Unauthenticated calls have a 60/hr rate limit. The workflow / local build
+# can set GITHUB_TOKEN (or GH_TOKEN) to lift this to 5000/hr; the script
+# auto-detects it and falls back gracefully on a miss (keeps the entry with
+# whatever cached data exists, or marks it as `fetchFailed`).
+
+ai:
+  - id: agent-frameworks
+    label: Agent 框架
+    summary: 多智能体、工作流编排、自主任务执行。
+    repos:
+      - anthropics/claude-code
+      - anthropics/anthropic-cookbook
+      - anthropics/claude-agent-sdk-python
+      - microsoft/autogen
+      - langchain-ai/langchain
+      - langchain-ai/langgraph
+      - crewAIInc/crewAI
+      - All-Hands-AI/OpenHands
+      - Significant-Gravitas/AutoGPT
+      - AntonOsika/gpt-engineer
+      - cline/cline
+      - continuedev/continue
+
+  - id: model-runtime
+    label: 模型推理与部署
+    summary: 本地跑大模型、推理引擎、量化与服务化。
+    repos:
+      - ollama/ollama
+      - ggml-org/llama.cpp
+      - vllm-project/vllm
+      - huggingface/transformers
+      - huggingface/text-generation-inference
+      - lmstudio-ai/lmstudio.js
+      - mlc-ai/mlc-llm
+
+  - id: rag-retrieval
+    label: RAG 与检索
+    summary: 文档问答、向量库、检索增强生成。
+    repos:
+      - run-llama/llama_index
+      - chroma-core/chroma
+      - qdrant/qdrant
+      - milvus-io/milvus
+      - weaviate/weaviate
+      - infiniflow/ragflow
+
+  - id: chat-ui
+    label: 对话 UI
+    summary: 本地或自托管的 LLM 聊天界面。
+    repos:
+      - danny-avila/LibreChat
+      - lobehub/lobe-chat
+      - open-webui/open-webui
+      - mckaywrigley/chatbot-ui
+
+research:
+  - id: data-core
+    label: 数据科学基础
+    summary: 各方向都会用到的通用计算与表格库。
+    repos:
+      - pandas-dev/pandas
+      - numpy/numpy
+      - scipy/scipy
+      - scikit-learn/scikit-learn
+      - pola-rs/polars
+      - dask/dask
+      - apache/arrow
+
+  - id: stats-causal
+    label: 统计与因果推断
+    summary: 贝叶斯、因果效应估计、生存分析、可解释性。
+    repos:
+      - pymc-devs/pymc
+      - py-why/dowhy
+      - microsoft/EconML
+      - sebp/scikit-survival
+      - shap/shap
+      - interpretml/interpret
+      - bambinos/bambi
+
+  - id: viz
+    label: 可视化
+    summary: 静态与交互式科研绘图。
+    repos:
+      - matplotlib/matplotlib
+      - mwaskom/seaborn
+      - plotly/plotly.py
+      - vega/vega-lite
+      - altair-viz/altair
+      - bokeh/bokeh
+
+  - id: bio
+    label: 生信与单细胞
+    summary: 序列分析、单细胞、组学工作流。
+    repos:
+      - biopython/biopython
+      - scverse/scanpy
+      - scverse/anndata
+      - scverse/scvi-tools
+      - deeptools/deepTools
+      - nf-core/tools
+
+  - id: writing-pubs
+    label: 写作与发表
+    summary: 学术排版、引用样式、可重复性报告。
+    repos:
+      - quarto-dev/quarto-cli
+      - jgm/pandoc
+      - citation-style-language/styles
+      - rstudio/bookdown
+      - rstudio/rmarkdown
+      - manubot/manubot
+
+  - id: notebooks-apps
+    label: 笔记本与轻量应用
+    summary: Jupyter 生态、参数化笔记本、把分析变成 web app。
+    repos:
+      - jupyter/notebook
+      - jupyterlab/jupyterlab
+      - nteract/papermill
+      - streamlit/streamlit
+      - gradio-app/gradio
+      - marimo-team/marimo
+
+  - id: reference-management
+    label: 文献管理
+    summary: Zotero 及其插件、文献元数据工具。
+    repos:
+      - zotero/zotero
+      - retorquere/zotero-better-bibtex
+      - inukshuk/jabref

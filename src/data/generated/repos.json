@@ -1,0 +1,72 @@
+{
+  "ai": [
+    {
+      "id": "agent-frameworks",
+      "label": "Agent 框架",
+      "summary": "多智能体、工作流编排、自主任务执行。",
+      "items": []
+    },
+    {
+      "id": "model-runtime",
+      "label": "模型推理与部署",
+      "summary": "本地跑大模型、推理引擎、量化与服务化。",
+      "items": []
+    },
+    {
+      "id": "rag-retrieval",
+      "label": "RAG 与检索",
+      "summary": "文档问答、向量库、检索增强生成。",
+      "items": []
+    },
+    {
+      "id": "chat-ui",
+      "label": "对话 UI",
+      "summary": "本地或自托管的 LLM 聊天界面。",
+      "items": []
+    }
+  ],
+  "research": [
+    {
+      "id": "data-core",
+      "label": "数据科学基础",
+      "summary": "各方向都会用到的通用计算与表格库。",
+      "items": []
+    },
+    {
+      "id": "stats-causal",
+      "label": "统计与因果推断",
+      "summary": "贝叶斯、因果效应估计、生存分析、可解释性。",
+      "items": []
+    },
+    {
+      "id": "viz",
+      "label": "可视化",
+      "summary": "静态与交互式科研绘图。",
+      "items": []
+    },
+    {
+      "id": "bio",
+      "label": "生信与单细胞",
+      "summary": "序列分析、单细胞、组学工作流。",
+      "items": []
+    },
+    {
+      "id": "writing-pubs",
+      "label": "写作与发表",
+      "summary": "学术排版、引用样式、可重复性报告。",
+      "items": []
+    },
+    {
+      "id": "notebooks-apps",
+      "label": "笔记本与轻量应用",
+      "summary": "Jupyter 生态、参数化笔记本、把分析变成 web app。",
+      "items": []
+    },
+    {
+      "id": "reference-management",
+      "label": "文献管理",
+      "summary": "Zotero 及其插件、文献元数据工具。",
+      "items": []
+    }
+  ]
+}
