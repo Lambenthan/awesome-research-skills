@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { RepoItem } from "@/lib/types";
 
 function formatStars(n?: number) {
@@ -12,7 +13,15 @@ function formatDelta(d?: number) {
   return `+${d}`;
 }
 
-export function RepoRow({ item, index }: { item: RepoItem; index: number }) {
+export function RepoRow({
+  item,
+  index,
+  href,
+}: {
+  item: RepoItem;
+  index: number;
+  href: string;
+}) {
   if (item.fetchFailed) {
     return (
       <article className="border-t border-dashed border-rule py-6 text-ink-subtle">
@@ -23,13 +32,10 @@ export function RepoRow({ item, index }: { item: RepoItem; index: number }) {
       </article>
     );
   }
-  const url = item.url || `https://github.com/${item.fullName}`;
   const [owner, name] = item.fullName.split("/");
   return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      href={href}
       className="group block border-t border-rule py-7 first:border-t-0 first:pt-0"
     >
       <div className="grid grid-cols-12 gap-6">
@@ -44,7 +50,7 @@ export function RepoRow({ item, index }: { item: RepoItem; index: number }) {
             <span className="font-medium">{name}</span>
           </h3>
           <p className="mt-3 max-w-3xl text-[14px] leading-[1.7] text-ink-muted">
-            {item.description || "—"}
+            {item.cn || item.description || "—"}
           </p>
           <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1">
             {item.language && <span className="eyebrow">{item.language}</span>}
@@ -72,6 +78,6 @@ export function RepoRow({ item, index }: { item: RepoItem; index: number }) {
           )}
         </div>
       </div>
-    </a>
+    </Link>
   );
 }

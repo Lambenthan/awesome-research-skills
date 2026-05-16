@@ -5,6 +5,7 @@
     "summary": "关于\"怎么把 agent 真正做出来用\"的高质量长文，而不是营销稿。",
     "items": [
       {
+        "itemSlug": "building-effective-agents",
         "title": "Building Effective Agents",
         "url": "https://www.anthropic.com/research/building-effective-agents",
         "source": "Anthropic Research",
@@ -12,12 +13,14 @@
         "blurb": "Anthropic 把\"agent\"拆成 prompt chain / routing / parallelization / orchestrator / evaluator 五种基本结构，并明确说\"先试无 agent 的 workflow\"。Agent 工程入门必读。"
       },
       {
+        "itemSlug": "claude-code-best-practices",
         "title": "Claude Code Best Practices",
         "url": "https://www.anthropic.com/engineering/claude-code-best-practices",
         "source": "Anthropic Engineering",
         "blurb": "官方写 Claude Code 的最佳实践，包含 CLAUDE.md、custom slash command、subagent、思考模式触发词。"
       },
       {
+        "itemSlug": "how-we-built-our-multi-agent-research-system",
         "title": "How we built our multi-agent research system",
         "url": "https://www.anthropic.com/engineering/built-multi-agent-research-system",
         "source": "Anthropic Engineering",
@@ -31,36 +34,42 @@
     "summary": "持续更新的研究文章首页，订阅源——而不是单篇文章。",
     "items": [
       {
+        "itemSlug": "anthropic-research",
         "title": "Anthropic Research",
         "url": "https://www.anthropic.com/research",
         "source": "Anthropic",
         "blurb": "Alignment、Interpretability、Societal Impacts、Economic Research 四条主线的研究索引页。"
       },
       {
+        "itemSlug": "anthropic-news",
         "title": "Anthropic News",
         "url": "https://www.anthropic.com/news",
         "source": "Anthropic",
         "blurb": "产品发布 + 工程博客的统一入口。"
       },
       {
+        "itemSlug": "google-deepmind-blog",
         "title": "Google DeepMind Blog",
         "url": "https://deepmind.google/blog/",
         "source": "Google DeepMind",
         "blurb": "Gemini 系列、AlphaFold、AGI 评估等研究持续更新。"
       },
       {
+        "itemSlug": "openai-research",
         "title": "OpenAI Research",
         "url": "https://openai.com/research",
         "source": "OpenAI",
         "blurb": "GPT 系列与对齐、推理、agent 方向的研究索引。"
       },
       {
+        "itemSlug": "antigravity-by-google",
         "title": "Antigravity by Google",
         "url": "https://antigravity.google",
         "source": "Google",
         "blurb": "Google 的智能体 IDE 平台（Gemini 3 同期发布），定位为 agent-native coding 环境。"
       },
       {
+        "itemSlug": "google-antigravity-news",
         "title": "Google Antigravity News",
         "url": "https://blog.google/technology/google-labs/",
         "source": "Google Labs",
@@ -74,18 +83,21 @@
     "summary": "prompting、context engineering、eval 与 fine-tuning 的实战长文。",
     "items": [
       {
+        "itemSlug": "prompt-engineering-guide",
         "title": "Prompt Engineering Guide",
         "url": "https://www.promptingguide.ai",
         "source": "DAIR.AI",
         "blurb": "社区维护的 prompt engineering 综合参考站，覆盖 zero-shot / few-shot / CoT / ReAct 等各种技术。"
       },
       {
+        "itemSlug": "anthropic-prompt-engineering-course",
         "title": "Anthropic Prompt Engineering Course",
         "url": "https://github.com/anthropics/courses",
         "source": "Anthropic",
         "blurb": "Anthropic 官方课程，含 prompt engineering、tool use、real-world prompting 三门交互式课。"
       },
       {
+        "itemSlug": "a-visual-guide-to-mixture-of-experts",
         "title": "A Visual Guide to Mixture of Experts",
         "url": "https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-mixture-of-experts",
         "source": "Maarten Grootendorst",

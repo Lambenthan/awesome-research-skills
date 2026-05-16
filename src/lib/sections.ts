@@ -65,6 +65,31 @@ export function getCategory(section: SectionId, slug: string) {
   return groups.find((g) => g.id === slug) ?? null;
 }
 
+export function getItem(
+  section: SectionId,
+  categorySlug: string,
+  itemSlug: string,
+) {
+  const cat = getCategory(section, categorySlug);
+  if (!cat) return null;
+  // SkillItem / RepoItem / ArticleItem all carry an itemSlug field.
+  const items = cat.items as Array<{ itemSlug?: string }>;
+  return items.find((it) => it.itemSlug === itemSlug) ?? null;
+}
+
+/** All { categorySlug, itemSlug } pairs for generateStaticParams. */
+export function allItemParams(section: SectionId) {
+  const groups = getSectionGroups(section);
+  const out: { slug: string; item: string }[] = [];
+  for (const g of groups) {
+    for (const it of g.items as Array<{ itemSlug?: string }>) {
+      if (it.itemSlug)
+        out.push({ slug: g.id, item: it.itemSlug });
+    }
+  }
+  return out;
+}
+
 export function getSectionCount(section: SectionId): number {
   const groups = getSectionGroups(section);
   return groups.reduce((n, g) => n + g.items.length, 0);

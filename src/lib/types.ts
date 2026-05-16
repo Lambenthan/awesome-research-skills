@@ -1,10 +1,13 @@
 export type SkillItem = {
   slug: string;
+  itemSlug: string; // URL slug within category
   repo: string;
   name: string;
   description: string;
+  body?: string; // SKILL.md body (markdown after frontmatter), capped
   githubUrl: string;
   skillsShUrl: string;
+  cn?: string; // optional curated Chinese intro
 };
 
 export type SkillCategory = {
@@ -15,10 +18,12 @@ export type SkillCategory = {
 };
 
 export type RepoItem = {
+  itemSlug: string; // URL slug within category
   owner?: string;
   name?: string;
   fullName: string;
   description?: string;
+  readme?: string; // README.md excerpt, capped
   stars?: number;
   starsDelta7d?: number;
   forks?: number;
@@ -28,7 +33,9 @@ export type RepoItem = {
   topics?: string[];
   license?: string | null;
   pushedAt?: string | null;
+  createdAt?: string | null;
   fetchFailed?: boolean;
+  cn?: string; // optional curated Chinese intro
 };
 
 export type RepoGroup = {
@@ -44,11 +51,13 @@ export type ReposData = {
 };
 
 export type ArticleItem = {
+  itemSlug: string; // URL slug within category
   title: string;
   url: string;
   source: string;
   date?: string;
   blurb?: string;
+  cn?: string;
 };
 
 export type ArticleCategory = {

@@ -120,10 +120,13 @@ async function fetchSkillMd(entry, cache) {
       return null;
     }
     const fm = yaml.load(m[1]) ?? {};
+    // Body = everything after the closing --- of frontmatter, capped to ~8KB.
+    const body = text.slice(m[0].length).trim().slice(0, 8000);
     const data = {
       name: typeof fm.name === "string" ? fm.name : entry.slug,
       description:
         typeof fm.description === "string" ? fm.description.trim() : "",
+      body,
     };
     cache[url] = { fetchedAt: Date.now(), data };
     return data;
@@ -149,14 +152,18 @@ async function extractSkills() {
         missing += 1;
         continue;
       }
-      items.push({
+      const item = {
         slug: entry.slug,
+        itemSlug: entry.slug, // already URL-safe (anthropics' SKILL.md slugs)
         repo: entry.repo,
         name: data.name,
         description: data.description,
         githubUrl: githubSourceUrl(entry),
         skillsShUrl: skillsShUrl(entry),
-      });
+      };
+      if (data.body) item.body = data.body;
+      if (entry.cn) item.cn = entry.cn;
+      items.push(item);
       total += 1;
     }
     out.push({
@@ -171,6 +178,28 @@ async function extractSkills() {
     `  skills: ${total} fetched, ${missing} missing across ${out.length} categories`,
   );
   return out;
+}
+
+async function fetchRepoReadme(fullName) {
+  if (process.env.SKIP_GITHUB === "1") return null;
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${fullName}/readme`,
+      { headers: authHeaders() },
+    );
+    if (!res.ok) return null;
+    const j = await res.json();
+    if (!j.content) return null;
+    const text = Buffer.from(j.content, "base64").toString("utf8");
+    // Cap so we don't ship megabyte READMEs in JSON.
+    return text.slice(0, 5000);
+  } catch {
+    return null;
+  }
+}
+
+function repoItemSlug(fullName) {
+  return fullName.toLowerCase().replace(/[^a-z0-9-]+/g, "-");
 }
 
 async function fetchRepo(fullName, cache) {
@@ -206,6 +235,7 @@ async function fetchRepo(fullName, cache) {
       topics: Array.isArray(json.topics) ? json.topics.slice(0, 8) : [],
       license: json.license?.spdx_id || null,
       pushedAt: json.pushed_at || null,
+      createdAt: json.created_at || null,
     };
     cache[fullName] = { fetchedAt: Date.now(), data };
     return data;
@@ -279,6 +309,7 @@ async function extractRepos() {
         const data = await fetchRepo(fullName, cache);
         if (!data) continue;
         const enriched = { ...data };
+        enriched.itemSlug = repoItemSlug(enriched.fullName || fullName);
         if (typeof enriched.stars === "number") {
           currentSnapshot.stars[enriched.fullName] = enriched.stars;
           const delta = computeStarsDelta7d(
@@ -287,6 +318,11 @@ async function extractRepos() {
             enriched.stars,
           );
           if (delta !== null) enriched.starsDelta7d = delta;
+          // Fetch README only for successful items (cache key lookup avoids
+          // refetching). Stored in a small dedicated cache to keep github.json
+          // light.
+          const readme = await fetchRepoReadme(enriched.fullName);
+          if (readme) enriched.readme = readme;
         }
         items.push(enriched);
       }
@@ -473,6 +509,15 @@ async function fetchLatest() {
   return out;
 }
 
+function articleItemSlug(title) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .slice(0, 80);
+}
+
 async function extractArticles() {
   // Articles are static curated entries — no network fetch, just YAML → JSON.
   try {
@@ -483,6 +528,7 @@ async function extractArticles() {
       label: c.label,
       summary: c.summary || "",
       items: (c.items || []).map((it) => ({
+        itemSlug: it.slug || articleItemSlug(it.title),
         title: it.title,
         url: it.url,
         source: it.source,
@@ -492,6 +538,7 @@ async function extractArticles() {
             ? it.date.toISOString().slice(0, 10)
             : it.date,
         blurb: it.blurb,
+        cn: it.cn,
       })),
     }));
     const total = out.reduce((n, c) => n + c.items.length, 0);

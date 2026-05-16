@@ -1,17 +1,18 @@
+import Link from "next/link";
 import type { ArticleItem } from "@/lib/types";
 
 export function ArticleRow({
   item,
   index,
+  href,
 }: {
   item: ArticleItem;
   index: number;
+  href: string;
 }) {
   return (
-    <a
-      href={item.url}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      href={href}
       className="group block border-t border-rule py-7 first:border-t-0 first:pt-0"
     >
       <div className="grid grid-cols-12 gap-6">
@@ -32,18 +33,18 @@ export function ArticleRow({
           <h3 className="mt-2 font-serif text-[24px] leading-tight text-ink transition group-hover:text-ember">
             {item.title}
           </h3>
-          {item.blurb && (
+          {(item.cn || item.blurb) && (
             <p className="mt-3 max-w-3xl text-[14px] leading-[1.7] text-ink-muted">
-              {item.blurb}
+              {item.cn || item.blurb}
             </p>
           )}
         </div>
         <div className="col-span-12 flex sm:col-span-3 sm:justify-end">
           <span className="eyebrow-strong text-ember transition group-hover:text-ink">
-            Read →
+            Open →
           </span>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }

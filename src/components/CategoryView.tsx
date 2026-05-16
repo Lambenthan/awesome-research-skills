@@ -97,18 +97,30 @@ export function CategoryView(props: Props) {
         {section === "skills"
           ? (category as SkillCategory).items.map((it, i) => (
               <Reveal key={it.slug + it.repo} delay={Math.min(i, 6) * 60}>
-                <SkillRow item={it} index={i} />
+                <SkillRow
+                  item={it}
+                  index={i}
+                  href={`${meta.href}/${category.id}/${it.itemSlug}`}
+                />
               </Reveal>
             ))
           : section === "reading"
             ? (category as ArticleCategory).items.map((it, i) => (
                 <Reveal key={it.url} delay={Math.min(i, 6) * 60}>
-                  <ArticleRow item={it} index={i} />
+                  <ArticleRow
+                    item={it}
+                    index={i}
+                    href={`${meta.href}/${category.id}/${it.itemSlug}`}
+                  />
                 </Reveal>
               ))
             : (category as RepoGroup).items.map((it, i) => (
                 <Reveal key={it.fullName} delay={Math.min(i, 6) * 60}>
-                  <RepoRow item={it} index={i} />
+                  <RepoRow
+                    item={it}
+                    index={i}
+                    href={`${meta.href}/${category.id}/${it.itemSlug}`}
+                  />
                 </Reveal>
               ))}
       </div>

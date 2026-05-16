@@ -130,14 +130,26 @@ export function SectionView(props: Props) {
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {section === "skills"
                   ? (g.items as SkillItem[]).map((it) => (
-                      <SkillCard key={it.slug + it.repo} item={it} />
+                      <SkillCard
+                        key={it.slug + it.repo}
+                        item={it}
+                        href={`${basePath}/${g.id}/${it.itemSlug}`}
+                      />
                     ))
                   : section === "reading"
                     ? (g.items as ArticleItem[]).map((it) => (
-                        <ArticleCard key={it.url} item={it} />
+                        <ArticleCard
+                          key={it.url}
+                          item={it}
+                          href={`${basePath}/${g.id}/${it.itemSlug}`}
+                        />
                       ))
                     : (g.items as RepoItem[]).map((it) => (
-                        <RepoCard key={it.fullName} item={it} />
+                        <RepoCard
+                          key={it.fullName}
+                          item={it}
+                          href={`${basePath}/${g.id}/${it.itemSlug}`}
+                        />
                       ))}
               </div>
             </section>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { RepoItem } from "@/lib/types";
 
 function formatStars(n?: number) {
@@ -12,7 +13,13 @@ function formatDelta(d?: number) {
   return `+${d}`;
 }
 
-export function RepoCard({ item }: { item: RepoItem }) {
+export function RepoCard({
+  item,
+  href,
+}: {
+  item: RepoItem;
+  href: string;
+}) {
   if (item.fetchFailed) {
     return (
       <article className="border border-dashed border-rule p-6">
@@ -25,15 +32,9 @@ export function RepoCard({ item }: { item: RepoItem }) {
       </article>
     );
   }
-  const url = item.url || `https://github.com/${item.fullName}`;
   const [owner, name] = item.fullName.split("/");
   return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="card group flex h-full flex-col p-6"
-    >
+    <Link href={href} className="card group flex h-full flex-col p-6">
       <div className="flex items-start justify-between gap-3">
         <h3 className="font-mono text-[13.5px] leading-snug text-ink transition group-hover:text-ember">
           <span className="text-ink-subtle">{owner}/</span>
@@ -51,12 +52,10 @@ export function RepoCard({ item }: { item: RepoItem }) {
         </div>
       </div>
       <p className="mt-3 line-clamp-4 text-[13.5px] leading-[1.65] text-ink-muted">
-        {item.description || "—"}
+        {item.cn || item.description || "—"}
       </p>
-      <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-rule pt-3">
-        {item.language && (
-          <span className="eyebrow">{item.language}</span>
-        )}
+      <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-rule pt-3">
+        {item.language && <span className="eyebrow">{item.language}</span>}
         {item.license && (
           <span className="eyebrow text-ink-subtle">{item.license}</span>
         )}
@@ -69,6 +68,6 @@ export function RepoCard({ item }: { item: RepoItem }) {
           </span>
         ))}
       </div>
-    </a>
+    </Link>
   );
 }
