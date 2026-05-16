@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 
 // Deploying to GitHub Pages as a project page → site lives under
 // `/field-notes/`. The deploy workflow sets NEXT_PUBLIC_BASE_PATH; local
@@ -11,6 +12,16 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   basePath,
   assetPrefix: basePath || undefined,
+  pageExtensions: ["ts", "tsx", "md", "mdx"],
 };
 
-export default nextConfig;
+// Turbopack requires MDX plugin options to be serializable, so reference
+// plugins by package name (string) rather than imported function values.
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: [["remark-math", {}], ["remark-gfm", {}]],
+    rehypePlugins: [["rehype-katex", { strict: false }]],
+  },
+});
+
+export default withMDX(nextConfig);

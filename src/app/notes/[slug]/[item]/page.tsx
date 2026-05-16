@@ -7,6 +7,7 @@ import { Reveal } from "@/components/Reveal";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { notes } from "@/lib/data";
 import { SECTION_META, allItemParams } from "@/lib/sections";
+import { getChaptersForItem } from "@/lib/chapters";
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -25,6 +26,10 @@ export default async function NoteItemPage({ params }: { params: Params }) {
 
   const meta = SECTION_META.notes;
   const pdfUrl = `${BASE_PATH}${note.pdf}`;
+  const itemHref = `${meta.href}/${category.id}/${note.itemSlug}`;
+
+  const liveChapters = getChaptersForItem(category.id, note.itemSlug);
+  const liveByNum = new Map(liveChapters.map((c) => [c.displayNum, c]));
 
   const siblings = category.items
     .filter((it) => it.itemSlug !== item)
@@ -140,27 +145,68 @@ export default async function NoteItemPage({ params }: { params: Params }) {
 
           {note.chapters && note.chapters.length > 0 && (
             <section>
-              <h2 className="mb-6 font-serif text-[22px] leading-tight text-ink">
-                章节梗概
-              </h2>
+              <div className="mb-6 flex items-baseline justify-between gap-4">
+                <h2 className="font-serif text-[22px] leading-tight text-ink">
+                  章节目录
+                </h2>
+                {liveChapters.length > 0 && (
+                  <span className="eyebrow text-ember">
+                    {liveChapters.length} / {note.chapters.length} 章已上线
+                  </span>
+                )}
+              </div>
               <ol className="border-y border-rule">
-                {note.chapters.map((ch) => (
-                  <li
-                    key={ch.num}
-                    className="grid grid-cols-12 gap-4 border-t border-rule py-4 first:border-t-0"
-                  >
-                    <div className="col-span-2 sm:col-span-1">
-                      <span className="font-serif text-[15px] tabular-nums text-ink-subtle">
-                        {ch.num.padStart(2, "0")}
-                      </span>
+                {note.chapters.map((ch) => {
+                  const live = liveByNum.get(ch.num);
+                  const Row = (
+                    <div className="grid grid-cols-12 items-baseline gap-4 py-4">
+                      <div className="col-span-2 sm:col-span-1">
+                        <span className="font-serif text-[15px] tabular-nums text-ink-subtle">
+                          {ch.num.padStart(2, "0")}
+                        </span>
+                      </div>
+                      <div className="col-span-8 sm:col-span-9">
+                        <span
+                          className={
+                            live
+                              ? "font-serif text-[17px] leading-snug text-ink transition group-hover:text-ember"
+                              : "font-serif text-[17px] leading-snug text-ink-muted"
+                          }
+                        >
+                          {ch.title}
+                        </span>
+                      </div>
+                      <div className="col-span-2 text-right">
+                        {live ? (
+                          <span className="eyebrow text-ember transition group-hover:text-ink">
+                            阅读 →
+                          </span>
+                        ) : (
+                          <span className="eyebrow text-ink-subtle">
+                            仅 PDF
+                          </span>
+                        )}
+                      </div>
                     </div>
-                    <div className="col-span-10 sm:col-span-11">
-                      <span className="font-serif text-[17px] leading-snug text-ink">
-                        {ch.title}
-                      </span>
-                    </div>
-                  </li>
-                ))}
+                  );
+                  return (
+                    <li
+                      key={ch.num}
+                      className="border-t border-rule first:border-t-0"
+                    >
+                      {live ? (
+                        <Link
+                          href={`${itemHref}/${live.slug}`}
+                          className="group block"
+                        >
+                          {Row}
+                        </Link>
+                      ) : (
+                        <div>{Row}</div>
+                      )}
+                    </li>
+                  );
+                })}
               </ol>
             </section>
           )}

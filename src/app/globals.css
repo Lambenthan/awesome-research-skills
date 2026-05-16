@@ -253,3 +253,161 @@ body {
     box-shadow: none;
   }
 }
+
+/* ============================================================
+   Chapter reading mode — used by /notes/.../chapter-N pages.
+   Same vocabulary as .prose-detail but tuned for long-form
+   reading: slightly bigger body type, more vertical breathing
+   room, serif heads with a touch more weight.
+   ============================================================ */
+.prose-chapter {
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  line-height: 1.9;
+  color: var(--color-ink);
+}
+.prose-chapter h1,
+.prose-chapter h2,
+.prose-chapter h3,
+.prose-chapter h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.014em;
+  line-height: 1.25;
+  color: var(--color-ink);
+}
+.prose-chapter h2 {
+  font-size: 26px;
+  margin-top: 2.6em;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.35em;
+  border-bottom: 1px solid var(--color-rule);
+}
+.prose-chapter h3 {
+  font-size: 19px;
+  margin-top: 2em;
+  margin-bottom: 0.4em;
+}
+.prose-chapter h4 {
+  font-size: 16px;
+  margin-top: 1.6em;
+  margin-bottom: 0.3em;
+}
+.prose-chapter p {
+  margin: 1.05em 0;
+}
+.prose-chapter strong {
+  font-weight: 600;
+  color: var(--color-ink);
+}
+.prose-chapter em {
+  font-style: italic;
+}
+.prose-chapter a {
+  color: var(--color-ember);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.prose-chapter a:hover {
+  color: var(--color-ink);
+}
+.prose-chapter ul,
+.prose-chapter ol {
+  margin: 1em 0;
+  padding-left: 1.4em;
+}
+.prose-chapter ul { list-style: disc; }
+.prose-chapter ol { list-style: decimal; }
+.prose-chapter li {
+  margin: 0.35em 0;
+}
+.prose-chapter blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.85;
+  border-left: 2px solid var(--color-ember);
+  margin: 1.4em 0;
+  padding: 0.2em 0 0.2em 1.2em;
+  color: var(--color-ink);
+}
+.prose-chapter blockquote p {
+  margin: 0.2em 0;
+}
+.prose-chapter table {
+  width: 100%;
+  font-size: 13.5px;
+  border-collapse: collapse;
+  margin: 1.4em 0;
+}
+.prose-chapter th,
+.prose-chapter td {
+  border-bottom: 1px solid var(--color-rule);
+  padding: 0.55em 0.85em;
+  text-align: left;
+  vertical-align: top;
+}
+.prose-chapter thead th {
+  border-bottom: 1.5px solid var(--color-rule-strong);
+  font-weight: 600;
+  color: var(--color-ink);
+  background: var(--color-cream-surface);
+}
+.prose-chapter code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--color-cream-hover);
+  padding: 0.08em 0.35em;
+  border-radius: 3px;
+}
+.prose-chapter pre {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.6;
+  background: var(--color-cream-hover);
+  border: 1px solid var(--color-rule);
+  border-radius: 4px;
+  padding: 0.9em 1em;
+  overflow-x: auto;
+  margin: 1.4em 0;
+}
+.prose-chapter pre code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+}
+.prose-chapter hr {
+  border: 0;
+  border-top: 1px solid var(--color-rule);
+  margin: 2em 0;
+}
+
+/* MDX callout inner styles — Introduction list and WhyNote body
+   reset markdown list spacing inside the callouts. */
+.intro-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.intro-list li {
+  position: relative;
+  padding-left: 1.1em;
+  margin: 0.45em 0;
+}
+.intro-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--color-ember);
+}
+.why-body p {
+  margin: 0.4em 0;
+}
+.why-body p:first-child { margin-top: 0; }
+.why-body p:last-child { margin-bottom: 0; }
+
+/* KaTeX color sync — render formulas in ink instead of default black,
+   tighten inline math spacing to match prose color. */
+.prose-chapter .katex { color: var(--color-ink); }
+.prose-chapter .katex-display { margin: 1.2em 0; }

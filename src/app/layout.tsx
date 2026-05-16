@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Source_Serif_4, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "katex/dist/katex.min.css";
 
 // Anthropic uses proprietary Styrene B (sans) + Tiempos Text (serif). We
 // declare those names first in the font-family stack so users who happen to
