@@ -15,6 +15,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  models: read
 
 concurrency:
   group: pages
@@ -40,6 +41,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Two-pass build for cron: extract once → fill any missing cn via
+      # GH Models → let prebuild's extract pick up the new cn → build.
+      # On push triggers we skip fill-cn (push doesn't add items, just
+      # changes site code), so build runs straight through.
+      - name: Initial extract for fill-cn input
+        if: github.event_name == 'schedule'
+        run: npm run extract
+
+      - name: Fill missing cn (cron only)
+        if: github.event_name == 'schedule'
+        env:
+          GH_MODEL: deepseek/DeepSeek-V3-0324
+        run: npm run fill-cn -- --missing
+
       - name: Build static export
         run: npm run build
 
@@ -55,7 +70,8 @@ jobs:
           git add \
             scripts/star-history.json \
             src/data/generated/latest.json \
-            src/data/generated/repos.json
+            src/data/generated/repos.json \
+            content/cn-summaries.yml
           if git diff --cached --quiet; then
             echo "No data changes to commit"
           else

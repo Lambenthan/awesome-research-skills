@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "extract": "node scripts/extract-content.mjs",
+    "fill-cn": "node scripts/fill-cn.mjs",
     "predev": "npm run extract",
     "prebuild": "npm run extract",
     "dev": "next dev",
