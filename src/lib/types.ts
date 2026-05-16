@@ -61,3 +61,30 @@ export type ArticleCategory = {
 export type Meta = {
   builtAt: string;
 };
+
+export type HnItem = {
+  id: string;
+  title: string;
+  url: string;
+  points: number;
+  comments: number;
+  createdAt: string;
+  author?: string;
+};
+
+export type LatestRepo = {
+  id: number;
+  fullName: string;
+  description: string;
+  url: string;
+  stars: number;
+  pushedAt: string;
+  createdAt: string;
+  language: string | null;
+};
+
+export type LatestSnapshot = {
+  fetchedAt: string | null;
+  hn: HnItem[];
+  gh: LatestRepo[];
+};

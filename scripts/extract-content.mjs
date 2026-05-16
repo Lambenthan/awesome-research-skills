@@ -337,6 +337,136 @@ async function extractRepos() {
   return result;
 }
 
+/**
+ * Pull a snapshot of "what's hot right now" so the static site can render
+ * a Latest page without making the visitor's browser fetch external APIs.
+ *
+ *   - HackerNews Algolia: AI/LLM/Claude/GPT/agent stories with >=10 points
+ *     in the last few days. CORS-friendly + no auth needed.
+ *   - GitHub Search: repos in agent/llm topics pushed in last 60 days with
+ *     >=100 stars. Authenticated via GITHUB_TOKEN for higher rate limits.
+ *
+ * Failures degrade gracefully — we keep the previous snapshot if one exists.
+ */
+async function fetchLatest() {
+  const outPath = path.join(OUT_DIR, "latest.json");
+  let previous = { fetchedAt: null, hn: [], gh: [] };
+  try {
+    previous = JSON.parse(await fs.readFile(outPath, "utf8"));
+  } catch {
+    /* fine — first run */
+  }
+  if (process.env.SKIP_GITHUB === "1") {
+    console.log("  latest: skipped (SKIP_GITHUB=1, keeping previous snapshot)");
+    return previous;
+  }
+
+  const out = { fetchedAt: new Date().toISOString(), hn: [], gh: [] };
+
+  // HackerNews — Algolia's advancedSyntax `OR` operator returns very few
+  // results once combined with numericFilters. More reliable: run one
+  // query per keyword and dedupe by objectID.
+  try {
+    const keywords = [
+      "LLM",
+      "Claude",
+      "GPT",
+      "agent",
+      "OpenAI",
+      "Anthropic",
+      "Antigravity",
+      "Gemini",
+    ];
+    const seen = new Map();
+    for (const kw of keywords) {
+      const url =
+        "https://hn.algolia.com/api/v1/search_by_date?tags=story&query=" +
+        encodeURIComponent(kw) +
+        "&numericFilters=" +
+        encodeURIComponent("points>=15") +
+        "&hitsPerPage=20";
+      try {
+        const res = await fetch(url);
+        if (!res.ok) continue;
+        const json = await res.json();
+        for (const h of json.hits ?? []) {
+          if (!h.url || !h.title) continue;
+          if (!seen.has(h.objectID)) seen.set(h.objectID, h);
+        }
+      } catch {
+        /* one keyword failing shouldn't tank the rest */
+      }
+    }
+    out.hn = [...seen.values()]
+      .sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at))
+      .slice(0, 15)
+      .map((h) => ({
+        id: h.objectID,
+        title: h.title,
+        url: h.url,
+        points: h.points ?? 0,
+        comments: h.num_comments ?? 0,
+        createdAt: h.created_at,
+        author: h.author,
+      }));
+  } catch (err) {
+    console.warn(`  latest: HN ${err.message}`);
+  }
+
+  // GitHub Search — `topic:X OR topic:Y` returns 422; instead query each
+  // topic separately and merge by repo id, deduplicating.
+  try {
+    const since = new Date(Date.now() - 60 * 24 * 60 * 60 * 1000)
+      .toISOString()
+      .slice(0, 10);
+    const topics = ["llm", "ai-agent", "agentic", "coding-agent", "claude"];
+    const all = new Map();
+    for (const topic of topics) {
+      try {
+        const q = `topic:${topic} pushed:>${since} stars:>100`;
+        const url = `https://api.github.com/search/repositories?q=${encodeURIComponent(q)}&sort=stars&order=desc&per_page=10`;
+        const res = await fetch(url, { headers: authHeaders() });
+        if (!res.ok) {
+          console.warn(
+            `  latest: GH topic:${topic} HTTP ${res.status} ${res.statusText}`,
+          );
+          continue;
+        }
+        const json = await res.json();
+        for (const it of json.items ?? []) {
+          if (!all.has(it.id)) all.set(it.id, it);
+        }
+      } catch (err) {
+        console.warn(`  latest: GH topic:${topic} ${err.message}`);
+      }
+    }
+    out.gh = [...all.values()]
+      .sort((a, b) => (b.stargazers_count ?? 0) - (a.stargazers_count ?? 0))
+      .slice(0, 15)
+      .map((it) => ({
+        id: it.id,
+        fullName: it.full_name,
+        description: it.description || "",
+        url: it.html_url,
+        stars: it.stargazers_count ?? 0,
+        pushedAt: it.pushed_at,
+        createdAt: it.created_at,
+        language: it.language || null,
+      }));
+  } catch (err) {
+    console.warn(`  latest: GH ${err.message}`);
+  }
+
+  // If both sources failed, fall back to previous snapshot rather than
+  // emptying the page.
+  if (out.hn.length === 0 && out.gh.length === 0 && previous.fetchedAt) {
+    console.log("  latest: both sources empty, keeping previous snapshot");
+    return previous;
+  }
+  console.log(`  latest: ${out.hn.length} hn + ${out.gh.length} gh`);
+  return out;
+}
+
 async function extractArticles() {
   // Articles are static curated entries — no network fetch, just YAML → JSON.
   try {
@@ -373,10 +503,11 @@ async function extractArticles() {
 async function main() {
   console.log("extract-content: fetching public skills + GitHub repos");
   await fs.mkdir(OUT_DIR, { recursive: true });
-  const [skills, repos, articles] = await Promise.all([
+  const [skills, repos, articles, latest] = await Promise.all([
     extractSkills(),
     extractRepos(),
     extractArticles(),
+    fetchLatest(),
   ]);
   await fs.writeFile(
     path.join(OUT_DIR, "skills.json"),
@@ -389,6 +520,10 @@ async function main() {
   await fs.writeFile(
     path.join(OUT_DIR, "articles.json"),
     JSON.stringify(articles, null, 2),
+  );
+  await fs.writeFile(
+    path.join(OUT_DIR, "latest.json"),
+    JSON.stringify(latest, null, 2),
   );
   await fs.writeFile(
     path.join(OUT_DIR, "meta.json"),

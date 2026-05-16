@@ -4,9 +4,12 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Refresh repo star/fork counts daily so they don't drift too far.
+  # Refresh repo stars + the /latest feed every 6 hours.
+  # Public repo → unlimited Actions minutes, so frequency only costs
+  # commit-log noise. 4 runs/day is well under the Pages soft limit of
+  # 10 deploys/hour.
   schedule:
-    - cron: "0 4 * * *"
+    - cron: "0 */6 * * *"
 
 permissions:
   contents: write
@@ -40,19 +43,25 @@ jobs:
       - name: Build static export
         run: npm run build
 
-      # Persist the appended star snapshot back to main so future runs can
-      # compute 7-day deltas. Only on cron-triggered runs (push-triggered
-      # builds don't change star counts), and only if the file actually
-      # changed. The "[skip ci]" tag prevents this push from triggering
-      # another workflow run.
-      - name: Commit refreshed star history
+      # Persist refreshed data snapshots back to main so future runs can
+      # diff against them (star deltas, latest feed history). Only on
+      # cron runs — push-triggered builds shouldn't touch the data files.
+      # [skip ci] in the subject prevents this push from triggering
+      # another workflow run; the current run still deploys what was
+      # already built above.
+      - name: Commit refreshed data snapshots
         if: github.event_name == 'schedule'
         run: |
-          if [ -n "$(git status --porcelain scripts/star-history.json)" ]; then
+          git add \
+            scripts/star-history.json \
+            src/data/generated/latest.json \
+            src/data/generated/repos.json
+          if git diff --cached --quiet; then
+            echo "No data changes to commit"
+          else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add scripts/star-history.json
-            git commit -m "chore: refresh star history snapshot [skip ci]"
+            git commit -m "chore: refresh data snapshots [skip ci]"
             git push
           fi
 
