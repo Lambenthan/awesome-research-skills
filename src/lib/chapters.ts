@@ -40,6 +40,78 @@ export const CHAPTERS: ChapterMeta[] = [
         "@/content/notes/personality-causal/yangming-trajectory/chap-0.mdx"
       ),
   },
+  {
+    categorySlug: "personality-causal",
+    itemSlug: "yangming-trajectory",
+    slug: "chapter-1",
+    num: 1,
+    displayNum: "1",
+    title: "1506 廷杖事件与阳明人格重组：基于中断时间序列的因果识别",
+    load: () =>
+      import(
+        "@/content/notes/personality-causal/yangming-trajectory/chap-1.mdx"
+      ),
+  },
+  {
+    categorySlug: "personality-causal",
+    itemSlug: "yangming-trajectory",
+    slug: "chapter-2",
+    num: 2,
+    displayNum: "2",
+    title: "概念分布散度：朱熹作为外生历史对照",
+    load: () =>
+      import(
+        "@/content/notes/personality-causal/yangming-trajectory/chap-2.mdx"
+      ),
+  },
+  {
+    categorySlug: "personality-causal",
+    itemSlug: "yangming-trajectory",
+    slug: "chapter-3",
+    num: 3,
+    displayNum: "3",
+    title: "断点检测：不预设事件年份的转折点定位",
+    load: () =>
+      import(
+        "@/content/notes/personality-causal/yangming-trajectory/chap-3.mdx"
+      ),
+  },
+  {
+    categorySlug: "personality-causal",
+    itemSlug: "yangming-trajectory",
+    slug: "chapter-4",
+    num: 4,
+    displayNum: "4",
+    title: "合成控制：用稳定概念构造致良知诞生的反事实",
+    load: () =>
+      import(
+        "@/content/notes/personality-causal/yangming-trajectory/chap-4.mdx"
+      ),
+  },
+  {
+    categorySlug: "personality-causal",
+    itemSlug: "yangming-trajectory",
+    slug: "chapter-5",
+    num: 5,
+    displayNum: "5",
+    title: "跨体裁人格分析：体裁固定效应回归与共线诊断",
+    load: () =>
+      import(
+        "@/content/notes/personality-causal/yangming-trajectory/chap-5.mdx"
+      ),
+  },
+  {
+    categorySlug: "personality-causal",
+    itemSlug: "yangming-trajectory",
+    slug: "chapter-6",
+    num: 6,
+    displayNum: "6",
+    title: "方法论附录：六种方法的假设核查与 claim 降级",
+    load: () =>
+      import(
+        "@/content/notes/personality-causal/yangming-trajectory/chap-6.mdx"
+      ),
+  },
 ];
 
 export function getChaptersForItem(
