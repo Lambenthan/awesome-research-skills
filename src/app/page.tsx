@@ -42,27 +42,20 @@ export default function Home() {
       <section className="border-b border-rule">
         <div className="mx-auto max-w-6xl px-6 pt-20 pb-16">
           <Reveal>
-            <p className="eyebrow">公开来源 · An awesome list</p>
+            <p className="eyebrow">Field Notes · 田野笔记</p>
           </Reveal>
           <Reveal delay={120}>
             <h1 className="display mt-5 text-[44px] text-ink sm:text-6xl md:text-[72px]">
-              为科研挑出来的 <em>skill</em>
+              研究路上拣到的
               <br />
-              与<em>开源项目</em>。
+              <em>好东西</em>。
             </h1>
           </Reveal>
           <Reveal delay={260}>
             <p className="mt-7 max-w-xl text-[15px] leading-[1.7] text-ink-muted">
-              来自{" "}
-              <span className="font-mono text-[13px] text-ink">
-                anthropics/skills
-              </span>
-              、
-              <span className="font-mono text-[13px] text-ink">
-                obra/superpowers
-              </span>{" "}
-              等公开仓库的 Claude Code skill，加上 AI 与科研方向的高星开源项目。
-              每张卡片直链 skills.sh 详情页与 GitHub 源目录。
+              一份个人化的研究目录。收 Claude Code skill、AI 与科研方向的开源
+              项目、值得读的研究长文，以及 HackerNews 上和 GitHub 新冒出来的
+              AI 相关动态。每条配一段中文导读，标注来源，直链原始页面。
             </p>
           </Reveal>
         </div>
