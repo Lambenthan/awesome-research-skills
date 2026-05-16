@@ -23,6 +23,12 @@ export function NavBar() {
               {SECTION_META[id].eyebrow}
             </Link>
           ))}
+          <Link
+            href="/latest"
+            className="eyebrow text-ember transition hover:text-ink"
+          >
+            Latest · Live
+          </Link>
         </nav>
         <a
           href={REPO_URL}

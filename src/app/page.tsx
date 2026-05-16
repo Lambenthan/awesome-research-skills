@@ -1,4 +1,5 @@
 import { Footer } from "@/components/Footer";
+import { LiveCallout } from "@/components/LiveCallout";
 import { NavBar } from "@/components/NavBar";
 import { Reveal } from "@/components/Reveal";
 import { SectionPreview } from "@/components/SectionPreview";
@@ -84,6 +85,9 @@ export default function Home() {
       </section>
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-16">
+        <Reveal>
+          <LiveCallout />
+        </Reveal>
         <Reveal>
           <SectionPreview
             meta={SECTION_META.skills}

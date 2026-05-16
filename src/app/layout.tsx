@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import { Mona_Sans, Source_Serif_4, Geist_Mono } from "next/font/google";
+import { Geist, Source_Serif_4, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 // Anthropic uses proprietary Styrene B (sans) + Tiempos Text (serif). We
 // declare those names first in the font-family stack so users who happen to
 // have them installed get the real experience; everyone else falls back to
-// the closest free equivalents: Mona Sans (GitHub) and Source Serif 4 (Adobe).
+// the closest free equivalents: Geist (Vercel) and Source Serif 4 (Adobe).
 // next/font self-hosts these and exposes them as CSS variables we feed into
 // @theme inside globals.css.
-const monaSans = Mona_Sans({
+//
+// Mona Sans (GitHub's Styrene-similar font) was the first pick but isn't yet
+// in next/font/google's catalog. Geist is the second-closest free analog and
+// fully supported.
+const geist = Geist({
   subsets: ["latin"],
-  variable: "--font-mona-sans",
+  variable: "--font-geist",
   display: "swap",
 });
 
@@ -39,7 +43,7 @@ export default function RootLayout({
   return (
     <html
       lang="zh-Hans"
-      className={`${monaSans.variable} ${sourceSerif.variable} ${geistMono.variable} antialiased`}
+      className={`${geist.variable} ${sourceSerif.variable} ${geistMono.variable} antialiased`}
     >
       <head>
         {/* LXGW WenKai (霞鹜文楷) — open-source Chinese serif, OFL. Sub-set
