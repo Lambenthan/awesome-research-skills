@@ -31,7 +31,7 @@ export const SECTION_META: Record<SectionId, SectionMeta> = {
     eyebrow: "AI Open Source",
     title: "AI 方向的高星开源项目",
     blurb:
-      "Agent 框架、模型推理、RAG 检索、对话 UI、编码 agent——按方向归组，按 star 排序，每日构建刷新数据。",
+      "Agent 框架、模型推理、RAG 检索、对话 UI、编码 agent，按研究方向归组、按 star 排序，由 6 小时构建周期刷新数据。",
   },
   research: {
     id: "research",
@@ -39,15 +39,15 @@ export const SECTION_META: Record<SectionId, SectionMeta> = {
     eyebrow: "Research Tools",
     title: "科研生产力工具",
     blurb:
-      "数据科学、统计因果、可视化、生信单细胞、写作发表、Notebook、文献管理——研究每个阶段都能找到对应的开源工具。",
+      "覆盖数据科学、统计与因果推断、可视化、生信单细胞、学术写作与发表、Notebook、文献管理等研究环节常用的开源工具。",
   },
   reading: {
     id: "reading",
     href: "/reading",
     eyebrow: "Reading",
-    title: "Agent 与 LLM 的真东西",
+    title: "Agent 与 LLM 的研究长文",
     blurb:
-      "Anthropic、Google DeepMind、OpenAI、Antigravity 等一手研究/工程长文，与社区里少数说人话的 LLM 工程指南。",
+      "Anthropic、Google DeepMind、OpenAI、Antigravity 等机构发布的一手研究与工程长文，以及社区在 LLM 与上下文工程方向的代表性写作。",
   },
 };
 

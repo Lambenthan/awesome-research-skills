@@ -18,12 +18,12 @@ export function LiveCallout() {
             Latest · 每 6 小时
           </p>
           <h2 className="display mt-4 text-[32px] text-ink sm:text-[40px]">
-            AI <em>新动向</em>
+            AI <em>最新动态</em>
           </h2>
           <p className="mt-4 max-w-md text-[14px] leading-[1.7] text-ink-muted">
-            GitHub Actions cron 每 6 小时跑一次，从 HackerNews 与 GitHub Search
-            拉取最新 AI 新闻和近期高 star 的新项目，commit 回仓库后部署成静态 JSON。
-            访客 0 外部请求。
+            GitHub Actions cron 每 6 小时调用抓取脚本，从 HackerNews 与 GitHub
+            Search 获取 AI 相关内容与近期高 star 项目，结果写入静态 JSON 随构建
+            一起部署。访客无需任何外部请求。
           </p>
         </div>
         <div className="col-span-12 sm:col-span-8">
@@ -34,7 +34,7 @@ export function LiveCallout() {
                   01
                 </span>
                 <span className="font-serif text-[18px] text-ink transition group-hover:text-ember">
-                  Hacker News · 多关键词 AI 故事 + 标题再筛
+                  Hacker News · 多关键词查询 + 标题相关性筛选
                 </span>
               </div>
               <span className="eyebrow text-ink-subtle">≥15 ↑</span>

@@ -46,16 +46,16 @@ export default function Home() {
           </Reveal>
           <Reveal delay={120}>
             <h1 className="display mt-5 text-[44px] text-ink sm:text-6xl md:text-[72px]">
-              研究路上拣到的
+              研究工具、开源项目
               <br />
-              <em>好东西</em>。
+              与文献的<em>个人索引</em>
             </h1>
           </Reveal>
           <Reveal delay={260}>
-            <p className="mt-7 max-w-xl text-[15px] leading-[1.7] text-ink-muted">
-              一份个人化的研究目录。收 Claude Code skill、AI 与科研方向的开源
-              项目、值得读的研究长文，以及 HackerNews 上和 GitHub 新冒出来的
-              AI 相关动态。每条配一段中文导读，标注来源，直链原始页面。
+            <p className="mt-7 max-w-2xl text-[15px] leading-[1.7] text-ink-muted">
+              收录公开来源的 Claude Code skill、活跃的 AI 与科研方向开源项目、
+              研究领域的代表性长文，并由定时任务追踪 HackerNews 与 GitHub
+              上的 AI 相关动态。每条提供中文导读、来源标注与原始页面链接。
             </p>
           </Reveal>
         </div>
