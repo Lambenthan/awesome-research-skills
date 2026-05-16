@@ -1,7 +1,7 @@
 {
   "snapshots": [
     {
-      "fetchedAt": "2026-05-16T06:39:33.791Z",
+      "fetchedAt": "2026-05-16T07:15:24.371Z",
       "stars": {
         "anthropics/claude-code": 123979,
         "anthropics/claude-cookbooks": 43062,

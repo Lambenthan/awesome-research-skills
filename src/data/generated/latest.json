@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-05-16T06:36:29.838Z",
+  "fetchedAt": "2026-05-16T07:15:24.338Z",
   "hn": [
     {
       "id": "48153058",
       "title": "The 52-Page Memo That Nearly Destroyed OpenAI: Ilya Sutskever's Deposition",
       "url": "https://medium.com/@prateekj24/the-52-page-memo-that-nearly-destroyed-openai-inside-ilya-sutskevers-deposition-acef91208a1c",
-      "points": 31,
+      "points": 32,
       "comments": 5,
       "createdAt": "2026-05-15T19:55:32Z",
       "author": "SilverElfin"
@@ -59,7 +59,7 @@
       "id": "48144670",
       "title": "Show HN: GlycemicGPT – Open-source AI-powered diabetes management",
       "url": "https://github.com/GlycemicGPT/GlycemicGPT",
-      "points": 63,
+      "points": 64,
       "comments": 58,
       "createdAt": "2026-05-15T04:48:23Z",
       "author": "jlengelbrecht"
@@ -77,7 +77,7 @@
       "id": "48143284",
       "title": "Access to frontier AI will soon be limited by economic and security constraints",
       "url": "https://writing.antonleicht.me/p/cut-off",
-      "points": 211,
+      "points": 213,
       "comments": 214,
       "createdAt": "2026-05-15T01:08:04Z",
       "author": "thoughtpeddler"
@@ -95,7 +95,7 @@
       "id": "48141234",
       "title": "Claude for Legal",
       "url": "https://github.com/anthropics/claude-for-legal",
-      "points": 198,
+      "points": 199,
       "comments": 187,
       "createdAt": "2026-05-14T21:05:05Z",
       "author": "Einenlum"
@@ -143,7 +143,7 @@
       "fullName": "Significant-Gravitas/AutoGPT",
       "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
       "url": "https://github.com/Significant-Gravitas/AutoGPT",
-      "stars": 184340,
+      "stars": 184341,
       "pushedAt": "2026-05-15T23:43:01Z",
       "createdAt": "2023-03-16T09:21:07Z",
       "language": "Python"
@@ -153,37 +153,97 @@
       "fullName": "affaan-m/everything-claude-code",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "url": "https://github.com/affaan-m/everything-claude-code",
-      "stars": 183747,
+      "stars": 183784,
       "pushedAt": "2026-05-16T06:22:15Z",
       "createdAt": "2026-01-18T00:51:51Z",
       "language": "JavaScript"
+    },
+    {
+      "id": 658928958,
+      "fullName": "ollama/ollama",
+      "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "url": "https://github.com/ollama/ollama",
+      "stars": 171483,
+      "pushedAt": "2026-05-15T23:23:55Z",
+      "createdAt": "2023-06-26T19:39:32Z",
+      "language": "Go"
     },
     {
       "id": 574523116,
       "fullName": "f/prompts.chat",
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
       "url": "https://github.com/f/prompts.chat",
-      "stars": 162313,
+      "stars": 162318,
       "pushedAt": "2026-05-16T04:17:15Z",
       "createdAt": "2022-12-05T13:54:13Z",
       "language": "HTML"
+    },
+    {
+      "id": 155220641,
+      "fullName": "huggingface/transformers",
+      "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+      "url": "https://github.com/huggingface/transformers",
+      "stars": 160647,
+      "pushedAt": "2026-05-15T20:21:30Z",
+      "createdAt": "2018-10-29T13:56:00Z",
+      "language": "Python"
     },
     {
       "id": 1024554267,
       "fullName": "NousResearch/hermes-agent",
       "description": "The agent that grows with you",
       "url": "https://github.com/NousResearch/hermes-agent",
-      "stars": 152381,
-      "pushedAt": "2026-05-16T06:34:54Z",
+      "stars": 152418,
+      "pushedAt": "2026-05-16T07:09:56Z",
       "createdAt": "2025-07-22T22:22:28Z",
       "language": "Python"
+    },
+    {
+      "id": 626805178,
+      "fullName": "langgenius/dify",
+      "description": "Production-ready platform for agentic workflow development.",
+      "url": "https://github.com/langgenius/dify",
+      "stars": 141537,
+      "pushedAt": "2026-05-16T06:05:44Z",
+      "createdAt": "2023-04-12T07:40:24Z",
+      "language": "TypeScript"
+    },
+    {
+      "id": 701547123,
+      "fullName": "open-webui/open-webui",
+      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+      "url": "https://github.com/open-webui/open-webui",
+      "stars": 137264,
+      "pushedAt": "2026-05-15T00:34:23Z",
+      "createdAt": "2023-10-06T22:08:27Z",
+      "language": "Python"
+    },
+    {
+      "id": 552661142,
+      "fullName": "langchain-ai/langchain",
+      "description": "The agent engineering platform.",
+      "url": "https://github.com/langchain-ai/langchain",
+      "stars": 136843,
+      "pushedAt": "2026-05-16T02:23:09Z",
+      "createdAt": "2022-10-17T02:58:36Z",
+      "language": "Python"
+    },
+    {
+      "id": 787076358,
+      "fullName": "firecrawl/firecrawl",
+      "description": "🔥 Search, scrape, and clean the web for AI agents.",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "stars": 120399,
+      "pushedAt": "2026-05-16T06:54:36Z",
+      "createdAt": "2024-04-15T21:02:29Z",
+      "language": "TypeScript"
     },
     {
       "id": 612344730,
       "fullName": "ChatGPTNextWeb/NextChat",
       "description": "✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android |  Linux | Windows",
       "url": "https://github.com/ChatGPTNextWeb/NextChat",
-      "stars": 88005,
+      "stars": 88003,
       "pushedAt": "2026-05-15T01:19:01Z",
       "createdAt": "2023-03-10T18:27:54Z",
       "language": "TypeScript"
@@ -193,7 +253,7 @@
       "fullName": "nextlevelbuilder/ui-ux-pro-max-skill",
       "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
       "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 79113,
+      "stars": 79127,
       "pushedAt": "2026-04-03T05:08:19Z",
       "createdAt": "2025-11-30T11:36:31Z",
       "language": "Python"
@@ -203,8 +263,8 @@
       "fullName": "lobehub/lobehub",
       "description": "The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
       "url": "https://github.com/lobehub/lobehub",
-      "stars": 77142,
-      "pushedAt": "2026-05-16T06:24:23Z",
+      "stars": 77144,
+      "pushedAt": "2026-05-16T07:06:48Z",
       "createdAt": "2023-05-21T07:19:12Z",
       "language": "TypeScript"
     },
@@ -213,7 +273,7 @@
       "fullName": "thedotmack/claude-mem",
       "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
       "url": "https://github.com/thedotmack/claude-mem",
-      "stars": 76044,
+      "stars": 76053,
       "pushedAt": "2026-05-15T04:07:15Z",
       "createdAt": "2025-08-31T20:50:03Z",
       "language": "TypeScript"
@@ -223,70 +283,10 @@
       "fullName": "bytedance/deer-flow",
       "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
       "url": "https://github.com/bytedance/deer-flow",
-      "stars": 67938,
+      "stars": 67939,
       "pushedAt": "2026-05-16T01:27:40Z",
       "createdAt": "2025-05-07T02:50:19Z",
       "language": "Python"
-    },
-    {
-      "id": 1201173969,
-      "fullName": "JuliusBrussee/caveman",
-      "description": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
-      "url": "https://github.com/JuliusBrussee/caveman",
-      "stars": 60803,
-      "pushedAt": "2026-05-12T19:44:48Z",
-      "createdAt": "2026-04-04T10:03:00Z",
-      "language": "JavaScript"
-    },
-    {
-      "id": 1010681419,
-      "fullName": "shareAI-lab/learn-claude-code",
-      "description": "Bash is all you need -  A nano claude code–like 「agent harness」, built from 0 to 1",
-      "url": "https://github.com/shareAI-lab/learn-claude-code",
-      "stars": 60707,
-      "pushedAt": "2026-05-11T14:25:37Z",
-      "createdAt": "2025-06-29T15:34:15Z",
-      "language": "TypeScript"
-    },
-    {
-      "id": 680120071,
-      "fullName": "microsoft/autogen",
-      "description": "A programming framework for agentic AI",
-      "url": "https://github.com/microsoft/autogen",
-      "stars": 58064,
-      "pushedAt": "2026-04-15T11:59:09Z",
-      "createdAt": "2023-08-18T11:43:45Z",
-      "language": "Python"
-    },
-    {
-      "id": 995029641,
-      "fullName": "ruvnet/ruflo",
-      "description": "🌊 The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features    enterprise-grade architecture, self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration",
-      "url": "https://github.com/ruvnet/ruflo",
-      "stars": 51649,
-      "pushedAt": "2026-05-16T02:29:22Z",
-      "createdAt": "2025-06-02T21:24:20Z",
-      "language": "TypeScript"
-    },
-    {
-      "id": 805155266,
-      "fullName": "CherryHQ/cherry-studio",
-      "description": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs",
-      "url": "https://github.com/CherryHQ/cherry-studio",
-      "stars": 45749,
-      "pushedAt": "2026-05-16T06:26:34Z",
-      "createdAt": "2024-05-24T01:56:26Z",
-      "language": "TypeScript"
-    },
-    {
-      "id": 1201476594,
-      "fullName": "santifer/career-ops",
-      "description": "AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.",
-      "url": "https://github.com/santifer/career-ops",
-      "stars": 44936,
-      "pushedAt": "2026-05-15T16:50:33Z",
-      "createdAt": "2026-04-04T18:21:18Z",
-      "language": "JavaScript"
     }
   ]
 }

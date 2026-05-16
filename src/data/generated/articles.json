@@ -10,21 +10,24 @@
         "url": "https://www.anthropic.com/research/building-effective-agents",
         "source": "Anthropic Research",
         "date": "2025-12-19",
-        "blurb": "Anthropic 把\"agent\"拆成 prompt chain / routing / parallelization / orchestrator / evaluator 五种基本结构，并明确说\"先试无 agent 的 workflow\"。Agent 工程入门必读。"
+        "blurb": "Anthropic 把\"agent\"拆成 prompt chain / routing / parallelization / orchestrator / evaluator 五种基本结构，并明确说\"先试无 agent 的 workflow\"。Agent 工程入门必读。",
+        "cn": "Anthropic 关于 agent 工程实务的代表性长文。把\"agent\"拆成 prompt chain、routing、parallelization、\norchestrator、evaluator 五种基础结构，并明确建议先用最简单的 workflow，能不上 agent 就不上。\nAgent 工程入门必读。"
       },
       {
         "itemSlug": "claude-code-best-practices",
         "title": "Claude Code Best Practices",
         "url": "https://www.anthropic.com/engineering/claude-code-best-practices",
         "source": "Anthropic Engineering",
-        "blurb": "官方写 Claude Code 的最佳实践，包含 CLAUDE.md、custom slash command、subagent、思考模式触发词。"
+        "blurb": "官方写 Claude Code 的最佳实践，包含 CLAUDE.md、custom slash command、subagent、思考模式触发词。",
+        "cn": "Anthropic 官方写的 Claude Code 使用最佳实践。覆盖 CLAUDE.md 配置、custom slash command、\nsubagent 拆分、思考模式触发词等具体手法，是把 Claude Code 用在真实研究与工程项目里的官方\n参考手册。"
       },
       {
         "itemSlug": "how-we-built-our-multi-agent-research-system",
         "title": "How we built our multi-agent research system",
         "url": "https://www.anthropic.com/engineering/built-multi-agent-research-system",
         "source": "Anthropic Engineering",
-        "blurb": "用 Claude 构建多 agent research 系统的工程总结：orchestrator/worker 模式、并行搜索、上下文压缩。"
+        "blurb": "用 Claude 构建多 agent research 系统的工程总结：orchestrator/worker 模式、并行搜索、上下文压缩。",
+        "cn": "Anthropic 工程团队复盘多 agent research 系统的搭建过程。重点讲 orchestrator/worker 协作模式、\n并行搜索的调度策略、子任务结果的上下文压缩，以及评估与失败模式分析。想做 deep research 类\n系统的人值得对照阅读。"
       }
     ]
   },
@@ -38,42 +41,48 @@
         "title": "Anthropic Research",
         "url": "https://www.anthropic.com/research",
         "source": "Anthropic",
-        "blurb": "Alignment、Interpretability、Societal Impacts、Economic Research 四条主线的研究索引页。"
+        "blurb": "Alignment、Interpretability、Societal Impacts、Economic Research 四条主线的研究索引页。",
+        "cn": "Anthropic 官方研究索引页，汇集 Alignment、Interpretability、Societal Impacts、Economic Research\n四条主线的论文与报告。追踪安全对齐与模型机理研究的入口。"
       },
       {
         "itemSlug": "anthropic-news",
         "title": "Anthropic News",
         "url": "https://www.anthropic.com/news",
         "source": "Anthropic",
-        "blurb": "产品发布 + 工程博客的统一入口。"
+        "blurb": "产品发布 + 工程博客的统一入口。",
+        "cn": "Anthropic 的产品发布与工程博客统一入口。Claude 新模型、Claude Code、API 能力更新、工程实践\n长文都在这里发布，配合 research 页一起看可以拼出完整动态。"
       },
       {
         "itemSlug": "google-deepmind-blog",
         "title": "Google DeepMind Blog",
         "url": "https://deepmind.google/blog/",
         "source": "Google DeepMind",
-        "blurb": "Gemini 系列、AlphaFold、AGI 评估等研究持续更新。"
+        "blurb": "Gemini 系列、AlphaFold、AGI 评估等研究持续更新。",
+        "cn": "Google DeepMind 官方博客，持续发布 Gemini 系列、AlphaFold、AGI 评估、强化学习等方向的研究\n进展。追踪 DeepMind 一线工作的主要渠道。"
       },
       {
         "itemSlug": "openai-research",
         "title": "OpenAI Research",
         "url": "https://openai.com/research",
         "source": "OpenAI",
-        "blurb": "GPT 系列与对齐、推理、agent 方向的研究索引。"
+        "blurb": "GPT 系列与对齐、推理、agent 方向的研究索引。",
+        "cn": "OpenAI 的研究索引页，覆盖 GPT 系列模型、对齐、推理、agent 等方向的论文与技术报告。了解\nOpenAI 公开研究脉络的起点。"
       },
       {
         "itemSlug": "antigravity-by-google",
         "title": "Antigravity by Google",
         "url": "https://antigravity.google",
         "source": "Google",
-        "blurb": "Google 的智能体 IDE 平台（Gemini 3 同期发布），定位为 agent-native coding 环境。"
+        "blurb": "Google 的智能体 IDE 平台（Gemini 3 同期发布），定位为 agent-native coding 环境。",
+        "cn": "Google 推出的智能体 IDE 平台，与 Gemini 3 同期发布，定位为 agent-native 的编码环境。把 agent\n做成开发流程里的一等公民，对比 Claude Code、Cursor 等同类产品时值得放在一起看。"
       },
       {
         "itemSlug": "google-antigravity-news",
         "title": "Google Antigravity News",
         "url": "https://blog.google/technology/google-labs/",
         "source": "Google Labs",
-        "blurb": "Google Labs 主页，Antigravity 等实验性产品的官方公告会汇集到这里。"
+        "blurb": "Google Labs 主页，Antigravity 等实验性产品的官方公告会汇集到这里。",
+        "cn": "Google Labs 的官方主页，Antigravity 等实验性产品的公告与更新会集中在这里发布。想跟踪 Google\n在 agent IDE 与早期产品方向上的动作可以从这里入。"
       }
     ]
   },
@@ -87,21 +96,24 @@
         "title": "Prompt Engineering Guide",
         "url": "https://www.promptingguide.ai",
         "source": "DAIR.AI",
-        "blurb": "社区维护的 prompt engineering 综合参考站，覆盖 zero-shot / few-shot / CoT / ReAct 等各种技术。"
+        "blurb": "社区维护的 prompt engineering 综合参考站，覆盖 zero-shot / few-shot / CoT / ReAct 等各种技术。",
+        "cn": "DAIR.AI 维护的 prompt engineering 综合参考站，系统梳理 zero-shot、few-shot、Chain-of-Thought、\nReAct、self-consistency 等技术的原理与示例，并附论文索引。入门 prompt 设计与查阅具体技巧\n时常用。"
       },
       {
         "itemSlug": "anthropic-prompt-engineering-course",
         "title": "Anthropic Prompt Engineering Course",
         "url": "https://github.com/anthropics/courses",
         "source": "Anthropic",
-        "blurb": "Anthropic 官方课程，含 prompt engineering、tool use、real-world prompting 三门交互式课。"
+        "blurb": "Anthropic 官方课程，含 prompt engineering、tool use、real-world prompting 三门交互式课。",
+        "cn": "Anthropic 官方在 GitHub 上开放的课程仓库，包含 Prompt Engineering、Tool Use、Real-world Prompting\n三门交互式课程，配套 Jupyter notebook 和示例。系统学习 Claude 提示工程的官方一手材料。"
       },
       {
         "itemSlug": "a-visual-guide-to-mixture-of-experts",
         "title": "A Visual Guide to Mixture of Experts",
         "url": "https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-mixture-of-experts",
         "source": "Maarten Grootendorst",
-        "blurb": "把 MoE 架构用插画一步步讲清楚。"
+        "blurb": "把 MoE 架构用插画一步步讲清楚。",
+        "cn": "Maarten Grootendorst 写的 Mixture of Experts 图解长文，用一步步的插画讲清 router、expert、稀疏激活\n与负载均衡的工作机制。想直观理解 Mixtral、DeepSeek-MoE 之类架构时是很好的入门读物。"
       }
     ]
   }

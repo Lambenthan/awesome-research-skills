@@ -36,6 +36,7 @@ const projectRoot = path.resolve(__dirname, "..");
 const FEATURED_SKILLS = path.join(projectRoot, "content", "featured-skills.yml");
 const FEATURED_REPOS = path.join(projectRoot, "content", "featured-repos.yml");
 const FEATURED_ARTICLES = path.join(projectRoot, "content", "featured-articles.yml");
+const CN_SUMMARIES = path.join(projectRoot, "content", "cn-summaries.yml");
 const OUT_DIR = path.join(projectRoot, "src", "data", "generated");
 const CACHE_DIR = path.join(projectRoot, "scripts", ".cache");
 const REPO_CACHE_FILE = path.join(CACHE_DIR, "github.json");
@@ -51,6 +52,22 @@ const FRONTMATTER_RE = /^---\s*\n([\s\S]*?)\n---\s*\n?/;
 async function readYaml(file) {
   const text = await fs.readFile(file, "utf8");
   return yaml.load(text);
+}
+
+/**
+ * Curator-written Chinese intros. Stored centrally as a flat map keyed by
+ * `${categorySlug}/${itemSlug}` — same form for every section. Missing
+ * entries are fine; items just render their English description fallback.
+ */
+async function loadCnSummaries() {
+  try {
+    const text = await fs.readFile(CN_SUMMARIES, "utf8");
+    const parsed = yaml.load(text) || {};
+    return parsed;
+  } catch (err) {
+    if (err.code === "ENOENT") return {};
+    throw err;
+  }
 }
 
 async function loadJsonCache(file) {
@@ -137,7 +154,7 @@ async function fetchSkillMd(entry, cache) {
   }
 }
 
-async function extractSkills() {
+async function extractSkills(cn) {
   const config = await readYaml(FEATURED_SKILLS);
   const categories = config.categories || [];
   const cache = await loadJsonCache(SKILL_CACHE_FILE);
@@ -152,9 +169,10 @@ async function extractSkills() {
         missing += 1;
         continue;
       }
+      const itemKey = `${cat.id}/${entry.slug}`;
       const item = {
         slug: entry.slug,
-        itemSlug: entry.slug, // already URL-safe (anthropics' SKILL.md slugs)
+        itemSlug: entry.slug,
         repo: entry.repo,
         name: data.name,
         description: data.description,
@@ -162,7 +180,9 @@ async function extractSkills() {
         skillsShUrl: skillsShUrl(entry),
       };
       if (data.body) item.body = data.body;
+      // Entry-level cn beats central cn-summaries.yml.
       if (entry.cn) item.cn = entry.cn;
+      else if (cn[itemKey]) item.cn = cn[itemKey];
       items.push(item);
       total += 1;
     }
@@ -291,7 +311,7 @@ function computeStarsDelta7d(snapshots, fullName, currentStars) {
   return currentStars - oldStars;
 }
 
-async function extractRepos() {
+async function extractRepos(cn) {
   const config = await readYaml(FEATURED_REPOS);
   const cache = await loadJsonCache(REPO_CACHE_FILE);
   const history = await loadStarHistory();
@@ -310,6 +330,8 @@ async function extractRepos() {
         if (!data) continue;
         const enriched = { ...data };
         enriched.itemSlug = repoItemSlug(enriched.fullName || fullName);
+        const cnKey = `${group.id}/${enriched.itemSlug}`;
+        if (cn[cnKey]) enriched.cn = cn[cnKey];
         if (typeof enriched.stars === "number") {
           currentSnapshot.stars[enriched.fullName] = enriched.stars;
           const delta = computeStarsDelta7d(
@@ -518,7 +540,7 @@ function articleItemSlug(title) {
     .slice(0, 80);
 }
 
-async function extractArticles() {
+async function extractArticles(cn) {
   // Articles are static curated entries — no network fetch, just YAML → JSON.
   try {
     const config = await readYaml(FEATURED_ARTICLES);
@@ -527,19 +549,22 @@ async function extractArticles() {
       id: c.id,
       label: c.label,
       summary: c.summary || "",
-      items: (c.items || []).map((it) => ({
-        itemSlug: it.slug || articleItemSlug(it.title),
-        title: it.title,
-        url: it.url,
-        source: it.source,
-        // YAML auto-parses dates to Date objects; keep ISO YYYY-MM-DD format.
-        date:
-          it.date instanceof Date
-            ? it.date.toISOString().slice(0, 10)
-            : it.date,
-        blurb: it.blurb,
-        cn: it.cn,
-      })),
+      items: (c.items || []).map((it) => {
+        const itemSlug = it.slug || articleItemSlug(it.title);
+        const cnKey = `${c.id}/${itemSlug}`;
+        return {
+          itemSlug,
+          title: it.title,
+          url: it.url,
+          source: it.source,
+          date:
+            it.date instanceof Date
+              ? it.date.toISOString().slice(0, 10)
+              : it.date,
+          blurb: it.blurb,
+          cn: it.cn || cn[cnKey],
+        };
+      }),
     }));
     const total = out.reduce((n, c) => n + c.items.length, 0);
     console.log(`  articles: ${total} across ${out.length} categories`);
@@ -556,10 +581,13 @@ async function extractArticles() {
 async function main() {
   console.log("extract-content: fetching public skills + GitHub repos");
   await fs.mkdir(OUT_DIR, { recursive: true });
+  const cn = await loadCnSummaries();
+  const cnCount = Object.keys(cn).length;
+  if (cnCount > 0) console.log(`  cn-summaries: ${cnCount} entries loaded`);
   const [skills, repos, articles, latest] = await Promise.all([
-    extractSkills(),
-    extractRepos(),
-    extractArticles(),
+    extractSkills(cn),
+    extractRepos(cn),
+    extractArticles(cn),
     fetchLatest(),
   ]);
   await fs.writeFile(
