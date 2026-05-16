@@ -67,6 +67,33 @@ export type ArticleCategory = {
   items: ArticleItem[];
 };
 
+export type NoteChapter = {
+  num: string;
+  title: string;
+};
+
+export type NoteItem = {
+  itemSlug: string;
+  title: string;
+  subtitle?: string;
+  author: string;
+  date?: string;
+  version?: string;
+  pages?: number;
+  kind: string;
+  cover: string;
+  pdf: string;
+  cn?: string;
+  chapters?: NoteChapter[];
+};
+
+export type NoteCategory = {
+  id: string;
+  label: string;
+  summary: string;
+  items: NoteItem[];
+};
+
 export type Meta = {
   builtAt: string;
 };

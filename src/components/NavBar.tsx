@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { href: SECTION_META.ai.href, label: SECTION_META.ai.eyebrow },
   { href: SECTION_META.research.href, label: SECTION_META.research.eyebrow },
   { href: SECTION_META.reading.href, label: SECTION_META.reading.eyebrow },
+  { href: SECTION_META.notes.href, label: SECTION_META.notes.eyebrow },
   { href: "/latest", label: "Latest · Live", accent: true as const },
 ];
 

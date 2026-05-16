@@ -1,12 +1,13 @@
 import type {
   ArticleCategory,
+  NoteCategory,
   ReposData,
   SkillCategory,
   RepoGroup,
 } from "./types";
-import { articles, repos, skills } from "./data";
+import { articles, notes, repos, skills } from "./data";
 
-export type SectionId = "skills" | "ai" | "research" | "reading";
+export type SectionId = "skills" | "ai" | "research" | "reading" | "notes";
 
 export type SectionMeta = {
   id: SectionId;
@@ -49,14 +50,23 @@ export const SECTION_META: Record<SectionId, SectionMeta> = {
     blurb:
       "Anthropic、Google DeepMind、OpenAI、Antigravity 等机构发布的一手研究与工程长文，以及社区在 LLM 与上下文工程方向的代表性写作。",
   },
+  notes: {
+    id: "notes",
+    href: "/notes",
+    eyebrow: "Research Notes",
+    title: "因果推断与文本计量的研究随笔",
+    blurb:
+      "围绕因果推断、文本计量与人格心理学交叉方向的研究草稿与方法笔记。每篇以工作论文或方法纲要形式发布，附 PDF 全文与章节梗概，可直接下载或在浏览器内打开。",
+  },
 };
 
 export function getSectionGroups(
   section: SectionId,
-): SkillCategory[] | RepoGroup[] | ArticleCategory[] {
+): SkillCategory[] | RepoGroup[] | ArticleCategory[] | NoteCategory[] {
   if (section === "skills") return skills;
   if (section === "ai") return repos.ai;
   if (section === "research") return repos.research;
+  if (section === "notes") return notes;
   return articles;
 }
 
@@ -95,4 +105,10 @@ export function getSectionCount(section: SectionId): number {
   return groups.reduce((n, g) => n + g.items.length, 0);
 }
 
-export const ALL_SECTIONS: SectionId[] = ["skills", "ai", "research", "reading"];
+export const ALL_SECTIONS: SectionId[] = [
+  "skills",
+  "ai",
+  "research",
+  "reading",
+  "notes",
+];

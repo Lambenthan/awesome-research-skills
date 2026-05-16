@@ -3,7 +3,7 @@ import { LiveCallout } from "@/components/LiveCallout";
 import { NavBar } from "@/components/NavBar";
 import { Reveal } from "@/components/Reveal";
 import { SectionPreview } from "@/components/SectionPreview";
-import { articles, meta, repos, skills } from "@/lib/data";
+import { articles, meta, notes, repos, skills } from "@/lib/data";
 import { SECTION_META } from "@/lib/sections";
 
 export default function Home() {
@@ -27,10 +27,16 @@ export default function Home() {
     label: c.label,
     count: c.items.length,
   }));
+  const noteCats = notes.map((c) => ({
+    id: c.id,
+    label: c.label,
+    count: c.items.length,
+  }));
   const totalSkills = skillCats.reduce((n, c) => n + c.count, 0);
   const totalAi = aiCats.reduce((n, c) => n + c.count, 0);
   const totalResearch = researchCats.reduce((n, c) => n + c.count, 0);
   const totalReading = readingCats.reduce((n, c) => n + c.count, 0);
+  const totalNotes = noteCats.reduce((n, c) => n + c.count, 0);
   const buildDate = meta.builtAt
     ? new Date(meta.builtAt).toISOString().slice(0, 10)
     : "—";
@@ -69,6 +75,7 @@ export default function Home() {
               <Stat label="AI repos" value={totalAi} />
               <Stat label="Research tools" value={totalResearch} />
               <Stat label="Reading" value={totalReading} />
+              <Stat label="Notes" value={totalNotes} />
               <div className="ml-auto eyebrow">
                 Updated <span className="text-ink">{buildDate}</span>
               </div>
@@ -107,6 +114,13 @@ export default function Home() {
             meta={SECTION_META.reading}
             total={totalReading}
             categories={readingCats}
+          />
+        </Reveal>
+        <Reveal>
+          <SectionPreview
+            meta={SECTION_META.notes}
+            total={totalNotes}
+            categories={noteCats}
           />
         </Reveal>
       </main>
