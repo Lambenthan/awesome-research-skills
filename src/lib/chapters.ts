@@ -27,91 +27,43 @@ export type ChapterMeta = {
   load: () => Promise<ChapterModule>;
 };
 
+const ym = (n: number, slug: string, displayNum: string, title: string): ChapterMeta => ({
+  categorySlug: "personality-causal",
+  itemSlug: "yangming-trajectory",
+  slug,
+  num: n,
+  displayNum,
+  title,
+  load: () =>
+    import(`@/content/notes/personality-causal/yangming-trajectory/chap-${n}.mdx`),
+});
+
+const sushi = (n: number, slug: string, displayNum: string, title: string): ChapterMeta => ({
+  categorySlug: "personality-causal",
+  itemSlug: "sushi-trajectory",
+  slug,
+  num: n,
+  displayNum,
+  title,
+  load: () =>
+    import(`@/content/notes/personality-causal/sushi-trajectory/chap-${n}.mdx`),
+});
+
 export const CHAPTERS: ChapterMeta[] = [
-  {
-    categorySlug: "personality-causal",
-    itemSlug: "yangming-trajectory",
-    slug: "chapter-0",
-    num: 0,
-    displayNum: "0",
-    title: "阳明生平与心学概览",
-    load: () =>
-      import(
-        "@/content/notes/personality-causal/yangming-trajectory/chap-0.mdx"
-      ),
-  },
-  {
-    categorySlug: "personality-causal",
-    itemSlug: "yangming-trajectory",
-    slug: "chapter-1",
-    num: 1,
-    displayNum: "1",
-    title: "1506 廷杖事件与阳明人格重组：基于中断时间序列的因果识别",
-    load: () =>
-      import(
-        "@/content/notes/personality-causal/yangming-trajectory/chap-1.mdx"
-      ),
-  },
-  {
-    categorySlug: "personality-causal",
-    itemSlug: "yangming-trajectory",
-    slug: "chapter-2",
-    num: 2,
-    displayNum: "2",
-    title: "概念分布散度：朱熹作为外生历史对照",
-    load: () =>
-      import(
-        "@/content/notes/personality-causal/yangming-trajectory/chap-2.mdx"
-      ),
-  },
-  {
-    categorySlug: "personality-causal",
-    itemSlug: "yangming-trajectory",
-    slug: "chapter-3",
-    num: 3,
-    displayNum: "3",
-    title: "断点检测：不预设事件年份的转折点定位",
-    load: () =>
-      import(
-        "@/content/notes/personality-causal/yangming-trajectory/chap-3.mdx"
-      ),
-  },
-  {
-    categorySlug: "personality-causal",
-    itemSlug: "yangming-trajectory",
-    slug: "chapter-4",
-    num: 4,
-    displayNum: "4",
-    title: "合成控制：用稳定概念构造致良知诞生的反事实",
-    load: () =>
-      import(
-        "@/content/notes/personality-causal/yangming-trajectory/chap-4.mdx"
-      ),
-  },
-  {
-    categorySlug: "personality-causal",
-    itemSlug: "yangming-trajectory",
-    slug: "chapter-5",
-    num: 5,
-    displayNum: "5",
-    title: "跨体裁人格分析：体裁固定效应回归与共线诊断",
-    load: () =>
-      import(
-        "@/content/notes/personality-causal/yangming-trajectory/chap-5.mdx"
-      ),
-  },
-  {
-    categorySlug: "personality-causal",
-    itemSlug: "yangming-trajectory",
-    slug: "chapter-6",
-    num: 6,
-    displayNum: "6",
-    title: "方法论附录：六种方法的假设核查与 claim 降级",
-    load: () =>
-      import(
-        "@/content/notes/personality-causal/yangming-trajectory/chap-6.mdx"
-      ),
-  },
+  ym(0, "chapter-0", "0", "阳明生平与心学概览"),
+  ym(1, "chapter-1", "1", "1506 廷杖事件与阳明人格重组：基于中断时间序列的因果识别"),
+  ym(2, "chapter-2", "2", "概念分布散度:朱熹作为外生历史对照"),
+  ym(3, "chapter-3", "3", "断点检测：不预设事件年份的转折点定位"),
+  ym(4, "chapter-4", "4", "合成控制：用稳定概念构造致良知诞生的反事实"),
+  ym(5, "chapter-5", "5", "跨体裁人格分析：体裁固定效应回归与共线诊断"),
+  ym(6, "chapter-6", "6", "方法论附录：六种方法的假设核查与 claim 降级"),
+  sushi(0, "chapter-0", "0", "东坡生平与北宋政局概览"),
+  sushi(1, "chapter-1", "1", "1079 乌台诗案与东坡人格重组：基于中断时间序列的因果识别"),
+  sushi(2, "chapter-2", "2", "概念分布散度：王安石与黄庭坚作为双外部历史对照"),
+  sushi(3, "chapter-3", "3", "断点检测：让数据自报转折点"),
+  sushi(4, "chapter-4", "4", "合成控制：用稳定概念构造黄州转向的反事实"),
+  sushi(5, "chapter-5", "5", "跨体裁人格分析：体裁固定效应回归与代笔诊断"),
+  sushi(6, "chapter-6", "6", "方法论附录：六种方法的假设核查与 claim 降级"),
 ];
 
 export function getChaptersForItem(
