@@ -6,6 +6,12 @@ function formatStars(n?: number) {
   return String(n);
 }
 
+function formatDelta(d?: number) {
+  if (d === undefined || d === null || d < 20) return null;
+  if (d >= 1000) return `+${(d / 1000).toFixed(1)}k`;
+  return `+${d}`;
+}
+
 export function RepoCard({ item }: { item: RepoItem }) {
   if (item.fetchFailed) {
     return (
@@ -33,9 +39,16 @@ export function RepoCard({ item }: { item: RepoItem }) {
           <span className="text-ink-subtle">{owner}/</span>
           <span className="font-medium">{name}</span>
         </h3>
-        <span className="shrink-0 font-serif text-[15px] leading-none text-ember">
-          ★ {formatStars(item.stars)}
-        </span>
+        <div className="shrink-0 text-right">
+          <span className="font-serif text-[15px] leading-none text-ember">
+            ★ {formatStars(item.stars)}
+          </span>
+          {formatDelta(item.starsDelta7d) && (
+            <span className="ml-1.5 text-[10px] font-medium tracking-wide text-ember/80">
+              {formatDelta(item.starsDelta7d)} · 7d
+            </span>
+          )}
+        </div>
       </div>
       <p className="mt-3 line-clamp-4 text-[13.5px] leading-[1.65] text-ink-muted">
         {item.description || "—"}

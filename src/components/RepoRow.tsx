@@ -6,6 +6,12 @@ function formatStars(n?: number) {
   return String(n);
 }
 
+function formatDelta(d?: number) {
+  if (d === undefined || d === null || d < 20) return null;
+  if (d >= 1000) return `+${(d / 1000).toFixed(1)}k`;
+  return `+${d}`;
+}
+
 export function RepoRow({ item, index }: { item: RepoItem; index: number }) {
   if (item.fetchFailed) {
     return (
@@ -55,10 +61,15 @@ export function RepoRow({ item, index }: { item: RepoItem; index: number }) {
             ))}
           </div>
         </div>
-        <div className="col-span-12 flex items-baseline gap-2 sm:col-span-3 sm:justify-end">
+        <div className="col-span-12 flex flex-col items-start gap-1 sm:col-span-3 sm:items-end">
           <span className="font-serif text-[26px] leading-none text-ember">
             ★ {formatStars(item.stars)}
           </span>
+          {formatDelta(item.starsDelta7d) && (
+            <span className="text-[11px] font-medium tracking-wide text-ember/80">
+              {formatDelta(item.starsDelta7d)} stars · 7d
+            </span>
+          )}
         </div>
       </div>
     </a>

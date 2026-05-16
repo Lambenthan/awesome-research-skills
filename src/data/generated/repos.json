@@ -4,25 +4,661 @@
       "id": "agent-frameworks",
       "label": "Agent 框架",
       "summary": "多智能体、工作流编排、自主任务执行。",
-      "items": []
+      "items": [
+        {
+          "owner": "Significant-Gravitas",
+          "name": "AutoGPT",
+          "fullName": "Significant-Gravitas/AutoGPT",
+          "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+          "stars": 184341,
+          "forks": 46229,
+          "language": "Python",
+          "url": "https://github.com/Significant-Gravitas/AutoGPT",
+          "homepage": "https://agpt.co",
+          "topics": [
+            "agentic-ai",
+            "agents",
+            "ai",
+            "artificial-intelligence",
+            "autonomous-agents",
+            "claude",
+            "gpt",
+            "llama-api"
+          ],
+          "license": "NOASSERTION",
+          "pushedAt": "2026-05-15T23:43:01Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "langchain-ai",
+          "name": "langchain",
+          "fullName": "langchain-ai/langchain",
+          "description": "The agent engineering platform.",
+          "stars": 136841,
+          "forks": 22632,
+          "language": "Python",
+          "url": "https://github.com/langchain-ai/langchain",
+          "homepage": "https://docs.langchain.com/langchain/",
+          "topics": [
+            "agents",
+            "ai",
+            "ai-agents",
+            "anthropic",
+            "chatgpt",
+            "deepagents",
+            "enterprise",
+            "framework"
+          ],
+          "license": "MIT",
+          "pushedAt": "2026-05-16T02:23:09Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "anthropics",
+          "name": "claude-code",
+          "fullName": "anthropics/claude-code",
+          "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+          "stars": 123958,
+          "forks": 20426,
+          "language": "Shell",
+          "url": "https://github.com/anthropics/claude-code",
+          "homepage": "https://code.claude.com/docs/en/overview",
+          "topics": [],
+          "license": null,
+          "pushedAt": "2026-05-15T22:28:22Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "OpenHands",
+          "name": "OpenHands",
+          "fullName": "OpenHands/OpenHands",
+          "description": "🙌 OpenHands: AI-Driven Development",
+          "stars": 73691,
+          "forks": 9323,
+          "language": "Python",
+          "url": "https://github.com/OpenHands/OpenHands",
+          "homepage": "https://openhands.dev",
+          "topics": [
+            "agent",
+            "artificial-intelligence",
+            "chatgpt",
+            "claude-ai",
+            "cli",
+            "developer-tools",
+            "gpt",
+            "llm"
+          ],
+          "license": "NOASSERTION",
+          "pushedAt": "2026-05-16T02:53:56Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "cline",
+          "name": "cline",
+          "fullName": "cline/cline",
+          "description": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant.",
+          "stars": 61862,
+          "forks": 6432,
+          "language": "TypeScript",
+          "url": "https://github.com/cline/cline",
+          "homepage": "https://x.com/cline",
+          "topics": [],
+          "license": "Apache-2.0",
+          "pushedAt": "2026-05-16T03:19:52Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "microsoft",
+          "name": "autogen",
+          "fullName": "microsoft/autogen",
+          "description": "A programming framework for agentic AI",
+          "stars": 58063,
+          "forks": 8762,
+          "language": "Python",
+          "url": "https://github.com/microsoft/autogen",
+          "homepage": "https://microsoft.github.io/autogen/",
+          "topics": [
+            "agentic",
+            "agentic-agi",
+            "agents",
+            "ai",
+            "autogen",
+            "autogen-ecosystem",
+            "chatgpt",
+            "framework"
+          ],
+          "license": "CC-BY-4.0",
+          "pushedAt": "2026-04-15T11:59:09Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "AntonOsika",
+          "name": "gpt-engineer",
+          "fullName": "AntonOsika/gpt-engineer",
+          "description": "CLI platform to experiment with codegen. Precursor to: https://lovable.dev",
+          "stars": 55216,
+          "forks": 7353,
+          "language": "Python",
+          "url": "https://github.com/AntonOsika/gpt-engineer",
+          "homepage": null,
+          "topics": [
+            "ai",
+            "autonomous-agent",
+            "code-generation",
+            "codebase-generation",
+            "codegen",
+            "coding-assistant",
+            "gpt-4",
+            "gpt-engineer"
+          ],
+          "license": "MIT",
+          "pushedAt": "2025-05-14T10:15:10Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "crewAIInc",
+          "name": "crewAI",
+          "fullName": "crewAIInc/crewAI",
+          "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.",
+          "stars": 51491,
+          "forks": 7122,
+          "language": "Python",
+          "url": "https://github.com/crewAIInc/crewAI",
+          "homepage": "https://crewai.com",
+          "topics": [
+            "agents",
+            "ai",
+            "ai-agents",
+            "aiagentframework",
+            "llms"
+          ],
+          "license": "MIT",
+          "pushedAt": "2026-05-15T20:05:46Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "anthropics",
+          "name": "claude-cookbooks",
+          "fullName": "anthropics/claude-cookbooks",
+          "description": "A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.",
+          "stars": 43058,
+          "forks": 4871,
+          "language": "Jupyter Notebook",
+          "url": "https://github.com/anthropics/claude-cookbooks",
+          "homepage": null,
+          "topics": [],
+          "license": "MIT",
+          "pushedAt": "2026-05-14T17:41:17Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "continuedev",
+          "name": "continue",
+          "fullName": "continuedev/continue",
+          "description": "⏩ Source-controlled AI checks, enforceable in CI. Powered by the open-source Continue CLI",
+          "stars": 33215,
+          "forks": 4510,
+          "language": "TypeScript",
+          "url": "https://github.com/continuedev/continue",
+          "homepage": "https://docs.continue.dev",
+          "topics": [
+            "agent",
+            "ai",
+            "cli",
+            "developer-tools",
+            "jetbrains-plugin",
+            "llm",
+            "open-source",
+            "vs-code-extenstion"
+          ],
+          "license": "Apache-2.0",
+          "pushedAt": "2026-05-15T23:30:27Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "langchain-ai",
+          "name": "langgraph",
+          "fullName": "langchain-ai/langgraph",
+          "description": "Build resilient agents.",
+          "stars": 32138,
+          "forks": 5453,
+          "language": "Python",
+          "url": "https://github.com/langchain-ai/langgraph",
+          "homepage": "https://docs.langchain.com/oss/python/langgraph/",
+          "topics": [
+            "agents",
+            "ai",
+            "ai-agents",
+            "chatgpt",
+            "deepagents",
+            "enterprise",
+            "framework",
+            "gemini"
+          ],
+          "license": "MIT",
+          "pushedAt": "2026-05-16T00:00:30Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "anthropics",
+          "name": "claude-agent-sdk-python",
+          "fullName": "anthropics/claude-agent-sdk-python",
+          "description": "",
+          "stars": 6897,
+          "forks": 996,
+          "language": "Python",
+          "url": "https://github.com/anthropics/claude-agent-sdk-python",
+          "homepage": null,
+          "topics": [],
+          "license": "MIT",
+          "pushedAt": "2026-05-15T22:29:07Z",
+          "_source": "cache-fresh"
+        }
+      ]
     },
     {
       "id": "model-runtime",
       "label": "模型推理与部署",
       "summary": "本地跑大模型、推理引擎、量化与服务化。",
-      "items": []
+      "items": [
+        {
+          "owner": "ollama",
+          "name": "ollama",
+          "fullName": "ollama/ollama",
+          "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+          "stars": 171480,
+          "forks": 16146,
+          "language": "Go",
+          "url": "https://github.com/ollama/ollama",
+          "homepage": "https://ollama.com",
+          "topics": [
+            "deepseek",
+            "gemma",
+            "gemma3",
+            "glm",
+            "go",
+            "golang",
+            "gpt-oss",
+            "llama"
+          ],
+          "license": "MIT",
+          "pushedAt": "2026-05-15T23:23:55Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "huggingface",
+          "name": "transformers",
+          "fullName": "huggingface/transformers",
+          "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+          "stars": 160648,
+          "forks": 33222,
+          "language": "Python",
+          "url": "https://github.com/huggingface/transformers",
+          "homepage": "https://huggingface.co/transformers",
+          "topics": [
+            "audio",
+            "deep-learning",
+            "deepseek",
+            "gemma",
+            "glm",
+            "hacktoberfest",
+            "llm",
+            "machine-learning"
+          ],
+          "license": "Apache-2.0",
+          "pushedAt": "2026-05-15T20:21:30Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "ggml-org",
+          "name": "llama.cpp",
+          "fullName": "ggml-org/llama.cpp",
+          "description": "LLM inference in C/C++",
+          "stars": 110339,
+          "forks": 18245,
+          "language": "C++",
+          "url": "https://github.com/ggml-org/llama.cpp",
+          "homepage": null,
+          "topics": [
+            "ggml"
+          ],
+          "license": "MIT",
+          "pushedAt": "2026-05-16T02:21:24Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "vllm-project",
+          "name": "vllm",
+          "fullName": "vllm-project/vllm",
+          "description": "A high-throughput and memory-efficient inference and serving engine for LLMs",
+          "stars": 80149,
+          "forks": 16842,
+          "language": "Python",
+          "url": "https://github.com/vllm-project/vllm",
+          "homepage": "https://vllm.ai",
+          "topics": [
+            "amd",
+            "blackwell",
+            "cuda",
+            "deepseek",
+            "deepseek-v3",
+            "gpt",
+            "gpt-oss",
+            "inference"
+          ],
+          "license": "Apache-2.0",
+          "pushedAt": "2026-05-16T04:46:42Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "mlc-ai",
+          "name": "mlc-llm",
+          "fullName": "mlc-ai/mlc-llm",
+          "description": "Universal LLM Deployment Engine with ML Compilation",
+          "stars": 22643,
+          "forks": 2039,
+          "language": "Python",
+          "url": "https://github.com/mlc-ai/mlc-llm",
+          "homepage": "https://llm.mlc.ai/",
+          "topics": [
+            "language-model",
+            "llm",
+            "machine-learning-compilation",
+            "tvm"
+          ],
+          "license": "Apache-2.0",
+          "pushedAt": "2026-05-11T22:52:18Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "huggingface",
+          "name": "text-generation-inference",
+          "fullName": "huggingface/text-generation-inference",
+          "description": "Large Language Model Text Generation Inference",
+          "stars": 10855,
+          "forks": 1269,
+          "language": "Python",
+          "url": "https://github.com/huggingface/text-generation-inference",
+          "homepage": "http://hf.co/docs/text-generation-inference",
+          "topics": [
+            "bloom",
+            "deep-learning",
+            "falcon",
+            "gpt",
+            "inference",
+            "nlp",
+            "pytorch",
+            "starcoder"
+          ],
+          "license": "Apache-2.0",
+          "pushedAt": "2026-03-21T11:34:22Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "lmstudio-ai",
+          "name": "lmstudio-js",
+          "fullName": "lmstudio-ai/lmstudio-js",
+          "description": "LM Studio TypeScript SDK",
+          "stars": 1646,
+          "forks": 261,
+          "language": "TypeScript",
+          "url": "https://github.com/lmstudio-ai/lmstudio-js",
+          "homepage": "https://www.npmjs.com/package/@lmstudio/sdk",
+          "topics": [
+            "llm",
+            "lm-studio",
+            "lmstudio",
+            "nodejs",
+            "typescript"
+          ],
+          "license": "MIT",
+          "pushedAt": "2026-05-07T17:33:07Z",
+          "_source": "cache-fresh"
+        }
+      ]
     },
     {
       "id": "rag-retrieval",
       "label": "RAG 与检索",
       "summary": "文档问答、向量库、检索增强生成。",
-      "items": []
+      "items": [
+        {
+          "owner": "infiniflow",
+          "name": "ragflow",
+          "fullName": "infiniflow/ragflow",
+          "description": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
+          "stars": 80595,
+          "forks": 9214,
+          "language": "Python",
+          "url": "https://github.com/infiniflow/ragflow",
+          "homepage": "https://ragflow.io",
+          "topics": [
+            "agentic-ai",
+            "agentic-retrieval",
+            "agentic-search",
+            "ai",
+            "ai-agents",
+            "context-engine",
+            "context-management",
+            "llm-apps"
+          ],
+          "license": "Apache-2.0",
+          "pushedAt": "2026-05-15T14:29:44Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "run-llama",
+          "name": "llama_index",
+          "fullName": "run-llama/llama_index",
+          "description": "LlamaIndex is the leading document agent and OCR platform",
+          "stars": 49441,
+          "forks": 7418,
+          "language": "Python",
+          "url": "https://github.com/run-llama/llama_index",
+          "homepage": "https://developers.llamaindex.ai",
+          "topics": [
+            "agents",
+            "application",
+            "data",
+            "fine-tuning",
+            "framework",
+            "llamaindex",
+            "llm",
+            "multi-agents"
+          ],
+          "license": "MIT",
+          "pushedAt": "2026-05-15T19:35:23Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "milvus-io",
+          "name": "milvus",
+          "fullName": "milvus-io/milvus",
+          "description": "Milvus is a high-performance, cloud-native vector database built for scalable vector ANN search",
+          "stars": 44315,
+          "forks": 4000,
+          "language": "Go",
+          "url": "https://github.com/milvus-io/milvus",
+          "homepage": "https://milvus.io",
+          "topics": [
+            "anns",
+            "cloud-native",
+            "diskann",
+            "distributed",
+            "embedding-database",
+            "embedding-similarity",
+            "embedding-store",
+            "faiss"
+          ],
+          "license": "Apache-2.0",
+          "pushedAt": "2026-05-16T03:27:30Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "qdrant",
+          "name": "qdrant",
+          "fullName": "qdrant/qdrant",
+          "description": "Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/",
+          "stars": 31343,
+          "forks": 2265,
+          "language": "Rust",
+          "url": "https://github.com/qdrant/qdrant",
+          "homepage": "https://qdrant.tech",
+          "topics": [
+            "ai-search",
+            "ai-search-engine",
+            "embeddings-similarity",
+            "hnsw",
+            "hybrid-search",
+            "image-search",
+            "knn-algorithm",
+            "machine-learning"
+          ],
+          "license": "Apache-2.0",
+          "pushedAt": "2026-05-16T01:13:21Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "chroma-core",
+          "name": "chroma",
+          "fullName": "chroma-core/chroma",
+          "description": "Search infrastructure for AI",
+          "stars": 27963,
+          "forks": 2248,
+          "language": "Rust",
+          "url": "https://github.com/chroma-core/chroma",
+          "homepage": "https://www.trychroma.com/",
+          "topics": [
+            "agents",
+            "ai",
+            "ai-agents",
+            "database",
+            "rust",
+            "rust-lang"
+          ],
+          "license": "Apache-2.0",
+          "pushedAt": "2026-05-15T22:57:42Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "weaviate",
+          "name": "weaviate",
+          "fullName": "weaviate/weaviate",
+          "description": "Weaviate is an open-source vector database that stores both objects and vectors, allowing for the combination of vector search with structured filtering with the fault tolerance and scalability of a cloud-native database​.",
+          "stars": 16188,
+          "forks": 1285,
+          "language": "Go",
+          "url": "https://github.com/weaviate/weaviate",
+          "homepage": "https://weaviate.io/developers/weaviate/",
+          "topics": [
+            "approximate-nearest-neighbor-search",
+            "generative-search",
+            "grpc",
+            "hnsw",
+            "hybrid-search",
+            "image-search",
+            "information-retrieval",
+            "mlops"
+          ],
+          "license": "BSD-3-Clause",
+          "pushedAt": "2026-05-16T03:37:25Z",
+          "_source": "cache-fresh"
+        }
+      ]
     },
     {
       "id": "chat-ui",
       "label": "对话 UI",
       "summary": "本地或自托管的 LLM 聊天界面。",
-      "items": []
+      "items": [
+        {
+          "owner": "open-webui",
+          "name": "open-webui",
+          "fullName": "open-webui/open-webui",
+          "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+          "stars": 137249,
+          "forks": 19582,
+          "language": "Python",
+          "url": "https://github.com/open-webui/open-webui",
+          "homepage": "https://openwebui.com",
+          "topics": [
+            "ai",
+            "llm",
+            "llm-ui",
+            "llm-webui",
+            "llms",
+            "mcp",
+            "ollama",
+            "ollama-webui"
+          ],
+          "license": "NOASSERTION",
+          "pushedAt": "2026-05-15T00:34:23Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "lobehub",
+          "name": "lobehub",
+          "fullName": "lobehub/lobehub",
+          "description": "The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
+          "stars": 77141,
+          "forks": 15187,
+          "language": "TypeScript",
+          "url": "https://github.com/lobehub/lobehub",
+          "homepage": "https://lobehub.com",
+          "topics": [
+            "agent",
+            "agent-collaboration",
+            "agent-harness",
+            "ai",
+            "chatgpt",
+            "claude",
+            "deepseek",
+            "gemini"
+          ],
+          "license": "NOASSERTION",
+          "pushedAt": "2026-05-16T05:01:36Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "danny-avila",
+          "name": "LibreChat",
+          "fullName": "danny-avila/LibreChat",
+          "description": "Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active.",
+          "stars": 37067,
+          "forks": 7621,
+          "language": "TypeScript",
+          "url": "https://github.com/danny-avila/LibreChat",
+          "homepage": "https://librechat.ai/",
+          "topics": [
+            "ai",
+            "anthropic",
+            "artifacts",
+            "aws",
+            "azure",
+            "chatgpt",
+            "chatgpt-clone",
+            "claude"
+          ],
+          "license": "MIT",
+          "pushedAt": "2026-05-15T19:12:43Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "mckaywrigley",
+          "name": "chatbot-ui",
+          "fullName": "mckaywrigley/chatbot-ui",
+          "description": "AI chat for any model.",
+          "stars": 33243,
+          "forks": 9439,
+          "language": "TypeScript",
+          "url": "https://github.com/mckaywrigley/chatbot-ui",
+          "homepage": "https://JoinTakeoff.com",
+          "topics": [],
+          "license": "MIT",
+          "pushedAt": "2024-08-03T00:38:07Z",
+          "_source": "cache-fresh"
+        }
+      ]
     }
   ],
   "research": [
@@ -30,43 +666,933 @@
       "id": "data-core",
       "label": "数据科学基础",
       "summary": "各方向都会用到的通用计算与表格库。",
-      "items": []
+      "items": [
+        {
+          "owner": "scikit-learn",
+          "name": "scikit-learn",
+          "fullName": "scikit-learn/scikit-learn",
+          "description": "scikit-learn: machine learning in Python",
+          "stars": 66096,
+          "forks": 27024,
+          "language": "Python",
+          "url": "https://github.com/scikit-learn/scikit-learn",
+          "homepage": "https://scikit-learn.org",
+          "topics": [
+            "data-analysis",
+            "data-science",
+            "machine-learning",
+            "python",
+            "statistics"
+          ],
+          "license": "BSD-3-Clause",
+          "pushedAt": "2026-05-15T17:21:24Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "pandas-dev",
+          "name": "pandas",
+          "fullName": "pandas-dev/pandas",
+          "description": "Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more",
+          "stars": 48770,
+          "forks": 19955,
+          "language": "Python",
+          "url": "https://github.com/pandas-dev/pandas",
+          "homepage": "https://pandas.pydata.org",
+          "topics": [
+            "alignment",
+            "data-analysis",
+            "data-science",
+            "flexible",
+            "pandas",
+            "python"
+          ],
+          "license": "BSD-3-Clause",
+          "pushedAt": "2026-05-15T23:52:07Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "pola-rs",
+          "name": "polars",
+          "fullName": "pola-rs/polars",
+          "description": "Extremely fast Query Engine for DataFrames, written in Rust",
+          "stars": 38503,
+          "forks": 2828,
+          "language": "Rust",
+          "url": "https://github.com/pola-rs/polars",
+          "homepage": "https://docs.pola.rs",
+          "topics": [
+            "arrow",
+            "dataframe",
+            "dataframe-library",
+            "dataframes",
+            "out-of-core",
+            "polars",
+            "python",
+            "rust"
+          ],
+          "license": "MIT",
+          "pushedAt": "2026-05-15T19:18:31Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "numpy",
+          "name": "numpy",
+          "fullName": "numpy/numpy",
+          "description": "The fundamental package for scientific computing with Python.",
+          "stars": 32040,
+          "forks": 12373,
+          "language": "Python",
+          "url": "https://github.com/numpy/numpy",
+          "homepage": "https://numpy.org",
+          "topics": [
+            "numpy",
+            "python"
+          ],
+          "license": "NOASSERTION",
+          "pushedAt": "2026-05-16T00:02:14Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "apache",
+          "name": "arrow",
+          "fullName": "apache/arrow",
+          "description": "Apache Arrow is the universal columnar format and multi-language toolbox for fast data interchange and in-memory analytics",
+          "stars": 16741,
+          "forks": 4107,
+          "language": "C++",
+          "url": "https://github.com/apache/arrow",
+          "homepage": "https://arrow.apache.org/",
+          "topics": [
+            "arrow",
+            "parquet"
+          ],
+          "license": "Apache-2.0",
+          "pushedAt": "2026-05-16T01:33:11Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "scipy",
+          "name": "scipy",
+          "fullName": "scipy/scipy",
+          "description": "SciPy library main repository",
+          "stars": 14691,
+          "forks": 5724,
+          "language": "Python",
+          "url": "https://github.com/scipy/scipy",
+          "homepage": "https://scipy.org",
+          "topics": [
+            "algorithms",
+            "closember",
+            "python",
+            "scientific-computing",
+            "scipy"
+          ],
+          "license": "BSD-3-Clause",
+          "pushedAt": "2026-05-15T23:06:41Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "dask",
+          "name": "dask",
+          "fullName": "dask/dask",
+          "description": "Parallel computing with task scheduling",
+          "stars": 13832,
+          "forks": 1871,
+          "language": "Python",
+          "url": "https://github.com/dask/dask",
+          "homepage": "https://dask.org",
+          "topics": [
+            "dask",
+            "numpy",
+            "pandas",
+            "pydata",
+            "python",
+            "scikit-learn",
+            "scipy"
+          ],
+          "license": "BSD-3-Clause",
+          "pushedAt": "2026-05-14T21:18:18Z",
+          "_source": "cache-fresh"
+        }
+      ]
     },
     {
       "id": "stats-causal",
       "label": "统计与因果推断",
       "summary": "贝叶斯、因果效应估计、生存分析、可解释性。",
-      "items": []
+      "items": [
+        {
+          "owner": "shap",
+          "name": "shap",
+          "fullName": "shap/shap",
+          "description": "A game theoretic approach to explain the output of any machine learning model.",
+          "stars": 25428,
+          "forks": 3725,
+          "language": "Jupyter Notebook",
+          "url": "https://github.com/shap/shap",
+          "homepage": "https://shap.readthedocs.io",
+          "topics": [
+            "deep-learning",
+            "explainability",
+            "gradient-boosting",
+            "interpretability",
+            "machine-learning",
+            "shap",
+            "shapley"
+          ],
+          "license": "MIT",
+          "pushedAt": "2026-05-13T19:40:36Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "pymc-devs",
+          "name": "pymc",
+          "fullName": "pymc-devs/pymc",
+          "description": "Bayesian Modeling and Probabilistic Programming in Python",
+          "stars": 9617,
+          "forks": 2250,
+          "language": "Python",
+          "url": "https://github.com/pymc-devs/pymc",
+          "homepage": "https://www.pymc.io",
+          "topics": [
+            "bayesian-inference",
+            "mcmc",
+            "probabilistic-programming",
+            "pytensor",
+            "python",
+            "statistical-analysis",
+            "variational-inference"
+          ],
+          "license": "NOASSERTION",
+          "pushedAt": "2026-05-13T08:39:43Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "py-why",
+          "name": "dowhy",
+          "fullName": "py-why/dowhy",
+          "description": "DoWhy is a Python library for causal inference that supports explicit modeling and testing of causal assumptions. DoWhy is based on a unified language for causal inference, combining causal graphical models and potential outcomes frameworks. ",
+          "stars": 8114,
+          "forks": 1031,
+          "language": "Python",
+          "url": "https://github.com/py-why/dowhy",
+          "homepage": "https://www.pywhy.org/dowhy",
+          "topics": [
+            "bayesian-networks",
+            "causal-inference",
+            "causal-machine-learning",
+            "causal-models",
+            "causality",
+            "data-science",
+            "do-calculus",
+            "graphical-models"
+          ],
+          "license": "MIT",
+          "pushedAt": "2026-05-16T01:53:21Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "interpretml",
+          "name": "interpret",
+          "fullName": "interpretml/interpret",
+          "description": "Fit interpretable models. Explain blackbox machine learning. ",
+          "stars": 6850,
+          "forks": 784,
+          "language": "C++",
+          "url": "https://github.com/interpretml/interpret",
+          "homepage": "https://interpret.ml/docs",
+          "topics": [
+            "ai",
+            "artificial-intelligence",
+            "bias",
+            "blackbox",
+            "differential-privacy",
+            "explainability",
+            "explainable-ai",
+            "explainable-ml"
+          ],
+          "license": "MIT",
+          "pushedAt": "2026-05-16T03:46:39Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "py-why",
+          "name": "EconML",
+          "fullName": "py-why/EconML",
+          "description": "ALICE (Automated Learning and Intelligence for Causation and Economics) is a Microsoft Research project aimed at applying Artificial Intelligence concepts to economic decision making. One of its  goals is to build a toolkit that combines state-of-the-art machine learning techniques with econometrics in order to bring automation to complex causal inference problems. To date, the ALICE Python SDK (econml) implements orthogonal machine learning algorithms such as the double machine learning work of Chernozhukov et al. This toolkit is designed to measure the causal effect of some treatment variable(s) t on an outcome variable y, controlling for a set of features x.",
+          "stars": 4631,
+          "forks": 810,
+          "language": "Jupyter Notebook",
+          "url": "https://github.com/py-why/EconML",
+          "homepage": "https://www.microsoft.com/en-us/research/project/alice/",
+          "topics": [
+            "causal-inference",
+            "causality",
+            "econometrics",
+            "economics",
+            "machine-learning",
+            "treatment-effects"
+          ],
+          "license": "NOASSERTION",
+          "pushedAt": "2026-04-27T18:45:46Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "sebp",
+          "name": "scikit-survival",
+          "fullName": "sebp/scikit-survival",
+          "description": "Survival analysis built on top of scikit-learn",
+          "stars": 1297,
+          "forks": 224,
+          "language": "Python",
+          "url": "https://github.com/sebp/scikit-survival",
+          "homepage": null,
+          "topics": [
+            "machine-learning",
+            "python",
+            "scikit-learn",
+            "survival-analysis"
+          ],
+          "license": "GPL-3.0",
+          "pushedAt": "2026-04-07T04:16:54Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "bambinos",
+          "name": "bambi",
+          "fullName": "bambinos/bambi",
+          "description": "BAyesian Model-Building Interface (Bambi) in Python.",
+          "stars": 1263,
+          "forks": 143,
+          "language": "Python",
+          "url": "https://github.com/bambinos/bambi",
+          "homepage": "https://bambinos.github.io/bambi/",
+          "topics": [
+            "bayesian-inference",
+            "bayesian-statistics",
+            "python",
+            "regression-models",
+            "statistical-analysis",
+            "statistical-modeling"
+          ],
+          "license": "MIT",
+          "pushedAt": "2026-05-16T02:14:57Z",
+          "_source": "cache-fresh"
+        }
+      ]
     },
     {
       "id": "viz",
       "label": "可视化",
       "summary": "静态与交互式科研绘图。",
-      "items": []
+      "items": [
+        {
+          "owner": "matplotlib",
+          "name": "matplotlib",
+          "fullName": "matplotlib/matplotlib",
+          "description": "matplotlib: plotting with Python",
+          "stars": 22801,
+          "forks": 8339,
+          "language": "Python",
+          "url": "https://github.com/matplotlib/matplotlib",
+          "homepage": "https://matplotlib.org/stable/",
+          "topics": [
+            "data-science",
+            "data-visualization",
+            "gtk",
+            "matplotlib",
+            "plotting",
+            "python",
+            "qt",
+            "tk"
+          ],
+          "license": null,
+          "pushedAt": "2026-05-16T03:42:42Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "bokeh",
+          "name": "bokeh",
+          "fullName": "bokeh/bokeh",
+          "description": "Interactive Data Visualization in the browser, from  Python",
+          "stars": 20377,
+          "forks": 4253,
+          "language": "TypeScript",
+          "url": "https://github.com/bokeh/bokeh",
+          "homepage": "https://bokeh.org",
+          "topics": [
+            "bokeh",
+            "data-visualisation",
+            "interactive-plots",
+            "javascript",
+            "jupyter",
+            "notebooks",
+            "numfocus",
+            "plots"
+          ],
+          "license": "BSD-3-Clause",
+          "pushedAt": "2026-05-15T20:19:12Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "plotly",
+          "name": "plotly.py",
+          "fullName": "plotly/plotly.py",
+          "description": "The interactive graphing library for Python :sparkles:",
+          "stars": 18525,
+          "forks": 2806,
+          "language": "Python",
+          "url": "https://github.com/plotly/plotly.py",
+          "homepage": "https://plotly.com/python/",
+          "topics": [
+            "d3",
+            "dashboard",
+            "declarative",
+            "graph-library",
+            "interactive",
+            "jupyter-notebook",
+            "plotly",
+            "plotly-dash"
+          ],
+          "license": "MIT",
+          "pushedAt": "2026-05-15T21:11:04Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "mwaskom",
+          "name": "seaborn",
+          "fullName": "mwaskom/seaborn",
+          "description": "Statistical data visualization in Python",
+          "stars": 13870,
+          "forks": 2114,
+          "language": "Python",
+          "url": "https://github.com/mwaskom/seaborn",
+          "homepage": "https://seaborn.pydata.org",
+          "topics": [
+            "data-science",
+            "data-visualization",
+            "matplotlib",
+            "pandas",
+            "python"
+          ],
+          "license": "BSD-3-Clause",
+          "pushedAt": "2026-01-22T13:03:07Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "vega",
+          "name": "altair",
+          "fullName": "vega/altair",
+          "description": "Declarative visualization library for Python",
+          "stars": 10377,
+          "forks": 847,
+          "language": "Python",
+          "url": "https://github.com/vega/altair",
+          "homepage": "https://altair-viz.github.io/",
+          "topics": [],
+          "license": "BSD-3-Clause",
+          "pushedAt": "2026-05-12T16:57:51Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "vega",
+          "name": "vega-lite",
+          "fullName": "vega/vega-lite",
+          "description": "A concise grammar of interactive graphics, built on Vega.",
+          "stars": 5320,
+          "forks": 701,
+          "language": "TypeScript",
+          "url": "https://github.com/vega/vega-lite",
+          "homepage": "https://vega.github.io/vega-lite/",
+          "topics": [
+            "charts",
+            "declarative-language",
+            "plot",
+            "vega",
+            "vega-lite",
+            "visual-analysis",
+            "visualization",
+            "visualization-grammar"
+          ],
+          "license": "BSD-3-Clause",
+          "pushedAt": "2026-05-08T18:11:26Z",
+          "_source": "cache-fresh"
+        }
+      ]
     },
     {
       "id": "bio",
       "label": "生信与单细胞",
       "summary": "序列分析、单细胞、组学工作流。",
-      "items": []
+      "items": [
+        {
+          "owner": "biopython",
+          "name": "biopython",
+          "fullName": "biopython/biopython",
+          "description": "Official git repository for Biopython (originally converted from CVS)",
+          "stars": 5023,
+          "forks": 1894,
+          "language": "Python",
+          "url": "https://github.com/biopython/biopython",
+          "homepage": "http://biopython.org/",
+          "topics": [
+            "bioinformatics",
+            "biopython",
+            "dna",
+            "genomics",
+            "phylogenetics",
+            "protein",
+            "protein-structure",
+            "python"
+          ],
+          "license": "NOASSERTION",
+          "pushedAt": "2026-05-11T15:23:07Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "scverse",
+          "name": "scanpy",
+          "fullName": "scverse/scanpy",
+          "description": "Single-cell analysis in Python. Scales to >100M cells.",
+          "stars": 2455,
+          "forks": 742,
+          "language": "Python",
+          "url": "https://github.com/scverse/scanpy",
+          "homepage": "https://scanpy.readthedocs.io",
+          "topics": [
+            "anndata",
+            "bioinformatics",
+            "data-science",
+            "machine-learning",
+            "python",
+            "scanpy",
+            "scverse",
+            "transcriptomics"
+          ],
+          "license": "BSD-3-Clause",
+          "pushedAt": "2026-05-15T16:18:41Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "scverse",
+          "name": "scvi-tools",
+          "fullName": "scverse/scvi-tools",
+          "description": "Deep probabilistic analysis of single-cell and spatial omics data",
+          "stars": 1623,
+          "forks": 450,
+          "language": "Python",
+          "url": "https://github.com/scverse/scvi-tools",
+          "homepage": "http://scvi-tools.org/",
+          "topics": [
+            "cite-seq",
+            "deep-generative-model",
+            "deep-learning",
+            "human-cell-atlas",
+            "scrna-seq",
+            "scverse",
+            "single-cell-genomics",
+            "single-cell-rna-seq"
+          ],
+          "license": "BSD-3-Clause",
+          "pushedAt": "2026-05-14T07:12:31Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "deeptools",
+          "name": "deepTools",
+          "fullName": "deeptools/deepTools",
+          "description": "Tools to process and analyze deep sequencing data.",
+          "stars": 760,
+          "forks": 221,
+          "language": "Python",
+          "url": "https://github.com/deeptools/deepTools",
+          "homepage": null,
+          "topics": [
+            "bioinformatics",
+            "chip-seq",
+            "genomics",
+            "ngs",
+            "python",
+            "rna-seq"
+          ],
+          "license": "NOASSERTION",
+          "pushedAt": "2025-07-23T08:37:22Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "scverse",
+          "name": "anndata",
+          "fullName": "scverse/anndata",
+          "description": "Annotated data.",
+          "stars": 740,
+          "forks": 191,
+          "language": "Python",
+          "url": "https://github.com/scverse/anndata",
+          "homepage": "http://anndata.readthedocs.io",
+          "topics": [
+            "anndata",
+            "bioinformatics",
+            "data-science",
+            "machine-learning",
+            "scanpy",
+            "scverse",
+            "transcriptomics"
+          ],
+          "license": "BSD-3-Clause",
+          "pushedAt": "2026-05-15T15:23:44Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "nf-core",
+          "name": "tools",
+          "fullName": "nf-core/tools",
+          "description": "Python package with helper tools for the nf-core community.",
+          "stars": 307,
+          "forks": 242,
+          "language": "Python",
+          "url": "https://github.com/nf-core/tools",
+          "homepage": "https://nf-co.re",
+          "topics": [
+            "bioinformatics",
+            "linter",
+            "linting",
+            "nextflow",
+            "nf-core",
+            "pipeline",
+            "python",
+            "workflow"
+          ],
+          "license": "MIT",
+          "pushedAt": "2026-05-15T05:27:51Z",
+          "_source": "cache-fresh"
+        }
+      ]
     },
     {
       "id": "writing-pubs",
       "label": "写作与发表",
       "summary": "学术排版、引用样式、可重复性报告。",
-      "items": []
+      "items": [
+        {
+          "owner": "jgm",
+          "name": "pandoc",
+          "fullName": "jgm/pandoc",
+          "description": "Universal markup converter",
+          "stars": 44164,
+          "forks": 3851,
+          "language": "Haskell",
+          "url": "https://github.com/jgm/pandoc",
+          "homepage": "https://pandoc.org",
+          "topics": [
+            "commonmark",
+            "converter",
+            "document",
+            "haskell",
+            "markdown",
+            "markup",
+            "pandoc",
+            "presentation"
+          ],
+          "license": "GPL-2.0",
+          "pushedAt": "2026-05-15T13:26:21Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "quarto-dev",
+          "name": "quarto-cli",
+          "fullName": "quarto-dev/quarto-cli",
+          "description": "Open-source scientific and technical publishing system built on Pandoc.",
+          "stars": 5634,
+          "forks": 434,
+          "language": "JavaScript",
+          "url": "https://github.com/quarto-dev/quarto-cli",
+          "homepage": "https://quarto.org",
+          "topics": [],
+          "license": "NOASSERTION",
+          "pushedAt": "2026-05-15T19:36:46Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "rstudio",
+          "name": "bookdown",
+          "fullName": "rstudio/bookdown",
+          "description": "Authoring Books and Technical Documents with R Markdown",
+          "stars": 4046,
+          "forks": 1278,
+          "language": "JavaScript",
+          "url": "https://github.com/rstudio/bookdown",
+          "homepage": "https://pkgs.rstudio.com/bookdown/",
+          "topics": [
+            "book",
+            "bookdown",
+            "epub",
+            "gitbook",
+            "html",
+            "latex",
+            "rmarkdown"
+          ],
+          "license": "GPL-3.0",
+          "pushedAt": "2026-05-06T00:04:30Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "citation-style-language",
+          "name": "styles",
+          "fullName": "citation-style-language/styles",
+          "description": "Official repository for Citation Style Language (CSL) citation styles.",
+          "stars": 3811,
+          "forks": 4102,
+          "language": "Ruby",
+          "url": "https://github.com/citation-style-language/styles",
+          "homepage": "https://citationstyles.org/",
+          "topics": [
+            "bibliography",
+            "citation-style-language",
+            "citation-styles",
+            "citations",
+            "csl",
+            "hacktoberfest"
+          ],
+          "license": null,
+          "pushedAt": "2026-05-15T10:06:45Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "rstudio",
+          "name": "rmarkdown",
+          "fullName": "rstudio/rmarkdown",
+          "description": "Dynamic Documents for R",
+          "stars": 3037,
+          "forks": 993,
+          "language": "R",
+          "url": "https://github.com/rstudio/rmarkdown",
+          "homepage": "https://rmarkdown.rstudio.com",
+          "topics": [
+            "literate-programming",
+            "markdown",
+            "pandoc",
+            "r",
+            "r-package",
+            "rmarkdown"
+          ],
+          "license": "NOASSERTION",
+          "pushedAt": "2026-04-21T16:01:42Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "manubot",
+          "name": "manubot",
+          "fullName": "manubot/manubot",
+          "description": "Python utilities for Manubot: Manuscripts, open and automated",
+          "stars": 472,
+          "forks": 47,
+          "language": "Python",
+          "url": "https://github.com/manubot/manubot",
+          "homepage": "https://manubot.org",
+          "topics": [
+            "citations",
+            "csl-json",
+            "manubot",
+            "markdown",
+            "pandoc",
+            "publishing",
+            "python"
+          ],
+          "license": "NOASSERTION",
+          "pushedAt": "2026-01-01T15:17:14Z",
+          "_source": "cache-fresh"
+        }
+      ]
     },
     {
       "id": "notebooks-apps",
       "label": "笔记本与轻量应用",
       "summary": "Jupyter 生态、参数化笔记本、把分析变成 web app。",
-      "items": []
+      "items": [
+        {
+          "owner": "streamlit",
+          "name": "streamlit",
+          "fullName": "streamlit/streamlit",
+          "description": "Streamlit — A faster way to build and share data apps.",
+          "stars": 44604,
+          "forks": 4261,
+          "language": "Python",
+          "url": "https://github.com/streamlit/streamlit",
+          "homepage": "https://streamlit.io",
+          "topics": [
+            "data-analysis",
+            "data-science",
+            "data-visualization",
+            "deep-learning",
+            "developer-tools",
+            "machine-learning",
+            "python",
+            "streamlit"
+          ],
+          "license": "Apache-2.0",
+          "pushedAt": "2026-05-16T03:01:27Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "gradio-app",
+          "name": "gradio",
+          "fullName": "gradio-app/gradio",
+          "description": "Build and share delightful machine learning apps, all in Python. 🌟 Star to support our work!",
+          "stars": 42595,
+          "forks": 3468,
+          "language": "Python",
+          "url": "https://github.com/gradio-app/gradio",
+          "homepage": "http://www.gradio.app",
+          "topics": [
+            "data-analysis",
+            "data-science",
+            "data-visualization",
+            "deep-learning",
+            "deploy",
+            "gradio",
+            "gradio-interface",
+            "interface"
+          ],
+          "license": "Apache-2.0",
+          "pushedAt": "2026-05-15T16:08:38Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "marimo-team",
+          "name": "marimo",
+          "fullName": "marimo-team/marimo",
+          "description": "A reactive notebook for Python — run reproducible experiments, query with SQL, execute as a script, deploy as an app, and version with git. Stored as pure Python. All in a modern, AI-native editor.",
+          "stars": 20996,
+          "forks": 1086,
+          "language": "Python",
+          "url": "https://github.com/marimo-team/marimo",
+          "homepage": "https://marimo.io",
+          "topics": [
+            "artificial-intelligence",
+            "dag",
+            "data-science",
+            "data-visualization",
+            "dataflow",
+            "developer-tools",
+            "machine-learning",
+            "notebooks"
+          ],
+          "license": "Apache-2.0",
+          "pushedAt": "2026-05-15T07:16:04Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "jupyterlab",
+          "name": "jupyterlab",
+          "fullName": "jupyterlab/jupyterlab",
+          "description": "JupyterLab computational environment.",
+          "stars": 15145,
+          "forks": 3991,
+          "language": "TypeScript",
+          "url": "https://github.com/jupyterlab/jupyterlab",
+          "homepage": "https://jupyterlab.readthedocs.io/",
+          "topics": [
+            "jupyter",
+            "jupyterlab"
+          ],
+          "license": "BSD-3-Clause",
+          "pushedAt": "2026-05-15T18:58:44Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "jupyter",
+          "name": "notebook",
+          "fullName": "jupyter/notebook",
+          "description": "Jupyter Interactive Notebook",
+          "stars": 13148,
+          "forks": 5667,
+          "language": "Jupyter Notebook",
+          "url": "https://github.com/jupyter/notebook",
+          "homepage": "https://jupyter-notebook.readthedocs.io/",
+          "topics": [
+            "closember",
+            "jupyter",
+            "jupyter-notebook",
+            "notebook"
+          ],
+          "license": "BSD-3-Clause",
+          "pushedAt": "2026-05-13T09:13:49Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "nteract",
+          "name": "papermill",
+          "fullName": "nteract/papermill",
+          "description": "📚 Parameterize, execute, and analyze notebooks",
+          "stars": 6445,
+          "forks": 450,
+          "language": "Python",
+          "url": "https://github.com/nteract/papermill",
+          "homepage": "http://papermill.readthedocs.io/en/latest/",
+          "topics": [
+            "julia",
+            "jupyter",
+            "notebook",
+            "notebook-generator",
+            "notebooks",
+            "nteract",
+            "pipeline",
+            "publishing"
+          ],
+          "license": "BSD-3-Clause",
+          "pushedAt": "2026-05-12T21:34:28Z",
+          "_source": "cache-fresh"
+        }
+      ]
     },
     {
       "id": "reference-management",
       "label": "文献管理",
       "summary": "Zotero 及其插件、文献元数据工具。",
-      "items": []
+      "items": [
+        {
+          "owner": "zotero",
+          "name": "zotero",
+          "fullName": "zotero/zotero",
+          "description": "Zotero is a free, easy-to-use tool to help you collect, organize, annotate, cite, and share your research sources.",
+          "stars": 14176,
+          "forks": 1029,
+          "language": "JavaScript",
+          "url": "https://github.com/zotero/zotero",
+          "homepage": "https://www.zotero.org",
+          "topics": [],
+          "license": "NOASSERTION",
+          "pushedAt": "2026-05-13T18:41:37Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "owner": "retorquere",
+          "name": "zotero-better-bibtex",
+          "fullName": "retorquere/zotero-better-bibtex",
+          "description": "Make Zotero effective for us LaTeX holdouts",
+          "stars": 6685,
+          "forks": 369,
+          "language": "TypeScript",
+          "url": "https://github.com/retorquere/zotero-better-bibtex",
+          "homepage": "https://retorque.re/zotero-better-bibtex/",
+          "topics": [
+            "bib",
+            "biblatex",
+            "bibtex",
+            "citation-keys",
+            "latex",
+            "zotero"
+          ],
+          "license": "MIT",
+          "pushedAt": "2026-05-11T13:12:12Z",
+          "_source": "cache-fresh"
+        },
+        {
+          "fullName": "inukshuk/jabref",
+          "fetchFailed": true,
+          "status": 404
+        }
+      ]
     }
   ]
 }

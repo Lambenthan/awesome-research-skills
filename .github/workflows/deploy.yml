@@ -9,7 +9,7 @@ on:
     - cron: "0 4 * * *"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -39,6 +39,22 @@ jobs:
 
       - name: Build static export
         run: npm run build
+
+      # Persist the appended star snapshot back to main so future runs can
+      # compute 7-day deltas. Only on cron-triggered runs (push-triggered
+      # builds don't change star counts), and only if the file actually
+      # changed. The "[skip ci]" tag prevents this push from triggering
+      # another workflow run.
+      - name: Commit refreshed star history
+        if: github.event_name == 'schedule'
+        run: |
+          if [ -n "$(git status --porcelain scripts/star-history.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add scripts/star-history.json
+            git commit -m "chore: refresh star history snapshot [skip ci]"
+            git push
+          fi
 
       - name: Disable Jekyll on Pages
         run: touch out/.nojekyll

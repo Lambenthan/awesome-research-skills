@@ -39,7 +39,11 @@ const OUT_DIR = path.join(projectRoot, "src", "data", "generated");
 const CACHE_DIR = path.join(projectRoot, "scripts", ".cache");
 const REPO_CACHE_FILE = path.join(CACHE_DIR, "github.json");
 const SKILL_CACHE_FILE = path.join(CACHE_DIR, "skill-md.json");
+// Long-lived star snapshots — committed to the repo (not in .cache/).
+const STAR_HISTORY_FILE = path.join(projectRoot, "scripts", "star-history.json");
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000;
+const HISTORY_RETAIN_MS = 30 * 24 * 60 * 60 * 1000;
+const DELTA_WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
 
 const FRONTMATTER_RE = /^---\s*\n([\s\S]*?)\n---\s*\n?/;
 
@@ -211,9 +215,59 @@ async function fetchRepo(fullName, cache) {
   }
 }
 
+async function loadStarHistory() {
+  try {
+    const text = await fs.readFile(STAR_HISTORY_FILE, "utf8");
+    const parsed = JSON.parse(text);
+    if (!parsed || !Array.isArray(parsed.snapshots)) {
+      return { snapshots: [] };
+    }
+    return parsed;
+  } catch (err) {
+    if (err.code === "ENOENT") return { snapshots: [] };
+    throw err;
+  }
+}
+
+async function saveStarHistory(history) {
+  await fs.writeFile(
+    STAR_HISTORY_FILE,
+    JSON.stringify(history, null, 2) + "\n",
+  );
+}
+
+/**
+ * Given the snapshots array, find the most recent snapshot taken at least
+ * DELTA_WINDOW_MS ago for the given repo, and return current - old.
+ * Returns null if no eligible historical reading exists yet.
+ */
+function computeStarsDelta7d(snapshots, fullName, currentStars) {
+  if (currentStars === undefined || currentStars === null) return null;
+  const cutoff = Date.now() - DELTA_WINDOW_MS;
+  let oldStars = null;
+  let oldAt = 0;
+  for (const snap of snapshots) {
+    const t = Date.parse(snap.fetchedAt);
+    if (!Number.isFinite(t) || t > cutoff) continue;
+    const v = snap.stars?.[fullName];
+    if (typeof v !== "number") continue;
+    if (t > oldAt) {
+      oldAt = t;
+      oldStars = v;
+    }
+  }
+  if (oldStars === null) return null;
+  return currentStars - oldStars;
+}
+
 async function extractRepos() {
   const config = await readYaml(FEATURED_REPOS);
   const cache = await loadJsonCache(REPO_CACHE_FILE);
+  const history = await loadStarHistory();
+  const currentSnapshot = {
+    fetchedAt: new Date().toISOString(),
+    stars: {},
+  };
   const result = {};
   for (const section of ["ai", "research"]) {
     const groups = config[section] || [];
@@ -223,7 +277,17 @@ async function extractRepos() {
       for (const fullName of group.repos || []) {
         const data = await fetchRepo(fullName, cache);
         if (!data) continue;
-        items.push(data);
+        const enriched = { ...data };
+        if (typeof enriched.stars === "number") {
+          currentSnapshot.stars[enriched.fullName] = enriched.stars;
+          const delta = computeStarsDelta7d(
+            history.snapshots,
+            enriched.fullName,
+            enriched.stars,
+          );
+          if (delta !== null) enriched.starsDelta7d = delta;
+        }
+        items.push(enriched);
       }
       items.sort((a, b) => (b.stars ?? 0) - (a.stars ?? 0));
       out.push({
@@ -236,9 +300,39 @@ async function extractRepos() {
     result[section] = out;
   }
   await saveJsonCache(REPO_CACHE_FILE, cache);
+
+  // Snapshot retention: one entry per ~day. If the last snapshot is <12h old,
+  // merge current readings into it (so a partial earlier run gets upgraded by
+  // a later full run). Otherwise append a new snapshot. Then prune old.
+  if (Object.keys(currentSnapshot.stars).length > 0) {
+    const lastSnap = history.snapshots[history.snapshots.length - 1];
+    const lastAt = lastSnap ? Date.parse(lastSnap.fetchedAt) : 0;
+    if (lastSnap && Date.now() - lastAt < 12 * 60 * 60 * 1000) {
+      lastSnap.stars = { ...lastSnap.stars, ...currentSnapshot.stars };
+      lastSnap.fetchedAt = currentSnapshot.fetchedAt;
+    } else {
+      history.snapshots.push(currentSnapshot);
+    }
+    const cutoff = Date.now() - HISTORY_RETAIN_MS;
+    history.snapshots = history.snapshots.filter(
+      (s) => Date.parse(s.fetchedAt) >= cutoff,
+    );
+    await saveStarHistory(history);
+    const latest = history.snapshots[history.snapshots.length - 1];
+    console.log(
+      `  star-history: ${history.snapshots.length} snapshots, latest has ${Object.keys(latest.stars).length} repos`,
+    );
+  }
+
   const totalAi = result.ai.reduce((n, g) => n + g.items.length, 0);
   const totalResearch = result.research.reduce((n, g) => n + g.items.length, 0);
-  console.log(`  repos: ${totalAi} ai + ${totalResearch} research`);
+  const withDelta = [...result.ai, ...result.research].reduce(
+    (n, g) => n + g.items.filter((i) => i.starsDelta7d !== undefined).length,
+    0,
+  );
+  console.log(
+    `  repos: ${totalAi} ai + ${totalResearch} research (${withDelta} with 7d delta)`,
+  );
   return result;
 }
 

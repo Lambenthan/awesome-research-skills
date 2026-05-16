@@ -20,6 +20,7 @@ export type RepoItem = {
   fullName: string;
   description?: string;
   stars?: number;
+  starsDelta7d?: number;
   forks?: number;
   language?: string | null;
   url?: string;
