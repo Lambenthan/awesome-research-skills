@@ -3,6 +3,14 @@ import { SECTION_META } from "@/lib/sections";
 
 const REPO_URL = "https://github.com/Lambenthan/awesome-research-skills";
 
+const NAV_LINKS = [
+  { href: SECTION_META.skills.href, label: SECTION_META.skills.eyebrow },
+  { href: SECTION_META.ai.href, label: SECTION_META.ai.eyebrow },
+  { href: SECTION_META.research.href, label: SECTION_META.research.eyebrow },
+  { href: SECTION_META.reading.href, label: SECTION_META.reading.eyebrow },
+  { href: "/latest", label: "Latest · Live", accent: true as const },
+];
+
 export function NavBar() {
   return (
     <header className="border-b border-rule">
@@ -14,21 +22,17 @@ export function NavBar() {
           Awesome Research Skills
         </Link>
         <nav className="hidden items-baseline gap-7 sm:flex">
-          {(["skills", "ai", "research", "reading"] as const).map((id) => (
+          {NAV_LINKS.map((l) => (
             <Link
-              key={id}
-              href={SECTION_META[id].href}
-              className="eyebrow transition hover:text-ink"
+              key={l.href}
+              href={l.href}
+              className={`eyebrow transition hover:text-ink ${
+                l.accent ? "text-ember" : ""
+              }`}
             >
-              {SECTION_META[id].eyebrow}
+              {l.label}
             </Link>
           ))}
-          <Link
-            href="/latest"
-            className="eyebrow text-ember transition hover:text-ink"
-          >
-            Latest · Live
-          </Link>
         </nav>
         <a
           href={REPO_URL}
@@ -39,6 +43,20 @@ export function NavBar() {
           GitHub →
         </a>
       </div>
+      {/* Mobile fallback row — keeps every section reachable on <sm screens. */}
+      <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-rule px-6 py-3 sm:hidden">
+        {NAV_LINKS.map((l) => (
+          <Link
+            key={l.href}
+            href={l.href}
+            className={`eyebrow transition hover:text-ink ${
+              l.accent ? "text-ember" : ""
+            }`}
+          >
+            {l.label}
+          </Link>
+        ))}
+      </nav>
     </header>
   );
 }

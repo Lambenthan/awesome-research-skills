@@ -15,7 +15,7 @@ ai:
       - anthropics/claude-code
       - cline/cline
       - openai/codex
-      - sst/opencode
+      - anomalyco/opencode
       - google-gemini/gemini-cli
       - voideditor/void
       - continuedev/continue

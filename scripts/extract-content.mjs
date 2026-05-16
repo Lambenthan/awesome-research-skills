@@ -98,10 +98,10 @@ async function fetchSkillMd(entry, cache) {
   const url = rawSkillUrl(entry);
   const cached = cache[url];
   if (process.env.SKIP_GITHUB === "1" && cached) {
-    return { ...cached.data, _source: "cache" };
+    return cached.data;
   }
   if (cached && Date.now() - cached.fetchedAt < CACHE_TTL_MS) {
-    return { ...cached.data, _source: "cache-fresh" };
+    return cached.data;
   }
   if (process.env.SKIP_GITHUB === "1") {
     return null;
@@ -110,7 +110,7 @@ async function fetchSkillMd(entry, cache) {
     const res = await fetch(url);
     if (!res.ok) {
       console.warn(`  [warn] ${entry.repo}/${entry.slug}: HTTP ${res.status}`);
-      if (cached) return { ...cached.data, _source: "cache-stale" };
+      if (cached) return cached.data;
       return null;
     }
     const text = await res.text();
@@ -126,7 +126,7 @@ async function fetchSkillMd(entry, cache) {
         typeof fm.description === "string" ? fm.description.trim() : "",
     };
     cache[url] = { fetchedAt: Date.now(), data };
-    return { ...data, _source: "raw" };
+    return data;
   } catch (err) {
     console.warn(`  [warn] ${entry.repo}/${entry.slug}: ${err.message}`);
     if (cached) return { ...cached.data, _source: "cache-stale" };
@@ -176,10 +176,10 @@ async function extractSkills() {
 async function fetchRepo(fullName, cache) {
   const cached = cache[fullName];
   if (process.env.SKIP_GITHUB === "1" && cached) {
-    return { ...cached.data, _source: "cache" };
+    return cached.data;
   }
   if (cached && Date.now() - cached.fetchedAt < CACHE_TTL_MS) {
-    return { ...cached.data, _source: "cache-fresh" };
+    return cached.data;
   }
   if (process.env.SKIP_GITHUB === "1") {
     return null;
@@ -189,7 +189,7 @@ async function fetchRepo(fullName, cache) {
     const res = await fetch(url, { headers: authHeaders() });
     if (!res.ok) {
       console.warn(`  [warn] ${fullName}: HTTP ${res.status} ${res.statusText}`);
-      if (cached) return { ...cached.data, _source: "cache-stale" };
+      if (cached) return cached.data;
       return { fullName, fetchFailed: true, status: res.status };
     }
     const json = await res.json();
@@ -208,7 +208,7 @@ async function fetchRepo(fullName, cache) {
       pushedAt: json.pushed_at || null,
     };
     cache[fullName] = { fetchedAt: Date.now(), data };
-    return { ...data, _source: "api" };
+    return data;
   } catch (err) {
     console.warn(`  [warn] ${fullName}: ${err.message}`);
     if (cached) return { ...cached.data, _source: "cache-stale" };
@@ -397,7 +397,13 @@ async function fetchLatest() {
         /* one keyword failing shouldn't tank the rest */
       }
     }
+    // Algolia matches a single keyword anywhere (incl. text content). So
+    // `agent` matches "AppLovin mediation" and `GPT` matches GPT-partition
+    // articles. Re-filter by requiring an AI-relevant token in the title.
+    const aiTitleRe =
+      /\b(AI|AGI|LLM|LLMs|GPT|Claude|Gemini|OpenAI|Anthropic|Antigravity|Mistral|Meta|Llama|DeepSeek|Qwen|Grok|RAG|MCP|agent|agents|agentic|chatbot|prompt|prompting|fine[- ]?tun|embedding|inference|reasoning|transformer|neural|RLHF|model|models|generative|copilot|cursor|coding assistant)\b/i;
     out.hn = [...seen.values()]
+      .filter((h) => aiTitleRe.test(h.title))
       .sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at))
       .slice(0, 15)
       .map((h) => ({

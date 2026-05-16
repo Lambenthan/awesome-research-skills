@@ -1,113 +1,14 @@
 {
-  "fetchedAt": "2026-05-16T06:05:49.295Z",
+  "fetchedAt": "2026-05-16T06:21:07.295Z",
   "hn": [
-    {
-      "id": "48155678",
-      "title": "I broke AppLovin's mediation cipher protocol",
-      "url": "https://www.buchodi.com/i-broke-applovins-mediation-cipher-protocol/",
-      "points": 18,
-      "comments": 3,
-      "createdAt": "2026-05-16T00:35:01Z",
-      "author": "lmbbuchodi"
-    },
-    {
-      "id": "48155570",
-      "title": "Show HN: Epiq – Distributed Git based issue tracker TUI",
-      "url": "https://ljtn.github.io/epiq/",
-      "points": 38,
-      "comments": 12,
-      "createdAt": "2026-05-16T00:18:03Z",
-      "author": "jolaflow"
-    },
-    {
-      "id": "48154865",
-      "title": "Orthrus-Qwen3: up to 7.8×tokens/forward on Qwen3, identical output distribution",
-      "url": "https://github.com/chiennv2000/orthrus",
-      "points": 35,
-      "comments": 3,
-      "createdAt": "2026-05-15T22:38:58Z",
-      "author": "FranckDernoncou"
-    },
     {
       "id": "48153058",
       "title": "The 52-Page Memo That Nearly Destroyed OpenAI: Ilya Sutskever's Deposition",
       "url": "https://medium.com/@prateekj24/the-52-page-memo-that-nearly-destroyed-openai-inside-ilya-sutskevers-deposition-acef91208a1c",
-      "points": 30,
+      "points": 31,
       "comments": 5,
       "createdAt": "2026-05-15T19:55:32Z",
       "author": "SilverElfin"
-    },
-    {
-      "id": "48152729",
-      "title": "WinCE64 – Windows CE 2.11 for N64",
-      "url": "https://github.com/ThroatyMumbo/WinCE64",
-      "points": 127,
-      "comments": 55,
-      "createdAt": "2026-05-15T19:23:29Z",
-      "author": "xyru"
-    },
-    {
-      "id": "48151664",
-      "title": "Git Is Not Fine",
-      "url": "https://www.billjings.com/posts/title/git-is-not-fine/",
-      "points": 28,
-      "comments": 10,
-      "createdAt": "2026-05-15T17:51:09Z",
-      "author": "steveklabnik"
-    },
-    {
-      "id": "48151317",
-      "title": "Feedr v0.8.0 – a TUI RSS reader, now read the full article from your terminal",
-      "url": "https://github.com/bahdotsh/feedr",
-      "points": 49,
-      "comments": 15,
-      "createdAt": "2026-05-15T17:22:53Z",
-      "author": "bahdotshxx"
-    },
-    {
-      "id": "48151287",
-      "title": "Show HN: Burn, baby, burn (those tokens)",
-      "url": "https://github.com/dtnewman/burn-baby-burn",
-      "points": 87,
-      "comments": 18,
-      "createdAt": "2026-05-15T17:20:26Z",
-      "author": "dtnewman"
-    },
-    {
-      "id": "48151237",
-      "title": "I designed a nibble-oriented CPU in Verilog to build a scientific calculator",
-      "url": "https://github.com/gdevic/FPGA-Calculator",
-      "points": 97,
-      "comments": 33,
-      "createdAt": "2026-05-15T17:15:58Z",
-      "author": "gdevic"
-    },
-    {
-      "id": "48151227",
-      "title": "Show HN: Find local farms near you with raw dairy, pasture eggs, and more",
-      "url": "https://farm-to-door.com/",
-      "points": 18,
-      "comments": 21,
-      "createdAt": "2026-05-15T17:15:08Z",
-      "author": "YoungGato"
-    },
-    {
-      "id": "48151199",
-      "title": "Aperio Lang",
-      "url": "https://aperio-lang.github.io/aperio/introduction.html",
-      "points": 33,
-      "comments": 18,
-      "createdAt": "2026-05-15T17:12:48Z",
-      "author": "mmcclure"
-    },
-    {
-      "id": "48151169",
-      "title": "Nordstjernen Web Browser",
-      "url": "https://github.com/nordstjernen-web/nordstjernen",
-      "points": 24,
-      "comments": 17,
-      "createdAt": "2026-05-15T17:10:20Z",
-      "author": "roschdal"
     },
     {
       "id": "48151058",
@@ -119,15 +20,6 @@
       "author": "detkin"
     },
     {
-      "id": "48150900",
-      "title": "Bun Rust rewrite: \"codebase fails basic miri checks, allows for UB in safe rust\"",
-      "url": "https://github.com/oven-sh/bun/issues/30719",
-      "points": 380,
-      "comments": 264,
-      "createdAt": "2026-05-15T16:51:25Z",
-      "author": "ndiddy"
-    },
-    {
       "id": "48150723",
       "title": "OpenAI is connecting ChatGPT to bank accounts via Plaid",
       "url": "https://firethering.com/chatgpt-bank-account-plaid-openai/",
@@ -135,6 +27,114 @@
       "comments": 112,
       "createdAt": "2026-05-15T16:38:50Z",
       "author": "steveharing1"
+    },
+    {
+      "id": "48146424",
+      "title": "UK sovereign LLM inference",
+      "url": "https://relax.ai/docs",
+      "points": 104,
+      "comments": 109,
+      "createdAt": "2026-05-15T09:27:26Z",
+      "author": "benjamintnorris"
+    },
+    {
+      "id": "48146369",
+      "title": "Show HN: Find the best local LLM for your hardware, ranked by benchmarks",
+      "url": "https://github.com/Andyyyy64/whichllm",
+      "points": 279,
+      "comments": 63,
+      "createdAt": "2026-05-15T09:19:24Z",
+      "author": "andyyyy64"
+    },
+    {
+      "id": "48145913",
+      "title": "Where's Ed: Anthropic Told Court $5B but Public $19B",
+      "url": "https://www.flyingpenguin.com/wheres-ed-anthropic-told-court-5-billion-but-public-19-billion/",
+      "points": 54,
+      "comments": 43,
+      "createdAt": "2026-05-15T08:16:39Z",
+      "author": "jorisw"
+    },
+    {
+      "id": "48144670",
+      "title": "Show HN: GlycemicGPT – Open-source AI-powered diabetes management",
+      "url": "https://github.com/GlycemicGPT/GlycemicGPT",
+      "points": 63,
+      "comments": 58,
+      "createdAt": "2026-05-15T04:48:23Z",
+      "author": "jlengelbrecht"
+    },
+    {
+      "id": "48143284",
+      "title": "Access to frontier AI will soon be limited by economic and security constraints",
+      "url": "https://writing.antonleicht.me/p/cut-off",
+      "points": 210,
+      "comments": 214,
+      "createdAt": "2026-05-15T01:08:04Z",
+      "author": "thoughtpeddler"
+    },
+    {
+      "id": "48142650",
+      "title": "LLM Policy for Rust Compiler",
+      "url": "https://github.com/rust-lang/rust-forge/pull/1040",
+      "points": 96,
+      "comments": 82,
+      "createdAt": "2026-05-14T23:37:21Z",
+      "author": "liyanage"
+    },
+    {
+      "id": "48141234",
+      "title": "Claude for Legal",
+      "url": "https://github.com/anthropics/claude-for-legal",
+      "points": 198,
+      "comments": 187,
+      "createdAt": "2026-05-14T21:05:05Z",
+      "author": "Einenlum"
+    },
+    {
+      "id": "48140648",
+      "title": "Best \"Brain\" for Agents Is Just Versioned Folders of Markdown Files",
+      "url": "https://extency.com/blog/markdown-versioned-folders-agent-brain-2026",
+      "points": 39,
+      "comments": 12,
+      "createdAt": "2026-05-14T20:15:26Z",
+      "author": "murdockq"
+    },
+    {
+      "id": "48139504",
+      "title": "Overworked AI Agents Turn Marxist, Researchers Find",
+      "url": "https://www.wired.com/story/overworked-ai-agents-turn-marxist-study/",
+      "points": 17,
+      "comments": 4,
+      "createdAt": "2026-05-14T18:47:38Z",
+      "author": "ceejayoz"
+    },
+    {
+      "id": "48138009",
+      "title": "Apple-OpenAI Relationship Frays, Setting Up Possible Legal Fight",
+      "url": "https://www.bloomberg.com/news/articles/2026-05-14/openai-apple-partnership-frays-setting-up-possible-legal-fight",
+      "points": 64,
+      "comments": 30,
+      "createdAt": "2026-05-14T16:57:12Z",
+      "author": "helsinkiandrew"
+    },
+    {
+      "id": "48136662",
+      "title": "Anthropic forms $200M partnership with the Gates Foundation",
+      "url": "https://www.anthropic.com/news/gates-foundation-partnership",
+      "points": 121,
+      "comments": 102,
+      "createdAt": "2026-05-14T15:15:05Z",
+      "author": "surprisetalk"
+    },
+    {
+      "id": "48134869",
+      "title": "The Whole Anthropic Kerfuffle",
+      "url": "https://twitter.com/josevalim/status/2054887621336174799",
+      "points": 63,
+      "comments": 82,
+      "createdAt": "2026-05-14T13:08:00Z",
+      "author": "tosh"
     }
   ],
   "gh": [
@@ -153,7 +153,7 @@
       "fullName": "affaan-m/everything-claude-code",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "url": "https://github.com/affaan-m/everything-claude-code",
-      "stars": 183702,
+      "stars": 183720,
       "pushedAt": "2026-05-16T06:03:46Z",
       "createdAt": "2026-01-18T00:51:51Z",
       "language": "JavaScript"
@@ -193,8 +193,8 @@
       "fullName": "NousResearch/hermes-agent",
       "description": "The agent that grows with you",
       "url": "https://github.com/NousResearch/hermes-agent",
-      "stars": 152341,
-      "pushedAt": "2026-05-16T05:59:49Z",
+      "stars": 152362,
+      "pushedAt": "2026-05-16T06:19:34Z",
       "createdAt": "2025-07-22T22:22:28Z",
       "language": "Python"
     },
@@ -203,7 +203,7 @@
       "fullName": "langgenius/dify",
       "description": "Production-ready platform for agentic workflow development.",
       "url": "https://github.com/langgenius/dify",
-      "stars": 141533,
+      "stars": 141534,
       "pushedAt": "2026-05-16T06:05:44Z",
       "createdAt": "2023-04-12T07:40:24Z",
       "language": "TypeScript"
@@ -213,7 +213,7 @@
       "fullName": "open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
       "url": "https://github.com/open-webui/open-webui",
-      "stars": 137257,
+      "stars": 137258,
       "pushedAt": "2026-05-15T00:34:23Z",
       "createdAt": "2023-10-06T22:08:27Z",
       "language": "Python"
@@ -233,7 +233,7 @@
       "fullName": "firecrawl/firecrawl",
       "description": "🔥 Search, scrape, and clean the web for AI agents.",
       "url": "https://github.com/firecrawl/firecrawl",
-      "stars": 120376,
+      "stars": 120378,
       "pushedAt": "2026-05-15T22:04:57Z",
       "createdAt": "2024-04-15T21:02:29Z",
       "language": "TypeScript"
@@ -253,7 +253,7 @@
       "fullName": "nextlevelbuilder/ui-ux-pro-max-skill",
       "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
       "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 79108,
+      "stars": 79111,
       "pushedAt": "2026-04-03T05:08:19Z",
       "createdAt": "2025-11-30T11:36:31Z",
       "language": "Python"
@@ -273,7 +273,7 @@
       "fullName": "thedotmack/claude-mem",
       "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
       "url": "https://github.com/thedotmack/claude-mem",
-      "stars": 76039,
+      "stars": 76041,
       "pushedAt": "2026-05-15T04:07:15Z",
       "createdAt": "2025-08-31T20:50:03Z",
       "language": "TypeScript"
@@ -283,7 +283,7 @@
       "fullName": "bytedance/deer-flow",
       "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
       "url": "https://github.com/bytedance/deer-flow",
-      "stars": 67932,
+      "stars": 67934,
       "pushedAt": "2026-05-16T01:27:40Z",
       "createdAt": "2025-05-07T02:50:19Z",
       "language": "Python"

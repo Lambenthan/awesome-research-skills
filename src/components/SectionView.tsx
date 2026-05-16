@@ -68,6 +68,13 @@ export function SectionView(props: Props) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="按名称、描述、topic 过滤…"
+            aria-label={
+              section === "skills"
+                ? "Search skills"
+                : section === "reading"
+                  ? "Search articles"
+                  : "Search repositories"
+            }
             className="w-full bg-transparent text-[15px] text-ink placeholder:text-ink-subtle outline-none"
           />
           {query && (

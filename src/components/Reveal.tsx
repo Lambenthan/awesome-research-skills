@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { createElement, useEffect, useRef, useState } from "react";
+import type { ElementType } from "react";
 
 /**
  * Lightweight scroll-reveal wrapper. Wraps any block and fades it in with a
@@ -14,12 +15,12 @@ import { useEffect, useRef, useState } from "react";
 export function Reveal({
   children,
   delay = 0,
-  as: Tag = "div",
+  as = "div",
   className = "",
 }: {
   children: React.ReactNode;
   delay?: number;
-  as?: "div" | "section" | "article" | "li";
+  as?: ElementType;
   className?: string;
 }) {
   const ref = useRef<HTMLElement | null>(null);
@@ -52,17 +53,14 @@ export function Reveal({
     return () => obs.disconnect();
   }, []);
 
-  const style = delay ? { transitionDelay: `${delay}ms` } : undefined;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const Element = Tag as any;
-  return (
-    <Element
-      ref={ref}
-      data-revealed={revealed ? "true" : "false"}
-      className={`reveal ${className}`}
-      style={style}
-    >
-      {children}
-    </Element>
+  return createElement(
+    as,
+    {
+      ref,
+      "data-revealed": revealed ? "true" : "false",
+      className: `reveal ${className}`,
+      style: delay ? { transitionDelay: `${delay}ms` } : undefined,
+    },
+    children,
   );
 }

@@ -23,7 +23,7 @@ export default function LatestPage() {
           <div className="mt-7 grid grid-cols-12 gap-6">
             <div className="col-span-12 sm:col-span-8">
               <Reveal>
-                <p className="eyebrow">Latest · 实时拉取</p>
+                <p className="eyebrow">Latest · 每 6 小时刷新</p>
               </Reveal>
               <Reveal delay={100}>
                 <h1 className="display mt-4 text-[44px] text-ink sm:text-[56px]">
@@ -32,9 +32,10 @@ export default function LatestPage() {
               </Reveal>
               <Reveal delay={220}>
                 <p className="mt-5 max-w-2xl text-[15px] leading-[1.75] text-ink-muted">
-                  打开页面时由你的浏览器直接调用 HackerNews 与 GitHub Search API，
-                  显示 AI 方向最近上 HN 的新闻，与近 60 天内活跃且高 star 的新项目。
-                  15 分钟内重复访问走 localStorage 缓存。
+                  GitHub Actions cron 每 6 小时跑一次抓取脚本，HackerNews 上
+                  最近上榜的 AI 故事（多关键词查询 + 标题过滤）与近 60 天活跃
+                  的高 star AI 项目（按 5 个 topic 分别查询合并）写入静态 JSON，
+                  随构建一起部署。访客读静态文件，不发起任何外部请求。
                 </p>
               </Reveal>
             </div>

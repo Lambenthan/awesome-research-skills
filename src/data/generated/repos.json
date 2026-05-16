@@ -10,15 +10,14 @@
           "name": "opencode",
           "fullName": "anomalyco/opencode",
           "description": "The open source coding agent.",
-          "stars": 160920,
+          "stars": 160934,
           "forks": 18885,
           "language": "TypeScript",
           "url": "https://github.com/anomalyco/opencode",
           "homepage": "https://opencode.ai",
           "topics": [],
           "license": "MIT",
-          "pushedAt": "2026-05-16T05:18:50Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T05:56:50Z"
         },
         {
           "owner": "anthropics",
@@ -32,8 +31,7 @@
           "homepage": "https://code.claude.com/docs/en/overview",
           "topics": [],
           "license": null,
-          "pushedAt": "2026-05-15T22:28:22Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T22:28:22Z"
         },
         {
           "owner": "google-gemini",
@@ -55,8 +53,7 @@
             "mcp-server"
           ],
           "license": "Apache-2.0",
-          "pushedAt": "2026-05-15T23:49:44Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T23:49:44Z"
         },
         {
           "owner": "openai",
@@ -70,8 +67,7 @@
           "homepage": null,
           "topics": [],
           "license": "Apache-2.0",
-          "pushedAt": "2026-05-16T05:14:53Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T05:14:53Z"
         },
         {
           "owner": "cline",
@@ -85,8 +81,7 @@
           "homepage": "https://x.com/cline",
           "topics": [],
           "license": "Apache-2.0",
-          "pushedAt": "2026-05-16T03:19:52Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T03:19:52Z"
         },
         {
           "owner": "AntonOsika",
@@ -109,8 +104,7 @@
             "gpt-engineer"
           ],
           "license": "MIT",
-          "pushedAt": "2025-05-14T10:15:10Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2025-05-14T10:15:10Z"
         },
         {
           "owner": "continuedev",
@@ -133,8 +127,7 @@
             "vs-code-extenstion"
           ],
           "license": "Apache-2.0",
-          "pushedAt": "2026-05-15T23:30:27Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T23:30:27Z"
         },
         {
           "owner": "voideditor",
@@ -157,8 +150,7 @@
             "open-source"
           ],
           "license": "Apache-2.0",
-          "pushedAt": "2026-01-12T09:57:57Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-01-12T09:57:57Z"
         },
         {
           "owner": "anthropics",
@@ -172,8 +164,7 @@
           "homepage": null,
           "topics": [],
           "license": "MIT",
-          "pushedAt": "2026-05-15T22:29:07Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T22:29:07Z"
         },
         {
           "owner": "codestoryai",
@@ -187,8 +178,7 @@
           "homepage": "https://aide.dev",
           "topics": [],
           "license": "AGPL-3.0",
-          "pushedAt": "2025-02-25T08:14:58Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2025-02-25T08:14:58Z"
         },
         {
           "owner": "anthropics",
@@ -202,8 +192,7 @@
           "homepage": null,
           "topics": [],
           "license": null,
-          "pushedAt": "2026-05-15T22:28:23Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T22:28:23Z"
         }
       ]
     },
@@ -233,8 +222,7 @@
             "llama-api"
           ],
           "license": "NOASSERTION",
-          "pushedAt": "2026-05-15T23:43:01Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T23:43:01Z"
         },
         {
           "owner": "langchain-ai",
@@ -257,8 +245,7 @@
             "framework"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-16T02:23:09Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T02:23:09Z"
         },
         {
           "owner": "OpenHands",
@@ -281,8 +268,7 @@
             "llm"
           ],
           "license": "NOASSERTION",
-          "pushedAt": "2026-05-16T02:53:56Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T02:53:56Z"
         },
         {
           "owner": "microsoft",
@@ -305,8 +291,7 @@
             "framework"
           ],
           "license": "CC-BY-4.0",
-          "pushedAt": "2026-04-15T11:59:09Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-04-15T11:59:09Z"
         },
         {
           "owner": "crewAIInc",
@@ -326,8 +311,7 @@
             "llms"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-15T20:05:46Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T20:05:46Z"
         },
         {
           "owner": "run-llama",
@@ -350,8 +334,7 @@
             "multi-agents"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-15T19:35:23Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T19:35:23Z"
         },
         {
           "owner": "anthropics",
@@ -365,8 +348,7 @@
           "homepage": null,
           "topics": [],
           "license": "MIT",
-          "pushedAt": "2026-05-14T17:41:17Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-14T17:41:17Z"
         },
         {
           "owner": "langchain-ai",
@@ -389,8 +371,7 @@
             "gemini"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-16T00:00:30Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T00:00:30Z"
         },
         {
           "owner": "mastra-ai",
@@ -413,8 +394,7 @@
             "nextjs"
           ],
           "license": "NOASSERTION",
-          "pushedAt": "2026-05-16T05:04:23Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T05:04:23Z"
         }
       ]
     },
@@ -444,8 +424,7 @@
             "llama"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-15T23:23:55Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T23:23:55Z"
         },
         {
           "owner": "huggingface",
@@ -468,8 +447,7 @@
             "machine-learning"
           ],
           "license": "Apache-2.0",
-          "pushedAt": "2026-05-15T20:21:30Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T20:21:30Z"
         },
         {
           "owner": "ggml-org",
@@ -485,8 +463,7 @@
             "ggml"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-16T02:21:24Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T02:21:24Z"
         },
         {
           "owner": "vllm-project",
@@ -509,8 +486,7 @@
             "inference"
           ],
           "license": "Apache-2.0",
-          "pushedAt": "2026-05-16T04:46:42Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T04:46:42Z"
         },
         {
           "owner": "mlc-ai",
@@ -529,8 +505,7 @@
             "tvm"
           ],
           "license": "Apache-2.0",
-          "pushedAt": "2026-05-11T22:52:18Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-11T22:52:18Z"
         },
         {
           "owner": "huggingface",
@@ -553,8 +528,7 @@
             "starcoder"
           ],
           "license": "Apache-2.0",
-          "pushedAt": "2026-03-21T11:34:22Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-03-21T11:34:22Z"
         },
         {
           "owner": "lmstudio-ai",
@@ -574,8 +548,7 @@
             "typescript"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-07T17:33:07Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-07T17:33:07Z"
         }
       ]
     },
@@ -604,8 +577,7 @@
             "pdf"
           ],
           "license": "MIT",
-          "pushedAt": "2026-04-20T17:52:20Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-04-20T17:52:20Z"
         },
         {
           "owner": "firecrawl",
@@ -628,8 +600,7 @@
             "html-to-markdown"
           ],
           "license": "AGPL-3.0",
-          "pushedAt": "2026-05-15T22:04:57Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T22:04:57Z"
         },
         {
           "owner": "infiniflow",
@@ -652,8 +623,7 @@
             "llm-apps"
           ],
           "license": "Apache-2.0",
-          "pushedAt": "2026-05-15T14:29:44Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T14:29:44Z"
         },
         {
           "owner": "milvus-io",
@@ -676,8 +646,7 @@
             "faiss"
           ],
           "license": "Apache-2.0",
-          "pushedAt": "2026-05-16T03:27:30Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T03:27:30Z"
         },
         {
           "owner": "qdrant",
@@ -700,8 +669,7 @@
             "machine-learning"
           ],
           "license": "Apache-2.0",
-          "pushedAt": "2026-05-16T01:13:21Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T01:13:21Z"
         },
         {
           "owner": "chroma-core",
@@ -722,8 +690,7 @@
             "rust-lang"
           ],
           "license": "Apache-2.0",
-          "pushedAt": "2026-05-15T22:57:42Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T22:57:42Z"
         },
         {
           "owner": "weaviate",
@@ -746,8 +713,7 @@
             "mlops"
           ],
           "license": "BSD-3-Clause",
-          "pushedAt": "2026-05-16T03:37:25Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T03:37:25Z"
         }
       ]
     },
@@ -777,8 +743,7 @@
             "llm"
           ],
           "license": "NOASSERTION",
-          "pushedAt": "2026-05-16T05:19:20Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T05:19:20Z"
         },
         {
           "owner": "vercel",
@@ -801,8 +766,7 @@
             "llm"
           ],
           "license": "NOASSERTION",
-          "pushedAt": "2026-05-15T23:22:50Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T23:22:50Z"
         },
         {
           "owner": "assistant-ui",
@@ -825,8 +789,7 @@
             "ui-components"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-15T17:42:49Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T17:42:49Z"
         },
         {
           "owner": "Helicone",
@@ -849,8 +812,7 @@
             "llm"
           ],
           "license": "Apache-2.0",
-          "pushedAt": "2026-05-14T22:37:00Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-14T22:37:00Z"
         },
         {
           "owner": "openlit",
@@ -873,8 +835,7 @@
             "langchain"
           ],
           "license": "Apache-2.0",
-          "pushedAt": "2026-05-13T21:22:33Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-13T21:22:33Z"
         }
       ]
     },
@@ -904,8 +865,7 @@
             "ollama-webui"
           ],
           "license": "NOASSERTION",
-          "pushedAt": "2026-05-15T00:34:23Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T00:34:23Z"
         },
         {
           "owner": "lobehub",
@@ -928,8 +888,7 @@
             "gemini"
           ],
           "license": "NOASSERTION",
-          "pushedAt": "2026-05-16T05:01:36Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T05:01:36Z"
         },
         {
           "owner": "danny-avila",
@@ -952,8 +911,7 @@
             "claude"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-15T19:12:43Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T19:12:43Z"
         },
         {
           "owner": "mckaywrigley",
@@ -967,8 +925,7 @@
           "homepage": "https://JoinTakeoff.com",
           "topics": [],
           "license": "MIT",
-          "pushedAt": "2024-08-03T00:38:07Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2024-08-03T00:38:07Z"
         }
       ]
     }
@@ -997,8 +954,7 @@
             "statistics"
           ],
           "license": "BSD-3-Clause",
-          "pushedAt": "2026-05-15T17:21:24Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T17:21:24Z"
         },
         {
           "owner": "pandas-dev",
@@ -1019,8 +975,7 @@
             "python"
           ],
           "license": "BSD-3-Clause",
-          "pushedAt": "2026-05-15T23:52:07Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T23:52:07Z"
         },
         {
           "owner": "pola-rs",
@@ -1043,8 +998,7 @@
             "rust"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-15T19:18:31Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T19:18:31Z"
         },
         {
           "owner": "numpy",
@@ -1061,8 +1015,7 @@
             "python"
           ],
           "license": "NOASSERTION",
-          "pushedAt": "2026-05-16T00:02:14Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T00:02:14Z"
         },
         {
           "owner": "apache",
@@ -1079,8 +1032,7 @@
             "parquet"
           ],
           "license": "Apache-2.0",
-          "pushedAt": "2026-05-16T01:33:11Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T01:33:11Z"
         },
         {
           "owner": "scipy",
@@ -1100,8 +1052,7 @@
             "scipy"
           ],
           "license": "BSD-3-Clause",
-          "pushedAt": "2026-05-15T23:06:41Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T23:06:41Z"
         },
         {
           "owner": "dask",
@@ -1123,8 +1074,7 @@
             "scipy"
           ],
           "license": "BSD-3-Clause",
-          "pushedAt": "2026-05-14T21:18:18Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-14T21:18:18Z"
         }
       ]
     },
@@ -1153,8 +1103,7 @@
             "shapley"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-13T19:40:36Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-13T19:40:36Z"
         },
         {
           "owner": "pymc-devs",
@@ -1176,8 +1125,7 @@
             "variational-inference"
           ],
           "license": "NOASSERTION",
-          "pushedAt": "2026-05-13T08:39:43Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-13T08:39:43Z"
         },
         {
           "owner": "py-why",
@@ -1200,8 +1148,7 @@
             "graphical-models"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-16T01:53:21Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T01:53:21Z"
         },
         {
           "owner": "interpretml",
@@ -1224,8 +1171,7 @@
             "explainable-ml"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-16T03:46:39Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T03:46:39Z"
         },
         {
           "owner": "py-why",
@@ -1246,8 +1192,7 @@
             "treatment-effects"
           ],
           "license": "NOASSERTION",
-          "pushedAt": "2026-04-27T18:45:46Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-04-27T18:45:46Z"
         },
         {
           "owner": "sebp",
@@ -1266,8 +1211,7 @@
             "survival-analysis"
           ],
           "license": "GPL-3.0",
-          "pushedAt": "2026-04-07T04:16:54Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-04-07T04:16:54Z"
         },
         {
           "owner": "bambinos",
@@ -1288,8 +1232,7 @@
             "statistical-modeling"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-16T02:14:57Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T02:14:57Z"
         }
       ]
     },
@@ -1319,8 +1262,7 @@
             "tk"
           ],
           "license": null,
-          "pushedAt": "2026-05-16T03:42:42Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T03:42:42Z"
         },
         {
           "owner": "bokeh",
@@ -1343,8 +1285,7 @@
             "plots"
           ],
           "license": "BSD-3-Clause",
-          "pushedAt": "2026-05-15T20:19:12Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T20:19:12Z"
         },
         {
           "owner": "plotly",
@@ -1367,8 +1308,7 @@
             "plotly-dash"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-15T21:11:04Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T21:11:04Z"
         },
         {
           "owner": "mwaskom",
@@ -1388,8 +1328,7 @@
             "python"
           ],
           "license": "BSD-3-Clause",
-          "pushedAt": "2026-01-22T13:03:07Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-01-22T13:03:07Z"
         },
         {
           "owner": "vega",
@@ -1403,8 +1342,7 @@
           "homepage": "https://altair-viz.github.io/",
           "topics": [],
           "license": "BSD-3-Clause",
-          "pushedAt": "2026-05-12T16:57:51Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-12T16:57:51Z"
         },
         {
           "owner": "vega",
@@ -1427,8 +1365,7 @@
             "visualization-grammar"
           ],
           "license": "BSD-3-Clause",
-          "pushedAt": "2026-05-08T18:11:26Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-08T18:11:26Z"
         }
       ]
     },
@@ -1458,8 +1395,7 @@
             "python"
           ],
           "license": "NOASSERTION",
-          "pushedAt": "2026-05-11T15:23:07Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-11T15:23:07Z"
         },
         {
           "owner": "scverse",
@@ -1482,8 +1418,7 @@
             "transcriptomics"
           ],
           "license": "BSD-3-Clause",
-          "pushedAt": "2026-05-15T16:18:41Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T16:18:41Z"
         },
         {
           "owner": "scverse",
@@ -1506,8 +1441,7 @@
             "single-cell-rna-seq"
           ],
           "license": "BSD-3-Clause",
-          "pushedAt": "2026-05-14T07:12:31Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-14T07:12:31Z"
         },
         {
           "owner": "deeptools",
@@ -1528,8 +1462,7 @@
             "rna-seq"
           ],
           "license": "NOASSERTION",
-          "pushedAt": "2025-07-23T08:37:22Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2025-07-23T08:37:22Z"
         },
         {
           "owner": "scverse",
@@ -1551,8 +1484,7 @@
             "transcriptomics"
           ],
           "license": "BSD-3-Clause",
-          "pushedAt": "2026-05-15T15:23:44Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T15:23:44Z"
         },
         {
           "owner": "nf-core",
@@ -1575,8 +1507,7 @@
             "workflow"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-15T05:27:51Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T05:27:51Z"
         }
       ]
     },
@@ -1606,8 +1537,7 @@
             "presentation"
           ],
           "license": "GPL-2.0",
-          "pushedAt": "2026-05-15T13:26:21Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T13:26:21Z"
         },
         {
           "owner": "quarto-dev",
@@ -1621,8 +1551,7 @@
           "homepage": "https://quarto.org",
           "topics": [],
           "license": "NOASSERTION",
-          "pushedAt": "2026-05-15T19:36:46Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T19:36:46Z"
         },
         {
           "owner": "rstudio",
@@ -1644,8 +1573,7 @@
             "rmarkdown"
           ],
           "license": "GPL-3.0",
-          "pushedAt": "2026-05-06T00:04:30Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-06T00:04:30Z"
         },
         {
           "owner": "citation-style-language",
@@ -1666,8 +1594,7 @@
             "hacktoberfest"
           ],
           "license": null,
-          "pushedAt": "2026-05-15T10:06:45Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T10:06:45Z"
         },
         {
           "owner": "rstudio",
@@ -1688,8 +1615,7 @@
             "rmarkdown"
           ],
           "license": "NOASSERTION",
-          "pushedAt": "2026-04-21T16:01:42Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-04-21T16:01:42Z"
         },
         {
           "owner": "manubot",
@@ -1711,8 +1637,7 @@
             "python"
           ],
           "license": "NOASSERTION",
-          "pushedAt": "2026-01-01T15:17:14Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-01-01T15:17:14Z"
         }
       ]
     },
@@ -1742,8 +1667,7 @@
             "streamlit"
           ],
           "license": "Apache-2.0",
-          "pushedAt": "2026-05-16T03:01:27Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-16T03:01:27Z"
         },
         {
           "owner": "gradio-app",
@@ -1766,8 +1690,7 @@
             "interface"
           ],
           "license": "Apache-2.0",
-          "pushedAt": "2026-05-15T16:08:38Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T16:08:38Z"
         },
         {
           "owner": "marimo-team",
@@ -1790,8 +1713,7 @@
             "notebooks"
           ],
           "license": "Apache-2.0",
-          "pushedAt": "2026-05-15T07:16:04Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T07:16:04Z"
         },
         {
           "owner": "jupyterlab",
@@ -1808,8 +1730,7 @@
             "jupyterlab"
           ],
           "license": "BSD-3-Clause",
-          "pushedAt": "2026-05-15T18:58:44Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T18:58:44Z"
         },
         {
           "owner": "jupyter",
@@ -1828,8 +1749,7 @@
             "notebook"
           ],
           "license": "BSD-3-Clause",
-          "pushedAt": "2026-05-13T09:13:49Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-13T09:13:49Z"
         },
         {
           "owner": "nteract",
@@ -1852,8 +1772,7 @@
             "publishing"
           ],
           "license": "BSD-3-Clause",
-          "pushedAt": "2026-05-12T21:34:28Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-12T21:34:28Z"
         }
       ]
     },
@@ -1874,8 +1793,7 @@
           "homepage": "https://www.zotero.org",
           "topics": [],
           "license": "NOASSERTION",
-          "pushedAt": "2026-05-13T18:41:37Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-13T18:41:37Z"
         },
         {
           "owner": "retorquere",
@@ -1896,8 +1814,7 @@
             "zotero"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-11T13:12:12Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-11T13:12:12Z"
         },
         {
           "owner": "JabRef",
@@ -1920,8 +1837,7 @@
             "citation-generator"
           ],
           "license": "MIT",
-          "pushedAt": "2026-05-15T21:45:01Z",
-          "_source": "cache-fresh"
+          "pushedAt": "2026-05-15T21:45:01Z"
         }
       ]
     }
