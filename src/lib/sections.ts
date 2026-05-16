@@ -1,7 +1,12 @@
-import type { ReposData, SkillCategory, RepoGroup } from "./types";
-import { repos, skills } from "./data";
+import type {
+  ArticleCategory,
+  ReposData,
+  SkillCategory,
+  RepoGroup,
+} from "./types";
+import { articles, repos, skills } from "./data";
 
-export type SectionId = "skills" | "ai" | "research";
+export type SectionId = "skills" | "ai" | "research" | "reading";
 
 export type SectionMeta = {
   id: SectionId;
@@ -26,7 +31,7 @@ export const SECTION_META: Record<SectionId, SectionMeta> = {
     eyebrow: "AI Open Source",
     title: "AI 方向的高星开源项目",
     blurb:
-      "Agent 框架、模型推理、RAG 检索、对话 UI——按方向归组、按 star 排序，更新于每日构建。",
+      "Agent 框架、模型推理、RAG 检索、对话 UI、编码 agent——按方向归组，按 star 排序，每日构建刷新数据。",
   },
   research: {
     id: "research",
@@ -36,12 +41,23 @@ export const SECTION_META: Record<SectionId, SectionMeta> = {
     blurb:
       "数据科学、统计因果、可视化、生信单细胞、写作发表、Notebook、文献管理——研究每个阶段都能找到对应的开源工具。",
   },
+  reading: {
+    id: "reading",
+    href: "/reading",
+    eyebrow: "Reading",
+    title: "Agent 与 LLM 的真东西",
+    blurb:
+      "Anthropic、Google DeepMind、OpenAI、Antigravity 等一手研究/工程长文，与社区里少数说人话的 LLM 工程指南。",
+  },
 };
 
-export function getSectionGroups(section: SectionId): SkillCategory[] | RepoGroup[] {
+export function getSectionGroups(
+  section: SectionId,
+): SkillCategory[] | RepoGroup[] | ArticleCategory[] {
   if (section === "skills") return skills;
   if (section === "ai") return repos.ai;
-  return repos.research;
+  if (section === "research") return repos.research;
+  return articles;
 }
 
 export function getCategory(section: SectionId, slug: string) {
@@ -54,8 +70,4 @@ export function getSectionCount(section: SectionId): number {
   return groups.reduce((n, g) => n + g.items.length, 0);
 }
 
-export function isSkillSection(section: SectionId): section is "skills" {
-  return section === "skills";
-}
-
-export const ALL_SECTIONS: SectionId[] = ["skills", "ai", "research"];
+export const ALL_SECTIONS: SectionId[] = ["skills", "ai", "research", "reading"];

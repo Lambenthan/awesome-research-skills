@@ -13,8 +13,8 @@ export function NavBar() {
         >
           Awesome Research Skills
         </Link>
-        <nav className="hidden items-baseline gap-8 sm:flex">
-          {(["skills", "ai", "research"] as const).map((id) => (
+        <nav className="hidden items-baseline gap-7 sm:flex">
+          {(["skills", "ai", "research", "reading"] as const).map((id) => (
             <Link
               key={id}
               href={SECTION_META[id].href}

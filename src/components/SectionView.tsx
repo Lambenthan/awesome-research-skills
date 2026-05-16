@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import type {
+  ArticleCategory,
+  ArticleItem,
   RepoGroup,
   SkillCategory,
   SkillItem,
@@ -10,11 +12,13 @@ import type {
 } from "@/lib/types";
 import { SkillCard } from "./SkillCard";
 import { RepoCard } from "./RepoCard";
+import { ArticleCard } from "./ArticleCard";
 import type { SectionId } from "@/lib/sections";
 
 type Props =
   | { section: "skills"; basePath: string; groups: SkillCategory[] }
-  | { section: "ai" | "research"; basePath: string; groups: RepoGroup[] };
+  | { section: "ai" | "research"; basePath: string; groups: RepoGroup[] }
+  | { section: "reading"; basePath: string; groups: ArticleCategory[] };
 
 export function SectionView(props: Props) {
   const { section, basePath, groups } = props;
@@ -24,22 +28,32 @@ export function SectionView(props: Props) {
   const lowerQ = query.trim().toLowerCase();
 
   const filtered = useMemo(() => {
+    const inActive = (id: string) => activeCat === "all" || activeCat === id;
     if (section === "skills") {
       return (groups as SkillCategory[])
-        .filter((c) => activeCat === "all" || activeCat === c.id)
+        .filter((c) => inActive(c.id))
         .map((c) => ({
           ...c,
-          items: c.items.filter((item) =>
-            matchSkill(item, lowerQ),
-          ) as SkillItem[],
+          items: c.items.filter((it) => matchSkill(it, lowerQ)) as SkillItem[],
+        }))
+        .filter((c) => c.items.length > 0);
+    }
+    if (section === "reading") {
+      return (groups as ArticleCategory[])
+        .filter((c) => inActive(c.id))
+        .map((c) => ({
+          ...c,
+          items: c.items.filter((it) =>
+            matchArticle(it, lowerQ),
+          ) as ArticleItem[],
         }))
         .filter((c) => c.items.length > 0);
     }
     return (groups as RepoGroup[])
-      .filter((g) => activeCat === "all" || activeCat === g.id)
+      .filter((g) => inActive(g.id))
       .map((g) => ({
         ...g,
-        items: g.items.filter((item) => matchRepo(item, lowerQ)) as RepoItem[],
+        items: g.items.filter((it) => matchRepo(it, lowerQ)) as RepoItem[],
       }))
       .filter((g) => g.items.length > 0);
   }, [section, groups, lowerQ, activeCat]);
@@ -86,7 +100,16 @@ export function SectionView(props: Props) {
       </div>
 
       {filtered.length === 0 ? (
-        <EmptyState what={section === "skills" ? "skill" : "项目"} hint={lowerQ} />
+        <EmptyState
+          what={
+            section === "skills"
+              ? "skill"
+              : section === "reading"
+                ? "article"
+                : "项目"
+          }
+          hint={lowerQ}
+        />
       ) : (
         <div className="space-y-14">
           {filtered.map((g) => (
@@ -102,9 +125,13 @@ export function SectionView(props: Props) {
                   ? (g.items as SkillItem[]).map((it) => (
                       <SkillCard key={it.slug + it.repo} item={it} />
                     ))
-                  : (g.items as RepoItem[]).map((it) => (
-                      <RepoCard key={it.fullName} item={it} />
-                    ))}
+                  : section === "reading"
+                    ? (g.items as ArticleItem[]).map((it) => (
+                        <ArticleCard key={it.url} item={it} />
+                      ))
+                    : (g.items as RepoItem[]).map((it) => (
+                        <RepoCard key={it.fullName} item={it} />
+                      ))}
               </div>
             </section>
           ))}
@@ -121,6 +148,12 @@ function matchSkill(item: SkillItem, q: string) {
 function matchRepo(item: RepoItem, q: string) {
   if (!q) return true;
   return `${item.fullName} ${item.description ?? ""} ${(item.topics ?? []).join(" ")}`
+    .toLowerCase()
+    .includes(q);
+}
+function matchArticle(item: ArticleItem, q: string) {
+  if (!q) return true;
+  return `${item.title} ${item.blurb ?? ""} ${item.source}`
     .toLowerCase()
     .includes(q);
 }
@@ -163,10 +196,7 @@ function SectionHeader({
   return (
     <div className="mb-5 flex items-baseline justify-between gap-4 border-b border-rule pb-3">
       <div>
-        <Link
-          href={href}
-          className="group inline-flex items-baseline gap-3"
-        >
+        <Link href={href} className="group inline-flex items-baseline gap-3">
           <h2 className="font-serif text-[22px] leading-tight text-ink transition group-hover:text-ember">
             {label}
           </h2>
@@ -193,9 +223,7 @@ function EmptyState({ what, hint }: { what: string; hint: string }) {
         没有匹配的{what}
         {hint ? (
           <>
-            （&ldquo;
-            <span className="font-mono text-ink">{hint}</span>
-            &rdquo;）
+            （&ldquo;<span className="font-mono text-ink">{hint}</span>&rdquo;）
           </>
         ) : null}
         。
@@ -204,5 +232,4 @@ function EmptyState({ what, hint }: { what: string; hint: string }) {
   );
 }
 
-// Suppress unused parameter ts hint for the section discriminator
 export type { SectionId };

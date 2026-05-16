@@ -35,6 +35,7 @@ const projectRoot = path.resolve(__dirname, "..");
 
 const FEATURED_SKILLS = path.join(projectRoot, "content", "featured-skills.yml");
 const FEATURED_REPOS = path.join(projectRoot, "content", "featured-repos.yml");
+const FEATURED_ARTICLES = path.join(projectRoot, "content", "featured-articles.yml");
 const OUT_DIR = path.join(projectRoot, "src", "data", "generated");
 const CACHE_DIR = path.join(projectRoot, "scripts", ".cache");
 const REPO_CACHE_FILE = path.join(CACHE_DIR, "github.json");
@@ -336,10 +337,47 @@ async function extractRepos() {
   return result;
 }
 
+async function extractArticles() {
+  // Articles are static curated entries — no network fetch, just YAML → JSON.
+  try {
+    const config = await readYaml(FEATURED_ARTICLES);
+    const categories = config.categories || [];
+    const out = categories.map((c) => ({
+      id: c.id,
+      label: c.label,
+      summary: c.summary || "",
+      items: (c.items || []).map((it) => ({
+        title: it.title,
+        url: it.url,
+        source: it.source,
+        // YAML auto-parses dates to Date objects; keep ISO YYYY-MM-DD format.
+        date:
+          it.date instanceof Date
+            ? it.date.toISOString().slice(0, 10)
+            : it.date,
+        blurb: it.blurb,
+      })),
+    }));
+    const total = out.reduce((n, c) => n + c.items.length, 0);
+    console.log(`  articles: ${total} across ${out.length} categories`);
+    return out;
+  } catch (err) {
+    if (err.code === "ENOENT") {
+      console.log("  articles: featured-articles.yml not present, skipping");
+      return [];
+    }
+    throw err;
+  }
+}
+
 async function main() {
   console.log("extract-content: fetching public skills + GitHub repos");
   await fs.mkdir(OUT_DIR, { recursive: true });
-  const [skills, repos] = await Promise.all([extractSkills(), extractRepos()]);
+  const [skills, repos, articles] = await Promise.all([
+    extractSkills(),
+    extractRepos(),
+    extractArticles(),
+  ]);
   await fs.writeFile(
     path.join(OUT_DIR, "skills.json"),
     JSON.stringify(skills, null, 2),
@@ -347,6 +385,10 @@ async function main() {
   await fs.writeFile(
     path.join(OUT_DIR, "repos.json"),
     JSON.stringify(repos, null, 2),
+  );
+  await fs.writeFile(
+    path.join(OUT_DIR, "articles.json"),
+    JSON.stringify(articles, null, 2),
   );
   await fs.writeFile(
     path.join(OUT_DIR, "meta.json"),

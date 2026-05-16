@@ -89,11 +89,163 @@ body {
   border: 1px solid var(--color-rule);
   border-radius: 4px;
   transition:
-    background 200ms ease,
-    border-color 200ms ease,
-    transform 200ms ease;
+    background 220ms ease,
+    border-color 220ms ease,
+    transform 220ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 220ms ease;
+  will-change: transform;
 }
 .card:hover {
   background: var(--color-cream-elevated);
   border-color: var(--color-rule-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -16px rgba(20, 20, 19, 0.12);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Motion — scroll reveal + Anthropic-style bouncing ball.
+   All motion respects prefers-reduced-motion (handled in component + the
+   media query at the bottom).
+   ───────────────────────────────────────────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 720ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 720ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal[data-revealed="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Bouncing-ball container — fixed viewport overlay, no pointer events. */
+.ball-stage {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+
+/* Nested transform stack so each axis owns one CSS transform. */
+.ball-x {
+  --bs: 80px;
+  --bx: -120px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--bs);
+  height: var(--bs);
+  animation: 3s 350ms both ball-move-x;
+  will-change: transform;
+}
+.ball-y {
+  --by: -120px;
+  width: 100%;
+  height: 100%;
+  animation: 3s 350ms both ball-move-y;
+}
+.ball-spin {
+  width: 100%;
+  height: 100%;
+  animation: 2s 350ms linear infinite ball-spin;
+}
+.ball-pucker {
+  width: 100%;
+  height: 100%;
+}
+.ball-pucker[data-pucker="true"] {
+  animation: 500ms cubic-bezier(0.55, 0, 1, 0.45) forwards ball-pucker;
+}
+.ball-visual {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    color-mix(in oklab, var(--color-ember) 100%, white 18%),
+    var(--color-ember) 60%,
+    color-mix(in oklab, var(--color-ember) 75%, black 8%) 100%
+  );
+  box-shadow: 0 18px 30px -16px rgba(193, 95, 60, 0.45);
+}
+
+@keyframes ball-move-x {
+  0% {
+    transform: translateX(var(--bx));
+    animation-timing-function: ease-out;
+  }
+  42% {
+    transform: translateX(calc(100vw - var(--bs) - 10px));
+    animation-timing-function: linear;
+  }
+  74% {
+    transform: translateX(10px);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translateX(calc(50vw - var(--bs) / 2));
+  }
+}
+@keyframes ball-move-y {
+  0% {
+    transform: translateY(var(--by));
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 1);
+  }
+  42% {
+    transform: translateY(calc(100vh - var(--bs) - 8vh));
+    animation-timing-function: cubic-bezier(0, 0, 0.45, 1);
+  }
+  57% {
+    transform: translateY(60vh);
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 1);
+  }
+  74% {
+    transform: translateY(calc(100vh - var(--bs) - 5vh));
+    animation-timing-function: cubic-bezier(0, 0, 0.45, 1);
+  }
+  84% {
+    transform: translateY(75vh);
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 1);
+  }
+  100% {
+    transform: translateY(calc(100vh - var(--bs) - 7vh));
+  }
+}
+@keyframes ball-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ball-pucker {
+  0% {
+    transform: scale(1);
+    animation-timing-function: ease-in-out;
+  }
+  50% {
+    transform: scale(0.78);
+    animation-timing-function: cubic-bezier(0, 0, 0.1, 1);
+  }
+  100% {
+    transform: scale(1.18);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .ball-stage {
+    display: none;
+  }
+  .card,
+  .card:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }

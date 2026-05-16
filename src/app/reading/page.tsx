@@ -3,12 +3,12 @@ import { NavBar } from "@/components/NavBar";
 import { Reveal } from "@/components/Reveal";
 import { SectionView } from "@/components/SectionView";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { repos } from "@/lib/data";
+import { articles } from "@/lib/data";
 import { SECTION_META } from "@/lib/sections";
 
-export default function AiIndex() {
-  const meta = SECTION_META.ai;
-  const total = repos.ai.reduce((n, g) => n + g.items.length, 0);
+export default function ReadingIndex() {
+  const meta = SECTION_META.reading;
+  const total = articles.reduce((n, c) => n + c.items.length, 0);
   return (
     <div className="flex min-h-screen flex-col">
       <NavBar />
@@ -34,13 +34,16 @@ export default function AiIndex() {
                 </p>
               </Reveal>
             </div>
-            <Reveal delay={180} className="col-span-12 sm:col-span-4 sm:text-right">
+            <Reveal
+              delay={180}
+              className="col-span-12 sm:col-span-4 sm:text-right"
+            >
               <p className="eyebrow">In total</p>
               <p className="mt-2 font-serif text-[48px] leading-none text-ink">
                 {total}
               </p>
               <p className="mt-1 eyebrow text-ink-subtle">
-                repos · {repos.ai.length} categories
+                articles · {articles.length} categories
               </p>
             </Reveal>
           </div>
@@ -48,7 +51,11 @@ export default function AiIndex() {
       </section>
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-12">
-        <SectionView section="ai" basePath={meta.href} groups={repos.ai} />
+        <SectionView
+          section="reading"
+          basePath={meta.href}
+          groups={articles}
+        />
       </main>
 
       <Footer />

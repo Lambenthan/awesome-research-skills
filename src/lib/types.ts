@@ -43,6 +43,21 @@ export type ReposData = {
   research: RepoGroup[];
 };
 
+export type ArticleItem = {
+  title: string;
+  url: string;
+  source: string;
+  date?: string;
+  blurb?: string;
+};
+
+export type ArticleCategory = {
+  id: string;
+  label: string;
+  summary: string;
+  items: ArticleItem[];
+};
+
 export type Meta = {
   builtAt: string;
 };

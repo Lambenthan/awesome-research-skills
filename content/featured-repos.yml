@@ -8,22 +8,35 @@
 # whatever cached data exists, or marks it as `fetchFailed`).
 
 ai:
-  - id: agent-frameworks
-    label: Agent 框架
-    summary: 多智能体、工作流编排、自主任务执行。
+  - id: coding-agents
+    label: 编码 Agent / Dev Tooling
+    summary: 终端、IDE 和 CLI 形态的编码智能体；近一年密集发布、高速增长的方向。
     repos:
       - anthropics/claude-code
-      - anthropics/anthropic-cookbook
+      - cline/cline
+      - openai/codex
+      - sst/opencode
+      - google-gemini/gemini-cli
+      - voideditor/void
+      - continuedev/continue
+      - codestoryai/aide
+      - AntonOsika/gpt-engineer
+      - anthropics/claude-agent-sdk-typescript
       - anthropics/claude-agent-sdk-python
+
+  - id: agent-frameworks
+    label: Agent 框架
+    summary: 多智能体、工作流编排、自主任务执行的通用框架。
+    repos:
+      - anthropics/anthropic-cookbook
       - microsoft/autogen
       - langchain-ai/langchain
       - langchain-ai/langgraph
       - crewAIInc/crewAI
       - All-Hands-AI/OpenHands
       - Significant-Gravitas/AutoGPT
-      - AntonOsika/gpt-engineer
-      - cline/cline
-      - continuedev/continue
+      - mastra-ai/mastra
+      - run-llama/llama_index
 
   - id: model-runtime
     label: 模型推理与部署
@@ -39,14 +52,25 @@ ai:
 
   - id: rag-retrieval
     label: RAG 与检索
-    summary: 文档问答、向量库、检索增强生成。
+    summary: 文档问答、向量库、检索增强生成、web 抓取。
     repos:
-      - run-llama/llama_index
       - chroma-core/chroma
       - qdrant/qdrant
       - milvus-io/milvus
       - weaviate/weaviate
       - infiniflow/ragflow
+      - mendableai/firecrawl
+      - microsoft/markitdown
+
+  - id: dev-toolkits
+    label: SDK 与开发工具
+    summary: 跨模型路由、构建 AI 应用的高层 SDK、observability。
+    repos:
+      - vercel/ai
+      - BerriAI/litellm
+      - assistant-ui/assistant-ui
+      - Helicone/helicone
+      - openlit/openlit
 
   - id: chat-ui
     label: 对话 UI
@@ -132,4 +156,4 @@ research:
     repos:
       - zotero/zotero
       - retorquere/zotero-better-bibtex
-      - inukshuk/jabref
+      - JabRef/jabref
