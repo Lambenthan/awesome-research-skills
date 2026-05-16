@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { NoteItem } from "@/lib/types";
+import { asset } from "@/lib/asset";
 
 export function NoteRow({
   item,
@@ -24,12 +24,12 @@ export function NoteRow({
         </div>
         <div className="col-span-4 sm:col-span-3">
           <div className="relative aspect-[1/1.414] overflow-hidden rounded-sm border border-rule bg-cream-elevated">
-            <Image
-              src={item.cover}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={asset(item.cover)}
               alt={item.title}
-              fill
-              sizes="(min-width: 640px) 220px, 40vw"
-              className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </div>
         </div>

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { NoteItem } from "@/lib/types";
+import { asset } from "@/lib/asset";
 
 export function NoteCard({
   item,
@@ -12,12 +12,12 @@ export function NoteCard({
   return (
     <Link href={href} className="card group flex h-full flex-col p-5">
       <div className="relative aspect-[1/1.414] w-full overflow-hidden rounded-sm border border-rule bg-cream-elevated">
-        <Image
-          src={item.cover}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={asset(item.cover)}
           alt={item.title}
-          fill
-          sizes="(min-width: 1024px) 320px, (min-width: 640px) 45vw, 90vw"
-          className="object-cover object-top"
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover object-top"
         />
       </div>
       <div className="mt-4 flex items-baseline justify-between gap-3">

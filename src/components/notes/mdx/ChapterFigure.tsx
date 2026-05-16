@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 export function ChapterFigure({
   src,
@@ -16,11 +16,13 @@ export function ChapterFigure({
   return (
     <figure className="my-10">
       <div className="overflow-hidden rounded-sm border border-rule bg-cream-elevated">
-        <Image
-          src={src}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={asset(src)}
           alt={alt}
           width={width}
           height={height}
+          loading="lazy"
           className="h-auto w-full"
         />
       </div>

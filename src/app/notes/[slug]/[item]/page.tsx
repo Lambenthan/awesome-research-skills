@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/Footer";
@@ -8,6 +7,7 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { notes } from "@/lib/data";
 import { SECTION_META, allItemParams } from "@/lib/sections";
 import { getChaptersForItem } from "@/lib/chapters";
+import { asset } from "@/lib/asset";
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -89,13 +89,11 @@ export default async function NoteItemPage({ params }: { params: Params }) {
                 aria-label={`在浏览器中打开 ${note.title} PDF`}
               >
                 <div className="relative aspect-[1/1.414] overflow-hidden rounded-sm border border-rule-strong bg-cream-elevated shadow-[0_18px_40px_-28px_rgba(20,20,19,0.45)] transition-transform duration-300 hover:scale-[1.01]">
-                  <Image
-                    src={note.cover}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={asset(note.cover)}
                     alt={`${note.title} 封面`}
-                    fill
-                    priority
-                    sizes="(min-width: 640px) 400px, 90vw"
-                    className="object-cover object-top"
+                    className="absolute inset-0 h-full w-full object-cover object-top"
                   />
                 </div>
               </a>
