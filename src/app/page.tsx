@@ -13,69 +13,92 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="border-b border-stone-200 bg-white">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-5">
-          <div>
-            <h1 className="text-lg font-semibold tracking-tight text-stone-900">
+      <header className="border-b border-rule">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-6 py-5">
+          <a href="/" className="group inline-flex items-baseline gap-2">
+            <span className="font-serif text-[19px] italic leading-none text-ink">
               Awesome Research Skills
-            </h1>
-            <p className="text-sm text-stone-500">
-              科研向 Claude Code skill 与开源项目的集散地
-            </p>
-          </div>
+            </span>
+          </a>
           <a
             href={REPO_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-sm text-stone-700 transition hover:border-stone-400"
+            className="eyebrow transition hover:text-ink"
           >
-            GitHub
+            GitHub →
           </a>
         </div>
       </header>
 
-      <section className="border-b border-stone-200 bg-gradient-to-b from-white to-stone-50">
-        <div className="mx-auto max-w-6xl px-6 py-10">
-          <p className="max-w-2xl text-base leading-relaxed text-stone-700">
-            收录三类资源：来自公开 GitHub 仓库的 Claude Code skill、
-            AI 方向高星开源项目，以及科研生产力工具仓库。
-            每张 skill 卡片都直链到{" "}
-            <a
-              href="https://skills.sh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-indigo-600 hover:underline"
-            >
-              skills.sh
-            </a>{" "}
-            和原始 GitHub 目录，方便你看一眼 SKILL.md 再决定要不要装。
+      <section className="border-b border-rule">
+        <div className="mx-auto max-w-6xl px-6 pt-20 pb-16">
+          <p className="eyebrow">公开来源 · An awesome list</p>
+          <h1 className="display mt-5 text-[44px] text-ink sm:text-6xl md:text-[72px]">
+            为科研挑出来的 <em>skill</em>
+            <br />
+            与<em>开源项目</em>。
+          </h1>
+          <p className="mt-7 max-w-xl text-[15px] leading-[1.7] text-ink-muted">
+            来自 <span className="font-mono text-[13px] text-ink">anthropics/skills</span>、
+            <span className="font-mono text-[13px] text-ink">obra/superpowers</span>
+            等公开仓库的 Claude Code skill，加上 AI 与科研方向的高星开源项目。
+            每张卡片直链 skills.sh 详情页与 GitHub 源目录，
+            看一眼 SKILL.md 再决定要不要装。
           </p>
-          <div className="mt-6 flex flex-wrap gap-x-8 gap-y-2 text-sm text-stone-600">
-            <span>
-              <strong className="text-stone-900">{totalSkills}</strong> 个 skill
-            </span>
-            <span>
-              <strong className="text-stone-900">{totalAi}</strong> 个 AI 项目
-            </span>
-            <span>
-              <strong className="text-stone-900">{totalResearch}</strong>{" "}
-              个科研工具
-            </span>
-            <span className="text-stone-400">数据构建于 {buildDate}</span>
-          </div>
         </div>
       </section>
 
-      <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-8">
+      <section className="border-b border-rule bg-cream-surface/40">
+        <div className="mx-auto max-w-6xl px-6 py-5">
+          <dl className="flex flex-wrap items-baseline gap-x-12 gap-y-3">
+            <Stat label="Skills" value={totalSkills} />
+            <Stat label="AI repos" value={totalAi} />
+            <Stat label="Research tools" value={totalResearch} />
+            <div className="ml-auto eyebrow">
+              Updated <span className="text-ink">{buildDate}</span>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <main className="mx-auto w-full max-w-6xl flex-1 px-6 pt-10 pb-20">
         <Browser skills={skills} repos={repos} />
       </main>
 
-      <footer className="border-t border-stone-200 bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-6 text-xs text-stone-500">
-          内容白名单见仓库 <code className="font-mono">content/featured-skills.yml</code> 与{" "}
-          <code className="font-mono">content/featured-repos.yml</code>。
+      <footer className="border-t border-rule">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-6">
+          <p className="eyebrow">
+            白名单 ·{" "}
+            <span className="font-mono normal-case tracking-normal text-ink-muted">
+              content/featured-skills.yml
+            </span>
+            {" + "}
+            <span className="font-mono normal-case tracking-normal text-ink-muted">
+              content/featured-repos.yml
+            </span>
+          </p>
+          <a
+            href={REPO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="eyebrow transition hover:text-ink"
+          >
+            Source on GitHub →
+          </a>
         </div>
       </footer>
+    </div>
+  );
+}
+
+function Stat({ label, value }: { label: string; value: number }) {
+  return (
+    <div className="flex items-baseline gap-2.5">
+      <span className="font-serif text-[26px] leading-none text-ink">
+        {value}
+      </span>
+      <span className="eyebrow">{label}</span>
     </div>
   );
 }

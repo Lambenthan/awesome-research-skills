@@ -8,9 +8,9 @@ import { RepoCard } from "./RepoCard";
 type Tab = "skills" | "ai" | "research";
 
 const TABS: Array<{ id: Tab; label: string; hint: string }> = [
-  { id: "skills", label: "Claude Code Skills", hint: "本地已装、研究向" },
-  { id: "ai", label: "AI 开源项目", hint: "Agent / LLM / RAG" },
-  { id: "research", label: "科研工具", hint: "数据 / 统计 / 生信 / 写作" },
+  { id: "skills", label: "Claude Code Skills", hint: "公开仓库收录" },
+  { id: "ai", label: "AI Open Source", hint: "Agent · LLM · RAG" },
+  { id: "research", label: "Research Tools", hint: "数据 · 统计 · 生信 · 写作" },
 ];
 
 export function Browser({
@@ -34,7 +34,7 @@ export function Browser({
         ...c,
         items: c.items.filter((item) => {
           if (!lowerQ) return true;
-          const hay = `${item.name} ${item.description}`.toLowerCase();
+          const hay = `${item.name} ${item.description} ${item.repo}`.toLowerCase();
           return hay.includes(lowerQ);
         }),
       }))
@@ -66,8 +66,8 @@ export function Browser({
         }));
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-wrap items-center gap-2 border-b border-stone-200">
+    <div className="space-y-10">
+      <div className="flex flex-wrap items-end gap-x-9 gap-y-2 border-b border-rule">
         {TABS.map((t) => (
           <button
             key={t.id}
@@ -75,51 +75,56 @@ export function Browser({
               setTab(t.id);
               setActiveCat("all");
             }}
-            className={`relative -mb-px px-4 py-2.5 text-sm font-medium transition ${
+            className={`relative -mb-px py-4 text-left transition ${
               tab === t.id
-                ? "border-b-2 border-indigo-600 text-indigo-700"
-                : "border-b-2 border-transparent text-stone-600 hover:text-stone-900"
+                ? "border-b border-ember text-ink"
+                : "border-b border-transparent text-ink-muted hover:text-ink"
             }`}
           >
-            {t.label}
-            <span className="ml-2 hidden text-xs text-stone-400 sm:inline">
+            <span className="text-[15px] font-medium">{t.label}</span>
+            <span className="ml-3 hidden text-[11px] text-ink-subtle sm:inline">
               {t.hint}
             </span>
           </button>
         ))}
       </div>
 
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-        <input
-          type="search"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="搜索名称、描述、topic…"
-          className="w-full rounded-lg border border-stone-300 bg-white px-3.5 py-2 text-sm shadow-sm outline-none transition focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 sm:max-w-md"
-        />
-        <div className="flex flex-wrap gap-1.5">
-          <button
+      <div className="space-y-4">
+        <div className="flex items-center gap-3 border-b border-rule pb-3">
+          <span className="eyebrow shrink-0">Search</span>
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="按名称、描述、topic 过滤…"
+            className="w-full bg-transparent text-[15px] text-ink placeholder:text-ink-subtle outline-none"
+          />
+          {query && (
+            <button
+              onClick={() => setQuery("")}
+              className="eyebrow shrink-0 hover:text-ink"
+              type="button"
+            >
+              Clear
+            </button>
+          )}
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2">
+          <FilterChip
+            active={activeCat === "all"}
             onClick={() => setActiveCat("all")}
-            className={`rounded-full px-3 py-1 text-xs font-medium transition ${
-              activeCat === "all"
-                ? "bg-indigo-600 text-white"
-                : "bg-white text-stone-600 ring-1 ring-stone-200 hover:bg-stone-100"
-            }`}
           >
             全部
-          </button>
+          </FilterChip>
           {categories.map((c) => (
-            <button
+            <FilterChip
               key={c.id}
+              active={activeCat === c.id}
               onClick={() => setActiveCat(c.id)}
-              className={`rounded-full px-3 py-1 text-xs font-medium transition ${
-                activeCat === c.id
-                  ? "bg-indigo-600 text-white"
-                  : "bg-white text-stone-600 ring-1 ring-stone-200 hover:bg-stone-100"
-              }`}
             >
               {c.label}
-            </button>
+            </FilterChip>
           ))}
         </div>
       </div>
@@ -134,6 +139,29 @@ export function Browser({
   );
 }
 
+function FilterChip({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className={`rounded-full border px-3 py-1 text-[12px] transition ${
+        active
+          ? "border-ember bg-ember-tint text-ember"
+          : "border-rule text-ink-muted hover:border-rule-strong hover:text-ink"
+      }`}
+    >
+      {children}
+    </button>
+  );
+}
+
 function SkillSections({
   groups,
   emptyHint,
@@ -142,25 +170,16 @@ function SkillSections({
   emptyHint: string;
 }) {
   if (groups.length === 0) {
-    return (
-      <p className="rounded-xl border border-dashed border-stone-300 bg-white p-8 text-center text-sm text-stone-500">
-        没有匹配的 skill{emptyHint ? `（"${emptyHint}"）` : ""}。
-      </p>
-    );
+    return <EmptyState what="skill" hint={emptyHint} />;
   }
   return (
-    <div className="space-y-10">
+    <div className="space-y-14">
       {groups.map((g) => (
         <section key={g.id}>
-          <div className="mb-3">
-            <h2 className="text-lg font-semibold text-stone-900">{g.label}</h2>
-            {g.summary && (
-              <p className="mt-1 text-sm text-stone-500">{g.summary}</p>
-            )}
-          </div>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <SectionHeader label={g.label} summary={g.summary} count={g.items.length} />
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {g.items.map((item) => (
-              <SkillCard key={item.slug} item={item} />
+              <SkillCard key={`${g.id}-${item.slug}`} item={item} />
             ))}
           </div>
         </section>
@@ -177,29 +196,63 @@ function RepoSections({
   emptyHint: string;
 }) {
   if (groups.length === 0) {
-    return (
-      <p className="rounded-xl border border-dashed border-stone-300 bg-white p-8 text-center text-sm text-stone-500">
-        没有匹配的项目{emptyHint ? `（"${emptyHint}"）` : ""}。
-      </p>
-    );
+    return <EmptyState what="项目" hint={emptyHint} />;
   }
   return (
-    <div className="space-y-10">
+    <div className="space-y-14">
       {groups.map((g) => (
         <section key={g.id}>
-          <div className="mb-3">
-            <h2 className="text-lg font-semibold text-stone-900">{g.label}</h2>
-            {g.summary && (
-              <p className="mt-1 text-sm text-stone-500">{g.summary}</p>
-            )}
-          </div>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <SectionHeader label={g.label} summary={g.summary} count={g.items.length} />
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {g.items.map((item) => (
               <RepoCard key={item.fullName} item={item} />
             ))}
           </div>
         </section>
       ))}
+    </div>
+  );
+}
+
+function SectionHeader({
+  label,
+  summary,
+  count,
+}: {
+  label: string;
+  summary?: string;
+  count: number;
+}) {
+  return (
+    <div className="mb-5 flex items-baseline justify-between gap-4 border-b border-rule pb-3">
+      <div>
+        <h2 className="font-serif text-[22px] leading-tight text-ink">
+          {label}
+        </h2>
+        {summary && (
+          <p className="mt-1 max-w-2xl text-[13.5px] leading-relaxed text-ink-muted">
+            {summary}
+          </p>
+        )}
+      </div>
+      <span className="eyebrow shrink-0">{count} items</span>
+    </div>
+  );
+}
+
+function EmptyState({ what, hint }: { what: string; hint: string }) {
+  return (
+    <div className="border border-dashed border-rule py-16 text-center">
+      <p className="eyebrow">No match</p>
+      <p className="mt-3 text-[15px] text-ink-muted">
+        没有匹配的{what}
+        {hint ? (
+          <>
+            （&ldquo;<span className="font-mono text-ink">{hint}</span>&rdquo;）
+          </>
+        ) : null}
+        。
+      </p>
     </div>
   );
 }

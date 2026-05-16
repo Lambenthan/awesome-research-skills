@@ -2,39 +2,39 @@ import type { SkillItem } from "@/lib/types";
 
 export function SkillCard({ item }: { item: SkillItem }) {
   return (
-    <article className="group rounded-xl border border-stone-200 bg-white p-5 transition hover:border-indigo-300 hover:shadow-sm">
+    <article className="card group flex h-full flex-col p-6">
       <a
         href={item.skillsShUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="block"
+        className="flex flex-1 flex-col"
       >
-        <div className="mb-1 flex items-baseline justify-between gap-2">
-          <h3 className="font-mono text-sm font-semibold text-stone-900 group-hover:text-indigo-700">
-            {item.name}
-          </h3>
-        </div>
-        <p className="mb-2 font-mono text-xs text-stone-400">{item.repo}</p>
-        <p className="line-clamp-4 text-sm leading-relaxed text-stone-600">
+        <h3 className="font-serif text-[19px] leading-tight text-ink transition group-hover:text-ember">
+          {item.name}
+        </h3>
+        <p className="mt-1 font-mono text-[11px] text-ink-subtle">
+          {item.repo}
+        </p>
+        <p className="mt-3 line-clamp-5 text-[13.5px] leading-[1.65] text-ink-muted">
           {item.description || "—"}
         </p>
       </a>
-      <div className="mt-3 flex gap-3 text-xs">
+      <div className="mt-5 flex items-center justify-between border-t border-rule pt-3">
         <a
           href={item.skillsShUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-indigo-600 hover:underline"
+          className="eyebrow-strong text-ember transition hover:text-ink"
         >
-          skills.sh ↗
+          skills.sh →
         </a>
         <a
           href={item.githubUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-stone-600 hover:underline"
+          className="eyebrow transition hover:text-ink"
         >
-          GitHub ↗
+          GitHub →
         </a>
       </div>
     </article>

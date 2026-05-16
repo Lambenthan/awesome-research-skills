@@ -2,55 +2,55 @@ import type { RepoItem } from "@/lib/types";
 
 function formatStars(n?: number) {
   if (n === undefined || n === null) return "—";
-  if (n >= 1000) return `${(n / 1000).toFixed(1)}k`;
+  if (n >= 1000) return `${(n / 1000).toFixed(n >= 10000 ? 0 : 1)}k`;
   return String(n);
 }
 
 export function RepoCard({ item }: { item: RepoItem }) {
   if (item.fetchFailed) {
     return (
-      <article className="rounded-xl border border-dashed border-stone-300 bg-stone-50 p-5">
-        <div className="font-mono text-sm text-stone-700">{item.fullName}</div>
-        <p className="mt-1 text-xs text-stone-500">
+      <article className="border border-dashed border-rule p-6">
+        <div className="font-mono text-[13px] text-ink-muted">
+          {item.fullName}
+        </div>
+        <p className="mt-2 text-[12.5px] text-ink-subtle">
           GitHub 数据抓取失败，可能是限频或仓库已删除。
         </p>
       </article>
     );
   }
   const url = item.url || `https://github.com/${item.fullName}`;
+  const [owner, name] = item.fullName.split("/");
   return (
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block rounded-xl border border-stone-200 bg-white p-5 transition hover:border-indigo-300 hover:shadow-sm"
+      className="card group flex h-full flex-col p-6"
     >
-      <div className="mb-2 flex items-start justify-between gap-3">
-        <h3 className="font-mono text-sm font-semibold text-stone-900 group-hover:text-indigo-700">
-          {item.fullName}
+      <div className="flex items-start justify-between gap-3">
+        <h3 className="font-mono text-[13.5px] leading-snug text-ink transition group-hover:text-ember">
+          <span className="text-ink-subtle">{owner}/</span>
+          <span className="font-medium">{name}</span>
         </h3>
-        <span className="shrink-0 text-xs font-medium text-amber-700">
+        <span className="shrink-0 font-serif text-[15px] leading-none text-ember">
           ★ {formatStars(item.stars)}
         </span>
       </div>
-      <p className="line-clamp-3 text-sm leading-relaxed text-stone-600">
+      <p className="mt-3 line-clamp-4 text-[13.5px] leading-[1.65] text-ink-muted">
         {item.description || "—"}
       </p>
-      <div className="mt-3 flex flex-wrap gap-1.5">
+      <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-rule pt-3">
         {item.language && (
-          <span className="rounded-full bg-stone-100 px-2 py-0.5 text-xs text-stone-700">
-            {item.language}
-          </span>
+          <span className="eyebrow">{item.language}</span>
         )}
         {item.license && (
-          <span className="rounded-full bg-stone-100 px-2 py-0.5 text-xs text-stone-700">
-            {item.license}
-          </span>
+          <span className="eyebrow text-ink-subtle">{item.license}</span>
         )}
-        {(item.topics ?? []).slice(0, 3).map((topic) => (
+        {(item.topics ?? []).slice(0, 2).map((topic) => (
           <span
             key={topic}
-            className="rounded-full bg-indigo-50 px-2 py-0.5 text-xs text-indigo-700"
+            className="rounded-full border border-rule px-2 py-0.5 text-[10.5px] text-ink-muted"
           >
             {topic}
           </span>

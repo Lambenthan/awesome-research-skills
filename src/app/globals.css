@@ -1,26 +1,99 @@
 @import "tailwindcss";
 
-:root {
-  --background: #fafaf9;
-  --foreground: #1c1917;
-  --accent: #4338ca;
+@theme {
+  /* Anthropic-flavor cream / black / ember palette */
+  --color-cream: #f5f4ed;
+  --color-cream-surface: #fafaf7;
+  --color-cream-elevated: #ffffff;
+  --color-cream-hover: #efece2;
+
+  --color-ink: #141413;
+  --color-ink-muted: #5e5b54;
+  --color-ink-subtle: #908d83;
+
+  --color-rule: #e3dfd2;
+  --color-rule-strong: #c8c4b5;
+
+  --color-ember: #c15f3c;
+  --color-ember-soft: #d8826a;
+  --color-ember-tint: rgba(193, 95, 60, 0.08);
+
+  /* Typography: editorial serif + characterful sans + matched mono */
+  --font-serif:
+    var(--font-fraunces), "Songti SC", "STSong", Georgia, serif;
+  --font-sans:
+    var(--font-geist), -apple-system, BlinkMacSystemFont, "PingFang SC",
+    "Hiragino Sans GB", sans-serif;
+  --font-mono:
+    var(--font-geist-mono), ui-monospace, "SF Mono", "JetBrains Mono",
+    monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family:
-    -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
-    "Microsoft YaHei", sans-serif;
-  font-feature-settings: "kern", "liga";
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  letter-spacing: -0.005em;
+  font-feature-settings: "kern", "ss01", "cv11";
 }
 
 ::selection {
-  background: rgba(67, 56, 202, 0.18);
+  background: rgba(193, 95, 60, 0.22);
+  color: var(--color-ink);
+}
+
+/* Editorial display headline — uses Fraunces with full optical sizing. */
+.display {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 144;
+  letter-spacing: -0.024em;
+  line-height: 1.04;
+  font-weight: 450;
+}
+
+.display em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144;
+  font-weight: 400;
+  color: var(--color-ember);
+}
+
+/* Eyebrow / smallcaps label, used for metadata and section headers */
+.eyebrow {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+  font-size: 10.5px;
+  color: var(--color-ink-subtle);
+}
+
+.eyebrow-strong {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--color-ink);
+}
+
+/* Hairline divider that picks up rule color. */
+.rule {
+  border-color: var(--color-rule);
+}
+
+/* Card shell — used by skill + repo cards alike. */
+.card {
+  background: var(--color-cream-surface);
+  border: 1px solid var(--color-rule);
+  border-radius: 4px;
+  transition:
+    background 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
+}
+.card:hover {
+  background: var(--color-cream-elevated);
+  border-color: var(--color-rule-strong);
 }
