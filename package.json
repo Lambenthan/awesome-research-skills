@@ -9,6 +9,7 @@
     "extract-aigclink": "node scripts/extract-aigclink.mjs",
     "fetch-og-images": "node scripts/fetch-og-images.mjs",
     "score-feed": "node scripts/score-and-tag.mjs",
+    "prune-feed-detail": "node scripts/prune-feed-detail.mjs",
     "fill-cn": "node scripts/fill-cn.mjs",
     "predev": "npm run extract",
     "prebuild": "npm run extract",
