@@ -41,13 +41,35 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Two-pass build for cron: extract once → fill any missing cn via
-      # GH Models → let prebuild's extract pick up the new cn → build.
-      # On push triggers we skip fill-cn (push doesn't add items, just
-      # changes site code), so build runs straight through.
+      # Cron uses a multi-pass pipeline:
+      #   1. extract  — produce skills/repos/articles JSON so fill-cn has
+      #      input to score against
+      #   2. extract-feed — pull 8 lab feeds (RSS + HTML + headless chromium)
+      #      into feed-raw.json
+      #   3. score-feed — call OpenRouter deepseek-v4-flash to score/tag/
+      #      cn-write each item incrementally; new ids only
+      #   4. fill-cn — generate cn for newly-discovered curated items
+      #   5. build — prebuild re-runs extract, merging feed-scored.json
+      #      into latest.json's rss[] field
+      # On push triggers we skip the cron-only steps (push changes site
+      # code, not data sources), so build runs straight through.
       - name: Initial extract for fill-cn input
         if: github.event_name == 'schedule'
         run: npm run extract
+
+      - name: Install Playwright chromium
+        if: github.event_name == 'schedule'
+        run: npx playwright install --with-deps chromium
+
+      - name: Extract lab feeds
+        if: github.event_name == 'schedule'
+        run: npm run extract-feed
+
+      - name: Score and tag lab feed items
+        if: github.event_name == 'schedule'
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: npm run score-feed
 
       - name: Fill missing cn (cron only)
         if: github.event_name == 'schedule'
@@ -71,6 +93,8 @@ jobs:
             scripts/star-history.json \
             src/data/generated/latest.json \
             src/data/generated/repos.json \
+            src/data/generated/feed-raw.json \
+            src/data/generated/feed-scored.json \
             content/cn-summaries.yml
           if git diff --cached --quiet; then
             echo "No data changes to commit"

@@ -1,5 +1,5 @@
 import { latest } from "@/lib/data";
-import type { HnItem, LatestRepo } from "@/lib/types";
+import type { HnItem, LatestRepo, LatestRss } from "@/lib/types";
 
 /**
  * Renders the latest snapshot built by scripts/extract-content.mjs at CI
@@ -11,6 +11,9 @@ export function LatestFeed() {
   const fetchedAt = latest.fetchedAt;
   const hn = latest.hn;
   const gh = latest.gh;
+  const rss = latest.rss ?? [];
+
+  const total = hn.length + gh.length + rss.length;
 
   return (
     <div className="space-y-12">
@@ -23,18 +26,37 @@ export function LatestFeed() {
             </span>
           )}
         </div>
-        <span className="eyebrow text-ink-subtle">
-          {hn.length + gh.length} items
-        </span>
+        <span className="eyebrow text-ink-subtle">{total} items</span>
       </div>
 
-      {hn.length === 0 && gh.length === 0 && (
+      {total === 0 && (
         <div className="border border-dashed border-rule p-8 text-center">
           <p className="eyebrow">No data yet</p>
           <p className="mt-3 text-[14px] text-ink-muted">
             首次部署后等下一次 cron 跑完（最多 6 小时）就有内容了。
           </p>
         </div>
+      )}
+
+      {rss.length > 0 && (
+        <section>
+          <div className="mb-5 flex items-baseline justify-between border-b border-rule pb-3">
+            <h2 className="font-serif text-[22px] leading-tight text-ink">
+              厂商一手发布 <em className="text-ember">· lab feed</em>
+            </h2>
+            <span className="eyebrow">{rss.length} items</span>
+          </div>
+          <p className="mb-6 max-w-3xl text-[13px] leading-[1.7] text-ink-muted">
+            来自 OpenAI、Anthropic、DeepMind、Google AI、NVIDIA、Mistral、Meta AI、xAI
+            的官方公告。每条由 deepseek-v4-flash 打分（1–5）、归类并写中文导读，
+            分数 &lt; 3 的运营动态已过滤掉。
+          </p>
+          <ul className="grid grid-cols-1 gap-x-10 gap-y-7 lg:grid-cols-2">
+            {rss.map((it) => (
+              <RssRow key={it.id} item={it} />
+            ))}
+          </ul>
+        </section>
       )}
 
       <div className="grid grid-cols-1 gap-x-12 gap-y-12 lg:grid-cols-2">
@@ -76,10 +98,42 @@ export function LatestFeed() {
         <code className="font-mono text-[11px] text-ink-muted">
           scripts/extract-content.mjs
         </code>{" "}
-        从 HackerNews Algolia 与 GitHub Search API 抓取，commit
-        回仓库后随构建一起部署。访客 0 外部请求。
+        与{" "}
+        <code className="font-mono text-[11px] text-ink-muted">
+          scripts/extract-feed.mjs
+        </code>{" "}
+        从 HackerNews Algolia、GitHub Search 与 8 家 AI lab 一手发布源抓取，过
+        LLM 打分归类后 commit 回仓库随构建部署。访客 0 外部请求。
       </p>
     </div>
+  );
+}
+
+function RssRow({ item }: { item: LatestRss }) {
+  const when = item.publishedAt ?? item.discoveredAt;
+  return (
+    <li>
+      <a
+        href={item.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group block"
+      >
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <span className="eyebrow-strong text-ember">{item.sourceName}</span>
+          <span className="eyebrow">{item.category}</span>
+          <span className="text-[11px] text-ink-subtle">{timeAgo(when)}</span>
+        </div>
+        <h3 className="mt-2 font-serif text-[17px] leading-snug text-ink transition group-hover:text-ember">
+          {item.title}
+        </h3>
+        {item.cn && (
+          <p className="mt-2 line-clamp-4 text-[13.5px] leading-[1.75] text-ink-muted">
+            {item.cn}
+          </p>
+        )}
+      </a>
+    </li>
   );
 }
 

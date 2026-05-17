@@ -408,9 +408,10 @@ async function extractRepos(cn) {
  */
 async function fetchLatest() {
   const outPath = path.join(OUT_DIR, "latest.json");
-  let previous = { fetchedAt: null, hn: [], gh: [] };
+  let previous = { fetchedAt: null, hn: [], gh: [], rss: [] };
   try {
     previous = JSON.parse(await fs.readFile(outPath, "utf8"));
+    if (!previous.rss) previous.rss = [];
   } catch {
     /* fine — first run */
   }
@@ -419,7 +420,7 @@ async function fetchLatest() {
     return previous;
   }
 
-  const out = { fetchedAt: new Date().toISOString(), hn: [], gh: [] };
+  const out = { fetchedAt: new Date().toISOString(), hn: [], gh: [], rss: [] };
 
   // HackerNews — Algolia's advancedSyntax `OR` operator returns very few
   // results once combined with numericFilters. More reliable: run one
@@ -521,13 +522,46 @@ async function fetchLatest() {
     console.warn(`  latest: GH ${err.message}`);
   }
 
-  // If both sources failed, fall back to previous snapshot rather than
+  // Lab feeds — read scored output produced by scripts/score-and-tag.mjs.
+  // The scorer runs independently (it depends on OPENROUTER_API_KEY); this
+  // step only consumes whatever is already on disk.
+  try {
+    const scoredPath = path.join(OUT_DIR, "feed-scored.json");
+    const scored = JSON.parse(await fs.readFile(scoredPath, "utf8"));
+    out.rss = (scored.items ?? [])
+      .filter((it) => typeof it.score === "number" && it.score >= 3)
+      .slice(0, 60)
+      .map((it) => ({
+        id: it.id,
+        source: it.source,
+        sourceName: it.sourceName,
+        title: it.title,
+        url: it.url,
+        summary: it.summary || "",
+        category: it.category,
+        score: it.score,
+        cn: it.cn || "",
+        publishedAt: it.publishedAt,
+        discoveredAt: it.discoveredAt,
+      }));
+  } catch {
+    out.rss = previous.rss ?? [];
+  }
+
+  // If all sources failed, fall back to previous snapshot rather than
   // emptying the page.
-  if (out.hn.length === 0 && out.gh.length === 0 && previous.fetchedAt) {
-    console.log("  latest: both sources empty, keeping previous snapshot");
+  if (
+    out.hn.length === 0 &&
+    out.gh.length === 0 &&
+    out.rss.length === 0 &&
+    previous.fetchedAt
+  ) {
+    console.log("  latest: all sources empty, keeping previous snapshot");
     return previous;
   }
-  console.log(`  latest: ${out.hn.length} hn + ${out.gh.length} gh`);
+  console.log(
+    `  latest: ${out.hn.length} hn + ${out.gh.length} gh + ${out.rss.length} rss`,
+  );
   return out;
 }
 

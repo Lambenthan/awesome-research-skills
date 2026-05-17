@@ -5,6 +5,7 @@
   "scripts": {
     "extract": "node scripts/extract-content.mjs",
     "extract-feed": "node scripts/extract-feed.mjs",
+    "score-feed": "node scripts/score-and-tag.mjs",
     "fill-cn": "node scripts/fill-cn.mjs",
     "predev": "npm run extract",
     "prebuild": "npm run extract",

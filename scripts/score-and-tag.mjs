@@ -1,0 +1,405 @@
+#!/usr/bin/env node
+/**
+ * Score, tag, and write Chinese 导读 for items in feed-raw.json.
+ *
+ * One prompt per item returns a JSON object:
+ *
+ *   { "score": 1..5, "category": "<one of 18>", "cn": "<80–180 chars>" }
+ *
+ * Items with score >= MIN_SCORE (default 3) are kept. Output is written to
+ * src/data/generated/feed-scored.json. Already-scored items are skipped on
+ * subsequent runs (keyed by stable id), so cron can run incrementally.
+ *
+ * Auth: OPENROUTER_API_KEY env. Model: $OR_MODEL or deepseek/deepseek-v4-flash.
+ *
+ * Modes (CLI flags):
+ *   --overwrite      regenerate all items (ignore existing scored cache)
+ *   --limit N        process at most N items this run
+ *   --concurrency N  parallel requests (default 8)
+ *   --min-score N    minimum score to keep (default 3)
+ *   --dry-run        log each result, do not write file
+ */
+
+import { promises as fs } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const projectRoot = path.resolve(__dirname, "..");
+
+const RAW_FILE = path.join(projectRoot, "src/data/generated/feed-raw.json");
+const OUT_FILE = path.join(projectRoot, "src/data/generated/feed-scored.json");
+
+const OPENROUTER_KEY = process.env.OPENROUTER_API_KEY;
+const ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
+const MODEL = process.env.OR_MODEL || "deepseek/deepseek-v4-flash";
+
+const CATEGORIES = [
+  "大模型",
+  "图像模型",
+  "视频生成模型",
+  "3D",
+  "世界模型",
+  "Agent",
+  "编程工具",
+  "浏览器自动化",
+  "TTS",
+  "ASR",
+  "UI生成",
+  "设计",
+  "知识库",
+  "skill",
+  "安全",
+  "训练",
+  "评测",
+  "其他",
+];
+
+// ─────────────────────────────────────────────────────────────────────────
+// System prompt — JSON output, scoring rubric, category list, plus the cn
+// red lines (verbatim from book-writing-default, adapted to a one-paragraph
+// 80–180 char summary).
+// ─────────────────────────────────────────────────────────────────────────
+const SYSTEM_PROMPT = `你是一个 AI 资讯目录站的编辑，正在给厂商一手公告打分、归类、并写 80–180 字中文导读。
+
+# 输出格式（严格 JSON，不要 markdown 代码块）
+
+{
+  "score": 1-5 的整数,
+  "category": "下方列表里的一项中文标签",
+  "cn": "80-180 字中文导读，一段散文"
+}
+
+# 评分规则 (score)
+
+5 = 新模型发布、重大产品发布、关键基础设施发布、决定性研究突破
+4 = 重要功能/能力更新、有显著技术含量的研究、影响面广的工具发布
+3 = 有信息量的工具/SDK/API 更新、可落地的应用案例、生态合作
+2 = 一般产品更新、企业合作、地区扩展、运营动态
+1 = 公关、品牌活动、招聘、HR、政策表态、无技术含量
+
+# 分类标签 (category)，必须从下面 18 项里选一个
+
+${CATEGORIES.join(" / ")}
+
+判断要点：模型新版本/能力突破 → 大模型；文生图/编辑模型 → 图像模型；文生视频 → 视频生成模型；
+NeRF/3DGS/三维重建 → 3D；可交互的虚拟环境/物理世界生成 → 世界模型；
+agent 框架/多智能体 → Agent；编程 copilot/CLI/IDE → 编程工具；browser-use 这类 → 浏览器自动化；
+语音合成 → TTS；语音识别 → ASR；HTML/UI 生成 → UI生成；设计工具 → 设计；
+向量库/RAG → 知识库；Claude Code skill 类 → skill；安全/对齐 → 安全；
+训练框架/数据集 → 训练；benchmark/榜单 → 评测；以上都对不上 → 其他。
+
+# 中文导读规则（cn 字段）
+
+每写完一段都要逐条 grep 自检；命中任何一条立即重写。
+
+## 严禁的句式与词
+
+- 严禁"不是 A 而是 B"句式（含变体："不是 A，是 B"、"并非 A，而是 B"、"这不是 X"）
+- 严禁"至少三类/两件事/三件事"等数字量词引导段落
+- 严禁 itemize / 列表（一段散文，不分行不列点）
+- 严禁"值得注意的是 / 综上所述 / 用一句话说 / 不难发现 / 显然 / 由此可见 / 我们可以看到"
+- 严禁"这不是 X / 这并非 X"否定前置
+- 一段最多 1 个破折号
+- 严禁渲染词："活生生 / 翻车 / 玄学 / 惊人的 / 伟大的"
+- 严禁戏剧形容："戏剧性 / 命运 / 奇迹 / 灵魂 / 核心本质 / 入场券 / 第一刀"
+- 严禁隐喻动词："押注 / 保险绳 / 工具箱 / 账本 / 地图 / 导航 / 救命"
+- 严禁"通过 X 实现 Y / 借助 X 完成 Y / 利用 X 进行 Y"动宾倒装
+- 严禁"特别适合 / 尤其适合 / 特别针对 / 特别擅长"——"特别 +" 是 AI 写中文最高发的口癖
+- 严禁"全方位 / 全场景 / 全流程 / 一站式 / 开箱即用 / 完整工作流 / 成熟的 / 主流的 / 专业的 / 高效"
+- 严禁"强大的 / 颠覆性 / 革命性 / 完美 / 灵魂 / 核心本质"
+- 严禁"带你 / 教你 / 讲清 / 玩转 / 速览 / 一文读懂"
+- 严禁中文夹全角括号注释（"前 X，简称 Y" 这样自然融入）
+- 严禁"涵盖 / 覆盖 / 集成 / 整合 / 支持"开头接 5+ 个并列名词的"报菜名"句
+
+## 必须做
+
+- 直接陈述：项目名做主语，第三人称
+- 英文专名保留：Claude / GPT / Anthropic / MCP / RAG / LLM / agent / skill / API / SDK
+- 80–180 个中文字符（少于 60 太敷衍，多于 220 太长）
+- 一段散文，不分行不列点
+- 抓最重要的一两个事实，不复读英文摘要
+
+# 注意
+
+只输出一个 JSON 对象。不要解释、不要 markdown 围栏、不要前缀。`;
+
+// ─────────────────────────────────────────────────────────────────────────
+// Red-line validators — applied to cn field only, matching fill-cn.mjs rules.
+// ─────────────────────────────────────────────────────────────────────────
+const RED_LINES = [
+  { name: "不是A而是B", re: /不是[^。，；]{1,40}(?:而是|，是)/ },
+  { name: "并非而是", re: /并非[^。，；]{1,40}而是/ },
+  { name: "这不是/这并非开头", re: /(?:^|[。；])\s*这不是|(?:^|[。；])\s*这并非/ },
+  { name: "数字量词清单", re: /(?:至少|有)[一二三四五六七八九十两][类件个种点项条种]/ },
+  { name: "X阶段X步式", re: /[一二三四五六七八九十两][阶层段步]/ },
+  { name: "数字+功能/能力/场景", re: /[一二三四五六七八九十两](?:大|个|种|类)(?:核心)?(?:功能|能力|场景|模块|特性|优势|步骤|流程)/ },
+  { name: "AI套话", re: /值得注意的是|不容忽视|不难发现|综上所述|由此可见|易得|一言以蔽之|用一句话说|我们可以看到/ },
+  { name: "营销词", re: /强大的|颠覆性|革命性|全方位|全场景|全流程|一站式|开箱即用|易用|易于使用|核心本质|灵魂|完美|完整工作流|高效/ },
+  { name: "成熟/主流形容", re: /成熟(?:的|工具链|库)|主流(?:的|工具|方案)|专业(?:的|工具|方案|级)/ },
+  { name: "特别+", re: /特别(?:适合|强调|针对|擅长|适用|关注)|尤其(?:适合|擅长|适用)/ },
+  { name: "动宾倒装AI句", re: /通过[^。，；]{1,30}(?:实现|完成|提供|支持)|借助[^。，；]{1,30}(?:实现|完成)|利用[^。，；]{1,30}(?:进行|完成|实现)/ },
+  { name: "渲染词", re: /活生生|翻车|玄学|惊人的|伟大的|乍一看/ },
+  { name: "戏剧形容", re: /戏剧性|命运|奇迹|脆弱处|入场券|第一刀|桥梁/ },
+  { name: "隐喻动词", re: /押注|押对|押错|保险绳|工具箱|账本|地图|导航|救命/ },
+  { name: "口语动词", re: /带你|教你|讲完|讲清|搞懂|玩转|手把手|轻松搞定/ },
+  { name: "速通词", re: /速览|一文读懂|极简指南|三分钟看懂/ },
+  { name: "AI 营销开头", re: /^本(?:项目|工具|产品|模型|框架|skill)(?:提供|实现|支持|帮助你|让你)|^该(?:项目|工具|产品|模型|框架|skill)(?:提供|实现|支持)/ },
+  { name: "全角括号注释", re: /[一-鿿]\s*[（(][A-Za-z][^()）]{0,30}[)）]/ },
+];
+
+function validateCn(text) {
+  const hits = [];
+  for (const { name, re } of RED_LINES) if (re.test(text)) hits.push(name);
+  const charCount = [...text.replace(/\s+/g, "")].length;
+  if (charCount < 60) hits.push(`too-short(${charCount})`);
+  if (charCount > 240) hits.push(`too-long(${charCount})`);
+  if ((text.match(/——/g) || []).length > 1) hits.push("too-many-dashes");
+  return hits;
+}
+
+// ─────────────────────────────────────────────────────────────────────────
+// Argv
+// ─────────────────────────────────────────────────────────────────────────
+const argv = new Map();
+for (let i = 2; i < process.argv.length; i++) {
+  const a = process.argv[i];
+  if (a.startsWith("--")) {
+    const k = a.slice(2);
+    const next = process.argv[i + 1];
+    if (!next || next.startsWith("--")) argv.set(k, true);
+    else {
+      argv.set(k, next);
+      i++;
+    }
+  }
+}
+const OVERWRITE = !!argv.get("overwrite");
+const LIMIT = argv.get("limit") ? parseInt(argv.get("limit"), 10) : Infinity;
+const CONCURRENCY = argv.get("concurrency")
+  ? parseInt(argv.get("concurrency"), 10)
+  : 8;
+const MIN_SCORE = argv.get("min-score")
+  ? parseInt(argv.get("min-score"), 10)
+  : 3;
+const DRY_RUN = !!argv.get("dry-run");
+
+// ─────────────────────────────────────────────────────────────────────────
+// LLM call
+// ─────────────────────────────────────────────────────────────────────────
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+function stripFences(text) {
+  return text
+    .replace(/^\s*```(?:json)?\s*\n?/i, "")
+    .replace(/\n?```\s*$/, "")
+    .trim();
+}
+
+function buildPrompt(item) {
+  const parts = [
+    `[来源]: ${item.sourceName} (${item.source})`,
+    `[标题]: ${item.title}`,
+  ];
+  if (item.category) parts.push(`[原分类标签]: ${item.category}`);
+  if (item.publishedAt) parts.push(`[发布时间]: ${item.publishedAt.slice(0, 10)}`);
+  if (item.summary) parts.push(`[原英文摘要]: ${item.summary}`);
+  parts.push(`[URL]: ${item.url}`);
+  parts.push("");
+  parts.push("按系统提示的 JSON schema 输出。");
+  return parts.join("\n");
+}
+
+async function callModel(messages, attempt = 0) {
+  if (!OPENROUTER_KEY) throw new Error("OPENROUTER_API_KEY env not set");
+  const res = await fetch(ENDPOINT, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${OPENROUTER_KEY}`,
+      "Content-Type": "application/json",
+      "HTTP-Referer": "https://lambenthan.github.io/field-notes/",
+      "X-Title": "Field Notes feed scorer",
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      messages,
+      temperature: 0.3,
+      max_tokens: 600,
+      response_format: { type: "json_object" },
+    }),
+  });
+  if (res.status === 429 || res.status === 503) {
+    const wait = Number(res.headers.get("retry-after") || "10");
+    await sleep(wait * 1000);
+    if (attempt < 3) return callModel(messages, attempt + 1);
+    throw new Error(`gave up after ${res.status} retries`);
+  }
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`HTTP ${res.status}: ${body.slice(0, 240)}`);
+  }
+  const json = await res.json();
+  return json.choices?.[0]?.message?.content?.trim() ?? "";
+}
+
+function parseJson(raw) {
+  const cleaned = stripFences(raw);
+  // tolerate trailing commas / stray text outside the object
+  const m = cleaned.match(/\{[\s\S]*\}/);
+  if (!m) throw new Error("no JSON object in response");
+  return JSON.parse(m[0]);
+}
+
+async function scoreOne(item) {
+  const messages = [
+    { role: "system", content: SYSTEM_PROMPT },
+    { role: "user", content: buildPrompt(item) },
+  ];
+  let raw = await callModel(messages);
+  let parsed;
+  try {
+    parsed = parseJson(raw);
+  } catch (e) {
+    throw new Error(`JSON parse failed: ${e.message} | raw: ${raw.slice(0, 200)}`);
+  }
+  const score = Math.max(1, Math.min(5, parseInt(parsed.score, 10) || 1));
+  const category = CATEGORIES.includes(parsed.category) ? parsed.category : "其他";
+  let cn = String(parsed.cn || "").trim();
+
+  // Validate cn; one stricter retry on red-line hit.
+  let hits = validateCn(cn);
+  if (hits.length > 0) {
+    const retryMsg = `上次输出违反规则：${hits.join("、")}。请重写 cn 字段，严格遵守系统提示中的红线规则，其它字段保持。再次输出完整 JSON。`;
+    const raw2 = await callModel([
+      ...messages,
+      { role: "assistant", content: raw },
+      { role: "user", content: retryMsg },
+    ]);
+    try {
+      const parsed2 = parseJson(raw2);
+      cn = String(parsed2.cn || cn).trim();
+      hits = validateCn(cn);
+    } catch {
+      /* keep first cn, will be logged */
+    }
+  }
+  return { score, category, cn, cnHits: hits };
+}
+
+// ─────────────────────────────────────────────────────────────────────────
+// Orchestration
+// ─────────────────────────────────────────────────────────────────────────
+
+async function runPool(items, worker, concurrency) {
+  const results = new Array(items.length);
+  let i = 0;
+  async function next() {
+    while (true) {
+      const idx = i++;
+      if (idx >= items.length) return;
+      try {
+        results[idx] = await worker(items[idx], idx);
+      } catch (err) {
+        results[idx] = { error: err.message };
+      }
+    }
+  }
+  await Promise.all(Array.from({ length: concurrency }, next));
+  return results;
+}
+
+async function main() {
+  const raw = JSON.parse(await fs.readFile(RAW_FILE, "utf8"));
+  let existing = { fetchedAt: null, items: [] };
+  try {
+    existing = JSON.parse(await fs.readFile(OUT_FILE, "utf8"));
+  } catch {
+    /* first run */
+  }
+  const existingById = new Map(existing.items.map((it) => [it.id, it]));
+
+  const toProcess = raw.items.filter(
+    (it) => OVERWRITE || !existingById.has(it.id),
+  );
+  const targets = toProcess.slice(0, LIMIT);
+  console.log(
+    `score-and-tag: ${targets.length} to process (raw=${raw.items.length}, cached=${existingById.size}, overwrite=${OVERWRITE})`,
+  );
+
+  let done = 0;
+  let kept = 0;
+  let dropped = 0;
+  let errored = 0;
+  const failedHits = [];
+
+  const newScored = await runPool(
+    targets,
+    async (item, idx) => {
+      const out = await scoreOne(item);
+      done++;
+      if (out.cnHits.length > 0) failedHits.push({ id: item.id, hits: out.cnHits });
+      if (out.score >= MIN_SCORE) kept++;
+      else dropped++;
+      const tag = out.score >= MIN_SCORE ? "KEEP" : "drop";
+      process.stdout.write(
+        `  [${String(done).padStart(3)}/${targets.length}] ${tag} ${String(out.score)}|${out.category.padEnd(8)} ${item.title.slice(0, 60)}\n`,
+      );
+      if (DRY_RUN) process.stdout.write(`        cn: ${out.cn}\n`);
+      return { ...item, score: out.score, category: out.category, cn: out.cn };
+    },
+    CONCURRENCY,
+  );
+
+  for (const r of newScored) {
+    if (r?.error) {
+      errored++;
+      console.warn(`  ERROR: ${r.error}`);
+    }
+  }
+
+  // Merge: keep existing, add new (drop those below MIN_SCORE).
+  const merged = new Map(existingById);
+  for (const it of newScored) {
+    if (!it || it.error) continue;
+    if (it.score < MIN_SCORE) {
+      merged.delete(it.id); // drop if previously kept but re-scored below threshold
+      continue;
+    }
+    merged.set(it.id, it);
+  }
+
+  // Prune entries whose source item no longer exists in feed-raw.
+  const rawIds = new Set(raw.items.map((i) => i.id));
+  for (const id of [...merged.keys()]) {
+    if (!rawIds.has(id)) merged.delete(id);
+  }
+
+  const items = [...merged.values()].sort((a, b) => {
+    const ad = a.publishedAt ? Date.parse(a.publishedAt) : 0;
+    const bd = b.publishedAt ? Date.parse(b.publishedAt) : 0;
+    if (bd !== ad) return bd - ad;
+    return b.score - a.score;
+  });
+
+  if (!DRY_RUN) {
+    await fs.writeFile(
+      OUT_FILE,
+      JSON.stringify({ fetchedAt: new Date().toISOString(), items }, null, 2),
+    );
+  }
+  console.log(
+    `\nsummary: kept=${kept} dropped=${dropped} errored=${errored} | total in file=${items.length}` +
+      (failedHits.length ? ` | red-line residue on ${failedHits.length} items` : "") +
+      (DRY_RUN ? " (dry-run, no file write)" : ` -> ${path.relative(projectRoot, OUT_FILE)}`),
+  );
+  if (failedHits.length) {
+    console.log("red-line residue details:");
+    for (const f of failedHits) console.log(`  ${f.id}: ${f.hits.join(", ")}`);
+  }
+}
+
+main().catch((err) => {
+  console.error("score-and-tag failed:", err);
+  process.exit(1);
+});

@@ -119,8 +119,23 @@ export type LatestRepo = {
   language: string | null;
 };
 
+export type LatestRss = {
+  id: string;
+  source: string;
+  sourceName: string;
+  title: string;
+  url: string;
+  summary: string;
+  category: string;
+  score: number;
+  cn: string;
+  publishedAt: string | null;
+  discoveredAt: string;
+};
+
 export type LatestSnapshot = {
   fetchedAt: string | null;
   hn: HnItem[];
   gh: LatestRepo[];
+  rss: LatestRss[];
 };
