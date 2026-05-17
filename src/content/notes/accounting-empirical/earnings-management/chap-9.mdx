@@ -1,0 +1,213 @@
+<Introduction>
+- Roychowdhury 2006 的核心思想：管理层不仅能调整会计估计，还能通过真实经营决策影响盈余
+- 三个真实活动代理变量：异常 CFO、异常 PROD、异常 DISEXP，分别对应折扣促销、超产降本、削减可酌情费用
+- 在 Bao 数据上跑通异常 CFO 与异常 PROD（DISEXP 因数据限制省略），与应计型 DA 对照看正交性
+- 解释为什么真实活动盈余管理在 SOX 法案后变得更重要
+</Introduction>
+
+## 应计型 DA 之外的另一种盈余管理
+
+第 3 章到第 8 章的所有方法都建立在会计估计之上：管理层通过应计科目如应收、存货、应付、储备，加上收入确认时点与折旧政策影响当期盈余。这一类操纵在 2002 年 SOX 法案后受到严格审计监控。Cohen 等在大样本研究中发现，SOX 后应计型 DA 显著下降，但真实活动盈余管理，英文称 real earnings management，反而上升。所谓真实活动盈余管理，指的是管理层通过真实经营决策影响盈余，而不是通过会计选择。
+
+<SideNote term="真实活动盈余管理">
+Real Earnings Management。管理层通过真实经营决策（折扣促销、超产、削减研发广告等）而非会计选择来影响当期盈余的操纵方式。与应计型操纵相比，真实活动操纵难以被外部审计发现，但代价是长期价值损失，例如降价促销牺牲未来销售、削减研发牺牲未来产品力。SOX 后真实活动盈余管理在大样本中显著上升。
+</SideNote>
+
+Roychowdhury 把真实活动盈余管理具体化为三类操作。第一类是折扣促销与放宽信用：临近年底降价或加大赊销，把下一年的销售拉到本年。这会导致当期 CFO 异常偏低（更多销售以应收形式存在、销售毛利率下降）。第二类是超量生产：开足产能让单位固定成本摊薄，导致存货上升、单位 COGS 下降、毛利改善。这会让生产成本 PROD = COGS + ΔInv 异常偏高。第三类是削减可酌情费用：研发、广告、销售费用按管理层意愿削减，可酌情费用 DISEXP = R&D + Adv + SG&A 异常偏低，本期利润抬高但牺牲长期价值。
+
+三类操作的方向都是把利润从未来期间挪到当期，但机制完全不同——前者是销售时点操纵、中者是生产规模操纵、后者是费用削减。
+
+## Roychowdhury 模型的定义
+
+<Definition title="Roychowdhury 2006 三个真实活动代理变量">
+对每个 fyear $t$ 跑三个独立的横截面 OLS：
+
+$$
+\frac{\text{CFO}_{it}}{\text{lag\_at}_{it}}
+  = \alpha_t^{C} \cdot \frac{1}{\text{lag\_at}_{it}}
+    + \beta_1^{C} \cdot \frac{\text{Sale}_{it}}{\text{lag\_at}_{it}}
+    + \beta_2^{C} \cdot \frac{\Delta\text{Sale}_{it}}{\text{lag\_at}_{it}}
+    + \varepsilon_{it}^{C}
+$$
+
+$$
+\frac{\text{PROD}_{it}}{\text{lag\_at}_{it}}
+  = \alpha_t^{P} \cdot \frac{1}{\text{lag\_at}_{it}}
+    + \beta_1^{P} \cdot \frac{\text{Sale}_{it}}{\text{lag\_at}_{it}}
+    + \beta_2^{P} \cdot \frac{\Delta\text{Sale}_{it}}{\text{lag\_at}_{it}}
+    + \beta_3^{P} \cdot \frac{\Delta\text{Sale}_{i,t-1}}{\text{lag\_at}_{it}}
+    + \varepsilon_{it}^{P}
+$$
+
+$$
+\frac{\text{DISEXP}_{it}}{\text{lag\_at}_{it}}
+  = \alpha_t^{D} \cdot \frac{1}{\text{lag\_at}_{it}}
+    + \beta_1^{D} \cdot \frac{\text{Sale}_{i,t-1}}{\text{lag\_at}_{it}}
+    + \varepsilon_{it}^{D}
+$$
+
+异常 CFO = $\widehat{\varepsilon}_{it}^{C}$，异常 PROD = $\widehat{\varepsilon}_{it}^{P}$，异常 DISEXP = $\widehat{\varepsilon}_{it}^{D}$。
+
+综合真实活动 EM 代理变量：
+
+$$
+RM_{it} = -\widehat{\varepsilon}_{it}^{C} + \widehat{\varepsilon}_{it}^{P} - \widehat{\varepsilon}_{it}^{D}
+$$
+
+真实活动盈余管理把 CFO 推低、把 PROD 推高、把 DISEXP 推低，因此 RM 的方向设计是负 abnCFO、正 abnPROD、负 abnDISEXP。
+</Definition>
+
+其中 $\text{Sale}_{it}$ 是公司 $i$ 第 $t$ 年的销售、$\Delta\text{Sale}_{it}$ 是销售变化、$\text{Sale}_{i,t-1}$ 是上年销售、$\text{PROD}_{it} = \text{COGS}_{it} + \Delta\text{Inv}_{it}$ 是生产成本、$\text{DISEXP}_{it} = \text{R\&D}_{it} + \text{Adv}_{it} + \text{SG\&A}_{it}$ 是可酌情费用、$\text{lag\_at}_{it}$ 是滞后总资产。
+
+<WhyNote title="Roychowdhury 选择 CFO、PROD、DISEXP 三个变量分别对应三类真实操作的会计后果。">
+CFO 反映销售时点与定价决策对现金流的影响；PROD 反映生产规模决策对成本结构的影响；DISEXP 反映费用削减决策对短期利润的影响。三个变量在销售相同的横截面公司之间应该有稳定的关系，偏离这一关系的部分就是管理层主动调节的结果。
+</WhyNote>
+
+<SideNote term="abnormal CFO">
+Abnormal Operating Cash Flow。给定销售水平下，实际 CFO 偏离同年同业回归预测的部分。Roychowdhury 把折扣促销与放宽信用视为真实操纵的第一类形态，会让当期 CFO 偏低。在 Bao 数据上异常 CFO 平均 $R^2 = 0.1075$，意味着销售水平只解释了 CFO 的一小部分方差，残差中有大量真实经营异质性。
+</SideNote>
+
+把横截面回归按 fyear 分组跑（而非 pooled），原因是真实活动操纵的强度可能因宏观经济周期、行业景气循环、监管环境变化而变化，年度系数能吸收这些时变因素。
+
+### Bao 数据的 DISEXP 限制
+
+第 1 章已经说明，本书使用的 Bao 2020 公开数据不包含 `xsga`（销售与一般行政费用）、`xrd`（研发费用）、`xad`（广告费用），无法构造 DISEXP。本书第 9 章仅实现异常 CFO 与异常 PROD 两个分量，DISEXP 留作扩展。综合 RM 代理变量按 $RM_{it} = -\widehat{\varepsilon}_{it}^{C} + \widehat{\varepsilon}_{it}^{P}$ 简化定义。
+
+这种简化在文献中也有先例。Cohen 等 (2008) 在主估计中报告了 "DISEXP-only"、"PROD-only"、"组合 RM" 三种变体的对比，发现不同变体在不同样本期、不同操纵动机下表现各异。本书的 "abnCFO + abnPROD" 变体最接近覆盖 *产品市场决策* 类真实操纵（折扣促销 + 超产），*费用削减* 类真实操纵 (DISEXP) 暂不覆盖。
+
+<SideNote term="abnormal Production">
+Abnormal Production Cost。给定销售水平下，PROD = COGS + ΔInv 偏离同年同业回归预测的部分。超产降本的逻辑是：让产能开足、单位固定成本摊薄、毛利改善，代价是存货上升。Roychowdhury PROD 模型的拟合优度极高（Bao 数据上平均 $R^2 = 0.8796$），因为 PROD 与 Sale 在会计恒等意义上高度相关。
+</SideNote>
+
+## 在 Bao 数据上的实现
+
+```r
+# 异常 CFO 按 fyear 跑
+cfo_by_year <- p |>
+  filter(!is.na(CFO_s), !is.na(Sale_s), !is.na(dSale_s)) |>
+  group_by(fyear) |>
+  nest() |>
+  mutate(fit = map(data,
+    ~ lm(CFO_s ~ 0 + inv_lag_at + Sale_s + dSale_s, data = .x)))
+
+# 异常 PROD 按 fyear 跑
+prod_by_year <- p |>
+  filter(!is.na(PROD_s), !is.na(Sale_s),
+         !is.na(dSale_s), !is.na(dSale_lag_s)) |>
+  group_by(fyear) |>
+  nest() |>
+  mutate(fit = map(data,
+    ~ lm(PROD_s ~ 0 + inv_lag_at + Sale_s + dSale_s + dSale_lag_s,
+         data = .x)))
+
+# 合并残差
+rm_panel <- p |> select(gvkey, fyear, company, misstate) |>
+  left_join(abn_cfo,  by = c("gvkey", "fyear")) |>
+  left_join(abn_prod, by = c("gvkey", "fyear")) |>
+  mutate(RM_proxy = -abnCFO + abnPROD)
+```
+
+异常 CFO 平均样本量 4,966，平均 $R^2 = 0.1075$。异常 PROD 平均样本量 4,510（损失主要来自第一年无可用 $\Delta\text{Sale}_{t-1}$），平均 $R^2 = 0.8796$——PROD 与 Sale 的相关性极强，回归能解释 88% 的 PROD 变异，剩下 12% 留给残差。
+
+<Interpretation title="残差描述统计与 RM 尺度">
+异常 CFO 描述统计：mean $-0.0410$、sd 0.670。异常 PROD：mean $-0.0181$、sd 0.426。综合 RM\_proxy = $-$abnCFO + abnPROD：mean 0.0013、sd 0.868。RM 标准差远大于应计型 DA，对照 McNichols 仅 0.150，因为它把两个独立残差叠加，方差近似翻倍且各自尺度更大。RM 的解读不能用 DA\_mj 的尺度直觉，必须用同年分位排名比较。
+</Interpretation>
+
+*Roychowdhury 并行结构：CFO 与 PROD 各自回归，残差合成 RM。完整 TikZ 结构图详见 PDF 全文。*
+
+<ChapterFigure src="/notes/accounting-empirical/earnings-management/figures/ch09_abn_cfo_prod_scatter.png" alt="abnCFO 与 abnPROD 的 firm-year 配对散点" caption={<>异常 CFO 与异常 PROD 散点，右下象限是真实活动操纵的典型方向</>}/>
+
+把全样本 abnCFO 与 abnPROD 的 firm-year 配对散点画出来，两者呈轻微负相关，右下象限即 abnCFO 取负、abnPROD 取正的区域，是真实活动盈余管理的典型方向。这种组合对应折扣促销让现金流下降的同时超产让生产成本上升。
+
+## 案例公司在真实活动 RM 下的表现
+
+*表 9·1　案例公司舞弊年份的真实活动代理变量与分位*
+
+| 公司 | fyear | abnCFO | abnPROD | RM\_proxy | rank\_rm |
+|------|------:|-------:|--------:|----------:|---------:|
+| Sunbeam | 1996 | $-0.158$ | $-0.059$ | $0.099$ | 0.738 |
+| Sunbeam | 1997 | $0.111$ | $0.123$ | $0.013$ | 0.639 |
+| Computer Associates | 2001 | $0.326$ | $0.480$ | $0.154$ | 0.759 |
+| Enron | 1998 | $0.239$ | $0.382$ | $0.143$ | 0.749 |
+| Enron | 1999 | $0.0746$ | $0.290$ | $0.216$ | 0.811 |
+| Enron | 2000 | $0.430$ | $0.656$ | $0.226$ | 0.819 |
+
+数据告诉我们 Roychowdhury 在三家 AAER 案例公司上整体表现较强：六个舞弊年份的 RM 分位全部在 0.6 以上，五个在 0.7 以上。Enron 1999 与 2000 年 RM 分位 0.811 与 0.819 与其他方法对比异常突出——应计型方法在 Enron 这两年表现平平，但 Roychowdhury 把 Enron 通过特殊目的实体推动的虚增交易（推高 Sale 与 PROD）准确捕捉到。
+
+<SideNote term="真实操纵 vs 应计操纵">
+两条度量路径在 Bao 数据上几乎正交：RM\_proxy 与 DA\_jones Pearson 仅 0.020、与 DA\_dd 仅 $-0.006$。低相关恰是方法设计的预期结果，应计型 DA 度量会计估计的偏差，真实活动 RM 度量经营决策的偏差，两者捕捉完全不同维度的操纵。第 10 章 F-Score logit 把两条路径合并使用，分位排名最高的公司同时在两条路径上偏离中位水平。
+</SideNote>
+
+但要注意 Roychowdhury 的信号方向解读：所有案例公司在舞弊年份 abnPROD 都为正，与 "超产降低单位成本" 一致；但 abnCFO 多为正，看似与 "折扣促销压低现金流" 的预期方向相反。原因在于 Enron 与 CA 的舞弊机制是直接虚增交易，并非折扣促销。虚增交易让账面 CFO 与 PROD 都同步抬升，落在右上象限，与典型的右下象限方向不同。RM\_proxy 在这种情形下无法区分方向，绝对值排名能识别异常，方向解读需要结合具体案例。
+
+舞弊年份平均分位：Sunbeam 0.688、Computer Associates 0.759、Enron 0.793，三家平均 0.747。在已介绍的所有方法里，Roychowdhury 是平均分位最高的方法。
+
+<Trap title="把 abnCFO 正负方向当成单一信号解读">
+Roychowdhury 原文设计的方向假设是 "真实活动操纵把 CFO 推低"，因此 RM 公式里 abnCFO 前面加负号。但虚增交易型操纵（如 Enron）会让 CFO 与 PROD 同时偏高，落在右上象限，RM 计算结果反而被两个分量抵消，绝对值缩小但绝对水平仍可能进入分布右尾。研究者使用 RM 时如果只看 RM\_proxy 的绝对值排名，会忽略方向背后的两种操纵机制：折扣促销型（右下象限）与虚增交易型（右上象限）。诊断方法：对怀疑存在 RM 操纵的公司，分别看 abnCFO 与 abnPROD 的方向与幅度，落在哪个象限决定了操纵机制的解读。第 10 章 F-Score 把 RM 与应计型 DA 一起放进 logit 模型，部分缓解了这一方向歧义问题。
+</Trap>
+
+## Python 实现
+
+```r
+# code/ch09_roychowdhury.py
+import pandas as pd, numpy as np
+
+p = pd.read_csv("data/em_panel.csv").sort_values(["gvkey","fyear"])
+p["dSale_lag_s"] = p.groupby("gvkey")["dSale_s"].shift(1)
+
+def fit_resid(df, ycol, xcols):
+    df2 = df.dropna(subset=[ycol] + xcols).copy()
+    X = df2[xcols].values
+    y = df2[ycol].values
+    beta, *_ = np.linalg.lstsq(X, y, rcond=None)
+    df2[ycol + "_resid"] = y - X @ beta
+    return df2[["gvkey", "fyear", ycol + "_resid"]]
+
+cols_cfo = ["inv_lag_at", "Sale_s", "dSale_s"]
+cols_prod = ["inv_lag_at", "Sale_s", "dSale_s", "dSale_lag_s"]
+abn_cfo  = p.groupby("fyear", group_keys=False).apply(
+              lambda d: fit_resid(d, "CFO_s",  cols_cfo))
+abn_prod = p.groupby("fyear", group_keys=False).apply(
+              lambda d: fit_resid(d, "PROD_s", cols_prod))
+rm = abn_cfo.merge(abn_prod, on=["gvkey", "fyear"]).rename(
+        columns={"CFO_s_resid": "abnCFO", "PROD_s_resid": "abnPROD"})
+rm["RM_proxy"] = -rm["abnCFO"] + rm["abnPROD"]
+print(rm[["abnCFO", "abnPROD", "RM_proxy"]].describe().round(4))
+```
+
+R 与 Python 端 abnCFO、abnPROD、RM\_proxy 的描述统计完全一致。
+
+## 本章累积对比表
+
+*表 9·2　累积对比表（第 9 章末）*
+
+| 方法 | 样本量 | DA mean | DA sd | 案例公司舞弊年份平均分位 |
+|------|------:|--------:|------:|----------------------|
+| 基线 TA | 119,187 | $-0.0513$ | 0.1920 | —— |
+| Healy 1985 | 119,187 | $0.0000$ | 0.1910 | Sunbeam 0.17 / CA 0.49 / Enron 0.49 |
+| DeAngelo 1986 | 103,736 | $-0.0038$ | 0.2480 | Sunbeam 0.13 / CA 0.23 / Enron 0.31 |
+| Jones 1991 | 119,187 | $-0.0110$ | 0.1860 | Sunbeam 0.23 / CA 0.01 / Enron 0.53 |
+| Modified Jones 1995 | 119,187 | $-0.0104$ | 0.1870 | Sunbeam 0.24 / CA 0.09 / Enron 0.44 |
+| PM-DA 2005 | 119,187 | $\approx 0$ | 0.2530 | Sunbeam 0.24 / CA 0.67 / Enron 0.28 |
+| DD 2002 (公司级 AQ) | 7,126 公司 | 0.109 | 0.114 | Sunbeam 0.27 / CA 0.31 / Enron 0.17 |
+| McNichols 2002 | 90,189 | $\approx 0$ | 0.150 | Sunbeam 0.35 / CA 0.59 / Enron 0.51 |
+| Stubben 2010 | 119,187 | $\approx 0$ | 0.086 | Sunbeam 0.25 / CA 0.95 / Enron 0.57 |
+| **Roychowdhury 2006 RM** | 102,953 | 0.001 | 0.868 | Sunbeam 0.69 / CA 0.76 / Enron 0.79 |
+| F-Score / ML | —— | —— | —— | —— |
+
+## 本章知识地图
+
+*表 9·3　第 9 章核心概念与常见误解*
+
+| 核心概念 | 核心内容 | 常见误解 | 为什么错 |
+|---------|---------|---------|---------|
+| 真实活动盈余管理 | 通过真实经营决策影响盈余，绕过会计估计 | 与应计型操纵相互替代 | SOX 后两者并存，应计型受审计约束、真实活动型成本是长期价值损失 |
+| abnCFO | 给定销售水平下，实际 CFO 偏离回归预测的部分 | abnCFO 为负就是促销操纵 | 虚增交易型操纵让 abnCFO 同时为正，需结合 abnPROD 方向判读 |
+| abnPROD | 给定销售水平下，PROD 偏离回归预测的部分 | abnPROD 高就是超产降本 | 也可能来自销售下降而存货未及时调整，需要分行业景气周期判读 |
+| DISEXP 缺失 | Bao 数据不含 xsga/xrd/xad，无法计算 | 缺一个分量等于方法不可用 | 文献中 PROD-only、DISEXP-only、组合变体并存，单分量在覆盖产品市场决策类操纵上仍有效 |
+| RM 标准差大 | 0.868 远大于应计型 DA 的 0.150 | 方法不稳定 | RM 把两个独立残差叠加，方差近似翻倍且尺度更大，需用同年分位而非绝对值 |
+| 与应计型独立 | 与 DA\_jones Pearson 0.020 | 高相关才说明方法可信 | 低相关恰是设计目的，两条路径捕捉完全不同维度的操纵 |
+
+## 小结
+
+本章把 Roychowdhury 2006 真实活动盈余管理在 Bao 数据上跑通。受 Bao 数据 DISEXP 字段缺失约束，本书只实现异常 CFO 与异常 PROD 两个分量。异常 CFO 平均 $R^2 = 0.1075$，异常 PROD 平均 $R^2 = 0.8796$。综合 RM\_proxy = $-$abnCFO + abnPROD 的标准差 0.868。三家 AAER 案例公司舞弊年份平均同年分位 0.747，是九种方法中最高，反映真实活动操纵在 Enron 与 CA 这一类大型舞弊案上确实存在。Roychowdhury 与应计型 DA 的 Pearson 相关接近零，与 DA\_jones 仅 0.020、与 DA\_dd 仅 $-0.006$，是与第 3–7 章完全独立的另一条度量路径。下一章把九种方法合并到一张面板，构造 F-Score logit 模型，给出本书的终极对比与综合判别。

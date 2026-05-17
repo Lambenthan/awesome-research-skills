@@ -7,6 +7,7 @@ import { OriginalQuote } from "@/components/notes/mdx/OriginalQuote";
 import { ChapterFigure } from "@/components/notes/mdx/ChapterFigure";
 import { Definition } from "@/components/notes/mdx/Definition";
 import { Trap } from "@/components/notes/mdx/Trap";
+import { SideNote } from "@/components/notes/mdx/SideNote";
 
 export function useMDXComponents(
   components: MDXComponents,
@@ -21,5 +22,6 @@ export function useMDXComponents(
     ChapterFigure,
     Definition,
     Trap,
+    SideNote,
   };
 }

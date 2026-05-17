@@ -1,0 +1,168 @@
+<Introduction>
+- McNichols 2002 的核心改动：在 DD 的三期 CFO 基础上加入销售变化与固定资产，融合 Jones 与 DD 两条路径
+- 在 Bao 数据上跑通 McNichols pooled OLS，比纯 DD 的 $R^2 = 0.0993$ 提升到 0.1475
+- 与 Dechow-Dichev 残差对比，分析两者 Pearson 相关 0.973 的含义
+- 解释为什么 McNichols 残差是研究中最常用的 firm-year 级应计型 DA
+</Introduction>
+
+## DD 与 Jones 的互补关系
+
+第 6 章 Dechow-Dichev 用三期 CFO 解释营运资金应计，$R^2$ 约 10%。这个 $R^2$ 看似低，但已经把应计中可由现金流匹配解释的成分剥离。然而 DD 缺一个 Jones 系列里的关键变量：销售变化与固定资产。McNichols 在对 DD 的方法学评论中指出，应计的正常水平不仅由前后期现金流决定，还受当期销售增长与资本结构影响，把这两个变量加进 DD 回归能进一步剥离非操纵成分。
+
+具体的会计含义是：销售增长直接驱动应收、存货、应付的同步扩张，这部分应计与三期 CFO 的耦合并不强（信用扩张可能在多期分散）；固定资产决定折旧规模，影响 TA 但与 CFO 关系微弱。把销售变化与 PPE 加进 DD 的右侧，回归能解释更多应计变异，剩下的残差更接近"无法用任何已知会计动力学解释的部分"。
+
+<SideNote term="McNichols">
+Maureen McNichols，斯坦福商学院会计学教授，长期从事盈余管理与分析师预测研究。2002 年她在《The Accounting Review》上对 Dechow-Dichev 论文撰写讨论稿，正面回应 DD 模型的方法学贡献并提出本章这一融合扩展，自此成为 firm-year 级应计型 DA 度量的主流实现。
+</SideNote>
+
+## McNichols 模型的定义
+
+<Definition title="McNichols 2002 模型">
+对所有 firm-year 跑 pooled OLS：
+
+$$
+\begin{aligned}
+\text{WC\_accr}_{it} = & b_0 + b_1 \cdot \text{CFO}_{i,t-1} + b_2 \cdot \text{CFO}_{it} + b_3 \cdot \text{CFO}_{i,t+1} \\
+                      & + b_4 \cdot \frac{\Delta\text{Sale}_{it}}{\text{lag\_at}_{it}} + b_5 \cdot \frac{\text{PPE}_{it}}{\text{lag\_at}_{it}} + \varepsilon_{it}
+\end{aligned}
+$$
+
+DA 为残差：$DA^{McN}_{it} = \widehat{\varepsilon}_{it}$。
+</Definition>
+
+公式相对 DD 多了两项：$\Delta\text{Sale}_{it} / \text{lag\_at}_{it}$ 与 $\text{PPE}_{it} / \text{lag\_at}_{it}$。其他变量定义与第 6 章 DD 一致。注意 McNichols 直接输出 firm-year 级残差作为 DA，不再做按公司聚合到 AQ 的步骤。
+
+<WhyNote title="McNichols 的设计在两条已有路径之间取并集">
+DD 路径捕捉应计与现金流的时间序列耦合，Jones 路径捕捉应计与销售扩张、资本强度的横截面耦合。把两条路径融合，等价于把所有"已知机制可解释"的应计成分一次性剥离。残差是当期既不能用现金流匹配解释、也不能用销售扩张与资本结构解释的部分，最接近研究者想要的"管理层主动选择"信号。
+</WhyNote>
+
+McNichols 是本书介绍的应计型 DA 度量里最综合的一个。第 10 章九种方法的相关矩阵显示，`DA_mcn` 与 `DA_dd` 的 Pearson 相关 0.973（几乎重合），与 `DA_mj` 的相关 0.902，与 `DA_jones` 的相关 0.903。McNichols 同时桥接了 DD 与 Jones 两族。
+
+<SideNote term="signed vs absolute DA">
+应计型 DA 在使用时有两种主流取向。带符号的 DA（signed DA）保留正负，可用来判断管理层是向上调利润还是向下调利润；绝对值 DA（|DA|）只看幅度，常用于检验"盈余质量"或"操纵强度"。McNichols 残差按构造均值为零，研究问题不同决定取哪种形式。本章累积对比表里给出的"舞弊年份平均分位"使用的是 signed DA 的同年百分位排名。
+</SideNote>
+
+## 在 Bao 数据上的实现
+
+```r
+p2 <- p |>
+  arrange(gvkey, fyear) |>
+  group_by(gvkey) |>
+  mutate(CFO_lag = lag(CFO_s), CFO_lead = lead(CFO_s)) |>
+  ungroup() |>
+  filter(!is.na(WC_accr), !is.na(CFO_lag), !is.na(CFO_s),
+         !is.na(CFO_lead), !is.na(dSale_s), !is.na(PPE_s))
+
+fit <- lm(WC_accr ~ CFO_lag + CFO_s + CFO_lead + dSale_s + PPE_s,
+          data = p2)
+p2$DA_mcn <- residuals(fit)
+```
+
+回归样本 90,189 firm-year，与第 6 章 DD 相同。回归结果：
+
+*表 7·1　McNichols pooled OLS 回归系数*
+
+| 变量 | 估计 | 标准误 | $t$ 值 |
+|------|----:|----:|----:|
+| Intercept | 0.0102 | 0.0008 | 12.8 |
+| CFO\_lag | 0.0512 | 0.0011 | 48.3 |
+| CFO\_t | −0.0996 | 0.0012 | −84.4 |
+| CFO\_lead | 0.0682 | 0.0011 | 62.5 |
+| dSale\_s | 0.0777 | 0.0011 | 70.8 |
+| PPE\_s | −0.0156 | 0.0009 | −16.7 |
+
+$R^2 = 0.1475$，比纯 DD 的 0.0993 提升 49%。两个新加变量 `dSale_s` 系数 0.0777（$t = 70.8$）与 `PPE_s` 系数 $-0.0156$（$t = -16.7$）都高度显著，方向与 Jones 系列一致：销售扩张推高应计，固定资产强度通过折旧拉低应计。
+
+<Interpretation title="McNichols 的解释力来源">
+McNichols 在 DD 上加 dSale 与 PPE，$R^2$ 提升约 5 个百分点。这一提升主要来自 dSale：dSale 系数 0.0777 是 PPE 系数绝对值 0.0156 的 5 倍，意味着销售扩张是营运资金应计的主要新增解释变量。`DA_mcn` 全样本统计：n 90,189，均值 $-4.27 \times 10^{-18}$（按构造为零），中位 0.000353，标准差 0.150，绝对值均值 0.0762。绝对值均值 0.0762 比 `DA_dd` 的 0.0989 显著降低 23%，说明 McNichols 进一步剥离了可解释的应计成分。
+</Interpretation>
+
+*图 7·1　McNichols 把 Jones 路径的 $\Delta\text{Sale}$ 与 PPE 加进 DD 回归。完整 TikZ 图详见 PDF 全文。*
+
+<ChapterFigure src="/notes/accounting-empirical/earnings-management/figures/ch07_mcn_dd_scatter.png" alt="McNichols 残差与 DD 残差散点" caption={<>图 7·2　McNichols 残差与 DD 残差的 firm-year 配对散点，Pearson 0.973。两者沿 45 度线高度对齐。</>}/>
+
+## 案例公司在 McNichols 下的表现
+
+*表 7·2　案例公司舞弊年份在 DD 残差与 McNichols 下的对比*
+
+| 公司 | fyear | AAER | rank\_McN | DA\_McN |
+|------|----:|:---:|----:|----:|
+| Sunbeam | 1996 | ✓ | 0.224 | −0.0146 |
+| Sunbeam | 1997 | ✓ | 0.470 | 0.0361 |
+| Computer Associates | 2001 | ✓ | 0.588 | −0.0530 |
+| Enron | 1998 | ✓ | 0.754 | −0.0985 |
+| Enron | 1999 | ✓ | 0.269 | 0.0185 |
+
+注：Enron 2000 年因 2001 后无可用 `CFO_lead` 数据，McNichols 残差缺失。
+
+数据告诉我们 McNichols 对三家案例公司的判别整体优于纯 DD。Sunbeam 1996 年分位 0.224 比 DD 模型给出的 firm-year 排名更靠左，符合 SEC 文件所述压低当期利润的方向。Enron 1998 年分位 0.754 是九种方法里 Enron 1998 表现最强的方法之一，说明 McNichols 捕捉到了 Enron 那年应计中既无法用三期 CFO 也无法用销售扩张解释的异常部分。Computer Associates 2001 年分位 0.588 处于中位偏右，比 Modified Jones 下的 0.089 大幅改善。
+
+舞弊年份平均分位：Sunbeam 0.347、Computer Associates 0.588、Enron 0.512，三家平均 0.482。比纯 DD 公司级 AQ 的三家平均 0.250 显著提升。
+
+<SideNote term="accrual reversal">
+应计反转。应计是权责发生制下未变现的利润成分，必然在未来某期反向流回（赊销收回为现金、预提费用最终支付）。McNichols 残差为负的当期，往往是前期高应计在本期反转的结果。Sunbeam 1996 残差 −0.0146、Computer Associates 2001 残差 −0.0530 都属于这一类。研究中如果只看单年度残差，会把反转期误判为"向下操纵"，需要前后期一起看。
+</SideNote>
+
+<Trap title="McNichols 与 DA_mj 高度相关时容易被当作不同信号">
+McNichols 与 `DA_mj` 的 Pearson 相关 0.902，与 `DA_jones` 的相关 0.903。如果一篇论文同时用 `DA_mj` 与 `DA_McN` 作为稳健性检验，得到两者方向一致的结果就声称"结论稳健"，这是误用：两个变量本质上是同一组应计动力学的不同切片，相互检验近似自循环。诊断方法：判断稳健性要用方法学路径完全不同的指标，如真实活动 EM（`DA_rm`）或收入侧 DA（`DA_stb`），后两者与 `DA_McN` 的相关分别仅为 0.000 与 0.297。论文中使用多重 DA 度量时，应至少包含一条与主估计路径不同的方法。
+</Trap>
+
+## Python 实现
+
+```python
+# code/ch07_mcnichols.py
+import pandas as pd, numpy as np, statsmodels.api as sm
+
+p = pd.read_csv("data/em_panel.csv").sort_values(["gvkey","fyear"])
+p["CFO_lag"]  = p.groupby("gvkey")["CFO_s"].shift(1)
+p["CFO_lead"] = p.groupby("gvkey")["CFO_s"].shift(-1)
+p2 = p.dropna(subset=["WC_accr","CFO_lag","CFO_s","CFO_lead",
+                       "dSale_s","PPE_s"])
+
+X = sm.add_constant(p2[["CFO_lag","CFO_s","CFO_lead","dSale_s","PPE_s"]])
+fit = sm.OLS(p2["WC_accr"], X).fit()
+print(fit.summary().tables[1])
+p2["DA_mcn"] = fit.resid
+print(p2["DA_mcn"].describe().round(4))
+```
+
+R 与 Python 端 McNichols 回归系数、$R^2= 0.1475$、`DA_mcn` 描述统计完全一致。
+
+<SideNote term="Wysocki 评估">
+Peter Wysocki 在 2009 年的方法学综述中系统比较了 Jones、Modified Jones、DD、McNichols 与 AQ 五种应计型 DA 度量，结论是 McNichols 在"识别管理层主动选择"这一研究目标下最优：它同时控制了销售扩张与现金流动态，残差里的剩余系统性成分最少。但 Wysocki 也指出，所有应计型方法共同的局限是无法区分会计估计调整（合规的）与真实操纵（违规的），需要配合真实活动 EM 一起使用。
+</SideNote>
+
+## 本章累积对比表
+
+*表 7·3　累积对比表（第 7 章末）*
+
+| 方法 | 样本量 | DA mean | DA sd | 案例公司舞弊年份平均分位 |
+|------|----:|----:|----:|------|
+| 基线 TA | 119,187 | −0.0513 | 0.1920 | —— |
+| Healy 1985 | 119,187 | 0.0000 | 0.1910 | Sunbeam 0.17 / CA 0.49 / Enron 0.49 |
+| DeAngelo 1986 | 103,736 | −0.0038 | 0.2480 | Sunbeam 0.13 / CA 0.23 / Enron 0.31 |
+| Jones 1991 | 119,187 | −0.0110 | 0.1860 | Sunbeam 0.23 / CA 0.01 / Enron 0.53 |
+| Modified Jones 1995 | 119,187 | −0.0104 | 0.1870 | Sunbeam 0.24 / CA 0.09 / Enron 0.44 |
+| PM-DA 2005 | 119,187 | $\approx 0$ | 0.2530 | Sunbeam 0.24 / CA 0.67 / Enron 0.28 |
+| DD 2002（公司级 AQ） | 7,126 公司 | 0.109 | 0.114 | Sunbeam 0.27 / CA 0.31 / Enron 0.17 |
+| **McNichols 2002** | 90,189 | $\approx 0$ | 0.150 | Sunbeam 0.35 / CA 0.59 / Enron 0.51 |
+| Stubben | —— | —— | —— | —— |
+| Roychowdhury RM | —— | —— | —— | —— |
+| F-Score / ML | —— | —— | —— | —— |
+
+## 本章知识地图
+
+*表 7·4　第 7 章核心概念与常见误解*
+
+| 核心概念 | 核心内容 | 常见误解 | 为什么错 |
+|---------|---------|---------|---------|
+| McNichols | DD 三期 CFO 加 $\Delta\text{Sale}_s$ 与 PPE 的融合回归 | 与 DD 等价 | $R^2$ 从 0.099 升到 0.148，两个新变量都高度显著，差异在残差结构 |
+| $R^2 = 0.1475$ | 应计中 14.8% 可由三期 CFO 与销售、PPE 解释 | 应该追求更高 $R^2$ | 设计目的仍是剥离已知机制，$R^2$ 不是优化目标 |
+| firm-year 级输出 | 直接输出残差作为 DA，不聚合到公司级 AQ | 与 DD 输出层次相同 | DD 的 AQ 是公司级标准差，McNichols 的 DA 是 firm-year 级残差，第 10 章 DD 也按 firm-year 重算 |
+| 与 DD 相关 0.973 | 同一组数据，多两个变量 | 高相关意味着 McNichols 没用 | 0.027 的差异恰好在那些销售扩张或资本结构变化大的公司上，是研究者关心的样本 |
+| 案例公司改善 | 三家平均分位 0.482，比纯 DD 的 0.250 提升 93% | McNichols 普遍优于所有 Jones 系列 | 与 Jones / MJ 同源高度相关，作为稳健性检验时不能算独立证据 |
+| 稳健性误用 | 与 `DA_jones` 相关 0.903，做"多重 DA 一致性"检验近似自循环 | 同时用 `DA_mj` 与 `DA_mcn` 即可 | 应至少加 Stubben 或 RM 一类与应计型路径不同的方法 |
+
+## 小结
+
+本章把 McNichols 2002 在 Bao 数据上跑通。在 DD 的三期 CFO 基础上加入 $\Delta\text{Sale}_s$ 与 PPE，$R^2$ 从纯 DD 的 0.0993 提升到 0.1475。三家 AAER 案例公司舞弊年份的平均同年分位 0.482，比 DD 公司级 AQ 的 0.250 显著提升。McNichols 与 DD、Jones、Modified Jones 都高度相关，本质上是同一应计型 DA 路径的最综合实现。下一章 Stubben 把度量视角从应计型完全切换到收入型，仅用应收变化与销售变化的关系定义 DA，是与 McNichols 等近似独立的另一条路径。

@@ -282,16 +282,19 @@ body {
   margin-bottom: 0.6em;
   padding-bottom: 0.35em;
   border-bottom: 1px solid var(--color-rule);
+  clear: both;
 }
 .prose-chapter h3 {
   font-size: 19px;
   margin-top: 2em;
   margin-bottom: 0.4em;
+  clear: both;
 }
 .prose-chapter h4 {
   font-size: 16px;
   margin-top: 1.6em;
   margin-bottom: 0.3em;
+  clear: both;
 }
 .prose-chapter p {
   margin: 1.05em 0;
@@ -411,3 +414,51 @@ body {
    tighten inline math spacing to match prose color. */
 .prose-chapter .katex { color: var(--color-ink); }
 .prose-chapter .katex-display { margin: 1.2em 0; }
+
+/* ============================================================
+   Side notes — short glossary entries that gloss technical
+   terms. On wide screens they float into the right margin
+   reserved by the chapter layout (Tufte CSS pattern). On
+   narrow screens they render inline as a soft callout.
+   ============================================================ */
+.sidenote {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--color-ink-muted);
+  margin: 1em 0;
+  padding: 10px 14px 10px 16px;
+  background: var(--color-cream-surface);
+  border-left: 2px solid var(--color-ember);
+  border-radius: 2px;
+}
+
+.sidenote-term {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--color-ink);
+  margin-bottom: 4px;
+  letter-spacing: -0.005em;
+}
+
+.sidenote-body {
+  display: block;
+}
+
+@media (min-width: 1280px) {
+  .sidenote {
+    float: right;
+    clear: right;
+    width: 260px;
+    margin-right: -312px;
+    margin-top: 0.25em;
+    margin-bottom: 1.2em;
+    padding: 4px 0 4px 16px;
+    background: transparent;
+    border-left-width: 1.5px;
+  }
+}

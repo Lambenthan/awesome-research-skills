@@ -1,0 +1,161 @@
+<Introduction>
+- Dechow, Sloan, Sweeney 1995 的核心改动：在 Jones 回归中用 $\Delta\text{Sale} - \Delta\text{Rec}$ 替代 $\Delta\text{Sale}$
+- 这一改动的会计含义：假设信用销售扩张是管理层可操纵的部分，现金销售扩张才是经营驱动的部分
+- 在 Bao 数据上跑通 Modified Jones，与 Jones 残差对照，看 Computer Associates 2001 年的判别是否被纠正
+- 解释为什么 Modified Jones 至今仍是会计实证文献中最常用的 DA 度量
+</Introduction>
+
+## Jones 模型留下的一个漏洞
+
+第 3 章 Jones 模型的核心是用销售变化解释流动应计的正常波动。但销售变化本身有两个组成部分：现金销售变化与信用销售变化。前者经营驱动，后者管理层有可操纵空间。Dechow, Sloan, Sweeney 指出，研究人员在使用 Jones 模型时遇到一个反复出现的问题：当公司通过提前确认收入或放宽信用政策推高销售时，应收账款同步增加，Jones 模型把这种增长当作合理销售相关应计吸收，残差变小，DA 反而看不到操纵痕迹。第 3 章 Computer Associates 2001 年的分位 0.011 就是这种现象的典型案例。
+
+<SideNote term="信用销售">
+Credit Sales。客户先拿货、后付款的销售模式，体现为资产负债表上的应收账款增长。与现金销售相对。管理层通过放宽信用政策可以快速做大销售口径，但现金回流滞后；激进情形下甚至向尚未真正接受订单的客户发货，应收账款随之虚增。Modified Jones 把信用销售扩张整体视为可操纵部分，从解释变量里扣除。
+</SideNote>
+
+Dechow, Sloan, Sweeney 提出的修正很直接：把销售变化中的应收变化部分扣掉，假设这部分都是可操纵的。修正后的解释变量是 $\Delta\text{Sale} - \Delta\text{Rec}$，含义是真正落到现金口袋里的销售扩张。
+
+## Modified Jones 的定义
+
+<Definition title="Modified Jones 模型，Dechow, Sloan, Sweeney 1995">
+对每个行业 $\times$ 年份组合 $g$，跑横截面 OLS：
+
+$$
+\frac{\text{TA}_{it}}{\text{lag\_at}_{it}}
+  = \alpha_{1g} \cdot \frac{1}{\text{lag\_at}_{it}}
+  + \alpha_{2g} \cdot \frac{\Delta\text{Sale}_{it} - \Delta\text{Rec}_{it}}{\text{lag\_at}_{it}}
+  + \alpha_{3g} \cdot \frac{\text{PPE}_{it}}{\text{lag\_at}_{it}}
+  + \varepsilon_{it}
+$$
+
+DA 为残差：$DA^{MJ}_{it} = \widehat{\varepsilon}_{it}$。
+</Definition>
+
+公式与第 3 章 Jones 只有一处不同：第二项的解释变量从 $\Delta\text{Sale}_{it}$ 变成 $\Delta\text{Sale}_{it} - \Delta\text{Rec}_{it}$。其中 $\Delta\text{Rec}_{it}$ 是公司 $i$ 第 $t$ 年的应收账款变化、$\Delta\text{Sale}_{it}$ 是销售变化、$\text{PPE}_{it}$ 是固定资产毛额、$\text{lag\_at}_{it}$ 是滞后总资产。其他变量定义与第 3 章相同。
+
+<WhyNote title="为什么要把应收变化从销售变化里扣掉">
+这个改动看似简单，背后的会计逻辑是把可操纵空间显式排除在解释变量之外。原始 Jones 的隐含假设是销售变化全部由经营驱动，应计中由销售解释的部分都不是可操纵的。Dechow 等观察到这个假设在收入操纵公司上失效：管理层既能通过会计选择影响应计，也能通过提前确认收入影响销售本身。把销售变化中的应收增长部分扣掉，等价于把 "可能由管理层主动放宽信用政策" 的那部分销售扩张排除在解释变量之外，让模型在这一类操纵公司上对应的残差更大。
+</WhyNote>
+
+<SideNote term="收入提前确认">
+Premature Revenue Recognition。把尚未达到准则规定确认条件的交易提前计入当期收入，是 SEC 在 AAER 案件中最常援引的舞弊类别之一。典型做法包括对未发货订单开票、把短期租赁记为销售、利用通道压货把存货推到经销商账上。提前确认的痕迹通常先反映在应收账款相对销售的异常扩张上，正是 Modified Jones 修正的目标。
+</SideNote>
+
+Dechow 等的原文做法略有差别：他们先在估计期跑标准 Jones（销售变化作为解释变量），得到系数；然后在事件年（怀疑发生操纵的年）把 $\Delta\text{Sale} - \Delta\text{Rec}$ 代入预测，差值作为 DA。这种做法只在事件年扣应收，估计期不扣。本书采用更常见的 "全样本同时扣" 变体，原因是 Bao 数据没有估计期与事件期的天然分割，全样本同步处理与文献后续使用更接近。
+
+## 在 Bao 数据上的实现
+
+R 实现只需把 Jones 脚本里的 `dSale_s` 替换为 `dSale_s - dRect_s`。完整脚本在 `code/ch04_modified_jones.R`。
+
+```r
+p <- p |> mutate(dSaleRect_s = dSale_s - dRect_s)
+mj_by_year <- p |>
+  filter(!is.na(TA), !is.na(dSaleRect_s), !is.na(PPE_s)) |>
+  group_by(fyear) |>
+  nest() |>
+  mutate(
+    fit = map(data, ~ lm(TA ~ 0 + inv_lag_at + dSaleRect_s + PPE_s,
+                         data = .x)),
+    r2  = map_dbl(fit, ~ summary(.x)$r.squared)
+  )
+mj_with_da <- mj_by_year |>
+  mutate(data2 = map2(data, fit, ~ mutate(.x, DA_mj = resid(.y)))) |>
+  select(fyear, data2) |> unnest(data2) |> ungroup()
+```
+
+跑完得到 24 个年度回归，平均样本量 4,966，平均 $R^2 = 0.1108$，比 Jones 的 0.1306 略低。
+
+<Interpretation title="结果解读">
+$R^2$ 下降的原因是 $\Delta\text{Sale} - \Delta\text{Rec}$ 比纯 $\Delta\text{Sale}$ 与 TA 的相关性略弱：原 Jones 模型里销售变化能直接拟合应收增长这部分应计，扣掉后这部分系统成分被赶到残差里，回归解释能力下降。但残差里被赶进去的恰恰是研究者关心的 "可操纵成分"，所以 $R^2$ 略低反而是 Modified Jones 设计意图的体现。DA_mj 全样本统计：n 119,187、均值 $-0.0104$、中位 $-0.00133$、标准差 0.187、绝对值均值 0.101，几乎与 Jones 一致。两种方法 Pearson 相关 0.998 表明它们在绝大多数 firm-year 上给出相同结果，差异主要在应收变化幅度大的公司年。
+</Interpretation>
+
+下面这张流程图把 Modified Jones 相对 Jones 的关键改动画出来。
+
+*图 4·1　Modified Jones 相对 Jones 的改动：把 $\Delta\text{Rec}_s$ 从 $\Delta\text{Sale}_s$ 中扣除，再与 $1/\text{lag\_at}$、$\text{PPE}_s$ 一起按 fyear 做 OLS，残差即 $DA^{MJ}$。完整 TikZ 图详见 PDF 全文。*
+
+下面把 DA_mj 与 DA_jones 的 firm-year 配对散点画出来。绝大多数点紧贴 45 度线，少数偏离 45 度线的点就是应收变化幅度大、Modified Jones 修正生效的公司年。
+
+<ChapterFigure src="/notes/accounting-empirical/earnings-management/figures/ch04_mj_jones_scatter.png" alt="DA_mj 与 DA_jones 配对散点，Pearson 0.998" caption={<>DA_mj 与 DA_jones 配对散点，Pearson 0.998</>}/>
+
+## 案例公司：CA 2001 年的判别是否被纠正
+
+第 3 章 Computer Associates 2001 年在 Jones 下分位 0.011 极其偏左，本章关心的核心问题是 Modified Jones 是否纠正这个错判。
+
+*表 4·1　案例公司舞弊年份在 Jones 与 Modified Jones 下的对比*
+
+| 公司 | fyear | AAER | rank_Jones | rank_MJ | 变化 |
+|------|------:|:----:|----------:|--------:|------|
+| Sunbeam             | 1996 | ✓ | 0.024 | 0.037 | 几乎不变 |
+| Sunbeam             | 1997 | ✓ | 0.434 | 0.433 | 几乎不变 |
+| Computer Associates | 2001 | ✓ | 0.011 | 0.089 | 小幅向右 |
+| Enron               | 1998 | ✓ | 0.676 | 0.618 | 略向左 |
+| Enron               | 1999 | ✓ | 0.417 | 0.443 | 略向右 |
+| Enron               | 2000 | ✓ | 0.508 | 0.259 | 大幅向左 |
+
+数据告诉我们 Modified Jones 对 CA 2001 年的纠正方向正确但幅度有限：分位从 0.011 升到 0.089，仍然偏左。继续在 Sunbeam 与 Enron 上看，Modified Jones 与 Jones 的差距整体不大，符合两种方法 Pearson 相关 0.998 的全样本结论。Enron 2000 年的分位从 0.508 大幅降到 0.259 是一个反向变化：Enron 2000 年应收账款相对销售的扩张幅度极大（销售从 1999 年 401 亿增到 2000 年 1008 亿，应收同步翻倍），Modified Jones 把这部分应收增长当作可操纵部分剥掉之后，TA 中可解释成分增加，DA 反而缩小。
+
+<SideNote term="F-test 边际显著">
+F-test Marginal Significance。在 Modified Jones 与 Jones 嵌套关系下，可以用 F 统计量检验 $\Delta\text{Rec}$ 系数是否显著区别于零；在 Bao 全样本年度面板上，F 统计常落在 0.05 到 0.1 之间的边际显著区。这说明应收变化作为额外解释项的边际贡献在统计上不强，但在右尾（高 DA）公司上集中体现，正好对应研究者关心的操纵样本。
+</SideNote>
+
+<Trap title="Modified Jones 在收入提前确认与赊销扩张之间区分不出来">
+Modified Jones 的假设是应收变化都是可操纵的，但现实中应收变化的两个驱动机制无法区分：一个是合法的赊销政策放松，比如行业竞争加剧、新产品上市铺货；另一个是非法的提前确认收入。两种机制都让 $\Delta\text{Rec}$ 扩大，模型把它们都从解释变量里扣掉、放进 DA 残差。这种处理方法对真正提前确认收入的公司有效，但对单纯赊销扩张的公司也会给出大 DA，造成假阳性。诊断方法：把 DA_mj 大的公司按行业、销售增长率、宏观信贷环境分层观察，如果右尾里有大量同时期普遍出现的赊销扩张公司，说明模型在该样本期把行业现象当成操纵。Kothari, Leone, Wasley 提出的 Performance-Matched 方法（下一章）就是针对这一类问题设计的补丁。
+</Trap>
+
+## Python 实现
+
+```r
+# code/ch04_modified_jones.py
+import pandas as pd, numpy as np
+
+p = pd.read_csv("data/em_panel.csv")
+p["dSaleRect_s"] = p["dSale_s"] - p["dRect_s"]
+p = p.dropna(subset=["TA","dSaleRect_s","PPE_s","inv_lag_at"])
+
+def mj_resid(df):
+    X = df[["inv_lag_at","dSaleRect_s","PPE_s"]].values
+    y = df["TA"].values
+    beta, *_ = np.linalg.lstsq(X, y, rcond=None)
+    df = df.copy(); df["DA_mj"] = y - X @ beta
+    return df
+
+p2 = p.groupby("fyear", group_keys=False).apply(mj_resid)
+print(p2["DA_mj"].describe().round(4))
+```
+
+R 与 Python 端 DA_mj 的均值 $-0.0104$、标准差 0.187、绝对值均值 0.101 完全一致。
+
+## 本章累积对比表
+
+*表 4·2　累积对比表（第 4 章末）*
+
+| 方法 | 样本量 | DA mean | DA sd | 案例公司舞弊年份平均分位 |
+|------|------:|--------:|------:|------|
+| 基线 TA          | 119,187 | $-0.0513$ | 0.1920 | —— |
+| Healy 1985       | 119,187 | $0.0000$  | 0.1910 | Sunbeam 0.17 / CA 0.49 / Enron 0.49 |
+| DeAngelo 1986    | 103,736 | $-0.0038$ | 0.2480 | Sunbeam 0.13 / CA 0.23 / Enron 0.31 |
+| Jones 1991       | 119,187 | $-0.0110$ | 0.1860 | Sunbeam 0.23 / CA 0.01 / Enron 0.53 |
+| **Modified Jones 1995** | 119,187 | $-0.0104$ | 0.1870 | Sunbeam 0.24 / CA 0.09 / Enron 0.44 |
+| PM-DA            | ——      | ——        | ——     | —— |
+| Dechow-Dichev    | ——      | ——        | ——     | —— |
+| McNichols        | ——      | ——        | ——     | —— |
+| Stubben          | ——      | ——        | ——     | —— |
+| Roychowdhury RM  | ——      | ——        | ——     | —— |
+| F-Score / ML     | ——      | ——        | ——     | —— |
+
+## 本章知识地图
+
+*表 4·3　第 4 章核心概念与常见误解*
+
+| 核心概念 | 核心内容 | 常见误解 | 为什么错 |
+|---------|---------|---------|---------|
+| Modified Jones | 用 $\Delta\text{Sale} - \Delta\text{Rec}$ 替代 $\Delta\text{Sale}$，把应收变化划归 DA | 比 Jones 严格更优 | 对应收扩张是合法赊销的公司会产生假阳性，需要 PM 等方法补救 |
+| 设计逻辑 | 假设应收变化全部可操纵，从解释变量中扣掉 | 应收变化都是收入操纵 | 行业普遍赊销扩张时也会让 DA 扩大，模型不区分动机 |
+| $R^2$ 略下降 | 0.131 → 0.111，下降的解释力赶进 DA | $R^2$ 下降说明模型变差 | 把可操纵成分推到残差里恰是设计目的，$R^2$ 不该作为优劣指标 |
+| 与 Jones 相关 0.998 | 绝大多数 firm-year 两种方法给出相同结果 | 高相关意味着 Modified Jones 没用 | 差异集中在应收变化大的少数公司，这正是研究者最关心的样本 |
+| CA 2001 修正 | rank 从 0.011 升到 0.089，方向正确但幅度有限 | Modified Jones 能完全解决 CA 这类案例 | 完整识别需要更多机制，PM-DA 与 Stubben 后续给出 |
+| Enron 2000 反向 | rank 从 0.508 降到 0.259 | 修正都是单向改善 | 当应收扩张本身合法时，扣掉它反而让残差缩小，方法的局限 |
+
+## 小结
+
+本章把 Modified Jones 在 Bao 数据上跑通。与 Jones 的差别仅在第二项解释变量从 $\Delta\text{Sale}_s$ 改为 $\Delta\text{Sale}_s - \Delta\text{Rec}_s$，全样本 Pearson 相关 0.998 表明绝大多数 firm-year 两种方法给出相同结果。Computer Associates 2001 年的分位从 Jones 下的 0.011 升到 Modified Jones 下的 0.089，方向上有所纠正但幅度有限；Enron 2000 年的分位反而从 0.508 降到 0.259，反映 Modified Jones 在合法赊销扩张的公司上会产生反向干扰。下一章 Performance-Matched DA 通过同业绩公司配对，把 ROA 相近公司的 DA 当作基准扣除，是对 Modified Jones 假阳性问题的直接补救。

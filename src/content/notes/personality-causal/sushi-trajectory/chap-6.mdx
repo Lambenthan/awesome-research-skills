@@ -17,6 +17,9 @@
 
 这两条限定决定了我们能用什么方法、不能用什么方法、能宣称多强的 claim。
 
+<SideNote term="单被试限定">单被试（single-subject）设计在心理学与教育学里有成熟传统，常见于神经心理学个案研究。其特点是受试者 N=1，所有比较发生在被试自身的时间序列上，统计推断只能依靠 within-subject 的 pre/post 对比或 baseline 反转。代价是外部效度受限，结果默认不能 generalize 到群体，除非有理由相信被试在相关维度上代表更大总体。</SideNote>
+
+
 <Trap title="把单被试纵向研究当 RCT 来读">
 
 读者读到第 1 章 "1079 乌台诗案 D2 自我修正 level shift +3.71，$t = 1.82$" 时，容易按 RCT 风格解读：*"乌台诗案**导致**苏轼自我修正词频上升，$p < 0.10$"*。
@@ -25,6 +28,9 @@
 
 **诊断方法**：任何用单被试历史数据做的因果推断，claim 强度必须从 "X 导致 Y" 退到 "在这段历史轨迹上，X 后观测到 Y"。这两句话差一个量化的 LATE / ATE 区分。
 
+<SideNote term="LATE vs ATE">ATE（average treatment effect）是处理对总体所有单位的平均因果效应，要求随机化或可识别的反事实分布。LATE（local average treatment effect）只针对依从者子集或某一特定轨迹的局部效应。单被试历史研究估的连 LATE 都算不上，更接近 individual treatment effect on a single trajectory，外推到群体需要额外的可比性假设。</SideNote>
+
+
 **稳健替代**：论文写作中明确写 "本研究是单被试事件研究，估计的是 local effect along this trajectory，不是 population-level causal effect"。
 
 </Trap>
@@ -32,6 +38,9 @@
 ## 6 种方法在因果推断框架里的位置
 
 把前 5 章用过的方法放在 Pearl 的因果推断梯子上看，它们分布在不同层级。
+
+<SideNote term="Pearl 因果梯子">Judea Pearl 在《The Book of Why》里把因果推断分三级：第一级关联（seeing，$P(Y|X)$），第二级干预（doing，$P(Y|do(X))$），第三级反事实（imagining，$P(Y_x|X',Y')$）。描述统计、回归、机器学习多数停在第一级；RCT、ITS、IV 进到第二级；合成控制与个体反事实推断进到第三级。同一份数据用不同方法，能达到的层级不同。</SideNote>
+
 
 *表 6·1　6 种方法的 Pearl 梯子层级与限制*
 

@@ -17,6 +17,8 @@
 
 这两条限定决定了我们能用什么方法、不能用什么方法、能宣称多强的 claim。
 
+<SideNote term="单被试因果推断">N=1 设计下的因果识别，材料是同一个体在时间轴上的多次观测，识别策略是 within-subject 的 pre/post 对照而非 between-subject 的随机分配。心理学早有 single-case experimental design 的传统，但应用到历史人物身上时，群体平均反事实彻底不可得，只能估"沿这条轨迹的偏离"。</SideNote>
+
 <Trap title="把单被试纵向研究当 RCT 来读">
 
 读者读到"1506 廷杖效应 +10.28，$t = 17.2$ ★★★"时，容易按 RCT 风格解读："廷杖**导致**情感深度上升 10.28 单位，$p < .01$"。
@@ -54,6 +56,8 @@
 
 **多维联合一致性**是元层面的策略，用来补强单被试推断，本身不构成直接的因果方法。单维度信号可能假，多维度联合一致是真信号的概率指标。
 
+<SideNote term="Pearl 因果梯子">Judea Pearl 提出的因果推断三层架构：第一层 association（看），回答 $P(Y|X)$ 这类相关性问题；第二层 intervention（做），回答 $P(Y|do(X))$ 即主动干预 X 后 Y 的反应；第三层 counterfactual（想），回答"若当时 X 没发生，Y 会怎样"。描述统计停在第一层，RCT 上到第二层，结构因果模型才进第三层。</SideNote>
+
 ## 每种方法的核心假设与现实违反情况
 
 下面把每种方法的标准假设与本书研究中真实违反的程度一一列出。
@@ -63,6 +67,8 @@
 ITS 给因果效应的前提是**反事实平行**：若事件没发生，pre-trend 会按相同斜率延伸到 post-period。这一假设无法直接检验，只能侧面支撑。
 
 **本书的违反程度**：中等。1506 事件之前的 pre-period 只有 6 个文档（1496–1505），而且大部分是奏疏。pre-trend 拟合的标准误大，外推到 22 个 post-period 年点的不确定性明显超出标准 ITS 应用场景。
+
+<SideNote term="反事实平行">ITS 与 DID 类设计的核心识别假设：若 treatment 没发生，post-period 的 outcome 会沿 pre-trend 的轨迹平行延伸下去。这个假设没法直接证，只能用 pre-trend 的拟合优度、placebo 时段、辅助变量等侧面支撑。单被试场景下没有控制组，平行假设比群体设计更脆弱。</SideNote>
 
 **补救**：(1) 用多维联合一致性弥补单维度推断不足。(2) 用 Placebo（合成控制章）做交叉验证。(3) 在 limitations 中明说。
 
@@ -104,11 +110,17 @@ PELT / Binary Segmentation 假设序列内部是 piecewise constant 加高斯白
 
 这件事让我们能宣称的因果效应必须**降级**：我们能讲的是"对一个会上疏救戴铣的阳明，廷杖触发了什么"，而不是"廷杖对一般人会怎样"。这是 LATE 而非 ATE。
 
+<SideNote term="LATE vs ATE">ATE（Average Treatment Effect）是 treatment 在总体上的平均因果效应；LATE（Local Average Treatment Effect）只在一类被 treatment 选中或受工具变量驱动的子总体上有定义，外推性差。Imbens 和 Angrist 1994 年正式给 LATE 写下识别条件。单被试 + 内生 treatment 的极端情形下，所谓 LATE 退化到 N=1 的 individual treatment effect。</SideNote>
+
+<SideNote term="内生 treatment">外生 treatment 指 treatment 的分配与个体的潜在 outcome 独立，RCT 通过随机化实现外生；内生 treatment 指个体自身的特征或选择影响了是否进入 treatment 组，常见于观察研究。阳明上疏救戴铣这一行为本身由他 pre-period 的人格状态决定，廷杖的发生就成了 pre-state 的下游事件，标准 ITS 假设被破坏。</SideNote>
+
 ### 并发事件混淆
 
 1506 不是单一事件，是一连串事件：上疏 → 下狱 → 廷杖 → 流放 → 追杀 → 极端环境 → 弟弟病逝。单凭 ITS 无法分离这些事件各自的贡献。ITS 估出的 +10.28 是**整条事件链**的综合效应，不是廷杖一项的独立效应。
 
 **诚实的结论**：第 1 章的论点应当改写为"1506 那段经历的综合冲击，触发了 7 维同时显著的人格重组"，不是"廷杖独立导致了 7 维重组"。两者差一个粒度层级。
+
+<SideNote term="并发事件混淆">事件研究的常见识别威胁：在 treatment 时间窗内同时发生了多个事件，单一时间序列无法把各事件的因果贡献拆开。流行病学中流感疫苗与同期口罩令的混淆是典型案例。要拆解必须借助跨地区差异、剂量梯度或其他外部变异源，单被试场景几乎做不到，唯一稳健的应对是把 claim 改写到事件链的粒度。</SideNote>
 
 ## 对 claim 强度的总体降级
 

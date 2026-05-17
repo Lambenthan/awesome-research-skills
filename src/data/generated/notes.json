@@ -49,5 +49,64 @@
         ]
       }
     ]
+  },
+  {
+    "id": "accounting-empirical",
+    "label": "会计实证方法",
+    "summary": "围绕同一份会计 / 金融面板数据，把多种方法在同一研究问题上做演练与对照，看每种方法在 R / Python 实现下的差异与适用边界。两本书分别聚焦舞弊检测（AAER + Compustat）与盈余管理（Compustat 面板）。",
+    "items": [
+      {
+        "itemSlug": "fraud-detection",
+        "title": "财务舞弊检测实践",
+        "subtitle": "基于 AAER 与 Compustat 的方法比较与 R / Python 实现",
+        "author": "Chanw",
+        "date": "2026-05",
+        "version": "v1.0",
+        "pages": 64,
+        "kind": "应用工具书",
+        "cover": "/notes/accounting-empirical/fraud-detection/cover.png",
+        "pdf": "/notes/accounting-empirical/fraud-detection/fraud-detection.pdf",
+        "cn": "以 Bao et al. 2020 公开复制包为基准样本，覆盖 1991–2014 年约 144,000 个 firm-year 观测、AAER 二元标签与 Compustat 财务变量。十章对应十种检测方法，从 Beneish M-Score 与 Dechow F-Score 的规则基线，到 LASSO 与随机森林、XGBoost 与 RUSBoost、表格深度学习与 MD&A 文本特征、最后用 SHAP 给方法选择决策树。每章末维护一张累积对比表，AUC、NDCG@k、Recall@1% 全口径累积报告。",
+        "chapters": [
+          { "num": "0", "title": "前言：同一份数据，十种刀法" },
+          { "num": "1", "title": "问题与数据：AAER 与上市公司舞弊检测" },
+          { "num": "2", "title": "Beneish M-Score：八变量规则基线" },
+          { "num": "3", "title": "F-Score：带学习的逻辑回归" },
+          { "num": "4", "title": "LASSO 与 Elastic Net：高维变量的正则化" },
+          { "num": "5", "title": "决策树与随机森林：跨入非参数世界" },
+          { "num": "6", "title": "XGBoost：Boosting 与 Bagging 的差异" },
+          { "num": "7", "title": "RUSBoost：复刻 Bao 2020 JAR 主结果" },
+          { "num": "8", "title": "表格深度学习与无监督异常检测" },
+          { "num": "9", "title": "MD&A 文本与 Loughran-McDonald 词典" },
+          { "num": "10", "title": "SHAP 可解释性与方法选择决策树" }
+        ]
+      },
+      {
+        "itemSlug": "earnings-management",
+        "title": "盈余管理实践",
+        "subtitle": "基于 Compustat 的方法演练与 R / Python 实现",
+        "author": "Chanw",
+        "date": "2026-05",
+        "version": "v1.0",
+        "pages": 78,
+        "kind": "应用工具书",
+        "cover": "/notes/accounting-empirical/earnings-management/cover.png",
+        "pdf": "/notes/accounting-empirical/earnings-management/earnings-management.pdf",
+        "cn": "以同一份 Compustat 面板数据为底，回答同一个 DA（Discretionary Accruals）度量问题。十章覆盖 Healy 1985 到现代 ML 残差的十种方法：DeAngelo 中位数离差、Jones 与 Modified Jones、业绩匹配 PMDA、Dechow-Dichev 应计质量、McNichols 改良、Stubben 收入侧 DA、Roychowdhury 真实活动盈余管理，最后一章给出方法选择决策树与综合排名。每章末维护一张累积对比表。",
+        "chapters": [
+          { "num": "0", "title": "前言：同一份 Compustat 面板的十种刀法" },
+          { "num": "1", "title": "总应计 TA：度量盈余管理的起点" },
+          { "num": "2", "title": "Healy 1985 与 DeAngelo：最早的 DA 度量" },
+          { "num": "3", "title": "Jones 1991 模型：行业残差识别" },
+          { "num": "4", "title": "Modified Jones (Dechow 1995)：剔除收入操纵" },
+          { "num": "5", "title": "Performance-Matched DA (Kothari 2005)" },
+          { "num": "6", "title": "Dechow-Dichev 2002 应计质量" },
+          { "num": "7", "title": "McNichols 改良与签号 vs 绝对值 DA" },
+          { "num": "8", "title": "Stubben 2010 收入侧 DA" },
+          { "num": "9", "title": "Roychowdhury 2006 真实活动盈余管理" },
+          { "num": "10", "title": "十种方法综合对比与方法选择决策树" }
+        ]
+      }
+    ]
   }
 ]
