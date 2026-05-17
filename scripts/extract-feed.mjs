@@ -3,13 +3,31 @@
  * Lab feed extractor.
  *
  * Reads content/feed-sources.yml and produces src/data/generated/feed-raw.json.
- * Three fetcher types are supported:
+ * Three fetcher types are supported on the "list page" entry:
  *
  *   rss      — RSS / Atom feed, parsed by fast-xml-parser
  *   html     — SSR HTML page, parsed by JSDOM-free regex against
  *              `selector.item` anchors. Robust enough for Anthropic.
  *   browser  — Playwright chromium headless; needed for sites that
  *              block UA-based curl (Cloudflare) or render on the client.
+ *
+ * Each source can ALSO declare an `archive:` block that walks the lab's
+ * full history beyond what the list page surfaces. Supported modes:
+ *
+ *   sitemap         — fetch one or more sitemap.xml documents, filter
+ *                     URLs against `url_pattern`, optionally keyword-filter
+ *                     for blogs that mix AI with unrelated content
+ *   pagination      — html or browser pagination via `template` with {n}
+ *                     placeholder; either parse anchor_pattern from HTML
+ *                     or use playwright on each page
+ *   browser-scroll  — single playwright session, scroll the list page until
+ *                     no new items appear for `idle_scrolls` rounds or
+ *                     `max_scrolls` total
+ *
+ * Archive items only carry url + a list-page title (from the sitemap is
+ * rarely informative — usually just the slug). The score-and-tag pass and
+ * enrich-feed-dates / fetch-og-images steps fill in real titles, dates,
+ * and summaries.
  *
  * Each source's output is appended to the same flat list, normalized to
  *
@@ -28,8 +46,11 @@
  * Stable IDs let downstream scoring skip already-scored items.
  *
  * Env:
- *   - SKIP_BROWSER=1   skip playwright sources (CI / dev convenience)
- *   - FEED_LIMIT=N     keep at most N items per source (default 30)
+ *   - SKIP_BROWSER=1     skip playwright sources (CI / dev convenience)
+ *   - FEED_LIMIT=N       keep at most N items per source from the LIST PAGE
+ *                        (default 30; archive walks have their own cap)
+ *   - SKIP_ARCHIVE=1     skip the archive walks (fast path for dev iteration)
+ *   - ARCHIVE_ONLY=src1,src2  only run archive walks for matching ids
  */
 
 import { promises as fs } from "node:fs";
@@ -345,6 +366,351 @@ async function fetchBrowser(source) {
   }
 }
 
+// ---------- Archive walks --------------------------------------------------
+//
+// Each lab gets one of three strategies depending on what their site
+// exposes. All three return the same shape — a flat array of minimal item
+// records — that the orchestrator merges into the per-source results.
+//
+// Archive items typically only have `url`. The title field is a slug-
+// derived placeholder; the score-and-tag pass rewrites it from the
+// detail page metadata anyway. publishedAt comes from sitemap <lastmod>
+// when available (it tracks first-publish on most blogs), and from
+// enrich-feed-dates.mjs otherwise.
+
+function slugToTitle(url) {
+  // Last path segment, kebab-case → space-separated, capitalised. Good
+  // enough placeholder; score-and-tag rewrites titles anyway.
+  try {
+    const u = new URL(url);
+    const last =
+      u.pathname.split("/").filter(Boolean).pop() || u.hostname;
+    const words = last
+      .replace(/\.html?$/, "")
+      .split("-")
+      .filter((w) => w.length > 0);
+    if (words.length === 0) return last;
+    return words
+      .map((w) => (w.length > 0 ? w[0].toUpperCase() + w.slice(1) : w))
+      .join(" ");
+  } catch {
+    return url;
+  }
+}
+
+async function fetchTextWithRetry(url, init, tries = 3) {
+  const res = await fetchWithRetry(url, init, tries);
+  return res.text();
+}
+
+async function expandSitemap(url, depth = 0) {
+  // Returns an array of { loc, lastmod } from a sitemap. If the file is a
+  // sitemap-index pointing at other sitemaps, recursively expand (one level
+  // deep is enough for the labs we hit).
+  const xml = await fetchTextWithRetry(url, { headers: { "User-Agent": UA } });
+  const doc = xmlParser.parse(xml);
+  // Sitemap index → recurse
+  if (doc.sitemapindex?.sitemap) {
+    const children = Array.isArray(doc.sitemapindex.sitemap)
+      ? doc.sitemapindex.sitemap
+      : [doc.sitemapindex.sitemap];
+    if (depth >= 2) return []; // bail to avoid runaway
+    const all = [];
+    for (const child of children) {
+      const childUrl = child.loc?.["#text"] ?? child.loc;
+      if (!childUrl) continue;
+      try {
+        const items = await expandSitemap(childUrl, depth + 1);
+        all.push(...items);
+      } catch (err) {
+        console.warn(`  [sitemap-child fail] ${childUrl}: ${err.message}`);
+      }
+    }
+    return all;
+  }
+  // urlset → flatten
+  if (doc.urlset?.url) {
+    const urls = Array.isArray(doc.urlset.url) ? doc.urlset.url : [doc.urlset.url];
+    return urls
+      .map((u) => ({
+        loc: u.loc?.["#text"] ?? u.loc,
+        lastmod: u.lastmod?.["#text"] ?? u.lastmod,
+      }))
+      .filter((u) => u.loc);
+  }
+  return [];
+}
+
+async function archiveSitemap(source) {
+  const cfg = source.archive;
+  const sitemaps = cfg.sitemaps || (cfg.sitemap ? [cfg.sitemap] : []);
+  if (sitemaps.length === 0) return [];
+  const pattern = new RegExp(cfg.url_pattern);
+  const kwFilter = cfg.keyword_filter ? new RegExp(cfg.keyword_filter, "i") : null;
+  const max = cfg.max_items ?? 500;
+
+  const seen = new Map();
+  for (const sm of sitemaps) {
+    let entries = [];
+    try {
+      entries = await expandSitemap(sm);
+    } catch (err) {
+      console.warn(`  [sitemap fail] ${sm}: ${err.message}`);
+      continue;
+    }
+    for (const e of entries) {
+      if (!e.loc || !pattern.test(e.loc)) continue;
+      if (kwFilter && !kwFilter.test(e.loc)) continue;
+      if (seen.has(e.loc)) continue;
+      seen.set(e.loc, {
+        url: e.loc,
+        publishedAt: normalizeISO(e.lastmod),
+      });
+    }
+  }
+  // Sort by publishedAt desc so the most recent items get kept under cap.
+  const all = [...seen.values()].sort((a, b) => {
+    const ad = a.publishedAt ? Date.parse(a.publishedAt) : 0;
+    const bd = b.publishedAt ? Date.parse(b.publishedAt) : 0;
+    return bd - ad;
+  });
+  return all.slice(0, max).map((it) => ({
+    title: slugToTitle(it.url),
+    url: it.url,
+    summary: "",
+    category: null,
+    publishedAt: it.publishedAt,
+  }));
+}
+
+async function archiveHtmlPagination(source) {
+  const cfg = source.archive;
+  const template = cfg.template;
+  const start = cfg.start ?? 1;
+  const maxPages = cfg.max_pages ?? 50;
+  const max = cfg.max_items ?? 500;
+  const anchorPattern = new RegExp(cfg.anchor_pattern, "g");
+
+  const seen = new Set();
+  const out = [];
+  let consecutiveEmpty = 0;
+  for (let n = start; n < start + maxPages; n++) {
+    const pageUrl = template.replace("{n}", String(n));
+    let html;
+    try {
+      html = await fetchTextWithRetry(
+        pageUrl,
+        { headers: { "User-Agent": UA } },
+        2,
+      );
+    } catch (err) {
+      console.warn(`  [pagination ${n} fail] ${err.message}`);
+      consecutiveEmpty++;
+      if (consecutiveEmpty >= 3) break;
+      continue;
+    }
+    anchorPattern.lastIndex = 0;
+    let pageHits = 0;
+    let m;
+    while ((m = anchorPattern.exec(html))) {
+      const url = m[1].replace(/[?#].*$/, "");
+      if (seen.has(url)) continue;
+      seen.add(url);
+      out.push({
+        title: slugToTitle(url),
+        url,
+        summary: "",
+        category: null,
+        publishedAt: null,
+      });
+      pageHits++;
+      if (out.length >= max) break;
+    }
+    if (out.length >= max) break;
+    if (pageHits === 0) {
+      consecutiveEmpty++;
+      if (consecutiveEmpty >= 3) break;
+    } else {
+      consecutiveEmpty = 0;
+    }
+    // Pace requests
+    await new Promise((r) => setTimeout(r, 250));
+  }
+  return out.slice(0, max);
+}
+
+async function archiveBrowserPagination(source) {
+  // Like archiveHtmlPagination but driven by playwright so sites that
+  // reject node fetch (Meta AI returns 400 to node's TLS fingerprint)
+  // still get crawled. Some sites (ai.meta.com) hydrate the same SPA
+  // grid regardless of ?page=N, so pagination only works when JS is
+  // disabled and a fresh context is used per request — that's the
+  // default here.
+  const cfg = source.archive;
+  const template = cfg.template;
+  const start = cfg.start ?? 1;
+  const maxPages = cfg.max_pages ?? 50;
+  const max = cfg.max_items ?? 500;
+  const anchorSel = cfg.anchor_selector ?? source.selector?.item;
+  if (!anchorSel) {
+    throw new Error("browser-pagination requires anchor_selector or selector.item");
+  }
+  // Default JS=disabled for this strategy. Sites that paginate via query
+  // string usually have full SSR; enabling JS lets the SPA hydrate over
+  // the SSR HTML and clobber the per-page content (Meta AI does this).
+  const jsEnabled = cfg.js === true;
+  // Default new-context-per-page=true. Reusing a single context can leak
+  // SPA state across navigations on aggressive client-side routers.
+  const newContextPerPage = cfg.new_context_per_page !== false;
+
+  const browser = await getBrowser();
+  const seen = new Set();
+  const out = [];
+  let consecutiveEmpty = 0;
+  let ctx = null;
+  let page = null;
+  if (!newContextPerPage) {
+    ctx = await browser.newContext({ userAgent: UA, javaScriptEnabled: jsEnabled });
+    page = await ctx.newPage();
+  }
+  try {
+    for (let n = start; n < start + maxPages && out.length < max; n++) {
+      const pageUrl = template.replace("{n}", String(n));
+      let localCtx = null;
+      let activePage = page;
+      try {
+        if (newContextPerPage) {
+          localCtx = await browser.newContext({
+            userAgent: UA,
+            javaScriptEnabled: jsEnabled,
+          });
+          activePage = await localCtx.newPage();
+        }
+        await activePage.goto(pageUrl, { waitUntil: "domcontentloaded", timeout: 30000 });
+        if (jsEnabled) {
+          try {
+            await activePage.waitForSelector(anchorSel, { timeout: 8000 });
+          } catch {
+            /* selector may not appear on empty pages */
+          }
+          await activePage.waitForTimeout(800);
+        }
+        const hrefs = await activePage.$$eval(anchorSel, (els) =>
+          els.map((el) => el.getAttribute("href")).filter(Boolean),
+        );
+        if (process.env.DEBUG_FEED === "1") {
+          console.log(
+            `    [browser-pagination ${source.id} p${n}] ${hrefs.length} hrefs (js=${jsEnabled})`,
+          );
+        }
+        let pageHits = 0;
+        const urlFilter = cfg.url_pattern ? new RegExp(cfg.url_pattern) : null;
+        for (const h of hrefs) {
+          const cleaned = h.replace(/[?#].*$/, "");
+          if (!cleaned) continue;
+          const abs = cleaned.startsWith("http")
+            ? cleaned
+            : (source.detailBase ?? "") + cleaned;
+          if (urlFilter && !urlFilter.test(abs)) continue;
+          if (seen.has(abs)) continue;
+          seen.add(abs);
+          out.push({
+            title: slugToTitle(abs),
+            url: abs,
+            summary: "",
+            category: null,
+            publishedAt: null,
+          });
+          pageHits++;
+          if (out.length >= max) break;
+        }
+        if (pageHits === 0) {
+          consecutiveEmpty++;
+          if (consecutiveEmpty >= 3) break;
+        } else {
+          consecutiveEmpty = 0;
+        }
+      } catch (err) {
+        console.warn(`  [browser-pagination ${n} fail] ${err.message}`);
+        consecutiveEmpty++;
+        if (consecutiveEmpty >= 3) break;
+      } finally {
+        if (localCtx) await localCtx.close();
+      }
+    }
+  } finally {
+    if (ctx) await ctx.close();
+  }
+  return out.slice(0, max);
+}
+
+async function archiveBrowserScroll(source) {
+  const cfg = source.archive;
+  const maxScrolls = cfg.max_scrolls ?? 80;
+  const idleScrolls = cfg.idle_scrolls ?? 5;
+  const max = cfg.max_items ?? 300;
+
+  const browser = await getBrowser();
+  const ctx = await browser.newContext({ userAgent: UA });
+  const page = await ctx.newPage();
+  const seen = new Set();
+  const out = [];
+  try {
+    await page.goto(source.url, { waitUntil: "domcontentloaded", timeout: 45000 });
+    try {
+      await page.waitForSelector(source.selector.item, { timeout: 15000 });
+    } catch {
+      /* proceed, maybe selector lazy */
+    }
+    await page.waitForTimeout(1500);
+
+    let idle = 0;
+    for (let i = 0; i < maxScrolls && out.length < max && idle < idleScrolls; i++) {
+      const before = out.length;
+      const items = await page.$$eval(source.selector.item, (els) =>
+        els
+          .map((el) => el.getAttribute("href"))
+          .filter(Boolean)
+          .map((h) => h.replace(/[?#].*$/, "")),
+      );
+      for (const href of items) {
+        const abs = href.startsWith("http") ? href : source.detailBase + href;
+        if (seen.has(abs)) continue;
+        seen.add(abs);
+        out.push({
+          title: slugToTitle(abs),
+          url: abs,
+          summary: "",
+          category: null,
+          publishedAt: null,
+        });
+        if (out.length >= max) break;
+      }
+      if (out.length === before) idle++;
+      else idle = 0;
+      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+      await page.waitForTimeout(1500);
+    }
+  } finally {
+    await ctx.close();
+  }
+  return out.slice(0, max);
+}
+
+async function runArchive(source) {
+  const mode = source.archive?.mode;
+  if (!mode) return [];
+  if (mode === "sitemap") return archiveSitemap(source);
+  if (mode === "pagination") {
+    const strat = source.archive.strategy ?? "html-pagination";
+    if (strat === "html-pagination") return archiveHtmlPagination(source);
+    if (strat === "browser-pagination") return archiveBrowserPagination(source);
+    throw new Error(`unknown pagination strategy: ${strat}`);
+  }
+  if (mode === "browser-scroll") return archiveBrowserScroll(source);
+  throw new Error(`unknown archive mode: ${mode}`);
+}
+
 // ---------- Orchestration --------------------------------------------------
 
 async function run() {
@@ -355,12 +721,26 @@ async function run() {
   const results = [];
   const stats = [];
 
+  // Archive scoping: ARCHIVE_ONLY=src1,src2 limits archive walks to those
+  // sources (the list-page fetches still run for everyone). Useful when
+  // iterating on a single lab.
+  const archiveOnlySet = process.env.ARCHIVE_ONLY
+    ? new Set(process.env.ARCHIVE_ONLY.split(",").map((s) => s.trim()))
+    : null;
+  const skipArchive = process.env.SKIP_ARCHIVE === "1";
+
   for (const source of sources) {
     if (process.env.SKIP_BROWSER === "1" && source.type === "browser") {
       stats.push(`  ${source.id.padEnd(12)} skipped (SKIP_BROWSER=1)`);
       continue;
     }
     const t0 = Date.now();
+    // Track per-source unique URLs so the archive walk can't double-add an
+    // item already pulled by the live list page.
+    const seenUrlsForSource = new Set();
+    let listCount = 0;
+    let archiveAdded = 0;
+    let archiveAvailable = 0;
     try {
       let raw;
       if (source.type === "rss") raw = await fetchRss(source);
@@ -370,6 +750,8 @@ async function run() {
 
       raw = raw.filter((r) => r.url && r.title).slice(0, FEED_LIMIT);
       for (const r of raw) {
+        if (seenUrlsForSource.has(r.url)) continue;
+        seenUrlsForSource.add(r.url);
         results.push({
           source: source.id,
           sourceName: source.name,
@@ -381,13 +763,71 @@ async function run() {
           publishedAt: r.publishedAt,
           discoveredAt: now,
         });
+        listCount++;
       }
-      stats.push(
-        `  ${source.id.padEnd(12)} ${String(raw.length).padStart(3)} items   ${Date.now() - t0}ms`,
-      );
     } catch (err) {
-      stats.push(`  ${source.id.padEnd(12)} FAILED  ${err.message}`);
+      stats.push(`  ${source.id.padEnd(12)} list FAILED  ${err.message}`);
     }
+
+    // Archive walk — separate try block so a sitemap timeout doesn't
+    // throw away the list-page items we already collected.
+    if (
+      !skipArchive &&
+      source.archive &&
+      (archiveOnlySet === null || archiveOnlySet.has(source.id))
+    ) {
+      // Browser-driven archives reuse the playwright session, so we only
+      // honour SKIP_BROWSER for them. Sitemap/html-pagination work over
+      // plain fetch and are always run.
+      const isBrowserMode =
+        source.archive.mode === "browser-scroll" ||
+        (source.archive.mode === "pagination" &&
+          source.archive.strategy === "browser-pagination");
+      if (isBrowserMode && process.env.SKIP_BROWSER === "1") {
+        stats.push(
+          `  ${source.id.padEnd(12)} list=${listCount} archive=skipped (SKIP_BROWSER=1)`,
+        );
+        continue;
+      }
+      try {
+        const archive = await runArchive(source);
+        if (process.env.DEBUG_FEED === "1") {
+          console.log(`    [archive ${source.id}] runArchive returned ${archive.length} items`);
+        }
+        archiveAvailable = archive.length;
+        for (const a of archive) {
+          if (seenUrlsForSource.has(a.url)) continue;
+          seenUrlsForSource.add(a.url);
+          results.push({
+            source: source.id,
+            sourceName: source.name,
+            id: stableId(a.url),
+            title: a.title,
+            url: a.url,
+            summary: a.summary ?? "",
+            category: a.category ?? null,
+            publishedAt: a.publishedAt,
+            discoveredAt: now,
+          });
+          archiveAdded++;
+        }
+      } catch (err) {
+        stats.push(
+          `  ${source.id.padEnd(12)} archive FAILED  ${err.message}`,
+        );
+      }
+    }
+
+    const capHint =
+      source.archive?.max_items &&
+      archiveAvailable >= source.archive.max_items
+        ? ` [cap=${source.archive.max_items}]`
+        : "";
+    stats.push(
+      `  ${source.id.padEnd(12)} list=${String(listCount).padStart(3)} ` +
+        `archive=${String(archiveAdded).padStart(4)}` +
+        `${capHint} (${Date.now() - t0}ms)`,
+    );
   }
 
   if (_browser) await _browser.close();
