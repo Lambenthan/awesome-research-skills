@@ -41,31 +41,49 @@ export function LatestDetail({ item }: { item: LatestRss }) {
         ]}
       />
 
-      <header className="space-y-6">
+      <header className="mx-auto max-w-3xl space-y-7 text-center">
         <Reveal>
           <p className="eyebrow">
             {item.sourceName} · {item.category}
           </p>
         </Reveal>
         <Reveal delay={100}>
-          <h1 className="display text-[34px] text-ink sm:text-[48px]">
+          <h1 className="display text-[38px] text-ink sm:text-[52px]">
             {item.title}
           </h1>
         </Reveal>
         {item.cn && (
           <Reveal delay={220}>
-            <p className="max-w-3xl text-[16px] leading-[1.85] text-ink">
+            <p className="mx-auto max-w-2xl text-[17px] leading-[1.85] text-ink">
               {item.cn}
             </p>
           </Reveal>
         )}
+        <Reveal delay={300}>
+          <dl className="mx-auto mt-2 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[12.5px] text-ink-subtle">
+            <Pair label="域名" value={<code className="font-mono text-[12px] text-ink">{host}</code>} />
+            <Pair label="评分" value={`${item.score} · ${SCORE_LABEL[item.score] ?? "—"}`} />
+            <Pair label={item.publishedAt ? "发布" : "收录"} value={dateText} />
+          </dl>
+        </Reveal>
+        <Reveal delay={380}>
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex items-center justify-center gap-2 rounded-full border border-ink bg-ink px-5 py-2.5 text-[13px] font-medium text-cream transition hover:bg-ember hover:border-ember focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
+          >
+            <span>访问项目本体</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </Reveal>
         {item.image && (
-          <Reveal delay={320}>
+          <Reveal delay={460}>
             <a
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block overflow-hidden rounded border border-rule focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
+              className="group mx-auto mt-6 block overflow-hidden rounded border border-rule focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -81,62 +99,31 @@ export function LatestDetail({ item }: { item: LatestRss }) {
         )}
       </header>
 
-      <div className="grid grid-cols-12 gap-x-10 gap-y-10">
-        <aside className="col-span-12 sm:col-span-4">
-          <dl className="divide-y divide-rule border-y border-rule">
-            <Row label="来源">
-              <span className="text-ink">{item.sourceName}</span>
-            </Row>
-            <Row label="域名">
-              <code className="font-mono text-[12.5px] text-ink-muted">
-                {host}
-              </code>
-            </Row>
-            <Row label="分类">{item.category}</Row>
-            <Row label="评分">
-              {item.score} · {SCORE_LABEL[item.score] ?? "—"}
-            </Row>
-            <Row label={item.publishedAt ? "发布" : "收录"}>{dateText}</Row>
-          </dl>
-          <div className="mt-6 flex flex-col gap-3">
-            <a
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-between rounded-full border border-ember bg-ember-tint px-5 py-2.5 text-[13px] font-medium text-ember transition hover:bg-ember hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
-            >
-              <span>访问项目本体</span>
-              <span aria-hidden="true">→</span>
-            </a>
+      <section className="mx-auto max-w-3xl">
+        <h2 className="mb-5 font-serif text-[22px] leading-tight text-ink">
+          导读
+        </h2>
+        {hasDetail ? (
+          <div className="prose-detail max-w-none text-[15.5px] leading-[1.95] text-ink">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {item.detail!}
+            </ReactMarkdown>
           </div>
-        </aside>
+        ) : (
+          <p className="border border-dashed border-rule p-6 text-center text-[13px] text-ink-subtle">
+            这条暂时没有深度导读，点上方「访问项目本体」直接到源页面查看。
+          </p>
+        )}
 
-        <section className="col-span-12 sm:col-span-8">
-          <h2 className="mb-4 font-serif text-[22px] leading-tight text-ink">
-            导读
-          </h2>
-          {hasDetail ? (
-            <div className="prose-detail max-w-none text-[14.5px] leading-[1.9] text-ink">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {item.detail!}
-              </ReactMarkdown>
-            </div>
-          ) : (
-            <p className="border border-dashed border-rule p-6 text-[13px] text-ink-subtle">
-              这条暂时没有深度导读，点上方「访问项目本体」直接到源页面查看。
+        {item.summary && (
+          <div className="mt-10 border-t border-rule pt-6">
+            <p className="eyebrow mb-3">原文摘要</p>
+            <p className="text-[13.5px] leading-[1.8] text-ink-muted">
+              {item.summary}
             </p>
-          )}
-
-          {item.summary && (
-            <div className="mt-10 border-t border-rule pt-6">
-              <p className="eyebrow mb-3">原文摘要</p>
-              <p className="text-[13.5px] leading-[1.8] text-ink-muted">
-                {item.summary}
-              </p>
-            </div>
-          )}
-        </section>
-      </div>
+          </div>
+        )}
+      </section>
 
       <div className="border-t border-rule pt-6">
         <Link
@@ -150,17 +137,11 @@ export function LatestDetail({ item }: { item: LatestRss }) {
   );
 }
 
-function Row({
-  label,
-  children,
-}: {
-  label: string;
-  children: React.ReactNode;
-}) {
+function Pair({ label, value }: { label: string; value: React.ReactNode }) {
   return (
-    <div className="grid grid-cols-3 gap-4 py-3">
-      <dt className="eyebrow col-span-1">{label}</dt>
-      <dd className="col-span-2 text-[13.5px] text-ink">{children}</dd>
+    <div className="flex items-baseline gap-1.5">
+      <dt className="eyebrow">{label}</dt>
+      <dd className="text-ink">{value}</dd>
     </div>
   );
 }
