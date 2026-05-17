@@ -86,7 +86,8 @@ export const GROUP_ORDER: RssGroupMeta[] = [
     id: "oss",
     label: "开源 OSS",
     subtitle: "indie projects",
-    blurb: "GitHub 上的独立开源项目，多为个人或小团队发起的工具与原型。",
+    blurb:
+      "GitHub 上的独立开源项目，多为个人或小团队发起的工具与原型。长存的高 star 项目整理在 /ai 与 /research 两个 section 下，按主题归组。",
   },
 ];
 

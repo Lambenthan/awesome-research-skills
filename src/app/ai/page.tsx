@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { NavBar } from "@/components/NavBar";
 import { Reveal } from "@/components/Reveal";
@@ -31,6 +32,18 @@ export default function AiIndex() {
               <Reveal delay={220}>
                 <p className="mt-5 max-w-2xl text-[15px] leading-[1.75] text-ink-muted">
                   {meta.blurb}
+                </p>
+              </Reveal>
+              <Reveal delay={300}>
+                <p className="mt-3 max-w-2xl text-[13px] leading-[1.7] text-ink-subtle">
+                  这里是长存的高 star 项目，每 6 小时刷新数据。最新的 GitHub 趋势在{" "}
+                  <Link
+                    href="/latest/oss"
+                    className="text-ember underline decoration-ember/40 underline-offset-2 transition hover:decoration-ember"
+                  >
+                    Latest · 开源 OSS
+                  </Link>
+                  。
                 </p>
               </Reveal>
             </div>
