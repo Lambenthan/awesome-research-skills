@@ -59,7 +59,7 @@ export function LatestDetail({ item }: { item: LatestRss }) {
         )}
         <Reveal delay={300}>
           <dl className="mx-auto mt-2 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[12.5px] text-ink-subtle">
-            <Pair label="域名" value={<code className="font-mono text-[12px] text-ink">{host}</code>} />
+            <Pair label="域名" value={<code translate="no" className="font-mono text-[12px] text-ink">{host}</code>} />
             <Pair label="评分" value={`${item.score} · ${SCORE_LABEL[item.score] ?? "—"}`} />
             <Pair label={item.publishedAt ? "发布" : "收录"} value={dateText} />
           </dl>
@@ -89,8 +89,8 @@ export function LatestDetail({ item }: { item: LatestRss }) {
                 alt={item.title}
                 width="1200"
                 height="675"
-                loading="lazy"
-                className="aspect-[16/9] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+                fetchPriority="high"
+                className="aspect-[16/9] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
               />
             </a>
           </Reveal>

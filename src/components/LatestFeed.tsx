@@ -64,7 +64,7 @@ export function LatestFeed() {
                   />
                   <Link
                     href={`/latest/${group.id}`}
-                    className="transition hover:text-ember"
+                    className="rounded transition hover:text-ember focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
                   >
                     {group.label}
                   </Link>{" "}

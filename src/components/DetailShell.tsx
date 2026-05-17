@@ -148,7 +148,7 @@ export function DetailShell({
               <li key={s.itemSlug}>
                 <Link
                   href={`${meta.href}/${categoryId}/${s.itemSlug}`}
-                  className="text-[13.5px] text-ink-muted transition hover:text-ember"
+                  className="rounded text-[13.5px] text-ink-muted transition hover:text-ember focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
                 >
                   {s.title}
                 </Link>
@@ -161,7 +161,7 @@ export function DetailShell({
       <div className="border-t border-rule pt-6">
         <Link
           href={`${meta.href}/${categoryId}`}
-          className="eyebrow transition hover:text-ember"
+          className="eyebrow rounded transition hover:text-ember focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
         >
           <span aria-hidden="true">←</span> Back to {categoryLabel}
         </Link>
