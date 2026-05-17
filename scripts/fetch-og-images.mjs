@@ -21,6 +21,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import yaml from "js-yaml";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,6 +29,7 @@ const projectRoot = path.resolve(__dirname, "..");
 
 const IN = path.join(projectRoot, "src/data/generated/latest.json");
 const OUT = path.join(projectRoot, "src/data/generated/og-images.json");
+const OVERRIDES = path.join(projectRoot, "content/og-overrides.yml");
 const CONCURRENCY = 6;
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
@@ -121,13 +123,25 @@ async function main() {
   } catch {
     /* first run */
   }
+  let overrides = {};
+  try {
+    overrides = yaml.load(await fs.readFile(OVERRIDES, "utf8")) || {};
+  } catch {
+    /* fine — optional */
+  }
 
   let hits = 0;
   let misses = 0;
   let cached = 0;
+  let overridden = 0;
   const results = await runPool(
     items,
     async (it, idx) => {
+      // Editor overrides win over both cache and live fetch.
+      if (typeof overrides[it.id] === "string") {
+        overridden++;
+        return [it.id, overrides[it.id]];
+      }
       if (existing[it.id]) {
         cached++;
         return [it.id, existing[it.id]];
@@ -156,7 +170,7 @@ async function main() {
 
   await fs.writeFile(OUT, JSON.stringify(out, null, 2));
   console.log(
-    `\nsummary: ${hits} new hits, ${misses} miss, ${cached} from cache | total in file: ${Object.keys(out).length}`,
+    `\nsummary: ${hits} new hits, ${misses} miss, ${cached} from cache, ${overridden} from overrides | total in file: ${Object.keys(out).length}`,
   );
 }
 

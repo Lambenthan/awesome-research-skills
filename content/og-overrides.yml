@@ -1,0 +1,16 @@
+# Manual og:image overrides for /latest detail pages.
+#
+# Format: flat map keyed by feed-scored.json item id. Value is the
+# absolute image URL to use as the detail-page hero.
+#
+# Use case: some upstream sources (openai.com, x.ai, meta.com,
+# deepmind.google) inject og:image via JS so the static-HTML scraper
+# in fetch-og-images.mjs comes back empty. Paste a screenshot or
+# brand asset URL here and it wins over auto-fetch.
+#
+# The fetcher reads this file first and skips its HTTP call for any
+# id present here, so adding an override is cheap and never adds
+# latency to the cron loop.
+
+# Example (delete the next entry when filling in real data):
+# 6659803055f395cb: https://lambenthan.github.io/field-notes/og/gpt-5.5.png
