@@ -61,22 +61,22 @@ jobs:
       # On push triggers we skip the cron-only steps (push changes site
       # code, not data sources), so build runs straight through.
       - name: Initial extract for fill-cn input
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         run: npm run extract
 
       - name: Install Playwright chromium
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         run: npx playwright install --with-deps chromium
 
       - name: Extract lab feeds
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         run: npm run extract-feed
 
       # Extras layer: HuggingFace daily papers, Reddit r/LocalLLaMA +
       # r/MachineLearning hot, arXiv recent cs.AI/CL/LG/CV. Independent
       # of the 8 lab feeds so a single source 429 doesn't tank everything.
       - name: Extract discovery extras (HF papers / Reddit / arXiv)
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         run: npm run extract-feed-extras
         continue-on-error: true
 
@@ -84,7 +84,7 @@ jobs:
       # publishedAt (mostly Mistral / Meta AI / xAI). Cached so we only
       # pay the playwright cost for new items each run.
       - name: Enrich missing publishedAt
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         run: npm run enrich-feed-dates
         continue-on-error: true
 
@@ -96,7 +96,7 @@ jobs:
         run: npm run extract-aigclink
 
       - name: Score and tag feed items
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: npm run score-feed
@@ -107,13 +107,13 @@ jobs:
       # the next prebuild extract merges into latest.rss[].image).
       # Cache hits skip — only new ids actually fetch.
       - name: Fetch og:images for new items
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         run: |
           npm run extract
           npm run fetch-og-images
 
       - name: Fill missing cn (cron only)
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         timeout-minutes: 12
         continue-on-error: true
         env:
@@ -130,7 +130,7 @@ jobs:
       # another workflow run; the current run still deploys what was
       # already built above.
       - name: Commit refreshed data snapshots
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         run: |
           git add \
             scripts/star-history.json \
