@@ -1,0 +1,270 @@
+1:"$Sreact.fragment"
+2:I[22016,["/field-notes/learn/_next/static/chunks/1259a7804b799f1b.js","/field-notes/learn/_next/static/chunks/0d1aaea012c74efe.js","/field-notes/learn/_next/static/chunks/33ff979acb7808b6.js","/field-notes/learn/_next/static/chunks/c3c7941b3e75e3c7.js","/field-notes/learn/_next/static/chunks/134602830c4db97a.js","/field-notes/learn/_next/static/chunks/fd5b7d8b38581d08.js","/field-notes/learn/_next/static/chunks/199d0ea5c980f71c.js"],""]
+3:I[3167,["/field-notes/learn/_next/static/chunks/1259a7804b799f1b.js","/field-notes/learn/_next/static/chunks/0d1aaea012c74efe.js","/field-notes/learn/_next/static/chunks/33ff979acb7808b6.js","/field-notes/learn/_next/static/chunks/c3c7941b3e75e3c7.js","/field-notes/learn/_next/static/chunks/134602830c4db97a.js","/field-notes/learn/_next/static/chunks/fd5b7d8b38581d08.js","/field-notes/learn/_next/static/chunks/199d0ea5c980f71c.js"],"VersionDetailClient"]
+c:I[97367,["/field-notes/learn/_next/static/chunks/ff1a16fafef87110.js","/field-notes/learn/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+d:"$Sreact.suspense"
+4:T27a1,#!/usr/bin/env python3
+# Harness: compression -- clean memory for infinite sessions.
+"""
+s06_context_compact.py - Compact
+
+Three-layer compression pipeline so the agent can work forever:
+
+    Every turn:
+    +------------------+
+    | Tool call result |
+    +------------------+
+            |
+            v
+    [Layer 1: micro_compact]        (silent, every turn)
+      Replace non-read_file tool_result content older than last 3
+      with "[Previous: used {tool_name}]"
+            |
+            v
+    [Check: tokens > 50000?]
+       |               |
+       no              yes
+       |               |
+       v               v
+    continue    [Layer 2: auto_compact]
+                  Save full transcript to .transcripts/
+                  Ask LLM to summarize conversation.
+                  Replace all messages with [summary].
+                        |
+                        v
+                [Layer 3: compact tool]
+                  Model calls compact -> immediate summarization.
+                  Same as auto, triggered manually.
+
+Key insight: "The agent can forget strategically and keep working forever."
+"""
+
+import json
+import os
+import subprocess
+import time
+from pathlib import Path
+
+from anthropic import Anthropic
+from dotenv import load_dotenv
+
+load_dotenv(override=True)
+
+if os.getenv("ANTHROPIC_BASE_URL"):
+    os.environ.pop("ANTHROPIC_AUTH_TOKEN", None)
+
+WORKDIR = Path.cwd()
+client = Anthropic(base_url=os.getenv("ANTHROPIC_BASE_URL"))
+MODEL = os.environ["MODEL_ID"]
+
+SYSTEM = f"You are a coding agent at {WORKDIR}. Use tools to solve tasks."
+
+THRESHOLD = 50000
+TRANSCRIPT_DIR = WORKDIR / ".transcripts"
+KEEP_RECENT = 3
+PRESERVE_RESULT_TOOLS = {"read_file"}
+
+
+def estimate_tokens(messages: list) -> int:
+    """Rough token count: ~4 chars per token."""
+    return len(str(messages)) // 4
+
+
+# -- Layer 1: micro_compact - replace old tool results with placeholders --
+def micro_compact(messages: list) -> list:
+    # Collect (msg_index, part_index, tool_result_dict) for all tool_result entries
+    tool_results = []
+    for msg_idx, msg in enumerate(messages):
+        if msg["role"] == "user" and isinstance(msg.get("content"), list):
+            for part_idx, part in enumerate(msg["content"]):
+                if isinstance(part, dict) and part.get("type") == "tool_result":
+                    tool_results.append((msg_idx, part_idx, part))
+    if len(tool_results) <= KEEP_RECENT:
+        return messages
+    # Find tool_name for each result by matching tool_use_id in prior assistant messages
+    tool_name_map = {}
+    for msg in messages:
+        if msg["role"] == "assistant":
+            content = msg.get("content", [])
+            if isinstance(content, list):
+                for block in content:
+                    if hasattr(block, "type") and block.type == "tool_use":
+                        tool_name_map[block.id] = block.name
+    # Clear old results (keep last KEEP_RECENT). Preserve read_file outputs because
+    # they are reference material; compacting them forces the agent to re-read files.
+    to_clear = tool_results[:-KEEP_RECENT]
+    for _, _, result in to_clear:
+        if not isinstance(result.get("content"), str) or len(result["content"]) <= 100:
+            continue
+        tool_id = result.get("tool_use_id", "")
+        tool_name = tool_name_map.get(tool_id, "unknown")
+        if tool_name in PRESERVE_RESULT_TOOLS:
+            continue
+        result["content"] = f"[Previous: used {tool_name}]"
+    return messages
+
+
+# -- Layer 2: auto_compact - save transcript, summarize, replace messages --
+def auto_compact(messages: list) -> list:
+    # Save full transcript to disk
+    TRANSCRIPT_DIR.mkdir(exist_ok=True)
+    transcript_path = TRANSCRIPT_DIR / f"transcript_{int(time.time())}.jsonl"
+    with open(transcript_path, "w") as f:
+        for msg in messages:
+            f.write(json.dumps(msg, default=str) + "\n")
+    print(f"[transcript saved: {transcript_path}]")
+    # Ask LLM to summarize
+    conversation_text = json.dumps(messages, default=str)[-80000:]
+    response = client.messages.create(
+        model=MODEL,
+        messages=[{"role": "user", "content":
+            "Summarize this conversation for continuity. Include: "
+            "1) What was accomplished, 2) Current state, 3) Key decisions made. "
+            "Be concise but preserve critical details.\n\n" + conversation_text}],
+        max_tokens=2000,
+    )
+    summary = next((block.text for block in response.content if hasattr(block, "text")), "")
+    if not summary:
+        summary = "No summary generated."
+    # Replace all messages with compressed summary
+    return [
+        {"role": "user", "content": f"[Conversation compressed. Transcript: {transcript_path}]\n\n{summary}"},
+    ]
+
+
+# -- Tool implementations --
+def safe_path(p: str) -> Path:
+    path = (WORKDIR / p).resolve()
+    if not path.is_relative_to(WORKDIR):
+        raise ValueError(f"Path escapes workspace: {p}")
+    return path
+
+def run_bash(command: str) -> str:
+    dangerous = ["rm -rf /", "sudo", "shutdown", "reboot", "> /dev/"]
+    if any(d in command for d in dangerous):
+        return "Error: Dangerous command blocked"
+    try:
+        r = subprocess.run(command, shell=True, cwd=WORKDIR,
+                           capture_output=True, text=True, timeout=120)
+        out = (r.stdout + r.stderr).strip()
+        return out[:50000] if out else "(no output)"
+    except subprocess.TimeoutExpired:
+        return "Error: Timeout (120s)"
+
+def run_read(path: str, limit: int = None) -> str:
+    try:
+        lines = safe_path(path).read_text().splitlines()
+        if limit and limit < len(lines):
+            lines = lines[:limit] + [f"... ({len(lines) - limit} more)"]
+        return "\n".join(lines)[:50000]
+    except Exception as e:
+        return f"Error: {e}"
+
+def run_write(path: str, content: str) -> str:
+    try:
+        fp = safe_path(path)
+        fp.parent.mkdir(parents=True, exist_ok=True)
+        fp.write_text(content)
+        return f"Wrote {len(content)} bytes"
+    except Exception as e:
+        return f"Error: {e}"
+
+def run_edit(path: str, old_text: str, new_text: str) -> str:
+    try:
+        fp = safe_path(path)
+        content = fp.read_text()
+        if old_text not in content:
+            return f"Error: Text not found in {path}"
+        fp.write_text(content.replace(old_text, new_text, 1))
+        return f"Edited {path}"
+    except Exception as e:
+        return f"Error: {e}"
+
+
+TOOL_HANDLERS = {
+    "bash":       lambda **kw: run_bash(kw["command"]),
+    "read_file":  lambda **kw: run_read(kw["path"], kw.get("limit")),
+    "write_file": lambda **kw: run_write(kw["path"], kw["content"]),
+    "edit_file":  lambda **kw: run_edit(kw["path"], kw["old_text"], kw["new_text"]),
+    "compact":    lambda **kw: "Manual compression requested.",
+}
+
+TOOLS = [
+    {"name": "bash", "description": "Run a shell command.",
+     "input_schema": {"type": "object", "properties": {"command": {"type": "string"}}, "required": ["command"]}},
+    {"name": "read_file", "description": "Read file contents.",
+     "input_schema": {"type": "object", "properties": {"path": {"type": "string"}, "limit": {"type": "integer"}}, "required": ["path"]}},
+    {"name": "write_file", "description": "Write content to file.",
+     "input_schema": {"type": "object", "properties": {"path": {"type": "string"}, "content": {"type": "string"}}, "required": ["path", "content"]}},
+    {"name": "edit_file", "description": "Replace exact text in file.",
+     "input_schema": {"type": "object", "properties": {"path": {"type": "string"}, "old_text": {"type": "string"}, "new_text": {"type": "string"}}, "required": ["path", "old_text", "new_text"]}},
+    {"name": "compact", "description": "Trigger manual conversation compression.",
+     "input_schema": {"type": "object", "properties": {"focus": {"type": "string", "description": "What to preserve in the summary"}}}},
+]
+
+
+def agent_loop(messages: list):
+    while True:
+        # Layer 1: micro_compact before each LLM call
+        micro_compact(messages)
+        # Layer 2: auto_compact if token estimate exceeds threshold
+        if estimate_tokens(messages) > THRESHOLD:
+            print("[auto_compact triggered]")
+            messages[:] = auto_compact(messages)
+        response = client.messages.create(
+            model=MODEL, system=SYSTEM, messages=messages,
+            tools=TOOLS, max_tokens=8000,
+        )
+        messages.append({"role": "assistant", "content": response.content})
+        if response.stop_reason != "tool_use":
+            return
+        results = []
+        manual_compact = False
+        for block in response.content:
+            if block.type == "tool_use":
+                if block.name == "compact":
+                    manual_compact = True
+                    output = "Compressing..."
+                else:
+                    handler = TOOL_HANDLERS.get(block.name)
+                    try:
+                        output = handler(**block.input) if handler else f"Unknown tool: {block.name}"
+                    except Exception as e:
+                        output = f"Error: {e}"
+                print(f"> {block.name}:")
+                print(str(output)[:200])
+                results.append({"type": "tool_result", "tool_use_id": block.id, "content": str(output)})
+        messages.append({"role": "user", "content": results})
+        # Layer 3: manual compact triggered by the compact tool
+        if manual_compact:
+            print("[manual compact]")
+            messages[:] = auto_compact(messages)
+            return
+
+
+if __name__ == "__main__":
+    history = []
+    while True:
+        try:
+            query = input("\033[36ms06 >> \033[0m")
+        except (EOFError, KeyboardInterrupt):
+            break
+        if query.strip().lower() in ("q", "exit", ""):
+            break
+        history.append({"role": "user", "content": query})
+        agent_loop(history)
+        response_content = history[-1]["content"]
+        if isinstance(response_content, list):
+            for block in response_content:
+                if hasattr(block, "text"):
+                    print(block.text)
+        print()
+0:{"buildId":"jhZqfFL-sYf0u4fkqHwxD","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-3xl space-y-12 py-4","children":[["$","header",null,{"className":"space-y-5","children":[["$","p",null,{"className":"eyebrow inline-flex items-center gap-2","children":[["$","span",null,{"aria-hidden":"true","className":"inline-block h-1.5 w-1.5 rounded-full bg-ember"}],["$","span",null,{"translate":"no","children":"s06"}],[["$","span",null,{"aria-hidden":"true","className":"text-ink-subtle","children":"·"}],["$","span",null,{"children":"记忆管理"}]]]}],["$","h1",null,{"className":"display text-ink","children":"Context Compact"}],["$","p",null,{"className":"font-fluid-lede max-w-2xl leading-[1.7] text-ink-muted","children":"Three-Layer Compression"}],["$","dl",null,{"className":"mt-2 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12.5px] text-ink-subtle","children":[["$","div",null,{"className":"flex items-baseline gap-1.5","children":[["$","dt",null,{"className":"eyebrow","children":"LOC"}],["$","dd",null,{"className":"text-ink","children":["$","span",null,{"className":"tabular-nums","children":212}]}]]}],["$","div",null,{"className":"flex items-baseline gap-1.5","children":[["$","dt",null,{"className":"eyebrow","children":"个工具"}],["$","dd",null,{"className":"text-ink","children":["$","span",null,{"className":"tabular-nums","children":5}]}]]}],["$","div",null,{"className":"flex items-baseline gap-1.5","children":[["$","dt",null,{"className":"eyebrow","children":"新增"}],["$","dd",null,{"className":"text-ink","children":"micro-compact + auto-compact + archival"}]]}],["$","div",null,{"className":"flex items-baseline gap-1.5","children":[["$","dt",null,{"className":"eyebrow","children":"层"}],["$","dd",null,{"children":["$","span",null,{"className":"inline-flex items-center rounded-sm px-2 py-0.5 text-[11px] font-medium tracking-[0.01em] bg-heather/40 text-ink","children":"记忆管理"}]}]]}]]}]]}],["$","section",null,{"className":"space-y-5","children":[["$","div",null,{"className":"border-l-2 border-rule-strong bg-cream-surface px-5 py-5","children":[["$","p",null,{"className":"eyebrow inline-flex items-center gap-2","children":[["$","span",null,{"aria-hidden":"true","className":"inline-block h-1.5 w-1.5 rounded-full bg-cloud"}],"机制概览"]}],["$","p",null,{"className":"mt-3 font-fluid-body leading-[1.85] text-ink","children":"跟 Claude 长时间对话会把对话历史撑得越来越长。Claude 的\"工作内存\"装得下的内容有上限，撞到上限就装不下后面的对话。Claude Code 自动把前面那些\"已经做完确认过\"的片段压缩成一段摘要，腾出空间让后面的对话继续装得下。"}]]}],["$","div",null,{"className":"border-l-2 border-cactus bg-cream-surface px-5 py-5","children":[["$","p",null,{"className":"eyebrow inline-flex items-center gap-2","children":[["$","span",null,{"aria-hidden":"true","className":"inline-block h-1.5 w-1.5 rounded-full bg-cactus"}],"本节贯穿示例"]}],["$","div",null,{"className":"mt-4 space-y-3","children":[["$","div",null,{"children":[["$","p",null,{"className":"eyebrow text-ink-subtle","children":"研究项目"}],["$","p",null,{"className":"mt-1 font-serif text-[16px] leading-snug text-ink","children":"耐心资本对企业 ESG 表现的实证项目"}]]}],["$","div",null,{"children":[["$","p",null,{"className":"eyebrow text-ink-subtle","children":"在这一节里做的事"}],["$","p",null,{"className":"mt-1 font-fluid-body leading-[1.8] text-ink","children":"phase 1 跑完 do0_setup 到 do6_baseline 七个脚本花了三个小时，对话历史累积了几十万字。压缩后保留 PC_A2 主测度、KZ 替代 WW、样本期 2009-2023、main_panel.dta 26441 obs、PC（A2）β=0.0004 不显著但 PC（A1）β=0.0018*** 显著这种核心决策与结果；丢弃中间反复打印的 winsor 边界、stata-mcp 返回的几万字 codebook、reghdfe 的 iteration log。"}]]}]]}],["$","div",null,{"className":"mt-5 border-t border-rule pt-3","children":["$","$L2",null,{"href":"/zh/scenarios/06-context-compact-third-chapter","className":"eyebrow inline-flex items-center gap-1.5 text-ember transition-colors hover:text-ink","children":["看完整机制讲解",["$","span",null,{"aria-hidden":"true","children":"→"}]]}]}]]}]]}],["$","$L3",null,{"version":"s06","diff":{"from":"s05","to":"s06","newClasses":[],"newFunctions":["estimate_tokens","micro_compact","auto_compact"],"newTools":["compact"],"locDelta":24},"source":"$4","filename":"s06_context_compact.py"}],"$L5"]}],["$L6","$L7","$L8","$L9","$La"],"$Lb"]}],"loading":null,"isPartial":false}
+5:["$","nav",null,{"className":"grid grid-cols-1 gap-4 border-t border-rule pt-7 sm:grid-cols-2","children":[["$","$L2",null,{"href":"/zh/s05","className":"group flex flex-col gap-1 rounded text-left transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember","children":[["$","span",null,{"className":"eyebrow inline-flex items-center gap-1.5","children":[["$","span",null,{"aria-hidden":"true","className":"transition-transform group-hover:-translate-x-1","children":"←"}],"上一版"]}],["$","span",null,{"className":"font-serif text-[16px] text-ink transition-colors group-hover:text-ember","children":[["$","span",null,{"translate":"no","className":"text-ink-subtle","children":"s05"}]," ","· ","Skills"]}]]}],["$","$L2",null,{"href":"/zh/s07","className":"group flex flex-col gap-1 rounded text-right transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember sm:items-end","children":[["$","span",null,{"className":"eyebrow inline-flex items-center gap-1.5","children":["下一版",["$","span",null,{"aria-hidden":"true","className":"transition-transform group-hover:translate-x-1","children":"→"}]]}],["$","span",null,{"className":"font-serif text-[16px] text-ink transition-colors group-hover:text-ember","children":["Task System"," ·"," ",["$","span",null,{"translate":"no","className":"text-ink-subtle","children":"s07"}]]}]]}]]}]
+6:["$","script","script-0",{"src":"/field-notes/learn/_next/static/chunks/33ff979acb7808b6.js","async":true}]
+7:["$","script","script-1",{"src":"/field-notes/learn/_next/static/chunks/c3c7941b3e75e3c7.js","async":true}]
+8:["$","script","script-2",{"src":"/field-notes/learn/_next/static/chunks/134602830c4db97a.js","async":true}]
+9:["$","script","script-3",{"src":"/field-notes/learn/_next/static/chunks/fd5b7d8b38581d08.js","async":true}]
+a:["$","script","script-4",{"src":"/field-notes/learn/_next/static/chunks/199d0ea5c980f71c.js","async":true}]
+b:["$","$Lc",null,{"children":["$","$d",null,{"name":"Next.MetadataOutlet","children":"$@e"}]}]
+e:null

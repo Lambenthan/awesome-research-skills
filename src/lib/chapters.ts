@@ -71,6 +71,17 @@ const em = (n: number, slug: string, displayNum: string, title: string): Chapter
     import(`@/content/notes/accounting-empirical/earnings-management/chap-${n}.mdx`),
 });
 
+const cib2 = (n: number, slug: string, displayNum: string, title: string): ChapterMeta => ({
+  categorySlug: "causal-inference-methods",
+  itemSlug: "causal-inference-book-v2",
+  slug,
+  num: n,
+  displayNum,
+  title,
+  load: () =>
+    import(`@/content/notes/causal-inference-methods/causal-inference-book-v2/chap-${n}.mdx`),
+});
+
 export const CHAPTERS: ChapterMeta[] = [
   // Yangming (人格因果学)
   ym(0, "chapter-0", "0", "阳明生平与心学概览"),
@@ -112,6 +123,18 @@ export const CHAPTERS: ChapterMeta[] = [
   em(8, "chapter-8", "8", "Stubben 2010 收入侧 DA"),
   em(9, "chapter-9", "9", "Roychowdhury 2006 真实活动盈余管理"),
   em(10, "chapter-10", "10", "十种方法综合对比与方法选择决策树"),
+  // Causal Inference Book v2 (因果推断方法)
+  cib2(0, "chapter-0", "0", "前言：同一份数据，九把刀"),
+  cib2(1, "chapter-1", "1", "问题与数据：RHC 争议的起点"),
+  cib2(2, "chapter-2", "2", "因果结构与识别条件"),
+  cib2(3, "chapter-3", "3", "回归调整：因果估计的第一刀"),
+  cib2(4, "chapter-4", "4", "G 计算：构造反事实人群"),
+  cib2(5, "chapter-5", "5", "倾向得分：匹配、加权与平衡诊断"),
+  cib2(6, "chapter-6", "6", "双重稳健估计：AIPW 的两根保险绳"),
+  cib2(7, "chapter-7", "7", "机器学习增强：Super Learner、DML 与 TMLE"),
+  cib2(8, "chapter-8", "8", "结果稳不稳：敏感性分析与未测量混杂"),
+  cib2(9, "chapter-9", "9", "谁获益谁受害：因果森林与处理效应异质性"),
+  cib2(10, "chapter-10", "10", "全书汇总：九种方法的终极对比"),
 ];
 
 export function getChaptersForItem(

@@ -108,5 +108,38 @@
         ]
       }
     ]
+  },
+  {
+    "id": "causal-inference-methods",
+    "label": "因果推断方法",
+    "summary": "围绕同一份观察性医学数据，把多种因果推断方法在同一个研究问题上做演练与对照，看每种方法在 R 语言实现下的差异、假设依赖与适用边界。",
+    "items": [
+      {
+        "itemSlug": "causal-inference-book-v2",
+        "title": "因果推断实践",
+        "subtitle": "基于 RHC 数据的方法比较与 R 语言实现",
+        "author": "Chanw",
+        "date": "2026-04",
+        "version": "v2.0",
+        "pages": 124,
+        "kind": "应用工具书",
+        "cover": "/notes/causal-inference-methods/causal-inference-book-v2/cover.jpg",
+        "pdf": "/notes/causal-inference-methods/causal-inference-book-v2/causal-inference-book-v2.pdf",
+        "cn": "以 Connors 等人 1996 年 JAMA 发表的右心导管观察性研究为基准样本，覆盖五所教学医院 5,735 名 ICU 危重症患者、49 个变量、高度非随机的处理分配与 180 天死亡结局。十章对应九种因果推断方法，从回归调整与 G 计算的参数基线，到倾向得分匹配、IPW 与重叠权重，再到 AIPW、DML 与 TMLE 的双重稳健与机器学习增强，最后用因果森林揭示个体化处理效应。每章末维护一张累积对比表，第 8 章用 E-value 与 sensemakr 量化结论对未测量混杂的稳健性。",
+        "chapters": [
+          { "num": "0", "title": "前言：同一份数据，九把刀" },
+          { "num": "1", "title": "问题与数据：RHC 争议的起点" },
+          { "num": "2", "title": "因果结构与识别条件" },
+          { "num": "3", "title": "回归调整：因果估计的第一刀" },
+          { "num": "4", "title": "G 计算：构造反事实人群" },
+          { "num": "5", "title": "倾向得分：匹配、加权与平衡诊断" },
+          { "num": "6", "title": "双重稳健估计：AIPW 的两根保险绳" },
+          { "num": "7", "title": "机器学习增强：Super Learner、DML 与 TMLE" },
+          { "num": "8", "title": "结果稳不稳：敏感性分析与未测量混杂" },
+          { "num": "9", "title": "谁获益谁受害：因果森林与处理效应异质性" },
+          { "num": "10", "title": "全书汇总：九种方法的终极对比" }
+        ]
+      }
+    ]
   }
 ]
