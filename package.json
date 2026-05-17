@@ -16,7 +16,9 @@
     "build": "next build",
     "postbuild": "pagefind --site out --output-subdir pagefind",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
@@ -39,10 +41,12 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitest/coverage-v8": "^4.1.6",
     "js-yaml": "^4.1.0",
     "pagefind": "^1.5.2",
     "playwright": "^1.60.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.6"
   }
 }

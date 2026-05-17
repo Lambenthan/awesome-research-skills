@@ -178,7 +178,7 @@ const RED_LINES = [
   { name: "全角括号注释", re: /[一-鿿]\s*[（(][A-Za-z][^()）]{0,30}[)）]/ },
 ];
 
-function validateCn(text) {
+export function validateCn(text) {
   const hits = [];
   for (const { name, re } of RED_LINES) if (re.test(text)) hits.push(name);
   const charCount = [...text.replace(/\s+/g, "")].length;
@@ -199,7 +199,7 @@ const TITLE_BANNED = [
   { name: "标题营销词", re: /强势|王者|领跑|霸榜|登顶|屠榜/ },
 ];
 
-function validateTitle(text) {
+export function validateTitle(text) {
   if (!text) return ["empty"];
   const hits = [];
   for (const { name, re } of TITLE_BANNED) if (re.test(text)) hits.push(name);
@@ -539,7 +539,10 @@ async function main() {
   }
 }
 
-main().catch((err) => {
-  console.error("score-and-tag failed:", err);
-  process.exit(1);
-});
+// Only auto-run when executed directly (not when imported by tests).
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch((err) => {
+    console.error("score-and-tag failed:", err);
+    process.exit(1);
+  });
+}
