@@ -551,16 +551,15 @@ async function fetchLatest() {
     }
     out.rss = (scored.items ?? [])
       .filter((it) => typeof it.score === "number" && it.score >= 3)
-      // Highest-signal items first: score desc, then recency. Without
-      // this, a high-frequency source (OpenAI RSS) crowds out smaller
-      // labs and AIGCLINK-discovered indie projects.
+      // Score desc, then recency. No item-count cap — every scored
+      // entry surfaces on /latest. The four-group section renderer
+      // keeps the page navigable even as the list grows.
       .sort((a, b) => {
         if (b.score !== a.score) return b.score - a.score;
         const ad = a.publishedAt ? Date.parse(a.publishedAt) : 0;
         const bd = b.publishedAt ? Date.parse(b.publishedAt) : 0;
         return bd - ad;
       })
-      .slice(0, 60)
       .map((it) => ({
         id: it.id,
         source: it.source,
