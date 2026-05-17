@@ -46,7 +46,7 @@ export default function Home() {
       <NavBar />
 
       <section className="border-b border-rule">
-        <div className="mx-auto max-w-6xl px-6 pt-20 pb-16">
+        <div className="mx-auto max-w-[88rem] px-6 pt-20 pb-16">
           <Reveal>
             <p className="eyebrow">Field Notes · 田野笔记</p>
           </Reveal>
@@ -68,7 +68,7 @@ export default function Home() {
       </section>
 
       <section className="border-b border-rule bg-cream-surface/40">
-        <div className="mx-auto max-w-6xl px-6 py-5">
+        <div className="mx-auto max-w-[88rem] px-6 py-5">
           <Reveal>
             <dl className="flex flex-wrap items-baseline gap-x-12 gap-y-3">
               <Stat label="Skills" value={totalSkills} />
@@ -84,7 +84,7 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-16">
+      <main className="mx-auto w-full max-w-[88rem] flex-1 px-6 py-16">
         <Reveal>
           <LiveCallout />
         </Reveal>

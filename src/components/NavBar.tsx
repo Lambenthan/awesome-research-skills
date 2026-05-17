@@ -15,7 +15,7 @@ const NAV_LINKS = [
 export function NavBar() {
   return (
     <header className="border-b border-rule">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-5">
+      <div className="mx-auto flex max-w-[88rem] items-center justify-between gap-6 px-6 py-5">
         <Link
           href="/"
           className="font-serif text-[18px] italic leading-none text-ink transition hover:text-ember"

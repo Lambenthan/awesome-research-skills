@@ -46,7 +46,7 @@ export default async function ChapterPage({ params }: { params: Params }) {
     <div className="flex min-h-screen flex-col">
       <ReadingProgress />
       <NavBar />
-      <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-14">
+      <main className="mx-auto w-full max-w-[88rem] flex-1 px-6 py-14">
         <Breadcrumb
           trail={[
             { label: "Home", href: "/" },

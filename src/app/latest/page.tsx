@@ -16,7 +16,7 @@ export default function LatestPage() {
       <NavBar />
 
       <section className="border-b border-rule">
-        <div className="mx-auto max-w-6xl px-6 pt-14 pb-12">
+        <div className="mx-auto max-w-[88rem] px-6 pt-14 pb-12">
           <Breadcrumb
             trail={[{ label: "Home", href: "/" }, { label: "Latest" }]}
           />
@@ -45,7 +45,7 @@ export default function LatestPage() {
         </div>
       </section>
 
-      <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-12">
+      <main className="mx-auto w-full max-w-[88rem] flex-1 px-6 py-12">
         <LatestFeed />
       </main>
 

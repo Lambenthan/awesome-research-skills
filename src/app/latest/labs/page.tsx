@@ -21,7 +21,7 @@ export default function LabsPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <NavBar />
-      <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-14">
+      <main className="mx-auto w-full max-w-[88rem] flex-1 px-6 py-14">
         <LatestGroupView group={meta} items={items} />
       </main>
       <Footer />

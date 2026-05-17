@@ -18,7 +18,7 @@ export default async function SkillCategoryPage({ params }: { params: Params }) 
   return (
     <div className="flex min-h-screen flex-col">
       <NavBar />
-      <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-16">
+      <main className="mx-auto w-full max-w-[88rem] flex-1 px-6 py-16">
         <CategoryView
           section="skills"
           category={category}

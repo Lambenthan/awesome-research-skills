@@ -29,7 +29,7 @@ export default async function SkillItemPage({ params }: { params: Params }) {
   return (
     <div className="flex min-h-screen flex-col">
       <NavBar />
-      <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-14">
+      <main className="mx-auto w-full max-w-[88rem] flex-1 px-6 py-14">
         <DetailShell
           section="skills"
           categoryId={category.id}
