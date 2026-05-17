@@ -90,3 +90,130 @@ categories:
       - slug: ui-ux-pro-max
         repo: nextlevelbuilder/ui-ux-pro-max-skill
         path: .claude/skills/ui-ux-pro-max
+
+  - id: paper-data
+    label: 论文 · 数据分析
+    summary: 实验规划、消融研究、结果分析、统计与表格整理。
+    items:
+      - { slug: ablation-planner, repo: Chanw-research/claude-code-paper-writing, path: skills/data-analysis/ablation-planner }
+      - { slug: analyze-results, repo: Chanw-research/claude-code-paper-writing, path: skills/data-analysis/analyze-results }
+      - { slug: experiment-plan, repo: Chanw-research/claude-code-paper-writing, path: skills/data-analysis/experiment-plan }
+      - { slug: results-analysis, repo: Chanw-research/claude-code-paper-writing, path: skills/data-analysis/results-analysis }
+      - { slug: run-experiment, repo: Chanw-research/claude-code-paper-writing, path: skills/data-analysis/run-experiment }
+      - { slug: statistical-analysis, repo: Chanw-research/claude-code-paper-writing, path: skills/data-analysis/statistical-analysis }
+      - { slug: xlsx, repo: Chanw-research/claude-code-paper-writing, path: skills/data-analysis/xlsx }
+
+  - id: paper-doc
+    label: 论文 · 文档处理
+    summary: docx / pdf / formula / proof reading 等论文素材处理。
+    items:
+      - { slug: docx, repo: Chanw-research/claude-code-paper-writing, path: skills/document-handling/docx }
+      - { slug: formula-derivation, repo: Chanw-research/claude-code-paper-writing, path: skills/document-handling/formula-derivation }
+      - { slug: markitdown, repo: Chanw-research/claude-code-paper-writing, path: skills/document-handling/markitdown }
+      - { slug: pdf, repo: Chanw-research/claude-code-paper-writing, path: skills/document-handling/pdf }
+      - { slug: proof-checker, repo: Chanw-research/claude-code-paper-writing, path: skills/document-handling/proof-checker }
+      - { slug: proof-writer, repo: Chanw-research/claude-code-paper-writing, path: skills/document-handling/proof-writer }
+
+  - id: paper-figure
+    label: 论文 · 图表绘制
+    summary: paper figure / illustration / mermaid / drawio / plotly / seaborn 等可视化与配图。
+    items:
+      - { slug: drawio, repo: Chanw-research/claude-code-paper-writing, path: skills/figures/drawio }
+      - { slug: figure-description, repo: Chanw-research/claude-code-paper-writing, path: skills/figures/figure-description }
+      - { slug: figure-generation, repo: Chanw-research/claude-code-paper-writing, path: skills/figures/figure-generation }
+      - { slug: figure-planner, repo: Chanw-research/claude-code-paper-writing, path: skills/figures/figure-planner }
+      - { slug: figure-spec, repo: Chanw-research/claude-code-paper-writing, path: skills/figures/figure-spec }
+      - { slug: mermaid-diagram, repo: Chanw-research/claude-code-paper-writing, path: skills/figures/mermaid-diagram }
+      - { slug: nature-data, repo: Chanw-research/claude-code-paper-writing, path: skills/figures/nature-data }
+      - { slug: nature-figure, repo: Chanw-research/claude-code-paper-writing, path: skills/figures/nature-figure }
+      - { slug: paper-figure, repo: Chanw-research/claude-code-paper-writing, path: skills/figures/paper-figure }
+      - { slug: paper-illustration, repo: Chanw-research/claude-code-paper-writing, path: skills/figures/paper-illustration }
+      - { slug: plotly, repo: Chanw-research/claude-code-paper-writing, path: skills/figures/plotly }
+      - { slug: seaborn, repo: Chanw-research/claude-code-paper-writing, path: skills/figures/seaborn }
+
+  - id: paper-lit
+    label: 论文 · 文献综述
+    summary: arxiv / pyzotero / systematic-review / citation-audit 等文献检索、引用核对与综述写作。
+    items:
+      - { slug: alphaxiv, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/alphaxiv }
+      - { slug: arxiv-database, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/arxiv-database }
+      - { slug: arxiv, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/arxiv }
+      - { slug: citation-audit, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/citation-audit }
+      - { slug: citation-management, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/citation-management }
+      - { slug: citation-verifier, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/citation-verifier }
+      - { slug: comm-lit-review, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/comm-lit-review }
+      - { slug: deep-research, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/deep-research }
+      - { slug: deepxiv, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/deepxiv }
+      - { slug: exa-search, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/exa-search }
+      - { slug: literature-review, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/literature-review }
+      - { slug: management-review-planner, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/management-review-planner }
+      - { slug: management-review-writer, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/management-review-writer }
+      - { slug: nature-citation, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/nature-citation }
+      - { slug: novelty-check, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/novelty-check }
+      - { slug: openalex-ajg-insights, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/openalex-ajg-insights }
+      - { slug: prior-art-search, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/prior-art-search }
+      - { slug: pyzotero, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/pyzotero }
+      - { slug: reference-audit-guide, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/reference-audit-guide }
+      - { slug: research-lit, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/research-lit }
+      - { slug: research-refine-pipeline, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/research-refine-pipeline }
+      - { slug: research-refine, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/research-refine }
+      - { slug: review-orchestrator, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/review-orchestrator }
+      - { slug: semantic-scholar, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/semantic-scholar }
+      - { slug: systematic-literature-review, repo: Chanw-research/claude-code-paper-writing, path: skills/literature-review/systematic-literature-review }
+
+  - id: paper-write
+    label: 论文 · 写作流程与纪律
+    summary: 论文写作的全套纪律：bootstrap / plan / write / claim audit / rebuttal / submission audit。
+    items:
+      - { slug: academic-researcher, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/academic-researcher }
+      - { slug: conference-paper-writing, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/conference-paper-writing }
+      - { slug: idea-creator, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/idea-creator }
+      - { slug: idea-discovery, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/idea-discovery }
+      - { slug: nature-portfolio-playbook, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/nature-portfolio-playbook }
+      - { slug: paper-analyzer, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-analyzer }
+      - { slug: paper-backup-before-word, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-backup-before-word }
+      - { slug: paper-bootstrap, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-bootstrap }
+      - { slug: paper-claim-audit, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-claim-audit }
+      - { slug: paper-claude-md-bootstrap, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-claude-md-bootstrap }
+      - { slug: paper-compile, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-compile }
+      - { slug: paper-confirm-before-doing, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-confirm-before-doing }
+      - { slug: paper-logical-consistency, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-logical-consistency }
+      - { slug: paper-one-session-one-task, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-one-session-one-task }
+      - { slug: paper-parallel-audit, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-parallel-audit }
+      - { slug: paper-pilot-before-batch, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-pilot-before-batch }
+      - { slug: paper-plan, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-plan }
+      - { slug: paper-protect-terminology, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-protect-terminology }
+      - { slug: paper-reviewer, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-reviewer }
+      - { slug: paper-translate-advisor-feedback, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-translate-advisor-feedback }
+      - { slug: paper-using-skills, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-using-skills }
+      - { slug: paper-verify-before-handoff, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-verify-before-handoff }
+      - { slug: paper-workflow, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-workflow }
+      - { slug: paper-write, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-write }
+      - { slug: paper-writing-discipline, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-writing-discipline }
+      - { slug: paper-writing, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/paper-writing }
+      - { slug: rebuttal-response, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/rebuttal-response }
+      - { slug: rebuttal, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/rebuttal }
+      - { slug: submission-audit, repo: Chanw-research/claude-code-paper-writing, path: skills/paper-discipline/submission-audit }
+
+  - id: paper-slides
+    label: 论文 · 演讲与海报
+    summary: academic-presentations / pptx / paper-poster / paper-to-beamer 等演讲与海报。
+    items:
+      - { slug: academic-presentations, repo: Chanw-research/claude-code-paper-writing, path: skills/slides/academic-presentations }
+      - { slug: nature-paper2ppt, repo: Chanw-research/claude-code-paper-writing, path: skills/slides/nature-paper2ppt }
+      - { slug: paper-poster, repo: Chanw-research/claude-code-paper-writing, path: skills/slides/paper-poster }
+      - { slug: paper-slides, repo: Chanw-research/claude-code-paper-writing, path: skills/slides/paper-slides }
+      - { slug: paper-to-beamer, repo: Chanw-research/claude-code-paper-writing, path: skills/slides/paper-to-beamer }
+      - { slug: pptx, repo: Chanw-research/claude-code-paper-writing, path: skills/slides/pptx }
+
+  - id: paper-polish
+    label: 论文 · 语言润色
+    summary: manuscript-optimizer / scientific-writing / humanizer-zh / 各档 polish 流程。
+    items:
+      - { slug: grant-proposal, repo: Chanw-research/claude-code-paper-writing, path: skills/writing-polish/grant-proposal }
+      - { slug: humanizer-zh, repo: Chanw-research/claude-code-paper-writing, path: skills/writing-polish/humanizer-zh }
+      - { slug: manuscript-optimizer, repo: Chanw-research/claude-code-paper-writing, path: skills/writing-polish/manuscript-optimizer }
+      - { slug: nature-polishing, repo: Chanw-research/claude-code-paper-writing, path: skills/writing-polish/nature-polishing }
+      - { slug: paper-polish-workflow, repo: Chanw-research/claude-code-paper-writing, path: skills/writing-polish/paper-polish-workflow }
+      - { slug: results-section-revision, repo: Chanw-research/claude-code-paper-writing, path: skills/writing-polish/results-section-revision }
+      - { slug: scientific-writing, repo: Chanw-research/claude-code-paper-writing, path: skills/writing-polish/scientific-writing }

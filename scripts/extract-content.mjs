@@ -125,7 +125,10 @@ async function fetchSkillMd(entry, cache) {
     return null;
   }
   try {
-    const res = await fetch(url);
+    // raw.githubusercontent.com accepts the same Bearer token that
+    // the REST API uses, so adding Authorization makes private-repo
+    // SKILL.md fetches succeed without needing a separate code path.
+    const res = await fetch(url, { headers: authHeaders() });
     if (!res.ok) {
       console.warn(`  [warn] ${entry.repo}/${entry.slug}: HTTP ${res.status}`);
       if (cached) return cached.data;
