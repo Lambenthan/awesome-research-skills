@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Breadcrumb } from "./Breadcrumb";
 import { Reveal } from "./Reveal";
-import { formatShortDate } from "@/lib/format-date";
+import { TimeDisplay } from "./TimeDisplay";
 import type { LatestRss } from "@/lib/types";
 import type { RssGroupMeta } from "@/lib/rss-groups";
 
@@ -80,9 +80,7 @@ function RssRow({ item }: { item: LatestRss }) {
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <span className="eyebrow-strong text-ember">{item.sourceName}</span>
           <span className="eyebrow">{item.category}</span>
-          <span className="text-[11px] text-ink-subtle">
-            {formatShortDate(when)}
-          </span>
+          <TimeDisplay iso={when} className="text-[11px] text-ink-subtle" />
         </div>
         <h3 className="mt-2 font-serif text-[17px] leading-snug text-ink transition group-hover:text-ember">
           {item.title}

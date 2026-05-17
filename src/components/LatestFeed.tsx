@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { latest } from "@/lib/data";
-import { formatShortDate } from "@/lib/format-date";
 import { groupRss } from "@/lib/rss-groups";
+import { TimeDisplay } from "@/components/TimeDisplay";
 import type { HnItem, LatestRepo, LatestRss } from "@/lib/types";
 
 const HOME_GROUP_LIMIT = 12;
@@ -27,7 +27,8 @@ export function LatestFeed() {
           <span className="eyebrow-strong">Snapshot</span>
           {fetchedAt && (
             <span className="eyebrow text-ink-subtle">
-              built {formatShortDate(fetchedAt)} · refreshed every 6 hours
+              built <TimeDisplay iso={fetchedAt} className="text-ink-subtle" /> ·
+              refreshed every 6 hours
             </span>
           )}
         </div>
@@ -145,9 +146,7 @@ function RssRow({ item }: { item: LatestRss }) {
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <span className="eyebrow-strong text-ember">{item.sourceName}</span>
           <span className="eyebrow">{item.category}</span>
-          <span className="text-[11px] text-ink-subtle">
-            {formatShortDate(when)}
-          </span>
+          <TimeDisplay iso={when} className="text-[11px] text-ink-subtle" />
         </div>
         <h3 className="mt-2 font-serif text-[17px] leading-snug text-ink transition group-hover:text-ember">
           {item.title}
@@ -187,7 +186,8 @@ function HnRow({ item }: { item: HnItem }) {
           {host && <span className="eyebrow">{host}</span>}
           <span className="text-[11px] text-ink-subtle">
             {item.points} <span aria-hidden="true">↑</span> · {item.comments}{" "}
-            comments · {formatShortDate(item.createdAt)}
+            comments ·{" "}
+            <TimeDisplay iso={item.createdAt} className="text-ink-subtle" />
           </span>
         </div>
       </a>
@@ -222,8 +222,8 @@ function GhRow({ item }: { item: LatestRepo }) {
         <div className="mt-1 flex flex-wrap items-baseline gap-x-3 gap-y-1">
           {item.language && <span className="eyebrow">{item.language}</span>}
           <span className="text-[11px] text-ink-subtle">
-            pushed {formatShortDate(item.pushedAt)} · created{" "}
-            {formatShortDate(item.createdAt)}
+            pushed <TimeDisplay iso={item.pushedAt} className="text-ink-subtle" /> ·
+            created <TimeDisplay iso={item.createdAt} className="text-ink-subtle" />
           </span>
         </div>
       </a>
