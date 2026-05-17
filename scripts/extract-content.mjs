@@ -605,13 +605,22 @@ async function fetchLatest() {
     }
     out.rss = (scored.items ?? [])
       .filter((it) => typeof it.score === "number" && it.score >= 3)
-      // Score desc, then recency. No item-count cap — every scored
-      // entry surfaces on /latest. The four-group section renderer
-      // keeps the page navigable even as the list grows.
+      // Pure recency. The previous (score desc, time desc) order made
+      // readers see dates jump back ("Apr 22 → Apr 15 → Apr 2 → Mar 19
+      // → Mar 5 → Feb 28 …") whenever a score band changed, which
+      // looked like the list had no rule. Score is still shown on each
+      // card; readers can scan it visually if they want quality cues.
       .sort((a, b) => {
-        if (b.score !== a.score) return b.score - a.score;
-        const ad = a.publishedAt ? Date.parse(a.publishedAt) : 0;
-        const bd = b.publishedAt ? Date.parse(b.publishedAt) : 0;
+        const ad = a.publishedAt
+          ? Date.parse(a.publishedAt)
+          : a.discoveredAt
+            ? Date.parse(a.discoveredAt)
+            : 0;
+        const bd = b.publishedAt
+          ? Date.parse(b.publishedAt)
+          : b.discoveredAt
+            ? Date.parse(b.discoveredAt)
+            : 0;
         return bd - ad;
       })
       .map((it) => ({

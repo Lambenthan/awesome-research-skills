@@ -45,7 +45,7 @@ export function repoDetail(
   groups: { id: string; label: string; items: RepoItem[] }[],
   slug: string,
   item: string,
-  section: "ai" | "research",
+  section: "ai" = "ai",
 ) {
   const category = groups.find((c) => c.id === slug);
   if (!category) notFound();

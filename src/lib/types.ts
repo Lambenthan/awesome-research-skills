@@ -47,7 +47,6 @@ export type RepoGroup = {
 
 export type ReposData = {
   ai: RepoGroup[];
-  research: RepoGroup[];
 };
 
 export type ArticleItem = {

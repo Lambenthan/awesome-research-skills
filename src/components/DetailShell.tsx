@@ -6,7 +6,7 @@ import { SECTION_META, type SectionId } from "@/lib/sections";
 export type DetailAttribute = { label: string; value: React.ReactNode };
 
 /**
- * Shared shell for /skills, /ai, /research, /reading item detail pages.
+ * Shared shell for /skills, /ai, /reading item detail pages.
  *
  * Editorial single-column layout (modeled after anthropic.com/news/*):
  *   - Breadcrumb

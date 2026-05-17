@@ -17,11 +17,6 @@ export default function Home() {
     label: g.label,
     count: g.items.length,
   }));
-  const researchCats = repos.research.map((g) => ({
-    id: g.id,
-    label: g.label,
-    count: g.items.length,
-  }));
   const readingCats = articles.map((c) => ({
     id: c.id,
     label: c.label,
@@ -34,7 +29,6 @@ export default function Home() {
   }));
   const totalSkills = skillCats.reduce((n, c) => n + c.count, 0);
   const totalAi = aiCats.reduce((n, c) => n + c.count, 0);
-  const totalResearch = researchCats.reduce((n, c) => n + c.count, 0);
   const totalReading = readingCats.reduce((n, c) => n + c.count, 0);
   const totalNotes = noteCats.reduce((n, c) => n + c.count, 0);
   const buildDate = meta.builtAt
@@ -73,7 +67,6 @@ export default function Home() {
             <dl className="flex flex-wrap items-baseline gap-x-12 gap-y-3">
               <Stat label="Skills" value={totalSkills} />
               <Stat label="AI repos" value={totalAi} />
-              <Stat label="Research tools" value={totalResearch} />
               <Stat label="Reading" value={totalReading} />
               <Stat label="Notes" value={totalNotes} />
               <div className="ml-auto eyebrow">
@@ -100,13 +93,6 @@ export default function Home() {
             meta={SECTION_META.ai}
             total={totalAi}
             categories={aiCats}
-          />
-        </Reveal>
-        <Reveal>
-          <SectionPreview
-            meta={SECTION_META.research}
-            total={totalResearch}
-            categories={researchCats}
           />
         </Reveal>
         <Reveal>

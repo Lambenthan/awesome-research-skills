@@ -8,9 +8,10 @@ import type { RssGroupMeta } from "@/lib/rss-groups";
 /**
  * Full-list view for a single rss group (Labs / 中文厂商 / 学术 / OSS).
  *
- * Used by /latest/{groupId} pages. The /latest index shows only the
- * top 12 of each group with a "查看全部 N 条 →" link pointing here,
- * so this view never needs to truncate.
+ * Items are pre-sorted by publishedAt desc in extract-content.mjs. This
+ * view groups them by year-month so readers always know where they are
+ * in time — useful when a group has 100+ items and pure infinite scroll
+ * would feel arbitrary.
  */
 export function LatestGroupView({
   group,
@@ -19,6 +20,8 @@ export function LatestGroupView({
   group: RssGroupMeta;
   items: LatestRss[];
 }) {
+  const byMonth = groupByMonth(items);
+
   return (
     <div className="space-y-12">
       <Breadcrumb
@@ -49,18 +52,37 @@ export function LatestGroupView({
           </p>
         </Reveal>
         <Reveal delay={320}>
-          <p className="eyebrow text-ink-subtle">{items.length} items</p>
+          <p className="eyebrow text-ink-subtle">
+            {items.length} items · 按发布时间倒序
+          </p>
         </Reveal>
       </header>
 
-      <ul
-        className="grid grid-cols-1 gap-x-10 gap-y-7 lg:grid-cols-2"
-        style={{ contentVisibility: "auto", containIntrinsicSize: "auto 240px" }}
-      >
-        {items.map((it) => (
-          <RssRow key={it.id} item={it} />
+      <div className="space-y-14">
+        {byMonth.map(({ key, label, items: monthItems }) => (
+          <section key={key}>
+            <div className="sticky top-0 z-10 -mx-6 mb-6 border-b border-rule bg-cream/95 px-6 py-3 backdrop-blur-sm">
+              <p className="eyebrow flex items-baseline justify-between">
+                <span className="text-ink">{label}</span>
+                <span className="text-ink-subtle">
+                  {monthItems.length} items
+                </span>
+              </p>
+            </div>
+            <ul
+              className="grid grid-cols-1 gap-x-10 gap-y-7 lg:grid-cols-2"
+              style={{
+                contentVisibility: "auto",
+                containIntrinsicSize: "auto 240px",
+              }}
+            >
+              {monthItems.map((it) => (
+                <RssRow key={it.id} item={it} />
+              ))}
+            </ul>
+          </section>
         ))}
-      </ul>
+      </div>
 
       <div className="border-t border-rule pt-6">
         <Link
@@ -74,3 +96,32 @@ export function LatestGroupView({
   );
 }
 
+type MonthBucket = {
+  key: string;
+  label: string;
+  items: LatestRss[];
+};
+
+function groupByMonth(items: LatestRss[]): MonthBucket[] {
+  const buckets = new Map<string, MonthBucket>();
+  for (const it of items) {
+    const iso = it.publishedAt ?? it.discoveredAt;
+    const t = iso ? Date.parse(iso) : NaN;
+    let key: string;
+    let label: string;
+    if (Number.isFinite(t)) {
+      const d = new Date(t);
+      const y = d.getUTCFullYear();
+      const m = d.getUTCMonth() + 1;
+      key = `${y}-${String(m).padStart(2, "0")}`;
+      label = `${y} 年 ${m} 月`;
+    } else {
+      key = "0000-00";
+      label = "未知日期";
+    }
+    if (!buckets.has(key)) buckets.set(key, { key, label, items: [] });
+    buckets.get(key)!.items.push(it);
+  }
+  // Keys are sortable as ISO yyyy-mm; descending = most recent month first.
+  return [...buckets.values()].sort((a, b) => (a.key < b.key ? 1 : -1));
+}

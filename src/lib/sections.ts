@@ -1,13 +1,12 @@
 import type {
   ArticleCategory,
   NoteCategory,
-  ReposData,
   SkillCategory,
   RepoGroup,
 } from "./types";
 import { articles, notes, repos, skills } from "./data";
 
-export type SectionId = "skills" | "ai" | "research" | "reading" | "notes";
+export type SectionId = "skills" | "ai" | "reading" | "notes";
 
 export type SectionMeta = {
   id: SectionId;
@@ -34,14 +33,6 @@ export const SECTION_META: Record<SectionId, SectionMeta> = {
     blurb:
       "Agent 框架、模型推理、RAG 检索、对话 UI、编码 agent，按研究方向归组、按 star 排序，由 6 小时构建周期刷新数据。",
   },
-  research: {
-    id: "research",
-    href: "/research",
-    eyebrow: "Research Tools",
-    title: "科研生产力工具",
-    blurb:
-      "覆盖数据科学、统计与因果推断、可视化、生信单细胞、学术写作与发表、Notebook、文献管理等研究环节常用的开源工具。",
-  },
   reading: {
     id: "reading",
     href: "/reading",
@@ -65,7 +56,6 @@ export function getSectionGroups(
 ): SkillCategory[] | RepoGroup[] | ArticleCategory[] | NoteCategory[] {
   if (section === "skills") return skills;
   if (section === "ai") return repos.ai;
-  if (section === "research") return repos.research;
   if (section === "notes") return notes;
   return articles;
 }
@@ -108,7 +98,6 @@ export function getSectionCount(section: SectionId): number {
 export const ALL_SECTIONS: SectionId[] = [
   "skills",
   "ai",
-  "research",
   "reading",
   "notes",
 ];

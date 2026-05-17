@@ -25,7 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const path of [
     "/skills",
     "/ai",
-    "/research",
     "/reading",
     "/notes",
     "/latest",
@@ -63,22 +62,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const it of cat.items) {
       entries.push({
         url: url(`/ai/${cat.id}/${it.itemSlug}`),
-        lastModified: NOW,
-        priority: 0.6,
-      });
-    }
-  }
-
-  // Research repos
-  for (const cat of repos.research) {
-    entries.push({
-      url: url(`/research/${cat.id}`),
-      lastModified: NOW,
-      priority: 0.7,
-    });
-    for (const it of cat.items) {
-      entries.push({
-        url: url(`/research/${cat.id}/${it.itemSlug}`),
         lastModified: NOW,
         priority: 0.6,
       });

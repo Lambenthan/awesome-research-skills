@@ -18,7 +18,7 @@ type Props =
       siblings: { id: string; label: string }[];
     }
   | {
-      section: "ai" | "research";
+      section: "ai";
       category: RepoGroup;
       siblings: { id: string; label: string }[];
     }

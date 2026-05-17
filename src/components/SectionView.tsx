@@ -17,7 +17,7 @@ import type { SectionId } from "@/lib/sections";
 
 type Props =
   | { section: "skills"; basePath: string; groups: SkillCategory[] }
-  | { section: "ai" | "research"; basePath: string; groups: RepoGroup[] }
+  | { section: "ai"; basePath: string; groups: RepoGroup[] }
   | { section: "reading"; basePath: string; groups: ArticleCategory[] };
 
 export function SectionView(props: Props) {
