@@ -24,12 +24,12 @@ export default function SkillsIndex() {
                 <p className="eyebrow">{meta.eyebrow}</p>
               </Reveal>
               <Reveal delay={100}>
-                <h1 className="display mt-4 text-[44px] text-ink sm:text-[56px]">
+                <h1 className="display display-xl mt-4 text-ink">
                   {meta.title}
                 </h1>
               </Reveal>
               <Reveal delay={220}>
-                <p className="mt-5 max-w-2xl text-[15px] leading-[1.75] text-ink-muted">
+                <p className="mt-5 max-w-2xl font-fluid-lede leading-[1.75] text-ink-muted">
                   {meta.blurb}
                 </p>
               </Reveal>

@@ -69,13 +69,11 @@ export function DetailShell({
           </p>
         </Reveal>
         <Reveal delay={100}>
-          <h1 className="display text-[40px] text-ink sm:text-[56px]">
-            {title}
-          </h1>
+          <h1 className="display text-ink">{title}</h1>
         </Reveal>
         {cn && (
           <Reveal delay={220}>
-            <p className="mx-auto max-w-2xl text-[17px] leading-[1.85] text-ink">
+            <p className="font-fluid-lede mx-auto max-w-2xl leading-[1.85] text-ink">
               {cn}
             </p>
           </Reveal>
@@ -132,7 +130,7 @@ export function DetailShell({
           </h2>
         )}
         {body ? (
-          <div className="prose-detail max-w-none text-[15px] leading-[1.9] text-ink">
+          <div className="prose-detail font-fluid-body max-w-none leading-[1.9] text-ink">
             {body}
           </div>
         ) : (

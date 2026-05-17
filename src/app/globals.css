@@ -49,6 +49,40 @@
      weight if you load it, else uses regular Screen. */
   --font-cn-display:
     "LXGW WenKai", "LXGW WenKai Screen", "霞鹜文楷", serif;
+
+  /* ────────────────────────────────────────────────────────────────────
+     Fluid type + space scale (anthropic.com pattern).
+     Each value is `clamp(min, intrinsic-fluid, max)` so layout breathes
+     between 360px viewport and 1432px without breakpoint jumps.
+
+     Type scale (use as text-[var(--type-…)] in Tailwind utility classes
+     or directly via font-size CSS):
+       --type-eyebrow      10.5px
+       --type-body         15→17px  (regular paragraph)
+       --type-lede         16→18px  (intro paragraph below display)
+       --type-h3           17→20px
+       --type-h2           22→32px
+       --type-h1           36→52px  (display)
+       --type-h1-xl        44→64px  (extra-large display, hero)
+
+     Space scale:
+       --space-xs   1.5→2rem      block padding inside small cards
+       --space-s    2→3rem        between sub-sections
+       --space-m    3.5→6rem      major section spacing (anth medium)
+       --space-l    7→14rem       hero / between landing slices
+     ──────────────────────────────────────────────────────────────────── */
+  --type-eyebrow: 10.5px;
+  --type-body: clamp(15px, 0.5vw + 13px, 17px);
+  --type-lede: clamp(16px, 0.5vw + 14px, 18px);
+  --type-h3: clamp(17px, 0.75vw + 15px, 20px);
+  --type-h2: clamp(22px, 1.5vw + 18px, 32px);
+  --type-h1: clamp(36px, 2.5vw + 24px, 52px);
+  --type-h1-xl: clamp(44px, 3.5vw + 28px, 64px);
+
+  --space-xs: clamp(1.5rem, 0.5vw + 1.3rem, 2rem);
+  --space-s: clamp(2rem, 1.5vw + 1.4rem, 3rem);
+  --space-m: clamp(3.5rem, 3.5vw + 2rem, 6rem);
+  --space-l: clamp(7rem, 9vw + 4rem, 14rem);
 }
 
 html,
@@ -66,15 +100,38 @@ body {
 }
 
 /* Editorial display headline — uses the serif stack with optical sizing
-   tilted toward the headline axis. */
+   tilted toward the headline axis. Default size is the h1 fluid scale;
+   page-specific overrides can apply text-[…] utility on top. */
 .display {
   font-family: var(--font-serif);
   font-optical-sizing: auto;
   font-variation-settings: "opsz" 60;
   letter-spacing: -0.022em;
-  line-height: 1.04;
+  line-height: 1.06;
   font-weight: 450;
+  font-size: var(--type-h1);
 }
+
+.display-xl {
+  font-size: var(--type-h1-xl);
+  line-height: 1.04;
+}
+
+/* Utility helpers for fluid scale outside Tailwind. Use as
+   className="font-fluid-body" / "font-fluid-lede" / "font-fluid-h2"
+   when an element wants the scale without a custom text-[] class. */
+.font-fluid-body { font-size: var(--type-body); }
+.font-fluid-lede { font-size: var(--type-lede); }
+.font-fluid-h3   { font-size: var(--type-h3); }
+.font-fluid-h2   { font-size: var(--type-h2); }
+.font-fluid-h1   { font-size: var(--type-h1); }
+
+/* Section padding helpers — apply as className="section-m" etc. on
+   <section> wrappers to inherit the fluid vertical rhythm. */
+.section-xs { padding-top: var(--space-xs); padding-bottom: var(--space-xs); }
+.section-s  { padding-top: var(--space-s);  padding-bottom: var(--space-s); }
+.section-m  { padding-top: var(--space-m);  padding-bottom: var(--space-m); }
+.section-l  { padding-top: var(--space-l);  padding-bottom: var(--space-l); }
 
 .display em {
   font-style: italic;

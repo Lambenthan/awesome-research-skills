@@ -26,12 +26,12 @@ export default function LatestPage() {
                 <p className="eyebrow">Latest · 6 小时刷新</p>
               </Reveal>
               <Reveal delay={100}>
-                <h1 className="display mt-4 text-[44px] text-ink sm:text-[56px]">
+                <h1 className="display display-xl mt-4 text-ink">
                   AI <em>最新动态</em>
                 </h1>
               </Reveal>
               <Reveal delay={220}>
-                <p className="mt-5 max-w-2xl text-[15px] leading-[1.75] text-ink-muted">
+                <p className="mt-5 max-w-2xl font-fluid-lede leading-[1.75] text-ink-muted">
                   GitHub Actions cron 每 6 小时调用抓取脚本，写入静态 JSON
                   随构建一起部署。厂商一手公告覆盖 OpenAI、Anthropic、DeepMind、
                   Google AI、NVIDIA、Mistral、Meta AI、xAI 八家 lab，经

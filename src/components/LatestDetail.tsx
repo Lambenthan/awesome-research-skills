@@ -48,13 +48,11 @@ export function LatestDetail({ item }: { item: LatestRss }) {
           </p>
         </Reveal>
         <Reveal delay={100}>
-          <h1 className="display text-[38px] text-ink sm:text-[52px]">
-            {item.title}
-          </h1>
+          <h1 className="display text-ink">{item.title}</h1>
         </Reveal>
         {item.cn && (
           <Reveal delay={220}>
-            <p className="mx-auto max-w-2xl text-[17px] leading-[1.85] text-ink">
+            <p className="font-fluid-lede mx-auto max-w-2xl leading-[1.85] text-ink">
               {item.cn}
             </p>
           </Reveal>
@@ -104,7 +102,7 @@ export function LatestDetail({ item }: { item: LatestRss }) {
           导读
         </h2>
         {hasDetail ? (
-          <div className="prose-detail max-w-none text-[15.5px] leading-[1.95] text-ink">
+          <div className="prose-detail font-fluid-body max-w-none leading-[1.95] text-ink">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
               {item.detail!}
             </ReactMarkdown>
