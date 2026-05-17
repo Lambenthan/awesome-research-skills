@@ -85,8 +85,15 @@ async function saveJsonCache(file, cache) {
   await fs.writeFile(file, JSON.stringify(cache, null, 2));
 }
 
+// Prefer a user-supplied PAT (PAPER_REPO_TOKEN) so private skill repos
+// can be read. Falls back to the workflow-supplied GITHUB_TOKEN, which
+// only has access to the current repo. Local dev typically sets neither
+// and relies on `gh auth token` being available indirectly.
 function authHeaders() {
-  const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+  const token =
+    process.env.PAPER_REPO_TOKEN ||
+    process.env.GITHUB_TOKEN ||
+    process.env.GH_TOKEN;
   const headers = {
     Accept: "application/vnd.github+json",
     "User-Agent": "awesome-research-skills-build",

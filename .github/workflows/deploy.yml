@@ -30,6 +30,11 @@ jobs:
       NEXT_PUBLIC_BASE_PATH: /field-notes
       # 5000 req/hr instead of unauth 60/hr — needed for the full repo list.
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Optional user PAT with read access to private skill repos
+      # (Chanw-research/claude-code-paper-writing). When set, extract-content.mjs
+      # prefers it over the workflow GITHUB_TOKEN. When unset, private-repo
+      # fetches 404 and the build falls back to the cached skills.json.
+      PAPER_REPO_TOKEN: ${{ secrets.PAPER_REPO_TOKEN }}
 
     steps:
       - uses: actions/checkout@v6
