@@ -38,26 +38,26 @@ export function LatestFeed() {
         </div>
       )}
 
-      {rss.length > 0 && (
-        <section>
-          <div className="mb-5 flex items-baseline justify-between border-b border-rule pb-3">
-            <h2 className="font-serif text-[22px] leading-tight text-ink">
-              厂商一手发布 <em className="text-ember">· lab feed</em>
-            </h2>
-            <span className="eyebrow">{rss.length} items</span>
-          </div>
-          <p className="mb-6 max-w-3xl text-[13px] leading-[1.7] text-ink-muted">
-            来自 OpenAI、Anthropic、DeepMind、Google AI、NVIDIA、Mistral、Meta AI、xAI
-            的官方公告。每条由 deepseek-v4-flash 打分（1–5）、归类并写中文导读，
-            分数 &lt; 3 的运营动态已过滤掉。
-          </p>
-          <ul className="grid grid-cols-1 gap-x-10 gap-y-7 lg:grid-cols-2">
-            {rss.map((it) => (
-              <RssRow key={it.id} item={it} />
-            ))}
-          </ul>
-        </section>
-      )}
+      {rss.length > 0 &&
+        groupRss(rss).map((group) => (
+          <section key={group.id}>
+            <div className="mb-5 flex items-baseline justify-between border-b border-rule pb-3">
+              <h2 className="font-serif text-[22px] leading-tight text-ink">
+                {group.label}{" "}
+                <em className="text-ember">· {group.subtitle}</em>
+              </h2>
+              <span className="eyebrow">{group.items.length} items</span>
+            </div>
+            <p className="mb-6 max-w-3xl text-[13px] leading-[1.7] text-ink-muted">
+              {group.blurb}
+            </p>
+            <ul className="grid grid-cols-1 gap-x-10 gap-y-7 lg:grid-cols-2">
+              {group.items.map((it) => (
+                <RssRow key={it.id} item={it} />
+              ))}
+            </ul>
+          </section>
+        ))}
 
       <div className="grid grid-cols-1 gap-x-12 gap-y-12 lg:grid-cols-2">
         {hn.length > 0 && (
@@ -106,6 +106,99 @@ export function LatestFeed() {
         LLM 打分归类后 commit 回仓库随构建部署。访客 0 外部请求。
       </p>
     </div>
+  );
+}
+
+// Group rss items by upstream source type. Visual rationale:
+//   - AI Labs    高频更新的英美 lab 官博，读者最常追的一组，放最上
+//   - 中文厂商    阿里 / 月之暗面 / 小米 / 智谱 等，与英美 lab 互补
+//   - 学术       arXiv / Nature / 研究机构博客，更新慢但信号高
+//   - 开源 OSS   GitHub 独立项目和小工具，最长尾
+//
+// The source → group mapping intentionally does NOT expose where the
+// discovery happened (e.g. via AIGCLINK). Visitors see only "中文厂商"
+// or "学术", same as labs they recognize from RSS.
+type RssGroup = {
+  id: string;
+  label: string;
+  subtitle: string;
+  blurb: string;
+  items: LatestRss[];
+};
+
+const SOURCE_GROUP_MAP: Record<string, string> = {
+  OpenAI: "labs",
+  Anthropic: "labs",
+  "Google AI": "labs",
+  DeepMind: "labs",
+  NVIDIA: "labs",
+  Mistral: "labs",
+  "Meta AI": "labs",
+  xAI: "labs",
+  "claude.com": "labs",
+  "code.claude.com": "labs",
+
+  "Alibaba Cloud": "cn-vendors",
+  "Moonshot Kimi": "cn-vendors",
+  "Zhipu AI": "cn-vendors",
+  "01.AI": "cn-vendors",
+  StepFun: "cn-vendors",
+  ByteDance: "cn-vendors",
+  MiniMax: "cn-vendors",
+  Xiaomi: "cn-vendors",
+  Tencent: "cn-vendors",
+  Qwen: "cn-vendors",
+  HuggingFace: "cn-vendors",
+  "mimo.xiaomi.com": "cn-vendors",
+  ModelScope: "cn-vendors",
+
+  arXiv: "academia",
+  Nature: "academia",
+  "research.google": "academia",
+  "correr-zhou.github.io": "academia",
+
+  GitHub: "oss",
+};
+
+const GROUP_ORDER: Array<Omit<RssGroup, "items">> = [
+  {
+    id: "labs",
+    label: "AI Labs",
+    subtitle: "厂商一手发布",
+    blurb:
+      "OpenAI、Anthropic、DeepMind、Google AI、NVIDIA、Mistral、Meta AI、xAI 的官方公告，覆盖新模型与新能力发布。",
+  },
+  {
+    id: "cn-vendors",
+    label: "中文厂商",
+    subtitle: "Chinese vendors",
+    blurb:
+      "阿里通义、月之暗面、小米、智谱、字节、腾讯等中文厂商的模型与产品发布，含 HuggingFace 上托管的中文模型卡。",
+  },
+  {
+    id: "academia",
+    label: "学术",
+    subtitle: "research & papers",
+    blurb:
+      "arXiv 预印本、Nature 等期刊以及研究机构博客（research.google 等）的 AI 相关原始研究。",
+  },
+  {
+    id: "oss",
+    label: "开源 OSS",
+    subtitle: "indie projects",
+    blurb: "GitHub 上的独立开源项目，多为个人或小团队发起的工具与原型。",
+  },
+];
+
+function groupRss(rss: LatestRss[]): RssGroup[] {
+  const bucket: Record<string, LatestRss[]> = {};
+  for (const it of rss) {
+    const gid = SOURCE_GROUP_MAP[it.sourceName] ?? "oss";
+    if (!bucket[gid]) bucket[gid] = [];
+    bucket[gid].push(it);
+  }
+  return GROUP_ORDER.filter((g) => (bucket[g.id]?.length ?? 0) > 0).map(
+    (g) => ({ ...g, items: bucket[g.id] }),
   );
 }
 
