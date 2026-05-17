@@ -1,0 +1,89 @@
+# AI lab 厂商一手发布源
+#
+# type:
+#   rss     直拉 RSS feed，fast-xml-parser 解析
+#   html    curl 拿 SSR HTML，正则按 selector 抽
+#   browser playwright headless chromium，渲染后从 DOM 抽
+#
+# enabled: false 可临时关掉某个源
+#
+# 字段说明：
+#   id        feed-raw.json 里写入的 source 标识
+#   name      展示名（中文为主）
+#   url       拉取入口
+#   detailBase 详情页相对路径补全 URL 的基址（仅 html / browser 用）
+#   selector  仅 html / browser 用，描述如何从 DOM 抽条目
+
+sources:
+  - id: openai
+    name: OpenAI
+    type: rss
+    url: https://openai.com/news/rss.xml
+    enabled: true
+
+  - id: google-ai
+    name: Google AI
+    type: rss
+    url: https://blog.google/technology/ai/rss/
+    enabled: true
+
+  - id: deepmind
+    name: DeepMind
+    type: rss
+    url: https://deepmind.google/blog/rss.xml
+    enabled: true
+
+  - id: nvidia
+    name: NVIDIA
+    type: rss
+    url: https://blogs.nvidia.com/blog/category/deep-learning/feed/
+    enabled: true
+
+  - id: anthropic
+    name: Anthropic
+    type: html
+    url: https://www.anthropic.com/news
+    detailBase: https://www.anthropic.com
+    selector:
+      # 条目锚点：<a href="/news/..."> 包含 h2 + time + p
+      item: 'a[href^="/news/"]'
+      title: h2
+      time: time
+      summary: p
+      category: span.caption
+
+  - id: mistral
+    name: Mistral
+    type: browser
+    url: https://mistral.ai/news
+    detailBase: https://mistral.ai
+    selector:
+      item: 'a[href^="/news/"]'
+      title: h1, h2
+      # mistral 日期在邻近 div 里，文本格式如 "Apr 29, 2026"
+      timeText: 'div'  # 取 a 内部含 ", 20" 的 div
+      summary: p
+      category: span
+
+  - id: meta-ai
+    name: Meta AI
+    type: browser
+    url: https://ai.meta.com/blog/
+    detailBase: https://ai.meta.com
+    selector:
+      # Meta uses absolute URLs in href, so match either prefix
+      item: 'a[href*="/blog/"]:not([href$="/blog/"])'
+      title: 'h1, h2, h3'
+      summary: p
+      timeText: 'div, span'
+
+  - id: xai
+    name: xAI
+    type: browser
+    url: https://x.ai/news
+    detailBase: https://x.ai
+    selector:
+      item: 'a[href^="/news/"]'
+      title: 'h1, h2, h3'
+      summary: p
+      timeText: 'time, div, span'
