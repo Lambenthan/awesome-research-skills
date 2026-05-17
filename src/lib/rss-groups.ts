@@ -21,6 +21,10 @@ export type RssGroupMeta = {
   label: string;
   subtitle: string;
   blurb: string;
+  /** CSS var name from globals.css palette (--color-cactus / etc). Used
+   *  by section headers to render a small accent bar so the four groups
+   *  are visually distinguishable beyond just their label text. */
+  accentVar: string;
 };
 
 export const SOURCE_GROUP_MAP: Record<string, string> = {
@@ -67,6 +71,7 @@ export const GROUP_ORDER: RssGroupMeta[] = [
     subtitle: "厂商一手发布",
     blurb:
       "OpenAI、Anthropic、DeepMind、Google AI、NVIDIA、Mistral、Meta AI、xAI 的官方公告，覆盖新模型与新能力发布。",
+    accentVar: "--color-cloud",
   },
   {
     id: "cn-vendors",
@@ -74,6 +79,7 @@ export const GROUP_ORDER: RssGroupMeta[] = [
     subtitle: "Chinese vendors",
     blurb:
       "阿里通义、月之暗面、小米、智谱、字节、腾讯等中文厂商的模型与产品发布，含 HuggingFace 上托管的中文模型卡。",
+    accentVar: "--color-coral",
   },
   {
     id: "academia",
@@ -81,6 +87,7 @@ export const GROUP_ORDER: RssGroupMeta[] = [
     subtitle: "research & papers",
     blurb:
       "arXiv 预印本、Nature 等期刊以及研究机构博客（research.google 等）的 AI 相关原始研究。",
+    accentVar: "--color-cactus",
   },
   {
     id: "oss",
@@ -88,6 +95,7 @@ export const GROUP_ORDER: RssGroupMeta[] = [
     subtitle: "indie projects",
     blurb:
       "GitHub 上的独立开源项目，多为个人或小团队发起的工具与原型。长存的高 star 项目整理在 /ai 与 /research 两个 section 下，按主题归组。",
+    accentVar: "--color-heather",
   },
 ];
 

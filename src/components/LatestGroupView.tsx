@@ -31,12 +31,17 @@ export function LatestGroupView({
 
       <header className="space-y-5">
         <Reveal>
-          <p className="eyebrow">{group.subtitle}</p>
+          <p className="eyebrow inline-flex items-center gap-2">
+            <span
+              aria-hidden="true"
+              className="inline-block h-2 w-2 rounded-full"
+              style={{ background: `var(${group.accentVar})` }}
+            />
+            {group.subtitle}
+          </p>
         </Reveal>
         <Reveal delay={100}>
-          <h1 className="display text-[40px] text-ink sm:text-[56px]">
-            {group.label}
-          </h1>
+          <h1 className="display display-xl text-ink">{group.label}</h1>
         </Reveal>
         <Reveal delay={220}>
           <p className="max-w-3xl text-[15px] leading-[1.85] text-ink-muted">

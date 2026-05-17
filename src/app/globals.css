@@ -18,6 +18,16 @@
   --color-ember-soft: #d8826a;
   --color-ember-tint: rgba(193, 95, 60, 0.08);
 
+  /* Accent palette — borrowed from anthropic.com's swatch set, kept
+     muted to play nicely with the cream/ink base. Used for /latest
+     group theming and any per-section accent need that ember alone
+     can't carry. */
+  --color-cactus: #bcd1ca;   /* mint, used by 学术 */
+  --color-coral:  #ebcece;   /* nude pink, used by 中文厂商 */
+  --color-fig:    #c46686;   /* magenta, hot accent */
+  --color-heather: #cbcadb;  /* lavender, used by 开源 OSS */
+  --color-cloud:  #b0aea5;   /* warm grey, used by AI Labs */
+
   /* Typography
      ─────────────────────────────────────────────────────────────────────
      Latin: Anthropic's proprietary Tiempos Text + Styrene B first so any

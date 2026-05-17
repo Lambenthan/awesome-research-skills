@@ -49,10 +49,19 @@ export function LatestFeed() {
         groupRss(rss).map((group) => {
           const visible = group.items.slice(0, HOME_GROUP_LIMIT);
           const hasMore = group.items.length > HOME_GROUP_LIMIT;
+          const accent = `var(${group.accentVar})`;
           return (
             <section key={group.id}>
-              <div className="mb-5 flex items-baseline justify-between border-b border-rule pb-3">
+              <div
+                className="mb-5 flex items-baseline justify-between border-b-2 pb-3"
+                style={{ borderColor: accent }}
+              >
                 <h2 className="font-serif text-[22px] leading-tight text-ink">
+                  <span
+                    aria-hidden="true"
+                    className="mr-3 inline-block h-[10px] w-[10px] -translate-y-[2px] rounded-full"
+                    style={{ background: accent }}
+                  />
                   <Link
                     href={`/latest/${group.id}`}
                     className="transition hover:text-ember"
