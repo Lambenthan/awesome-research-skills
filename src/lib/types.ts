@@ -129,6 +129,10 @@ export type LatestRss = {
   category: string;
   score: number;
   cn: string;
+  // Optional hand-written deep dive for the detail page. When absent the
+  // detail page falls back to the short cn intro. Lives in
+  // content/feed-detail.yml keyed by id and merged at extract time.
+  detail?: string;
   publishedAt: string | null;
   discoveredAt: string;
 };

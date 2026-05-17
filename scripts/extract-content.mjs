@@ -37,6 +37,7 @@ const FEATURED_SKILLS = path.join(projectRoot, "content", "featured-skills.yml")
 const FEATURED_REPOS = path.join(projectRoot, "content", "featured-repos.yml");
 const FEATURED_ARTICLES = path.join(projectRoot, "content", "featured-articles.yml");
 const CN_SUMMARIES = path.join(projectRoot, "content", "cn-summaries.yml");
+const FEED_DETAILS = path.join(projectRoot, "content", "feed-detail.yml");
 const OUT_DIR = path.join(projectRoot, "src", "data", "generated");
 const CACHE_DIR = path.join(projectRoot, "scripts", ".cache");
 const REPO_CACHE_FILE = path.join(CACHE_DIR, "github.json");
@@ -528,6 +529,14 @@ async function fetchLatest() {
   try {
     const scoredPath = path.join(OUT_DIR, "feed-scored.json");
     const scored = JSON.parse(await fs.readFile(scoredPath, "utf8"));
+    // Hand-written deep-dive blocks keyed by item id, falling back to
+    // cn on the detail page when an entry is missing.
+    let details = {};
+    try {
+      details = (await readYaml(FEED_DETAILS)) || {};
+    } catch {
+      /* fine — file is optional */
+    }
     out.rss = (scored.items ?? [])
       .filter((it) => typeof it.score === "number" && it.score >= 3)
       // Highest-signal items first: score desc, then recency. Without
@@ -550,6 +559,7 @@ async function fetchLatest() {
         category: it.category,
         score: it.score,
         cn: it.cn || "",
+        detail: typeof details[it.id] === "string" ? details[it.id] : undefined,
         publishedAt: it.publishedAt,
         discoveredAt: it.discoveredAt,
       }));

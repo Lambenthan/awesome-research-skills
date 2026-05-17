@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { latest } from "@/lib/data";
 import type { HnItem, LatestRepo, LatestRss } from "@/lib/types";
 
@@ -206,12 +207,7 @@ function RssRow({ item }: { item: LatestRss }) {
   const when = item.publishedAt ?? item.discoveredAt;
   return (
     <li>
-      <a
-        href={item.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group block"
-      >
+      <Link href={`/latest/${item.id}`} className="group block">
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <span className="eyebrow-strong text-ember">{item.sourceName}</span>
           <span className="eyebrow">{item.category}</span>
@@ -221,11 +217,14 @@ function RssRow({ item }: { item: LatestRss }) {
           {item.title}
         </h3>
         {item.cn && (
-          <p className="mt-2 line-clamp-4 text-[13.5px] leading-[1.75] text-ink-muted">
+          <p className="mt-2 line-clamp-3 text-[13.5px] leading-[1.75] text-ink-muted">
             {item.cn}
           </p>
         )}
-      </a>
+        <p className="mt-2 text-[12px] text-ember opacity-0 transition group-hover:opacity-100">
+          阅读详情 →
+        </p>
+      </Link>
     </li>
   );
 }
