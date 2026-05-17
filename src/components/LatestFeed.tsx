@@ -2,7 +2,8 @@ import Link from "next/link";
 import { latest } from "@/lib/data";
 import { groupRss } from "@/lib/rss-groups";
 import { TimeDisplay } from "@/components/TimeDisplay";
-import type { HnItem, LatestRepo, LatestRss } from "@/lib/types";
+import { RssRow } from "@/components/rss/RssRow";
+import type { HnItem, LatestRepo } from "@/lib/types";
 
 const HOME_GROUP_LIMIT = 12;
 
@@ -67,7 +68,7 @@ export function LatestFeed() {
               </p>
               <ul className="grid grid-cols-1 gap-x-10 gap-y-7 lg:grid-cols-2">
                 {visible.map((it) => (
-                  <RssRow key={it.id} item={it} />
+                  <RssRow key={it.id} item={it} showReadHint />
                 ))}
               </ul>
               {hasMore && (
@@ -132,35 +133,6 @@ export function LatestFeed() {
         LLM 打分归类后 commit 回仓库随构建部署。访客 0 外部请求。
       </p>
     </div>
-  );
-}
-
-function RssRow({ item }: { item: LatestRss }) {
-  const when = item.publishedAt ?? item.discoveredAt;
-  return (
-    <li>
-      <Link
-        href={`/latest/${item.id}`}
-        className="group block rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
-      >
-        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <span className="eyebrow-strong text-ember">{item.sourceName}</span>
-          <span className="eyebrow">{item.category}</span>
-          <TimeDisplay iso={when} className="text-[11px] text-ink-subtle" />
-        </div>
-        <h3 className="mt-2 font-serif text-[17px] leading-snug text-ink transition group-hover:text-ember">
-          {item.title}
-        </h3>
-        {item.cn && (
-          <p className="mt-2 line-clamp-3 text-[13.5px] leading-[1.75] text-ink-muted">
-            {item.cn}
-          </p>
-        )}
-        <p className="mt-2 text-[12px] text-ember opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100">
-          阅读详情 <span aria-hidden="true">→</span>
-        </p>
-      </Link>
-    </li>
   );
 }
 
