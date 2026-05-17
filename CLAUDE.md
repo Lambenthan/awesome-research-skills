@@ -3,6 +3,32 @@
 This file is the project-level brief for any Claude Code session working in
 this repo. Read it before editing.
 
+## Design north star (HARD)
+
+When in doubt about layout, typography, spacing, motion, color, or any
+visual choice, **anthropic.com is the reference**. Before introducing a
+new visual pattern that doesn't have an obvious precedent in this repo,
+open the relevant anthropic.com page via the `/web-access` skill and
+study it first. Examples of what to confirm against the live site:
+
+- hero block layout and proportions (h1 size, lede max-width, CTA pill)
+- editorial detail page rhythm (centered single column, body max-width)
+- accent color usage (cactus / coral / fig / heather / cloud are picked
+  from anthropic's swatch set; new accents should come from the same
+  family)
+- spacing scale steps and section padding hierarchy
+- list-page card composition and hover affordances
+- nav structure and footer information density
+- any motion / interaction Anthropic visibly uses (transform/opacity
+  transitions, sticky behavior, reveal timing)
+
+**Rule:** if you're about to write speculative CSS or invent a new
+visual primitive, stop and load anthropic.com first via /web-access,
+take a screenshot, then make the call from observed behavior.
+
+Skip this only for purely structural / data-pipeline work where there
+is no visual question.
+
 ## What this site is
 
 A Chinese-flavored research directory. Live at <https://lambenthan.github.io/field-notes/>.
