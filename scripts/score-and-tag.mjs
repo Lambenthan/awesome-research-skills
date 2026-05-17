@@ -23,6 +23,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import yaml from "js-yaml";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -36,6 +37,10 @@ const RAW_FILES = [
   path.join(projectRoot, "src/data/generated/feed-extras-raw.json"),
 ];
 const OUT_FILE = path.join(projectRoot, "src/data/generated/feed-scored.json");
+const OVERRIDES_FILE = path.join(
+  projectRoot,
+  "content/feed-score-overrides.yml",
+);
 
 const OPENROUTER_KEY = process.env.OPENROUTER_API_KEY;
 const ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
@@ -461,6 +466,52 @@ async function main() {
     if (!rawIds.has(id)) merged.delete(id);
   }
 
+  // Apply editor overrides last. They can rescue items the LLM dropped
+  // (by writing in score >= MIN_SCORE) and can correct cleanedTitle /
+  // category / cn on items that already passed.
+  let overrides = {};
+  try {
+    overrides = yaml.load(await fs.readFile(OVERRIDES_FILE, "utf8")) || {};
+  } catch {
+    /* fine — file is optional */
+  }
+  const rawById = new Map(rawItems.map((it) => [it.id, it]));
+  let rescuedByOverride = 0;
+  let patchedByOverride = 0;
+  for (const [id, patch] of Object.entries(overrides)) {
+    if (!patch || typeof patch !== "object") continue;
+    const raw = rawById.get(id);
+    if (!raw) continue; // override points at an id that no longer exists in raw
+    const base = merged.get(id);
+    if (base) {
+      // patch in place — apply only the fields present
+      const next = { ...base };
+      if (typeof patch.score === "number") next.score = patch.score;
+      if (typeof patch.category === "string") next.category = patch.category;
+      if (typeof patch.cleanedTitle === "string") {
+        next.title = patch.cleanedTitle;
+      }
+      if (typeof patch.cn === "string") next.cn = patch.cn.trim();
+      next.editorOverride = true;
+      merged.set(id, next);
+      patchedByOverride++;
+    } else {
+      // rescue: build a record from raw + override fields
+      const score = typeof patch.score === "number" ? patch.score : 3;
+      if (score < MIN_SCORE) continue;
+      merged.set(id, {
+        ...raw,
+        title: typeof patch.cleanedTitle === "string" ? patch.cleanedTitle : raw.title,
+        originalTitle: raw.title,
+        score,
+        category: typeof patch.category === "string" ? patch.category : "其他",
+        cn: typeof patch.cn === "string" ? patch.cn.trim() : "",
+        editorOverride: true,
+      });
+      rescuedByOverride++;
+    }
+  }
+
   const items = [...merged.values()].sort((a, b) => {
     const ad = a.publishedAt ? Date.parse(a.publishedAt) : 0;
     const bd = b.publishedAt ? Date.parse(b.publishedAt) : 0;
@@ -476,6 +527,9 @@ async function main() {
   }
   console.log(
     `\nsummary: kept=${kept} dropped=${dropped} errored=${errored} | total in file=${items.length}` +
+      (rescuedByOverride || patchedByOverride
+        ? ` | overrides rescued=${rescuedByOverride} patched=${patchedByOverride}`
+        : "") +
       (failedHits.length ? ` | red-line residue on ${failedHits.length} items` : "") +
       (DRY_RUN ? " (dry-run, no file write)" : ` -> ${path.relative(projectRoot, OUT_FILE)}`),
   );

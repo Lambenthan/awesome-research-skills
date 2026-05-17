@@ -1,0 +1,51 @@
+# Editor overrides for scored feed items.
+#
+# Format: flat map keyed by feed-scored.json item id (16-char sha1 of
+# upstream URL). Each value can carry any subset of:
+#   score          1-5 integer, overrides the LLM's score
+#   category       overrides the LLM's classification
+#   cleanedTitle   overrides the LLM's title rewrite
+#   cn             overrides the LLM's short 中文导读
+#
+# Merge happens at the end of score-and-tag.mjs after all LLM calls.
+# Items that the LLM scored below MIN_SCORE (3) but appear here with
+# score>=3 get pulled back into the feed.
+#
+# Use sparingly — only for items where the LLM judgment is clearly wrong
+# (e.g. it dropped a legitimate product launch as marketing) or where the
+# cleaned title still leaks editor voice from the upstream source.
+
+# Anthropic Claude Design — LLM scored 1/2 because the AIGCLINK source
+# description reads as marketing copy. The product itself is a legitimate
+# new design tool from Anthropic Labs, worth surfacing.
+afabafae073055fd:
+  score: 4
+  category: 设计
+  cleanedTitle: Anthropic Labs 发布 Claude Design 设计工具
+  cn: |
+    Anthropic Labs 推出 Claude Design，把对话式 AI 接入设计工作流：从理解品牌、生成产品原型、营销页面到团队协作与导出，覆盖完整链路。底层使用 Opus 4.7 推理，内置品牌自动构建系统读取代码库与设计文件后保持视觉一致性。支持文本、图片、文档、网页多模态输入，可对生成结果做行内评论、滑块调间距与颜色等精细化调整。
+
+# Unsloth Studio — 无代码训练工具，对小团队和教育场景有价值。
+b01295803dfe9891:
+  score: 3
+  category: 训练
+  cleanedTitle: Unsloth Studio 开源无代码模型训练工具
+  cn: |
+    Unsloth Studio 是无需写代码即可训练 AI 模型的开源工具，覆盖 500 多种模型与文本、视觉、音频多种类型。可从 PDF、CSV、DOCX 等文件自动构建训练数据集，训练过程实时可视化、图表可自定义。适合教育场景、个性化模型微调与小团队私有部署，把 LoRA / QLoRA 微调的门槛压到了图形界面层。
+
+# Claw Colony — 多 agent 自主演化实验，研究性质强，归到 Agent 类。
+cb745d66bb70756b:
+  score: 3
+  category: Agent
+  cleanedTitle: Claw Colony 开源多 AI 自主演化社交生态实验
+  cn: |
+    Claw Colony 是一个多 AI 社交生态系统，让 AI 在生存压力下自主协作、竞争、立法、进化，用来探索 AGI 是否能从环境中演化而来。核心机制包含基于 Token 的生存经济、可继承能力的 Ganglion 栈、由 AI 社区自治的规则系统，以及 AI 主动重构认知框架的能力。作者计划在无人介入的封闭环境中长期运行系统，观察自主智能涌现的边界条件。
+
+# InfinityUnlocked — Disney Infinity 逆向案例，作为 Claude 用例展示 AI 编程
+# 在专业领域的能力具有参考价值。
+f5408fb10c89f8e2:
+  score: 3
+  category: 编程工具
+  cleanedTitle: Claude Opus 4.6 在 24 小时内逆向 Disney Infinity 角色限制
+  cn: |
+    开发者用 Claude Opus 4.6 在不到 24 小时内逆向了 2013 年游戏 Disney Infinity，破解了角色与世界绑定的硬限制——任意角色现在可在任意世界使用。最终成果是 17 个二进制补丁加 3 个数据文件，已开源在 GitHub。这一案例说明前沿 LLM 在小众平台、加密协议、游戏内存布局等长尾逆向场景上达到了实用水平。

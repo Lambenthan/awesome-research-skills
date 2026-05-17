@@ -1,12 +1,21 @@
 {
-  "fetchedAt": "2026-05-17T06:46:56.285Z",
+  "fetchedAt": "2026-05-17T08:18:34.612Z",
   "hn": [
+    {
+      "id": "48165492",
+      "title": "How to buy cheap Claude tokens in China",
+      "url": "https://www.chinatalk.media/p/how-to-buy-cheap-claude-tokens-in",
+      "points": 21,
+      "comments": 4,
+      "createdAt": "2026-05-17T02:11:57Z",
+      "author": "RyanShook"
+    },
     {
       "id": "48164287",
       "title": "Zerostack – A Unix-inspired coding agent written in pure Rust",
       "url": "https://crates.io/crates/zerostack/1.0.0",
-      "points": 309,
-      "comments": 122,
+      "points": 354,
+      "comments": 145,
       "createdAt": "2026-05-16T22:23:50Z",
       "author": "gidellav"
     },
@@ -14,7 +23,7 @@
       "id": "48164229",
       "title": "I tried to make Claude make me money on open-source bounties",
       "url": "https://github.com/ztc00/algora-scout/blob/main/POST.md",
-      "points": 34,
+      "points": 35,
       "comments": 22,
       "createdAt": "2026-05-16T22:13:54Z",
       "author": "ztc00"
@@ -23,8 +32,8 @@
       "id": "48163392",
       "title": "OpenAI and Government of Malta partner to roll out ChatGPT Plus to all citizens",
       "url": "https://openai.com/index/malta-chatgpt-plus-partnership/",
-      "points": 143,
-      "comments": 138,
+      "points": 162,
+      "comments": 179,
       "createdAt": "2026-05-16T20:14:06Z",
       "author": "bookofjoe"
     },
@@ -32,7 +41,7 @@
       "id": "48160807",
       "title": "DeepSeek-V4-Flash means LLM steering is interesting again",
       "url": "https://www.seangoedecke.com/steering-vectors/",
-      "points": 225,
+      "points": 233,
       "comments": 72,
       "createdAt": "2026-05-16T14:58:16Z",
       "author": "Brajeshwar"
@@ -50,8 +59,8 @@
       "id": "48159445",
       "title": "SANA-WM, a 2.6B open-source world model for 1-minute 720p video",
       "url": "https://nvlabs.github.io/Sana/WM/",
-      "points": 322,
-      "comments": 133,
+      "points": 331,
+      "comments": 135,
       "createdAt": "2026-05-16T12:06:21Z",
       "author": "mjgil"
     },
@@ -60,7 +69,7 @@
       "title": "OpenClaw Creator Spent $1.3M on OpenAI Tokens in 30 Days",
       "url": "https://twitter.com/steipete/status/2055346265869721905",
       "points": 150,
-      "comments": 181,
+      "comments": 182,
       "createdAt": "2026-05-16T11:34:04Z",
       "author": "eamag"
     },
@@ -95,8 +104,8 @@
       "id": "48150723",
       "title": "OpenAI is connecting ChatGPT to bank accounts via Plaid",
       "url": "https://firethering.com/chatgpt-bank-account-plaid-openai/",
-      "points": 108,
-      "comments": 132,
+      "points": 109,
+      "comments": 134,
       "createdAt": "2026-05-15T16:38:50Z",
       "author": "steveharing1"
     },
@@ -126,15 +135,6 @@
       "comments": 43,
       "createdAt": "2026-05-15T08:16:39Z",
       "author": "jorisw"
-    },
-    {
-      "id": "48144670",
-      "title": "Show HN: GlycemicGPT – Open-source AI-powered diabetes management",
-      "url": "https://github.com/GlycemicGPT/GlycemicGPT",
-      "points": 64,
-      "comments": 61,
-      "createdAt": "2026-05-15T04:48:23Z",
-      "author": "jlengelbrecht"
     }
   ],
   "gh": [
@@ -143,8 +143,8 @@
       "fullName": "affaan-m/everything-claude-code",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "url": "https://github.com/affaan-m/everything-claude-code",
-      "stars": 184961,
-      "pushedAt": "2026-05-17T06:44:21Z",
+      "stars": 185052,
+      "pushedAt": "2026-05-17T07:58:39Z",
       "createdAt": "2026-01-18T00:51:51Z",
       "language": "JavaScript"
     },
@@ -153,8 +153,8 @@
       "fullName": "Significant-Gravitas/AutoGPT",
       "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
       "url": "https://github.com/Significant-Gravitas/AutoGPT",
-      "stars": 184364,
-      "pushedAt": "2026-05-17T04:26:13Z",
+      "stars": 184365,
+      "pushedAt": "2026-05-17T07:36:42Z",
       "createdAt": "2023-03-16T09:21:07Z",
       "language": "Python"
     },
@@ -163,7 +163,7 @@
       "fullName": "ollama/ollama",
       "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
       "url": "https://github.com/ollama/ollama",
-      "stars": 171568,
+      "stars": 171573,
       "pushedAt": "2026-05-15T23:23:55Z",
       "createdAt": "2023-06-26T19:39:32Z",
       "language": "Go"
@@ -173,7 +173,7 @@
       "fullName": "f/prompts.chat",
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
       "url": "https://github.com/f/prompts.chat",
-      "stars": 162389,
+      "stars": 162390,
       "pushedAt": "2026-05-17T04:28:49Z",
       "createdAt": "2022-12-05T13:54:13Z",
       "language": "HTML"
@@ -183,7 +183,7 @@
       "fullName": "huggingface/transformers",
       "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
       "url": "https://github.com/huggingface/transformers",
-      "stars": 160675,
+      "stars": 160676,
       "pushedAt": "2026-05-17T05:43:53Z",
       "createdAt": "2018-10-29T13:56:00Z",
       "language": "Python"
@@ -193,8 +193,8 @@
       "fullName": "NousResearch/hermes-agent",
       "description": "The agent that grows with you",
       "url": "https://github.com/NousResearch/hermes-agent",
-      "stars": 153747,
-      "pushedAt": "2026-05-17T06:11:45Z",
+      "stars": 153840,
+      "pushedAt": "2026-05-17T07:28:24Z",
       "createdAt": "2025-07-22T22:22:28Z",
       "language": "Python"
     },
@@ -203,7 +203,7 @@
       "fullName": "langgenius/dify",
       "description": "Production-ready platform for agentic workflow development.",
       "url": "https://github.com/langgenius/dify",
-      "stars": 141621,
+      "stars": 141628,
       "pushedAt": "2026-05-17T06:07:16Z",
       "createdAt": "2023-04-12T07:40:24Z",
       "language": "TypeScript"
@@ -213,7 +213,7 @@
       "fullName": "open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
       "url": "https://github.com/open-webui/open-webui",
-      "stars": 137391,
+      "stars": 137402,
       "pushedAt": "2026-05-15T00:34:23Z",
       "createdAt": "2023-10-06T22:08:27Z",
       "language": "Python"
@@ -223,7 +223,7 @@
       "fullName": "langchain-ai/langchain",
       "description": "The agent engineering platform.",
       "url": "https://github.com/langchain-ai/langchain",
-      "stars": 136909,
+      "stars": 136916,
       "pushedAt": "2026-05-17T01:10:42Z",
       "createdAt": "2022-10-17T02:58:36Z",
       "language": "Python"
@@ -233,8 +233,8 @@
       "fullName": "firecrawl/firecrawl",
       "description": "🔥 Search, scrape, and clean the web for AI agents.",
       "url": "https://github.com/firecrawl/firecrawl",
-      "stars": 120762,
-      "pushedAt": "2026-05-17T04:35:08Z",
+      "stars": 120780,
+      "pushedAt": "2026-05-17T07:05:45Z",
       "createdAt": "2024-04-15T21:02:29Z",
       "language": "TypeScript"
     },
@@ -243,7 +243,7 @@
       "fullName": "ChatGPTNextWeb/NextChat",
       "description": "✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android |  Linux | Windows",
       "url": "https://github.com/ChatGPTNextWeb/NextChat",
-      "stars": 88008,
+      "stars": 88007,
       "pushedAt": "2026-05-15T01:19:01Z",
       "createdAt": "2023-03-10T18:27:54Z",
       "language": "TypeScript"
@@ -253,7 +253,7 @@
       "fullName": "nextlevelbuilder/ui-ux-pro-max-skill",
       "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
       "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 79417,
+      "stars": 79446,
       "pushedAt": "2026-04-03T05:08:19Z",
       "createdAt": "2025-11-30T11:36:31Z",
       "language": "Python"
@@ -263,7 +263,7 @@
       "fullName": "lobehub/lobehub",
       "description": "LobeHub organizes your agents into 7×24 operation. It hires, schedules, reports on your entire AI team. You stay in charge — without staying online.",
       "url": "https://github.com/lobehub/lobehub",
-      "stars": 77167,
+      "stars": 77171,
       "pushedAt": "2026-05-17T06:14:02Z",
       "createdAt": "2023-05-21T07:19:12Z",
       "language": "TypeScript"
@@ -273,7 +273,7 @@
       "fullName": "thedotmack/claude-mem",
       "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
       "url": "https://github.com/thedotmack/claude-mem",
-      "stars": 76219,
+      "stars": 76242,
       "pushedAt": "2026-05-17T05:37:32Z",
       "createdAt": "2025-08-31T20:50:03Z",
       "language": "TypeScript"
@@ -283,8 +283,8 @@
       "fullName": "bytedance/deer-flow",
       "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
       "url": "https://github.com/bytedance/deer-flow",
-      "stars": 68029,
-      "pushedAt": "2026-05-17T01:03:56Z",
+      "stars": 68039,
+      "pushedAt": "2026-05-17T08:15:07Z",
       "createdAt": "2025-05-07T02:50:19Z",
       "language": "Python"
     }
@@ -387,6 +387,7 @@
       "score": 5,
       "cn": "阿里开源 Qwen3.6-35B-A3B，一款总参数 35B、仅激活 3B 的 MoE 模型，专为智能体编程与推理任务设计。相比前代 Qwen3.5-35B-A3B，其智能体编程能力显著提升，在 Claw-Eval 上超越 Qwen3.5-27B。同时具备原生多模态能力，在大多数视觉语言基准上表现与 Claude Sonnet 4.5 持平，例如 RefCOCO 达 92.0、ODInW13 成绩亮眼。模型已在 HuggingFace 和 ModelScope 开源。",
       "detail": "阿里通义实验室开源 Qwen3.6-35B-A3B 智能体编程模型。Qwen 系列从 Qwen 1 到 Qwen 3.6\n迭代频率极高，是中文开源模型里最稳定持续输出的一支。3.6 版本的特色是 MoE 架构 +\n小激活参数的高性能设计。\n\nQwen3.6-35B-A3B 是 35B 总参数、激活 3B 的稀疏模型，推理时只调用约十分之一参数，速\n度接近 3B 稠密模型而质量接近 35B 稠密模型。专为智能体编程场景训练，在 SWE-Bench、\nHumanEval、MBPP 等编程评测上接近 Claude Sonnet 4 水平。原生支持函数调用、JSON 输\n出、长上下文（128K）。\n\n模型权重在 ModelScope 和 HuggingFace 双发布，许可证为 Apache 2.0 商用友好。配套的\nQwen-Agent 框架提供工具调用、记忆、规划等 agent 组件。对中国开发者来说，Qwen3.6 是\n本地化部署 + 中文优化 + 商业许可三者兼备的少数选项。\n",
+      "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/models/Qwen/Qwen3.6-35B-A3B.png",
       "publishedAt": "2026-04-16T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:22.227Z"
     },
@@ -812,6 +813,7 @@
       "score": 5,
       "cn": "xAI 正式推出 Grok 3 测试版，强调推理能力的跃升。新模型在前代基础上强化了逻辑推理、多步骤问题解决和 agent 式任务执行，能够自主拆解复杂指令并逐步验证结果。Grok 3 Beta 的发布标志着 xAI 从对话助手向推理 agent 平台过渡，为后续更高级的自主智能体奠定了基础。",
       "detail": "xAI 发布 Grok 3 Beta，自称\"推理 agent 时代\"的开始。Grok 3 是 Grok 系列第一个在测试\n时计算（test-time compute）上做大投入的版本，引入 Think 和 Big Brain 两种推理模式，\n对位 OpenAI o 系列。\n\nThink 模式让模型在回答前进行可见的链式推理，速度变慢但准确率提升明显，特别在数学、\n逻辑、代码 debug 上效果显著。Big Brain 模式则使用更多计算资源做更深推理，适合极难\n的问题。两种模式都通过 grok.com 和 X 客户端开放给订阅用户。\n\nGrok 3 的关键意义在于把 xAI 从\"追赶者\"变成\"参与者\"——之前 Grok 1/2 都被认为是同代\n落后产品，3 这一代在 LMSys Arena 和多项独立评测上首次和 GPT/Claude 同档位竞争。从\nGrok 3 起，xAI 在 LLM 圈才开始被认真当作四巨头之一来讨论。\n",
+      "image": "https://x.ai/images/news/grok-3.webp",
       "publishedAt": null,
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -840,6 +842,7 @@
       "score": 5,
       "cn": "xAI 在 Grok 中加入了图像生成能力，用户可通过文字描述实时生成图片。该功能基于自研模型，并融入了对话上下文理解，使生成的图像更贴合用户意图。此次更新让 Grok 从纯文本模型扩展至多模态交互，为用户提供了更丰富的表达方式。",
       "detail": "xAI 发布 Grok 图像生成功能，把图像生成作为 Grok 主产品的内置能力开放给所有用户。\nAurora 是该功能背后的图像模型代号，xAI 内部自研。\n\nAurora 的特色是写实风格的强项——人物、场景、商品摄影类图像质量接近 Midjourney v6，\n比 DALL-E 3 更真实但比 SDXL 调教更稳定。模型支持文本到图像、图像到图像、图像编辑\n三种模式，内置安全过滤但相较 OpenAI 宽松。\n\nGrok 图像生成对所有用户免费开放，每天有数十次额度，这在主流 LLM 产品里是较高的免\n费配额。配合 Grok 的实时数据访问能力，可以用\"生成一张今天 X 热搜话题的配图\"这类\n组合指令实现内容自动化。对 xAI 来说，这是把用户从竞品迁过来的产品入口之一。\n",
+      "image": "https://x.ai/images/news/default.webp",
       "publishedAt": null,
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1186,6 +1189,7 @@
       "category": "其他",
       "score": 4,
       "cn": "DeepMind 推出 Lyria 3 Pro，这是其音乐生成模型的最新版本，支持生成长度更长、具备结构感知能力的曲目。同时，Lyria 正在被集成到更多 Google 产品与界面中，让用户能在更多场景下直接使用 AI 辅助音乐创作。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Lyria-3-Pro_thumbnail.width-1300.png",
       "publishedAt": "2026-03-25T16:01:39.000Z",
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1199,6 +1203,7 @@
       "category": "编程工具",
       "score": 4,
       "cn": "Claude Code 新增自动模式，在完全放手与每次审批之间提供了一个折中方案。该模式内置安全分类器，操作前自动审查：安全操作直接执行，有风险的操作则被拦截并建议替代方案，连续拦截会触发用户审批。Anthropic 建议在隔离环境中使用此功能。Team Plan 用户即日起可用研究预览版，企业版和 API 访问将在未来几天内陆续开放。",
+      "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": "2026-03-25T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:35.360Z"
     },
@@ -1212,6 +1217,7 @@
       "category": "skill",
       "score": 4,
       "cn": "web-access 是一个为 Claude Code 设计的 skill，补齐了其在 CDP 浏览器操作和复杂交互上的短板。它支持 WebSearch、WebFetch、curl、Jina 和 CDP 等多种工具，能直接连接日常使用的 Chrome 浏览器，天然携带登录态，可执行点击、文件上传、视频截帧等操作。操作经验按域名存储并跨会话复用，多个目标任务可交由子 Agent 并行处理，适合需要登录态和动态页面交互的场景。",
+      "image": "https://opengraph.githubassets.com/6b5ce3d0a86857a8597691eb58ffb10ce25aa2bdc4f8e730119db6b7ea6dac8d/eze-is/web-access",
       "publishedAt": "2026-03-24T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:38.722Z"
     },
@@ -1225,6 +1231,7 @@
       "category": "其他",
       "score": 4,
       "cn": "阿里发布了 PrismAudio 环境音与音效生成模型，参数量 5.18 亿，生成 9 秒音频仅需 0.63 秒。该模型将强化学习与思维链结合，先推理再生成匹配画面的声音，在声画同步和音质清晰度上表现不错。模型权重已在 HuggingFace 和 ModelScope 开源。",
+      "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/models/FunAudioLLM/PrismAudio.png",
       "publishedAt": "2026-03-24T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:38.526Z"
     },
@@ -1238,6 +1245,7 @@
       "category": "Agent",
       "score": 4,
       "cn": "阿里上线 Accio Work，定位电商场景的智能代理平台。用户通过对话框即可驱动商品设计、采购、店铺运营、营销等任务，平台支持组建多角色 AI 团队，内置电商相关 skill，并可通过微信、钉钉等通讯工具交互。Accio Work 将阿里自身的电商经验封装为可调用的 agent 能力，适合希望快速启动跨境电商业务的用户。",
+      "image": "https://s.alicdn.com/@img/imgextra/i4/O1CN01L3EOoU1IfPQXGpYhJ_!!6000000000920-55-tps-24-24.svg_300x300.jpg",
       "publishedAt": "2026-03-24T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:39.432Z"
     },
@@ -1251,6 +1259,7 @@
       "category": "Agent",
       "score": 4,
       "cn": "EvoSkill 是一个开源的自动化系统，通过分析 Agent 执行失败的原因，自动发现需要改进的技能点，并生成针对性的 skill 文件。系统会对每个改进进行验证，保留最优配置并进入下一轮迭代，直到收敛到最佳方案。每次迭代都会保存为 git 分支，所有改动可追溯。默认使用 Claude SDK，也支持通过 OpenCode SDK 接入 DeepSeek、Gemini 等其他模型。",
+      "image": "https://opengraph.githubassets.com/c7f23fb16a20ce8635aaace29b382ed785b73fc3aa6e85e7b09dc6f9f26a822e/sentient-agi/EvoSkill",
       "publishedAt": "2026-03-19T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:42.784Z"
     },
@@ -1264,6 +1273,7 @@
       "category": "Agent",
       "score": 4,
       "cn": "阿里开源的 Page Agent 是一个纯前端 JavaScript GUI Agent，用户通过自然语言指令即可操控页面，无需浏览器插件或后端改动。它基于文本的 DOM 操作，不依赖截图或多模态模型，安装 Chrome 扩展后能跨多页面连续执行任务，并支持人机协同确认。对 SaaS 厂商和 ERP、CRM 用户来说，可大幅简化操作流程，降低 AI 化改造门槛。",
+      "image": "https://repository-images.githubusercontent.com/1062458369/4f9a1671-3953-4f45-8a8e-b010e33520bc",
       "publishedAt": "2026-03-19T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:43.603Z"
     },
@@ -1277,6 +1287,7 @@
       "category": "Agent",
       "score": 4,
       "cn": "EvoScientist 是一个开源的多智能体科研系统，由规划、调研、编码、调试、分析、写作六个智能体协同完成文献调研、实验、数据分析和论文撰写等环节。系统支持跨会话保存上下文，可通过 CLI、Telegram、Slack、飞书、微信等多渠道接入，并允许用户自由组合 Skill 子任务，适应不同研究需求。",
+      "image": "https://opengraph.githubassets.com/a90444ffae653084838ebacece9026ee94a09d50c4c9982b9dfa7bc6fbff6253/EvoScientist/EvoScientist",
       "publishedAt": "2026-03-19T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:44.285Z"
     },
@@ -1290,6 +1301,7 @@
       "category": "评测",
       "score": 4,
       "cn": "DeepMind 发布了一套用于衡量 AGI 进展的认知框架，并同步在 Kaggle 上发起黑客松，鼓励社区构建对应的评测任务。该框架试图从认知能力维度拆解 AGI 的关键能力指标，为当前大模型的能力边界提供更结构化的评估手段。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/agi_cognitive-framework_meta.width-1300.jpg",
       "publishedAt": "2026-03-17T16:03:47.000Z",
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1342,6 +1354,7 @@
       "category": "大模型",
       "score": 4,
       "cn": "DeepMind 发布了改进版 Gemini 音频模型，在语音理解与生成方面取得显著提升。新模型能够更自然地处理多轮对话中的语气、语速和情感表达，同时支持更复杂的语音指令识别。这一更新让 Gemini 在语音助手、实时翻译和有声内容创作等场景中的表现更加流畅，为开发者提供了更强大的语音交互基础能力。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-audio-flash__keyword_meta__dark.width-1300.png",
       "publishedAt": "2025-12-12T17:50:50.000Z",
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1355,6 +1368,7 @@
       "category": "大模型",
       "score": 4,
       "cn": "UK-LLM 主权 AI 计划基于 NVIDIA Nemotron 构建多语言模型，重点支持威尔士语等凯尔特语言。该模型能同时用英语和威尔士语进行推理，旨在服务约 85 万威尔士语使用者，并计划扩展至康沃尔语、爱尔兰语和苏格兰盖尔语。这一项目体现了 AI 在保护语言多样性方面的应用潜力。",
+      "image": "https://blogs.nvidia.com/wp-content/uploads/2025/09/genai-corp-blog-nemotron-uk-trip-1280x680-1.png",
       "publishedAt": "2025-09-14T01:00:21.000Z",
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1368,6 +1382,7 @@
       "category": "世界模型",
       "score": 4,
       "cn": "NVIDIA 在 SIGGRAPH 2025 上发布了多项物理 AI 研究进展，覆盖神经渲染、3D 生成与世界模拟三大方向。这些技术旨在提升机器人、自动驾驶和内容创作的物理真实感与交互能力。虽然尚未推出具体产品，但将底层算法向更贴近真实物理规律的方向推进，为后续的仿真训练与数字孪生打下基础。",
+      "image": "https://blogs.nvidia.com/wp-content/uploads/2025/08/NV_SIGGRAPH-KV-video_Still001.jpg",
       "publishedAt": "2025-08-11T15:00:38.000Z",
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1381,6 +1396,7 @@
       "category": "训练",
       "score": 4,
       "cn": "布里斯托大学基于 NVIDIA Grace Hopper 超级芯片打造的 Isambard-AI 超级计算机正式上线，可提供 21 exaflops AI 算力，成为英国最快的超算系统，并在全球能效排名中位居前列。这台超算将支撑英国在气候科学、药物研发和基础物理等领域的大规模 AI 训练与推理任务。",
+      "image": "https://blogs.nvidia.com/wp-content/uploads/2025/07/Isambard-AI_featured-still-scaled.png",
       "publishedAt": "2025-07-17T17:00:50.000Z",
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1394,6 +1410,7 @@
       "category": "大模型",
       "score": 4,
       "cn": "NVIDIA 发布了一系列面向自动驾驶生态的新 AI 模型与开发者工具。这些模型旨在支持从多模型分立架构向端到端统一架构的演进，后者可直接从传感器数据生成驾驶决策。新工具还包含高质量物理传感器数据生成能力，以满足大模型训练对数据规模和真实性的更高要求。此举有望加速自动驾驶系统的研发与部署进程。",
+      "image": "https://blogs.nvidia.com/wp-content/uploads/2025/06/Cosmos-AV-Blog-Image.png",
       "publishedAt": "2025-06-11T10:55:36.000Z",
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1407,6 +1424,7 @@
       "category": "其他",
       "score": 4,
       "cn": "NVIDIA 研究人员利用 AI 设计出能中和致命蛇毒的蛋白质。蛇毒的蛋白质，为全球蛇咬伤高发地区提供了一种潜在的低成本治疗方案。这项技术通过深度学习模型快速筛选和优化蛋白质结构，有望大幅缩短传统解毒剂的研发周期，并降低生产成本，让更多脆弱人群获得及时救治。",
+      "image": "https://blogs.nvidia.com/wp-content/uploads/2025/02/AdobeStock_542101600-scaled.jpeg",
       "publishedAt": "2025-02-07T14:00:36.000Z",
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1420,6 +1438,7 @@
       "category": "TTS",
       "score": 4,
       "cn": "Mistral 推出 Voxtral TTS，一款开源权重的高性能文本转语音模型。它能够快速生成逼真的人声，并支持即时适配不同风格和说话人，为语音 agent 场景提供了灵活的基础能力。Voxtral 在速度与自然度之间取得了良好平衡，可广泛应用于智能助手、有声内容制作等领域。",
+      "image": "https://mistral.ai/img/mistral-cover.png",
       "publishedAt": null,
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1459,6 +1478,7 @@
       "category": "大模型",
       "score": 4,
       "cn": "Mistral 推出 Forge，一个面向企业的 AI 模型构建系统。Forge 允许企业在自有数据基础上，打造达到前沿水平的定制模型，将 Mistral 的通用能力与客户专有知识结合。该系统旨在解决企业数据安全与模型个性化之间的平衡问题，为金融、医疗等对数据敏感且需要高精度模型的行业提供了一条可控的路径。",
+      "image": "https://mistral.ai/img/mistral-cover.png",
       "publishedAt": null,
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1472,6 +1492,7 @@
       "category": "Agent",
       "score": 4,
       "cn": "Mistral 发布 Leanstral，首个针对 Lean 4 的开源代码 agent。该项目为形式化验证场景下的编码提供可信赖的自动化辅助，旨在将 agent 能力引入严谨的数学证明与程序验证领域，降低使用 Lean 4 的门槛。",
+      "image": "https://mistral.ai/img/mistral-cover.png",
       "publishedAt": null,
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1550,6 +1571,7 @@
       "category": "图像模型",
       "score": 4,
       "cn": "xAI 为 Grok Imagine 图像生成模型新增了质量模式 API。开发者可以通过参数调整图片的细节丰富度与渲染精度。该模式在保持原有生成速度的基础上，提升了纹理、光影和复杂构图的表现力，适用于对视觉质量有更高要求的应用场景。此次更新并未改变模型架构，而是优化了采样策略和后处理流程，为图像生成类产品提供了更灵活的质量控制选项。",
+      "image": "https://x.ai/images/news/grok-imagine-image-quality.webp",
       "publishedAt": null,
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1563,6 +1585,7 @@
       "category": "大模型",
       "score": 4,
       "cn": "xAI 推出了 Grok Voice Think Fast 1.0，这是 Grok 模型的新一代语音交互模式。该模式旨在提供更自然、迅速的语音对话体验，用户能以说话速度实时与 Grok 交流，获得即时回应。Think Fast 强调低延迟与流畅性，可能利用端侧或优化推理加速。此次更新让 Grok 的语音能力从简单问答升级为更沉浸式的对话，适用于实时信息查询、创意讨论等场景，为多模态交互再添一环。",
+      "image": "https://x.ai/images/news/grok-voice-think-fast-1.webp",
       "publishedAt": null,
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1602,6 +1625,7 @@
       "category": "大模型",
       "score": 4,
       "cn": "xAI 宣布其 API 进入公开测试阶段，开发者可通过标准 REST 可通过标准 REST 接口调用 Grok 系列模型的能力。该 API 支持文本生成与对话补全，定价按 token 计费，并提供与 OpenAI 兼容的接口格式以降低迁移成本。xAI 表示，API 的开放是构建更广泛 AI 生态的第一步，后续将逐步增加多模态、微调等功能。对于希望接入 Grok 模型的团队而言，这提供了一个正式且稳定的入口。",
+      "image": "https://x.ai/images/news/enterprise.webp",
       "publishedAt": null,
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1654,6 +1678,7 @@
       "category": "大模型",
       "score": 4,
       "cn": "Meta 开源了 TRIBE v2，一个能预测人类在看到、听到、读到内容时全脑活动的基础模型。它利用预训练的音频、视频和文本嵌入，通过 Transformer 学习跨刺激、任务和个体的通用表征，再映射到个体 fMRI 体素。无需重新训练即可预测新刺激和新受试者的脑反应，在听觉和视觉数据集上比标准方法提升 2–3 倍，为神经科学实验设计和脑疾病辅助诊断提供了新工具。",
+      "image": "https://opengraph.githubassets.com/dc13f5b09d48b2d124d7c0cbf274ba6f5f3bbde881f92179a10b5dedb2ce060c/facebookresearch/tribev2",
       "publishedAt": null,
       "discoveredAt": "2026-05-17T05:19:34.114Z"
     },
@@ -1719,6 +1744,7 @@
       "category": "评测",
       "score": 3,
       "cn": "OpenAI 回顾了 Parameter Golf 竞赛的成果，这场活动吸引了超过 1000 名参与者和 2000 多份提交，聚焦于在严格参数限制下利用 AI 辅助进行机器学习研究、编码 agent、量化及新型模型设计。竞赛展示了 AI 在加速研究探索方面的潜力，也揭示了当前模型在复杂推理和约束优化上的边界。",
+      "image": "https://images.ctfassets.net/kftzwdyauwt9/6PRLQARXtH3sfsTBcHlufc/ac545b82a82009609194d64e34538e62/SEO.png?w=1600&h=900&fit=fill",
       "publishedAt": "2026-05-12T00:00:00.000Z",
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1758,6 +1784,7 @@
       "category": "其他",
       "score": 3,
       "cn": "Google AI 在 Gemini API 中新增了事件驱动的 Webhooks 功能，允许开发者以推送方式接收长时间运行任务的完成通知，从而避免轮询带来的延迟和资源浪费。这一更新简化了异步工作流的集成，适合需要后台处理或批处理场景的应用。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/WebhooksGeminiAPI-social.width-1300.png",
       "publishedAt": "2026-05-04T15:30:00.000Z",
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1771,6 +1798,7 @@
       "category": "浏览器自动化",
       "score": 3,
       "cn": "Google 在 Chrome 中推出 AI Mode，让用户以对话方式与网页交互，而非传统搜索。该模式整合了浏览器上下文理解与生成式 AI，能直接回答复杂问题、总结页面内容或执行多步指令，例如对比多个商品信息或提取关键数据。这一更新将浏览器从被动展示工具变为主动助手，降低了信息获取的门槛，也预示着搜索与浏览体验的融合趋势。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AI_Mode_in_Chrome_-_Social_feed.width-1300.png",
       "publishedAt": "2026-04-16T17:00:00.000Z",
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1784,6 +1812,7 @@
       "category": "skill",
       "score": 3,
       "cn": "Hue 是一套开源工具，专为 Claude Code 设计。用户只需提供网站 URL 或设计截图，Hue 即可自动提取颜色、字体、阴影等品牌视觉元素，生成包含 30 多个组件（按钮、输入框、卡片等）的完整设计系统，并支持深浅双模式。该系统输出为 8 个文件，其中包含一个可直接浏览的组件库 HTML，后续 Claude 生成 UI 时会自动引用这套规范，确保品牌一致性。",
+      "image": "https://opengraph.githubassets.com/1e54ee37e19cb02b8bbd7edb3e9a7c21e182375c29c732699b1f2b9f7cdd7e6b/dominikmartn/hue",
       "publishedAt": "2026-04-16T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:22.312Z"
     },
@@ -1797,6 +1826,7 @@
       "category": "编程工具",
       "score": 3,
       "cn": "CodeFlow 是一款纯浏览器运行的代码架构可视化工具，无需配置即可分析代码库。它生成交互式架构地图，展示文件间的依赖关系。影响范围分析功能可预估修改文件波及的其他文件，活动热力图按提交频率着色标记活跃区域。工具还检测设计模式与反模式，辅助开发者快速理解代码库结构。",
+      "image": "https://repository-images.githubusercontent.com/1117250245/745b39a2-cf05-4a3f-9d6d-01eaf50120f0",
       "publishedAt": "2026-04-16T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:25.413Z"
     },
@@ -1810,6 +1840,7 @@
       "category": "skill",
       "score": 3,
       "cn": "Google 在 Chrome 浏览器中上线了 Skills 功能，允许用户将自己常用的 AI 提示保存为一键触发的工具。用户可以在 Chrome 中浏览、保存和复用 AI 工作流，无需每次手动输入提示词。这一更新降低了 AI 工具的使用门槛，让高频操作更加便捷。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/GoogleChrome_RR_Skills_KeywordHeader-Thumbnai.width-1300.png",
       "publishedAt": "2026-04-14T17:00:00.000Z",
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1836,6 +1867,7 @@
       "category": "知识库",
       "score": 3,
       "cn": "Wikiwise 是一款基于 Karpathy 个人知识库理念的原生 macOS 应用，用户无需编程即可使用。它内置 SwiftTerm 终端，可直接运行 Claude Code、Codex 等工具。FSEvents 文件监听让 Markdown 自动编译并即时预览。知识图谱可视化提供 3D 视图，支持一键发布生成分享链接，同时兼容 URL 导入、Readwise 同步、本地文件及手写 Markdown 等多种导入方式。",
+      "image": "https://opengraph.githubassets.com/9e9d6362ea23ff59ba44c9bc02faf269622b83ceef5b64debd508917108a65a9/TristanH/wikiwise",
       "publishedAt": "2026-04-13T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:30.075Z"
     },
@@ -1849,6 +1881,7 @@
       "category": "大模型",
       "score": 3,
       "cn": "Google 在 Gemini API 中新增 Flex 和 Priority 两种推理层级，让开发者可以根据场景在成本与延迟之间灵活取舍。Flex 优先保障吞吐量、适合批量处理；Priority 则争取更快的响应时间。两者共享同一模型能力，不改变生成质量，但计费方式和配额分配有所不同。这是 API 层面的一次务实调整，有助于降低开发者的实际使用门槛。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_API_Dials_ss_1.width-1300.png",
       "publishedAt": "2026-04-02T16:00:00.000Z",
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1862,6 +1895,7 @@
       "category": "安全",
       "score": 3,
       "cn": "cc-gateway 是一个针对 Claude Code 的反封号反追踪开源工具。Anthropic 通过 640 多种遥测事件和 40 多个维度的指纹（设备 ID、邮箱、操作系统、硬件配置等）每 5 秒上报一次来检测异常使用。cc-gateway 在身份指纹出网前全部重写，让服务器只能看到一个标准化身份，同时接管 OAuth 流程和网络层阻断直连，实现多设备共用一个账号。",
+      "image": "https://opengraph.githubassets.com/9b0f03d621f6d1bb0fd72112659beec578e4c6b13173c748b3d05d18c41f919b/motiful/cc-gateway",
       "publishedAt": "2026-04-01T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:33.024Z"
     },
@@ -1875,6 +1909,7 @@
       "category": "其他",
       "score": 3,
       "cn": "TrendRadar 是一款开源的舆情监控工具，默认覆盖知乎、微博、抖音、B站、百度热搜等11个平台，用户也可自行添加RSS订阅源。它支持关键词过滤和AI智能筛选，能用自然语言描述关注领域。推送渠道涵盖企业微信、飞书、钉钉、Telegram、邮件等10余种。工具还提供趋势分析，记录新闻从出现到结束的完整周期，并生成热点洞察报告，支持多语言翻译。部署方面支持Docker，数据可本地或云端存储。",
+      "image": "https://repository-images.githubusercontent.com/974186260/babe0e85-a00e-421e-bfda-0e0ed43ff2bd",
       "publishedAt": "2026-03-31T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:33.005Z"
     },
@@ -1888,6 +1923,7 @@
       "category": "skill",
       "score": 3,
       "cn": "HyperLearn 是一个开源项目，能根据用户提供的主题或网址自动打开浏览器阅读文档，并实时整理为技能文档。完成后将 skill 打包为 zip 文件，可直接用于其他 Agent。该项目将人工整理技能文档的过程完全自动化，通过可见的浏览器预览展示 AI 的学习过程。",
+      "image": "https://opengraph.githubassets.com/1fbccc57d1f8ea9483e01515af70d53b1d014e08ca94919f842fac097368fea9/hyperbrowserai/hyperbrowser-app-examples",
       "publishedAt": "2026-03-25T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:36.579Z"
     },
@@ -1901,6 +1937,7 @@
       "category": "安全",
       "score": 3,
       "cn": "openclaw-security-hardening 是一个面向 OpenClaw 的自动化安全体检与加固工具。它通过对话式交互扫描配置文件，识别风险项并标注等级，提供三档加固方案供用户选择，选定后直接修改配置，省去手动编辑 JSON 的麻烦。适合不想逐条检查配置文件的团队使用。",
+      "image": "https://opengraph.githubassets.com/a834abec2b31e3735d0e6959aa1241604ce6dede1de8cd77b60ca361bcc4448f/shanggqm/openclaw-security-hardening",
       "publishedAt": "2026-03-23T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:41.031Z"
     },
@@ -1914,6 +1951,7 @@
       "category": "编程工具",
       "score": 3,
       "cn": "Anthropic 为 Claude Code 新增了通过即时通讯软件下发指令的能力，目前支持 Telegram 和 Discord。用户可以直接在聊天中要求 Claude Code 修复 bug、添加功能或执行任务，执行完毕后会收到结果汇报。该功能为研究预览版，需使用 Claude Code v2.1.80 及以上版本，并且登录方式仅限于 claude.ai 账户，不支持 API Key。",
+      "image": "https://claude-code.mintlify.app/_next/image?url=%2F_mintlify%2Fapi%2Fog%3Fdivision%3DAutomation%26appearance%3Dsystem%26title%3DPush%2Bevents%2Binto%2Ba%2Brunning%2Bsession%2Bwith%2Bchannels%26description%3DUse%2Bchannels%2Bto%2Bpush%2Bmessages%252C%2Balerts%252C%2Band%2Bwebhooks%2Binto%2Byour%2BClaude%2BCode%2Bsession%2Bfrom%2Ban%2BMCP%2Bserver.%2BForward%2BCI%2Bresults%252C%2Bchat%2Bmessages%252C%2Band%2Bmonitoring%2Bevents%2Bs%26logoLight%3Dhttps%253A%252F%252Fmintcdn.com%252Fclaude-code%252Fc5r9_6tjPMzFdDDT%252Flogo%252Flight.svg%253Ffit%253Dmax%2526auto%253Dformat%2526n%253Dc5r9_6tjPMzFdDDT%2526q%253D85%2526s%253D78fd01ff4f4340295a4f66e2ea54903c%26logoDark%3Dhttps%253A%252F%252Fmintcdn.com%252Fclaude-code%252Fc5r9_6tjPMzFdDDT%252Flogo%252Fdark.svg%253Ffit%253Dmax%2526auto%253Dformat%2526n%253Dc5r9_6tjPMzFdDDT%2526q%253D85%2526s%253D1298a0c3b3a1da603b190d0de0e31712%26primaryColor%3D%25230E0E0E%26lightColor%3D%2523D4A27F%26darkColor%3D%25230E0E0E%26backgroundLight%3D%2523FDFDF7%26backgroundDark%3D%252309090B&w=1200&q=100",
       "publishedAt": "2026-03-20T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:41.015Z"
     },
@@ -1927,6 +1965,7 @@
       "category": "skill",
       "score": 3,
       "cn": "posterskill 是一个开源项目，能从 Overleaf 论文源文件中提取内容、下载图表和机构 Logo，自动生成可交互的学术海报编辑器。生成的海报并非静态图片，而是支持实时编辑的网页，可导出 PDF 打印，并允许添加参考海报。适合需要快速将论文转化为视觉海报的研究者使用。",
+      "image": "https://opengraph.githubassets.com/e4a905c96b41f6213460f78f415961d6e6c4d62ad33b2634f788e030c9a75526/ethanweber/posterskill",
       "publishedAt": "2026-03-18T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:43.859Z"
     },
@@ -1940,6 +1979,7 @@
       "category": "其他",
       "score": 3,
       "cn": "OpenCLI 是一个开源工具，支持在终端直接访问 B 站、知乎、X、Reddit、YouTube 等 19 个网站，提供 80 多条命令。该工具可复用 Chrome 的登录状态，无需单独登录，凭证不离开浏览器。它具备 AI 原生能力，能自动发现 API 接口并生成适配器，采用 YAML 声明式和 TypeScript 浏览器注入的双引擎架构。",
+      "image": "https://opengraph.githubassets.com/a278540c067496ce11e19783f1af246295faa7e26e7d84ee9239412b34cff769/jackwener/OpenCLI",
       "publishedAt": "2026-03-18T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:46.558Z"
     },
@@ -1966,6 +2006,7 @@
       "category": "skill",
       "score": 3,
       "cn": "HyperSkill 是一款根据主题或网址自动搜索并生成 SKILL.md 文档的工具。它支持单条和批量处理，实时显示生成进度，结果可打包为 ZIP 下载。适合需要快速构建 AI skill 文档的开发者，简化了信息搜集与整理流程。",
+      "image": "https://opengraph.githubassets.com/1fbccc57d1f8ea9483e01515af70d53b1d014e08ca94919f842fac097368fea9/hyperbrowserai/hyperbrowser-app-examples",
       "publishedAt": "2026-03-17T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:47.877Z"
     },
@@ -1979,6 +2020,7 @@
       "category": "其他",
       "score": 3,
       "cn": "NVIDIA 发布了一项将游戏 GPU 用于文化研究的案例：通过深度学习分析陶瓷器物的纹理、风格与历史流转，帮助考古学家和艺术史学者解码跨越千年的文化对话。这项应用展示了消费级显卡在非传统计算场景中的潜力，将 AI 从实验室带入博物馆与拍卖行，为文化遗产研究提供了新的数字工具。",
+      "image": "https://blogs.nvidia.com/wp-content/uploads/2025/07/AdobeStock_345973842-scaled.jpeg",
       "publishedAt": "2025-07-11T13:00:50.000Z",
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -1992,6 +2034,7 @@
       "category": "其他",
       "score": 3,
       "cn": "NVIDIA 将 GPU 加速的深度学习应用于卡西尼号探测器多年积累的土卫六数据，原本需要数年分析的工作在数秒内完成。研究团队利用 AI 快速识别甲烷云层分布，为外星世界探索提供了一种更高效的方法。这一成果展示了 GPU 在天体物理学数据处理中的潜力，也意味着未来类似任务可以大幅缩短周期。",
+      "image": "https://blogs.nvidia.com/wp-content/uploads/2025/01/nasa-titans-1-scaled.jpg",
       "publishedAt": "2025-01-24T14:00:30.000Z",
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -2005,6 +2048,7 @@
       "category": "Agent",
       "score": 3,
       "cn": "Mistral 在 Studio 平台中推出 MCP 连接器功能，支持将企业数据系统通过可重用的连接器直接接入 AI 应用，并允许开发者调用内置或自定义的 MCP 工具。该更新还引入了人工审批控制，确保敏感操作可被审计与干预，降低 agent 自动执行任务时的安全风险。",
+      "image": "https://mistral.ai/img/mistral-cover.png",
       "publishedAt": null,
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -2018,6 +2062,7 @@
       "category": "编程工具",
       "score": 3,
       "cn": "Mistral 推出一个面向 Rails 开发者的 agent 工具，能够自动编写测试代码，覆盖开发者不愿手动处理的测试场景。该 agent 基于 Mistral 模型，可理解 Rails 项目结构和业务逻辑，生成符合项目风格的测试用例，旨在提升测试覆盖率并减少重复劳动。",
+      "image": "https://mistral.ai/img/mistral-cover.png",
       "publishedAt": null,
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -2070,6 +2115,7 @@
       "category": "其他",
       "score": 3,
       "cn": "Grok 在网页、iOS 和 Android 端上线了 Connectors 功能，允许用户将 Grok 与外部数据源或服务连接，扩展对话助手的上下文获取能力。这一更新让 Grok 在实用性和信息整合上更进一步，适合需要实时或个性化信息的场景。",
+      "image": "https://x.ai/images/news/grok-connectors.webp",
       "publishedAt": null,
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -2083,6 +2129,7 @@
       "category": "TTS",
       "score": 3,
       "cn": "xAI 为 Grok 上线自定义语音功能，用户可以从预设的语音库中选择，或创建专属合成语音。该功能基于 Grok 的文本转语音能力，支持调节语速、音调等参数。语音库初期提供十余种风格选项，覆盖中性、活泼、沉稳等类型。自定义语音需通过简短录音样本生成，系统自动训练出匹配的声学模型。这使 Grok 在对话助手中的表现更具个性化，适合不同使用场景。",
+      "image": "https://x.ai/images/news/grok-custom-voices.webp",
       "publishedAt": null,
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
@@ -2096,6 +2143,7 @@
       "category": "大模型",
       "score": 3,
       "cn": "Mistral AI 宣布加入 NVIDIA Nemotron 联盟，双方将围绕开放前沿模型展开合作。Mistral 将贡献其在大规模模型开发和多模态能力方面的积累，借助 NVIDIA 的算力与基础设施加速模型迭代。这一合作延续了 Mistral 一贯的开源路线，也为开放模型生态引入了更强的底层算力支持。",
+      "image": "https://mistral.ai/img/mistral-cover.png",
       "publishedAt": null,
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     }
