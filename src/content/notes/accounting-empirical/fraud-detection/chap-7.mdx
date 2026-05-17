@@ -1,6 +1,6 @@
 <Introduction>
 - 理解极端不平衡分类下三种主流应对路径的统计直觉
-- 复现 Bao et al. (2020 JAR) 的 RUSBoost 主结果，含其单年验证调参协议
+- 复现 Bao et al. (2020 JAR) 的 <NoteRef>RUSBoost</NoteRef> 主结果，含其单年验证调参协议
 - 在同一测试集上把 RUSBoost 与 SMOTE、class_weight 平衡 logit、普通 logit 并列对比
 - 对照 2020 原文与 2022 Erratum，理解 RUSBoost 的领先究竟在哪个指标上稳健
 </Introduction>
@@ -10,7 +10,7 @@
 本章的主角是 **RUSBoost**。这是 Bao、Ke、Li、Yu 与 Zhang 在 2020 年 *Journal of Accounting Research* 上推荐的方法，是会计 ML 文献到目前为止最具影响力的一篇旗舰论文。Bao 等人在 2022 年又发表了一篇 Erratum，修订了原文中关于 NDCG\@$k$ 指标的部分论断。本章会同时面对这两个版本，做一次完整的复刻。
 
 <SideNote term="RUSBoost">
-Random UnderSampling Boosting。Seiffert 等人 2010 年提出的集成方法，每一轮 AdaBoost 迭代之前先对训练集做一次随机欠采样让多数类与少数类等量，再在平衡子集上训练 base learner。在会计 ML 中由 Bao 等人 2020 推为不平衡舞弊检测的旗舰方法。
+Random UnderSampling Boosting。Seiffert 等人 2010 年提出的集成方法，每一轮 <NoteRef>AdaBoost</NoteRef> 迭代之前先对训练集做一次随机欠采样让多数类与少数类等量，再在平衡子集上训练 base learner。在会计 ML 中由 Bao 等人 2020 推为不平衡舞弊检测的旗舰方法。
 </SideNote>
 
 下图把欠采样与 Boosting 这两件事画在同一张流程上：每一轮迭代都先从极不平衡的训练集里随机欠采样一份 1:1 的小子集，再用 AdaBoost 的权重更新规则把这一轮训练出来的弱分类器拼回最终的加权投票。

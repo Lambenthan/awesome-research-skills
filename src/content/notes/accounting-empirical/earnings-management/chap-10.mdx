@@ -1,6 +1,6 @@
 <Introduction>
 - 把第 1–9 章的九种 DA 度量合并到一张 firm-year 面板，跑九方法之间的 Pearson 与 Spearman 相关矩阵
-- 构造 Dechow et al. 2011 的 F-Score 基础版 logit 模型，在 Bao 数据 AAER 标签上得到 AUC = 0.5888
+- 构造 Dechow et al. 2011 的 <NoteRef>F-Score</NoteRef> 基础版 logit 模型，在 Bao 数据 AAER 标签上得到 AUC = 0.5888
 - 把三家案例公司在九种方法下的舞弊年份平均同年分位汇总成一张图，给出全书的最终判别图谱
 - 讨论盈余管理度量这件事在 2010 年代以后的 ML 扩展方向
 </Introduction>
@@ -77,7 +77,7 @@ Fraud Score。Dechow et al. 2011 发表于《Contemporary Accounting Research》
 四种 DA 度量在 logit 模型中的系数方向告诉我们：Stubben 收入侧 DA 系数最大且最显著（1.58, $p = 0.0008$），说明收入侧操纵在 Bao 样本里是最强的舞弊信号；DD 残差系数 1.25 也显著正，符合应计估计误差与舞弊关联的预期；Modified Jones 系数 $-1.23$ 反向，说明在控制了其他三种 DA 后，`DA_mj` 的额外信息反而与舞弊概率负相关，可能是同源高相关方法之间的多重共线性效应；Roychowdhury RM 系数接近零且不显著，反映 Bao 样本中真实活动操纵与 AAER 标签的关联很弱。ROA 系数 0.959 显著正，说明高 ROA 公司被 SEC 处罚的概率更高，符合 *管理层为维持高业绩才有动机操纵* 的研究文献。AUC 0.5888 反映综合 F-Score 对 AAER 标签有一定判别力，但远不到强分类器水准。
 </Interpretation>
 
-AUC 0.5888 的解读需要小心。AAER 标签本身有局限：第一，AAER 只覆盖被 SEC 调查与处罚的最严重舞弊案，大量未被发现的盈余管理在标签上为 0；第二，AAER 处罚时间与实际操纵时间窗未必完全重合，标签噪声大；第三，本章 F-Score 使用线性 logit，未捕捉变量间的非线性交互。Bao et al. 2020 用 RUSBoost 集成学习方法在同一份数据上把 AUC 提升到 0.72 以上，说明 ML 方法相对线性 F-Score 在该任务上有显著增量。这正是本章后半部分要展开的 ML 扩展方向。
+AUC 0.5888 的解读需要小心。AAER 标签本身有局限：第一，AAER 只覆盖被 SEC 调查与处罚的最严重舞弊案，大量未被发现的盈余管理在标签上为 0；第二，AAER 处罚时间与实际操纵时间窗未必完全重合，标签噪声大；第三，本章 F-Score 使用线性 logit，未捕捉变量间的非线性交互。Bao et al. 2020 用 <NoteRef>RUSBoost</NoteRef> 集成学习方法在同一份数据上把 AUC 提升到 0.72 以上，说明 ML 方法相对线性 F-Score 在该任务上有显著增量。这正是本章后半部分要展开的 ML 扩展方向。
 
 ## 三家案例公司的方法图谱
 

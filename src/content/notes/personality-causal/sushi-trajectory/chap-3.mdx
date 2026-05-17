@@ -1,5 +1,5 @@
 <Introduction>
-- 用 Binary Segmentation + BIC 在不预设事件位置的前提下识别人格序列断点
+- 用 <NoteRef>Binary Segmentation</NoteRef> + BIC 在不预设事件位置的前提下识别人格序列断点
 - 比较"数据自报的断点"与"年谱标注的事件"的吻合度
 - 对 8 个人格维度与 9 个概念主题共 17 条序列做断点检测
 - 给出 D8 三教融合断点 1088 与佛家断点 1086 两条反传统结论
@@ -17,7 +17,7 @@
 
 <Definition title="Binary Segmentation 多断点检测" label="def:bin-seg">
 
-给定时间序列 $\{y_t\}_{t=1}^{T}$，贪心地寻找一系列断点 $\{\tau_1, \tau_2, \ldots, \tau_K\}$ 使得分段均值拟合的残差平方和最小：
+给定时间序列 $\{y_t\}_{t=1}^{T}$，贪心地寻找一系列断点 $\{\tau_1, \tau_2, \ldots, \tau_K\}$ 使得分<NoteRef>段均值</NoteRef>拟合的残差平方和最小：
 
 $$
 \min_{\tau_1, \ldots, \tau_K} \sum_{k=0}^{K} \sum_{t = \tau_k + 1}^{\tau_{k+1}} (y_t - \bar{y}_{[\tau_k+1, \tau_{k+1}]})^2.
