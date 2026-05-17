@@ -5,6 +5,7 @@
   "scripts": {
     "extract": "node scripts/extract-content.mjs",
     "extract-feed": "node scripts/extract-feed.mjs",
+    "extract-feed-extras": "node scripts/extract-feed-extras.mjs",
     "extract-aigclink": "node scripts/extract-aigclink.mjs",
     "fetch-og-images": "node scripts/fetch-og-images.mjs",
     "score-feed": "node scripts/score-and-tag.mjs",

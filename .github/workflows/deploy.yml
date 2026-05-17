@@ -72,6 +72,14 @@ jobs:
         if: github.event_name == 'schedule'
         run: npm run extract-feed
 
+      # Extras layer: HuggingFace daily papers, Reddit r/LocalLLaMA +
+      # r/MachineLearning hot, arXiv recent cs.AI/CL/LG/CV. Independent
+      # of the 8 lab feeds so a single source 429 doesn't tank everything.
+      - name: Extract discovery extras (HF papers / Reddit / arXiv)
+        if: github.event_name == 'schedule'
+        run: npm run extract-feed-extras
+        continue-on-error: true
+
       # AIGCLINK is a discovery layer for Chinese vendors + indie OSS
       # the lab feeds don't cover. It changes slowly, so we only re-scrape
       # on the weekly Sunday cron — not the every-6h main loop.
@@ -119,6 +127,7 @@ jobs:
             src/data/generated/latest.json \
             src/data/generated/repos.json \
             src/data/generated/feed-raw.json \
+            src/data/generated/feed-extras-raw.json \
             src/data/generated/feed-aigclink-raw.json \
             src/data/generated/feed-scored.json \
             src/data/generated/og-images.json \

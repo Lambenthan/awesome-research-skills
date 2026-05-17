@@ -53,8 +53,11 @@ export const SOURCE_GROUP_MAP: Record<string, string> = {
   Nature: "academia",
   "research.google": "academia",
   "correr-zhou.github.io": "academia",
+  "HuggingFace Papers": "academia",
 
   GitHub: "oss",
+  "r/LocalLLaMA": "oss",
+  "r/MachineLearning": "oss",
 };
 
 export const GROUP_ORDER: RssGroupMeta[] = [

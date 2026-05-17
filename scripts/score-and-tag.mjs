@@ -33,6 +33,7 @@ const projectRoot = path.resolve(__dirname, "..");
 const RAW_FILES = [
   path.join(projectRoot, "src/data/generated/feed-raw.json"),
   path.join(projectRoot, "src/data/generated/feed-aigclink-raw.json"),
+  path.join(projectRoot, "src/data/generated/feed-extras-raw.json"),
 ];
 const OUT_FILE = path.join(projectRoot, "src/data/generated/feed-scored.json");
 
