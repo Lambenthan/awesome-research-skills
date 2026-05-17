@@ -1,204 +1,6 @@
 {
-  "fetchedAt": "2026-05-17T08:29:21.753Z",
+  "fetchedAt": "2026-05-17T13:23:37.831Z",
   "items": [
-    {
-      "source": "reddit-machinelearning",
-      "sourceName": "r/MachineLearning",
-      "id": "4e59cee5b3019df3",
-      "title": "Program misleading high school students into paying to perform academic misconduct in ML Research [D]",
-      "url": "https://reddit.com/r/MachineLearning/comments/1tfh2s9/program_misleading_high_school_students_into/",
-      "summary": "I was browsing OpenReview and I came accross this person called Kevin Zhu [https://openreview.net/profile?id=\\~Kevin\\_Zhu3](https://openreview.net/profile?id=~Kevin_Zhu3), lets say I was impressed when I saw 158 publications and 468 coauthors, and out of curiosity I searched up his afflication ([ht…",
-      "category": "discussion",
-      "publishedAt": "2026-05-17T06:08:54.000Z",
-      "discoveredAt": "2026-05-17T08:28:02.195Z"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "4bb4c1eb29c2f6b8",
-      "title": "Testing llama.cpp MTP support on Qwen3.6 - RTX 5090",
-      "url": "https://i.redd.it/etfdid7h0n1h1.png",
-      "summary": "Setup: \\- RTX 5090, 32 GB, Linux \\- Built llama.cpp from 4f13cb7 (the official [ghcr.io/ggml-org/llama.cpp:server-cuda](http://ghcr.io/ggml-org/llama.cpp:server-cuda) image hasn't picked up the merge yet as of writing — had to docker build from source with CUDA\\_DOCKER\\_ARCH=120) \\- Unsloth's Qwen3…",
-      "category": "discussion",
-      "publishedAt": "2026-05-17T06:00:43.000Z",
-      "discoveredAt": "2026-05-17T08:28:00.039Z"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "6ec1cc17a5b9fa5d",
-      "title": "G4-Meromero-31B-Uncensored-Heretic Is Out Now, a Finetune of Gemma 4 31B It Designed for Creative Tasks, With Kld of 0.0100 and 15/100 Refusals!",
-      "url": "https://huggingface.co/llmfan46/G4-MeroMero-31B-uncensored-heretic-GGUF",
-      "summary": "Provided in both Safetensors and GGUFs. Safetensors: llmfan46/G4-MeroMero-31B-uncensored-heretic: [https://huggingface.co/llmfan46/G4-MeroMero-31B-uncensored-heretic](https://huggingface.co/llmfan46/G4-MeroMero-31B-uncensored-heretic) GGUFs: llmfan46/G4-MeroMero-31B-uncensored-heretic-GGUF: [https:…",
-      "category": "discussion",
-      "publishedAt": "2026-05-17T00:10:23.000Z",
-      "discoveredAt": "2026-05-17T08:28:00.039Z"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "00d44689af8f0cea",
-      "title": "Ran the same models across Strix Halo, RTX 3090, and RTX 5070 because I wanted my own numbers",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1tf9iyk/ran_the_same_models_across_strix_halo_rtx_3090/",
-      "summary": "I kept seeing inference-speed claims for these models and wanting an apples-to-apples comparison on the hardware I actually have. So I built a harness and a public page that dumps every run as YAML. The dataset: 55 runs, three rigs, five backends (rocm, vulkan, cpu, cuda, vllm-cuda), models from 0.…",
-      "category": "discussion",
-      "publishedAt": "2026-05-16T23:57:06.000Z",
-      "discoveredAt": "2026-05-17T08:28:00.039Z"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "a7df5c4844c73d36",
-      "title": "Qwen3.5-122B-Q5-MTP - Qwen3.5-122B-Q6-MTP",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1tf6qeb/qwen35122bq5mtp_qwen35122bq6mtp/",
-      "summary": "for anyone who cares... 😄 prompt = spen a 1000 tokens unsloth MTP models strix halo llama.cpp:server-rocm-mtp \\\\ \\--spec-type draft-mtp \\\\ \\--spec-draft-n-max 3 ***Qwen3.5-122B-Q5-MTP-General*** n\\_decoded = 100 tg = ***29.77 t/s*** n\\_decoded = 179 tg = 27.95 t/s n\\_decoded = 254 tg = 26.80 t/s n…",
-      "category": "discussion",
-      "publishedAt": "2026-05-16T21:54:55.000Z",
-      "discoveredAt": "2026-05-17T08:28:00.039Z"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "7591b526434f7943",
-      "title": "gemma-4-Ortenzya-The-Creative-Wordsmith-31B-it-uncensored-heretic is Out Now, A Writing Finetune that Aims to Improve Gemma 4 31B it Writing Quality with More Natural English and Better Prose, Good for Creative Writings…",
-      "url": "https://huggingface.co/llmfan46/gemma-4-Ortenzya-The-Creative-Wordsmith-31B-it-uncensored-heretic-GGUF",
-      "summary": "Provided in both Safetensors and GGUFs. llmfan46/gemma-4-Ortenzya-The-Creative-Wordsmith-31B-it-uncensored-heretic: [https://huggingface.co/llmfan46/gemma-4-Ortenzya-The-Creative-Wordsmith-31B-it-uncensored-heretic](https://huggingface.co/llmfan46/gemma-4-Ortenzya-The-Creative-Wordsmith-31B-it-unce…",
-      "category": "discussion",
-      "publishedAt": "2026-05-16T20:45:34.000Z",
-      "discoveredAt": "2026-05-17T08:28:00.039Z"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "a07d6fc6d05f4053",
-      "title": "Local Qwen 3.6 vs frontier models on a coding primitive: single-file HTML canvas driving animation - results and GIFs",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1tf3p6c/local_qwen_36_vs_frontier_models_on_a_coding/",
-      "summary": "Saw [this post](https://www.reddit.com/r/LocalLLaMA/comments/1styxdy/compared_qwen_36_35b_with_qwen_36_27b_for_coding/) comparing Qwen 3.6 variants on coding primitives, so I wanted to see how local quants stack up against frontier models on a similar dense, single-file coding task. I ran the exact…",
-      "category": "discussion",
-      "publishedAt": "2026-05-16T19:51:05.000Z",
-      "discoveredAt": "2026-05-17T08:28:00.039Z"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "28d710e40819b854",
-      "title": "How I started programming differently over the last year. What about you?",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1tf2cxh/how_i_started_programming_differently_over_the/",
-      "summary": "An interesting observation: I’ve stopped using the LLM-powered autocomplete in my IDE. At first, it was one of the key features for me. It felt extremely convenient: you start writing a function in your code, and the LLM completes it based on common sense or the context from the open tabs. But the …",
-      "category": "discussion",
-      "publishedAt": "2026-05-16T18:58:05.000Z",
-      "discoveredAt": "2026-05-17T08:28:00.040Z"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "57462775b1e78704",
-      "title": "Corsair desktop PC with Ryzen 395 and 128GB of unified RAM, has anyone tested it for LLM? Seems \"a good\" price",
-      "url": "https://www.corsair.com/it/it/p/gaming-computers/cs-9080002-pe/corsair-ai-workstation-300-amd-ryzen-ai-max-395-processor-amd-radeon-8060s-igpu-up-to-96gb-vram-128gb-lpddr5x-memory-1tb-m2-ssd-win11-home-cs-9080002-pe",
-      "summary": "",
-      "category": "discussion",
-      "publishedAt": "2026-05-16T17:19:09.000Z",
-      "discoveredAt": "2026-05-17T08:28:00.039Z"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "fc718db4393634f5",
-      "title": "Strix Halo Llama.cpp MTP Benchmarks: 27B Gets Much Faster, 35B Is Mixed",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1teypb8/strix_halo_llamacpp_mtp_benchmarks_27b_gets_much/",
-      "summary": "### **TL;DR** All models were Qwen3.6 **27B-MTP vs Base 27B (15k single-turn): Faster overall** * **Total Time (wall):** 87.44s → 77.39s (**10.05s faster** / -11.50%) * **Generation:** 7.63 → 16.15 t/s (+111.77% speedup) * **Prompt Processing:** 279.75 → 244.90 t/s (-12.46% slowdown) **35B-MTP vs B…",
-      "category": "discussion",
-      "publishedAt": "2026-05-16T16:41:06.000Z",
-      "discoveredAt": "2026-05-17T08:28:00.039Z"
-    },
-    {
-      "source": "reddit-machinelearning",
-      "sourceName": "r/MachineLearning",
-      "id": "7d56466650b5cf7c",
-      "title": "Do you agree with Judea that learning from data is not everything? [D]",
-      "url": "https://reddit.com/r/MachineLearning/comments/1tevot1/do_you_agree_with_judea_that_learning_from_data/",
-      "summary": "Link: [Judea Pearl, 2011 ACM Turing Award Recipient](https://youtu.be/XExyqAYDnvw?si=BVyX-oEetFslAvZq&amp;t=8285) (2:18:05) Quote: &gt;There is a limitation to that which people not everybody understand. I already mentioned a limitation that you have a hierarchy here and going from correlation to c…",
-      "category": "discussion",
-      "publishedAt": "2026-05-16T14:46:17.000Z",
-      "discoveredAt": "2026-05-17T08:28:02.195Z"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "f8cac5d059ed5a69",
-      "title": "MTP support merged into llama.cpp",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1tes1wx/mtp_support_merged_into_llamacpp/",
-      "summary": "PR [22673](https://github.com/ggml-org/llama.cpp/pull/22673) has been merged into master! 🎉",
-      "category": "discussion",
-      "publishedAt": "2026-05-16T12:15:54.000Z",
-      "discoveredAt": "2026-05-17T08:28:00.039Z"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "a5586005ca534425",
-      "title": "MTP PR Merged!!!",
-      "url": "https://i.redd.it/1mwo5r3wqh1h1.jpeg",
-      "summary": "Llamas, LFG!!! 🎉🎉🎉",
-      "category": "discussion",
-      "publishedAt": "2026-05-16T12:13:08.000Z",
-      "discoveredAt": "2026-05-17T08:28:00.039Z"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "684ef99cc72ff7fa",
-      "title": "That's a good news...",
-      "url": "https://i.redd.it/40kc44wjfh1h1.png",
-      "summary": "Looks like it finally happens... MTP getting approved for llama.cpp. Time to prepare for the update.",
-      "category": "discussion",
-      "publishedAt": "2026-05-16T11:09:36.000Z",
-      "discoveredAt": "2026-05-17T08:28:00.039Z"
-    },
-    {
-      "source": "reddit-machinelearning",
-      "sourceName": "r/MachineLearning",
-      "id": "8584038d12cf2835",
-      "title": "Backlash against Arxiv's proposed 1 year ban is genuinely perplexing. [D]",
-      "url": "https://reddit.com/r/MachineLearning/comments/1tens5n/backlash_against_arxivs_proposed_1_year_ban_is/",
-      "summary": "Anyone else surprised at the enormous amount of backlash against Arxiv's proposed 1 year ban for authors and coauthors publishing papers with hallucinated reference and other obvious LLM/Gen AI artifacts? [https://x.com/tdietterich/status/2055000956144935055](https://x.com/tdietterich/status/205500…",
-      "category": "discussion",
-      "publishedAt": "2026-05-16T08:30:00.000Z",
-      "discoveredAt": "2026-05-17T08:28:02.195Z"
-    },
-    {
-      "source": "reddit-machinelearning",
-      "sourceName": "r/MachineLearning",
-      "id": "4c8903a3a8cf8095",
-      "title": "ROCm with PyTorch and PyTorch Lightning seems to still suck for research [D]",
-      "url": "https://reddit.com/r/MachineLearning/comments/1tedjwo/rocm_with_pytorch_and_pytorch_lightning_seems_to/",
-      "summary": "So I asked about people's experiences with ROCm in a post a few weeks or so ago [https://www.reddit.com/r/MachineLearning/comments/1t6cng3/rocm\\_status\\_in\\_mid\\_2026\\_d/](https://www.reddit.com/r/MachineLearning/comments/1t6cng3/rocm_status_in_mid_2026_d/) I actually went and procured a RX 7900XTX…",
-      "category": "discussion",
-      "publishedAt": "2026-05-16T00:01:38.000Z",
-      "discoveredAt": "2026-05-17T08:28:02.195Z"
-    },
-    {
-      "source": "reddit-machinelearning",
-      "sourceName": "r/MachineLearning",
-      "id": "f405697edb39069b",
-      "title": "arXiv implements 1-year ban for papers containing incontrovertible evidence of unchecked LLM-generated errors, such as hallucinated references or results. [N]",
-      "url": "https://reddit.com/r/MachineLearning/comments/1tdje2d/arxiv_implements_1year_ban_for_papers_containing/",
-      "summary": "From Thomas G. Dietterich (arXiv moderator for cs.LG) on 𝕏 (thread): [https://x.com/tdietterich/status/2055000956144935055](https://x.com/tdietterich/status/2055000956144935055) [https://xcancel.com/tdietterich/status/2055000956144935055](https://xcancel.com/tdietterich/status/2055000956144935055)…",
-      "category": "discussion",
-      "publishedAt": "2026-05-15T02:44:10.000Z",
-      "discoveredAt": "2026-05-17T08:28:02.195Z"
-    },
-    {
-      "source": "reddit-machinelearning",
-      "sourceName": "r/MachineLearning",
-      "id": "d972b872ef5e321f",
-      "title": "Would a 2000-2021 ML paper even get accepted today? [D]",
-      "url": "https://reddit.com/r/MachineLearning/comments/1tcvk8s/would_a_20002021_ml_paper_even_get_accepted_today/",
-      "summary": "I keep hearing some version of this: “A paper that got accepted years ago wouldn’t stand a chance today.” Honestly, for a lot of ML subfields, this doesn’t sound crazy anymore. A paper that once looked solid can now look under-evaluated, under-ablated, weak on baselines, or just too obvious. So may…",
-      "category": "discussion",
-      "publishedAt": "2026-05-14T11:39:51.000Z",
-      "discoveredAt": "2026-05-17T08:28:02.195Z"
-    },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
@@ -208,7 +10,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.574Z"
+      "discoveredAt": "2026-05-17T13:22:37.105Z"
     },
     {
       "source": "hf-papers",
@@ -219,7 +21,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.575Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -230,7 +32,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.575Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -241,7 +43,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.575Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -252,7 +54,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -263,7 +65,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -274,7 +76,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -285,7 +87,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -296,7 +98,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -307,7 +109,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -318,7 +120,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -329,7 +131,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -340,7 +142,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -351,7 +153,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -362,7 +164,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -373,7 +175,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -384,7 +186,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -395,7 +197,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -406,7 +208,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -417,7 +219,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -428,7 +230,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -439,7 +241,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -450,7 +252,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -461,7 +263,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -472,18 +274,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "ffe50e1e197936fe",
-      "title": "RAVEN: Real-time Autoregressive Video Extrapolation with Consistency-model GRPO",
-      "url": "https://huggingface.co/papers/2605.15190",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -494,7 +285,18 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "ffe50e1e197936fe",
+      "title": "RAVEN: Real-time Autoregressive Video Extrapolation with Consistency-model GRPO",
+      "url": "https://huggingface.co/papers/2605.15190",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -505,7 +307,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -516,7 +318,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -527,7 +329,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -538,7 +340,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -549,7 +351,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -560,7 +362,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -571,40 +373,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "3e4bc0610b9df945",
-      "title": "Sat3DGen: Comprehensive Street-Level 3D Scene Generation from Single Satellite Image",
-      "url": "https://huggingface.co/papers/2605.14984",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "73e98bd22085665a",
-      "title": "FutureSim: Replaying World Events to Evaluate Adaptive Agents",
-      "url": "https://huggingface.co/papers/2605.15188",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.576Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "8deb7f75d266a96c",
-      "title": "Adaptive Teacher Exposure for Self-Distillation in LLM Reasoning",
-      "url": "https://huggingface.co/papers/2605.11458",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.577Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -615,40 +384,40 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.577Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "8c940c8acd41e404",
-      "title": "Topology-Preserving Neural Operator Learning via Hodge Decomposition",
-      "url": "https://huggingface.co/papers/2605.13834",
+      "id": "3e4bc0610b9df945",
+      "title": "Sat3DGen: Comprehensive Street-Level 3D Scene Generation from Single Satellite Image",
+      "url": "https://huggingface.co/papers/2605.14984",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.577Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "395bf98d651e974a",
-      "title": "RewardHarness: Self-Evolving Agentic Post-Training",
-      "url": "https://huggingface.co/papers/2605.08703",
+      "id": "73e98bd22085665a",
+      "title": "FutureSim: Replaying World Events to Evaluate Adaptive Agents",
+      "url": "https://huggingface.co/papers/2605.15188",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.577Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "95ae449123483be9",
-      "title": "Unlocking Complex Visual Generation via Closed-Loop Verified Reasoning",
-      "url": "https://huggingface.co/papers/2605.14876",
+      "id": "8deb7f75d266a96c",
+      "title": "Adaptive Teacher Exposure for Self-Distillation in LLM Reasoning",
+      "url": "https://huggingface.co/papers/2605.11458",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.577Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -659,29 +428,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.577Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "bdb1d44bcd64a4f8",
-      "title": "LLM-based Detection of Manipulative Political Narratives",
-      "url": "https://huggingface.co/papers/2605.14354",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.577Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "7f6f3a9d94e36315",
-      "title": "Ideology Prediction of German Political Texts",
-      "url": "https://huggingface.co/papers/2605.14352",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.577Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -692,7 +439,62 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.577Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "8c940c8acd41e404",
+      "title": "Topology-Preserving Neural Operator Learning via Hodge Decomposition",
+      "url": "https://huggingface.co/papers/2605.13834",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "395bf98d651e974a",
+      "title": "RewardHarness: Self-Evolving Agentic Post-Training",
+      "url": "https://huggingface.co/papers/2605.08703",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "95ae449123483be9",
+      "title": "Unlocking Complex Visual Generation via Closed-Loop Verified Reasoning",
+      "url": "https://huggingface.co/papers/2605.14876",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "bdb1d44bcd64a4f8",
+      "title": "LLM-based Detection of Manipulative Political Narratives",
+      "url": "https://huggingface.co/papers/2605.14354",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "7f6f3a9d94e36315",
+      "title": "Ideology Prediction of German Political Texts",
+      "url": "https://huggingface.co/papers/2605.14352",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -703,7 +505,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.577Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -714,7 +516,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.577Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -725,7 +527,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.577Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -736,7 +538,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.577Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -747,7 +549,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.577Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -758,7 +560,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.577Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -769,7 +571,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.577Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     },
     {
       "source": "hf-papers",
@@ -780,7 +582,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-17T08:27:58.577Z"
+      "discoveredAt": "2026-05-17T13:22:37.106Z"
     }
   ]
 }
