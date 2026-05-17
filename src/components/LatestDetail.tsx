@@ -65,14 +65,16 @@ export function LatestDetail({ item }: { item: LatestRss }) {
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block overflow-hidden rounded border border-rule"
+              className="group block overflow-hidden rounded border border-rule focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={item.image}
                 alt={item.title}
+                width="1200"
+                height="675"
                 loading="lazy"
-                className="aspect-[16/9] w-full object-cover transition group-hover:scale-105"
+                className="aspect-[16/9] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
               />
             </a>
           </Reveal>
@@ -101,7 +103,7 @@ export function LatestDetail({ item }: { item: LatestRss }) {
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-between rounded-full border border-ember bg-ember-tint px-5 py-2.5 text-[13px] font-medium text-ember transition hover:bg-ember hover:text-cream"
+              className="inline-flex w-full items-center justify-between rounded-full border border-ember bg-ember-tint px-5 py-2.5 text-[13px] font-medium text-ember transition hover:bg-ember hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
             >
               <span>访问项目本体</span>
               <span aria-hidden="true">→</span>
@@ -137,8 +139,11 @@ export function LatestDetail({ item }: { item: LatestRss }) {
       </div>
 
       <div className="border-t border-rule pt-6">
-        <Link href="/latest" className="eyebrow transition hover:text-ember">
-          ← Back to Latest
+        <Link
+          href="/latest"
+          className="eyebrow rounded transition hover:text-ember focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
+        >
+          <span aria-hidden="true">←</span> Back to Latest
         </Link>
       </div>
     </div>

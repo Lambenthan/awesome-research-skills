@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { latest } from "@/lib/data";
+import { formatShortDate } from "@/lib/format-date";
 import { groupRss } from "@/lib/rss-groups";
 import type { HnItem, LatestRepo, LatestRss } from "@/lib/types";
 
@@ -26,7 +27,7 @@ export function LatestFeed() {
           <span className="eyebrow-strong">Snapshot</span>
           {fetchedAt && (
             <span className="eyebrow text-ink-subtle">
-              built {timeAgo(fetchedAt)} · refreshed every 6 hours
+              built {formatShortDate(fetchedAt)} · refreshed every 6 hours
             </span>
           )}
         </div>
@@ -72,9 +73,10 @@ export function LatestFeed() {
                 <div className="mt-6 border-t border-rule pt-4">
                   <Link
                     href={`/latest/${group.id}`}
-                    className="eyebrow text-ember transition hover:text-ink"
+                    className="eyebrow rounded text-ember transition hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
                   >
-                    查看全部 {group.items.length} 条 →
+                    查看全部 {group.items.length} 条{" "}
+                    <span aria-hidden="true">→</span>
                   </Link>
                 </div>
               )}
@@ -136,11 +138,16 @@ function RssRow({ item }: { item: LatestRss }) {
   const when = item.publishedAt ?? item.discoveredAt;
   return (
     <li>
-      <Link href={`/latest/${item.id}`} className="group block">
+      <Link
+        href={`/latest/${item.id}`}
+        className="group block rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
+      >
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <span className="eyebrow-strong text-ember">{item.sourceName}</span>
           <span className="eyebrow">{item.category}</span>
-          <span className="text-[11px] text-ink-subtle">{timeAgo(when)}</span>
+          <span className="text-[11px] text-ink-subtle">
+            {formatShortDate(when)}
+          </span>
         </div>
         <h3 className="mt-2 font-serif text-[17px] leading-snug text-ink transition group-hover:text-ember">
           {item.title}
@@ -150,8 +157,8 @@ function RssRow({ item }: { item: LatestRss }) {
             {item.cn}
           </p>
         )}
-        <p className="mt-2 text-[12px] text-ember opacity-0 transition group-hover:opacity-100">
-          阅读详情 →
+        <p className="mt-2 text-[12px] text-ember opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100">
+          阅读详情 <span aria-hidden="true">→</span>
         </p>
       </Link>
     </li>
@@ -171,7 +178,7 @@ function HnRow({ item }: { item: HnItem }) {
         href={item.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group block"
+        className="group block rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
       >
         <h3 className="font-serif text-[17px] leading-snug text-ink transition group-hover:text-ember">
           {item.title}
@@ -179,8 +186,8 @@ function HnRow({ item }: { item: HnItem }) {
         <div className="mt-1 flex flex-wrap items-baseline gap-x-3 gap-y-1">
           {host && <span className="eyebrow">{host}</span>}
           <span className="text-[11px] text-ink-subtle">
-            {item.points} ↑ · {item.comments} comments ·{" "}
-            {timeAgo(item.createdAt)}
+            {item.points} <span aria-hidden="true">↑</span> · {item.comments}{" "}
+            comments · {formatShortDate(item.createdAt)}
           </span>
         </div>
       </a>
@@ -196,15 +203,15 @@ function GhRow({ item }: { item: LatestRepo }) {
         href={item.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group block"
+        className="group block rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
       >
         <div className="flex items-baseline justify-between gap-3">
           <h3 className="font-mono text-[14px] leading-snug text-ink transition group-hover:text-ember">
             <span className="text-ink-subtle">{owner}/</span>
             <span className="font-medium">{name}</span>
           </h3>
-          <span className="shrink-0 font-serif text-[14px] text-ember">
-            ★ {formatStars(item.stars)}
+          <span className="shrink-0 font-serif text-[14px] text-ember tabular-nums">
+            <span aria-hidden="true">★</span> {formatStars(item.stars)}
           </span>
         </div>
         {item.description && (
@@ -215,26 +222,13 @@ function GhRow({ item }: { item: LatestRepo }) {
         <div className="mt-1 flex flex-wrap items-baseline gap-x-3 gap-y-1">
           {item.language && <span className="eyebrow">{item.language}</span>}
           <span className="text-[11px] text-ink-subtle">
-            pushed {timeAgo(item.pushedAt)} · created {timeAgo(item.createdAt)}
+            pushed {formatShortDate(item.pushedAt)} · created{" "}
+            {formatShortDate(item.createdAt)}
           </span>
         </div>
       </a>
     </li>
   );
-}
-
-function timeAgo(iso: string): string {
-  const t = Date.parse(iso);
-  if (!Number.isFinite(t)) return "—";
-  const diff = Date.now() - t;
-  const m = Math.round(diff / 60_000);
-  if (m < 1) return "just now";
-  if (m < 60) return `${m}m ago`;
-  const h = Math.round(m / 60);
-  if (h < 24) return `${h}h ago`;
-  const d = Math.round(h / 24);
-  if (d < 30) return `${d}d ago`;
-  return new Date(t).toISOString().slice(0, 10);
 }
 
 function formatStars(n: number) {

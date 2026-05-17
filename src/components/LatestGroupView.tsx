@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Breadcrumb } from "./Breadcrumb";
 import { Reveal } from "./Reveal";
+import { formatShortDate } from "@/lib/format-date";
 import type { LatestRss } from "@/lib/types";
 import type { RssGroupMeta } from "@/lib/rss-groups";
 
@@ -47,15 +48,21 @@ export function LatestGroupView({
         </Reveal>
       </header>
 
-      <ul className="grid grid-cols-1 gap-x-10 gap-y-7 lg:grid-cols-2">
+      <ul
+        className="grid grid-cols-1 gap-x-10 gap-y-7 lg:grid-cols-2"
+        style={{ contentVisibility: "auto", containIntrinsicSize: "auto 240px" }}
+      >
         {items.map((it) => (
           <RssRow key={it.id} item={it} />
         ))}
       </ul>
 
       <div className="border-t border-rule pt-6">
-        <Link href="/latest" className="eyebrow transition hover:text-ember">
-          ← Back to Latest
+        <Link
+          href="/latest"
+          className="eyebrow rounded transition hover:text-ember focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
+        >
+          <span aria-hidden="true">←</span> Back to Latest
         </Link>
       </div>
     </div>
@@ -66,11 +73,16 @@ function RssRow({ item }: { item: LatestRss }) {
   const when = item.publishedAt ?? item.discoveredAt;
   return (
     <li>
-      <Link href={`/latest/${item.id}`} className="group block">
+      <Link
+        href={`/latest/${item.id}`}
+        className="group block rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
+      >
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <span className="eyebrow-strong text-ember">{item.sourceName}</span>
           <span className="eyebrow">{item.category}</span>
-          <span className="text-[11px] text-ink-subtle">{timeAgo(when)}</span>
+          <span className="text-[11px] text-ink-subtle">
+            {formatShortDate(when)}
+          </span>
         </div>
         <h3 className="mt-2 font-serif text-[17px] leading-snug text-ink transition group-hover:text-ember">
           {item.title}
@@ -83,18 +95,4 @@ function RssRow({ item }: { item: LatestRss }) {
       </Link>
     </li>
   );
-}
-
-function timeAgo(iso: string): string {
-  const t = Date.parse(iso);
-  if (!Number.isFinite(t)) return "—";
-  const diff = Date.now() - t;
-  const m = Math.round(diff / 60_000);
-  if (m < 1) return "just now";
-  if (m < 60) return `${m}m ago`;
-  const h = Math.round(m / 60);
-  if (h < 24) return `${h}h ago`;
-  const d = Math.round(h / 24);
-  if (d < 30) return `${d}d ago`;
-  return new Date(t).toISOString().slice(0, 10);
 }
