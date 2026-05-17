@@ -604,7 +604,7 @@ async function fetchLatest() {
       /* fine — optional */
     }
     out.rss = (scored.items ?? [])
-      .filter((it) => typeof it.score === "number" && it.score >= 3)
+      .filter((it) => typeof it.score === "number" && it.score >= 1)
       // Pure recency. The previous (score desc, time desc) order made
       // readers see dates jump back ("Apr 22 → Apr 15 → Apr 2 → Mar 19
       // → Mar 5 → Feb 28 …") whenever a score band changed, which
