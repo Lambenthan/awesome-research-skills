@@ -443,6 +443,9 @@
 "paper-data/run-experiment": |-
   Claude Code 的 run-experiment skill 负责将训练任务部署到本地 GPU、远程服务器、Vast.ai 或 Modal serverless 环境。自动检测目标机器的硬件状态与 conda 环境，完成代码同步与命令执行，省去反复 SSHand 配置的工作。适合需要频繁切换多台 GPU 机器跑消融实验或超参搜索的研究者。
 
+"paper-data/statistical-analysis": |-
+  Anthropic 官方维护的统计分析 skill，覆盖从检验选型、前提检验、功效分析、效应量计算到 APA 格式报告的全过程。内建参数与非参数方法、线性与逻辑回归、贝叶斯分析，并能自动生成诊断图表和结果解读。适用于学术论文中数据分析和结果报告，对统计流程不熟悉的研究者可用它做结构化指引。
+
 "paper-data/xlsx": |-
   用于处理 Excel、CSV 等电子表格文件的 Claude Code skill。定义了一套完整的格式规范：蓝色字体标记硬编码输入、黑色标记公式、绿色标记同工作簿引用，同时要求零公式错误、数字格式统一。适用于论文数据整理、财务模型搭建、批量数据清洗等场景，输出的表格可直接用于汇报或投稿。
 
@@ -469,6 +472,9 @@
 
 "paper-figure/figure-description": |-
   figure-description 是面向专利撰写的 Claude Code skill。用户提供技术示意图，它按附图自动分配参考数字编号（Fig 1 用 100–199，Fig 2 用 200–299，以此类推），并参考发明公开书与权利要求书，生成形式规范的中文附图说明。适用于专利撰写阶段，将草图中的技术特征对应到权利要求，同时产出符合审查指南的附图说明文本。
+
+"paper-figure/figure-generation": |-
+  用于论文图表生成的 Claude Code skill。以 matplotlib/seaborn 为核心，先用查询扩展明确需求，再生成并执行绘图代码，最后自动用 VLM 检查视觉效果并迭代修正。涵盖柱状图、折线图、热图、训练曲线、消融图等常见科学图表类型。适合在论文写作中快速生成格式统一的图表，减少手动调整代码的工作量。
 
 "paper-figure/figure-planner": |-
   针对论文图表逻辑的设计与审计 skill。它解决的是单个主图信息过载、面板分工模糊、图例与正文脱节这类问题。核心做法是：先给每个主图写一句可辩护的 claim，再分配每个面板的唯一角色（证据、方法说明、验证、排序、转化示意等），然后调整主图与补图的归属。在草稿阶段，把图表从“按绘图方便组织”改成“按论证逻辑组织”时用得上。
@@ -497,8 +503,14 @@
 "paper-lit/alphaxiv": |-
   AlphaXiv 是面向 Claude Code 的快速论文查阅工具。输入 arXiv ID 或 URL 即可拉取该论文的三级摘要——先尝试 AlphaXiv 的 LLM 优化概述，再降级到完整 Markdown，最后回退到 LaTeX 源码。适用于只想快速理解某一篇论文的核心贡献与结构，而非做文献检索的场景。属于单篇精读的快捷入口。
 
+"paper-lit/arxiv": |-
+  Anthropic Claude Code 的 arXiv skill，用于在终端中直接检索、下载和总结学术论文。传入关键词或 arXiv ID 即可返回结果列表，支持下载 PDF 到本地指定目录，并可通过参数控制返回条数和保存路径。适合文献调研阶段快速搜集论文，或在撰写论文时引用参考文献。
+
 "paper-lit/arxiv-database": |-
   基于 arXiv Atom API 的预印本检索工具。支持按关键词、作者、分类、日期范围与 arXiv ID 查询，结果以 JSON 格式返回标题、摘要、作者、分类及链接。适用于搭建文献综述数据集、跟踪子领域新投稿，或批量下载 PDF 做全文分析。
+
+"paper-lit/citation-audit": |-
+  提交前用的参考文献审计 skill，独立检查每个 \cite 引用的三个层次：文献真实存在、元数据（作者/年份/会议/DOI）与权威来源一致、引用语境与原文主张匹配。不依赖已有上下文，每次调用会独立联网查 DBLP、arXiv、OpenReview 等。能抓到最危险的一类问题——文献是真文献但引用不当（比如引了一篇结论相反的论文来支持自己的论点），这类错误人工核对也容易漏。
 
 "paper-lit/citation-management": |-
   Citation-management 用于学术文献引用管理，从 Google Scholar 和 PubMed 查找论文，提取作者、标题、期刊、年份等完整元数据，验证引用准确性，并将 DOI、PMID 或 arXiv ID 转换为格式正确的 BibTeX 条目。写论文或整理文献综述时，可以用它快速核对参考文献、消除重复条目，保持引用格式一致。
@@ -518,6 +530,9 @@
 "paper-lit/exa-search": |-
   exa-search 是 Claude Code 中基于 Exa API 的网络搜索技能，专为内容提取设计。与仅覆盖学术数据库的 arXiv、Semantic Scholar 不同，它搜索博客、技术文档、公司官网与新闻等广义在线内容，支持按类别、日期、域名过滤，返回高亮片段或全文摘要。适合文献综述阶段补充学术数据库未能索引的技术博客或行业报告。
 
+"paper-lit/literature-review": |-
+  该 skill 模拟多位领域专家围绕研究选题的多轮对话流程。每次对话中，系统从不同视角生成问题、检索 Semantic Scholar 与 arXiv 等来源、基于真实文献合成回答，最后跨角色去重归并成统一知识结构。适用于新课题立项前快速建立文献图景，或写 survey 章节时先用对话方式理清脉络。
+
 "paper-lit/management-review-planner": |-
   用于管理学和战略领域正式文献综述的规划 skill。在完成论文列表构建和全文转换之后、进入正式写作之前使用。核心任务是把研究主题拆解为关键构念与机制，追踪每个构念的锚定来源，围绕它们搭建节段结构，并生成段落级蓝图。框架冻结为 `review_plan.md` 存储在 workspace，每一次修订都有时间戳存档，确保之后文献增补和写作不偏离已确认的结构。适合需要严谨追踪文献溯源和保持综述逻辑一致性的研究项目。
 
@@ -527,6 +542,9 @@
 "paper-lit/nature-citation": |-
   针对 Nature/CNS 系列期刊的引用搜索与导出工具。它将长手稿切分成可引用的段落，仅搜索 Nature Portfolio、AAAS Science 系列及 Cell Press 认可的旗舰和子刊，按出版时间范围过滤，最终输出 ENW、RIS 或 Zotero RDF 格式的引用管理文件。每条候选引用附带强支撑、部分支撑、背景支撑三个层级的证据评价，有助于在正式投稿前补全并验证参考文献的准确性。
 
+"paper-lit/novelty-check": |-
+  novelty-check skill 提供研究思路的查新流程。从方法描述中提取 3 至 5 项核心技术主张，跨 arXiv、Google Scholar、ICLR、NeurIPS 等来源逐一搜索，再用 GPT-5.4 做交叉比对，最终输出一张包含最接近文献、关键差异与新颖性评分的报告。适用于论文投稿前确认想法未撞车、或在方案落地前做文献调研。
+
 "paper-lit/openalex-ajg-insights": |-
   面向管理与商科研究的 Claude Code skill，内置 openalex-ajg-mcp 与 paper-download-mcp 两个后端。支持按 ABS/AJG 评级检索文献、创建可复用的综述语料库、增量下载 PDF、用 MinerU 将 PDF 转为 Markdown，并检索摘要或全文观点。适用于系统文献综述、理论构建与期刊投稿前的文献扫描。
 
@@ -535,6 +553,9 @@
 
 "paper-lit/pyzotero": |-
   封装 pyzotero 的 Claude Code skill，通过 Zotero Web API v3 管理参考文献库。可以从 Zotero 中检索条目、创建和更新文献、上传 PDF 附件、管理标签和导出引文。适用于需要将文献管理与写作自动化结合的场景，比如按关键词批量导出引用条目、同步本地文件到 Zotero 群组库。
+
+"paper-lit/reference-audit-guide": |-
+  引用验证指南，提供了一套在论文写作中主动核实引用的操作原则。核心做法是每次添加引用时立即搜索确认论文是否存在、作者标题年份匹配、以及具体声称是否出现在原文中。信息来源按出版社页面、PubMed、arXiv 等分优先级。适用于写综述或方法章节时需要保证引用准确、拒稿后修改引用问题的场景。
 
 "paper-lit/research-lit": |-
   为 Claude Code 设计的文献检索技能，整合 arXiv、Semantic Scholar、Zotero 和本地 PDF 库作为数据源。用户可以指定搜索范围、下载论文全文或仅获取元数据，并支持对本地 PDF 进行内容扫描。适用于论文写作初期快速定位相关文献、生成摘要和组织参考文献列表。
@@ -551,8 +572,107 @@
 "paper-lit/semantic-scholar": |-
   Semantic Scholar API 用于搜索已发表的期刊与会议论文，返回被引量、出处、TLDR 摘要。适用于查找 IEEE、ACM、Springer 等正式出版的文献，与 arXiv 预印本搜索配合使用。
 
+"paper-lit/systematic-literature-review": |-
+  这是一个用于辅助系统文献综述的 Claude Code 技能。技能覆盖从多源检索、去重、AI 逐篇评分与子主题聚类，到按字数预算自动生成综述正文与参考文献列表的全过程，最终输出 LaTeX 格式的 PDF 或 Word。适用于需要快速完成一份结构化文献调研的场景，从课程作业到期刊综述均可使用，档位与字数可按需调整。
+
+"paper-polish/grant-proposal": |-
+  一份将成型研究想法转化为评审导向基金申请书的 Claude Code skill。自动选择 KAKENHI、NSF、NSFC、ERC、DFG 等机构的格式模板，串联文献调研、创新点论证、研究方案设计、预算与 timeline 撰写、模拟评审回修的完整流程。适用于研究者在 idea 验证之后、尚未进入实验阶段时，先申请经费再开展实施。
+
+"paper-polish/humanizer-zh": |-
+  针对中文文本去除 AI 写作痕迹的专用 skill。基于维基百科 WikiProject AI Cleanup 维护的“AI 写作特征”指南，检测并修复过度强调、公式化结构、现在分词肤浅分析、AI 惯用连接短语等模式。重写结果保留信息，但去掉拐杖词和机械感。适用于论文润色、审稿意见修改、以及任何不想让人看出是 LLM 代笔的写作场景。
+
+"paper-polish/manuscript-optimizer": |-
+  Manuscript Optimizer 是一个按阶次处理论文的 skill，核心原则是“方向第一、逻辑第二、图表第三、术语第四、语言最后”——先修顶层结构再动句子，因为不稳的论点不值得润色。适用于投稿前或返修时检查摘要、证据链、图表与正文是否脱节。提供 Review 和 Optimization 两种模式，前者专门定位结构漏洞，后者做实际
+
+"paper-polish/nature-polishing": |-
+  面向 Nature 子刊风格的学术语言润色 skill。从论文架构和写作策略出发，先梳理段落论证逻辑，再用 Academic Phrasebank 的短语族匹配适当的表态与过渡措辞。适合在投稿前调整摘要、引言、讨论或方法部分的层级结构与正式度，也适用于将中文初稿重构为出版级英文。
+
+"paper-polish/paper-polish-workflow": |-
+  这套 skill 提供自上而下的论文润色流程：先改结构，再理逻辑，最后调表达，每个环节都交用户确认。内置四档模式——逐段交互、关键节点确认、一键直改、批量处理，能自动识别“quickly”或“逐步”等指令来切换。润色方案不从空话出发，而是从预先整理好的学术表达参考库中抽取。适合需要逐段精修、又不想每次自己重写句式的写作场景。
+
+"paper-polish/results-section-revision": |-
+  针对论文 Result 部分写作后期的精细修订 skill。适用于科学内容已稳定、图与证据链基本确定，但子节标题、段首句、段落衔接仍在逐图平铺、读着像图注拼接的场景。专门处理"读上去跳"或"段落间缺少推理推进"的问题，不介入整体 claim 层级或证据链重构——那需要更上层的手稿优化 skill。
+
+"paper-polish/scientific-writing": |-
+  用于 Claude Code 的科研写作 skill，面向需要把稳定结果转化为完整稿件的环节。它按 IMRAD 结构组织段落，支持 APA、AMA、Vancouver 等引用格式和 CONSORT、STROBE、PRISMA 等报告指南。对修订稿件，强调先做反向提纲和 claim-evidence 映射再重写，而不是直接从旧段落到润色。适用于论文各节的初稿撰写，以及回复审稿意见时的大幅重写。
+
+"paper-slides/nature-paper2ppt": |-
+  nature-paper2ppt 把一篇科研论文的 PDF、手稿或阅读笔记转为一份中文 Nature 风格汇报 PPTX。它不照搬论文章节顺序，而是按科学论证逻辑组织幻灯片：先讲问题意义，再讲缺口与作者做法、关键证据、可信度、贡献与局限。自动识别论文类型、选取核心图表、撰写中文幻灯片内容与演讲注释，适合组会、文献分享或论文预答辩快速制稿。
+
+"paper-slides/paper-slides": |-
+  将已编译的论文转换为会议幻灯片。输出 beamer LaTeX 源码、可直接使用的 PDF 以及可编辑的 PPTX，同时附带演讲注释和完整讲稿。支持 NeurIPS、ICML、ICLR、CVPR 等会场配色方案以及 oral、spotlight、poster-talk 等演讲时长设定。论文写作工作流收尾阶段，完成稿件后可直接调用这个 skill 准备报告材料，不用手动拆内容、排版式。
+
+"paper-slides/pptx": |-
+  用于处理 PowerPoint 文件的 Claude Code skill。可以读取 .pptx 中的文本与内容结构，基于模板编辑现有幻灯片，或从零生成新演示文稿。底层调用 markitdown、python-pptx 及 Node.js pptxgenjs 实现文字提取、幻灯片缩略图预览、解包重打包等操作。写论文期间准备学术报告、答辩或会议海报时顺手可用。
+
 "paper-write/academic-researcher": |-
   Academic Researcher 是面向文献综述与学术写作的 Claude Code skill。它内置了一套论文分析框架，从研究问题、方法论、关键发现、解释与意义到局限与未来方向，逐项结构化审读；同时整合 APA、MLA、Chicago 三种引用格式。适用于跨学科的场景：快速提取一篇论文的骨架、对比多篇文献的方法差异、或在校对时生成标准参考文献条目。
+
+"paper-write/conference-paper-writing": |-
+  Conference Paper Writing skill 针对 NeurIPS、ICML、ICLR、ACL、AAAI、COLM 等 ML/AI 会议的投稿流程设计。整合了 Nanda、Farquhar、Karpathy、Lipton、Steinhardt 等研究者的写作理念，以及 LaTeX 模板与会议 checklist。核心规则是绝不虚构引用，要求通过搜索 API 获取 BibTeX 并验证。适合作者在完成实验后，由 skill 主动读取仓库中的代码与结果，生成初稿，再通过反馈迭代。
+
+"paper-write/idea-creator": |-
+  面向论文写作的研究想法生成与管理 skill。给定一个大致方向，系统化生成备选课题、验证可行性并按可发表性排序。内置 pilot 实验约束（每想法最多 2 GPU 小时，总计 8 小时），避免思路发散浪费算力。与文献检索、新颖性检查、综述 skill 串联可组成完整选题流程，适合在探索新领域或寻找可投稿方向时使用。
+
+"paper-write/idea-discovery": |-
+  idea-discovery 是一个完整的选题发现流水线，将文献调研、点子生成、新颖性检验、同行评议与方案细化依次串联。输入一个宽泛的研究方向，输出一个经过验证的 idea 排名报告、优化后提案与实验计划。各阶段自动传递输出，并附带 GPU 预算约束与超时控制。适用于研究者想从零系统挖掘可落地方向、生成可提交的课题方案时使用。
+
+"paper-write/paper-analyzer": |-
+  Paper-analyzer 从 arXiv ID 或论文标题入手，自动下载 PDF、HTML 页面与 LaTeX 源文件，对论文的贡献、方法、实验、局限与相关工作逐一分析，输出一份带 0–10 综合评分的中英双语笔记，同时将新论文与已有笔记之间的引用关系录入本地知识图谱。适用于需要系统梳理领域文献时的深度阅读场景。
+
+"paper-write/paper-backup-before-word": |-
+  为 Claude Code 编辑 Word 文档时设计的强制备份流程。.docx 实际是 zip 包，写崩 XML 会导致整份文件打不开、批注定稿丢失。这套 skill 先创建带时间戳的备份，再按决策表判断是直接修改 Word 还是先转 LaTeX 再改，改完强制提醒用户打开验证。适用于导师批注后的小修或主稿反复修改的场景——书里记载的两次惨案都是因为没备份就直接动手。
+
+"paper-write/paper-bootstrap": |-
+  这个 skill 负责为论文项目搭建可写的骨架。它做三件事：找到真正的稿件源文件、只创建必要的文件夹、把项目锁定到对应的投稿期刊和贡献类型上。内置默认偏向 Nature 系列的风格，但可以手动覆盖。初始化时还会生成 project_truth.md、decision_log.md 等轻量文档，避免写作过程中靠记忆来回翻查实验结果。适合开始写新论文前跑一遍，或者清理散落在多处草稿的已有项目。
+
+"paper-write/paper-claim-audit": |-
+  提交论文前核对论文数字与原始数据是否一致。这个 skill 用一个全新模型，不接触任何实验日志或作者之前的解释，只拿 .tex 文件和结果文件做比对。它瞄准的是作者在写论文时容易出现的确认偏差——比如把 84.7% 写成 85.3%、用最好种子代替平均、引用其他实验的指标。适合在每次投稿前跑一遍，保证论文里的每个数字都经得起审查。
+
+"paper-write/paper-compile": |-
+  论文写作场景下的 LaTeX 自动化编译 skill。负责从 `latexmk` 调用 `pdflatex` 完成多轮编译、运行 `bibtex`、诊断缺失包与引用警告，并在编译失败后给出自动修复建议。内置 ICLR、NeurIPS、ICML 等会议的页数限制检查，适合投递机器学习会议或 IEEE 期刊前反复调整排版时使用。
+
+"paper-write/paper-confirm-before-doing": |-
+  paper-confirm-before-doing 是论文写作专用纪律 skill。当 Claude 收到“润色”“整理”“改一下”这类范围与方法未指定的指令时，它在调用任何编辑工具前先输出一份方案：改哪里、不改哪里、按什么标准改，并让用户点头后再动手。设计逻辑来自《Claude Code 科研手记》§3.2 的日常经验：模糊任务执行完后发现方向不对再回滚，代价远高于开口确认。
+
+"paper-write/paper-logical-consistency": |-
+  论文写作中的论证一致性检查。当修改研究问题、因果机制或关键结论时，自动扫描全文搜索同一概念的所有出现位置，并列出上下文让作者逐处确认是否要同步修改。它管的是概念层的语义对齐，而不是术语拼写一致性。建议在改动核心主张或用完大段重写后调用，避免摘要、结论与方法描述相互打架。
+
+"paper-write/paper-one-session-one-task": |-
+  一次会话只做一件事，这是针对 Claude Code 论文写作场景的协作纪律。当用户在同一轮请求里提出多项独立任务（比如“润色第三章顺便统一参考文献再重画图 3”），skill 会叫停并列出所有任务，让用户只选一件做。背后的道理是：会话越长上下文越稀释，每件输出的质量都会打折——开五个新会话各自单做，比一场会话赶五件事更干净。适用于任何需要在 AI 辅助下保持论文修改质量的场景。
+
+"paper-write/paper-parallel-audit": |-
+  paper-parallel-audit 用于大批量同质核查任务（引用核查、术语一致性检查、格式统一等）。当任务规模达到 30
+
+"paper-write/paper-pilot-before-batch": |-
+  针对批量操作的流程纪律 skill。在涉及大量文件或引用修改时（≥30 个对象），要求先从 3–5 个样本跑一遍，将改动前后展示给用户确认，确认无误后才推全量。抽样需覆盖边界情况，避免只取前几个规整数据。适用于论文写作中批量改格式、批量核查引用、批量重命名等场景。
+
+"paper-write/paper-plan": |-
+  将审稿反馈与实验结果转化为结构化论文大纲的 Claude Code skill。读取项目目录中的研究陈述、自动审阅报告、实验日志等材料，生成分节大纲，并针对 ICLR、NeurIPS、ICML 等目标会场调整篇幅与格式。适用于实验数据基本到位、需要把零散发现梳理为完整论文架构的阶段。
+
+"paper-write/paper-protect-terminology": |-
+  论文写作场景下，AI 最常做的「同义替换」恰恰是术语的致命伤。这个 skill 在跨文件批改、整篇润色或术语统一操作前，先扫描段落，从缩写、模型名、算法名到自定义概念自动提取候选保护词，列清单请用户确认后再动手，改完后核对清单数量是否变化。适合对包含多个专业词/缩写/人名的章节做修改之前调用，能避免“鲁棒性→稳健性”“Transformer→变换器”这类破坏一致性的替换。
+
+"paper-write/paper-reviewer": |-
+  面向期刊审稿与课题评审场景的辅助 skill。收到论文或申请书后，它引导你系统评价研究方法、统计合理性、报告标准如 CONSORT、STROBE 与 PRISMA，以及数据可重复性，并生成带建设性意见的正式反馈。适用于审稿人在撰写评审意见时保持评价的结构性与一致性。
+
+"paper-write/paper-using-skills": |-
+  《Claude Code 科研手记》论文写作纪律 skill 集的入口文件。它预先录入一套触发规则：任何涉及论文写作的请求，在调用工具前必须先扫描对照表，匹配则调用对应纪律 skill，不匹配也要过一遍判断。目的是防止熟练用户赶时间、紧张时跳过流程——简单的环节恰恰是出错时最
+
+"paper-write/paper-write": |-
+  论文草稿生成 skill，从提纲逐节生成 LaTeX 正文。自动匹配 ICLR、NeurIPS、CVPR、ACL、IEEE 等会议与期刊的样式文件与篇幅限制，通过 DBLP 或 CrossRef 抓取真实 BibTeX 条目，杜绝 LLM 编造的虚假引用。整合 GPT-5.4 对每节做审查，适合写完方法论后希望快速产出初稿的研究者。
+
+"paper-write/paper-writing-discipline": |-
+  科研写作领域积累个人纪律的自动化工件。当你在 Claude Code 中说出“以后都要这样做”“下次记得”“加一条新规则”时，会触发一系列判断——检查这条规则是否反直觉、能否事前触发、是否是做事方式而非工具用法。通过后自动生成一个新的 paper-* skill 并存入配置文件。适用于长期用 Claude Code 辅助论文写作、想把每次踩坑的教训固化为纪律的人。
+
+"paper-write/rebuttal": |-
+  rebuttal skill 专为论文审稿回复阶段设计。它读入外部审稿意见（来自 OpenReview 或会议系统），生成符合字数限制的纯文字回复；覆盖单个文档与每位审稿人独立线程两种模式。同时维护内部 stress-test 检查：防止捏造结果、防止过度承诺、保证每个重点问题都有回应。适用于收到 ICML 等会议审稿意见后快速起草回复并迭代多轮。
+
+"paper-write/rebuttal-response": |-
+  针对期刊或会议审稿意见的回复 skill。核心是把每条审稿意见归入误解、表述不清、证据不足、范围不符、前提错误五类，然后决定是仅回复澄清、修改正文、两者都做还是礼貌拒绝。附带一个同步机制确保回复信与修改稿的改动一一对应，避免审稿人发现回复说了改但正文没动。适用于论文进入 revision 阶段后的结构化回复。
+
+"paper-write/submission-audit": |-
+  提交前系统审核 skill，专用于手稿结构基本完成、图表和 legends 已定稿的阶段。检查标题、摘要、Introduction 与 Discussion 是否超出 Results 的证据力度；核实所有主图与补充图的面板在正文和图注中一致；确认方法部分被正确引用，补充材料与正文对应。适合在投稿、返修或内部传阅前做一通过滤，避免常见的 claims 夸大与跨节不匹配。
 
 "rag-retrieval/chroma-core-chroma": |-
   面向 AI 应用的轻量级向量数据库，主打开发者友好。原本是 Python embedded
