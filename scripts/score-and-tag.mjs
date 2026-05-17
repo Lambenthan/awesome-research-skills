@@ -28,7 +28,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, "..");
 
-const RAW_FILE = path.join(projectRoot, "src/data/generated/feed-raw.json");
+// All raw input feeds. Each gets merged into one scored output keyed by
+// stable item id. New inputs only need to drop a *-raw.json file here.
+const RAW_FILES = [
+  path.join(projectRoot, "src/data/generated/feed-raw.json"),
+  path.join(projectRoot, "src/data/generated/feed-aigclink-raw.json"),
+];
 const OUT_FILE = path.join(projectRoot, "src/data/generated/feed-scored.json");
 
 const OPENROUTER_KEY = process.env.OPENROUTER_API_KEY;
@@ -61,15 +66,33 @@ const CATEGORIES = [
 // red lines (verbatim from book-writing-default, adapted to a one-paragraph
 // 80–180 char summary).
 // ─────────────────────────────────────────────────────────────────────────
-const SYSTEM_PROMPT = `你是一个 AI 资讯目录站的编辑，正在给厂商一手公告打分、归类、并写 80–180 字中文导读。
+const SYSTEM_PROMPT = `你是一个 AI 资讯目录站的编辑，正在给厂商一手公告或独立项目打分、归类、清洗标题、并写 80–180 字中文导读。
 
 # 输出格式（严格 JSON，不要 markdown 代码块）
 
 {
   "score": 1-5 的整数,
   "category": "下方列表里的一项中文标签",
+  "cleanedTitle": "清洗后的中文标题，15–55 字，客观陈述",
   "cn": "80-180 字中文导读，一段散文"
 }
+
+# cleanedTitle 规则
+
+输入的标题可能是英文（来自厂商 RSS），也可能是中文编辑写的口语化版本。无论哪种，统一产出**简洁客观的中文标题**：
+
+- 主语用项目名 / 厂商名（如 "Anthropic"、"Qwen"、"Kimi"、"NVIDIA"、"Horizon"）
+- 动词用 "发布"、"开源"、"推出"、"更新"、"上线"，不用"放出来了"、"放出"、"丢出"、"扔出"
+- 严禁口语化前缀："溜儿"、"酷"、"妥妥的"、"刚刚把"、"昨晚"、"深夜炸弹"、"杀疯了"、"绝了"、"AI 圈炸了"
+- 严禁戏剧动词："炸弹"、"重磅"、"突袭"、"开撕"、"暴击"、"屠榜"、"震撼"、"血洗"
+- 严禁口语副词："太牛了"、"超强"、"贼快"、"巨"、"爆款"、"逆天"
+- 保留专名与版本号：GPT-5.5、Claude Opus 4.7、Kimi K2.6、Gemma 4、Qwen3.6-35B-A3B 保持原样
+- 不加副标题、不带括号注释、不带 emoji
+- 例：
+  - "溜儿，Anthropic刚刚把Claude Opus 4.7放出来了" → "Anthropic 发布 Claude Opus 4.7"
+  - "OpenAI深夜炸弹放出了：GPT-5.5，超Claude Opus 4.7" → "OpenAI 发布 GPT-5.5"
+  - "酷，browser use刚出的一个仅592行代码的极简自愈式浏览器自动化框架：Browser Harness" → "browser-use 开源 Browser Harness 浏览器自动化框架"
+  - "Databricks brings GPT-5.5 to enterprise agent workflows" → "Databricks 将 GPT-5.5 接入企业 agent 工作流"
 
 # 评分规则 (score)
 
@@ -156,6 +179,27 @@ function validateCn(text) {
   if (charCount < 60) hits.push(`too-short(${charCount})`);
   if (charCount > 240) hits.push(`too-long(${charCount})`);
   if ((text.match(/——/g) || []).length > 1) hits.push("too-many-dashes");
+  return hits;
+}
+
+// Title-specific validators: catches AIGCLINK / influencer-style colloquial
+// phrasing that the editor uses but the site style forbids.
+const TITLE_BANNED = [
+  { name: "口语前缀", re: /^(溜儿|酷|妥妥的|这家伙|哥们|绝了|杀疯了|牛了|炸了|爆了)/ },
+  { name: "戏剧词", re: /炸弹|重磅|突袭|开撕|暴击|屠榜|震撼|血洗|王炸|逆天|爆款|杀疯/ },
+  { name: "夸张副词", re: /太牛|超强|贼快|巨能|巨好|碾压|秒杀|吊打/ },
+  { name: "口语动词", re: /放出来|丢出|扔出|甩出|掏出|甩出来|刷屏|出圈/ },
+  { name: "时间口语", re: /昨晚|深夜|凌晨|半夜|今早|刚刚刚/ },
+  { name: "标题营销词", re: /强势|王者|领跑|霸榜|登顶|屠榜/ },
+];
+
+function validateTitle(text) {
+  if (!text) return ["empty"];
+  const hits = [];
+  for (const { name, re } of TITLE_BANNED) if (re.test(text)) hits.push(name);
+  const charCount = [...text.replace(/\s+/g, "")].length;
+  if (charCount < 6) hits.push(`too-short(${charCount})`);
+  if (charCount > 80) hits.push(`too-long(${charCount})`);
   return hits;
 }
 
@@ -265,12 +309,19 @@ async function scoreOne(item) {
   }
   const score = Math.max(1, Math.min(5, parseInt(parsed.score, 10) || 1));
   const category = CATEGORIES.includes(parsed.category) ? parsed.category : "其他";
+  let cleanedTitle = String(parsed.cleanedTitle || "").trim();
   let cn = String(parsed.cn || "").trim();
 
-  // Validate cn; one stricter retry on red-line hit.
-  let hits = validateCn(cn);
-  if (hits.length > 0) {
-    const retryMsg = `上次输出违反规则：${hits.join("、")}。请重写 cn 字段，严格遵守系统提示中的红线规则，其它字段保持。再次输出完整 JSON。`;
+  // Validate both fields against red-line patterns. cleanedTitle uses
+  // the same banned-phrase set as cn — colloquial / dramatic words leak
+  // into titles just as easily.
+  let cnHits = validateCn(cn);
+  let titleHits = validateTitle(cleanedTitle);
+  if (cnHits.length > 0 || titleHits.length > 0) {
+    const issues = [];
+    if (cnHits.length) issues.push(`cn: ${cnHits.join("、")}`);
+    if (titleHits.length) issues.push(`cleanedTitle: ${titleHits.join("、")}`);
+    const retryMsg = `上次输出违反规则 — ${issues.join("；")}。重写违规字段，严格遵守系统提示中的规则，其它字段保持。再次输出完整 JSON。`;
     const raw2 = await callModel([
       ...messages,
       { role: "assistant", content: raw },
@@ -278,13 +329,15 @@ async function scoreOne(item) {
     ]);
     try {
       const parsed2 = parseJson(raw2);
-      cn = String(parsed2.cn || cn).trim();
-      hits = validateCn(cn);
+      if (parsed2.cn) cn = String(parsed2.cn).trim();
+      if (parsed2.cleanedTitle) cleanedTitle = String(parsed2.cleanedTitle).trim();
+      cnHits = validateCn(cn);
+      titleHits = validateTitle(cleanedTitle);
     } catch {
-      /* keep first cn, will be logged */
+      /* keep first values, residue will be logged */
     }
   }
-  return { score, category, cn, cnHits: hits };
+  return { score, category, cleanedTitle, cn, cnHits, titleHits };
 }
 
 // ─────────────────────────────────────────────────────────────────────────
@@ -310,7 +363,23 @@ async function runPool(items, worker, concurrency) {
 }
 
 async function main() {
-  const raw = JSON.parse(await fs.readFile(RAW_FILE, "utf8"));
+  // Merge every available raw feed file into a single list; later
+  // duplicates by id are dropped so the order of RAW_FILES wins on ties.
+  const rawItems = [];
+  const seenRawIds = new Set();
+  for (const file of RAW_FILES) {
+    try {
+      const data = JSON.parse(await fs.readFile(file, "utf8"));
+      for (const it of data.items ?? []) {
+        if (seenRawIds.has(it.id)) continue;
+        seenRawIds.add(it.id);
+        rawItems.push(it);
+      }
+    } catch {
+      /* file may not exist for sources that aren't wired yet */
+    }
+  }
+
   let existing = { fetchedAt: null, items: [] };
   try {
     existing = JSON.parse(await fs.readFile(OUT_FILE, "utf8"));
@@ -319,12 +388,12 @@ async function main() {
   }
   const existingById = new Map(existing.items.map((it) => [it.id, it]));
 
-  const toProcess = raw.items.filter(
+  const toProcess = rawItems.filter(
     (it) => OVERWRITE || !existingById.has(it.id),
   );
   const targets = toProcess.slice(0, LIMIT);
   console.log(
-    `score-and-tag: ${targets.length} to process (raw=${raw.items.length}, cached=${existingById.size}, overwrite=${OVERWRITE})`,
+    `score-and-tag: ${targets.length} to process (raw=${rawItems.length}, cached=${existingById.size}, overwrite=${OVERWRITE})`,
   );
 
   let done = 0;
@@ -338,15 +407,31 @@ async function main() {
     async (item, idx) => {
       const out = await scoreOne(item);
       done++;
-      if (out.cnHits.length > 0) failedHits.push({ id: item.id, hits: out.cnHits });
+      const allHits = [
+        ...out.cnHits.map((h) => `cn:${h}`),
+        ...out.titleHits.map((h) => `title:${h}`),
+      ];
+      if (allHits.length > 0) failedHits.push({ id: item.id, hits: allHits });
       if (out.score >= MIN_SCORE) kept++;
       else dropped++;
       const tag = out.score >= MIN_SCORE ? "KEEP" : "drop";
       process.stdout.write(
-        `  [${String(done).padStart(3)}/${targets.length}] ${tag} ${String(out.score)}|${out.category.padEnd(8)} ${item.title.slice(0, 60)}\n`,
+        `  [${String(done).padStart(3)}/${targets.length}] ${tag} ${String(out.score)}|${out.category.padEnd(8)} ${out.cleanedTitle.slice(0, 60)}\n`,
       );
-      if (DRY_RUN) process.stdout.write(`        cn: ${out.cn}\n`);
-      return { ...item, score: out.score, category: out.category, cn: out.cn };
+      if (DRY_RUN) {
+        process.stdout.write(`        title was: ${item.title.slice(0, 80)}\n`);
+        process.stdout.write(`        cn: ${out.cn}\n`);
+      }
+      return {
+        ...item,
+        // Replace the raw title with the cleaned Chinese title so the
+        // site renders consistently; keep upstream URL and source intact.
+        title: out.cleanedTitle || item.title,
+        originalTitle: item.title,
+        score: out.score,
+        category: out.category,
+        cn: out.cn,
+      };
     },
     CONCURRENCY,
   );
@@ -369,8 +454,8 @@ async function main() {
     merged.set(it.id, it);
   }
 
-  // Prune entries whose source item no longer exists in feed-raw.
-  const rawIds = new Set(raw.items.map((i) => i.id));
+  // Prune entries whose source item no longer exists in any raw input.
+  const rawIds = new Set(rawItems.map((i) => i.id));
   for (const id of [...merged.keys()]) {
     if (!rawIds.has(id)) merged.delete(id);
   }

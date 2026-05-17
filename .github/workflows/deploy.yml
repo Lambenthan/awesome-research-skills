@@ -4,12 +4,14 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Refresh repo stars + the /latest feed every 6 hours.
-  # Public repo → unlimited Actions minutes, so frequency only costs
-  # commit-log noise. 4 runs/day is well under the Pages soft limit of
-  # 10 deploys/hour.
+  # Two cron schedules:
+  #   - every 6h: refresh repo stars, lab feeds, HN/GitHub latest
+  #   - weekly on Sunday 02:00 UTC: also run extract-aigclink which scrapes
+  #     d.aigclink.ai (heavy playwright work). Weekly is enough since
+  #     AIGCLINK adds ~6 items / week to its public 50-slot table.
   schedule:
     - cron: "0 */6 * * *"
+    - cron: "0 2 * * 0"
 
 permissions:
   contents: write
@@ -65,7 +67,14 @@ jobs:
         if: github.event_name == 'schedule'
         run: npm run extract-feed
 
-      - name: Score and tag lab feed items
+      # AIGCLINK is a discovery layer for Chinese vendors + indie OSS
+      # the lab feeds don't cover. It changes slowly, so we only re-scrape
+      # on the weekly Sunday cron — not the every-6h main loop.
+      - name: Extract AIGCLINK editor picks (weekly)
+        if: github.event.schedule == '0 2 * * 0'
+        run: npm run extract-aigclink
+
+      - name: Score and tag feed items
         if: github.event_name == 'schedule'
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -94,6 +103,7 @@ jobs:
             src/data/generated/latest.json \
             src/data/generated/repos.json \
             src/data/generated/feed-raw.json \
+            src/data/generated/feed-aigclink-raw.json \
             src/data/generated/feed-scored.json \
             content/cn-summaries.yml
           if git diff --cached --quiet; then
