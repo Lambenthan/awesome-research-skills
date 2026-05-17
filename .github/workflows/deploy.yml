@@ -80,6 +80,17 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: npm run score-feed
 
+      # og:image scraper. Runs an interim extract to refresh latest.json
+      # so the scraper sees today's top 60 items, then fetches og:image /
+      # twitter:image from each upstream URL into og-images.json (which
+      # the next prebuild extract merges into latest.rss[].image).
+      # Cache hits skip — only new ids actually fetch.
+      - name: Fetch og:images for new items
+        if: github.event_name == 'schedule'
+        run: |
+          npm run extract
+          npm run fetch-og-images
+
       - name: Fill missing cn (cron only)
         if: github.event_name == 'schedule'
         env:
@@ -105,6 +116,7 @@ jobs:
             src/data/generated/feed-raw.json \
             src/data/generated/feed-aigclink-raw.json \
             src/data/generated/feed-scored.json \
+            src/data/generated/og-images.json \
             content/cn-summaries.yml
           if git diff --cached --quiet; then
             echo "No data changes to commit"

@@ -133,6 +133,10 @@ export type LatestRss = {
   // detail page falls back to the short cn intro. Lives in
   // content/feed-detail.yml keyed by id and merged at extract time.
   detail?: string;
+  // Optional og:image / twitter:image scraped from upstream URL. Used as
+  // hero on the detail page. May be absent for sites that hide their
+  // social card behind JS or Cloudflare.
+  image?: string;
   publishedAt: string | null;
   discoveredAt: string;
 };

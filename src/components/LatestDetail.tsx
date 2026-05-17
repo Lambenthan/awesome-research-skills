@@ -59,6 +59,24 @@ export function LatestDetail({ item }: { item: LatestRss }) {
             </p>
           </Reveal>
         )}
+        {item.image && (
+          <Reveal delay={320}>
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block overflow-hidden rounded border border-rule"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={item.image}
+                alt={item.title}
+                loading="lazy"
+                className="aspect-[16/9] w-full object-cover transition group-hover:scale-105"
+              />
+            </a>
+          </Reveal>
+        )}
       </header>
 
       <div className="grid grid-cols-12 gap-x-10 gap-y-10">

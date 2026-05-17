@@ -537,6 +537,18 @@ async function fetchLatest() {
     } catch {
       /* fine — file is optional */
     }
+    // og:image map produced by scripts/fetch-og-images.mjs.
+    let images = {};
+    try {
+      images = JSON.parse(
+        await fs.readFile(
+          path.join(OUT_DIR, "og-images.json"),
+          "utf8",
+        ),
+      );
+    } catch {
+      /* fine — optional, detail page just won't show a hero */
+    }
     out.rss = (scored.items ?? [])
       .filter((it) => typeof it.score === "number" && it.score >= 3)
       // Highest-signal items first: score desc, then recency. Without
@@ -560,6 +572,7 @@ async function fetchLatest() {
         score: it.score,
         cn: it.cn || "",
         detail: typeof details[it.id] === "string" ? details[it.id] : undefined,
+        image: typeof images[it.id] === "string" ? images[it.id] : undefined,
         publishedAt: it.publishedAt,
         discoveredAt: it.discoveredAt,
       }));
