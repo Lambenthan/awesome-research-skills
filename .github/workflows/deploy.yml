@@ -114,8 +114,10 @@ jobs:
 
       - name: Fill missing cn (cron only)
         if: github.event_name == 'schedule'
+        timeout-minutes: 12
+        continue-on-error: true
         env:
-          GH_MODEL: deepseek/DeepSeek-V3-0324
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: npm run fill-cn -- --missing
 
       - name: Build static export

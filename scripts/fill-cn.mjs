@@ -2,10 +2,11 @@
 /**
  * Generate / refresh Chinese 导读 (cn) for items via GitHub Models.
  *
- * Default model: deepseek/DeepSeek-V3-0324 (free tier, ~native Chinese).
- * Override with: env GH_MODEL=openai/gpt-4o-mini etc.
- * Auth: GITHUB_TOKEN env (any GitHub personal token works locally; the
- *       workflow injects the runner token automatically).
+ * Default model: deepseek/deepseek-v4-flash via OpenRouter (pay-as-you-go).
+ * Override with: env OR_MODEL=openai/gpt-4o-mini etc.
+ * Auth: OPENROUTER_API_KEY env. Paid tier has no RPM cap, so we drop
+ *       the explicit pacing that the previous GH Models path needed
+ *       to stay under the free 15 RPM ceiling.
  *
  * Modes:
  *   --missing      (default) only items with empty/missing cn
@@ -19,7 +20,8 @@
  * regex-validated against a red-line list; failures trigger one stricter
  * retry, and a second failure logs and skips that item.
  *
- * Pacing: 12 RPM (≤ 15 RPM free-tier ceiling). Total ≈ 134 × 5s = 11 min.
+ * Pacing: no client-side throttle. Concurrent calls bounded by main()
+ * issuing them one at a time. Total ≈ 134 × ~2s = 4-5 min on first run.
  */
 
 import { promises as fs } from "node:fs";
@@ -36,11 +38,12 @@ const SKILLS_JSON = path.join(projectRoot, "src/data/generated/skills.json");
 const REPOS_JSON = path.join(projectRoot, "src/data/generated/repos.json");
 const ARTICLES_JSON = path.join(projectRoot, "src/data/generated/articles.json");
 
-const TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
-const ENDPOINT = "https://models.github.ai/inference/chat/completions";
-const MODEL = process.env.GH_MODEL || "deepseek/DeepSeek-V3-0324";
-const RPM = 12;
-const REQUEST_GAP_MS = Math.ceil(60_000 / RPM);
+const TOKEN = process.env.OPENROUTER_API_KEY;
+const ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
+const MODEL = process.env.OR_MODEL || "deepseek/deepseek-v4-flash";
+// Paid tier has no RPM cap. Keep a tiny gap (200ms) so we don't hammer
+// the endpoint during big batches; this is well under any practical limit.
+const REQUEST_GAP_MS = 200;
 
 // ─────────────────────────────────────────────────────────────────────────
 // Style rules — verbatim port of book-writing-default + a header explaining
@@ -367,13 +370,16 @@ function stripFences(text) {
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function callModel(messages, attempt = 0) {
-  if (!TOKEN) throw new Error("GITHUB_TOKEN env not set");
+  if (!TOKEN) throw new Error("OPENROUTER_API_KEY env not set");
   const res = await fetch(ENDPOINT, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${TOKEN}`,
       "Content-Type": "application/json",
       Accept: "application/json",
+      // OpenRouter recommends these to attribute usage and improve routing.
+      "HTTP-Referer": "https://lambenthan.github.io/field-notes/",
+      "X-Title": "Field Notes fill-cn",
     },
     body: JSON.stringify({
       model: MODEL,
@@ -383,12 +389,12 @@ async function callModel(messages, attempt = 0) {
       max_tokens: 500,
     }),
   });
-  if (res.status === 429) {
-    const wait = Number(res.headers.get("retry-after") || "30");
-    console.warn(`  [429] rate limited, waiting ${wait}s …`);
+  if (res.status === 429 || res.status === 503) {
+    const wait = Number(res.headers.get("retry-after") || "10");
+    console.warn(`  [${res.status}] backoff ${wait}s …`);
     await sleep(wait * 1000);
     if (attempt < 3) return callModel(messages, attempt + 1);
-    throw new Error("rate limit, gave up after retries");
+    throw new Error(`gave up after ${res.status} retries`);
   }
   if (!res.ok) {
     const body = await res.text();
@@ -552,7 +558,7 @@ async function main() {
   const args = parseArgs(process.argv);
   console.log(`fill-cn: model=${MODEL} mode=${args.mode} limit=${args.limit} dry=${args.dry}`);
   if (!TOKEN) {
-    console.error("ERROR: GITHUB_TOKEN env not set.");
+    console.error("ERROR: OPENROUTER_API_KEY env not set.");
     process.exit(1);
   }
 
