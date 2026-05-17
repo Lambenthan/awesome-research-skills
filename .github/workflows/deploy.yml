@@ -80,6 +80,14 @@ jobs:
         run: npm run extract-feed-extras
         continue-on-error: true
 
+      # Enrich dates: open detail pages for items whose list page had no
+      # publishedAt (mostly Mistral / Meta AI / xAI). Cached so we only
+      # pay the playwright cost for new items each run.
+      - name: Enrich missing publishedAt
+        if: github.event_name == 'schedule'
+        run: npm run enrich-feed-dates
+        continue-on-error: true
+
       # AIGCLINK is a discovery layer for Chinese vendors + indie OSS
       # the lab feeds don't cover. It changes slowly, so we only re-scrape
       # on the weekly Sunday cron — not the every-6h main loop.
@@ -130,6 +138,7 @@ jobs:
             src/data/generated/feed-extras-raw.json \
             src/data/generated/feed-aigclink-raw.json \
             src/data/generated/feed-scored.json \
+            src/data/generated/feed-dates.json \
             src/data/generated/og-images.json \
             content/cn-summaries.yml
           if git diff --cached --quiet; then

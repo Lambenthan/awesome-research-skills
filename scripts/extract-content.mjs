@@ -592,6 +592,17 @@ async function fetchLatest() {
     } catch {
       /* fine — optional, detail page just won't show a hero */
     }
+    // Detail-page-resolved publishedAt fallback produced by
+    // scripts/enrich-feed-dates.mjs for items whose list page omitted
+    // the date (Mistral / Meta AI / xAI today).
+    let datesFallback = {};
+    try {
+      datesFallback = JSON.parse(
+        await fs.readFile(path.join(OUT_DIR, "feed-dates.json"), "utf8"),
+      );
+    } catch {
+      /* fine — optional */
+    }
     out.rss = (scored.items ?? [])
       .filter((it) => typeof it.score === "number" && it.score >= 3)
       // Score desc, then recency. No item-count cap — every scored
@@ -615,7 +626,11 @@ async function fetchLatest() {
         cn: it.cn || "",
         detail: typeof details[it.id] === "string" ? details[it.id] : undefined,
         image: typeof images[it.id] === "string" ? images[it.id] : undefined,
-        publishedAt: it.publishedAt,
+        publishedAt:
+          it.publishedAt ||
+          (typeof datesFallback[it.id] === "string"
+            ? datesFallback[it.id]
+            : null),
         discoveredAt: it.discoveredAt,
       }));
   } catch {

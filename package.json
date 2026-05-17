@@ -7,6 +7,7 @@
     "extract-feed": "node scripts/extract-feed.mjs",
     "extract-feed-extras": "node scripts/extract-feed-extras.mjs",
     "extract-aigclink": "node scripts/extract-aigclink.mjs",
+    "enrich-feed-dates": "node scripts/enrich-feed-dates.mjs",
     "fetch-og-images": "node scripts/fetch-og-images.mjs",
     "score-feed": "node scripts/score-and-tag.mjs",
     "prune-feed-detail": "node scripts/prune-feed-detail.mjs",
