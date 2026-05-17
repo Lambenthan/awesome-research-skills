@@ -4,6 +4,8 @@ import { Footer } from "@/components/Footer";
 import { NavBar } from "@/components/NavBar";
 import { Reveal } from "@/components/Reveal";
 import { Breadcrumb } from "@/components/Breadcrumb";
+import { ChapterToc } from "@/components/ChapterToc";
+import { ReadingProgress } from "@/components/ReadingProgress";
 import { notes } from "@/lib/data";
 import { SECTION_META } from "@/lib/sections";
 import {
@@ -42,6 +44,7 @@ export default async function ChapterPage({ params }: { params: Params }) {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <ReadingProgress />
       <NavBar />
       <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-14">
         <Breadcrumb
@@ -70,9 +73,19 @@ export default async function ChapterPage({ params }: { params: Params }) {
           </Reveal>
         </header>
 
-        <article className="prose-chapter mt-10 max-w-3xl">
-          <ChapterBody />
-        </article>
+        <div className="mt-10 grid grid-cols-1 gap-x-12 gap-y-10 lg:grid-cols-[1fr_220px]">
+          <article className="prose-chapter min-w-0 max-w-3xl">
+            <ChapterBody />
+          </article>
+          <aside className="lg:order-last">
+            <ChapterToc
+              itemHref={itemHref}
+              peers={peers}
+              currentSlug={meta.slug}
+              noteTitle={note.title}
+            />
+          </aside>
+        </div>
 
         <nav className="mt-16 grid grid-cols-1 gap-4 border-t border-rule pt-8 sm:grid-cols-2">
           <div>
