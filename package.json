@@ -13,6 +13,7 @@
     "prebuild": "npm run extract",
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "pagefind --site out --output-subdir pagefind",
     "start": "next start",
     "typecheck": "tsc --noEmit"
   },
@@ -38,6 +39,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "js-yaml": "^4.1.0",
+    "pagefind": "^1.5.2",
     "playwright": "^1.60.0",
     "tailwindcss": "^4",
     "typescript": "^5"

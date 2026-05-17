@@ -35,14 +35,23 @@ export function NavBar() {
             </Link>
           ))}
         </nav>
-        <a
-          href={REPO_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="eyebrow transition hover:text-ink"
-        >
-          GitHub →
-        </a>
+        <div className="flex items-center gap-5">
+          <Link
+            href="/search"
+            className="eyebrow transition hover:text-ink"
+            aria-label="站内搜索"
+          >
+            Search
+          </Link>
+          <a
+            href={REPO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="eyebrow transition hover:text-ink"
+          >
+            GitHub <span aria-hidden="true">→</span>
+          </a>
+        </div>
       </div>
       {/* Mobile fallback row — keeps every section reachable on <sm screens. */}
       <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-rule px-6 py-3 sm:hidden">
@@ -57,6 +66,9 @@ export function NavBar() {
             {l.label}
           </Link>
         ))}
+        <Link href="/search" className="eyebrow transition hover:text-ink">
+          Search
+        </Link>
       </nav>
     </header>
   );
