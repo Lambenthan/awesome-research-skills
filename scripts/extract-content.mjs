@@ -435,7 +435,12 @@ async function fetchLatest() {
 
   // HackerNews — Algolia's advancedSyntax `OR` operator returns very few
   // results once combined with numericFilters. More reliable: run one
-  // query per keyword and dedupe by objectID.
+  // query per keyword and dedupe by objectID. Each keyword's response is
+  // cached for 1h in scripts/.cache/hn-algolia.json so a transient 429
+  // burst doesn't blow the whole pull away.
+  const HN_CACHE_FILE = path.join(CACHE_DIR, "hn-algolia.json");
+  const HN_CACHE_TTL_MS = 60 * 60 * 1000; // 1h
+  const hnCache = await loadJsonCache(HN_CACHE_FILE);
   try {
     const keywords = [
       "LLM",
@@ -455,18 +460,30 @@ async function fetchLatest() {
         "&numericFilters=" +
         encodeURIComponent("points>=15") +
         "&hitsPerPage=20";
-      try {
-        const res = await fetch(url);
-        if (!res.ok) continue;
-        const json = await res.json();
-        for (const h of json.hits ?? []) {
-          if (!h.url || !h.title) continue;
-          if (!seen.has(h.objectID)) seen.set(h.objectID, h);
+      let hits = null;
+      const cached = hnCache[url];
+      if (cached && Date.now() - cached.fetchedAt < HN_CACHE_TTL_MS) {
+        hits = cached.data;
+      } else {
+        try {
+          const res = await fetch(url);
+          if (res.ok) {
+            const json = await res.json();
+            hits = json.hits ?? [];
+            hnCache[url] = { fetchedAt: Date.now(), data: hits };
+          } else if (cached) {
+            hits = cached.data; // fall back to stale cache on rate limit
+          }
+        } catch {
+          if (cached) hits = cached.data;
         }
-      } catch {
-        /* one keyword failing shouldn't tank the rest */
+      }
+      for (const h of hits ?? []) {
+        if (!h.url || !h.title) continue;
+        if (!seen.has(h.objectID)) seen.set(h.objectID, h);
       }
     }
+    await saveJsonCache(HN_CACHE_FILE, hnCache);
     // Algolia matches a single keyword anywhere (incl. text content). So
     // `agent` matches "AppLovin mediation" and `GPT` matches GPT-partition
     // articles. Re-filter by requiring an AI-relevant token in the title.
@@ -490,7 +507,12 @@ async function fetchLatest() {
   }
 
   // GitHub Search — `topic:X OR topic:Y` returns 422; instead query each
-  // topic separately and merge by repo id, deduplicating.
+  // topic separately and merge by repo id, deduplicating. Cache each
+  // topic's result for 4h so a 403 rate-limit burst doesn't empty the
+  // page. GitHub Search rate limit is much tighter than the regular API.
+  const GH_SEARCH_CACHE_FILE = path.join(CACHE_DIR, "gh-search.json");
+  const GH_SEARCH_CACHE_TTL_MS = 4 * 60 * 60 * 1000; // 4h
+  const ghSearchCache = await loadJsonCache(GH_SEARCH_CACHE_FILE);
   try {
     const since = new Date(Date.now() - 60 * 24 * 60 * 60 * 1000)
       .toISOString()
@@ -498,24 +520,35 @@ async function fetchLatest() {
     const topics = ["llm", "ai-agent", "agentic", "coding-agent", "claude"];
     const all = new Map();
     for (const topic of topics) {
-      try {
-        const q = `topic:${topic} pushed:>${since} stars:>100`;
-        const url = `https://api.github.com/search/repositories?q=${encodeURIComponent(q)}&sort=stars&order=desc&per_page=10`;
-        const res = await fetch(url, { headers: authHeaders() });
-        if (!res.ok) {
-          console.warn(
-            `  latest: GH topic:${topic} HTTP ${res.status} ${res.statusText}`,
-          );
-          continue;
+      const q = `topic:${topic} pushed:>${since} stars:>100`;
+      const url = `https://api.github.com/search/repositories?q=${encodeURIComponent(q)}&sort=stars&order=desc&per_page=10`;
+      const cached = ghSearchCache[url];
+      let items = null;
+      if (cached && Date.now() - cached.fetchedAt < GH_SEARCH_CACHE_TTL_MS) {
+        items = cached.data;
+      } else {
+        try {
+          const res = await fetch(url, { headers: authHeaders() });
+          if (res.ok) {
+            const json = await res.json();
+            items = json.items ?? [];
+            ghSearchCache[url] = { fetchedAt: Date.now(), data: items };
+          } else {
+            console.warn(
+              `  latest: GH topic:${topic} HTTP ${res.status} ${res.statusText}`,
+            );
+            if (cached) items = cached.data;
+          }
+        } catch (err) {
+          console.warn(`  latest: GH topic:${topic} ${err.message}`);
+          if (cached) items = cached.data;
         }
-        const json = await res.json();
-        for (const it of json.items ?? []) {
-          if (!all.has(it.id)) all.set(it.id, it);
-        }
-      } catch (err) {
-        console.warn(`  latest: GH topic:${topic} ${err.message}`);
+      }
+      for (const it of items ?? []) {
+        if (!all.has(it.id)) all.set(it.id, it);
       }
     }
+    await saveJsonCache(GH_SEARCH_CACHE_FILE, ghSearchCache);
     out.gh = [...all.values()]
       .sort((a, b) => (b.stargazers_count ?? 0) - (a.stargazers_count ?? 0))
       .slice(0, 15)
