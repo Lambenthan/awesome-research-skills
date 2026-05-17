@@ -32,10 +32,60 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+const SITE_ORIGIN = "https://lambenthan.github.io";
+const SITE_BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const SITE_URL = SITE_ORIGIN + SITE_BASE_PATH;
+const SITE_TITLE = "Field Notes · 田野笔记";
+const SITE_DESCRIPTION =
+  "Chanw 的研究纲要与应用工具书 36 章，配套 Claude Code skill、AI 与科研方向开源项目、研究长文与每日 AI 动态的发现面板。";
+const SITE_OG_IMAGE = SITE_URL + "/og.png";
+
 export const metadata: Metadata = {
-  title: "Field Notes · 田野笔记",
-  description:
-    "研究路上的随手笔记。收录用得上的 Claude Code skill、AI 与科研方向的开源项目、值得读的研究长文。",
+  metadataBase: new URL(SITE_URL || SITE_ORIGIN),
+  title: {
+    default: SITE_TITLE,
+    template: "%s — Field Notes",
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: "Field Notes",
+  authors: [{ name: "Chanw" }],
+  keywords: [
+    "Field Notes",
+    "田野笔记",
+    "Claude Code skill",
+    "AI 工具",
+    "科研工具",
+    "因果推断",
+    "文本计量",
+    "研究笔记",
+  ],
+  alternates: {
+    canonical: "/",
+    types: {
+      "application/rss+xml": [{ url: "/feed.xml", title: "Field Notes RSS" }],
+    },
+  },
+  openGraph: {
+    type: "website",
+    siteName: SITE_TITLE,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL || "/",
+    locale: "zh_CN",
+    images: [{ url: SITE_OG_IMAGE, width: 1200, height: 630, alt: SITE_TITLE }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [SITE_OG_IMAGE],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  formatDetection: { telephone: false, address: false, email: false },
 };
 
 export default function RootLayout({
