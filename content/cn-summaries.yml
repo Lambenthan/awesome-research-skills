@@ -488,6 +488,9 @@
 "paper-figure/nature-data": |-
   针对 Nature Portfolio 期刊投稿流程而设计的 Data Availability 写作辅助。自动生成符合出版社要求的英文数据可用性声明，涵盖存储库选择、数据集引用格式与 FAIR 元数据检查。特别考虑中文作者常见的表述习惯，将“可向通讯作者索取”这类模糊说法转化为 Nature 认可的受限访问声明。适用于准备投稿 Nature 系列杂志时整理原始数据与补充材料的发布方案。
 
+"paper-figure/nature-figure": |-
+  面向 Nature 系列等高水平期刊的论文图表绘制 skill。支持 Python 与 R 两种后端，强调在动笔之前先建立"图表契约"——明确每张图要支撑的结论、证据层级与审稿风险。配色上优先使用统一方法族而非最大色相分离。适合准备投稿阶段需要反复修改多面板组合图的场景。
+
 "paper-figure/paper-figure": |-
   基于实验数据自动生成出版级图表与 LaTeX 表格的 Claude Code skill。适用范围包括训练曲线、方法对比柱状图、热力图、箱线图等数据驱动图表，以及消融实验等对比表格。无法自动生成架构示意图或定性结果图——这类需要手动绘制并置于指定目录。适合在论文写作收尾阶段集中成图，减少逐张手动调整样式的工作量。
 
@@ -596,11 +599,20 @@
 "paper-polish/scientific-writing": |-
   用于 Claude Code 的科研写作 skill，面向需要把稳定结果转化为完整稿件的环节。它按 IMRAD 结构组织段落，支持 APA、AMA、Vancouver 等引用格式和 CONSORT、STROBE、PRISMA 等报告指南。对修订稿件，强调先做反向提纲和 claim-evidence 映射再重写，而不是直接从旧段落到润色。适用于论文各节的初稿撰写，以及回复审稿意见时的大幅重写。
 
+"paper-slides/academic-presentations": |-
+  从研究论文生成学术演讲幻灯片，可选配配音讲解视频。流程分脚本起草、幻灯片生成、TTS 配音、视频合成四个阶段，用户决定大纲与视觉方向，agent 执行排版与素材处理。幻灯片优先基于论文原图做编辑而非从零生成，适合赶会议报告或组会展示时快速出初稿。
+
 "paper-slides/nature-paper2ppt": |-
   nature-paper2ppt 把一篇科研论文的 PDF、手稿或阅读笔记转为一份中文 Nature 风格汇报 PPTX。它不照搬论文章节顺序，而是按科学论证逻辑组织幻灯片：先讲问题意义，再讲缺口与作者做法、关键证据、可信度、贡献与局限。自动识别论文类型、选取核心图表、撰写中文幻灯片内容与演讲注释，适合组会、文献分享或论文预答辩快速制稿。
 
+"paper-slides/paper-poster": |-
+  从已编译的论文生成会议海报的 Claude Code skill。输入 LaTeX 论文，输出 A0 或 A1 尺寸的 PDF 海报，同时附带可编辑的 PPTX 与 SVG。海报按视觉优先原则组织——四栏横版或三栏竖版，用要点和图表代替全文搬运。支持 NeurIPS、ICML、ICLR 等常见会议配色方案，适合投稿前制作 poster session 展示材料。
+
 "paper-slides/paper-slides": |-
   将已编译的论文转换为会议幻灯片。输出 beamer LaTeX 源码、可直接使用的 PDF 以及可编辑的 PPTX，同时附带演讲注释和完整讲稿。支持 NeurIPS、ICML、ICLR、CVPR 等会场配色方案以及 oral、spotlight、poster-talk 等演讲时长设定。论文写作工作流收尾阶段，完成稿件后可直接调用这个 skill 准备报告材料，不用手动拆内容、排版式。
+
+"paper-slides/paper-to-beamer": |-
+  从学术论文自动生成可编译的 LaTeX Beamer 幻灯片。读取论文 PDF 后提取结构、关键图表与公式，按 Crimson 主题生成幻灯片源码，支持 XeLaTeX 与 xeCJK 中文排版。流程中设有一轮强制视觉审查环节，逐页检查编译后的 PDF 是否存在图文重叠、目录溢出等 LaTeX 不报错的布局问题，修正后才交付。
 
 "paper-slides/pptx": |-
   用于处理 PowerPoint 文件的 Claude Code skill。可以读取 .pptx 中的文本与内容结构，基于模板编辑现有幻灯片，或从零生成新演示文稿。底层调用 markitdown、python-pptx 及 Node.js pptxgenjs 实现文字提取、幻灯片缩略图预览、解包重打包等操作。写论文期间准备学术报告、答辩或会议海报时顺手可用。
@@ -617,6 +629,9 @@
 "paper-write/idea-discovery": |-
   idea-discovery 是一个完整的选题发现流水线，将文献调研、点子生成、新颖性检验、同行评议与方案细化依次串联。输入一个宽泛的研究方向，输出一个经过验证的 idea 排名报告、优化后提案与实验计划。各阶段自动传递输出，并附带 GPU 预算约束与超时控制。适用于研究者想从零系统挖掘可落地方向、生成可提交的课题方案时使用。
 
+"paper-write/nature-portfolio-playbook": |-
+  Nature 系列期刊投稿前的定向检查 skill。当一篇生命科学论文的目标期刊在 Nature、Nature Methods、Nature Biotechnology 之间摇摆时，用它判断故事类型与期刊定位的匹配度。skill 内置了三种期刊的审稿偏好：旗舰 Nature 看重跨领域可读性，Nature Methods 要求方法学贡献与充分验证，Nature Biotechnology 侧重应用转化。不替代通用写作润色，只做投稿前的定向决策。
+
 "paper-write/paper-analyzer": |-
   Paper-analyzer 从 arXiv ID 或论文标题入手，自动下载 PDF、HTML 页面与 LaTeX 源文件，对论文的贡献、方法、实验、局限与相关工作逐一分析，输出一份带 0–10 综合评分的中英双语笔记，同时将新论文与已有笔记之间的引用关系录入本地知识图谱。适用于需要系统梳理领域文献时的深度阅读场景。
 
@@ -628,6 +643,9 @@
 
 "paper-write/paper-claim-audit": |-
   提交论文前核对论文数字与原始数据是否一致。这个 skill 用一个全新模型，不接触任何实验日志或作者之前的解释，只拿 .tex 文件和结果文件做比对。它瞄准的是作者在写论文时容易出现的确认偏差——比如把 84.7% 写成 85.3%、用最好种子代替平均、引用其他实验的指标。适合在每次投稿前跑一遍，保证论文里的每个数字都经得起审查。
+
+"paper-write/paper-claude-md-bootstrap": |-
+  论文写作项目启动时，第一件事不是写正文，而是建一份项目级 CLAUDE.md。这个 skill 强制在新建目录或首次会话时，逐项问清研究主题、投稿目标、术语保护清单、文件结构、写作风格与导师偏好，然后落盘为永久记忆文件。没有 CLAUDE.md 的项目，每次会话都要重新解释背景，AI 回应质量差距明显。适用于任何需要长期协作的论文写作项目。
 
 "paper-write/paper-compile": |-
   论文写作场景下的 LaTeX 自动化编译 skill。负责从 `latexmk` 调用 `pdflatex` 完成多轮编译、运行 `bibtex`、诊断缺失包与引用警告，并在编译失败后给出自动修复建议。内置 ICLR、NeurIPS、ICML 等会议的页数限制检查，适合投递机器学习会议或 IEEE 期刊前反复调整排版时使用。
@@ -656,11 +674,17 @@
 "paper-write/paper-reviewer": |-
   面向期刊审稿与课题评审场景的辅助 skill。收到论文或申请书后，它引导你系统评价研究方法、统计合理性、报告标准如 CONSORT、STROBE 与 PRISMA，以及数据可重复性，并生成带建设性意见的正式反馈。适用于审稿人在撰写评审意见时保持评价的结构性与一致性。
 
+"paper-write/paper-translate-advisor-feedback": |-
+  处理导师口语化反馈的翻译工作流。当收到“逻辑不顺”“再深入点”这类模糊意见时，不直接喂给 AI 改文章，而是逐条解析为含位置、改什么、改成什么、标准、不动哪里的可执行清单，让用户确认后再执行。这避免了 AI 把“逻辑不顺”理解成改句子通顺度而非调论证结构，减少因理解偏差导致的反复修改。
+
 "paper-write/paper-using-skills": |-
   《Claude Code 科研手记》论文写作纪律 skill 集的入口文件。它预先录入一套触发规则：任何涉及论文写作的请求，在调用工具前必须先扫描对照表，匹配则调用对应纪律 skill，不匹配也要过一遍判断。目的是防止熟练用户赶时间、紧张时跳过流程——简单的环节恰恰是出错时最
 
 "paper-write/paper-write": |-
   论文草稿生成 skill，从提纲逐节生成 LaTeX 正文。自动匹配 ICLR、NeurIPS、CVPR、ACL、IEEE 等会议与期刊的样式文件与篇幅限制，通过 DBLP 或 CrossRef 抓取真实 BibTeX 条目，杜绝 LLM 编造的虚假引用。整合 GPT-5.4 对每节做审查，适合写完方法论后希望快速产出初稿的研究者。
+
+"paper-write/paper-writing": |-
+  将论文写作拆成五个子 skill 串联的自动化管线：从大纲规划、图表生成、LaTeX 撰写、PDF 编译到自动审阅改进循环。支持 ICLR、NeurIPS 等常见会议模板，外部验证脚本通过后才标记为 submission-ready。适用于从实验报告到投稿稿件的完整转换场景，减少重复编译与格式调整的体力劳动。
 
 "paper-write/paper-writing-discipline": |-
   科研写作领域积累个人纪律的自动化工件。当你在 Claude Code 中说出“以后都要这样做”“下次记得”“加一条新规则”时，会触发一系列判断——检查这条规则是否反直觉、能否事前触发、是否是做事方式而非工具用法。通过后自动生成一个新的 paper-* skill 并存入配置文件。适用于长期用 Claude Code 辅助论文写作、想把每次踩坑的教训固化为纪律的人。
