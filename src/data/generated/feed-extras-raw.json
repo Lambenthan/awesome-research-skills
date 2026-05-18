@@ -1,27 +1,445 @@
 {
-  "fetchedAt": "2026-05-18T10:08:22.918Z",
+  "fetchedAt": "2026-05-18T15:37:34.847Z",
   "items": [
     {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "744a1966e84fc2b4",
-      "title": "MMSkills: Towards Multimodal Skills for General Visual Agents",
-      "url": "https://huggingface.co/papers/2605.13527",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.976Z"
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "c00524a258616803",
+      "title": "IVGT: Implicit Visual Geometry Transformer for Neural Scene Representation",
+      "url": "https://arxiv.org/abs/2605.16258v1",
+      "summary": "Reconstructing coherent 3D geometry and appearance from unposed multi-view images is a fundamental yet challenging problem in computer vision. Most existing visual geometry foundation models predict explicit geometry by regressing pixel-aligned pointmaps, often suffering from redundancy and limited…",
+      "category": "cs.CV",
+      "publishedAt": "2026-05-15T17:59:57Z",
+      "discoveredAt": "2026-05-18T15:37:34.843Z"
     },
     {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "c106f6f2e34a852e",
-      "title": "CiteVQA: Benchmarking Evidence Attribution for Trustworthy Document Intelligence",
-      "url": "https://huggingface.co/papers/2605.12882",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.976Z"
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "94ffec3d9e34c905",
+      "title": "Designing Datacenter Power Delivery Hierarchies for the AI Era",
+      "url": "https://arxiv.org/abs/2605.16255v1",
+      "summary": "Demand for AI accelerators is rapidly increasing rack power density, with projections approaching 1MW per deployment by 2027. This poses a major challenge for datacenter power delivery designers. As power densities increase, a datacenter designed for a different target density may strand power, i.e…",
+      "category": "cs.DC",
+      "publishedAt": "2026-05-15T17:58:58Z",
+      "discoveredAt": "2026-05-18T15:37:34.843Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "49e8ebd2f8ce7abe",
+      "title": "A Generative AI Framework for Intelligent Utility Billing CO 2 Analytics and Sustainable Resource Optimisation",
+      "url": "https://arxiv.org/abs/2605.16250v1",
+      "summary": "Distribution utilities are now expected to deliver bills that customers can actually read attach a defensible carbon number to every kWh sold and schedule load against grid stress and emissions constraints We propose an end-to-end framework that unifies four production-grade capabilities under one …",
+      "category": "cs.CL",
+      "publishedAt": "2026-05-15T17:52:57Z",
+      "discoveredAt": "2026-05-18T15:37:34.843Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "599813f6ea0579f2",
+      "title": "AI-Mediated Communication Can Steer Collective Opinion",
+      "url": "https://arxiv.org/abs/2605.16245v1",
+      "summary": "Generative artificial intelligence (AI) is increasingly integrated into the online platforms where humans exchange opinions; large language models (LLMs) now polish users' posts on LinkedIn and provide context for content shared on X. While prior work has shown that AI can express biased opinions a…",
+      "category": "cs.CY",
+      "publishedAt": "2026-05-15T17:49:24Z",
+      "discoveredAt": "2026-05-18T15:37:34.844Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "ea553e67fa867cf1",
+      "title": "Offline Semantic Guidance for Efficient Vision-Language-Action Policy Distillation",
+      "url": "https://arxiv.org/abs/2605.16241v1",
+      "summary": "Billion-parameter Vision-Language-Action (VLA) policies have recently shown impressive performance in robotic manipulation, yet their size and inference cost remain major obstacles for real-time closed-loop control. We introduce \\textbf{VLA-AD}, a distillation framework that uses a Vision-Language …",
+      "category": "cs.CV",
+      "publishedAt": "2026-05-15T17:48:25Z",
+      "discoveredAt": "2026-05-18T15:37:34.844Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "7cc1da54ed7e4421",
+      "title": "Dynamics-Level Watermarking of Flow Matching Models with Random Codes",
+      "url": "https://arxiv.org/abs/2605.16239v1",
+      "summary": "We introduce a dynamics-level approach to watermarking generative models. Rather than embedding signals into model weights or outputs, we embed the watermark directly into the learned continuous dynamics -- the velocity field of a flow matching model. We formulate this as random coding over a conti…",
+      "category": "cs.LG",
+      "publishedAt": "2026-05-15T17:48:22Z",
+      "discoveredAt": "2026-05-18T15:37:34.844Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "e9b7502f718bb5e3",
+      "title": "Prospective multi-pathogen disease forecasting using autonomous LLM-guided tree search",
+      "url": "https://arxiv.org/abs/2605.16238v1",
+      "summary": "Probabilistic forecasting of infectious diseases is crucial for public health but relies on labor-intensive manual model curation by expert modeling teams. This bespoke development bottlenecks scalability to granular geographic resolutions or emerging pathogens. Here, we present an autonomous syste…",
+      "category": "cs.AI",
+      "publishedAt": "2026-05-15T17:45:17Z",
+      "discoveredAt": "2026-05-18T15:37:34.844Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "b2c571e1b641c2e6",
+      "title": "Layer Equivalence Is Not a Property of Layers Alone: How You Test Redundancy Changes What You Find",
+      "url": "https://arxiv.org/abs/2605.16234v1",
+      "summary": "When researchers ask whether two transformer layers are \"equivalent\" for compression, they often conflate distinct tests. Replacement asks whether one layer's map can substitute for another's in place; interchange asks whether two layers approximately commute when their positions are swapped. Both …",
+      "category": "cs.LG",
+      "publishedAt": "2026-05-15T17:43:16Z",
+      "discoveredAt": "2026-05-18T15:37:34.844Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "a22c1b3cd970bc8f",
+      "title": "FORGE: Self-Evolving Agent Memory With No Weight Updates via Population Broadcast",
+      "url": "https://arxiv.org/abs/2605.16233v1",
+      "summary": "Can LLM agents improve decision-making through self-generated memory without gradient updates? We propose FORGE (Failure-Optimized Reflective Graduation and Evolution), a staged, population-based protocol that evolves prompt-injected natural-language memory for hierarchical ReAct agents. FORGE wrap…",
+      "category": "cs.AI",
+      "publishedAt": "2026-05-15T17:42:49Z",
+      "discoveredAt": "2026-05-18T15:37:34.844Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "fda1e8fe718e268b",
+      "title": "A Unified Generative-AI Framework for Smart Energy Infrastructure: Intelligent Gas Distribution, Utility Billing, Carbon Analytics, and Quantum-Inspired Optimisation",
+      "url": "https://arxiv.org/abs/2605.16232v1",
+      "summary": "The accelerating convergence of smart metering, generative artificial intelligence, and quantum-inspired combinatorial optimisation is reshaping how energy utilities manage physical infrastructure, customer engagement, and environmental accountability",
+      "category": "cs.CL",
+      "publishedAt": "2026-05-15T17:42:11Z",
+      "discoveredAt": "2026-05-18T15:37:34.844Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "e19adc8ded26acb4",
+      "title": "Universal Magnetic Structure Prediction from Atomic Coordinates with Near-Experimental Accuracy",
+      "url": "https://arxiv.org/abs/2605.16230v1",
+      "summary": "Magnetic order is a fundamental property of materials, governing collective behavior and enabling a broad range of functionalities. Yet magnetic structure remains difficult to determine: experiments are costly and specialized, while first-principles methods often struggle with the noncollinear and …",
+      "category": "cond-mat.mtrl-sci",
+      "publishedAt": "2026-05-15T17:40:08Z",
+      "discoveredAt": "2026-05-18T15:37:34.844Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "3fe9850b6b15530c",
+      "title": "Evaluating Design Video Generation: Metrics for Compositional Fidelity",
+      "url": "https://arxiv.org/abs/2605.16223v1",
+      "summary": "Generative video models are increasingly used in design animation tasks, yet no standardized evaluation framework exists for this domain. Unlike natural video generation, design animation imposes structured constraints: specific components shall animate with prescribed motion types, directions, spe…",
+      "category": "cs.GR",
+      "publishedAt": "2026-05-15T17:34:05Z",
+      "discoveredAt": "2026-05-18T15:37:34.844Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "369d707072a83e8b",
+      "title": "Artificial Aphasias in Lesioned Language Models",
+      "url": "https://arxiv.org/abs/2605.16222v1",
+      "summary": "Aphasias, selective language impairments which can arise from brain damage, reveal the functional organization of human language by providing causal links between affected brain regions and specific symptom profiles. Drawing on this literature, we introduce an aphasia-inspired technique to characte…",
+      "category": "cs.CL",
+      "publishedAt": "2026-05-15T17:33:07Z",
+      "discoveredAt": "2026-05-18T15:37:34.844Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "525fc6ce0269f9cf",
+      "title": "The Privacy Price of Tail-Risk Learning: Effective Tail Sample Size in Differentially Private CVaR Optimization",
+      "url": "https://arxiv.org/abs/2605.16219v1",
+      "summary": "Differential privacy changes the effective sample size governing CVaR learning. For tail mass $τ$, the privacy-relevant sample size is not $n$, but $nτ$; equivalently, the effective private tail sample size is $εnτ$. Private CVaR excess risk decomposes into ordinary tail-risk statistical error and …",
+      "category": "cs.LG",
+      "publishedAt": "2026-05-15T17:30:42Z",
+      "discoveredAt": "2026-05-18T15:37:34.844Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "907498ea050a74ca",
+      "title": "Argus: Evidence Assembly for Scalable Deep Research Agents",
+      "url": "https://arxiv.org/abs/2605.16217v1",
+      "summary": "Deep research agents have achieved remarkable progress on complex information seeking tasks. Even long ReAct style rollouts explore only a single trajectory, while recent state of the art systems scale inference time compute via parallel search and aggregation. Yet deep research answers are compose…",
+      "category": "cs.CL",
+      "publishedAt": "2026-05-15T17:29:27Z",
+      "discoveredAt": "2026-05-18T15:37:34.844Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "920741c8ee2aa93d",
+      "title": "Fully Open Meditron: An Auditable Pipeline for Clinical LLMs",
+      "url": "https://arxiv.org/abs/2605.16215v1",
+      "summary": "Clinical decision support systems (CDSS) require scrutable, auditable pipelines that enable rigorous, reproducible validation. Yet current LLM-based CDSS remain largely opaque. Most \"open\" models are open-weight only, releasing parameters while withholding the data provenance, curation procedures, …",
+      "category": "cs.AI",
+      "publishedAt": "2026-05-15T17:29:08Z",
+      "discoveredAt": "2026-05-18T15:37:34.844Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "19792e3d69f48bc3",
+      "title": "Hypothesis-driven construction of mesoscopic dynamics",
+      "url": "https://arxiv.org/abs/2605.16211v1",
+      "summary": "Traditional scientific modeling typically begins with fixed, instance-wise effective equations and then carries out equation-specific analysis and computation, a procedure that becomes exceptionally challenging in complex applications such as multiscale systems. We propose an alternative paradigm b…",
+      "category": "cs.LG",
+      "publishedAt": "2026-05-15T17:26:28Z",
+      "discoveredAt": "2026-05-18T15:37:34.844Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "d57f997a92b82190",
+      "title": "A Scalable Nonparametric Continuous-Time Survival Model through Numerical Quadrature",
+      "url": "https://arxiv.org/abs/2605.16208v1",
+      "summary": "Flexible continuous-time survival modeling is critical for capturing complex time-varying hazard dynamics in high-dimensional data; however, training such models remains challenging due to the intractable integral required for likelihood estimation. We introduce QSurv, a scalable deep learning fram…",
+      "category": "stat.ML",
+      "publishedAt": "2026-05-15T17:25:17Z",
+      "discoveredAt": "2026-05-18T15:37:34.845Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "9e5d873fb1e2a211",
+      "title": "Confirming Correct, Missing the Rest: LLM Tutoring Agents Struggle Where Feedback Matters Most",
+      "url": "https://arxiv.org/abs/2605.16207v1",
+      "summary": "Effective tutoring requires distinguishing optimal, valid but suboptimal, and incorrect student solutions, a distinction central to intelligent tutoring systems (ITS) but untested for LLM-based tutors. As LLMs are increasingly explored as conversational complements to ITS, evaluating their diagnost…",
+      "category": "cs.AI",
+      "publishedAt": "2026-05-15T17:24:42Z",
+      "discoveredAt": "2026-05-18T15:37:34.845Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "80add0c881c9fdc7",
+      "title": "Context, Reasoning, and Hierarchy: A Cost-Performance Study of Compound LLM Agent Design in an Adversarial POMDP",
+      "url": "https://arxiv.org/abs/2605.16205v1",
+      "summary": "Deploying compound LLM agents in adversarial, partially observable sequential environments requires navigating several design dimensions: (1) what the agent sees, (2) how it reasons, and (3) how tasks are decomposed across components. Yet practitioners lack guidance on which design choices improve …",
+      "category": "cs.AI",
+      "publishedAt": "2026-05-15T17:23:08Z",
+      "discoveredAt": "2026-05-18T15:37:34.845Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "e4a591d5eb46d524",
+      "title": "Formal Methods Meet LLMs: Auditing, Monitoring, and Intervention for Compliance of Advanced AI Systems",
+      "url": "https://arxiv.org/abs/2605.16198v1",
+      "summary": "We examine one particular dimension of AI governance: how to monitor and audit AI-enabled products and services throughout the AI development lifecycle, from pre-deployment testing to post-deployment auditing. Combining principles from formal methods with SoTA machine learning, we propose technique…",
+      "category": "cs.AI",
+      "publishedAt": "2026-05-15T17:13:27Z",
+      "discoveredAt": "2026-05-18T15:37:34.845Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "ff800c98598f5af4",
+      "title": "paper.json: A Coordination Convention for LLM-Agent-Actionable Papers",
+      "url": "https://arxiv.org/abs/2605.16194v1",
+      "summary": "LLM agents routinely serve as first (and sometimes only) readers of academic papers, skimming for sub-claims, extracting reproducibility steps, and generalizing scope. Standard prose papers produce recurring failures in this role: sub-claims that cannot be cited at sub-paper granularity, scope over…",
+      "category": "cs.DL",
+      "publishedAt": "2026-05-15T17:10:50Z",
+      "discoveredAt": "2026-05-18T15:37:34.845Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "24a01ef8aae21a49",
+      "title": "Improving Cross-Cultural Survey Simulation with Calibrated Value Personas",
+      "url": "https://arxiv.org/abs/2605.16193v1",
+      "summary": "Large language models (LLMs) are increasingly used to simulate human opinions and survey responses, but their ability to reproduce population responses across cultures remains limited. Existing persona-based prompting methods typically rely on sociodemographic or personality traits, which are only …",
+      "category": "cs.CL",
+      "publishedAt": "2026-05-15T17:10:50Z",
+      "discoveredAt": "2026-05-18T15:37:34.845Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "927ccf9cb1acad39",
+      "title": "Optimized Three-Dimensional Photovoltaic Structures with LLM guided Tree Search",
+      "url": "https://arxiv.org/abs/2605.16191v1",
+      "summary": "We present a case study for how AI coding systems can be used to generate novel scientific hypotheses. We combine a generic coding agent (Google's AntiGravity) with an LLM-driven tree search algorithm (Empirical Research Assistance / ERA) to autonomously generate high-efficiency three-dimensional p…",
+      "category": "cs.CL",
+      "publishedAt": "2026-05-15T17:10:22Z",
+      "discoveredAt": "2026-05-18T15:37:34.845Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "ff80fb794b626917",
+      "title": "Runtime-Orchestrated Second-Order Optimization for Scalable LLM Training",
+      "url": "https://arxiv.org/abs/2605.16184v1",
+      "summary": "Second-order methods offer an attractive path toward more sample-efficient LLM training, but their practical use is often blocked by the systems cost of maintaining and updating large matrix-based optimizer states. We introduce \\textbf{Asteria}, a runtime system designed to remove this bottleneck b…",
+      "category": "cs.DC",
+      "publishedAt": "2026-05-15T17:03:55Z",
+      "discoveredAt": "2026-05-18T15:37:34.845Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "9847fb8b5febaa4a",
+      "title": "MAgSeg: Segmentation of Agricultural Landscapes in High-Resolution Satellite Imagery using Multimodal Large Language Models",
+      "url": "https://arxiv.org/abs/2605.16179v1",
+      "summary": "Agricultural landscape segmentation in the Global South is challenging as it is characterized by fragmented plots, high intra-class variance, and a scarcity of labeled training data. Recent advances in segmentation have been made by Multimodal Large Language Models (MLLMs). However, current approac…",
+      "category": "cs.CV",
+      "publishedAt": "2026-05-15T16:59:39Z",
+      "discoveredAt": "2026-05-18T15:37:34.845Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "84ba8674caa4ad20",
+      "title": "Imitation learning for clinical decision support in pediatric ECMO",
+      "url": "https://arxiv.org/abs/2605.16175v1",
+      "summary": "Pediatric critical care is a dynamic, high-stakes process involving constant monitoring and adjustments in life-saving treatments. Modeling these interventions is crucial for effective decision support. To address the challenges of high complexity and data scarcity in pediatric Extracorporeal Membr…",
+      "category": "cs.LG",
+      "publishedAt": "2026-05-15T16:53:34Z",
+      "discoveredAt": "2026-05-18T15:37:34.845Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "76a1ef70e2f4d184",
+      "title": "Res$^2$CLIP: Few-Shot Generalist Anomaly Detection with Residual-to-Residual Alignment",
+      "url": "https://arxiv.org/abs/2605.16171v1",
+      "summary": "Few-shot Generalist Anomaly Detection requires models to generalize to novel categories without retraining, posing significant challenges in real-world scenarios with scarce samples and rapidly changing categories. Existing CLIP-based methods face two major challenges: coarse-grained unified text p…",
+      "category": "cs.CV",
+      "publishedAt": "2026-05-15T16:49:58Z",
+      "discoveredAt": "2026-05-18T15:37:34.845Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "65a7b2174d77b0da",
+      "title": "BAPR: Bayesian amnesic piecewise-robust reinforcement learning for non-stationary continuous control",
+      "url": "https://arxiv.org/abs/2605.16170v1",
+      "summary": "Real-world control systems frequently operate under \\emph{piecewise stationary} conditions, where dynamics remain stable for extended periods before undergoing abrupt regime changes. Standard robust RL methods face a fundamental dilemma: a globally conservative policy wastes performance during stab…",
+      "category": "cs.LG",
+      "publishedAt": "2026-05-15T16:49:05Z",
+      "discoveredAt": "2026-05-18T15:37:34.845Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "9650bcc2eee64fff",
+      "title": "Second-Order Multi-Level Variance Correction for Modality Competition in Multimodal Models",
+      "url": "https://arxiv.org/abs/2605.16165v1",
+      "summary": "Autoregressive next-token training offers a unified formulation for image generation and text understanding, but it also creates strong modality competition that destabilizes optimization and limits large-batch scaling. We show that first-order optimizers such as AdamW are vulnerable to cross-modal…",
+      "category": "cs.CV",
+      "publishedAt": "2026-05-15T16:45:56Z",
+      "discoveredAt": "2026-05-18T15:37:34.845Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "03929324976806a9",
+      "title": "Entropic Auto-Encoding via Implicit Free-Energy Minimization",
+      "url": "https://arxiv.org/abs/2605.16164v1",
+      "summary": "Despite their ubiquity, variational autoencoders (VAEs) inherently suffer from posterior collapse, a failure mode in which latent variables are effectively ignored. This failure arises because explicit prior imposition drives optimization toward loss landscape regions corresponding to uninformative…",
+      "category": "cs.LG",
+      "publishedAt": "2026-05-15T16:43:45Z",
+      "discoveredAt": "2026-05-18T15:37:34.845Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "5d8fa468306e52f1",
+      "title": "SwAIther-Precip: Lead-Time-Aware Bias Correction Enables Kilometer-Scale Downscaling of Global AI Precipitation Forecasts over Switzerland",
+      "url": "https://arxiv.org/abs/2605.16163v1",
+      "summary": "Skillful medium-range precipitation forecasting at kilometer scale remains challenging over complex terrain because precipitation arises from multiscale nonlinear processes that global models cannot explicitly resolve at affordable cost. Global AI weather models can produce skillful medium-range fo…",
+      "category": "physics.ao-ph",
+      "publishedAt": "2026-05-15T16:42:45Z",
+      "discoveredAt": "2026-05-18T15:37:34.845Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "35b1a0314470c697",
+      "title": "Learn Where Outcomes Diverge: Efficient VLA RL via Probabilistic Chunk Masking",
+      "url": "https://arxiv.org/abs/2605.16154v1",
+      "summary": "Reinforcement learning (RL) allows vision-language-action (VLA) policies to generalize beyond their training distribution by optimizing directly for task success, but post-training is computationally expensive. A natural response has been to speed rollout collection through faster simulators and wo…",
+      "category": "cs.LG",
+      "publishedAt": "2026-05-15T16:33:59Z",
+      "discoveredAt": "2026-05-18T15:37:34.846Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "c4428e02dc0d575b",
+      "title": "An Algebraic Exposition of the Theory of Dyadic Morality",
+      "url": "https://arxiv.org/abs/2605.16153v1",
+      "summary": "This paper provides an algebraic exposition of the theory of dyadic morality (TDM), a psychological model of moral judgment grounded in a simple two-node template: an intentional agent causing harm to a vulnerable patient. We formalize TDM using structural causal modeling (SCM) notation and identif…",
+      "category": "cs.AI",
+      "publishedAt": "2026-05-15T16:33:51Z",
+      "discoveredAt": "2026-05-18T15:37:34.846Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "df9cf33d0b0dca9c",
+      "title": "Registers Matter for Pixel-Space Diffusion Transformers",
+      "url": "https://arxiv.org/abs/2605.16147v1",
+      "summary": "Vision Transformers (ViTs) are known to exhibit high-norm patch-token outliers that degrade feature map quality, a problem effectively mitigated by \\textit{register tokens}. As diffusion models increasingly adopt transformer architectures and move toward pixel-space training, they become closer in …",
+      "category": "cs.CV",
+      "publishedAt": "2026-05-15T16:27:10Z",
+      "discoveredAt": "2026-05-18T15:37:34.846Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "deffb1b98f7e77cd",
+      "title": "Skew-adaptive conformal prediction",
+      "url": "https://arxiv.org/abs/2605.16145v1",
+      "summary": "We develop a skew-adaptive extension of split conformal prediction for regression. The method starts from an asymmetric interval family centered at a point prediction and uses the gauge approach to deduce the conformity score induced by this family. The inverse hyperbolic sine transform of signed s…",
+      "category": "stat.ML",
+      "publishedAt": "2026-05-15T16:26:41Z",
+      "discoveredAt": "2026-05-18T15:37:34.846Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "bf2e38d0d3c6aa8b",
+      "title": "Look Before You Leap: Autonomous Exploration for LLM Agents",
+      "url": "https://arxiv.org/abs/2605.16143v1",
+      "summary": "Large language model based agents often fail in unfamiliar environments due to premature exploitation: a tendency to act on prior knowledge before acquiring sufficient environment-specific information. We identify autonomous exploration as a critical yet underexplored capability for building adapti…",
+      "category": "cs.AI",
+      "publishedAt": "2026-05-15T16:24:16Z",
+      "discoveredAt": "2026-05-18T15:37:34.846Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "7135d6e259f43748",
+      "title": "Property-Guided LLM Program Synthesis for Planning",
+      "url": "https://arxiv.org/abs/2605.16142v1",
+      "summary": "LLMs have shown impressive success in program synthesis, discovering programs that surpass prior solutions. However, these approaches rely on simple numeric scores to signal program quality, such as the value of the solution or the number of passed tests. Because a score offers no guidance on why a…",
+      "category": "cs.AI",
+      "publishedAt": "2026-05-15T16:23:35Z",
+      "discoveredAt": "2026-05-18T15:37:34.846Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "7666d0092511cc42",
+      "title": "Surrogate Neural Architecture Codesign Package (SNAC-Pack)",
+      "url": "https://arxiv.org/abs/2605.16138v1",
+      "summary": "Neural architecture search (NAS) is a powerful approach for automating model design, but existing methods often optimize for accuracy alone or rely on proxy metrics such as bit operations (BOPs) that correlate poorly with hardware cost. This gap is particularly large for FPGA deployment, where cost…",
+      "category": "cs.LG",
+      "publishedAt": "2026-05-15T16:18:43Z",
+      "discoveredAt": "2026-05-18T15:37:34.846Z"
+    },
+    {
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "id": "c0f2ba6229410451",
+      "title": "STABLE: Simulation-Ready Tabletop Layout Generation via a Semantics-Physics Dual System",
+      "url": "https://arxiv.org/abs/2605.16137v1",
+      "summary": "Generating simulation-ready tabletop scenes from task instructions is an intriguing and promising research direction in the field of Embodied AI. However, existing task-to-scene generation methods rely exclusively on large language models (LLMs) to predict scene layouts, inevitably yielding object …",
+      "category": "cs.CV",
+      "publishedAt": "2026-05-15T16:18:42Z",
+      "discoveredAt": "2026-05-18T15:37:34.846Z"
     },
     {
       "source": "hf-papers",
@@ -32,18 +450,29 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.976Z"
+      "discoveredAt": "2026-05-18T15:37:16.916Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "edbdd999367813db",
-      "title": "DexJoCo: A Benchmark and Toolkit for Task-Oriented Dexterous Manipulation on MuJoCo",
-      "url": "https://huggingface.co/papers/2605.16257",
+      "id": "c106f6f2e34a852e",
+      "title": "CiteVQA: Benchmarking Evidence Attribution for Trustworthy Document Intelligence",
+      "url": "https://huggingface.co/papers/2605.12882",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.976Z"
+      "discoveredAt": "2026-05-18T15:37:16.916Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "744a1966e84fc2b4",
+      "title": "MMSkills: Towards Multimodal Skills for General Visual Agents",
+      "url": "https://huggingface.co/papers/2605.13527",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.916Z"
     },
     {
       "source": "hf-papers",
@@ -54,62 +483,18 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.976Z"
+      "discoveredAt": "2026-05-18T15:37:16.916Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "3272f9e564370824",
-      "title": "InsightTok: Improving Text and Face Fidelity in Discrete Tokenization for Autoregressive Image Generation",
-      "url": "https://huggingface.co/papers/2605.14333",
+      "id": "edbdd999367813db",
+      "title": "DexJoCo: A Benchmark and Toolkit for Task-Oriented Dexterous Manipulation on MuJoCo",
+      "url": "https://huggingface.co/papers/2605.16257",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.976Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "4f279fe6e370cd99",
-      "title": "Nudging Beyond the Comfort Zone: Efficient Strategy-Guided Exploration for RLVR",
-      "url": "https://huggingface.co/papers/2605.15726",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.976Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "eaa9063fbd822b77",
-      "title": "ReactiveGWM: Steering NPC in Reactive Game World Models",
-      "url": "https://huggingface.co/papers/2605.15256",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.976Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "6574db468358a7bd",
-      "title": "Flash-GRPO: Efficient Alignment for Video Diffusion via One-Step Policy Optimization",
-      "url": "https://huggingface.co/papers/2605.15980",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.976Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "b56a68ccfe973d5e",
-      "title": "Distilling Long-CoT Reasoning through Collaborative Step-wise Multi-Teacher Decoding",
-      "url": "https://huggingface.co/papers/2605.02290",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.976Z"
+      "discoveredAt": "2026-05-18T15:37:16.916Z"
     },
     {
       "source": "hf-papers",
@@ -120,18 +505,62 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.976Z"
+      "discoveredAt": "2026-05-18T15:37:16.916Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "151221dc92de9abc",
-      "title": "Solvita: Enhancing Large Language Models for Competitive Programming via Agentic Evolution",
-      "url": "https://huggingface.co/papers/2605.15301",
+      "id": "3272f9e564370824",
+      "title": "InsightTok: Improving Text and Face Fidelity in Discrete Tokenization for Autoregressive Image Generation",
+      "url": "https://huggingface.co/papers/2605.14333",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.976Z"
+      "discoveredAt": "2026-05-18T15:37:16.916Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "b56a68ccfe973d5e",
+      "title": "Distilling Long-CoT Reasoning through Collaborative Step-wise Multi-Teacher Decoding",
+      "url": "https://huggingface.co/papers/2605.02290",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.916Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "6574db468358a7bd",
+      "title": "Flash-GRPO: Efficient Alignment for Video Diffusion via One-Step Policy Optimization",
+      "url": "https://huggingface.co/papers/2605.15980",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.916Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "4f279fe6e370cd99",
+      "title": "Nudging Beyond the Comfort Zone: Efficient Strategy-Guided Exploration for RLVR",
+      "url": "https://huggingface.co/papers/2605.15726",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.916Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "eaa9063fbd822b77",
+      "title": "ReactiveGWM: Steering NPC in Reactive Game World Models",
+      "url": "https://huggingface.co/papers/2605.15256",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.916Z"
     },
     {
       "source": "hf-papers",
@@ -142,7 +571,29 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.976Z"
+      "discoveredAt": "2026-05-18T15:37:16.916Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "151221dc92de9abc",
+      "title": "Solvita: Enhancing Large Language Models for Competitive Programming via Agentic Evolution",
+      "url": "https://huggingface.co/papers/2605.15301",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.916Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "b7ba8ae132e19e2b",
+      "title": "CM-EVS: Sparse Panoramic RGB-D-Pose Data for Complete Scene Coverage",
+      "url": "https://huggingface.co/papers/2605.15597",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.916Z"
     },
     {
       "source": "hf-papers",
@@ -153,18 +604,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.976Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "7a4672fd5fdce57c",
-      "title": "Unlocking Dense Metric Depth Estimation in VLMs",
-      "url": "https://huggingface.co/papers/2605.15876",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.976Z"
+      "discoveredAt": "2026-05-18T15:37:16.916Z"
     },
     {
       "source": "hf-papers",
@@ -175,51 +615,40 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.976Z"
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "4d8b3bb8e9dbd53d",
-      "title": "DiagnosticIQ: A Benchmark for LLM-Based Industrial Maintenance Action Recommendation from Symbolic Rules",
-      "url": "https://huggingface.co/papers/2605.08614",
+      "id": "7a4672fd5fdce57c",
+      "title": "Unlocking Dense Metric Depth Estimation in VLMs",
+      "url": "https://huggingface.co/papers/2605.15876",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.977Z"
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "4d38af716b52f254",
-      "title": "WorldAct: Activating Monolithic 3D Worlds into Interactive-Ready Object-Centric Scenes",
-      "url": "https://huggingface.co/papers/2605.15843",
+      "id": "cd9bb873e6431c2a",
+      "title": "Steered LLM Activations are Non-Surjective",
+      "url": "https://huggingface.co/papers/2604.09839",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.977Z"
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "0d8a19d213d52acb",
-      "title": "Look Before You Leap: Autonomous Exploration for LLM Agents",
-      "url": "https://huggingface.co/papers/2605.16143",
+      "id": "52da2935250fc4fa",
+      "title": "Sparse Autoencoders enable Robust and Interpretable Fine-tuning of CLIP models",
+      "url": "https://huggingface.co/papers/2605.15961",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.977Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "0e706c5f673442b0",
-      "title": "Learning from Failures: Correction-Oriented Policy Optimization with Verifiable Rewards",
-      "url": "https://huggingface.co/papers/2605.14539",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.977Z"
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
     },
     {
       "source": "hf-papers",
@@ -230,18 +659,40 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.977Z"
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "990431ae4ac9b8fc",
-      "title": "HodgeCover: Higher-Order Topological Coverage Drives Compression of Sparse Mixture-of-Experts",
-      "url": "https://huggingface.co/papers/2605.13997",
+      "id": "4d8b3bb8e9dbd53d",
+      "title": "DiagnosticIQ: A Benchmark for LLM-Based Industrial Maintenance Action Recommendation from Symbolic Rules",
+      "url": "https://huggingface.co/papers/2605.08614",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.977Z"
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "07a8ad26f419c5e6",
+      "title": "MobileEgo Anywhere: Open Infrastructure for long horizon egocentric data on commodity hardware",
+      "url": "https://huggingface.co/papers/2605.05945",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "4d38af716b52f254",
+      "title": "WorldAct: Activating Monolithic 3D Worlds into Interactive-Ready Object-Centric Scenes",
+      "url": "https://huggingface.co/papers/2605.15843",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
     },
     {
       "source": "hf-papers",
@@ -252,7 +703,40 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.977Z"
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "0d8a19d213d52acb",
+      "title": "Look Before You Leap: Autonomous Exploration for LLM Agents",
+      "url": "https://huggingface.co/papers/2605.16143",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "0e706c5f673442b0",
+      "title": "Learning from Failures: Correction-Oriented Policy Optimization with Verifiable Rewards",
+      "url": "https://huggingface.co/papers/2605.14539",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "806c484ae84ddc6b",
+      "title": "Efficient Image Synthesis with Sphere Latent Encoder",
+      "url": "https://huggingface.co/papers/2605.15592",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
     },
     {
       "source": "hf-papers",
@@ -263,7 +747,29 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.977Z"
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "990431ae4ac9b8fc",
+      "title": "HodgeCover: Higher-Order Topological Coverage Drives Compression of Sparse Mixture-of-Experts",
+      "url": "https://huggingface.co/papers/2605.13997",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "a90ad23569cb1693",
+      "title": "ChangeFlow -- Latent Rectified Flow for Change Detection in Remote Sensing",
+      "url": "https://huggingface.co/papers/2605.15375",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
     },
     {
       "source": "hf-papers",
@@ -274,7 +780,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.977Z"
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
     },
     {
       "source": "hf-papers",
@@ -285,7 +791,51 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-18T10:07:06.977Z"
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "aee7118db7b370ab",
+      "title": "Forgetting That Sticks: Quantization-Permanent Unlearning via Circuit Attribution",
+      "url": "https://huggingface.co/papers/2605.15138",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "63bb51b7dba8efbe",
+      "title": "Follow the Mean: Reference-Guided Flow Matching",
+      "url": "https://huggingface.co/papers/2605.10302",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "52e67d271bc27334",
+      "title": "AuralSAM2: Enabling SAM2 Hear Through Pyramid Audio-Visual Feature Prompting",
+      "url": "https://huggingface.co/papers/2506.01015",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "e728967638898f40",
+      "title": "Known By Their Actions: Fingerprinting LLM Browser Agents via UI Traces",
+      "url": "https://huggingface.co/papers/2605.14786",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-18T15:37:16.917Z"
     }
   ]
 }
