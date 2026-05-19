@@ -683,6 +683,9 @@
 "paper-write/paper-verify-before-handoff": |-
   论文写作交付前的最后一道检查闸。在宣告“改完了”之前，必须逐条运行硬检查清单：术语一致性、引用完整性、数据正确性、图表编号、交叉引用、字数格式、todo 残留、AIGC 痕迹与论证一致性——任意一项未通过，不能宣告完成。适合在准备提交或发给导师前把关，避免“看起来对了所以不查了”的致命后果。
 
+"paper-write/paper-workflow": |-
+  论文写作流程的路由入口。它本身不做具体写作或修改工作，而是根据当前阶段推荐最合适的 skill：从 bootstrap 初始化、target journal 定位、正文写作与修订、图表规划，到 submission 前的逐项审计和 rebuttal 回复。默认走 Nature 风格期刊流程，需要投会议时手动切换。适合在写论文的全过程中作为每次会话的起始点。
+
 "paper-write/paper-write": |-
   论文草稿生成 skill，从提纲逐节生成 LaTeX 正文。自动匹配 ICLR、NeurIPS、CVPR、ACL、IEEE 等会议与期刊的样式文件与篇幅限制，通过 DBLP 或 CrossRef 抓取真实 BibTeX 条目，杜绝 LLM 编造的虚假引用。整合 GPT-5.4 对每节做审查，适合写完方法论后希望快速产出初稿的研究者。
 
