@@ -1,12 +1,57 @@
 {
-  "fetchedAt": "2026-05-19T15:33:01.287Z",
+  "fetchedAt": "2026-05-19T20:01:27.972Z",
   "hn": [
     {
+      "id": "48196656",
+      "title": "Gemini 3.5 Flash: frontier intelligence with action",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+      "points": 174,
+      "comments": 1,
+      "createdAt": "2026-05-19T17:49:50Z",
+      "author": "meetpateltech"
+    },
+    {
+      "id": "48196609",
+      "title": "Gemini Omni",
+      "url": "https://deepmind.google/models/gemini-omni/",
+      "points": 102,
+      "comments": 43,
+      "createdAt": "2026-05-19T17:46:19Z",
+      "author": "meetpateltech"
+    },
+    {
+      "id": "48196570",
+      "title": "Gemini 3.5 Flash",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+      "points": 174,
+      "comments": 158,
+      "createdAt": "2026-05-19T17:43:45Z",
+      "author": "spectraldrift"
+    },
+    {
+      "id": "48196479",
+      "title": "Cursor Cloud Agents Down",
+      "url": "https://forum.cursor.com/t/cloud-agents-broken-ii/161036",
+      "points": 17,
+      "comments": 2,
+      "createdAt": "2026-05-19T17:37:19Z",
+      "author": "mopatches"
+    },
+    {
+      "id": "48195291",
+      "title": "Andrej Karpathy Joins Anthropic",
+      "url": "https://twitter.com/i/status/2056753169888334312",
+      "points": 15,
+      "comments": 0,
+      "createdAt": "2026-05-19T16:12:32Z",
+      "author": "kpw94"
+    },
+    {
       "id": "48194352",
-      "title": "Andrej Karpathy joins Anthropic",
+      "title": "I’ve joined Anthropic",
       "url": "https://twitter.com/karpathy/status/2056753169888334312",
-      "points": 94,
-      "comments": 14,
+      "points": 895,
+      "comments": 350,
       "createdAt": "2026-05-19T15:07:45Z",
       "author": "dmarcos"
     },
@@ -14,8 +59,8 @@
       "id": "48193524",
       "title": "Going full AI engineer, not touching code anymore",
       "url": "https://max.gp/writing/going-full-ai-engineer-not-touching-code-anymore/",
-      "points": 40,
-      "comments": 89,
+      "points": 47,
+      "comments": 108,
       "createdAt": "2026-05-19T14:08:53Z",
       "author": "maxheyer"
     },
@@ -23,8 +68,8 @@
       "id": "48193111",
       "title": "Anthropic Is Preparing for IPO and We Should Be Worried",
       "url": "https://www.vincentschmalbach.com/anthropic-ipo-developers-should-be-worried-v2/",
-      "points": 62,
-      "comments": 78,
+      "points": 74,
+      "comments": 86,
       "createdAt": "2026-05-19T13:30:58Z",
       "author": "vincent_s"
     },
@@ -32,8 +77,8 @@
       "id": "48191852",
       "title": "Show HN: Id-agent – Token efficient UUID alternative for AI agents",
       "url": "https://github.com/vostride/id-agent",
-      "points": 28,
-      "comments": 46,
+      "points": 29,
+      "comments": 49,
       "createdAt": "2026-05-19T11:16:56Z",
       "author": "pranshuchittora"
     },
@@ -42,7 +87,7 @@
       "title": "Open-Source Agentic QA Harness with Memory",
       "url": "https://github.com/vostride/agent-qa",
       "points": 50,
-      "comments": 7,
+      "comments": 8,
       "createdAt": "2026-05-19T09:53:01Z",
       "author": "pranshuchittora"
     },
@@ -59,7 +104,7 @@
       "id": "48188727",
       "title": "Sieve – scans Cursor/Claude chat history for leaked API keys",
       "url": "https://apps.apple.com/us/app/sieve-secret-scanner/id6767409365?mt=12",
-      "points": 17,
+      "points": 18,
       "comments": 3,
       "createdAt": "2026-05-19T03:06:45Z",
       "author": "helpful_human"
@@ -68,8 +113,8 @@
       "id": "48188183",
       "title": "The last six months in LLMs in five minutes",
       "url": "https://simonwillison.net/2026/May/19/5-minute-llms/",
-      "points": 598,
-      "comments": 486,
+      "points": 684,
+      "comments": 533,
       "createdAt": "2026-05-19T01:30:42Z",
       "author": "yakkomajuri"
     },
@@ -77,8 +122,8 @@
       "id": "48187680",
       "title": "What political censorship looks like inside an LLM's weights (Qwen 3.5)",
       "url": "https://vas-blog.pages.dev/qwen-censorship/",
-      "points": 79,
-      "comments": 40,
+      "points": 80,
+      "comments": 41,
       "createdAt": "2026-05-19T00:16:31Z",
       "author": "s314"
     },
@@ -90,51 +135,6 @@
       "comments": 40,
       "createdAt": "2026-05-18T21:59:34Z",
       "author": "Reaktornano"
-    },
-    {
-      "id": "48183793",
-      "title": "Show HN: Beacon - The open-source layer for local AI agent visibility",
-      "url": "https://github.com/Asymptote-Labs/agent-beacon",
-      "points": 20,
-      "comments": 8,
-      "createdAt": "2026-05-18T18:45:55Z",
-      "author": "jqdsouza"
-    },
-    {
-      "id": "48183748",
-      "title": "Agora-1: The Multi-Agent World Model",
-      "url": "https://odyssey.ml/introducing-agora-1",
-      "points": 120,
-      "comments": 22,
-      "createdAt": "2026-05-18T18:43:30Z",
-      "author": "olivercameron"
-    },
-    {
-      "id": "48183038",
-      "title": "Cutting inference cold starts by 40x with LP, FUSE, C/R, and CUDA-checkpoint",
-      "url": "https://modal.com/blog/truly-serverless-gpus",
-      "points": 85,
-      "comments": 18,
-      "createdAt": "2026-05-18T17:56:26Z",
-      "author": "charles_irl"
-    },
-    {
-      "id": "48182781",
-      "title": "Jury Sides with OpenAI, Sam Altman in Case Brought by Elon Musk",
-      "url": "https://www.wsj.com/tech/ai/jury-sides-with-openai-sam-altman-in-case-brought-by-elon-musk-933240ff",
-      "points": 18,
-      "comments": 1,
-      "createdAt": "2026-05-18T17:40:05Z",
-      "author": "jbredeche"
-    },
-    {
-      "id": "48182754",
-      "title": "Elon Musk has lost his lawsuit against Sam Altman and OpenAI",
-      "url": "https://techcrunch.com/2026/05/18/elon-musk-has-lost-his-lawsuit-against-sam-altman-and-openai/",
-      "points": 1030,
-      "comments": 521,
-      "createdAt": "2026-05-18T17:38:22Z",
-      "author": "nycdatasci"
     }
   ],
   "gh": [
@@ -143,8 +143,8 @@
       "fullName": "affaan-m/ECC",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "url": "https://github.com/affaan-m/ECC",
-      "stars": 187038,
-      "pushedAt": "2026-05-19T15:11:00Z",
+      "stars": 187121,
+      "pushedAt": "2026-05-19T17:51:04Z",
       "createdAt": "2026-01-18T00:51:51Z",
       "language": "JavaScript"
     },
@@ -153,8 +153,8 @@
       "fullName": "Significant-Gravitas/AutoGPT",
       "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
       "url": "https://github.com/Significant-Gravitas/AutoGPT",
-      "stars": 184429,
-      "pushedAt": "2026-05-19T13:57:43Z",
+      "stars": 184428,
+      "pushedAt": "2026-05-19T17:43:34Z",
       "createdAt": "2023-03-16T09:21:07Z",
       "language": "Python"
     },
@@ -163,8 +163,8 @@
       "fullName": "ollama/ollama",
       "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
       "url": "https://github.com/ollama/ollama",
-      "stars": 171742,
-      "pushedAt": "2026-05-19T02:51:08Z",
+      "stars": 171753,
+      "pushedAt": "2026-05-19T19:37:48Z",
       "createdAt": "2023-06-26T19:39:32Z",
       "language": "Go"
     },
@@ -173,7 +173,7 @@
       "fullName": "f/prompts.chat",
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
       "url": "https://github.com/f/prompts.chat",
-      "stars": 162518,
+      "stars": 162535,
       "pushedAt": "2026-05-19T04:29:32Z",
       "createdAt": "2022-12-05T13:54:13Z",
       "language": "HTML"
@@ -183,8 +183,8 @@
       "fullName": "huggingface/transformers",
       "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
       "url": "https://github.com/huggingface/transformers",
-      "stars": 160774,
-      "pushedAt": "2026-05-19T15:22:42Z",
+      "stars": 160784,
+      "pushedAt": "2026-05-19T19:02:41Z",
       "createdAt": "2018-10-29T13:56:00Z",
       "language": "Python"
     },
@@ -193,8 +193,8 @@
       "fullName": "NousResearch/hermes-agent",
       "description": "The agent that grows with you",
       "url": "https://github.com/NousResearch/hermes-agent",
-      "stars": 157634,
-      "pushedAt": "2026-05-19T15:09:11Z",
+      "stars": 157839,
+      "pushedAt": "2026-05-19T19:50:26Z",
       "createdAt": "2025-07-22T22:22:28Z",
       "language": "Python"
     },
@@ -203,8 +203,8 @@
       "fullName": "langgenius/dify",
       "description": "Production-ready platform for agentic workflow development.",
       "url": "https://github.com/langgenius/dify",
-      "stars": 141898,
-      "pushedAt": "2026-05-19T14:08:27Z",
+      "stars": 141910,
+      "pushedAt": "2026-05-19T18:00:54Z",
       "createdAt": "2023-04-12T07:40:24Z",
       "language": "TypeScript"
     },
@@ -213,8 +213,8 @@
       "fullName": "open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
       "url": "https://github.com/open-webui/open-webui",
-      "stars": 137760,
-      "pushedAt": "2026-05-15T00:34:23Z",
+      "stars": 137797,
+      "pushedAt": "2026-05-19T18:25:42Z",
       "createdAt": "2023-10-06T22:08:27Z",
       "language": "Python"
     },
@@ -223,8 +223,8 @@
       "fullName": "langchain-ai/langchain",
       "description": "The agent engineering platform.",
       "url": "https://github.com/langchain-ai/langchain",
-      "stars": 137122,
-      "pushedAt": "2026-05-19T09:09:58Z",
+      "stars": 137134,
+      "pushedAt": "2026-05-19T19:35:00Z",
       "createdAt": "2022-10-17T02:58:36Z",
       "language": "Python"
     },
@@ -233,8 +233,8 @@
       "fullName": "firecrawl/firecrawl",
       "description": "🔥 Search, scrape, and clean the web for AI agents.",
       "url": "https://github.com/firecrawl/firecrawl",
-      "stars": 121758,
-      "pushedAt": "2026-05-19T14:51:15Z",
+      "stars": 121859,
+      "pushedAt": "2026-05-19T19:12:22Z",
       "createdAt": "2024-04-15T21:02:29Z",
       "language": "TypeScript"
     },
@@ -243,7 +243,7 @@
       "fullName": "ChatGPTNextWeb/NextChat",
       "description": "✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android |  Linux | Windows",
       "url": "https://github.com/ChatGPTNextWeb/NextChat",
-      "stars": 88052,
+      "stars": 88053,
       "pushedAt": "2026-05-15T01:19:01Z",
       "createdAt": "2023-03-10T18:27:54Z",
       "language": "TypeScript"
@@ -253,7 +253,7 @@
       "fullName": "nextlevelbuilder/ui-ux-pro-max-skill",
       "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
       "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 80488,
+      "stars": 80556,
       "pushedAt": "2026-04-03T05:08:19Z",
       "createdAt": "2025-11-30T11:36:31Z",
       "language": "Python"
@@ -263,8 +263,8 @@
       "fullName": "lobehub/lobehub",
       "description": "🤯 LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team.",
       "url": "https://github.com/lobehub/lobehub",
-      "stars": 77341,
-      "pushedAt": "2026-05-19T15:15:34Z",
+      "stars": 77350,
+      "pushedAt": "2026-05-19T18:44:18Z",
       "createdAt": "2023-05-21T07:19:12Z",
       "language": "TypeScript"
     },
@@ -273,7 +273,7 @@
       "fullName": "thedotmack/claude-mem",
       "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
       "url": "https://github.com/thedotmack/claude-mem",
-      "stars": 76768,
+      "stars": 76811,
       "pushedAt": "2026-05-17T05:37:32Z",
       "createdAt": "2025-08-31T20:50:03Z",
       "language": "TypeScript"
@@ -283,13 +283,287 @@
       "fullName": "bytedance/deer-flow",
       "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
       "url": "https://github.com/bytedance/deer-flow",
-      "stars": 68662,
+      "stars": 68691,
       "pushedAt": "2026-05-19T14:34:51Z",
       "createdAt": "2025-05-07T02:50:19Z",
       "language": "Python"
     }
   ],
   "rss": [
+    {
+      "id": "e3cd19d71ea917c9",
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "title": "AR-VLA 提出适用于视觉-语言-行动模型的自回归行动专家",
+      "url": "https://huggingface.co/papers/2603.10126",
+      "summary": "",
+      "category": "大模型",
+      "score": 5,
+      "cn": "AR-VLA 将行动预测建模为自回归生成任务，用于视觉-语言-行动模型。该方法使模型在复杂环境中做出更连贯精准的决策。实验显示，AR-VLA 在多项机器人操控和导航 benchmark 上获得明显提升，为具身智能体提供了更稳定的行动推理方式。",
+      "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.10126/gradient.png",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T19:55:29.805Z"
+    },
+    {
+      "id": "48367cfd411b9eba",
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "title": "WavFlow 提出波形空间音频生成方法",
+      "url": "https://huggingface.co/papers/2605.18749",
+      "summary": "",
+      "category": "TTS",
+      "score": 4,
+      "cn": "WavFlow 是一种直接在波形空间进行音频生成的方法，绕过了传统声学特征提取与频谱建模流程。该方案将生成过程从梅尔频谱等中间表示迁移至原始音频信号域，旨在保留更完整的声学细节与时间分辨率。相关工作发表于 arXiv，为语音合成与通用音频生成提供了新的技术路线。",
+      "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.18749/gradient.png",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T19:55:29.805Z"
+    },
+    {
+      "id": "3d6aa1b892f53b50",
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "title": "对称性兼容原则提出优化器设计新方法",
+      "url": "https://huggingface.co/papers/2605.18106",
+      "summary": "",
+      "category": "训练",
+      "score": 4,
+      "cn": "一篇新论文提出对称性兼容原则，为优化器设计提供理论指导。该方法可应用于嵌入层、语言模型头、SwiGLU MLP 和 MoE 路由器等模块，通过保持参数空间的对称性来提升训练效率与模型性能。研究为理解神经网络优化机制提供了新视角。",
+      "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.18106/gradient.png",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T19:55:29.805Z"
+    },
+    {
+      "id": "17b82fc07613e200",
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "title": "DexHoldem 将德扑策略推理与灵巧手操控结合",
+      "url": "https://huggingface.co/papers/2605.18727",
+      "summary": "",
+      "category": "Agent",
+      "score": 4,
+      "cn": "DexHoldem 提出了一套结合灵巧操控与策略推理的具身系统，让机械手在德州扑克场景中完成抓牌、博弈等物理交互。该工作将牌局策略学习与灵巧操控统一在同一框架下，使 agent 不仅知道打什么牌，还能自己动手。在仿真环境中，DexHoldem 在多轮博弈中的胜率高于纯策略模型，展示了具身智能在需要复杂操作与博弈推理的任务上的潜质。",
+      "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.18727/gradient.png",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T19:55:29.805Z"
+    },
+    {
+      "id": "162994cd7a7c251c",
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "title": "OSCAR 提出 2-bit KV Cache 离线旋转量化方法",
+      "url": "https://huggingface.co/papers/2605.17757",
+      "summary": "",
+      "category": "训练",
+      "score": 4,
+      "cn": "OSCAR 提出了一种名为离线光谱协方差感知旋转（OSCAR）的 2-bit KV Cache 量化技术，通过旋转矩阵对齐激活与权重分布，在保持模型精度的同时显著压缩缓存占用。实验表明，该方法在多种大语言模型上达到近乎无损的量化效果，为长序列推理场景提供了高效的内存优化方案。",
+      "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.17757/gradient.png",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T19:55:29.805Z"
+    },
+    {
+      "id": "a1a8a43bf6b86a0b",
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "title": "VideoSeeker 通过原生 agent 工具调用提升视频实例级理解能力",
+      "url": "https://huggingface.co/papers/2605.16079",
+      "summary": "",
+      "category": "视频生成模型",
+      "score": 4,
+      "cn": "VideoSeeker 提出一种新框架，将视频理解任务与原生 agent 工具调用深度结合。它通过激励模型主动调用外部工具（如目标检测、跟踪、OCR 等），在推理过程中获取实例级细粒度信息，从而显著提升对视频中物体、动作和时序关系的理解准确率。该方法在多个视频 QA 数据集上取得领先成绩，为视频模型与 agent 系统的融合提供了新思路。",
+      "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.16079/gradient.png",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T19:55:29.805Z"
+    },
+    {
+      "id": "95d6528ee72c7cc9",
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "title": "多模态 LLM 在临床评分中表现出集中趋势偏差",
+      "url": "https://huggingface.co/papers/2605.16386",
+      "summary": "",
+      "category": "评测",
+      "score": 4,
+      "cn": "一篇新论文系统性地审计了多模态大语言模型作为临床评分器时的表现，发现它们普遍存在集中趋势偏差——倾向于给出中间分数而非极端值。研究通过设计临床序数评分任务，揭示了 GPT-4V 等模型在医学影像评估中的系统性偏差，为将 LLM 用于自动化临床评分提供了重要的校准依据。",
+      "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.16386/gradient.png",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T19:55:29.805Z"
+    },
+    {
+      "id": "9ca83984bef5637d",
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "title": "SCICONVBENCH 发布多轮澄清对话评测基准",
+      "url": "https://huggingface.co/papers/2605.18630",
+      "summary": "",
+      "category": "评测",
+      "score": 4,
+      "cn": "SCICONVBENCH 是为评估大模型在计算科学场景下进行多轮澄清对话能力而设计的评测基准。它要求模型在面对模糊的科学计算任务描述时，主动与用户交互、提问并逐步明确需求，直至形成可执行的正式任务规约。该基准填补了现有评测对任务澄清阶段关注不足的空白，聚焦于模型能否像人一样在初始需求不清晰时引导对话走向精确的表述。",
+      "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.18630/gradient.png",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T19:55:29.805Z"
+    },
+    {
+      "id": "066882eb38ec7f14",
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "title": "TopoPrimer 为时序预测模型补充拓扑上下文",
+      "url": "https://huggingface.co/papers/2605.15035",
+      "summary": "",
+      "category": "其他",
+      "score": 4,
+      "cn": "TopoPrimer 是一项提出为时序预测模型提供拓扑上下文的研究。该方法通过挖掘数据中的拓扑结构信息，帮助模型捕捉传统方法忽略的空间与关系特征，在多个基准上取得显著提升。论文已在 Hugging Face 发布。",
+      "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.15035/gradient.png",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T19:55:29.805Z"
+    },
+    {
+      "id": "a3537895448aee25",
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "title": "Meta 在 Llamacon 活动上公布 Llama 模型系列新消息",
+      "url": "https://ai.meta.com/blog/llamacon-llama-news/",
+      "summary": "",
+      "category": "大模型",
+      "score": 5,
+      "cn": "Meta 在其首届 Llamacon 开发者活动上发布了多项与 Llama 模型系列相关的重大更新。官方尚未透露具体模型版本或技术细节，但这次活动被视为 Llama 生态扩展的关键节点，预计将涉及新模型发布、工具链升级以及社区合作计划的推进。Meta 希望通过 Llamacon 进一步巩固其在开放模型领域的领先地位。",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
+      "id": "f4d59c009a3a2d40",
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "title": "Meta 发布 HuBERT 自监督语音表示学习研究",
+      "url": "https://ai.meta.com/blog/hubert-self-supervised-representation-learning-for-speech-recognition-generation-and-compression/",
+      "summary": "",
+      "category": "ASR",
+      "score": 4,
+      "cn": "Meta AI 发布 HuBERT 研究，提出一种自监督语音表示学习方法，可用于语音识别、生成与压缩。HuBERT 通过迭代聚类与掩码预测，从无标注语音中学习丰富的声学与语言表示，在多个基准上取得优异表现。这项研究为语音领域的自监督学习提供了更具竞争力的基线方法。",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
+      "id": "d3a69a504774063d",
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "title": "Meta 发布 Llama 3.1 AI 责任报告",
+      "url": "https://ai.meta.com/blog/meta-llama-3-1-ai-responsibility/",
+      "summary": "",
+      "category": "安全",
+      "score": 3,
+      "cn": "Meta 发布了 Llama 3.1 的 AI 责任报告，详细阐述了该大模型在安全、公平性、隐私等方面的评估与治理措施。报告涵盖了红队测试、内容过滤机制以及使用指南，旨在为开源模型的负责任部署提供参考框架。",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
+      "id": "18d629ce37f8081b",
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "title": "Meta AI 探讨 LLM 微调与其他技术的选择时机",
+      "url": "https://ai.meta.com/blog/when-to-fine-tune-llms-vs-other-techniques/",
+      "summary": "",
+      "category": "训练",
+      "score": 3,
+      "cn": "Meta AI 发布了一篇技术博客，系统梳理了何时对大型语言模型进行微调、何时采用提示工程或检索增强生成等替代方案。文章从任务复杂度、数据可用性、成本与延迟等维度展开对比，帮助开发者根据实际场景做出更合理的决策。对于正在权衡模型定制路径的团队来说，这篇内容提供了清晰的参考框架。",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
+      "id": "7898b0994d0f7b50",
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "title": "Meta AI 转向通用 AI 以更好识别违规内容",
+      "url": "https://ai.meta.com/blog/the-shift-to-generalized-ai-to-better-identify-violating-content/",
+      "summary": "",
+      "category": "安全",
+      "score": 3,
+      "cn": "Meta AI 宣布将其内容审核策略从专用模型转向通用 AI 方法，以更准确地识别平台上的违规内容。这一转变意味着模型需要承担更复杂的语义理解任务，而非此前针对特定类型违禁品的窄适配方案。Meta 表示新方法在多项测试中减少了漏检，同时兼顾了表达自由与社区规范之间的平衡，对大型社交平台的内容治理有借鉴意义。",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
+      "id": "5622e39aecf5664f",
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "title": "Meta AI 发起 WMT 多语言翻译挑战并征集算力赞助",
+      "url": "https://ai.meta.com/blog/flores-researchers-kick-off-multilingual-translation-challenge-at-wmt-and-call-for-compute-grants/",
+      "summary": "",
+      "category": "评测",
+      "score": 3,
+      "cn": "Meta AI 旗下 Flores 研究团队在 WMT 评测中发起新一轮多语言翻译挑战，面向全球征集算力赞助。该比赛聚焦低资源语种与跨语言翻译能力，旨在推动机器翻译领域覆盖更多语言，提升模型的泛化表现。通过公开竞赛与算力共享，Meta 希望加速翻译技术的开源演进，为学术界和开发者提供标准化评估平台。",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
+      "id": "0bc8c8213ee121bf",
+      "source": "xai",
+      "sourceName": "xAI",
+      "title": "xAI 将 Grok 集成至 OpenClaw",
+      "url": "https://x.ai/news/grok-openclaw",
+      "summary": "",
+      "category": "大模型",
+      "score": 3,
+      "cn": "xAI 宣布 Grok 模型接入 OpenClaw 平台，用户可在 OpenClaw 中直接调用 Grok 的对话与推理能力。这次集成拓展了 Grok 的应用场景，为开发者提供了新的部署选择。",
+      "image": "https://x.ai/images/news/grok-openclaw.png",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
+      "id": "e4e059ae9ebc65ab",
+      "source": "google-ai",
+      "sourceName": "Google AI",
+      "title": "Google 发布 Gemini 3.5 系列模型",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+      "summary": "At Google I/O we released Gemini 3.5, our latest series of models combining frontier intelligence with action.",
+      "category": "大模型",
+      "score": 5,
+      "cn": "Google 在 I/O 大会上正式推出 Gemini 3.5 系列模型，将推理能力与自主行动能力整合在一起。新模型延续多模态和长上下文特性，同时强化了 agent 导向的工具调用与决策能力。Gemini 3.5 的发布表明 Google 正在将前沿模型从单纯的语言理解推进到可执行任务的世界模型层面。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3-5__keywordstatement__metacard__light.width-1300.png",
+      "publishedAt": "2026-05-19T17:45:00.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
+      "id": "ab50a6a962f16cad",
+      "source": "google-ai",
+      "sourceName": "Google AI",
+      "title": "Google I/O 2026 发布全新 Gemini agent 时代更新",
+      "url": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
+      "summary": "The latest from Google I/O: See how we’re helping you get more done with Gemini.",
+      "category": "大模型",
+      "score": 4,
+      "cn": "Google 在 I/O 2026 大会上宣布进入 agent 化的 Gemini 时代。与往年侧重助手能力不同，今年 Gemini 被定位为可以主动协调任务的 agent 平台。Google 展示了 Gemini 在日程安排、信息检索和多步骤操作上的新进展，强调 agent 将成为用户与 AI 交互的主要方式，这一方向与当前行业从问答系统向 agent 协作的转型趋势一致。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/SundarKeynote_tempsocial.width-1300.png",
+      "publishedAt": "2026-05-19T17:45:00.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
+      "id": "8fc9597adf555bd4",
+      "source": "google-ai",
+      "sourceName": "Google AI",
+      "title": "Google 发布 AI Mode 搜索方式调查",
+      "url": "https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/",
+      "summary": "One year after launch, see how AI Mode’s users are shifting from keywords to natural language queries.",
+      "category": "其他",
+      "score": 3,
+      "cn": "Google 推出 AI Mode 搜索功能一周年后，公布了美国用户的使用数据。这项功能鼓励用户用自然语言提问替代传统关键词搜索，从结果来看，用户行为正在发生明显转变，更多查询以对话式长句展开。目前 AI Mode 尚处于早期反馈积累阶段，Google 借此推动搜索体验向更智能的方向演化。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AI_Mode_US.width-1300.png",
+      "publishedAt": "2026-05-19T17:45:00.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
+      "id": "4a09b699f249cb6f",
+      "source": "google-ai",
+      "sourceName": "Google AI",
+      "title": "Google Workspace 新增语音能力并推出 Google Pics 设计工具",
+      "url": "https://blog.google/products-and-platforms/products/workspace/workspace-updates/",
+      "summary": "Announcing new voice capabilities in Gmail, Docs and Keep, a new design tool called Google Pics and updates to AI Inbox.",
+      "category": "其他",
+      "score": 3,
+      "cn": "Google Workspace 更新加入语音交互能力，Gmail、Docs 和 Keep 用户可通过语音输入或指令操作。Google Pics 也正式发布，定位为轻量级设计工具。AI Inbox 同步获得更新，邮件摘要与回复建议更贴近实际办公场景。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/GoogleWorkspace-IO.width-1300.png",
+      "publishedAt": "2026-05-19T17:45:00.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
     {
       "id": "4e318fb55a644cff",
       "source": "hf-papers",
@@ -752,6 +1026,19 @@
       "cn": "Meta 披露了其平台应用 AI 技术识别虚假信息的具体方法，包括分析内容模式、识别可疑传播路径等。这篇技术博客分享了已有能力在实际审核流程中的运作方式，对理解大型平台如何将 AI 用于内容治理有参考价值。",
       "publishedAt": null,
       "discoveredAt": "2026-05-19T15:25:04.678Z"
+    },
+    {
+      "id": "4f1431164463c271",
+      "source": "openai",
+      "sourceName": "OpenAI",
+      "title": "OpenAI 推出内容溯源工具套件",
+      "url": "https://openai.com/index/advancing-content-provenance",
+      "summary": "OpenAI advances AI content provenance with Content Credentials, SynthID, and a verification tool to help people identify and trust AI-generated media.",
+      "category": "安全",
+      "score": 3,
+      "cn": "OpenAI 发布内容溯源技术更新，整合 Content Credentials 与 SynthID 水印方案，并推出独立验证工具。这套工具旨在帮助用户识别 AI 生成内容的来源，提升数字媒体可信度。OpenAI 表示，内容溯源是构建透明 AI 生态的关键环节，未来将逐步集成到更多产品中。",
+      "publishedAt": "2026-05-19T10:45:00.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
     },
     {
       "id": "ea1a8f1cb18a7e12",
@@ -3645,6 +3932,20 @@
       "discoveredAt": "2026-05-19T03:38:07.759Z"
     },
     {
+      "id": "6a0caae59b70a0bf",
+      "source": "google-ai",
+      "sourceName": "Google AI",
+      "title": "Google AI 发布 AI 生成内容在线识别方案",
+      "url": "https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/",
+      "summary": "",
+      "category": "安全",
+      "score": 3,
+      "cn": "Google AI 推出了一套面向在线场景的 AI 生成内容识别方案，旨在帮助用户分辨媒体文件中是否存在 AI 伪造痕迹。该工具基于内部检测模型与内容凭证技术，可对图像、音频和视频进行标记与验证，减少虚假信息传播的风险。Google 同步开放了部分检测接口供第三方平台接入，以推动行业建立更透明的 AI 内容溯源标准。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/FINAL_SOCIAL_HERO.width-1300.png",
+      "publishedAt": "2026-05-19T00:00:00.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
       "id": "ae362949419e3f08",
       "source": "nvidia",
       "sourceName": "NVIDIA",
@@ -4048,6 +4349,19 @@
       "cn": "NeurIPS 2021 上，Meta AI 展出了多项前沿研究，包括具身智能体、无监督语音识别和机器人学习。智能体在 3D 环境中通过与物体交互完成任务，语音识别系统不依赖标注数据提升了识别性能，这些工作反映了 Meta 在通用 AI 与感知能力上的持续投入。",
       "publishedAt": null,
       "discoveredAt": "2026-05-18T19:46:01.201Z"
+    },
+    {
+      "id": "2758b59a9d96871d",
+      "source": "deepmind",
+      "sourceName": "DeepMind",
+      "title": "DeepMind 利用 Co-Scientist 发现逆转细胞衰老的遗传因子",
+      "url": "https://deepmind.google/blog/fast-tracking-genetic-leads-to-reverse-cellular-aging/",
+      "summary": "Biologists use Co-Scientist to find novel factors that successfully rejuvenate human cells.",
+      "category": "其他",
+      "score": 5,
+      "cn": "DeepMind 将其 AI 系统 Co-Scientist 应用于生物学领域，帮助研究人员快速筛选出能够逆转人类细胞衰老的遗传因子。这项发现验证了 AI 在加速复杂生物过程发现中的潜力，为衰老干预研究开辟了新路径。",
+      "publishedAt": "2026-05-18T18:21:39.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
     },
     {
       "id": "c823abd459a208b4",
@@ -6782,6 +7096,48 @@
       "discoveredAt": "2026-05-19T03:38:07.759Z"
     },
     {
+      "id": "c120575d799b8685",
+      "source": "deepmind",
+      "sourceName": "DeepMind",
+      "title": "DeepMind 推出 Project Genie 街景驱动场景生成能力",
+      "url": "https://deepmind.google/blog/simulate-real-world-places-with-project-genie-and-street-view/",
+      "summary": "We’re expanding access to Google AI Ultra subscribers globally and introducing a new capability powered by Street View.",
+      "category": "3D",
+      "score": 4,
+      "cn": "DeepMind 为 Google AI Ultra 订阅用户解锁新能力：Project Genie 引入街景数据驱动场景生成。用户可基于真实地理位置与街景图像生成三维环境的视觉模拟。该功能突破了传统文本到 3D 的抽象限制，让 AI 直接学习真实街景的几何与语义结构，生成结果在空间一致性上显著优于此前的方法。面向全球部分城市开放，后续将扩展更多区域。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/projectgenie-social.width-1300.png",
+      "publishedAt": "2026-05-17T19:53:18.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
+      "id": "6ff85c3103b9c554",
+      "source": "deepmind",
+      "sourceName": "DeepMind",
+      "title": "DeepMind 发布 Gemini Omni",
+      "url": "https://deepmind.google/blog/introducing-gemini-omni/",
+      "summary": "",
+      "category": "大模型",
+      "score": 5,
+      "cn": "DeepMind 正式发布 Gemini Omni，一款强调多模态统一感知与生成能力的全新模型。Gemini Omni 在文本、图像、音频、视频的输入与输出之间实现了端到端融合，支持任意模态的混合推理与实时交互，不再需要拼接多个独立专家模型。这一架构设计大幅降低了跨模态任务中的信息损失与延迟，为更自然的人机对话和多媒体理解场景提供了原生能力基础。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/GeminiOmni_social.width-1300.png",
+      "publishedAt": "2026-05-17T19:50:57.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
+      "id": "c24549cf8179fd12",
+      "source": "deepmind",
+      "sourceName": "DeepMind",
+      "title": "DeepMind 发布 Google Antigravity 2.0",
+      "url": "https://deepmind.google/blog/introducing-google-antigravity-2-0/",
+      "summary": "",
+      "category": "其他",
+      "score": 5,
+      "cn": "DeepMind 推出 Google Antigravity 2.0，在反重力技术方向取得新进展。该项目延续了对非推进式悬浮力场的控制探索，新版本在系统稳定性与操控精度上有所提升，为未来交通与空间基建提供了技术储备。",
+      "image": "https://antigravity.google/assets/image/sitecards/sitecard-default.png",
+      "publishedAt": "2026-05-17T19:43:45.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
       "id": "c4f1ef0feab176a0",
       "source": "openai",
       "sourceName": "OpenAI",
@@ -6988,6 +7344,34 @@
       "image": "https://x.ai/images/news/funding.webp",
       "publishedAt": "2024-05-26T00:00:00Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z"
+    },
+    {
+      "id": "548bdf100a67ce04",
+      "source": "deepmind",
+      "sourceName": "DeepMind",
+      "title": "DeepMind 发布 Gemini for Science 科学探索工具集",
+      "url": "https://deepmind.google/blog/gemini-for-science-ai-experiments-and-tools-for-a-new-era-of-discovery/",
+      "summary": "A collection of science tools and experiments to expand the scale and precision of scientific exploration.",
+      "category": "其他",
+      "score": 4,
+      "cn": "DeepMind 推出 Gemini for Science，一套面向科学研究的 AI 实验与工具集合，旨在提升科学探索的规模与精度。该工具集整合了 Gemini 模型在数据分析、模拟和推理方面的能力，帮助研究人员加速从假设生成到实验验证的流程。这是 AI 在基础科学领域的一次系统化落地尝试。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/science__keyword__blog-header.width-1300.jpg",
+      "publishedAt": "2026-05-17T13:50:34.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
+      "id": "ce11f0ad142d8bff",
+      "source": "deepmind",
+      "sourceName": "DeepMind",
+      "title": "DeepMind 扩展内容溯源工具以揭示编辑历史",
+      "url": "https://deepmind.google/blog/making-it-easier-to-understand-how-content-was-created-and-edited/",
+      "summary": "We're expanding our tools to help you understand how content was created and edited across the web.",
+      "category": "其他",
+      "score": 3,
+      "cn": "DeepMind 正在拓展其溯源工具，帮助用户更清晰地了解网络内容的创作和编辑过程。这些功能旨在追踪内容来源与修改痕迹，提升数字信息的透明度，适用于新闻、文档和创意作品等场景。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/FINAL_SOCIAL_HERO.width-1300.png",
+      "publishedAt": "2026-05-17T13:43:50.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
     },
     {
       "id": "8e556b9d08583ef3",
@@ -7725,6 +8109,58 @@
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
     {
+      "id": "dc51e9439f713d71",
+      "source": "deepmind",
+      "sourceName": "DeepMind",
+      "title": "DeepMind 利用 Co-Scientist 识别新发传染病分子开关",
+      "url": "https://deepmind.google/blog/finding-the-molecular-switches-behind-new-infectious-diseases/",
+      "summary": "Clare Bryant uses Co-Scientist to identify genetic triggers in emerging infectious diseases.",
+      "category": "其他",
+      "score": 3,
+      "cn": "DeepMind 发布了一项研究，Clare Bryant 团队利用 Co-Scientist 工具识别新发传染病背后的遗传触发因素。这项应用展示了 AI 在病原体分子机制探索中的潜力，为疾病防控提供了新的研究路径。",
+      "publishedAt": "2026-05-16T08:16:06.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
+      "id": "ec8cac2807cd8c53",
+      "source": "deepmind",
+      "sourceName": "DeepMind",
+      "title": "DeepMind 用 Co-Scientist 加速肝脏疾病机制发现",
+      "url": "https://deepmind.google/blog/accelerating-discovery-of-liver-disease-mechanisms/",
+      "summary": "Filippo Menolascina uses Co-Scientist to identify new liver disease treatments and explain why existing drugs only help certain patients.",
+      "category": "其他",
+      "score": 4,
+      "cn": "DeepMind 与科学家合作，将 Co-Scientist 应用于肝脏疾病研究。Filippo Menolascina 利用该工具识别新的治疗机制，并解释为何现有药物只对部分患者有效。这展现了 AI 在生物医学发现中的实际价值。",
+      "publishedAt": "2026-05-16T08:00:15.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
+      "id": "d73753090118c957",
+      "source": "deepmind",
+      "sourceName": "DeepMind",
+      "title": "DeepMind 联合波士顿儿童医院与 MIT 探索 ALS 新疗法",
+      "url": "https://deepmind.google/blog/uniting-biological-toolkits-for-a-new-approach-to-als/",
+      "summary": "Co-Scientist unites Boston Children’s Hospital and MIT’s labs to explore new RNA-based treatments for ALS.",
+      "category": "其他",
+      "score": 3,
+      "cn": "DeepMind 的 Co-Scientist 平台将波士顿儿童医院与 MIT 实验室连接起来，共同探索基于 RNA 的肌萎缩侧索硬化症新疗法。这一跨机构合作整合了生物学工具与方法，为神经退行性疾病研究开辟了新的路径。",
+      "publishedAt": "2026-05-16T07:53:11.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
+      "id": "68b912792fc08f50",
+      "source": "deepmind",
+      "sourceName": "DeepMind",
+      "title": "DeepMind WeatherNext 协助国家飓风中心预测飓风梅丽莎历史性登陆",
+      "url": "https://deepmind.google/blog/how-weathernext-helped-the-national-hurricane-center-better-predict-hurricane-melissas-historic-landfall-in-jamaica/",
+      "summary": "Learn how our WeatherNext AI model help forecasters give communities unprecedented time to prepare ahead of the historic Hurricane Melissa.",
+      "category": "其他",
+      "score": 4,
+      "cn": "DeepMind 的 WeatherNext 模型在预测飓风梅丽莎时展现了实用价值。该模型帮助美国国家飓风中心提前数天预判了飓风在牙买加的历史性登陆路径与强度，为应急部门争取到更充裕的准备时间。与常规数值预报相比，WeatherNext 在计算效率和预报精度上均有提升，证明了 AI 在极端天气预警中可发挥实质作用。",
+      "publishedAt": "2026-05-16T03:14:17.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
       "id": "002d50d67b58ccc8",
       "source": "google-ai",
       "sourceName": "Google AI",
@@ -7750,6 +8186,20 @@
       "cn": "OpenAI 宣布与马耳他政府达成合作，向该国所有公民提供 ChatGPT Plus 订阅，并配套 AI 技能培训课程。这一合作旨在扩大 AI 工具的普及范围，帮助居民在实际场景中建立负责任地使用 AI 的能力。对于 OpenAI 而言，这是一次与国家层面的教育合作尝试，项目本身不涉及新模型或技术发布。",
       "publishedAt": "2026-05-16T00:00:00.000Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z"
+    },
+    {
+      "id": "ec1bcc4fbeadc7bf",
+      "source": "deepmind",
+      "sourceName": "DeepMind",
+      "title": "DeepMind 发布 Gemini 3.5",
+      "url": "https://deepmind.google/blog/gemini-3-5-frontier-intelligence-with-action/",
+      "summary": "Gemini 3.5 is built to help you execute complex, agentic workflows.",
+      "category": "大模型",
+      "score": 5,
+      "cn": "Google DeepMind 正式发布 Gemini 3.5，将前沿语言智能与 agent 执行能力结合。新模型不仅延续 Gemini 系列在推理和知识方面的优势，更在构建复杂、多步骤的自主工作流方面做出关键突破。用户可以借助 Gemini 3.5 的 action 机制，让模型直接调用工具、操作 API 并完成连贯的任务链条，而不仅仅是生成文本响应。这标志着大模型正从对话助手迈向主动执行系统的进化方向。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3-5__keywordstatement__metacard__light.width-1300.png",
+      "publishedAt": "2026-05-15T22:50:12.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
     },
     {
       "id": "2fb16f25155388c8",
@@ -8576,6 +9026,19 @@
       "discoveredAt": "2026-05-17T19:12:01.330Z"
     },
     {
+      "id": "28fd7a886b8b60cc",
+      "source": "deepmind",
+      "sourceName": "DeepMind",
+      "title": "DeepMind 发布 Co-Scientist 多智能体科研助手",
+      "url": "https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research/",
+      "summary": "Introducing Co-Scientist, a collaborative AI partner built with Gemini to help researchers accelerate scientific breakthroughs.",
+      "category": "Agent",
+      "score": 5,
+      "cn": "DeepMind 推出 Co-Scientist，一个基于 Gemini 的多智能体协作系统，旨在帮助科研团队加速科学发现。该系统通过多个专门 agent 分工合作，覆盖假设生成、实验设计、文献分析等环节，为研究人员提供端到端的智能辅助。Co-Scientist 的发布标志着 AI 在科学研究领域的应用从单点工具向系统性协作伙伴迈进。",
+      "publishedAt": "2026-05-12T14:40:07.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
       "id": "38002720a806adce",
       "source": "openai",
       "sourceName": "OpenAI",
@@ -9198,6 +9661,20 @@
       "image": "https://images.ctfassets.net/kftzwdyauwt9/Aj1UBJC1Kpt5IYhqrwOn4/0b039f2804579e9bbe42a67f8316a5c0/System_Card_16x9.jpg?w=1600&h=900&fit=fill",
       "publishedAt": "2026-05-05T17:35:56.165Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z"
+    },
+    {
+      "id": "4e60ba9595b8ef99",
+      "source": "google-ai",
+      "sourceName": "Google AI",
+      "title": "Google 发布 2026 年 4 月 AI 更新汇总",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-april-2026/",
+      "summary": "Here are Google’s latest AI updates from April 2026",
+      "category": "其他",
+      "score": 3,
+      "cn": "Google 在其官方博客汇总了 2026 年 4 月的 AI 研究与产品进展，涵盖模型能力提升、新工具上线及生态合作动态。此次公告未披露单一重大发布，而是呈现本月多个团队在语音、视觉与推荐系统方面的增量改进。对于关注 Google AI 整体走势的从业者，这是一份值得翻阅的月度快报。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/April_2026_AI_Recap_still.width-1300.png",
+      "publishedAt": "2026-05-04T17:00:00.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
     },
     {
       "id": "29276d540e65a684",
@@ -12794,35 +13271,6 @@
       "discoveredAt": "2026-05-17T15:40:00.238Z"
     },
     {
-      "id": "7982e6a9800653a0",
-      "source": "google-ai",
-      "sourceName": "Google AI",
-      "title": "Google 在 Chrome 中推出 AI Mode 网页探索新方式",
-      "url": "https://blog.google/products-and-platforms/products/search/ai-mode-chrome/",
-      "summary": "Today’s upgrades for AI Mode in Chrome transform how you interact with the web",
-      "category": "浏览器自动化",
-      "score": 4,
-      "cn": "Google 为 Chrome 浏览器引入 AI Mode，旨在改变用户与网页的交互方式。该功能通过 AI 增强搜索与浏览体验，让用户能更自然地探索网络内容。作为浏览器原生集成，AI Mode 降低了使用门槛，可能推动 AI 辅助浏览的普及。",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AI_Mode_in_Chrome_-_Social_feed.width-1300.png",
-      "publishedAt": "2026-04-16T17:00:00.000Z",
-      "discoveredAt": "2026-05-18T10:06:19.736Z"
-    },
-    {
-      "id": "6e7bff1b860f69f8",
-      "source": "google-ai",
-      "sourceName": "Google AI",
-      "title": "Google 在 Gemini 应用中推出个性化图像生成功能",
-      "url": "https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence-nano-banana/",
-      "summary": "Nano Banana 2 now uses your personal context and Google Photos to create images that reflect your unique life.",
-      "category": "图像模型",
-      "score": 4,
-      "cn": "Google 在 Gemini 应用中新增个性化图像生成能力，该功能基于 Nano Banana 2 技术，能够结合用户的个人上下文和 Google Photos 中的照片，生成贴合用户生活场景的图像。这一更新让 Gemini 的图像生成从通用走向个性化，用户无需手动描述细节即可获得与自己相关的视觉内容。",
-      "detail": "Google 在 Gemini 应用中推出个性化图像生成功能，用户可以上传自己的照片、宠物图、产\n品图，让 Gemini 在后续生成中保持这些主体的一致性。这是把 ChatGPT 的\"图像参考\"和\nMidjourney 的\"角色参考\"功能在 Gemini 端整合的产物。\n\n底层是 Nano Banana 2 的多图理解 + 角色一致性能力。用户上传 1-5 张参考图，模型自动\n提取主体特征，在后续生成中以新场景重现这些主体。常见使用场景是个人头像批量风格化、\n电商商品多场景渲染、宠物拟人画。\n\n这一功能向所有 Gemini 用户开放，免费档每天有限次额度。Google 强调上传图像不会用于\n训练，并提供一键删除已学习的主体特征。这种\"个性化 + 隐私可控\"的产品定位试图回应\nAI 生成内容的伦理与版权争议，是大厂在消费级 AI 产品上的合规姿态。\n",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Blog_post_header.width-1300.png",
-      "publishedAt": "2026-04-16T16:00:00.000Z",
-      "discoveredAt": "2026-05-17T19:12:01.330Z"
-    },
-    {
       "id": "64c1745cd16a5ed9",
       "source": "nvidia",
       "sourceName": "NVIDIA",
@@ -13037,21 +13485,6 @@
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
     {
-      "id": "a797ae4cd684e3af",
-      "source": "google-ai",
-      "sourceName": "Google AI",
-      "title": "Google 发布 Gemini 3.1 Flash TTS",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/",
-      "summary": "Gemini 3.1 Flash TTS is now available across Google products.",
-      "category": "TTS",
-      "score": 4,
-      "cn": "Google AI 推出 Gemini 3.1 Flash TTS，将下一代表达力丰富的语音合成能力带入 Google 产品生态。该模型在自然度、语调和情感传递上做了显著升级，使合成语音更接近真人对话节奏。Gemini 3.1 Flash TTS 现已集成到 Google 多款应用中，为语音助手、内容朗读和无障碍场景提供更流畅的听觉体验。",
-      "detail": "Gemini 3.1 Flash TTS 由 Google AI 团队和 DeepMind 联合发布，blog.google 这一条是官方\n对开发者的正式公告。和 DeepMind 那篇技术博客相比，这一条更聚焦应用与生态：定价、SDK\n接入路径、与 Google Cloud Voice 的关系、与 Gemini Live 的整合。\n\nTTS 接口同时通过 Vertex AI、Gemini API、Google AI Studio 三条渠道开放，价格按 1M 字符\n计费，Flash 档位定价低于 GPT-4o Realtime 约一半。配合 streaming 接口，可以做边生成边\n播放，延迟体验接近真人对话。SDK 在 Python/JS/Java/Go 同步上线。\n\n公告里 Google 强调了 voice agent 的几个落地场景：客服自动化、教育辅助、无障碍辅助、\n播客自动生成。对内容创作者的实际影响是中文 TTS 终于有了与英文同代的开箱选项，不必\n再为多语言项目额外接 ElevenLabs。\n",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3.1-flash-tts_metacard_dark_1920x1080.width-1300.png",
-      "publishedAt": "2026-04-15T15:00:00.000Z",
-      "discoveredAt": "2026-05-17T19:12:01.330Z"
-    },
-    {
       "id": "77ae700ce1f2f401",
       "source": "anthropic",
       "sourceName": "Anthropic",
@@ -13123,20 +13556,6 @@
       "image": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20Abacus&backgroundColor=olive",
       "publishedAt": "2026-04-14T19:00:21.000Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z"
-    },
-    {
-      "id": "ab67017c0110be03",
-      "source": "google-ai",
-      "sourceName": "Google AI",
-      "title": "Google 在 Chrome 中推出 AI Skills 功能",
-      "url": "https://blog.google/products-and-platforms/products/chrome/skills-in-chrome/",
-      "summary": "Skills in Chrome let you discover, save and remix AI workflows — and repeat them instantly.",
-      "category": "skill",
-      "score": 3,
-      "cn": "Google 在 Chrome 浏览器中推出 Skills 功能，允许用户将常用的 AI 提示词保存为一键触发的工具。用户可发现、保存和混搭 AI 工作流，并在不同页面中重复使用，无需每次手动输入提示词。这一更新降低了 AI 工具的使用门槛，让日常浏览中的 AI 辅助操作更加便捷。",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/GoogleChrome_RR_Skills_KeywordHeader-Thumbnai.width-1300.png",
-      "publishedAt": "2026-04-14T17:00:00.000Z",
-      "discoveredAt": "2026-05-17T19:12:01.330Z"
     },
     {
       "id": "7871fe6960f9fadc",
@@ -13783,20 +14202,6 @@
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemma-4_blog_keyword_meta-dark.width-1300.png",
       "publishedAt": "2026-04-02T16:00:49.000Z",
       "discoveredAt": "2026-05-17T03:07:12.778Z"
-    },
-    {
-      "id": "f2b31c55fc99db07",
-      "source": "google-ai",
-      "sourceName": "Google AI",
-      "title": "Google 为 Gemini API 新增 Flex 与 Priority 推理层级",
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-flex-and-priority-inference/",
-      "summary": "Google is introducing two new inference tiers to the Gemini API, Flex and Priority, to balance cost and latency.",
-      "category": "大模型",
-      "score": 4,
-      "cn": "Google 在 Gemini API 中新增 Flex 与 Priority 两个推理层级，让开发者能在成本与延迟之间按需权衡。Flex 利用空闲计算资源提供更经济的推理选项，适合非实时场景；Priority 则保障低延迟响应，用于要求快速返回的应用。两项新选项只需在请求中指定 tier 即可切换，不改变原有 API 调用方式。",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_API_Dials_ss_1.width-1300.png",
-      "publishedAt": "2026-04-02T16:00:00.000Z",
-      "discoveredAt": "2026-05-17T19:12:01.330Z"
     },
     {
       "id": "8ecd1a4dd5c84cd1",
@@ -19247,21 +19652,6 @@
       "discoveredAt": "2026-05-17T15:40:00.238Z"
     },
     {
-      "id": "926481ff33d539e9",
-      "source": "deepmind",
-      "sourceName": "DeepMind",
-      "title": "DeepMind 发布 Gemini 3.1 Pro",
-      "url": "https://deepmind.google/blog/gemini-3-1-pro-a-smarter-model-for-your-most-complex-tasks/",
-      "summary": "3.1 Pro is designed for tasks where a simple answer isn’t enough.",
-      "category": "大模型",
-      "score": 5,
-      "cn": "DeepMind 推出 Gemini 3.1 Pro，定位为处理复杂任务的更智能模型。该版本针对需要深度推理和多步骤分析的场景进行了优化，旨在提供超越简单问答的解决方案。Gemini 3.1 Pro 的发布标志着 DeepMind 在大型语言模型能力上的又一次重要迭代。",
-      "detail": "DeepMind 发布 Gemini 3.1 Pro，Gemini 3 系列的主力旗舰档位。Pro 在 3 系列里承担\"通用\n最强\"的角色，对标 Claude Opus 4.7 和 GPT-5.5，定价介于二者之间，上下文窗口保持 1M\ntoken。\n\n和上一代 3.0 Pro 相比，3.1 Pro 的主要进展在长上下文检索的稳定性、代码生成的正确率、\n多模态推理的连贯性。在 ARC-AGI 2、LiveCodeBench、MMLU-Pro、Vibe-Eval 等多个评测上的\n分数都有 2-5 个百分点的提升。多语言能力依然是 Gemini 系列的强项，中文和小语种表现优\n于同档位 GPT。\n\n对开发者的实际选择题是 Gemini 3.1 Pro vs Claude Opus 4.7 vs GPT-5.5 怎么挑。Gemini\n的优势在多模态输入和长上下文，Claude 在代码与 agent 长任务，GPT 在工具调用生态与社\n区轮子。三家在质量上接近，差异更多体现在工程契合度和 API 设计风格。\n",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3.1_pro_meta_dark.width-1300.png",
-      "publishedAt": "2026-02-19T16:06:14.000Z",
-      "discoveredAt": "2026-05-17T03:07:12.778Z"
-    },
-    {
       "id": "50152b607d65baa9",
       "source": "nvidia",
       "sourceName": "NVIDIA",
@@ -19288,21 +19678,6 @@
       "image": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20Reflection&backgroundColor=sky",
       "publishedAt": "2026-02-19T04:03:53.000Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z"
-    },
-    {
-      "id": "fd50a220fdc4516f",
-      "source": "deepmind",
-      "sourceName": "DeepMind",
-      "title": "DeepMind 在 Gemini 中集成 Lyria 3 音乐生成功能",
-      "url": "https://deepmind.google/blog/a-new-way-to-express-yourself-gemini-can-now-create-music/",
-      "summary": "The Gemini app now features our most advanced music generation model Lyria 3, empowering anyone to make 30-second tracks using text or images.",
-      "category": "大模型",
-      "score": 5,
-      "cn": "DeepMind 将最新音乐生成模型 Lyria 3 集成到 Gemini 应用中，用户可通过文字或图片生成最长 30 秒的音乐片段。这一功能让 Gemini 从文本对话扩展到多模态创作，降低了音乐制作的门槛。Lyria 3 是 DeepMind 在音频生成领域的最新成果，标志着大模型在创意表达上的又一次能力延伸。",
-      "detail": "DeepMind 把 Lyria 3 音乐生成模型集成进 Gemini App，开放给 Gemini 用户使用。Lyria 是\nDeepMind 音频生成线的核心模型，Lyria 3 在乐曲长度、风格控制、乐器层次上较 Lyria 2\n有明显进步。\n\n集成进 Gemini 后，用户可以用自然语言描述风格、情绪、乐器、节奏，Lyria 3 会生成最长\n数分钟的高质量音乐片段。模型支持流派融合（古典与电子、爵士与中国民乐等）、配套人声\n合成（与 Music FX 协同）、对照已有作品做风格迁移。原创音乐和带版权样本的衍生作品都\n有明确的使用授权说明。\n\n对内容创作者的价值在于背景配乐这一块的门槛被大幅降低：视频博主、播客制作、独立游戏\n开发者可以直接在 Gemini 里生成贴合内容情绪的配乐，无需购买曲库授权或学习 DAW 软件。\n对音乐产业的影响则更复杂，DeepMind 与几家主流唱片公司达成了训练数据合作协议。\n",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/0217_KeywordHeaderFinalc.width-1300.png",
-      "publishedAt": "2026-02-18T16:01:38.000Z",
-      "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
     {
       "id": "e89ae5823b4bd151",
@@ -19456,21 +19831,6 @@
       "image": "https://blogs.nvidia.com/wp-content/uploads/2026/02/sao-paulo-featured-1920x1080-2.jpg",
       "publishedAt": "2026-02-12T22:00:58.000Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z"
-    },
-    {
-      "id": "09fc1b54fabbac27",
-      "source": "deepmind",
-      "sourceName": "DeepMind",
-      "title": "DeepMind 发布 Gemini 3 Deep Think 推理模式",
-      "url": "https://deepmind.google/blog/gemini-3-deep-think-advancing-science-research-and-engineering/",
-      "summary": "Our most specialized reasoning mode is now updated to solve modern science, research and engineering challenges.",
-      "category": "大模型",
-      "score": 5,
-      "cn": "DeepMind 推出 Gemini 3 Deep Think，这是其推理模式的最新更新，面向科学、研究和工程领域的复杂问题。该模式在逻辑推理与多步分析上做了针对性强化，可辅助研究人员处理高难度任务。此次更新让 Gemini 系列在专业场景中的可用性更进一步。",
-      "detail": "DeepMind 发布 Gemini 3 Deep Think 推理模式，把\"长时间思考\"作为产品形态显式暴露给用户。\nDeep Think 不是新模型，而是在 Gemini 3 Pro 之上的推理增强模式，类似 OpenAI o 系列的\nthinking 时间。\n\n开启 Deep Think 后，模型会用显著更多的 token 做内部思考（chain of thought），然后输\n出更经过推敲的答案。在数学竞赛题、复杂代码 debug、多步规划这类需要深度推理的任务上，\n正确率提升 10-20 个百分点。代价是延迟从秒级到数十秒甚至分钟级。\n\n这个模式的产品定位很清晰：日常对话不开，遇到难题切到 Deep Think。对 Gemini Advanced\n订阅用户开放，企业版可以通过 Vertex AI 接入。Deep Think 的存在也确认了\"测试时计算\"\n（test-time compute）会成为 LLM 提升上限的主要路径之一，与单纯做大参数并行推进。\n",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3_deep-think_meta_dark_Fm70Cou.width-1300.png",
-      "publishedAt": "2026-02-12T16:15:09.000Z",
-      "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
     {
       "id": "54b924c9f45136d0",
@@ -19776,21 +20136,6 @@
       "image": "https://mistral.ai/img/mistral-cover.png",
       "publishedAt": "2026-01-29T23:35:23.704Z",
       "discoveredAt": "2026-05-17T19:12:01.330Z"
-    },
-    {
-      "id": "1812f15d5f5ff6e0",
-      "source": "deepmind",
-      "sourceName": "DeepMind",
-      "title": "DeepMind 发布 Project Genie 交互式世界生成原型",
-      "url": "https://deepmind.google/blog/project-genie-experimenting-with-infinite-interactive-worlds/",
-      "summary": "Google AI Ultra subscribers in the U.S. can try out Project Genie, an experimental research prototype that lets you create and explore worlds.",
-      "category": "世界模型",
-      "score": 5,
-      "cn": "DeepMind 推出 Project Genie，一个面向美国 Google AI Ultra 订阅用户开放的实验性研究原型。该工具允许用户创建并探索无限、可交互的虚拟世界，将生成式 AI 从静态内容拓展至动态环境。Project Genie 代表了世界模型方向的一次重要尝试，为游戏、模拟和沉浸式体验提供了新的可能性。",
-      "detail": "DeepMind 发布 Project Genie 交互式世界生成原型，一个能从单张图片或一段描述生成可交\n互 3D 世界的 AI 系统。Genie 系列从 Genie 1 的 2D 像素世界，到 Genie 2 的 3D 场景，\n这一代进一步把世界规模、物理一致性、可交互性向前推。\n\n生成的世界包含可移动角色、可触发物理交互、动态光照和天气，用户可以用键鼠或控制器在\n其中自由探索。底层是基于扩散模型的视频生成 + 强化学习训练的物理动力学模型。每秒生成\n约 30 帧，分辨率 720p，单次会话可持续数分钟。\n\nProject Genie 现阶段仍是研究原型，未对公众开放，但代表了\"世界模型\"这一研究方向的当\n前最高水平。对 AI 训练数据生成、游戏原型设计、机器人模拟训练都有潜在价值，DeepMind\n也明示 Genie 未来会用于训练 embodied AI 和具身机器人的模拟环境。\n",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/genie-3__project-genie__hero-film_social-shar.width-1300.jpg",
-      "publishedAt": "2026-01-29T17:01:05.000Z",
-      "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
     {
       "id": "f1dc0027fa1fd412",
@@ -20307,21 +20652,6 @@
       "image": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20Puzzle&backgroundColor=sky",
       "publishedAt": "2026-01-13T22:46:14.000Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z"
-    },
-    {
-      "id": "11b268cc755483e0",
-      "source": "deepmind",
-      "sourceName": "DeepMind",
-      "title": "DeepMind 发布 Veo 3.1 视频生成模型",
-      "url": "https://deepmind.google/blog/veo-3-1-ingredients-to-video-more-consistency-creativity-and-control/",
-      "summary": "Our latest Veo update generates lively, dynamic clips that feel natural and engaging — and supports vertical video generation.",
-      "category": "视频生成模型",
-      "score": 5,
-      "cn": "DeepMind 推出 Veo 3.1，这是其视频生成模型的一次重大更新。新版本在保持场景一致性的同时，增强了创作自由度和精细控制能力，支持生成更自然、更具动态感的视频片段，并首次加入竖屏视频支持，为社交媒体和移动端内容创作提供了更直接的工具。",
-      "detail": "DeepMind 发布 Veo 3.1 视频生成模型，Veo 系列的最新迭代。和 Veo 3 相比，3.1 版本在时\n长、分辨率、镜头控制、音视频同步上都有明显升级，单次生成最长可达 60 秒，原生支持 4K\n输出，并能从同一 prompt 维持稳定的人物外观。\n\n最大的工程进展是 native audio。之前 Veo 生成视频后需要单独接 TTS 和音效模型做后期混\n音，3.1 直接在视频生成时同步产出环境音、对话语音、动作音效，三轨同时与画面对齐。\n这在影视前期分镜、广告样片、短视频内容创作上是关键体验。\n\nVeo 3.1 通过 Vertex AI 开放给企业用户，定价按秒数计费，最低档位在每秒 0.5-1 美元。\n消费端 Flow 视频编辑工具集成了 Veo 3.1，付费订阅用户可以用浏览器界面直接出 commerc-\nial 级视频。这一档位与 Sora 2 直接竞争。\n",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Veo3.1IngredientstoVideo_Social.width-1300.png",
-      "publishedAt": "2026-01-13T17:00:18.000Z",
-      "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
     {
       "id": "fa488316fab4ae21",
@@ -23752,20 +24082,6 @@
       "discoveredAt": "2026-05-17T15:40:00.238Z"
     },
     {
-      "id": "6e2f12694ee75421",
-      "source": "deepmind",
-      "sourceName": "DeepMind",
-      "title": "Google 发布 2025 年研究突破年度回顾",
-      "url": "https://deepmind.google/blog/googles-year-in-review-8-areas-with-research-breakthroughs-in-2025/",
-      "summary": "Google 2025 recap: Research breakthroughs of the year",
-      "category": "其他",
-      "score": 1,
-      "cn": "Google DeepMind 发布 2025 年度回顾，梳理了八个领域的研究突破，涵盖人工智能、医疗健康、量子计算等方向。文章总结了一年来在基础模型、科学发现、社会责任等方面的进展，并展望未来技术发展方向。",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/end-of-year-blog_keyword_social_share_light_1.width-1300.png",
-      "publishedAt": "2025-12-23T17:01:02.000Z",
-      "discoveredAt": "2026-05-17T15:40:00.238Z"
-    },
-    {
       "id": "a1915aac415a7200",
       "source": "nvidia",
       "sourceName": "NVIDIA",
@@ -24200,21 +24516,6 @@
       "discoveredAt": "2026-05-17T15:40:00.238Z"
     },
     {
-      "id": "9d22821b6fe44492",
-      "source": "deepmind",
-      "sourceName": "DeepMind",
-      "title": "DeepMind 发布 Gemini 3 Flash",
-      "url": "https://deepmind.google/blog/gemini-3-flash-frontier-intelligence-built-for-speed/",
-      "summary": "Gemini 3 Flash offers frontier intelligence built for speed at a fraction of the cost.",
-      "category": "大模型",
-      "score": 5,
-      "cn": "DeepMind 推出 Gemini 3 Flash，这是一款以速度为核心设计的前沿智能模型，在保持高性能的同时大幅降低了推理成本。该模型延续了 Gemini 系列在语言理解与生成上的优势，针对实时交互场景进行了优化，适合需要快速响应的应用。",
-      "detail": "DeepMind 发布 Gemini 3 Flash，Gemini 3 系列中速度与价格的甜点档位。Flash 这个名字从\nGemini 1.5 时代沿用至今，定位始终是\"性能 80%、成本 20%、延迟 30%\"的工程取舍。Gemini\n3 Flash 在保持这条曲线的同时把质量基线整体往上推了一个等级。\n\n和 3.1 Flash-Lite 相比，3 Flash 的复杂推理能力更接近 Pro，适合那些质量要求不能妥协\n但又对延迟敏感的应用场景：实时聊天助手、代码补全、文档摘要、智能搜索。原生支持工具\n调用和 1M token 上下文。\n\n发布时 Google 同时把 Gemini 3 Flash 接入 Search Generative Experience，作为搜索结果\n里 AI 答案的底层模型。这一升级让 Google 搜索的 AI 摘要质量明显提升，延迟却没有明显\n上涨。开发者通过 Vertex AI 和 Gemini API 都能调用，价格大约是 Pro 的五分之一。\n",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini3Flash_Social.width-1300.png",
-      "publishedAt": "2025-12-17T11:58:17.000Z",
-      "discoveredAt": "2026-05-17T03:07:12.778Z"
-    },
-    {
       "id": "53a9bb8429248605",
       "source": "deepmind",
       "sourceName": "DeepMind",
@@ -24323,20 +24624,6 @@
       "image": "https://mistral.ai/img/mistral-cover.png",
       "publishedAt": "2025-12-12T23:20:37.596Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z"
-    },
-    {
-      "id": "6b2c48156a6607f7",
-      "source": "deepmind",
-      "sourceName": "DeepMind",
-      "title": "DeepMind 更新 Gemini 音频模型，提升语音交互能力",
-      "url": "https://deepmind.google/blog/improved-gemini-audio-models-for-powerful-voice-experiences/",
-      "summary": "",
-      "category": "大模型",
-      "score": 4,
-      "cn": "DeepMind 发布了改进版 Gemini 音频模型，在语音理解与生成方面取得显著提升。新模型能够更自然地处理多轮对话中的语气、语速和情感表达，同时支持更复杂的语音指令识别。这一更新让 Gemini 在语音助手、实时翻译和有声内容创作等场景中的表现更加流畅，为开发者提供了更强大的语音交互基础能力。",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-audio-flash__keyword_meta__dark.width-1300.png",
-      "publishedAt": "2025-12-12T17:50:50.000Z",
-      "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
     {
       "id": "f5c88aa37437000b",
@@ -24651,6 +24938,20 @@
       "cn": "Google DeepMind 在 NeurIPS 2023 会议上展示其最新研究成果和进展，涵盖强化学习、生成模型等多个 AI 前沿方向。作为年度顶级学术会议，NeurIPS 是 DeepMind 展示技术实力的重要平台，此次参与意在分享其在 AI 领域的最新突破与探索。",
       "publishedAt": "2025-11-26T00:00:00.000Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z"
+    },
+    {
+      "id": "0af84fd336175290",
+      "source": "nvidia",
+      "sourceName": "NVIDIA",
+      "title": "NVIDIA 在智慧城市世界博览会上展示 Physical AI",
+      "url": "https://blogs.nvidia.com/blog/physical-ai-smart-city-expo-world-congress/",
+      "summary": "",
+      "category": "其他",
+      "score": 3,
+      "cn": "NVIDIA 在 Smart City Expo World Congress 上展示了 Physical AI 在智慧城市中的应用，涉及机器人、自动驾驶和城市模拟领域。借助物理仿真与 AI 的结合，该技术尝试提升城市管理和基础设施效率。展会上演示了基于 NVIDIA 平台的数字孪生与实时决策能力。",
+      "image": "https://blogs.nvidia.com/wp-content/uploads/2025/11/scewc-featured-1280x680-1.jpg",
+      "publishedAt": "2025-11-24T19:31:56.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
     },
     {
       "id": "7701b775790ee706",
@@ -25154,6 +25455,20 @@
       "image": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20NodeLine&backgroundColor=oat",
       "publishedAt": "2025-11-06T20:57:55.000Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z"
+    },
+    {
+      "id": "299e6d956207a8e0",
+      "source": "nvidia",
+      "sourceName": "NVIDIA",
+      "title": "NVIDIA 在德国启动工业 AI 云服务",
+      "url": "https://blogs.nvidia.com/blog/germany-industrial-ai-cloud-launch/",
+      "summary": "",
+      "category": "其他",
+      "score": 3,
+      "cn": "NVIDIA 宣布在德国推出工业 AI 云平台，面向制造、工程等领域的 AI 应用部署。该云服务将 GPU 算力与行业软件相结合，帮助欧洲企业加速 AI 驱动的工业自动化与数字孪生落地。此举也标志着 NVIDIA 在欧洲工业 AI 市场的重要布局。",
+      "image": "https://blogs.nvidia.com/wp-content/uploads/2025/11/4476900-jhh-dt-ai-cloud-ann-blog-1280x680-1.jpg",
+      "publishedAt": "2025-11-06T20:28:32.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
     },
     {
       "id": "fcec823f42daa780",
@@ -26369,6 +26684,20 @@
       "discoveredAt": "2026-05-17T19:12:01.330Z"
     },
     {
+      "id": "abeabceb7069c1e6",
+      "source": "nvidia",
+      "sourceName": "NVIDIA",
+      "title": "NVIDIA 与全球咨询领导者合作推动日本行业 AI 应用",
+      "url": "https://blogs.nvidia.com/blog/global-consulting-leaders-ai-adoption-japan-industries/",
+      "summary": "",
+      "category": "其他",
+      "score": 3,
+      "cn": "NVIDIA 宣布与多家全球咨询公司合作，共同推动日本各行业的人工智能应用。合作方将结合 NVIDIA 的 AI 基础设施与自身行业知识，为日本企业提供从战略规划到技术落地的端到端服务，重点覆盖制造业、医疗、金融等领域。此举旨在加速日本企业的数字化转型，释放 AI 在传统产业中的实际价值。",
+      "image": "https://blogs.nvidia.com/wp-content/uploads/2024/11/ai-summit-japan-gsi-corp-blog-1280x680-1.png",
+      "publishedAt": "2025-09-23T23:29:06.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
       "id": "db0639edd9926e59",
       "source": "nvidia",
       "sourceName": "NVIDIA",
@@ -26801,6 +27130,20 @@
       "image": "https://blogs.nvidia.com/wp-content/uploads/2025/01/nemo-guardrails-nim1280x680.jpg",
       "publishedAt": "2025-09-23T22:46:06.000Z",
       "discoveredAt": "2026-05-17T19:12:01.330Z"
+    },
+    {
+      "id": "45d984e57573e7af",
+      "source": "nvidia",
+      "sourceName": "NVIDIA",
+      "title": "NVIDIA 探讨 Agentic AI 提升用户体验",
+      "url": "https://blogs.nvidia.com/blog/agentic-ai-enhances-user-experience/",
+      "summary": "",
+      "category": "Agent",
+      "score": 3,
+      "cn": "NVIDIA 发布技术博客，探讨 agentic AI 在改善用户体验方面的应用。文章分析了智能代理如何通过主动感知、自主决策与自然交互来优化用户与系统的互动方式，并介绍了相关技术架构与实践案例。",
+      "image": "https://blogs.nvidia.com/wp-content/uploads/2025/01/AI-Podcast-Inworld-Streamlabs-Experience-Feature-Image-scaled.jpg",
+      "publishedAt": "2025-09-23T22:45:58.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
     },
     {
       "id": "8524531bde20eed9",
@@ -31362,6 +31705,20 @@
       "discoveredAt": "2026-05-17T19:12:01.330Z"
     },
     {
+      "id": "91f9c224f0028b30",
+      "source": "nvidia",
+      "sourceName": "NVIDIA",
+      "title": "NVIDIA 发文讨论 AI 对美国制造业的影响",
+      "url": "https://blogs.nvidia.com/blog/ai-us-manufacturing/",
+      "summary": "",
+      "category": "其他",
+      "score": 3,
+      "cn": "NVIDIA 发布一篇关于 AI 技术如何助力美国制造业转型升级的文章，探讨大模型、数字孪生和智能机器人等技术在工厂自动化、质检和供应链优化方面的应用前景。该文属于行业趋势分析与倡议性质的内容，并未发布具体产品或开源项目，但对于了解 NVIDIA 在工业 AI 领域的布局有一定参考价值。",
+      "image": "https://blogs.nvidia.com/wp-content/uploads/2022/12/public-sector-blog-gov-affairs-1260x680-1.jpg",
+      "publishedAt": "2024-12-12T17:39:58.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
+    },
+    {
       "id": "e9129dfedc1f3ff7",
       "source": "nvidia",
       "sourceName": "NVIDIA",
@@ -31430,6 +31787,20 @@
       "image": "https://blogs.nvidia.com/wp-content/uploads/2024/12/holiday-ai-rtx-nv-blog-1280x680-1.jpg",
       "publishedAt": "2024-12-11T16:48:24.000Z",
       "discoveredAt": "2026-05-17T19:12:01.330Z"
+    },
+    {
+      "id": "832ff6faed076050",
+      "source": "nvidia",
+      "sourceName": "NVIDIA",
+      "title": "NVIDIA 为金融科技公司 Bunq 提供生成式 AI 支持",
+      "url": "https://blogs.nvidia.com/blog/bunq-financial-services-generative-ai/",
+      "summary": "",
+      "category": "其他",
+      "score": 3,
+      "cn": "NVIDIA 宣布为荷兰金融科技公司 Bunq 提供生成式 AI 技术支持。Bunq 计划将 NVIDIA 的 AI 基础设施和软件引入其金融平台，用于提升客户服务、风控和个性化推荐等场景。这一合作让 Bunq 能够在其产品中部署大语言模型，加速金融服务的智能化升级，同时也体现了生成式 AI 在垂直行业中的落地趋势。",
+      "image": "https://blogs.nvidia.com/wp-content/uploads/2024/05/bunq-1280x680-1.jpg",
+      "publishedAt": "2024-12-05T23:54:00.000Z",
+      "discoveredAt": "2026-05-19T19:53:36.518Z"
     },
     {
       "id": "ebbb19c7e23f0181",
