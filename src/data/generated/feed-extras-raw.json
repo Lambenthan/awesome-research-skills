@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-19T09:47:20.750Z",
+  "fetchedAt": "2026-05-19T15:27:26.044Z",
   "items": [
     {
       "source": "arxiv",
@@ -10,7 +10,7 @@
       "summary": "Multiview 3D evaluation assumes that the images being scored are observations of one static 3D scene. This assumption can fail in NVS and sparse-view reconstruction: inputs or generated outputs may contain artifacts, outlier frames, repeated views, or noise, yet still receive high 3D consistency sc…",
       "category": "cs.CV",
       "publishedAt": "2026-05-18T17:59:58Z",
-      "discoveredAt": "2026-05-19T09:47:20.746Z"
+      "discoveredAt": "2026-05-19T15:27:26.039Z"
     },
     {
       "source": "arxiv",
@@ -21,7 +21,7 @@
       "summary": "Current hierarchical attention methods, such as NSA and InfLLMv2, select the top-k relevant key-value (KV) blocks based on coarse attention scores and subsequently apply fine-grained softmax attention on the selected tokens. However, the top-k operation assumes the number of relevant tokens for any…",
       "category": "cs.CL",
       "publishedAt": "2026-05-18T17:59:52Z",
-      "discoveredAt": "2026-05-19T09:47:20.746Z"
+      "discoveredAt": "2026-05-19T15:27:26.039Z"
     },
     {
       "source": "arxiv",
@@ -32,7 +32,7 @@
       "summary": "Pipeline parallelism is a key technique for scaling large-model training, but modern workloads exhibit runtime variability in computation and communication. Existing pipeline systems typically consume static, profiled, or adaptively generated schedules as pre-committed execution orders. When realiz…",
       "category": "cs.DC",
       "publishedAt": "2026-05-18T17:59:18Z",
-      "discoveredAt": "2026-05-19T09:47:20.746Z"
+      "discoveredAt": "2026-05-19T15:27:26.039Z"
     },
     {
       "source": "arxiv",
@@ -43,7 +43,7 @@
       "summary": "Modern audio generation predominantly relies on latent-space compression, introducing additional complexity and potential information loss. In this work, we challenge this paradigm with WavFlow, a framework that generates high-fidelity audio directly in raw waveform space without intermediate repre…",
       "category": "cs.SD",
       "publishedAt": "2026-05-18T17:59:10Z",
-      "discoveredAt": "2026-05-19T09:47:20.746Z"
+      "discoveredAt": "2026-05-19T15:27:26.039Z"
     },
     {
       "source": "arxiv",
@@ -54,7 +54,7 @@
       "summary": "Recent video editing models have converged on a unified conditioning design: a single diffusion transformer jointly consumes text, source video, and reference images, and one set of weights covers replacement, removal, style transfer, and reference-driven insertion. The design is flexible, but it a…",
       "category": "cs.CV",
       "publishedAt": "2026-05-18T17:59:03Z",
-      "discoveredAt": "2026-05-19T09:47:20.746Z"
+      "discoveredAt": "2026-05-19T15:27:26.039Z"
     },
     {
       "source": "arxiv",
@@ -65,7 +65,7 @@
       "summary": "Recent large language models (LLMs) have demonstrated strong capabilities in understanding and generating code, from competitive programming to repository-level software engineering. In emerging agentic systems, code is no longer only a target output. It increasingly serves as an operational substr…",
       "category": "cs.CL",
       "publishedAt": "2026-05-18T17:59:03Z",
-      "discoveredAt": "2026-05-19T09:47:20.747Z"
+      "discoveredAt": "2026-05-19T15:27:26.040Z"
     },
     {
       "source": "arxiv",
@@ -76,7 +76,7 @@
       "summary": "Spatial intelligence unfolds through a perception-action loop: agents act to acquire observations, and reason about how observations vary as a function of action. Rather than passively processing what is seen, they actively uncover what is unseen - occluded structure, dynamics, containment, and fun…",
       "category": "cs.CV",
       "publishedAt": "2026-05-18T17:59:02Z",
-      "discoveredAt": "2026-05-19T09:47:20.747Z"
+      "discoveredAt": "2026-05-19T15:27:26.040Z"
     },
     {
       "source": "arxiv",
@@ -87,7 +87,7 @@
       "summary": "Diffusion-based generative models increasingly rely on inference-time guidance, adding a drift term or reweighting mixture of experts, to improve sample quality on task-specific objectives. However, most existing techniques require repeated score or gradient evaluations, introducing bias, high comp…",
       "category": "stat.ML",
       "publishedAt": "2026-05-18T17:59:00Z",
-      "discoveredAt": "2026-05-19T09:47:20.747Z"
+      "discoveredAt": "2026-05-19T15:27:26.040Z"
     },
     {
       "source": "arxiv",
@@ -98,7 +98,7 @@
       "summary": "Inspired by the emergent behaviors in large language models that generalized human intelligence, the research community is pursuing similar emergent capabilities within world models, with a emphasis on modeling the physical world. Within the scope of physical world model, objects are the fundamenta…",
       "category": "cs.AI",
       "publishedAt": "2026-05-18T17:58:51Z",
-      "discoveredAt": "2026-05-19T09:47:20.747Z"
+      "discoveredAt": "2026-05-19T15:27:26.040Z"
     },
     {
       "source": "arxiv",
@@ -109,7 +109,7 @@
       "summary": "Multimodal Large Language Models (MLLMs) still struggle with fine-grained visual understanding, where answers often depend on small but decisive evidence in the full image. We observe a regional-to-global perception gap: the same MLLM answers fine-grained questions more accurately when conditioned …",
       "category": "cs.CV",
       "publishedAt": "2026-05-18T17:57:04Z",
-      "discoveredAt": "2026-05-19T09:47:20.747Z"
+      "discoveredAt": "2026-05-19T15:27:26.040Z"
     },
     {
       "source": "arxiv",
@@ -120,7 +120,7 @@
       "summary": "We present LongLive-2.0, an NVFP4-based parallel infrastructure throughout the full training and inference workflow of long video generation, addressing speed and memory bottlenecks. For training, we introduce sequence-parallel autoregressive (AR) training, instantiated as Balanced SP, which co-des…",
       "category": "cs.CV",
       "publishedAt": "2026-05-18T17:57:03Z",
-      "discoveredAt": "2026-05-19T09:47:20.747Z"
+      "discoveredAt": "2026-05-19T15:27:26.040Z"
     },
     {
       "source": "arxiv",
@@ -131,7 +131,7 @@
       "summary": "Medicine is inherently pluralistic. Principles such as autonomy, beneficence, nonmaleficence, and justice routinely conflict, and such ethical dilemmas often sharply divide reasonable physicians. Good clinical practice navigates these tensions in concert with each patient's values rather than impos…",
       "category": "cs.AI",
       "publishedAt": "2026-05-18T17:56:13Z",
-      "discoveredAt": "2026-05-19T09:47:20.747Z"
+      "discoveredAt": "2026-05-19T15:27:26.040Z"
     },
     {
       "source": "arxiv",
@@ -142,7 +142,7 @@
       "summary": "Diffusion models have been shown to implicitly generate visual content autoregressively in the frequency domain, where low-frequency components are generated earlier in the denoising process while high-frequency details emerge only in later timesteps. This structure offers a natural opportunity for…",
       "category": "cs.CV",
       "publishedAt": "2026-05-18T17:55:39Z",
-      "discoveredAt": "2026-05-19T09:47:20.747Z"
+      "discoveredAt": "2026-05-19T15:27:26.040Z"
     },
     {
       "source": "arxiv",
@@ -153,7 +153,7 @@
       "summary": "We present PIXLRelight, a feed-forward approach for physically controllable single-image relighting. Existing methods either provide limited lighting control (e.g. through text or environment maps), accumulate errors when chaining inverse and forward rendering, or require costly per-image optimizat…",
       "category": "cs.CV",
       "publishedAt": "2026-05-18T17:55:03Z",
-      "discoveredAt": "2026-05-19T09:47:20.747Z"
+      "discoveredAt": "2026-05-19T15:27:26.040Z"
     },
     {
       "source": "arxiv",
@@ -164,7 +164,7 @@
       "summary": "Egocentric memory is widely used in embodied intelligence, but it may be insufficient for comprehensive spatial-temporal reasoning. Inspired by human recall from both field and observer perspectives, we introduce EgoExoMem, the first benchmark for cross-view memory reasoning over synchronized egoce…",
       "category": "cs.CV",
       "publishedAt": "2026-05-18T17:54:55Z",
-      "discoveredAt": "2026-05-19T09:47:20.747Z"
+      "discoveredAt": "2026-05-19T15:27:26.040Z"
     },
     {
       "source": "arxiv",
@@ -175,7 +175,7 @@
       "summary": "Autoregressive video generation has improved rapidly in visual fidelity and interactivity, but it still suffers from long-term inconsistency and memory degradation. Most existing solutions either compress historical frames using predefined strategies or retrieve keyframes based on coarse implicit a…",
       "category": "cs.CV",
       "publishedAt": "2026-05-18T17:54:34Z",
-      "discoveredAt": "2026-05-19T09:47:20.747Z"
+      "discoveredAt": "2026-05-19T15:27:26.040Z"
     },
     {
       "source": "arxiv",
@@ -186,7 +186,7 @@
       "summary": "While scaling laws govern aggregate large language model performance, no scaling law has linked factual recall to both model size and training-data composition. We evaluated 38 models on over 8,900 scholarly references evaluated by an automated reference verification system. Recall quality follows …",
       "category": "cs.CL",
       "publishedAt": "2026-05-18T17:53:44Z",
-      "discoveredAt": "2026-05-19T09:47:20.747Z"
+      "discoveredAt": "2026-05-19T15:27:26.040Z"
     },
     {
       "source": "arxiv",
@@ -197,7 +197,7 @@
       "summary": "The ability to navigate and interact with complex environments is central to real-world embodied agents, yet navigation in unseen environments remains challenging due to \"experiential amnesia,\" where existing trajectory-driven or reactive policies fail to synthesize generalizable strategies from pa…",
       "category": "cs.RO",
       "publishedAt": "2026-05-18T17:52:14Z",
-      "discoveredAt": "2026-05-19T09:47:20.747Z"
+      "discoveredAt": "2026-05-19T15:27:26.041Z"
     },
     {
       "source": "arxiv",
@@ -208,7 +208,7 @@
       "summary": "Evaluating embodied systems on real dexterous hardware requires more than isolated primitive skills: an agent must perceive a changing tabletop scene, choose a context-appropriate action, execute it with a dexterous hand, and leave the scene usable for later decisions. We introduce DexHoldem, a rea…",
       "category": "cs.RO",
       "publishedAt": "2026-05-18T17:51:34Z",
-      "discoveredAt": "2026-05-19T09:47:20.747Z"
+      "discoveredAt": "2026-05-19T15:27:26.041Z"
     },
     {
       "source": "arxiv",
@@ -219,7 +219,7 @@
       "summary": "Post-training has split large language model (LLM) alignment into two largely disconnected tracks. Online reinforcement learning (RL) with verifiable rewards drives emergent reasoning on math and code but depends on a programmatic verifier that cannot reach open-ended tasks, while preference optimi…",
       "category": "cs.LG",
       "publishedAt": "2026-05-18T17:50:27Z",
-      "discoveredAt": "2026-05-19T09:47:20.747Z"
+      "discoveredAt": "2026-05-19T15:27:26.041Z"
     },
     {
       "source": "arxiv",
@@ -230,7 +230,7 @@
       "summary": "Diffusion models have been widely studied for removing unsafe content learned during pre-training. Existing methods require expensive supervised data, either unsafe-text paired with safe-image groundtruth or negative/positive image pairs, making them impractical to scale. Furthermore, offline reinf…",
       "category": "cs.CV",
       "publishedAt": "2026-05-18T17:50:04Z",
-      "discoveredAt": "2026-05-19T09:47:20.748Z"
+      "discoveredAt": "2026-05-19T15:27:26.041Z"
     },
     {
       "source": "arxiv",
@@ -241,7 +241,7 @@
       "summary": "Unified multimodal models (UMMs) strive to consolidate visual understanding and visual generation within a single architecture. However, prevailing training paradigms independently optimize understanding via sparse text signals and generation through dense pixel objectives. Such a decoupled strateg…",
       "category": "cs.CV",
       "publishedAt": "2026-05-18T17:46:46Z",
-      "discoveredAt": "2026-05-19T09:47:20.748Z"
+      "discoveredAt": "2026-05-19T15:27:26.041Z"
     },
     {
       "source": "arxiv",
@@ -252,7 +252,7 @@
       "summary": "Unmanned Aerial Vehicles in dynamic environments face telemetry outages, structural vibrations, and regime-dependent noise that invalidate the stationary covariance assumptions of classical Kalman filters. The Sage-Husa Kalman Filter (SHKF) estimates noise statistics online, but its reliance on a s…",
       "category": "eess.SP",
       "publishedAt": "2026-05-18T17:38:13Z",
-      "discoveredAt": "2026-05-19T09:47:20.748Z"
+      "discoveredAt": "2026-05-19T15:27:26.041Z"
     },
     {
       "source": "arxiv",
@@ -263,7 +263,7 @@
       "summary": "Equipping LLMs with tool-use capabilities via Agentic Reinforcement Learning (Agentic RL) is bottlenecked by two challenges: the lack of scalable, robust execution environments and the scarcity of realistic training data that captures implicit human reasoning. Existing approaches depend on costly r…",
       "category": "cs.CL",
       "publishedAt": "2026-05-18T17:37:40Z",
-      "discoveredAt": "2026-05-19T09:47:20.748Z"
+      "discoveredAt": "2026-05-19T15:27:26.041Z"
     },
     {
       "source": "arxiv",
@@ -274,7 +274,7 @@
       "summary": "Tabular foundation models (TFMs) achieve strong performance on health datasets, but their inference cost and infrastructure requirements limit practical use. We study whether their predictive behavior can be transferred to lightweight tabular models through knowledge distillation. Since in-context …",
       "category": "cs.LG",
       "publishedAt": "2026-05-18T17:37:28Z",
-      "discoveredAt": "2026-05-19T09:47:20.748Z"
+      "discoveredAt": "2026-05-19T15:27:26.041Z"
     },
     {
       "source": "arxiv",
@@ -285,7 +285,7 @@
       "summary": "Blood-based biomarkers underpin clinical diagnosis and management, yet their interpretation relies largely on fixed population reference intervals that ignore stable, intra-patient variability. As such, population-based interpretation can mask meaningful deviation from an individual's baseline, ris…",
       "category": "cs.LG",
       "publishedAt": "2026-05-18T17:37:05Z",
-      "discoveredAt": "2026-05-19T09:47:20.748Z"
+      "discoveredAt": "2026-05-19T15:27:26.042Z"
     },
     {
       "source": "arxiv",
@@ -296,7 +296,7 @@
       "summary": "Prior work on fine-grained image recognition (FGIR) has established the importance of the backbone selection, but has neglected the accuracy-vs-cost trade-offs under different training and evaluation settings. In this work we conduct a large-scale study with over 2000 experiments across 6 training …",
       "category": "cs.CV",
       "publishedAt": "2026-05-18T17:36:30Z",
-      "discoveredAt": "2026-05-19T09:47:20.749Z"
+      "discoveredAt": "2026-05-19T15:27:26.042Z"
     },
     {
       "source": "arxiv",
@@ -307,7 +307,7 @@
       "summary": "Compound AI applications, which compose calls to ML models using a general-purpose programming language like Python, are widely used for a variety of user-facing tasks, from software engineering to enterprise automation, making their end-to-end latency a critical bottleneck. In contrast to traditio…",
       "category": "cs.DC",
       "publishedAt": "2026-05-18T17:33:50Z",
-      "discoveredAt": "2026-05-19T09:47:20.749Z"
+      "discoveredAt": "2026-05-19T15:27:26.042Z"
     },
     {
       "source": "arxiv",
@@ -318,7 +318,7 @@
       "summary": "Tabular foundation models (TFMs) now match or beat tuned gradient-boosted trees on a growing fraction of tabular tasks, but no single TFM wins on every dataset. Ensembling is the go to fix here, and it works less well than expected. Six modern TFMs form a near-redundant pool: their mean pairwise Q-…",
       "category": "cs.LG",
       "publishedAt": "2026-05-18T17:32:57Z",
-      "discoveredAt": "2026-05-19T09:47:20.749Z"
+      "discoveredAt": "2026-05-19T15:27:26.042Z"
     },
     {
       "source": "arxiv",
@@ -329,7 +329,7 @@
       "summary": "Many tasks in modern machine learning are observed to involve heavy-tailed gradient noise during the optimization process. To manage this realistic and challenging setting, new mechanisms, such as gradient clipping and gradient normalization, have been introduced to ensure the convergence of first-…",
       "category": "math.OC",
       "publishedAt": "2026-05-18T17:30:15Z",
-      "discoveredAt": "2026-05-19T09:47:20.749Z"
+      "discoveredAt": "2026-05-19T15:27:26.042Z"
     },
     {
       "source": "arxiv",
@@ -340,7 +340,7 @@
       "summary": "As LLM agents are increasingly built around reusable skills, a central challenge is no longer only whether agents can use provided skills, but whether they can generate correct, reusable, and executable skills from repositories and documents. Existing benchmarks primarily evaluate the efficacy of g…",
       "category": "cs.AI",
       "publishedAt": "2026-05-18T17:28:36Z",
-      "discoveredAt": "2026-05-19T09:47:20.749Z"
+      "discoveredAt": "2026-05-19T15:27:26.042Z"
     },
     {
       "source": "arxiv",
@@ -351,7 +351,7 @@
       "summary": "Optimization models developed by operations research (OR) experts are often deployed as decision-support systems in industrial settings. However, real-world environments are dynamic, with evolving business rules, previously overlooked constraints, and unforeseen perturbations. In such contexts, end…",
       "category": "cs.AI",
       "publishedAt": "2026-05-18T17:28:25Z",
-      "discoveredAt": "2026-05-19T09:47:20.749Z"
+      "discoveredAt": "2026-05-19T15:27:26.042Z"
     },
     {
       "source": "arxiv",
@@ -362,7 +362,7 @@
       "summary": "Virtually all aspects of many-body atomic physics are challenging: experiments are technically demanding, datasets have become enormous, and the memory and CPU requirements for classical simulation of generic quantum systems often scale exponentially with system size. Machine learning (ML) methods …",
       "category": "cond-mat.quant-gas",
       "publishedAt": "2026-05-18T17:27:46Z",
-      "discoveredAt": "2026-05-19T09:47:20.749Z"
+      "discoveredAt": "2026-05-19T15:27:26.042Z"
     },
     {
       "source": "arxiv",
@@ -373,7 +373,7 @@
       "summary": "Legacy systems concentrate business rules, architectural decisions, and operational exceptions that often remain implicit in code, data, configuration, and maintenance practices. At the same time, language-model-based coding agents depend on reliable context, correctness criteria, and behavioral co…",
       "category": "cs.SE",
       "publishedAt": "2026-05-18T17:23:13Z",
-      "discoveredAt": "2026-05-19T09:47:20.749Z"
+      "discoveredAt": "2026-05-19T15:27:26.042Z"
     },
     {
       "source": "arxiv",
@@ -384,7 +384,7 @@
       "summary": "Explainable AI (XAI) techniques are increasingly important for the validation and responsible use of modern deep learning models, but are difficult to evaluate due to the lack of good ground-truth to compare against. We propose a framework that serves as a quantifiable metric for the quality of XAI…",
       "category": "cs.AI",
       "publishedAt": "2026-05-18T17:21:48Z",
-      "discoveredAt": "2026-05-19T09:47:20.749Z"
+      "discoveredAt": "2026-05-19T15:27:26.042Z"
     },
     {
       "source": "arxiv",
@@ -395,7 +395,7 @@
       "summary": "Metaverse platforms rely on creator-driven marketplaces where avatars are assembled from discrete, taxonomy-labeled 3D assets (e.g., tops, bottoms, shoes, accessories) under strict category and topology constraints. While users increasingly expect free-form text control, text-only retrieval is brit…",
       "category": "cs.CV",
       "publishedAt": "2026-05-18T17:21:43Z",
-      "discoveredAt": "2026-05-19T09:47:20.749Z"
+      "discoveredAt": "2026-05-19T15:27:26.042Z"
     },
     {
       "source": "arxiv",
@@ -406,7 +406,7 @@
       "summary": "We present Lance, a lightweight native unified model supporting multimodal understanding, generation, and editing for both images and videos. Rather than relying on model capacity scaling or text-image-dominant designs, Lance explores a practical paradigm for unified multimodal modeling via collabo…",
       "category": "cs.CV",
       "publishedAt": "2026-05-18T17:18:24Z",
-      "discoveredAt": "2026-05-19T09:47:20.749Z"
+      "discoveredAt": "2026-05-19T15:27:26.042Z"
     },
     {
       "source": "arxiv",
@@ -417,7 +417,7 @@
       "summary": "Offline reinforcement learning struggles with distributional shift and constrained performance due to static dataset limitations, while online RL demands prohibitive environment interactions. The recent advent of hybrid offline-to-online methods bridges these domains but suffers from distribution d…",
       "category": "cs.LG",
       "publishedAt": "2026-05-18T17:15:27Z",
-      "discoveredAt": "2026-05-19T09:47:20.750Z"
+      "discoveredAt": "2026-05-19T15:27:26.043Z"
     },
     {
       "source": "arxiv",
@@ -428,7 +428,7 @@
       "summary": "Generalized planning aims to learn policies that generalize across collections of instances within a classical planning domain. Recent Graph Neural Network (GNN) approaches have learned nearly perfect policies for several domains. This work improves on the recently published idea of Iterated Width …",
       "category": "cs.AI",
       "publishedAt": "2026-05-18T17:15:23Z",
-      "discoveredAt": "2026-05-19T09:47:20.750Z"
+      "discoveredAt": "2026-05-19T15:27:26.043Z"
     },
     {
       "source": "arxiv",
@@ -439,7 +439,7 @@
       "summary": "Major deployed generative AI advertising systems preserve a visible boundary between commercial content and AI-generated responses. Yet empirical research shows that ads woven directly into large language model (LLM) outputs often go undetected by users. We argue that generative AI fundamentally ch…",
       "category": "cs.CY",
       "publishedAt": "2026-05-18T17:15:06Z",
-      "discoveredAt": "2026-05-19T09:47:20.750Z"
+      "discoveredAt": "2026-05-19T15:27:26.043Z"
     },
     {
       "source": "hf-papers",
@@ -450,40 +450,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.184Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "b53854fb829ae712",
-      "title": "Lance: Unified Multimodal Modeling by Multi-Task Synergy",
-      "url": "https://huggingface.co/papers/2605.18678",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "45eaea9938ec079f",
-      "title": "AI for Auto-Research: Roadmap &amp; User Guide",
-      "url": "https://huggingface.co/papers/2605.18661",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "ea1a8f1cb18a7e12",
-      "title": "KVPO: ODE-Native GRPO for Autoregressive Video Alignment via KV Semantic Exploration",
-      "url": "https://huggingface.co/papers/2605.14278",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
@@ -494,7 +461,29 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "b53854fb829ae712",
+      "title": "Lance: Unified Multimodal Modeling by Multi-Task Synergy",
+      "url": "https://huggingface.co/papers/2605.18678",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "45eaea9938ec079f",
+      "title": "AI for Auto-Research: Roadmap &amp; User Guide",
+      "url": "https://huggingface.co/papers/2605.18661",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
@@ -505,7 +494,18 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "ea1a8f1cb18a7e12",
+      "title": "KVPO: ODE-Native GRPO for Autoregressive Video Alignment via KV Semantic Exploration",
+      "url": "https://huggingface.co/papers/2605.14278",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
@@ -516,7 +516,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
@@ -527,7 +527,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
@@ -538,7 +538,18 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "79e45d00e4a9a342",
+      "title": "CHI-Bench: Can AI Agents Automate End-to-End, Long-Horizon, Policy-Rich Healthcare Workflows?",
+      "url": "https://huggingface.co/papers/2605.16679",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
@@ -549,62 +560,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "699d5d146c28bfb4",
-      "title": "Where Should Diffusion Enter a Language Model? Geometry-Guided Hidden-State Replacement",
-      "url": "https://huggingface.co/papers/2605.14368",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "10868c51a2b25f63",
-      "title": "Model-Adaptive Tool Necessity Reveals the Knowing-Doing Gap in LLM Tool Use",
-      "url": "https://huggingface.co/papers/2605.14038",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "6f07ad5195343f88",
-      "title": "StableVLA: Towards Robust Vision-Language-Action Models without Extra Data",
-      "url": "https://huggingface.co/papers/2605.18287",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "402ceca22efbc2b2",
-      "title": "CompactAttention: Accelerating Chunked Prefill with Block-Union KV Selection",
-      "url": "https://huggingface.co/papers/2605.16839",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "fbc5fb34a0d26e2e",
-      "title": "From Runnable to Shippable: Multi-Agent Test-Driven Development for Generating Full-Stack Web Applications from Requirements",
-      "url": "https://huggingface.co/papers/2605.17242",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
@@ -615,18 +571,18 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "cd24b8c565de1408",
-      "title": "Targeted Neuron Modulation via Contrastive Pair Search",
-      "url": "https://huggingface.co/papers/2605.12290",
+      "id": "6f07ad5195343f88",
+      "title": "StableVLA: Towards Robust Vision-Language-Action Models without Extra Data",
+      "url": "https://huggingface.co/papers/2605.18287",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
@@ -637,7 +593,62 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "699d5d146c28bfb4",
+      "title": "Where Should Diffusion Enter a Language Model? Geometry-Guided Hidden-State Replacement",
+      "url": "https://huggingface.co/papers/2605.14368",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "10868c51a2b25f63",
+      "title": "Model-Adaptive Tool Necessity Reveals the Knowing-Doing Gap in LLM Tool Use",
+      "url": "https://huggingface.co/papers/2605.14038",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "402ceca22efbc2b2",
+      "title": "CompactAttention: Accelerating Chunked Prefill with Block-Union KV Selection",
+      "url": "https://huggingface.co/papers/2605.16839",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "fbc5fb34a0d26e2e",
+      "title": "From Runnable to Shippable: Multi-Agent Test-Driven Development for Generating Full-Stack Web Applications from Requirements",
+      "url": "https://huggingface.co/papers/2605.17242",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "cd24b8c565de1408",
+      "title": "Targeted Neuron Modulation via Contrastive Pair Search",
+      "url": "https://huggingface.co/papers/2605.12290",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
@@ -648,7 +659,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
@@ -659,29 +670,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "2c3184f0348df7f9",
-      "title": "NGM: A Plug-and-Play Training-Free Memory Module for LLMs",
-      "url": "https://huggingface.co/papers/2605.16893",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "e759b6c84985c7f0",
-      "title": "SafeDiffusion-R1: Online Reward Steering for Safe Diffusion Post-Training",
-      "url": "https://huggingface.co/papers/2605.18719",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
@@ -692,29 +681,18 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "624455c47a0545f9",
-      "title": "TOBench: A Task-Oriented Omni-Modal Benchmark for Real-World Tool-Using Agents",
-      "url": "https://huggingface.co/papers/2605.16909",
+      "id": "2c3184f0348df7f9",
+      "title": "NGM: A Plug-and-Play Training-Free Memory Module for LLMs",
+      "url": "https://huggingface.co/papers/2605.16893",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "ed7998337bc28246",
-      "title": "Incantation: Natural Language as the Action Interface for Multi-Entity Video World Models",
-      "url": "https://huggingface.co/papers/2605.18601",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
@@ -725,7 +703,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
@@ -736,18 +714,18 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "ad563541442fd1a4",
-      "title": "SNLP: Layer-Parallel Inference via Structured Newton Corrections",
-      "url": "https://huggingface.co/papers/2605.17842",
+      "id": "e759b6c84985c7f0",
+      "title": "SafeDiffusion-R1: Online Reward Steering for Safe Diffusion Post-Training",
+      "url": "https://huggingface.co/papers/2605.18719",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
@@ -758,29 +736,73 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "a100bf4a539f70ca",
-      "title": "Geometric Phase Transition Enables Extreme Hippocampal Memory Capacity",
-      "url": "https://huggingface.co/papers/2605.17199",
+      "id": "624455c47a0545f9",
+      "title": "TOBench: A Task-Oriented Omni-Modal Benchmark for Real-World Tool-Using Agents",
+      "url": "https://huggingface.co/papers/2605.16909",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "c16e875deaa73214",
-      "title": "Monitoring the Internal Monologue: Probe Trajectories Reveal Reasoning Dynamics",
-      "url": "https://huggingface.co/papers/2605.18549",
+      "id": "2688d4a10d2614ae",
+      "title": "Evaluating Cognitive Age Alignment in Interactive AI Agents",
+      "url": "https://huggingface.co/papers/2605.17894",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "960c665adb9dd90f",
+      "title": "MementoGUI: Learning Agentic Multimodal Memory Control for Long-Horizon GUI Agents",
+      "url": "https://huggingface.co/papers/2605.18652",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "ed7998337bc28246",
+      "title": "Incantation: Natural Language as the Action Interface for Multi-Entity Video World Models",
+      "url": "https://huggingface.co/papers/2605.18601",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "ad563541442fd1a4",
+      "title": "SNLP: Layer-Parallel Inference via Structured Newton Corrections",
+      "url": "https://huggingface.co/papers/2605.17842",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "4b13677dc2ac5a8b",
+      "title": "E-PMQ: Expert-Guided Post-Merge Quantization with Merged-Weight Anchoring",
+      "url": "https://huggingface.co/papers/2605.16882",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
     },
     {
       "source": "hf-papers",
@@ -791,7 +813,40 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.290Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "a100bf4a539f70ca",
+      "title": "Geometric Phase Transition Enables Extreme Hippocampal Memory Capacity",
+      "url": "https://huggingface.co/papers/2605.17199",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T15:27:08.291Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "a1a8a43bf6b86a0b",
+      "title": "VideoSeeker: Incentivizing Instance-level Video Understanding via Native Agentic Tool Invocation",
+      "url": "https://huggingface.co/papers/2605.16079",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T15:27:08.291Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "c16e875deaa73214",
+      "title": "Monitoring the Internal Monologue: Probe Trajectories Reveal Reasoning Dynamics",
+      "url": "https://huggingface.co/papers/2605.18549",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-19T15:27:08.291Z"
     },
     {
       "source": "hf-papers",
@@ -802,7 +857,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.291Z"
     },
     {
       "source": "hf-papers",
@@ -813,7 +868,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-19T09:47:03.185Z"
+      "discoveredAt": "2026-05-19T15:27:08.291Z"
     }
   ]
 }
