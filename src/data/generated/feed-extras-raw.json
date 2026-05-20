@@ -1,82 +1,16 @@
 {
-  "fetchedAt": "2026-05-20T03:42:44.965Z",
+  "fetchedAt": "2026-05-20T09:38:54.390Z",
   "items": [
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "3740be39f419b443",
-      "title": "Process Rewards with Learned Reliability",
-      "url": "https://huggingface.co/papers/2605.15529",
+      "id": "dd230548d9104aad",
+      "title": "OpenComputer: Verifiable Software Worlds for Computer-Use Agents",
+      "url": "https://huggingface.co/papers/2605.19769",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-20T03:41:59.803Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "107f33c51bfca359",
-      "title": "Artifact-Bench: Evaluating MLLMs on Detecting and Assessing the Artifacts of AI-Generated Videos",
-      "url": "https://huggingface.co/papers/2605.18984",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-20T03:41:59.803Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "097e02cd9372f17a",
-      "title": "CogOmniControl: Reasoning-Driven Controllable Video Generation via Creative Intent Cognition",
-      "url": "https://huggingface.co/papers/2605.19995",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-20T03:41:59.803Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "c8326c2c12dbe3c8",
-      "title": "Aurora: Unified Video Editing with a Tool-Using Agent",
-      "url": "https://huggingface.co/papers/2605.18748",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-20T03:41:59.803Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "c928a9bdc742ae54",
-      "title": "OmniGUI: Benchmarking GUI Agents in Omni-Modal Smartphone Environments",
-      "url": "https://huggingface.co/papers/2605.18758",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-20T03:41:59.803Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "7a5e7dd59ee6249f",
-      "title": "MSAVBench: Towards Comprehensive and Reliable Evaluation of Multi-Shot Audio-Video Generation",
-      "url": "https://huggingface.co/papers/2605.20183",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-20T03:41:59.803Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "187612257cf05877",
-      "title": "CEPO: RLVR Self-Distillation using Contrastive Evidence Policy Optimization",
-      "url": "https://huggingface.co/papers/2605.19436",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-20T03:41:59.803Z"
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
     },
     {
       "source": "hf-papers",
@@ -87,7 +21,18 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-20T03:41:59.803Z"
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "bc68d7a8070664d0",
+      "title": "When Vision Speaks for Sound",
+      "url": "https://huggingface.co/papers/2605.16403",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
     },
     {
       "source": "hf-papers",
@@ -98,29 +43,40 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-20T03:41:59.803Z"
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "ca5b64031d947b3b",
-      "title": "Echo-Forcing: A Scene Memory Framework for Interactive Long Video Generation",
-      "url": "https://huggingface.co/papers/2605.16003",
+      "id": "bf584f349318e7e7",
+      "title": "EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL",
+      "url": "https://huggingface.co/papers/2605.18703",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-20T03:41:59.803Z"
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "ce22ae3b9637e90d",
-      "title": "DocAtlas: Multilingual Document Understanding Across 80+ Languages",
-      "url": "https://huggingface.co/papers/2605.12623",
+      "id": "097e02cd9372f17a",
+      "title": "CogOmniControl: Reasoning-Driven Controllable Video Generation via Creative Intent Cognition",
+      "url": "https://huggingface.co/papers/2605.19995",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-20T03:41:59.803Z"
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "3740be39f419b443",
+      "title": "Process Rewards with Learned Reliability",
+      "url": "https://huggingface.co/papers/2605.15529",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
     },
     {
       "source": "hf-papers",
@@ -131,29 +87,106 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-20T03:41:59.803Z"
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "818e7d120e069087",
-      "title": "SceneCode: Executable World Programs for Editable Indoor Scenes with Articulated Objects",
-      "url": "https://huggingface.co/papers/2605.19587",
+      "id": "107f33c51bfca359",
+      "title": "Artifact-Bench: Evaluating MLLMs on Detecting and Assessing the Artifacts of AI-Generated Videos",
+      "url": "https://huggingface.co/papers/2605.18984",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-20T03:41:59.803Z"
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "dd230548d9104aad",
-      "title": "OpenComputer: Verifiable Software Worlds for Computer-Use Agents",
-      "url": "https://huggingface.co/papers/2605.19769",
+      "id": "c8326c2c12dbe3c8",
+      "title": "Aurora: Unified Video Editing with a Tool-Using Agent",
+      "url": "https://huggingface.co/papers/2605.18748",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-20T03:41:59.803Z"
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "7a5e7dd59ee6249f",
+      "title": "MSAVBench: Towards Comprehensive and Reliable Evaluation of Multi-Shot Audio-Video Generation",
+      "url": "https://huggingface.co/papers/2605.20183",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "187612257cf05877",
+      "title": "CEPO: RLVR Self-Distillation using Contrastive Evidence Policy Optimization",
+      "url": "https://huggingface.co/papers/2605.19436",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "c928a9bdc742ae54",
+      "title": "OmniGUI: Benchmarking GUI Agents in Omni-Modal Smartphone Environments",
+      "url": "https://huggingface.co/papers/2605.18758",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "8fd92b0e3a105d48",
+      "title": "Video Models Can Reason with Verifiable Rewards",
+      "url": "https://huggingface.co/papers/2605.15458",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "aea9116987d8df1f",
+      "title": "Semantic Generative Tuning for Unified Multimodal Models",
+      "url": "https://huggingface.co/papers/2605.18714",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "e7333c0e02687bd4",
+      "title": "PixVerve: Advancing Native UHR Image Generation to 100MP with a Large-Scale High-Quality Dataset",
+      "url": "https://huggingface.co/papers/2605.20147",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "c9628fc03608b396",
+      "title": "ESI-Bench: Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop",
+      "url": "https://huggingface.co/papers/2605.18746",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
     },
     {
       "source": "hf-papers",
@@ -164,7 +197,51 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-20T03:41:59.803Z"
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "b3ffe4c3079c514c",
+      "title": "Context Memorization for Efficient Long Context Generation",
+      "url": "https://huggingface.co/papers/2605.18226",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "36b46531209b3338",
+      "title": "SAGA: A Sequence-Adaptive Generative Architecture for Multi-Horizon Probabilistic Forecasting with Adaptive Temporal Conformal Prediction",
+      "url": "https://huggingface.co/papers/2605.19014",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "339599feea04d909",
+      "title": "Omni-DuplexEval: Evaluating Real-time Duplex Omni-modal Interaction",
+      "url": "https://huggingface.co/papers/2605.17360",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "ca5b64031d947b3b",
+      "title": "Echo-Forcing: A Scene Memory Framework for Interactive Long Video Generation",
+      "url": "https://huggingface.co/papers/2605.16003",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
     },
     {
       "source": "hf-papers",
@@ -175,7 +252,95 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-20T03:41:59.803Z"
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "00e958201c277b95",
+      "title": "Code-Guided Reasoning for Small Language Models: Evaluating Executable MCQA Scaffolds",
+      "url": "https://huggingface.co/papers/2605.18827",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "ce22ae3b9637e90d",
+      "title": "DocAtlas: Multilingual Document Understanding Across 80+ Languages",
+      "url": "https://huggingface.co/papers/2605.12623",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "bf9c955a909d7f75",
+      "title": "TideGS: Scalable Training of Over One Billion 3D Gaussian Splatting Primitives via Out-of-Core Optimization",
+      "url": "https://huggingface.co/papers/2605.20150",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "8bfc222e68e21c8c",
+      "title": "Where Does Authorship Signal Emerge in Encoder-Based Language Models?",
+      "url": "https://huggingface.co/papers/2605.19908",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "8b65365b8ee8f8bb",
+      "title": "CopT: Contrastive On-Policy Thinking with Continuous Spaces for General and Agentic Reasoning",
+      "url": "https://huggingface.co/papers/2605.20075",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.828Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "4fd4861995967c23",
+      "title": "PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents",
+      "url": "https://huggingface.co/papers/2605.19932",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.829Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "818e7d120e069087",
+      "title": "SceneCode: Executable World Programs for Editable Indoor Scenes with Articulated Objects",
+      "url": "https://huggingface.co/papers/2605.19587",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.829Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "e8c755eaa1235b78",
+      "title": "Language-Switching Triggers Take a Latent Detour Through Language Models",
+      "url": "https://huggingface.co/papers/2605.18646",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-20T09:38:24.829Z"
     }
   ]
 }
