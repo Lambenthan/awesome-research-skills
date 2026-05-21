@@ -1,12 +1,12 @@
 {
-  "fetchedAt": "2026-05-21T03:53:56.093Z",
+  "fetchedAt": "2026-05-21T04:31:43.269Z",
   "hn": [
     {
       "id": "48217052",
       "title": "OpenAI to confidentially file for IPO as soon as Friday",
       "url": "https://www.cnbc.com/2026/05/20/openai-ipo-filing.html",
-      "points": 24,
-      "comments": 0,
+      "points": 52,
+      "comments": 7,
       "createdAt": "2026-05-21T02:24:35Z",
       "author": "doppp"
     },
@@ -23,7 +23,7 @@
       "id": "48214188",
       "title": "PopuLoRA: Co-Evolving LLM Populations for Reasoning Self- Play",
       "url": "https://vmax.ai/team/populora-co-evolving-llm-populations-for-reasoning-self-play",
-      "points": 34,
+      "points": 38,
       "comments": 6,
       "createdAt": "2026-05-20T21:11:55Z",
       "author": "AMavorParker"
@@ -32,7 +32,7 @@
       "id": "48214017",
       "title": "Anthropic is expanding to Colossus2. Will use GB200",
       "url": "https://xcancel.com/nottombrown/status/2057194829986300375",
-      "points": 95,
+      "points": 97,
       "comments": 86,
       "createdAt": "2026-05-20T20:55:52Z",
       "author": "aurareturn"
@@ -50,8 +50,8 @@
       "id": "48212493",
       "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
       "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/",
-      "points": 824,
-      "comments": 618,
+      "points": 864,
+      "comments": 646,
       "createdAt": "2026-05-20T19:05:30Z",
       "author": "tedsanders"
     },
@@ -86,7 +86,7 @@
       "id": "48209668",
       "title": "Show HN: Lance – image/video generation and understanding in one model",
       "url": "https://github.com/bytedance/Lance",
-      "points": 55,
+      "points": 56,
       "comments": 15,
       "createdAt": "2026-05-20T15:45:32Z",
       "author": "cleardusk"
@@ -104,8 +104,8 @@
       "id": "48208685",
       "title": "Testing distributed systems with AI agents",
       "url": "https://github.com/shenli/distributed-system-testing",
-      "points": 78,
-      "comments": 13,
+      "points": 79,
+      "comments": 14,
       "createdAt": "2026-05-20T14:40:42Z",
       "author": "shenli3514"
     },
@@ -131,8 +131,8 @@
       "id": "48205626",
       "title": "Qwen3.7-Max: The Agent Frontier",
       "url": "https://qwen.ai/blog?id=qwen3.7",
-      "points": 635,
-      "comments": 252,
+      "points": 640,
+      "comments": 254,
       "createdAt": "2026-05-20T10:35:02Z",
       "author": "kevinsimper"
     }
@@ -143,7 +143,7 @@
       "fullName": "affaan-m/ECC",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "url": "https://github.com/affaan-m/ECC",
-      "stars": 187791,
+      "stars": 187754,
       "pushedAt": "2026-05-20T03:25:40Z",
       "createdAt": "2026-01-18T00:51:51Z",
       "language": "JavaScript"
@@ -153,7 +153,7 @@
       "fullName": "Significant-Gravitas/AutoGPT",
       "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
       "url": "https://github.com/Significant-Gravitas/AutoGPT",
-      "stars": 184435,
+      "stars": 184433,
       "pushedAt": "2026-05-21T01:49:20Z",
       "createdAt": "2023-03-16T09:21:07Z",
       "language": "Python"
@@ -163,8 +163,8 @@
       "fullName": "ollama/ollama",
       "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
       "url": "https://github.com/ollama/ollama",
-      "stars": 171842,
-      "pushedAt": "2026-05-21T03:41:40Z",
+      "stars": 171841,
+      "pushedAt": "2026-05-20T23:06:13Z",
       "createdAt": "2023-06-26T19:39:32Z",
       "language": "Go"
     },
@@ -173,7 +173,7 @@
       "fullName": "f/prompts.chat",
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
       "url": "https://github.com/f/prompts.chat",
-      "stars": 162596,
+      "stars": 162595,
       "pushedAt": "2026-05-20T04:30:45Z",
       "createdAt": "2022-12-05T13:54:13Z",
       "language": "HTML"
@@ -183,7 +183,7 @@
       "fullName": "huggingface/transformers",
       "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
       "url": "https://github.com/huggingface/transformers",
-      "stars": 160817,
+      "stars": 160816,
       "pushedAt": "2026-05-20T14:02:23Z",
       "createdAt": "2018-10-29T13:56:00Z",
       "language": "Python"
@@ -193,8 +193,8 @@
       "fullName": "NousResearch/hermes-agent",
       "description": "The agent that grows with you",
       "url": "https://github.com/NousResearch/hermes-agent",
-      "stars": 159937,
-      "pushedAt": "2026-05-21T03:07:24Z",
+      "stars": 159817,
+      "pushedAt": "2026-05-21T02:18:55Z",
       "createdAt": "2025-07-22T22:22:28Z",
       "language": "Python"
     },
@@ -203,8 +203,8 @@
       "fullName": "langgenius/dify",
       "description": "Production-ready platform for agentic workflow development.",
       "url": "https://github.com/langgenius/dify",
-      "stars": 142076,
-      "pushedAt": "2026-05-21T03:23:00Z",
+      "stars": 142068,
+      "pushedAt": "2026-05-21T02:39:06Z",
       "createdAt": "2023-04-12T07:40:24Z",
       "language": "TypeScript"
     },
@@ -213,7 +213,7 @@
       "fullName": "open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
       "url": "https://github.com/open-webui/open-webui",
-      "stars": 138002,
+      "stars": 137996,
       "pushedAt": "2026-05-19T21:47:01Z",
       "createdAt": "2023-10-06T22:08:27Z",
       "language": "Python"
@@ -223,8 +223,8 @@
       "fullName": "langchain-ai/langchain",
       "description": "The agent engineering platform.",
       "url": "https://github.com/langchain-ai/langchain",
-      "stars": 137242,
-      "pushedAt": "2026-05-21T02:59:30Z",
+      "stars": 137238,
+      "pushedAt": "2026-05-21T02:00:54Z",
       "createdAt": "2022-10-17T02:58:36Z",
       "language": "Python"
     },
@@ -233,7 +233,7 @@
       "fullName": "firecrawl/firecrawl",
       "description": "🔥 Search, scrape, and clean the web for AI agents.",
       "url": "https://github.com/firecrawl/firecrawl",
-      "stars": 122402,
+      "stars": 122385,
       "pushedAt": "2026-05-21T00:35:49Z",
       "createdAt": "2024-04-15T21:02:29Z",
       "language": "TypeScript"
@@ -243,7 +243,7 @@
       "fullName": "ChatGPTNextWeb/NextChat",
       "description": "✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android |  Linux | Windows",
       "url": "https://github.com/ChatGPTNextWeb/NextChat",
-      "stars": 88056,
+      "stars": 88055,
       "pushedAt": "2026-05-15T01:19:01Z",
       "createdAt": "2023-03-10T18:27:54Z",
       "language": "TypeScript"
@@ -253,7 +253,7 @@
       "fullName": "nextlevelbuilder/ui-ux-pro-max-skill",
       "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
       "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 81005,
+      "stars": 80988,
       "pushedAt": "2026-04-03T05:08:19Z",
       "createdAt": "2025-11-30T11:36:31Z",
       "language": "Python"
@@ -263,8 +263,8 @@
       "fullName": "lobehub/lobehub",
       "description": "🤯 LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team.",
       "url": "https://github.com/lobehub/lobehub",
-      "stars": 77440,
-      "pushedAt": "2026-05-21T03:41:46Z",
+      "stars": 77434,
+      "pushedAt": "2026-05-21T02:40:08Z",
       "createdAt": "2023-05-21T07:19:12Z",
       "language": "TypeScript"
     },
@@ -273,7 +273,7 @@
       "fullName": "thedotmack/claude-mem",
       "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
       "url": "https://github.com/thedotmack/claude-mem",
-      "stars": 77102,
+      "stars": 77087,
       "pushedAt": "2026-05-17T05:37:32Z",
       "createdAt": "2025-08-31T20:50:03Z",
       "language": "TypeScript"
@@ -283,7 +283,7 @@
       "fullName": "bytedance/deer-flow",
       "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
       "url": "https://github.com/bytedance/deer-flow",
-      "stars": 68850,
+      "stars": 68842,
       "pushedAt": "2026-05-21T02:28:57Z",
       "createdAt": "2025-05-07T02:50:19Z",
       "language": "Python"
@@ -1404,6 +1404,7 @@
       "category": "浏览器自动化",
       "score": 4,
       "cn": "Anthropic 在博客中梳理了使用 Claude 控制计算机与浏览器时的实践经验。文章从权限边界、敏感操作确认、错误恢复策略等方面给出建议，并讨论了如何设计 prompt 与系统指令让 Claude 在自动化任务中保持稳定。内容涵盖屏幕识别、元素定位、跨页面状态保持等常见场景的处理思路，对于正在构建 Computer Use 与 Browser Use agent 的开发者，这份指南给出了可直接套用的安全与可靠性基线。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 工程团队系统整理了 Claude 4.6 家族与 Opus 4.7 在 computer use 和 browser use 上的工程经验, 同步开源了 claude-quickstarts 仓库下的 computer-use-best-practices 参考实现\n- 点击精度的最大单一变量是分辨率: 4.6 家族截图必须压到 1568 像素长边、1.15MP 以内, Opus 4.7 放宽到 2576 像素长边、3.75MP, 超限会被悄悄降采样导致坐标错位\n- 推荐起步分辨率 1280×720, Opus 4.7 起步 1080p; 也给出 compute_max_api_fit 函数按原图宽高比挤满像素预算, 并附坐标回缩公式将 API 返回值还原到真实屏幕\n- messages 数组中必须先放文本指令再放截图, 顺序颠倒会让模型在不知道目标的情况下处理图像, 直接拉低点击命中率\n- 模型选择上 Sonnet 4.6 机械点击更精准、Opus 4.6 推理更强、Haiku 4.5 优先低延迟; Opus 4.7 缩小了点击精度差距并因更高像素预算减少了降采样需求\n- adaptive thinking 给出按模型不同的努力档位建议, 4.6 家族 medium 最划算且重试后能追平 high, Opus 4.7 默认 high、复杂一次成型用 max, 文章解释为何 UI 任务以感知和机械操作为主、加大思考预算收益有限\n- prompt injection 防御分训练期鲁棒化、实时分类器、持续红队三层, 官方 computer_20251124 工具自动启用分类器且零延迟零成本; 同时强调高风险动作要走 human-in-the-loop、最小权限、全程日志\n- 上下文管理给出组合策略: cache 断点放在稳定前缀加最近的 tool_result, 滚动缓冲按 keep_n=3、interval=25 批量替换旧截图为占位, 配合 compact_20260112 服务端压缩并附 COMPACT_PROMPT 分节大纲\n- 实验段介绍 computer_batch / browser_batch 批量动作工具、advisor_20260301 执行器与高智能顾问配对的工具, 以及孤儿 advisor 块清理、定时提醒 nudge 等踩坑细节\n- 引入 Teach Mode 思路: 录制人工演示形成 WorkflowStep 数据结构, 回放时把标注好蓝圈的截图作为上下文喂给模型, 并提供 strict、adaptive、goal-oriented 几档不同严格度\n\n## 具体怎么实现\n\n文章的工程结构围绕一个核心约束展开: Claude 看到的是被 API 限制过的图像, 而开发者收到的坐标是相对开发者声明的 display_width_px / display_height_px 空间. 实现路径上, prepare_screenshot 函数把原图 LANCZOS 压到目标尺寸并 base64 编码, scale_coordinates 用 screen_w/display_w 比值把 API 返回坐标乘回真机像素, 调用时 tools 列表里的 computer_20251124 块声明的 display_width_px / display_height_px 必须与发出去的图严格一致, 顺序上 content 数组先 text 再 image, betas 头带 computer-use-2025-11-24. 思考预算用 thinking={\"type\": \"adaptive\"} 加 output_config={\"effort\": \"medium\"} 配置, 4.6 家族 medium 与 high 在重试场景下成功率收敛, 因此对成本敏感工作流应优先 medium, Opus 4.7 默认 high 且 low 档单 token 表现就接近 4.6 的 max.\n\n长会话的成本控制则交给一组互补的机制: set_trailing_cache_control 函数先清空旧 cache_control 标记, 再给最近的 tool_result 打上 ephemeral 缓存断点, prune_old_screenshots 在截图总数超过 keep_n + interval 才一次性把最老的 interval 张图替换为 [Image omitted] 文本块, 保持 prefix 在两次剪枝之间字节稳定. context_management 字段里挂 compact_20260112 编辑器并自定义 instructions 字段为 COMPACT_PROMPT, 大纲依次落到 USER INSTRUCTIONS 逐字保留、TASK TEMPLATE 抽出可重复模式、CONSTRAINTS AND RULES、ACTIONS TAKEN、ERRORS AND FIXES、PROGRESS TRACKING、CURRENT STATE 与 NEXT STEP, 服务端压缩后还要在客户端用 truncate_to_last_compaction 函数按 message_index_after_compaction 切掉本地旧消息, 否则下一次请求 cache 前缀会错位.\n\nadvisor 工具用 advisor_20260301 类型挂在 tools 数组里, model 字段填 claude-opus-4-7, 执行器调用时服务端单次请求内消费 Opus 推理, 因此 max_uses 与会话级上限要在 harness 里再加一层. 一旦关掉 advisor, 必须用 strip_orphaned_advisor_blocks 走一遍历史消息删掉 server_tool_use(name=advisor) 与 advisor_tool_result, 否则下一次请求 API 会因引用了已下线的工具而返回 400. Teach Mode 的回放 prompt 由 generate_playback_context 函数生成, 里面把 demonstration_context 标签塞进消息开头, 明确告诉模型蓝圈是录制时的标注、自己截图不会有, 接着把每个 WorkflowStep 的 description 与 base64 截图按 image block 依次追加, 形成可重放、可适配 UI 变化的工作流脚本. 调试方面参考实现配套了几件 utility: streamlit 启动的 trajectory viewer 复盘历史轨迹, uvicorn 起的 tool debug panel 单独触发截图与点击, localization playground 把模型预测的点直接画回原图, 用来定位失败到底是降采样、坐标换算还是模型本身的判断错误. 这套写法的合理性在于把误差源头逐一分离, 让排查不再依赖盯日志.\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1418,6 +1419,7 @@
       "category": "Agent",
       "score": 4,
       "cn": "Anthropic 发布了一篇面向初创公司的 AI Agent 构建指南。文章从 Agent 的定义出发，区分了简单工作流与自主 Agent 的适用场景，并给出了设计原则：保持简单、透明化流程、为 Agent 提供明确工具。指南还讨论了 Agent 的评估、安全与成本控制，以及何时应避免使用 Agent。对于正在探索 AI 自动化的创业团队，这是一份务实的参考。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 在 2025 年 11 月 3 日发表针对初创公司的 AI agent 实践指南，强调 agent 与传统 AI 工具的区别在于可以自主执行业务流程，仅保留人类在关键节点介入\n- 文章把 agent 给初创公司带来的价值归到三条主线：消除重复劳动、补齐难以招聘的专家能力、打破速度与质量之间的取舍\n- 引用 Campfire、Armanino、ClassDojo 等案例说明日常运营加速，比如 Campfire 把月结流程压缩 3 天，对账时间减 90%\n- eSentire 与 Gradient Labs 案例说明专家级能力替代，SOC 分析从 5 小时压到 7 分钟、复杂金融客服 80–90% 解决率\n- Brex 在合规率与自动化率上的数字，StackBlitz 4 周内做到 400 万美元 ARR，体现速度与质量同时提升\n- 文章给出实施路径，从有人工监督、容错高的场景起步，先解决一个具体问题再向外扩\n- 强调三条工程原则：模块化设计、决策可追溯、保留关键节点的 human-in-the-loop\n\n## 具体怎么实现\n\n实施部分围绕\"从哪里开始、如何扩、规模化时要注意什么\"展开。文章建议把首个 agent 部署放在已经有人类审核流程的环节上，这种位置允许 agent 即使产出存在瑕疵也不会引发系统性问题，同时给团队提供观察 agent 行为的低风险窗口。Inscribe 把欺诈审查从 30 分钟压到 90 秒、产出提升 70 倍，前提是文档校验与风险分析任务本身有标准化判定规则；Micro1 每天跑 3000 多场 AI 技术面试、招聘成本降 85%，做法是把已标准化的初筛动作交给 agent，把人力留在后续高价值环节。\n\n规模化阶段聚焦工程实践。modularity 要求把 agent 能力拆成可替换组件，避免端到端整块开发，更换模型或新增能力时不必从头重做。observability 在跨职能场景下比模型本身更关键，日志、推理轨迹与工具调用记录必须从第一天就设计好，事后补很痛苦。human-in-the-loop 的边界设计也写得很具体，agent 应该识别哪些决策需要人类介入并主动标出来，避免在\"全自动\"与\"全审批\"之间二选一。这些首次部署除了带来即时收益，更重要的是沉淀\"你的数据如何与 agent 集成、什么样的 prompt 适合你的场景、工作流要怎么调整\"这套经验，成为后续放大的 playbook。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1432,6 +1434,7 @@
       "category": "Agent",
       "score": 4,
       "cn": "企业级 AI Agent 的构建涉及可靠性与安全性。Anthropic 从工程实践出发，总结了设计原则、架构模式与部署策略，涵盖工具使用、记忆管理、权限控制等关键环节。Claude 在 Agent 执行中负责规划、调用工具与处理反馈，把复杂任务推进到自动化层面。文章还讨论了评估与监控方法，帮助团队在生产环境中稳定运行 AI Agent。",
+      "detail": "## 这篇文章讲了什么\n\n- 文章是 Anthropic 面向企业领导者的 agent 落地指南，配套 PDF guide 与 Claude Cowork 推荐部署路径\n- 引用 Anthropic 2025 年 9 月的 Economic Index：美国受雇者在工作中使用 AI 的比例从 2023 年的 20% 升至 40%\n- 提出一个分水岭问题：AI 的回报会是长期复利，还是在一个季度内就摊平？\n- 在 Anthropic 的观察里，能持续兑现回报的企业把 agent 嵌入员工工作、流程与产品本身，把机构知识编码成会随时间累积的系统\n- 指南围绕\"三大支柱\"展开：跨越 agentic thinking divide、按企业真实工作方式给员工做 AI 进阶训练、压缩信息密集流程同时保留 human-in-the-loop\n- 同步给出第四条主线：用 AI 构建能直接产生新收入的产品能力，而不止节流\n- 落地工具是 Claude Cowork，并提供一份六个月的部署框架，避免企业为每个业务团队重做一遍定制开发\n- 客户案例选取 L'Oreal、Lyft、Rakuten 三家，展示了在不同行业里 agent 如何嵌入实际业务\n\n## 具体怎么实现\n\n指南把企业 AI 转型拆解为几条交叉推进的工作线。其一是 upskilling，把员工能掌握的 AI 用法贴近本公司真实业务、术语与决策习惯，让 AI 反映组织实际的工作方式，原文将这条作为跨越所谓 agentic thinking divide 的前提。其二是流程压缩，把信息密集、跨系统的处理环节交给 agent 串联，关键约束是保留 human-in-the-loop 的判断与专家审核，让 agent 处理收敛、专家处理裁定。再往后一层是产品化，把 agent 能力沉淀到自家产品里，转化为能直接产生收入的新形态，而非停留在内部降本工具。L'Oreal、Lyft、Rakuten 三家被列为已在路径上跑出实绩的样本，原文以这些案例支撑了\"先发优势难以被竞争对手复制\"的判断。\n\n工具层落在 Claude Cowork 上。Anthropic 在指南中给出一份六个月部署框架，把团队不必为每个业务部门做一次定制开发的情况列为推荐路径：先在小范围里把员工训练与流程压缩做到稳定，再以共享的 Cowork 能力扩散到组织其他业务团队。文章并未把这套部署当成模板照搬，而是反复回到 deliberate 这个判断点上：把 AI 教给员工的方式、应用 AI 的环节、下一步要构建的产品能力，都需要企业自身有意识地选择。完整 PDF 链接附在原文末尾，读者按需下载即可。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1446,6 +1449,7 @@
       "category": "其他",
       "score": 4,
       "cn": "Anthropic 为 Claude 更新了与 Microsoft Excel 和 PowerPoint 的集成能力。用户现在可以直接在 Excel 中调用 Claude 进行数据分析和公式生成，在 PowerPoint 中辅助创建演示文稿内容与排版。这些更新降低了在办公场景中使用 AI 的门槛，让文档处理与数据工作流更顺畅。Claude 能够理解表格上下文并生成结构化输出，同时支持对幻灯片内容的智能建议与调整，提升了办公效率与协作体验。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 宣布 Claude for Excel 与 Claude for PowerPoint 升级，两个 add-in 之间共享完整对话上下文\n- 一次会话里 Claude 能跨多个 Excel 与 PowerPoint 文件读单元格、写公式、合并数据、编辑幻灯片\n- Skills 功能正式接入 Excel 和 PowerPoint add-in，把成熟工作流变成一键动作\n- 为 Excel 预装了财务建模相关的 starter skills，为 PowerPoint 预装了演示稿相关的 starter skills\n- 部署侧扩展到 Amazon Bedrock、Google Cloud Vertex AI、Microsoft Foundry 三大云平台，可通过 LLM gateway 接入\n- Claude 同时支撑 Microsoft 365 Copilot 中 Excel 的 Agent Mode，与 Copilot 并排工作\n- 付费计划用户在 Mac 和 Windows 上可 beta 使用，更新于 2026 年 3 月 11 日发布，4 月 10 日 Claude for Word beta 跟进开放给 Team 和 Enterprise\n\n## 具体怎么实现\n\n跨文件共享上下文是这次更新的主线。文章给出的典型场景里，一位金融分析师把 workbook 里的可比公司财务数据拉出来，在 Excel 里搭出 trading comps 表，把估值摘要落进 pitch deck，再起草一封发给 MD 的邮件，全程不需要切换标签页或对 Claude 重新解释数据集。两个 add-in 看到的是同一段对话，因此 Claude 在 Excel 里做的任何动作，PowerPoint 这边也能直接接上。Skills 在这里的作用是把\"某个同事摸索出的正确做法\"固化下来，例如 variance analysis 的跑法、客户 deck 的模板用法，保存为 skill 之后整个团队都能一键复用。Anthropic 预装的 starter skills 覆盖 Excel 端的模型审计、LBO/DCF/三表模型搭建、可比公司分析、脏数据清洗，以及 PowerPoint 端的竞品 landscape deck、已有 deck 内容更新、投行 deck 数字一致性与叙事审阅。所有已经在 Claude 桌面或 web app 里配置好的 skill，无论个人还是组织级，都能像 MCP connector 一样直接在 add-in 里跑起来，starter skills 还通过 Financial Analysis plugin 自动安装到两个 add-in，plugin 加新 skill 时用户端无需重新配置。\n\nInstructions 是另一条贯穿全局的机制，用于设定 app 级别的持久偏好，比如 Excel 里始终套用公司号码格式、PowerPoint 项目符号控制在一行、对硬编码假设单元格做出标记，Claude 自身也能帮使用者撰写和编辑 instructions。部署层面，文章强调\"在客户合规姿态所在的地方与之相遇\"：组织既可以用 Claude 账号直接接入两个 add-in，也可以把流量路由到已有 LLM gateway，最终落到运行在 Amazon Bedrock、Google Cloud Vertex AI 或 Microsoft Foundry 上的 Claude 模型；同时 Excel 的 Agent Mode 让 Microsoft 365 Copilot 客户能在同一个 workbook 上让 Claude 和 Copilot 并排出力。配套支持页面给出了 LLM gateway 配置指南、Excel 与 PowerPoint 的使用指南，以及一个面向 add-in 最佳实践的 webinar 报名入口。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1460,6 +1464,7 @@
       "category": "Agent",
       "score": 4,
       "cn": "Claude 更新了 Managed Agents 功能，新增自托管沙箱和 MCP 隧道支持。自托管沙箱允许企业将 Agent 执行环境部署在自己的基础设施中，满足数据合规与安全隔离需求。MCP 隧道则简化了 Agent 与内部工具、API 的连接，无需暴露公网端口。这两项更新为生产环境下的 Agent 部署提供了更强的控制力与灵活性，适合需要定制化安全策略的企业用户。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 给 Claude Managed Agents 加入两项企业向能力：self-hosted sandbox 进入 public beta，MCP tunnel 进入 research preview\n- Self-hosted sandbox 让 tool execution 留在客户自家基础设施或受信任的 sandbox provider 内，而 agent loop 的编排、上下文管理、错误恢复仍由 Anthropic 平台承担\n- 客户可自带 sandbox client，官方支持 Cloudflare、Daytona、Modal、Vercel 四家，分别覆盖 microVM 隔离、长时有状态会话、AI 工作负载、VM 加 VPC peering 等不同场景\n- MCP tunnel 由客户在内网部署一个轻量 gateway，向外发起单条出站连接，让 agent 不打开任何 inbound 防火墙规则即可调用内网 MCP server，流量端到端加密\n- Cloudflare 上 Amplitude 在做 Design Agent，Daytona 上 Clay 的 Sculptor 自主构建并监控 GTM workflow，Vercel sandbox 上 Rogo 服务机构金融，Modal 上 Mason 把上线时间压到一周内\n\n## 具体怎么实现\n\nSelf-hosted sandbox 把 Managed Agent 的执行栈切成两段。上层由 Anthropic 托管 agent loop、context、retry，调用 tool 时把任务下发到客户配置的 sandbox 镜像；下层运行在客户控制的 compute 上，资源规格、镜像、network policy、audit log 由客户侧决定，文件与仓库不离开企业边界。四家 provider 侧重各异：Cloudflare 走 microVM 加 zero-trust 出站，Daytona 提供长时有状态会话，Modal 把 sandbox 与自家函数共用底座并支持 GPU，Vercel 走 VM 加 VPC peering 并在网络边界注入凭据。MCP tunnel 则补齐数据访问的另一半：客户在内网部署 gateway，对外只保留单条加密出站，agent 即可调用内网数据库、私有 API 与工单系统，配置入口在 Claude Console 工作区设置中由组织管理员管理。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1474,6 +1479,7 @@
       "category": "skill",
       "score": 4,
       "cn": "Anthropic 推出 Connectors Directory，汇集与 Claude 兼容的工具和集成。该目录允许用户浏览、筛选与发现可用于扩展 Claude 能力的第三方服务与 MCP 插件，涵盖开发、生产力、数据分析等领域，让用户在构建基于 Claude 的应用时少绕弯路。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 发布 Connectors Directory, 把第三方工具的接入入口收拢到 claude.ai/directory 与 anthropic.com/partners/mcp 两个目录, 用户在 Claude 应用内一键完成 OAuth 认证或本地扩展安装\n- 本次合作伙伴构建的新一批 connector 同步上线, 远程服务端含 Notion、Canva、Stripe, 本地桌面端含 Figma、Socket、Prisma\n- 文章定位 connector 的作用: 让 Claude 拿到用户自己工具中的上下文, 减少每次对话从零解释项目背景的重复成本\n- 给出几条典型工作流, 包含把 Claude 讨论沉淀为 Notion 路线图、从创意 brief 生成 Canva 社媒图、把 Figma 文件转成可上线代码、调用 Stripe 客户与支付数据\n- 区分使用范围: 目录与本地桌面扩展面向全部 Claude 用户的网页端和桌面端, 远程 connector 仅向付费计划开放\n\n## 具体怎么实现\n\nConnectors Directory 的产品形态是一个集中入口加上远端与本地的接入路径. 用户进入 claude.ai/directory 浏览 Anthropic 推荐的工具列表, 远程服务点击 Connect 触发标准 OAuth 流程把账户与 Claude 关联, 本地桌面应用点击 Install 把扩展装进 Claude Desktop 客户端, 安装完成后 Claude 就可以在对话上下文里调用对应工具的能力. 这一层对应 MCP 协议的两种部署形态, 远程 connector 走服务器对服务器的 MCP 调用, 本地扩展则走客户端内的桌面 MCP server, 二者共享同一份能力声明.\n\n使用层面的关键区别在于上下文来源. 没有 connector 时, 用户让 Claude 写发布说明要么得到一个空模板, 要么必须手动粘贴 ticket 列表; 接通 Linear 之后, Claude 在生成发布说明前会先调用对应工具拉取本期 sprint 的 ticket 数据再撰写正文. Notion、Canva、Stripe、Figma 等 connector 也遵循同一模式, 即模型在生成前先到用户已授权的系统中取数, 再用真实数据完成任务. Anthropic 用一段示例视频展示了把 Claude 讨论沉淀为 Notion 路线图、从创意 brief 生成 Canva 社媒图、把 Figma 文件转换为可上线代码、调用 Stripe 客户与支付数据等场景, 强调对话不再需要重复解释项目背景与工具配置.\n\n商业层面这套目录对全部用户开放浏览, 桌面扩展对所有用户可用, 远程 connector 仅向 Pro、Max、Team、Enterprise 等付费计划开放, 形成免费桌面接入加付费云端接入的双层结构. Anthropic 的产品意图是把 Claude 从一次性问答助手转向贴近真实工作环境的协作者, Connectors Directory 是这一转变的承载入口, 后续 anthropic.com/partners/mcp 的合作伙伴列表也将沿同一目录持续扩展, 第三方应用厂商凭借 MCP 协议即可自助上架.\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1488,6 +1494,7 @@
       "category": "其他",
       "score": 4,
       "cn": "Anthropic 通过案例详细介绍了 Claude 在法律行业多个场景中的部署情况。律师事务所、企业法务部门和法院系统将 Claude 用于合同审查、法律研究、文件摘要、合规分析等任务，提升了法律工作的效率和一致性。文章梳理了不同规模机构部署时的技术方案选择、数据安全考量、人机协作模式以及实际产出的质量评估结果，为法律行业采用大语言模型提供了可参考的实践路径。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 发布面向法律行业的部署指南 PDF, 同时引用 FTI Consulting 与 Relativity 联合发布的 2026 General Counsel Report: 公司法务团队使用生成式 AI 的比例从 2023 年的 20% 升到 2025 年的 44%, 2026 年再升到 87%\n- 文章给出 Claude 在法律场景的四产品矩阵: Chat 用于检索与问答, Claude Cowork 处理跨文件跨应用的事项级工作, Claude for Microsoft 365 嵌入 Word、Excel、PowerPoint、Outlook, Claude Platform 用来构建定制法律应用\n- 同时介绍 connectors、skills、subagents 与 plugins 如何让 Claude 对齐律所或企业法务团队的 playbook、判例库与文风\n- 配套 12 个面向业务领域的预置 plugin, 商务合同、公司治理、雇佣、隐私、产品、监管、AI Governance、IP、诉讼等条线都有现成模板\n- 使用场景按企业法务部门、交易实务、诉讼与争议、合规与监管四个维度组织, 列出合同审查与红线、并购尽调、隐私影响评估、监管监控、诉讼准备、外部律师监督等具体工作流\n- 收录 Anthropic 自家法务团队如何用 Claude 加速合同红线与营销内容审查的案例\n- 针对 CIO 与 IT 负责人, 单列问答回答托管方式、数据留存、律师工作产品特免、SSO、审计相关疑虑\n- 提供一份可在公司内部直接推进的三阶段采用路线图, 引导团队从单点试用到规模化落地\n\n## 具体怎么实现\n\n这份指南的落地路径围绕产品矩阵展开. Anthropic 把法律团队的工作流按发生场所拆开: 日常检索与一次性问答留在 Chat, 跨文件跨系统的事项级工作交给 Claude Cowork, 律师真正花时间的 Word、Excel、PowerPoint、Outlook 由 Claude for Microsoft 365 嵌入式接管, 自建合同审查工具、立法监控机器人这类定制应用走 Claude Platform. 文章作者强调多数客户实际是几款产品并行使用, 而不是单一入口.\n\ncustomization 这一层让 Claude 贴合律所文风的方式分散在几个层次: connectors 接通文档管理系统, 例如 iManage、NetDocuments, 以及 Microsoft 365 生产力组件; skills 把红线规则、条款偏好与 house style 编码为可加载的能力包; subagents 负责在事项级任务中并行处理子任务; plugins 则把上述能力封装成可一键启用的业务模板. 12 个预置 plugin 已经按业务条线分好, 法务团队拿到之后直接挑选对应模板, 不必从零编写. 三阶段路线图则给出从试点选择、流程改造到规模化推广的执行节奏, CIO 关心的托管、留存、SSO、审计、律师工作产品特免则在 PDF 末尾单列 FAQ. Anthropic 自家法务团队作为内部案例出现, 把合同红线与营销内容审查的耗时从天级压到小时级, 作为给外部团队参考的样本.\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1502,6 +1509,7 @@
       "category": "skill",
       "score": 4,
       "cn": "Claude 现已支持以 Skills 和 MCP 服务器扩展功能。用户可创建自定义 Skills 赋予 Claude 特定领域的知识与行为，也可以接入 MCP，即 Model Context Protocol 服务器，让外部工具和数据源参与对话。这一更新让 Claude 在更多工作场景中灵活适配，开发者只需写简单配置即可定制助手行为，不必等待官方集成。Anthropic 认为这将加速 Claude 在企业级应用中的落地。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 回答客户最常追问的两个问题：Skill 与 MCP 何时单独用、何时联用，并把 Agent Skills 作为开放标准公开发布以支持跨平台移植\n- 文章给出的核心定位是：MCP 解决\"连得上\"，负责为 Claude 提供对 GitHub、Salesforce、Notion 等外部系统的标准化、安全访问；Skill 解决\"用得好\"，封装领域知识与 workflow 逻辑\n- 单一 Skill 可以编排多个 MCP server，单一 MCP server 也可以被多个 Skill 复用，这种正交结构让团队能把连接与流程逻辑独立演进\n- Skill 与 MCP 联用带来三项结果：discovery 路径清晰、orchestration 顺序可预测、output 与团队标准一致，把\"通用 agent\"变成\"按本队 playbook 工作的 agent\"\n- 用两个真实场景演示联用：金融分析师做 comparable company analysis，由 Skill 决定方法论与输出格式，MCP 连 S&P Capital IQ、Daloopa、Morningstar 取实时数据；项目经理做 meeting prep，用 Notion 的 Meeting Intelligence Skill 配合 Notion MCP server 抓页面并生成内部 pre-read 与外部 agenda\n- 给出明确的选用边界：解释\"怎么做\"用 Skill，让 Claude\"访问什么\"用 MCP；并提醒避免 MCP 与 Skill 在输出格式等指令上互相冲突\n\n## 具体怎么实现\n\nAnthropic 用一组对照把两者的职责切干净。MCP server 暴露 tool、resource、prompt 三类接口，连接一旦建立，定义会在 session 开始时整体加载，便于 Claude 随时调用；Skill 走 progressive disclosure 路线，按需载入，把指令、脚本、模板、素材组织成可复用的 procedural knowledge。两者交叠的灰区在 tool usage hint：MCP 内置的提示应当只覆盖\"如何正确使用本 server 的 tool\"，例如 Salesforce 的 query 语法与 API 格式；Skill 负责跨 server 的 orchestration，例如先查哪条记录、与 Slack 上下文做交叉引用、按本队 pipeline review 标准排版。文章给出的判定经验是：如果 MCP 与 Skill 在输出格式上冲突，Claude 只能猜，应当让 MCP 处理连接、让 Skill 主导呈现与流程。\n\n两个真实工作流展示了这套分工的运行方式。Comparable company analysis 的 Skill 先定位需要查询的数据源，再触发 MCP 拉取 S&P Capital IQ、Daloopa、Morningstar 的实时财务数据，由 Skill 套用方法论、按合规要求格式化、做最终校验。Notion 的 Meeting Intelligence Skill 则先列出要扫描的 project page、previous meeting note、stakeholder profile，由 Notion MCP server 完成检索与读写，再由 Skill 把内容拆成内部 pre-read 与外部 agenda 两份文档并写回 Notion。文章末尾给出落地步骤：在 claude.ai 的 Settings → Capabilities 启用 Skill，从 anthropics/skills 仓库挑现成模板，再到 modelcontextprotocol/servers 找对应 MCP server 接上，最后把 Skill 指向新接入的 MCP，让两者在同一个 agent 内协作。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1516,6 +1524,7 @@
       "category": "skill",
       "score": 4,
       "cn": "Anthropic 发布了一篇关于如何为 Claude 创建 Skill 的详尽指南。文章从背景出发，解释了 Skill 作为定制化指令包的功能定位，适用于个人与团队在特定场景中统一 Claude 的行为。指南列出四项核心准备：明确技能目标、编写清晰指令、确定触发条件以及提供示例。同时指出当前 Skill 的若干局限，如无法自动获取外部信息、不支持多轮对话的上下文记忆，以及复杂任务仍需配合工具。通过客服、内容摘要和代码审查三个示例展示了实际用法，帮助用户理解从命名到测试的完整创建流程。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 系统介绍如何通过 SKILL.md 文件创建 Skill，把机构经验、输出规范、多步骤工作流编码进 Claude\n- 给出从需求澄清到上线的五步流程：理解核心需求、命名、写 description、写 instructions、上传\n- 强调 SKILL.md 里只有 name 和 description 影响触发，description 是决定 Skill 何时激活的关键字段\n- 列出 Claude.ai、Claude Code、Claude Developer Platform 三个上传路径，并给出 Skills API 的 curl 调用片段\n- 提出三类测试场景：normal operations、edge cases、out-of-scope，以及 triggering test 与 functional test\n- 给出 docx、brand-guidelines、frontend-design 三个真实 Skill 示例并解析\"为什么强\"\n- 讨论 Skill 触发机制、文件膨胀控制、组织内共享治理与常见调试问题\n\n## 具体怎么实现\n\n文章把 Skill 拆成三件可写的东西：name、description、instructions。name 用小写加连字符的形式标识，例如 pdf-editor、brand-guidelines；description 决定 Claude 是否会在某次请求里调用它，作者用一组对比把\"弱描述\"和\"强描述\"摆在一起，弱版本写\"This skill helps with PDFs and documents\"，强版本写一段包含 extract、create、merge 等具体动词，以及 form filling、batch operations 等用例，再加上\"not for simple PDF viewing\"这样的边界说明。Anthropic 把 description 视作 Claude 做语义匹配的输入，而非关键词匹配，所以模糊描述会同时带来\"该触发没触发\"和\"不该触发也触发\"两类问题。instructions 这一块要求 markdown 结构化呈现，包括 overview、prerequisites、execution steps、examples、error handling、limitations，并强调把成功标准写进 Skill 本身让 Claude 自检；为了控制 context window，作者推荐\"menu\"模式，SKILL.md 只描述菜单，把具体流程拆到独立文件里用相对路径引用，Claude 按任务现读现取。\n\n上传环节给出三条具体路径：Claude.ai 在 Settings 里加 custom skill，要求 Pro/Max/Team/Enterprise 计划并开启 code execution，且当前 Skill 仅个人可见；Claude Code 在 plugin 或 project 根目录建 skills/ 目录，每个子目录放一份 SKILL.md，Claude 在 plugin 安装后自动发现；Claude Developer Platform 通过 /v1/skills 端点上传，文章给出 curl 调用，请求带 anthropic-beta: skills-2025-10-02 头、display_title 字段以及通过 -F files[] 上传的 SKILL.md。测试矩阵覆盖三类场景，normal operations 用典型请求验证基础逻辑，edge cases 用残缺或异常输入观察降级行为，out-of-scope 用相邻任务确认 Skill 不该越界激活，例如 NDA review skill 不应被 employment agreement 唤起；triggering test 同时跑显式调用和自然语言调用两种触发方式。三个示例里，docx skill 展示了 workflow decision tree、redlining workflow、ooxml.md 渐进式披露以及 tracked changes 的 good/bad XML 对比；brand-guidelines skill 提供 Claude 本身不知道的精确事实，如 #d97757 这类十六进制色值、Poppins/Lora 字体名、24pt 字号阈值；frontend-design skill 把\"避免 generic AI aesthetic\"写进 description，列出 typography、color、motion、spatial composition、background 五个美学维度的明确要求。文末还给出团队级治理建议：小团队用统一 specification 模板，中大型团队设 skill owner、维护中心 wiki、做版本化与季度复审。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1530,6 +1539,7 @@
       "category": "其他",
       "score": 4,
       "cn": "Anthropic 为 Claude 新增集成能力，让它能够连接 Google Drive、GitHub、Slack 等常用外部服务。用户以自然语言指令让 Claude 直接读取文档、仓库代码或团队消息，并在对话中处理这些数据。该功能落在 MCP 协议之上，确保安全可控的权限管理。集成支持一次性授权和持续使用，适用于知识检索、代码审查、协作分析等场景。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 推出 Integrations，让 Claude 通过远程 MCP 服务器连接到外部应用与数据\n- 首批接入 10 个服务，包括 Atlassian 的 Jira 和 Confluence、Zapier、Cloudflare、Intercom、Asana、Square、Sentry、PayPal、Linear、Plaid，后续将加入 Stripe、GitLab、Box\n- 文章宣布 Research 进入 advanced 模式，单次任务可调度 5 到 45 分钟，跨越数百个内外部来源生成带引用的报告\n- Web search 对所有付费 Claude 用户全球开放\n- 开发者可以基于 Cloudflare 等方案在 30 分钟内自建一个 MCP 服务器，内置 OAuth、传输处理与一体化部署\n- Integrations 与 advanced Research 在 Max、Team、Enterprise 计划上开启 beta，6 月 3 日扩展到 Pro\n\n## 具体怎么实现\n\nIntegrations 把 2024 年 11 月发布的 Model Context Protocol 从 Claude Desktop 的本地服务器场景推广到远程服务器，使第三方厂商可以把自家产品做成可被 Claude 直接调用的工具集。一旦工具被接入，Claude 就拿到了项目历史、任务状态与机构知识等上下文，并能在网页与桌面端两个界面里反过来对这些系统下指令。文章用 Zapier 举例：Claude 在对话中可以走 Zapier 已搭好的工作流拉取 HubSpot 销售数据、按日历自动准备会议简报；用 Atlassian 举例：Claude 可以一次性总结并新建多个 Confluence 页面与 Jira 工单，承担产品规划与任务分发的串联工作；用 Intercom 举例：Fin 作为 MCP 客户端，能把用户报障自动写入 Linear，让产品方在一次对话中走完从用户反馈到 bug 修复的链路。\n\nadvanced Research 的工作机制是把请求拆成若干子问题，对每一部分单独深挖再合成总报告，多数任务在 5 到 15 分钟内完成，复杂调研可以跑到 45 分钟，相当于人工几小时的工作量。数据来源在原有 web 与 Google Workspace 基础上加入用户接入的 Integration，每条引用直接链接回原始资料，便于核对溯源。这意味着 Research 不再只读公开网络，而是把组织内部的 Jira 任务、Confluence 文档、Asana 计划、Linear 工单、Plaid 金融数据等内部信号一并纳入。\n\n开发者自建 MCP 服务器时，文章指向 Anthropic 官方文档与 Cloudflare 的远程 MCP 服务方案，由后者承担 OAuth 鉴权、传输处理与一体化部署，整套上线最快可在 30 分钟内完成。这次发布同时把 web search 在所有付费 Claude 计划上全球开放。功能首先在 Max、Team、Enterprise 计划进入 beta，随后于 6 月 3 日扩展至 Pro 用户；未来 Stripe、GitLab 与 Box 的 Integration 也将陆续接入。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1544,6 +1554,7 @@
       "category": "编程工具",
       "score": 4,
       "cn": "Anthropic 工程师将 Claude Code 视为一名新入职的开发者，总结了过去 17 年的开发经验来指导其行为规范。团队为 Claude Code 设定了代码风格、提交信息格式、测试优先等工程准则，并持续通过“代码审查”反馈调整。这篇博客展示了如何像带人一样引导 AI 编程工具，使其产出更符合团队预期。",
+      "detail": "## 这篇文章讲了什么\n\n- Skyline 是华盛顿大学 MacCoss Lab 维护的开源蛋白质分析软件, 由 Brendan MacLean 主导, 70 万行 C# 代码、200,000+ 夜间自动化测试, 2008 年至今十七年\n- Brendan 把训练新研究员的方法搬到 Claude Code, 把所有 AI 上下文移到独立仓库 pwiz-ai, 根目录 CLAUDE.md 负责环境与文档索引\n- 真正的专业知识写进 skills, debugging skill 用 ALWAYS 触发条件把 Claude 从\"猜测加试错\"模式拉到根因分析\n- 实际收益: 前同事遗留一年的 Files View 面板两周完工, 三年没人维护的 LabKey 夜间测试模块加新特性只花了不到一天\n- 配套基础设施被 Claude Code 改写, 含 2000+ 教程截图的自动复现流水线、用 C# 写的 diff MCP server、每日早晨汇总失败与异常的邮件机器人\n\n## 具体怎么实现\n\n把 AI 上下文与代码仓库解耦是这套方法的关键: pwiz-ai 独立版本控制, 因为上下文增长速度与代码不同步, 且要跨分支与历史时间点生效. 根目录 CLAUDE.md 只承担环境地形说明, 真正的专业能力以 skill 形式存储, 每个 skill 遵循 reference do not embed 原则, 指向中央文档而不复制内容. 数据层用 MCP 把 LabKey Server 的测试结果、团队邮件、GitHub 发布标签接进来, Claude Code 据此生成每日摘要邮件; diff MCP server 用 C# 写成, 让 Claude 在截图复现流水线里看到像素级差异.\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1558,6 +1569,7 @@
       "category": "其他",
       "score": 4,
       "cn": "Anthropic 发布了一篇关于 Agent 时代产品开发思考的博客文章。文章围绕如何构建以 Claude 等 AI 系统为核心的软件产品展开，讨论了从用户需求定义、交互设计到技术架构取舍的完整流程。作者结合自身在构建 Claude 过程中的经验，分享了在不确定性中迭代产品的实践。文章还探讨了 AI 产品的独特性，例如如何平衡模型能力与用户体验，以及如何设计可预测的交互边界。这篇内容适合产品经理、工程师和创业者参考，了解 AI 原生产品的设计思路。",
+      "detail": "## 这篇文章讲了什么\n\n- 文章作者 Jess Yan 是 Claude Managed Agents 的产品经理，分享了 agent 时代 PM 的工作方式如何被自家产品改写\n- 过去 PM 的一周被会议、状态汇报、积压工单占满，决策快但落地慢；现在 Claude 让她把精力还给产品打磨本身\n- API 设计过去活在文档与评论线程里，文档评审周期常常迟于真实使用反馈，Claude Code 让她半天内就能拉起一个端到端的 API 规范原型\n- Anthropic 的 API 抽象与 Claude Console 的交互被反复调整过几次，依据是团队用自家原语试搭 agent 时遇到的真实问题\n- Jess Yan 的日常工作明确分流：Claude 与 Claude Cowork 用于开放式调研，Claude Code 与 Managed Agents 用于把已经清晰的任务封装成定制 agent\n- 文章给出三类 PM 常用 agent 范例：贴近内部数据库的 Adoption analytics、并行 fan-out 的 Developer sentiment monitoring、按受众改写的 Demo building\n- Managed Agents 在云端运行，作者可以挂起任务离开，回来时结果已就绪，让原本不可规模化的发布事务自动化\n\n## 具体怎么实现\n\nClaude Managed Agents 目前处于 beta，是一组可组合的 API，用于构建并部署托管在云端的 agent。Jess Yan 的搭建路径很直接：在 Claude Code 里加载 Managed Agents skill，写一段任务草图，Claude 会一边解释集成步骤一边把 agent 拼出来；开发者也可以用最新版 Claude Code 内置的 claude-api skill，给出 prompt \"start onboarding for managed agents in Claude API\" 来启动。每个 agent 由具体能力拼合而成：Adoption analytics 借助对内部数据库的持续访问和理解数据 schema 的 skill 跑查询，配合 Managed Agents 的 memory 在历次运行间累积视角；Developer sentiment monitoring 调用平台预置的 web search 工具，按指定域名列表扫描开发者反馈，遇到内容过载时 fan out 到多个并行子 agent，等待结果再汇总；Demo building 则把品牌素材、GitHub demo 仓库、活动 deck 接入同一 agent，让它依据受众场景把模板改写成正式 demo。\n\nAnthropic 内部的 PM 工作流由此沿着两条产品线分裂。Claude 与 Claude Cowork 处理处于\"还没想清楚\"阶段的研究和发散，用对话推进；一旦\"要做的事\"足够明确，就转到 Claude Code，把任务沉淀为基于 Managed Agents 的定制 agent。这种双产品分工带来的副作用是文章作者反复提到的：能拿自家 API 当原型沙盘，让 PM 对下一代模型与任务演化保持手感；同时 agent 跑在云端，长尾运营工作可以挂起再回收，原先因每次发布都有自家节奏而无法自动化的事，被一一交给 agent。Jess Yan 把这种变化总结为 PM 重新有时间陪用户、陪工程团队琢磨真正重要的问题，并建议同行本周就动手把心里那个一直想做却没空做的 agent 搭出来。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1572,6 +1584,7 @@
       "category": "其他",
       "score": 4,
       "cn": "Anthropic宣布Claude Enterprise现推出自助服务模式，企业用户可直接在线注册并立即使用，无需与销售团队沟通。该版本整合了企业级安全与治理功能，支持单点登录、数据管控和访问权限设置，同时提供自定义品牌和专有知识库集成。自助服务模式降低了企业部署门槛，使组织能够灵活按需扩展，适用于从中小团队到大型企业的多种场景。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 在 2026 年 2 月 12 日宣布 Claude Enterprise 开放自助购买，组织可以直接在官网完成下单，无需经过销售流程\n- 自助开通包含工作区创建、SSO 配置与团队成员邀请三个动作，官方称可在数分钟内完成\n- Enterprise 套餐打包 Claude、Claude Code 与 Claude Cowork 三类产品，承诺面向大型代码库、长文档集合与跨组织上下文工作\n- 文章强调企业级安全与管控能力，包括 SSO 与域名捕获、SCIM 自动化配置、审计日志、Compliance API、自定义数据留存策略以及用量分析仪表\n- 计费采用席位加用量模型，用量按 API 价计费，管理员可设置组织级与个人级的支出上限\n- 引用 Canva、Quantium、Zapier、Deloitte、NBIM 等客户原话，说明 Claude 在分析推理与长上下文场景下的落地价值\n- 文末区分自助购买与 Sales 渠道，HIPAA 合规、定制条款、用量阶梯优惠仍需联系销售团队\n\n## 具体怎么实现\n\nClaude Enterprise 在产品层面把三条产品线打通：Claude 的对话窗口承担头脑风暴与多步项目交付，Claude Code 承接从网页与终端发起的编码任务委托，Claude Cowork 借助 plugins 把 Claude 训练成销售、财务、法务、市场等岗位的对口助手。文章描绘的工作流是销售团队让 Claude 在邮件往来、日历与潜客资料中检索后生成会前材料；工程团队把代码库挂上 Claude Code 跑生命周期开发；市场团队在保持品牌一致性下做多语种内容草稿；产品经理拼可交互原型并排路线图；财务团队直接在 Excel 里做建模与预测。Claude 还以 connectors 形式接入 Microsoft 365、Slack 等平台，并在 Excel 与 PowerPoint 的内嵌侧边栏里直接对话。文章末尾把 Canva、Quantium、Zapier 这几个不同体量客户的原话并列出来，Zapier 提到 Skills 在内部\"像闪电一样扩散\"，说明工具被采纳的核心条件是日常工作能直接用上。\n\n自助开通流程围绕 claude.ai/create/enterprise 这个入口构建，管理员进入后先建工作区，再接 SSO 与 SCIM 完成统一身份与自动化分配，再把使用记录以 Compliance API 与审计日志的形式开放给安全合规团队，最后用 usage analytics 跟踪团队活跃度、功能采用与支出。数据侧的承诺写在文末，Enterprise 内容默认不用于模型训练。计费上文章给出的口径是 seat-plus-usage，席位定额叠加 API 用量计费，遇到突发用量场景，支出上限可同时在组织层与个人用户层下沉，从源头管控成本风险。需要 HIPAA-readiness、专项支持或定制条款的客户，仍然走 contact-sales 通道；其余情况下，整条采购链路被压缩为一个网页表单加几次配置点击，原本要走数周的销售对接被压到分钟级。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1586,6 +1599,7 @@
       "category": "其他",
       "score": 4,
       "cn": "Anthropic 发布了一份以 Claude 为核心的提示工程最佳实践指南，涵盖从基础原则到高级技巧的多个层面。内容涉及角色设定、清晰指令编写、多步骤推理激发、以及如何利用工具和长上下文等能力。对于希望提升与 Claude 对话效果的用户，这份指南可以作为具有参考价值的系统化入门资料。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 在 2025 年 11 月把 prompt engineering 重新放进 context engineering 这个更大的框架里，认为前者是后者的构件\n- 文章先讲核心技巧再讲进阶技巧，并指明哪些早期常见做法在 Claude 4.x 时代已经不再必要\n- 核心技巧包括五条：明确指令、提供上下文与动机、保持具体、用 examples、给模型表达不确定的许可\n- 进阶技巧覆盖 prefill response、chain of thought、输出格式控制与 prompt chaining\n- 文章交代了 extended thinking 与手写 chain of thought 的关系，extended thinking 在可用时优先选用，手写写法在它不可用或需要审查推理过程时仍然有用\n- XML tags 与 role prompting 被归入\"曾经流行但现在不再必要\"的一类做法，同时给出仍然适用的少数场景\n- 文末给出技巧组合示例和决策框架，并列出常见问题对应的排查思路\n\n## 具体怎么实现\n\n文章把 prompt 写法拆成可以照做的动作。explicit and clear 要求用动词开头、跳过寒暄、把想要的输出特性直接列出来，对照例是把\"创建一个仪表盘\"扩展为\"创建仪表盘并尽量加入相关功能与交互，超越基础实现\"。provide context 让模型理解 why，对照例把\"never use bullet points\"换成解释偏好的散文。具体性那一条要求列清楚约束、上下文、输出结构与限制，文章用 Mediterranean diet 的 meal plan 做演示，把通用问题改成\"1800 卡、低 GI、糖尿病前期管理、列出三餐与一份零食含营养拆解\"。examples 给出 one-shot 与 few-shot 的边界，提醒 Claude 4.x 会对示例细节高度敏感。给模型表达不确定的许可是减少幻觉的最小改动，加一句\"如果数据不足以下结论就明说\"即可。\n\n进阶技巧覆盖四种做法。prefill 把 messages 数组里 assistant 的 content 设为 \"{\"，让模型从 JSON 开括号继续生成，chat 界面里没有 API 控制时改用强约束语言。chain of thought 分 basic、guided、structured 三档实现，从\"think step-by-step\"到用 thinking 与 email 这类 tag 把推理与输出分离。格式控制的原则是描述期望动作、让 prompt 的格式与期望输出对齐、把格式偏好显性写出。prompt chaining 在单个 prompt 内做不到，做法是把复杂任务拆成顺序步骤，前一步输出作为后一步输入，代价是多次 API 调用带来的延迟，收益是把每一步的难度压低。XML tags 与 role prompting 在 Claude 4.x 上不再必需，过度细化角色反而限制能力，直接说出想要的分析视角更有效。文章末尾用 if-then 形式的决策表把这些技巧映射到具体任务上。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1600,6 +1614,7 @@
       "category": "其他",
       "score": 4,
       "cn": "Anthropic 宣布 Claude 2 在 Amazon Bedrock 上正式可用。Bedrock 是 AWS 的托管服务，提供基础模型 API。此举让开发者通过 AWS 控制台和 API 即可调用 Claude 2，无需管理底层基础设施。Claude 2 支持更长上下文窗口和更高质量的生成，适合企业级对话和文本处理工作负载。Anthropic 和 AWS 的合作让用户可同时使用 Bedrock 的安全合规特性与 Claude 的对话能力。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 在 2023 年 8 月 23 日宣布 Claude 2 上线 Amazon Bedrock，AWS 客户可以通过托管 API 调用这一模型\n- 文章交代了上下文，Bedrock 在 2023 年 4 月上线时，Claude 1.3 与 Claude Instant 是首批可用的基础模型，这次是把更新的 Claude 2 接入同一服务\n- Claude 2 的卖点写得明确，对话推理、内容创作、复杂推理、创造性写作与编程，并基于 Constitutional AI 训练\n- 给出三个早期客户案例，分别落在法律、旅行、企业运营三个行业\n- LexisNexis Legal & Professional 服务 150 多个国家的律所、企业、政府与学术客户，将 Claude 2 接入其法律 AI 能力，强调长上下文窗口与高质量技术分析\n- Lonely Planet 用 Claude 2 把数十年旅行内容做成可对话查询的形态，帮助用户规划行程\n- Ricoh USA 用 Claude 2 生成高质量训练数据集，看重的是 HIPAA 与 SOC II 等合规标准\n- 文末把入口指向 aws.amazon.com/bedrock/claude，并预告未来会有更多模型通过 Bedrock 上架\n\n## 具体怎么实现\n\nBedrock 这条合作链路解决的是企业部署 LLM 时常被卡住的一组问题：模型本身要够强、调用方式要够简单、数据治理要符合既有合规要求。Anthropic 的角色是把 Claude 2 这个模型按照 Bedrock 的接入规范上架，AWS 的角色是把模型封装成全托管 API，客户不需要自己跑 GPU 集群，也不需要单独签数据处理协议，只在已有的 AWS 账号下走 IAM 权限即可调用。Claude 2 在 Bedrock 上的能力边界被明确列在三类客户场景里，分别对应法律检索、长文档处理与训练数据生成。文章没有给出具体的 API 调用样例，重点放在合作模式与客户证言上。\n\nLexisNexis 的需求最能体现 Claude 2 的长上下文窗口价值，律所、企业法务、政府与学术机构每天处理大量长篇判例与合同文书，Jeff Reihl 在引语里强调三个采购口径：数据安全、对模型训练的可控性、以及长上下文加快速输出。Lonely Planet 的链路则把\"几十年沉淀下来的旅行内容\"当成一个语料库，用 Claude 2 做检索与生成的中间层，Chris Whyde 提到的关键词是 scalable、reliable 与 secure，决策点落在企业级 SLA 这一层，模型能力本身被默认达标。Ricoh USA 的诉求最特别，他们要的是生成高质量训练数据这个二阶能力，把 Claude 2 当作下游模型的训练数据源使用，因此 Ashok Shenoy 反复提到 HIPAA 与 SOC II 这两条合规线。从这三家来看，Bedrock 通道在 2023 年的实际定位是给已经在 AWS 上跑业务的大型企业一个低摩擦的 LLM 接入入口，模型供应方和云供应方的责任划分清晰，客户只需要在自己原本的安全合规体系内增量评估 LLM 这个新组件。文章把这条入口写得克制，没有承诺普适效果，把判断权留给客户自己评估场景。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1614,6 +1629,7 @@
       "category": "其他",
       "score": 4,
       "cn": "Anthropic 针对 Claude Team 订阅计划推出一组更新，覆盖团队协作与企业级管理。包含新增工作空间管理、更严格的数据隐私控制与更灵活的账单功能，团队成员之间共享 Claude 使用记录与对话历史更顺畅。Claude Team 用户现可创建独立工作空间隔离项目内容，并在管理控制台统一查看用量与成员权限。延续 Anthropic 对安全与可扩展性的取向，帮助企业在合规前提下用上 Claude 在代码、写作与分析任务中的价值。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 在 2026 年 1 月 28 日更新 Claude Team 计划：调低价格并为 premium 席位引入年付折扣\n- Standard 席位调整为年付每月 20 美元，月付每月 25 美元\n- Premium 席位调整为年付每月 100 美元，月付每月 125 美元\n- 每个 Team 席位的可用额度都高于 Pro 计划，premium 席位的额度是 standard 席位的五倍\n- 如果重度用户仍不够用，管理员可单独为团队加购额外用量\n- Team 计划提供共享工作区，团队成员可一起在项目中协作，并通过 connectors 接入企业内部知识\n- Claude Code 已默认随每个 Team 席位一同发放，工程师与产品经理可在同一工作区使用\n- 集中式管理控制台与计费、默认不会用客户内容训练 Claude，这两条沿用 Team 计划原本的承诺\n\n## 具体怎么实现\n\n这次调整不涉及功能形态变化，重心在价格档与额度结构。Standard 与 premium 两档席位都同步给出年付与月付两种价位：standard 年付折后每月 20 美元，月付每月 25 美元；premium 年付折后每月 100 美元，月付每月 125 美元，premium 首次进入年付折扣体系。在使用额度上，文章保留了 Team 高于 Pro 的基础设定，并把 standard 与 premium 的对比关系明确化——premium 席位的可用量是 standard 的五倍，如果团队中有用户跑到上限，管理员可以为整个 Team 加购额外容量。\n\n在产品形态上，文中重申 Team 计划的几个组件不变：共享工作区让团队成员把项目、对话与内部知识沉淀在同一处；connectors 把企业内部系统接入 Claude，省去成员各自手动复制信息；Claude Code 不再单独购买，每个 Team 席位都默认带上，工程团队与产品团队可以在同一计划下使用，开发者发版与 PM 自动化日常事务都覆盖到。管理与合规层面，Team 计划继续提供集中化的管理员控制台与统一计费入口，账户数据默认不进入 Claude 的训练流程。新价格即刻生效，企业在 claude.com/team 完成开通即可使用，原有 Pro 用户也可顺势升档过去。\n\n从定位上看，这一次调整把 Team 与 Pro 的位差拉得更清楚：Pro 是个人付费，Team 是有共享工作区与管理员控制台的组织付费层，premium 席位则面向团队内对额度有更高需求的重度用户。年付折扣首次覆盖 premium，意味着团队在做年度预算时可以把这类席位锁定在更低的单价水平。整体来看，这一轮更新没有引入新功能，更像是 Anthropic 对 Team 这条产品线的价格信号重置，让中小团队能以更低的进入成本带上 Claude Code 与共享工作区一起使用。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1628,6 +1644,7 @@
       "category": "编程工具",
       "score": 4,
       "cn": "Anthropic 宣布 Code with Claude 开发者活动将在旧金山、伦敦和东京三座城市举办。该活动聚焦于 Claude 在编程场景中的应用实践，包括代码生成、调试与协同开发。参与者可以现场体验 Claude 的最新编程能力，与 Anthropic 工程师面对面交流，并参与实战挑战。活动面向开发者社区，旨在展示大语言模型在工程效率提升方面的实际价值。Anthropic 还将分享最佳实践与案例分析，帮助开发者更有效地将 Claude 融入日常开发流程。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 宣布 2026 年的开发者大会 Code with Claude 将首次扩展到三座城市，San Francisco 保留原地举办，London 与 Tokyo 是首次落地\n- 三场活动的日期已定：San Francisco 在 5 月 6 日，London 在 5 月 19 日，Tokyo 在 6 月 10 日\n- 每场都是 full-day 形式，包含 live workshop、最新 capability 的 demo，以及与 Anthropic 工程团队的 1:1 office hours\n- 今年的 agenda 在去年基础上扩充了 technical session，邀请的讲者除 Anthropic 工程师外还包括正在 Claude 上发布产品的 startup 与 enterprise 开发者\n- 现场名额有限，申请窗口当天开放，4 月初通过 random drawing 抽取入选者并通知申请人\n- 没有抽中或无法到场的开发者可以注册 livestream，所有 session 之后都会提供 recording\n\n## 具体怎么实现\n\n这是一篇活动公告类博文，落地路径围绕申请、直播、录播这套访问机制铺开。Code with Claude 去年只在 San Francisco 单点举办，今年的扩展逻辑是把同一套议程结构复制到欧洲与亚洲，三场之间间隔大约两周，方便讲者循环出席。议程由 Anthropic 团队主导，technical session 与 demo 主打的是当下最新的 Claude 与 Claude Code capability，而 office hours 是为申请到现场名额的开发者保留的 1:1 沟通时段，由模型与产品团队的成员轮值，这部分内容是现场独有，无法通过 livestream 复刻。\n\n申请通道在公告日同步开放，入口集中在 claude.com/code-with-claude 一页，由 Anthropic 在 4 月初统一公布完整 agenda 与抽签结果。考虑到三城名额都极为紧张，Anthropic 把 livestream 注册作为兜底渠道，所有主舞台 session 都会同步直播并提供事后 recording，让无法到场的开发者仍能跟上节奏。这种设计与 Anthropic 此前 Skill、MCP 等产品发布的 launch 节奏一致，把核心内容尽量公开释放，把现场名额留给抽签入选的开发者，让 1:1 与 Anthropic 工程师交流这种稀缺资源用在愿意亲身到场的人身上。\n\n讲者阵容上，今年的扩充方向是把 Anthropic 工程师之外的实战者纳入议程，邀请正在 Claude 上发布产品的 startup 与 enterprise 开发者分享落地经验，弥补单一厂商视角的局限。三场活动的城市选择也对应了 Anthropic 在过去一年观察到的开发者活跃度：San Francisco 仍是 AI 工程的密度中心，London 承接欧洲监管与企业级使用场景，Tokyo 则面向日本本地的 startup 生态与企业客户。完整 agenda 与具体演讲嘉宾名单留到 4 月初一并对外，配合抽签结果一同发布。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1642,6 +1659,7 @@
       "category": "其他",
       "score": 4,
       "cn": "Claude 上线面向企业团队的协同工作 Cowork 与插件功能，多名成员可在同一对话中协作编辑和审阅内容，同时让插件扩展工作流。该更新意在化解团队使用 AI 助手时的信息孤岛问题，成员围绕共享会话推进任务，并接入内部工具与数据源。Anthropic 认为这一协作模式有助于企业在合规前提下，提升 AI 辅助工作的透明度。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 在 2026 年 2 月 24 日发布 Cowork 与 plugins 的企业级更新，引入私有 plugin marketplace 概念\n- 管理员可以从模板新建或从零搭建 plugin，Claude 会用问询方式逐项确认 skills、commands 与 MCP 连接\n- 新增统一管理面板 Customize，把 plugins、skills、connectors 收进一个入口\n- 管控层增加私有 GitHub 仓库作为 plugin 来源、按用户分配、自动安装、OpenTelemetry 用量与成本观测\n- slash command 改为结构化表单形式启动，类似填写工作单\n- 新增 connector 与 plugin 模板拓展到 HR、Design、Engineering、Operations、Financial analysis、Investment banking 等岗位\n- Claude 在 Excel 与 PowerPoint 之间可以端到端跨应用执行任务，作为 research preview 开放给付费用户\n\n## 具体怎么实现\n\nplugin 在新版本里被定义为\"简单的、可移植的文件系统，归用户所有\"，运行环境跨 Cowork 与基于 Claude Agent SDK 构建的应用。管理员新建 plugin 时，Claude 按问询式流程逐项确认 skills、commands 与 MCP 连接，产物可分发到组织专属 marketplace 也可从私有 GitHub 仓库拉取。管控层细化到组织专属 marketplace、按用户分配权限、自动安装、连接器与 plugin 的捆绑关系管理。用户侧最大改动是 slash command 不再是纯文本输入，generate report、dashboard 这类工作流以结构化表单弹出，相当于把 prompt 模板做成可填写的工单。跨应用层面，Claude 在 Excel 与 PowerPoint 之间传递上下文，可以承接\"先做 Excel 分析再做成 PowerPoint 汇报\"这类组合任务，研究预览版在 Mac 与 Windows 付费账号上可用。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1656,6 +1674,7 @@
       "category": "安全",
       "score": 4,
       "cn": "Anthropic 网络安全团队利用 Claude Code 构建了一套威胁检测平台，用于自动化分析安全日志、识别潜在攻击模式并加速事件响应。该平台将 Claude 的代码生成与安全分析能力结合，使团队能够快速开发定制化检测规则，减少人工排查时间。文章详细介绍了从需求分析到系统部署的工程实践，包括如何设计提示词、处理误报以及将 AI 集成到现有安全工具链中。这一案例展示了大型语言模型在网络安全领域的实际应用价值。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 防御性安全工程团队 Detection Platform Engineering 用 Claude Code 自建了威胁检测平台 CLUE，原型一天内跑出第一版，设计与实现一周内完成\n- CLUE 分 CLUE Triage 与 CLUE Investigate 两部分，前者在分析师看到告警前先做分诊与置信度评分，后者支持以自然语言查询全部安全日志\n- 核心设计是让 Claude 通过 tool use 接入 Slack、内部文档、代码仓库与数据仓库，把外部安全平台拿不到的 internal context 接进调查链路\n- 引入 CLUE Triage 后告警误报率从约三分之一降至 7%，过去无人力处理的低置信度信号也被批处理纳入分诊\n- 30 天用量统计：CLUE 自动化约 1.2 万次查询、2.7 万次工具调用，相当于 1870 个人时、合 234 个 person-day 的人工工作\n\n## 具体怎么实现\n\nCLUE Triage 在告警进入分析师视野前先跑一轮：Claude 调用工具把告警与跨系统上下文拼起来，给出 false positive、true positive、malicious、expected behavior 四类判断和置信度。CLUE Investigate 走 agentic loop，orchestrator 把请求拆成子任务，多个 sub-agent 并行执行 SQL 查询、汇总结果、生成 investigation summary，原本数小时的关联工作压到三到四分钟，单次会话平均 25 次工具调用、近 11 次查询。团队负责人 Jackie Bow 援引 AI 研究中的 bitter lesson，主张给 Claude 划定可用工具与数据边界、把调查策略留给模型自己决定，下一步把 CLUE 推向主动 hunting 与跨会话经验积累。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1670,6 +1689,7 @@
       "category": "其他",
       "score": 4,
       "cn": "Anthropic 发布内部案例，介绍法务团队如何利用 Claude 处理合同审查、合规分析等日常工作。该实践展示了将大语言模型集成到企业法务流程后，在效率提升和信息检索准确度方面取得的改善。文章详细说明了从风险控制到文档管理的具体应用方式，为同类场景提供参考.",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 内部产品律师 Mark Pike 分享他用 Claude 把战术性工作压到最少的做法\n- 法务团队先在白板上盘点痛点：市场材料评审等数日、合同 redline 耗时长、隐私影响评估反复套模板、纸质邮件分流繁琐\n- 文章给出四条已经跑通的工作流：营销自审工具、合同 redline、对外业务活动 COI 审批、隐私影响评估\n- Mark 总结四条经验：从痛点而非技术入手、用自然语言描述需求、保留人审环节、用 Skills 承载团队风格与一致性，并用 MCP 把 Google Drive、JIRA、Slack、Google Calendar 等知识源串起来\n\n## 具体怎么实现\n\n四条工作流分别有不同的落点。营销自审工具固定在 Slack，市场同事先把文案贴入由 Claude 加载法务\"skill\"文件做自查，标出公开权、夸大宣传、统计口径等低中高风险并给修改建议，再走正式审批；接入后周期从两三天降到 24 小时。合同 redline 由 Claude 在 Google Docs、Office 365 里比对版本，按 commercial playbook 给出 fallback 语言。COI 审批让员工填表，Claude 比照利益冲突政策初判，并把建议推送到律师 Slack 队列。隐私影响评估则用 MCP 把 Claude 接到装满历史 PIA 的 Google Drive 文件夹，叠加规定格式与关切点的 skill，由律师说明新项目，Claude 基于过往范本生成初稿。所有产出仍走人审，律师对引用与事实独立核验。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1684,6 +1704,7 @@
       "category": "其他",
       "score": 4,
       "cn": "Claude博客发布了一篇面向企业技术决策者的综述文章，梳理2026年企业在生产环境中构建和部署AI agent的主要模式。文章基于Anthropic与多家客户合作的经验，概述了企业从原型验证到规模化部署的典型路径，包括任务拆分、人机协作、监控与回滚等关键环节的设计考量。对于那些正在规划AI agent落地策略、希望参考真实企业案例的团队来说，这篇综述提供了有价值的背景和结构化的讨论框架。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 与研究机构 Material 合作，对 500 多位跨行业技术负责人做了关于 AI agent 部署现状的调研，并据此整理出《2026 State of AI Agents Report》\n- 57% 的组织已经把 agent 用于多阶段工作流，16% 已在跨多个团队的流程上跑 agent；2026 年内 81% 计划扩展到更复杂的用例\n- Coding 是落地最早的方向，近 90% 的组织在开发流程里用 AI，86% 已把 agent 投入生产代码；规划、生成、文档、评审与测试各环节均节省约 58% 到 59% 的时间\n- 数据分析与报告生成的影响最高，达 60%，内部流程自动化 48% 紧随其后；56% 的受访者计划在未来一年把 agent 引入研究与汇报场景\n- 80% 的组织报告 AI agent 投资已经带来可量化的经济回报\n- 文章列出 Thomson Reuters、eSentire、Doctolib、L'Oréal 四个客户案例，并指出规模化的主要阻力来自系统对接，占 46%，数据访问与质量占 42%，变更管理占 39%\n\n## 具体怎么实现\n\n文章的主要载体是问卷数据加客户案例的组合，先报现状，再讲实践，最后落到前路。在现状层，调研的核心发现是 agent 的部署形态正在从单点任务自动化迁移到多阶段、跨团队的工作流，39% 的受访者计划在 2026 年开发面向多步骤流程的 agent，29% 计划做跨职能 agent。实践部分写了几家头部客户。Thomson Reuters 用 Claude 驱动 CoCounsel，让律师把过去翻几小时文档的工作压缩到几分钟内访问 150 年判例与 3000 位领域专家；eSentire 把高级安全分析师 5 小时的威胁分析压到 7 分钟，与资深专家结论一致率 95%；Doctolib 在整个工程团队全面铺开 Claude Code，把遗留测试基础设施的替换从数周缩到数小时，特性上线提速 40%；L'Oréal 借对话式数据查询达到 99.9% 的准确率，44000 名月活用户可以直接对数据库提问，不再排队等定制看板。\n\n在落地路径上，文章把规模化所需的基础设施拆为模型、框架与工具链：面向编码与企业工作流优化的模型、Agent SDK 这样的开发框架、Claude Code 这样的端到端工具链，共同支撑从原型走向生产。文章同时指出，九成受访负责人观察到团队工作方式正在迁移，员工把更多时间放在战略性事务、客户关系与技能成长上，而非例行执行。展望部分提示，coding 只是 agent 的第一个成熟场域，研究与汇报、客服、财务规划、供应链运营都会陆续被 agent 化，提前积累方法论的组织更可能在技术成熟期获得更大的回报。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1698,6 +1719,7 @@
       "category": "安全",
       "score": 4,
       "cn": "Anthropic 在官方博客中探讨了 AI 加速攻击对现有安全计划的挑战，并给出了应对建议。文章从攻击面扩大、自动化攻击能力提升、社会工程学威胁升级三个维度，分析了 AI 如何改变安全攻防格局。Anthropic 建议安全团队重新评估威胁模型，将 AI 攻击者视为拥有无限耐心和资源的对手，并加强对内部系统的异常检测、内容安全控制以及员工安全意识培训。文章还讨论了如何使用 Claude 等 AI 工具辅助防御，以及构建安全架构时需要考虑的纵深防御原则。这篇指南面向安全负责人和 IT 管理者，旨在帮助组织在 AI 时代保持安全韧性。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 安全工程团队发布一组建议，帮助安全项目应对 AI 加速的攻击节奏\n- 文章承接 Project Glasswing 与 Claude Mythos Preview 的发布，把内部经验对外整理成 SOC 2 / ISO 27001 可对齐的控制清单\n- 七条主控制：关闭 patch gap、为漏洞洪水做准备、上线前找 bug、找出代码里已有的漏洞、按 breach 思路做架构、收敛并清点暴露面、压缩 incident response time\n- 给出向上游提交漏洞报告的质量底线，避免低质 AI 报告污染开源生态\n- 为没有专职安全团队的小组织、独立开发者、开源维护者另写一节简化建议\n- 附一张参考资料表，列出 CISA KEV、FIRST EPSS、NIST SSDF、OWASP ASVS、SLSA、OpenSSF Scorecard、MITRE ATT&CK 等标准\n- 由 Donny Greenberg、Jason Clinton、Michael Moore、Abel Ribbink、Jackie Bow 等安全研究人员合写\n\n## 具体怎么实现\n\n文章按\"先做什么\"组织七节主控制，每节都把建议拆成可在 CI、IT、cloud 控制台直接配置的动作。Close your patch gap 一节给出三层优先级：CISA KEV catalog 上的已确认在野利用漏洞按紧急事件处理，其余按 EPSS 的 30 天利用概率打分排队，互联网暴露的系统在 exploit 公开后 24 小时内打补丁，其它在数日内完成；patch 部署与 reboot 在可接受 outage 的场景下自动化。Vulnerability management 一节预判未来两年漏洞发现量会上一个数量级，建议把 OpenSSF Scorecard 接进 CI 评估开源依赖，把可达性分析、AI 驱动的去重、ticket 起草、patch 验证乃至小型不再维护依赖的 AI vendoring 都纳入流程。Find bugs before you ship 强调 SAST、AI-assisted review、自动化渗透测试、SLSA build provenance 与 memory-safe 语言迁移，并直接点出 GitHub 的 CodeQL 与 slsa-github-generator 是低门槛起点，特别加粗一句：If you implement one thing from this section, implement AI vulnerability scanning。Find vulnerabilities already in your code 提示对长期未被 frontier model 审过的老代码做主动扫描，优先处理解析 untrusted input、做认证授权决策、可从公网到达的代码路径。\n\nDesign for breach 一节把重点放在\"摩擦类缓解措施已经不够用\"，建议放弃 SMS-based MFA、额外跳板这类只是让攻击者麻烦但不构成硬屏障的控制，改用 zero trust 架构，认证授权每一个服务间调用，把访问绑定到具备 attested hardware identity 的托管设备并搭配 FIDO2 或 passkey，把长期密钥换成由 identity provider 颁发的短期 token，让 build server 无法直接查询 production 数据库。Reduce and inventory 强调连续维护 internet-facing host、service、API 的清单，并用 AI agent 做 autonomous external red-teaming，从外部以无凭据状态测试自家边界。Shorten incident response time 一节把\"在告警队列前放一个 model\"作为关键动作：triage agent 以只读权限接 SIEM，对每条 alert 做 first-pass investigation 产出结构化 disposition，让 human reviewer 把判断时间留给真正需要决策的部分；同时让 model 做 incident scribe，做笔记、打时间戳、推进并行调查线、起草 postmortem，而 containment、disclosure、customer-comms 的决定保留给 human。文章建议 tabletop 不再以\"周一上午一个高危 CVE\"为脚本，而是模拟\"一周同时五起事件\"。\n\nSubmitting vulnerability reports 一节给开源生态提了硬底线：报告必须由人工核实并署名，第一段就用 plain language 说清 bug 与影响，再走 code path，附可运行的 PoC、给出维护者会愿意接受的 patch，并在首行明示 AI involvement；自检方法是\"关掉编辑器，凭记忆复述 bug\"。If you don't have a security team 一节面向独立开发者和小团队，要求开启系统与浏览器自动更新、优先用 managed service 把 patching 转嫁给 provider、所有支持 passkey 或硬件密钥的账号都启用、在 GitHub 上免费打开 Dependabot、secret scanning 与 CodeQL，开源项目则在仓库里写 SECURITY.md 公布报告通道。文章最后附的参考表把 patch prioritization、baseline controls、secure development、memory safety、supply chain、zero trust、detection & response、program framework 八类话题对齐到 CISA、NIST、NCSC、ACSC、OWASP、MITRE 的现成标准。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -1712,6 +1734,7 @@
       "category": "其他",
       "score": 4,
       "cn": "Anthropic 发布了一份面向创业者的实践指南，系统梳理了在 Claude 平台上构建 AI 原生产品的关键环节。手册覆盖从产品构思、原型验证到规模化部署的路径，包括如何拿 Claude 的 API 能力快速迭代、设计用户交互流程，以及处理数据隐私与合规问题。对于希望把想法转化为产品的技术创始人，这份资源给出一套可操作的框架。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 发布 The Founder's Playbook，给 AI 原生初创公司提供从 0 到 1 的实操手册\n- 文章把创业生命周期重新切成 Idea、MVP、Launch、Scale 四个阶段，对应 2026 年 AI 能力下的新打法\n- 每个阶段写明目标、退出条件、常见失败模式与 AI 驱动的练习\n- Idea 阶段聚焦如何用 AI 验证问题假设、画竞品 landscape、做客户访谈\n- MVP 阶段聚焦 AI 生成代码的 architecture、scope 与安全实践，避免技术债积累\n- Launch 阶段提出一套\"agentic 工作流替代 founder 注意力\"的运营系统，并给出区分真实 PMF 与早期热度的衡量框架\n- Scale 阶段给出 Chat、Claude Cowork、Claude Code 在各阶段的搭配矩阵\n- 引用 Ambral、Anything、Carta Healthcare、HumanLayer、Vulcan Technologies 等公司的 founder story\n\n## 具体怎么实现\n\nPlaybook 以 PDF 形式发布在 cdn.prod.website-files.com 上，正文页提供下载入口。手册的核心改造对象是 founder 的角色定位，作者写道 founder 正在从 individual contributor 转向 orchestrator，把精力集中在只有自己能做的事情上。围绕这条主线，文章把传统 startup lifecycle 的四个阶段重新映射。Idea 阶段配套三组 AI 练习，对应 validate problem hypothesis、map competitive landscape、run customer discovery，让 founder 在写第一行代码之前先把市场假设走完；MVP 阶段处理的是 AI 生成代码带来的新问题，手册写明 architecture、scope、security 三块工程实践，目的是防止 vibe coding 出来的代码在公司还没融到 A 轮前就背上技术债；Launch 阶段引入\"agentic operating system\"概念，把日常运营从 founder 个人盯人式管理切换为由 agent 驱动的工作流，同时配一个 measurement framework，区分真正的 product-market fit 与短期 launch 热度造成的虚假指标；Scale 阶段则用一份产品矩阵告诉 founder 在哪些环节用 Claude apps、Claude Cowork、Claude Code，对应不同决策密度与技术深度的任务。\n\n手册的另一条主线是把抽象建议落到具体公司案例上。Ambral、Anything、Carta Healthcare、HumanLayer、Vulcan Technologies 等被点名的 founder 在不同阶段给出第一手经验，例如非技术背景 founder 如何在没有工程师的情况下把生产级应用做出来、如何在 hire 第一位员工之前就把 ARR 跑到一定水位。Anthropic 配套了一组可复用的 prompt、framework 与 exercise，覆盖从问题假设书写到 launch 前一晚的检查清单，目标读者既包括从 day 1 就要 architect AI-native 公司的 founder，也包括陪 founder 走早期阶段的 early operator。配套生态上，文章给出 Claude for Startups 项目入口，并在 related posts 区指向 Claude Code 在大型代码库的最佳实践、非技术 PM 用 Claude Code 六周做完压力管理 app、Claude Code 内部 prompt caching 经验等几篇互补稿。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -2325,6 +2348,7 @@
       "category": "其他",
       "score": 3,
       "cn": "Anthropic 为 Claude 推出了 Slack 集成，用户可在 Slack 工作空间中直接与 Claude 对话完成文本生成、信息检索、内容总结等任务。该集成支持@提及唤醒、对话历史记录、私有频道与公开频道双向使用，并提供可自定义的指令以控制 Claude 的回答风格与行为边界。企业团队无需切换应用即可调用 Claude 的能力，适合日常协作中快速获取信息或辅助撰写。集成安装流程在 Slack App Directory 中完成，管理员可限制使用范围。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 公布 Claude 与 Slack 的双向集成：一种把 Claude 放进 Slack 工作区，一种把 Slack 工作区接入 Claude 应用\n- 集成已通过 Slack Marketplace 上线，面向付费 Slack 计划的团队；2026 年 1 月起 Slack connector 已扩展到 Claude Pro 与 Max 订阅者\n- Claude 在 Slack 中的形态有三种：直接 @Claude 私聊、Slack 顶部 AI assistant 面板调出 Claude、在任意 thread 中 @Claude 让它基于上下文起草回复\n- Claude 在 Slack 内只检索用户本身已有权限访问的频道，公共 thread 中的回复会先以私密 draft 形式生成，由用户审核、编辑、再选择是否发出\n- Slack connector 让 Claude 在做更深的研究项目时反向检索 Slack 的频道、私信与共享文件，串联起会议准备、项目协调、新人入职、文档沉淀等场景\n- 集成沿用 Claude 账号原有的安全标准与隐私设置，Slack 端的权限、留存策略与组织安全配置在调用时完整继承\n- 工作区管理员需先在 Slack 端批准 Claude 应用，组织管理员需先在 Claude 端启用 connector，个人用户才能在 Claude 设置的 Connectors 标签里完成绑定\n\n## 具体怎么实现\n\n集成由两个方向组成。\"Bringing Claude to Slack\"把 Claude 作为应用安装进 Slack 工作区，安装完成后 Claude 在 Slack 内仍带着它原本的 web search、文档分析与已连接的外部工具，可以从 Claude 账户中绑定的 Google Drive、邮件等数据源拉回上下文。Slack 端的入口有三处：直接 @Claude 发起私聊处理研究、写作、分析；点击 Slack 顶部 AI assistant 区的 Claude 图标，在不打断当前频道讨论的前提下用面板调出 Claude；在任意 thread 里 @Claude 把它拉进对话，由它读完上下文后起草一条候选回复，用户审核后再决定发还是改。\"Connecting Slack to Claude\"则反过来把 Slack 工作区作为 Claude 的检索数据源，让 Claude 在做研究或回答问题时检索用户有权限的频道、私信与共享文件，拼出更具体的回应。原文列了四个典型用法：会议准备时回看 Slack 讨论并拼出 briefing；项目协调时跨频道汇总状态、识别阻塞、汇报进度；onboarding 时让新成员通过频道历史、共享文档与相关邮件线程了解项目；以及把团队讨论沉淀成正式文档，把 Slack 上的对话与背景材料合并成成稿。\n\n安全与权限边界在文中有明确说明。Claude 在 Slack 内访问的频道、私信范围严格等同于当前用户在 Slack 中已经有权限看到的内容，组织的留存策略与安全配置会随之继承；Claude 账号的隐私设置同步生效。落地路径分为两段管理员动作：Slack 工作区管理员要先在 Slack Marketplace 批准 Claude 应用，组织内的成员才能用自己的 Claude 账号鉴权登录；Slack connector 的启用则需要组织管理员先开通该 connector，之后用户在 Claude 设置的 Connectors 标签里完成绑定，整个流程不需要团队额外接 API。文章也引用了 Salesforce 旗下 Slack 首席产品官 Rob Seaman 的判断：每家公司都在走向 agent 与人协作的形态，Claude 与 Slack 互通让最前沿的 AI 落到日常工作流里。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -2339,6 +2363,7 @@
       "category": "其他",
       "score": 3,
       "cn": "Anthropic 发布了一篇面向法律行业的博客，介绍了 Claude 在合同审查、法律研究、文书起草等场景中的具体用法。文章列举了法律事务所和法务部门如何利用 Claude 处理重复性文本工作，缩短审阅周期，并在合规框架下使用大语言模型。同时讨论了数据隐私、输出准确性等专业领域需注意的问题，适合法律从业者了解 AI 辅助工作的落地方式。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 为法律行业释出 20 多个 MCP connector 与 12 个 practice-area plugin，把 Claude 接入律所与法务团队日常使用的软件栈\n- 新 Connector 分布在合同生命周期、交易数据室、文档管理、电子取证、案例研究、专家网络与公益服务等模块，合作方包括 Docusign、Ironclad、iManage、NetDocuments、Datasite、Box、Relativity、Everlaw、Thomson Reuters、Harvey 等\n- 12 个 plugin 按职能切分：Commercial、Corporate、Employment、Privacy、Product、Regulatory、AI Governance、IP、Litigation、Law Student、Legal Clinic、Legal Builder Hub\n- 与 Free Law Project、Justice Technology Association 等合作，把法律援助纳入 Claude for Nonprofits 折扣计划\n- 这一批更新构建在 Claude Opus 4.7 之上，Harvey 报告该模型在 BigLaw Bench 上得分 90.9%\n\n## 具体怎么实现\n\n文章把\"Claude 在律师工作的位置\"拆成几个固定入口。在 Microsoft Word 中，Claude skills 承担起草、redline、按 playbook 逐条比对，并处理评论清理、格式终检、条款回退建议等机械动作；Outlook 里 Claude 做收件箱分流与回函起草；Claude Cowork 处理跨多份文档的批量审查、产品上线合规清单与监管简报；Projects 则保留判例与历史草稿，做为团队的持久工作空间。\n\nConnector 是把外部系统挂入 Claude 的接口层。以 iManage 为例，Claude 可以按权限访问受治理的事项档案与机构知识，免去批量导出；Datasite connector 允许 Claude 在 M&A 数据室里建文件夹、邀人、查文件、追踪买方 Q&A；Thomson Reuters 则把 CoCounsel Legal 接入 Claude，由 Westlaw 主法、Practical Law 指引与 KeyCite 做事实底座。Plugin 比 connector 更上层，每个 plugin 启动时跑一个 setup interview，把团队的 playbook、风险偏好、审批链与文风学下来，输出贴合本团队的草稿。文章同时强调协议开放，Box、Legal Quants、Lawve AI、Thomson Reuters 已经在 Directory 上贡献了自有的 skill、plugin 与样式约定。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -2353,6 +2378,7 @@
       "category": "其他",
       "score": 3,
       "cn": "Anthropic发布了一篇关于将Claude部署到金融服务业的实践文章。文章讨论了大型语言模型在银行、保险、投资等受监管行业中的应用挑战，包括合规、安全、准确性等问题。通过具体案例，展示了Claude如何帮助金融企业自动化客户服务、文档处理、风险分析等任务，同时满足监管要求。内容适合金融机构的技术决策者参考。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 发布一份面向金融业的部署指南，把 Claude 用于研究、交易撮合、核保、理赔、模型评审、月末结账等场景\n- 指南给出产品组合矩阵，说明 Claude Chat、Claude Cowork、Claude Code、Claude for Microsoft 365、Claude Platform、Claude Managed Agents 各自的定位与配合方式\n- 配套 10 个面向金融行业的 pre-built agent 模板，包括 pitch builder、市场研究员、KYC 筛查、总账对账、月末结账等岗位职责\n- 客户案例引用 AIG、Commonwealth Bank of Australia、IG Group、Moody's\n- 提出 foundation、pilot、scale 的采纳路线，每个阶段配套具体动作与实操建议\n- 按投资银行与私募、财富与资产管理、零售与商业银行分别梳理用例\n\n## 具体怎么实现\n\n指南的落地骨架是产品矩阵叠加路线图。产品层面，Claude 用于一般对话与研究，Claude Cowork 承担横跨文件与应用的项目级协作，Claude Code 给量化与工程团队使用，Claude for Microsoft 365 嵌入 Excel、PowerPoint、Word、Outlook 这套金融人最熟悉的办公组件，Claude Platform 与 Claude Managed Agents 用于构建并部署自有应用与 agent。文章强调多数客户同时部署多条产品线，分别匹配不同岗位的工作介质，而不是用一条产品覆盖所有人。研究员的 chat、PM 的项目空间、量化的 IDE、运营的 Excel、工程师的 API，分别由对应的 Claude 产品承接。\n\nAgent 模板部分给出 10 个 finance agent reference architecture，把投行的提案构建、买方的市场扫描、合规的 KYC 筛查、运营的总账对账与月末结账等任务做成可直接套用的参考实现，便于客户在自有 Claude Platform 上改造为 Managed Agents。这些模板既能在内部部署，也能作为 cookbook 供工程团队二次开发。\n\n在采纳节奏上，foundation 阶段做基础设施、权限与安全策略，确保数据边界与审计要求先到位；pilot 阶段挑选有限工作流跑试点并收集指标，让风险与价值看得见；scale 阶段把验证过的工作流推广至全行并接入下游系统。每个阶段都附\"pro-tips\"指出常见坑。指南的目标读者是负责选型的 AI 负责人与负责落地的工程师，配合 AIG、Commonwealth Bank of Australia、IG Group、Moody's 等客户案例，把方法论落到具体岗位与具体场景：投资银行与私募的 deal 工作、财富与资产管理的研究与 IC 流程、零售与商业银行的核保、理赔与客户运营。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -2367,6 +2393,7 @@
       "category": "编程工具",
       "score": 3,
       "cn": "Claude 团队发布了一篇指南，面向工程管理者与开发者，讨论如何在团队中推广 agentic coding。内容覆盖治理框架、安全边界、可观测性以及渐进式采用策略，帮助组织在提升开发效率的同时控制风险。博客基于实际部署经验，列出了常见陷阱与应对方案，适合希望将 agentic 工具融入日常开发流程的团队参考。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 总结在工程组织内规模化推广 agentic coding 的实践模式，强调成功与失败的差异主要在执行方式，与具体工具关系不大\n- 推广路径建议从 20–50 人的 super user pilot 开始，挑选已经在用 AI 辅助工具的开发者，让他们在真实 codebase 上验证、积累 prompt 与 CLAUDE.md 模板\n- 用一场 hackathon 替代漫长的分阶段 rollout，把 pilot 的经验向全员一次性扩散，pilot 用户后续转为 advisor，承担 workshop、培训与答疑\n- CLAUDE.md 文件作为团队层面的契约：放在仓库根目录、当作文档维护、纳入新人 onboarding checklist，必要时按 branch 维护不同版本\n- 给出超过单纯 \"代码行数\" 的衡量维度：sprint throughput、task completion time、migration velocity、developer satisfaction、onboarding duration、跨职能依赖减少，并辅以 Claude Code 自带的 Activity Metrics\n- 把常见落地问题归到三处：任务粒度过大、上下文不足、prompt 缺乏结构，每一处都给出可操作的修正办法\n\n## 具体怎么实现\n\nAnthropic 把规模化推广拆成三块抓手。组织层面的抓手是 pilot 加 hackathon 模式：先让 super user 在真实项目上做出 custom slash command、CLAUDE.md、wrapper script 等可复用资产，再用一场带食物的 hackathon 把这些资产推到全员，pilot 用户随后转岗为内部 champion。这个路径之所以比外部培训更有效，是因为 champion 熟悉本公司的代码语境与历史包袱，能拿真实项目做示例。\n\n工程层面的抓手是 CLAUDE.md 与衡量体系。CLAUDE.md 被定位成\"活文档\"，覆盖开发环境、测试与代码规范、关键架构 pattern、当前 focus area，随架构演进与 pull request 一起更新。衡量体系刻意绕开 \"lines of code accepted\"，转而追踪 sprint throughput、task completion time、legacy migration velocity 等业务指标，再叠加 Claude Code 平台自带的接受率、daily active user、组织级与用户级支出数据，让 ROI 的讨论有可对照的量化结果。\n\n使用层面的抓手放在 prompt 习惯上。文章建议用 test-driven 的方式控制任务粒度，让 Claude Code 一次只让一个 test 变绿，再追加新的 test；上下文方面要求开发者把完整 error message、stack trace、操作步骤、环境版本、UI 截图与精确描述都给 Claude，避免 \"this isn't working\" 这类无效输入；prompt 的写法要分层，先给高层目标再给实现细节，复杂任务拆成 schema、catalog API、cart 等顺序子任务，并通过 \"follow this existing API pattern\" 这类引用给出具体范本。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -2420,6 +2447,7 @@
       "category": "编程工具",
       "score": 3,
       "cn": "Claude 发布了一篇关于构建响应式网页布局的实践指南，面向希望提升前端开发效率的开发者。文章介绍了如何利用 Claude 的代码生成能力，快速实现从固定布局到弹性网格、媒体查询等响应式设计方案的转换。通过具体示例，展示了 Claude 在理解设计意图、生成适配不同屏幕尺寸的 CSS 代码方面的表现，帮助开发者减少手动调整布局的时间，专注于更高层次的设计决策。",
+      "detail": "## 这篇文章讲了什么\n\n- 文章面向前端开发者，介绍如何在响应式布局工作流里引入 Claude，分别给出 Claude.ai 与 Claude Code 两种用法\n- 先梳理传统做法的痛点：手写 media query、跨真机与模拟器测试、依赖 Bootstrap 与 Tailwind 的断点工具、在 dev tools 里逐像素调试\n- Claude.ai 适合从需求描述生成完整的 HTML、CSS 与 viewport meta，验证设计图能否跨设备适配\n- Claude Code 适合在已有代码库上做系统性 refactor，跨文件定位固定宽度与溢出，并落地修复\n- 文章给出一个 dashboard 案例，演示 Claude Code 完成审计、修复、验证、生成 Playwright 回归测试四步\n\n## 具体怎么实现\n\n文章的工程指南类写法落在两条工具路径上。在 Claude.ai 这边，用户用自然语言描述布局诉求，例如三列卡片网格在移动端折成单列、768px 以下折叠为汉堡菜单、平板隐藏的仪表盘侧栏，Claude 返回带语义化标签、移动优先 CSS 与解释性注释的完整代码，并能进一步解释为何在某个场景选用 flexbox 加 flex-wrap 而非 CSS Grid。\n\n在 Claude Code 这边，开发者用 `npm install -g @anthropic-ai/claude-code` 装好后在项目根目录启动，Claude Code 扫描 layout.css，输出带行号与建议的问题清单，把固定宽度替换为 max-width、flex-basis、grid-template-columns: auto-fit 等响应式写法，在 320px 与 512px 两个窗口尺寸下复测，再生成一份针对 iPhone SE、iPhone 12、iPad、iPad Pro、桌面端的 Playwright 测试套件，把回归保护沉到 CI 中。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -2434,6 +2462,7 @@
       "category": "其他",
       "score": 3,
       "cn": "Anthropic 在官方博客中发表长文，梳理 2026 年软件构建方式将发生的八个关键转变。文章从 AI 辅助编程、自动化测试、安全实践、团队协作等维度展开，结合 Claude 的实际使用案例，勾勒出未来一年开发者可能面对的工作流变化。这些趋势更接近基于当前产品形态与用户行为做出的推演，适合希望提前布局的团队参考。",
+      "detail": "## 这篇文章讲了什么\n\n- 这是 Anthropic 发布的 *2026 Agentic Coding Trends Report* 摘要版，把 2026 年 agentic coding 的演进归纳为八条趋势，分成 foundation、capability、impact 三组\n- 文章定调把 2025 年描述为 coding agent 开始承担端到端实现任务的一年，2026 年的关键变化是工程师角色从写代码转向协调 agent，把精力压在架构、系统设计、战略决策上\n- 引用了 Anthropic Societal Impacts 团队的研究数据：开发者在大约 60% 的工作中已经用上了 AI，但能 \"fully delegate\" 给 AI 的任务只有 0–20%，AI 是常在的协作者而非自动驾驶\n- 把客户案例作为趋势的落地证据：Rakuten 在 12.5 million 行的 vLLM codebase 上用 Claude Code 实现 activation vector 提取，7 小时自主完成，数值精度 99.9%\n- TELUS 创建了超过 13,000 个定制 AI 解决方案，工程交付速度提升 30%，累计节省 500,000 小时以上；Zapier 在公司范围内 AI 采用率达到 89%，内部部署 800+ 个 agent\n- 文章给 2026 年的工程组织划出四条优先级：掌握 multi-agent 协调、用 AI 自动 review 把 human-agent oversight 推广到大规模、把 agentic coding 推到工程团队之外、把 security architecture 嵌入到最早的设计阶段\n- 全文不展开八条具体趋势，把读者引向完整 PDF 报告，主帖只放分组框架与重点客户数据\n\n## 具体怎么实现\n\n这是一篇综述类的摘要博文，论证路径走的是\"框架 + 数据 + 案例\"三段。框架部分给出 foundation / capability / impact 的三分类法：foundation 趋势负责改变开发节奏，capability 趋势负责扩展 agent 能做的事，impact 趋势负责衡量它对业务的影响。Anthropic 没有罗列八条具体名目，而是把详细列表留在外链的 *2026 Agentic Coding Trends Report* PDF 里，正文承担的是定调与导流。数据层引用自家 Societal Impacts 团队的调研，强调 60% 渗透率与 0–20% 可委托率之间的差距，把 \"engineer expertise count where it matters most\" 这个判断撑起来：领先组织保留工程师在回路中的角色，把人力压到 architecture、system design 与策略性判断这些更高杠杆的环节。\n\n案例层用三家公司各自代表一个落地维度。Rakuten 案例代表 capability 维度，证明 Claude Code 在百万级行数的真实 codebase 上能维持长时间的自主推理与数值精度。TELUS 案例代表 impact 维度，把 agent 与具体的交付速度、工时节省数字挂钩。Zapier 案例代表 foundation 维度，说明组织级的 AI 采用率与内部 agent 部署密度已经能跑到很高的量级。结尾的 \"path forward\" 段把这些证据收束成给工程领导层的四个优先级动作，其中 multi-agent coordination 与 AI-automated review 对应 capability，extending beyond engineering teams 对应 foundation，embedding security architecture 对应 impact。整篇博文的实际功能是把完整报告的核心断言压缩到五分钟阅读量，并用真实客户数字替代抽象判断。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -2448,6 +2477,7 @@
       "category": "其他",
       "score": 3,
       "cn": "Anthropic 的营销团队在日常工作中引入 Claude，用于内容构思、文案撰写、数据分析等环节。这篇博客分享了他们如何将 Claude 融入工作流，以及由此带来的效率提升和创意启发。通过实际案例，展示了 AI 工具在营销领域的应用潜力。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic Growth Marketing 团队的 Austin Lau 用 Claude Code 把单条广告的制作时间从 30 分钟压到 30 秒\n- Austin 完全没有编程背景，产品发布时连终端怎么打开都要 Google\n- 他先用 Claude Code 做了一个简单的计算器 app 试手，再去搭真正的工作流\n- 一周内交付两套工作流：Figma 插件批量生成创意变体、Google Ads 文案生成与导出 CSV\n- Anthropic 内部 Influencer、Customer、Digital、Product、Partner 五个营销分支都跑出了类似收益\n\n## 具体怎么实现\n\nFigma 插件的构建路径是直接对 Claude Code 描述问题，让它自己去查 Figma plugin 的可行性与限制再起草原型，前后大约 45 分钟到 1 小时。最终插件让 Austin 只需指定创意 frame、粘贴一次所有文案变体，就能在同一张图上批量产出不同 aspect ratio 的版本。Google Ads 工作流走的是 custom slash command 路线，Austin 在 Claude Code 里输入 /rsa 触发流程，Claude 索要 campaign 数据、现有文案与关键词，再调用他事先写好的 Agent Skills，分别约束 Anthropic 的 brand tone and voice、产品描述准确性、Google Ads RSA 最佳实践，产出 15 条 headline 与 4 条 description，最后整合成可直接上传到 Google Ads 的 CSV 文件。文案模板由产品营销与文案团队事先把关，再交给 Claude 作为 brainstorming 起点。文末同时给出 Anthropic 内部其他营销组的数字：Influencer Marketing 每月省下 100 多小时，Customer Marketing 把 case study 起草从 2.5 小时压到 30 分钟，Digital Marketing 把团队 web 开发产出做到 5 倍同比，Partner Marketing 把 trade show 准备时间砍掉 40%。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -2462,6 +2492,7 @@
       "category": "其他",
       "score": 3,
       "cn": "多家领先零售商正将 AI 试点项目扩展为企业级部署，Anthropic 在博客中梳理了其中的关键路径。这些企业从单点任务切入，逐步将 Claude 嵌入客服、库存管理、营销内容生成等流程，并搭起跨部门协作与治理机制。文章总结了规模化落地中常见的组织阻力与技术挑战，以及渐进式迭代与员工培训如何托住平稳过渡。对于正在规划 AI 战略的零售团队，这篇案例提供了从实验到全面推广的参考框架。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 在 2026 年 1 月 28 日发布零售业 AI 转型指南，回顾过去一年与多家零售组织合作的观察\n- 文章直接点出多数企业 AI 项目\"起步快、停在试点\"，把组织拉开差距的因素归到三个执行步骤上\n- 引用 PwC 数据，88% 受访高管计划在当年加大 AI 投入，但投资规模并非瓶颈\n- 实际堵点写得很具体，电商、POS、库存、CRM 各自为政，季节性需求让 ROI 难以建模，同时懂零售运营又懂 AI 的人才稀缺\n- 给出三个客户案例，Shopify 用 Claude 做 Sidekick 把自然语言翻成 ShopifyQL 查询；L'Oréal 搭多 agent 系统协调 15 个以上专门 agent 服务 150 个国家 4.4 万员工；Lotte Homeshopping 给合作供应商提供 24 小时 AI 助手处理 QA 询问与合规文档\n- 把成功路径浓缩为三步：先做利益相关方对齐与治理底座，再选低风险场景跑试点，再把验证过的方案放大并培养组织能力\n- 文末导向《Enterprise AI Transformation Guide for Retail》PDF 完整指南\n\n## 具体怎么实现\n\n文章的实现机制部分围绕\"从具体业务问题切入、几周内验证价值、再向外扩\"这条路径展开。Shopify 的 Sidekick 把\"商家用自然语言问问题\"这个具体场景切出来，让 Claude 在背后把请求转成 ShopifyQL 查询语句，原本需要技术背景的查询动作被降到对话级别。L'Oréal 走的是另一条路线，他们没把 Claude 当单一对话窗口用，而是把它放进一个 multi-agent 系统的中枢位置，再编排 15 个以上专项 agent 协同把用户问题转成洞察与可视化结果，规模上覆盖 150 个国家、4.4 万员工。Lotte Homeshopping 把 AI 助手放在 B2B 合作供应商一侧，提供 24/7 的 QA 询问、文档校验和合规指导。三个案例的共同点是从某个长期靠人力做、规则又能描述清楚的环节切进去，先解决一个工作流再考虑横向扩展。\n\n指南推荐的落地路径在文章里被命名为 foundation、pilot 与 scale。foundation 阶段强调利益相关方对齐与治理框架，把数据访问、权限边界、评估口径在跑模型之前先定下来。pilot 阶段限制在风险低、容错高的应用上，让团队在没有任务关键压力的情况下摸清 agent 如何工作、在哪里会出错，以及与现有系统的集成方式。scale 阶段把验证过的模式放大到更高价值场景，同时投入组织级能力建设，包括跨职能 AI 团队、内部支持流程与持续度量。文章把零售业的技术栈现实写得很诚实，e-commerce、POS、库存、CRM 这几套系统本来就不是为协同设计的，所以差距不来自模型选型，而来自整合策略与节奏控制。值得读者从指南正文继续追的，是 ROI 建模如何处理季节性波动，以及如何把领域专家与 AI 能力放在同一个团队里。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
@@ -2476,6 +2507,7 @@
       "category": "编程工具",
       "score": 3,
       "cn": "Anthropic 在博客中介绍了将外部 API 接入 Claude 对话的方法。内容聚焦于 function calling 与工具调用机制，包括参数 schema 设计、错误响应处理、批量调用与异步任务的协调。文章还讨论了如何让 Claude 在多轮对话中维持 API 调用上下文，避免状态丢失。对于希望让 Claude 直接读取业务系统数据并完成端到端任务的团队，这份指南给出可复用的代码模式与常见陷阱的规避建议。",
+      "detail": "## 这篇文章讲了什么\n\n- Anthropic 把 API 集成的失败模式总结为三类常见症状：authentication token 在请求中途过期触发 401、rate limit 静默节流引发下游 timeout、第三方 API 的 schema 变更悄无声息打破生产\n- 传统做法是先按 documentation 写实现、上线后再补 error handling，作者认为这条路径把可预测的失败留给了 production incident，本应在设计阶段就处理掉\n- 文章把 Claude.ai 与 Claude Code 拆成两种使用场景：前者负责前期的方案评估与 documentation 解读，后者负责在仓库内生成 typed client、retry 机制与认证流的真实代码\n- 给出可直接套用的提问模板，例如 \"What could break with this payment API during high traffic\" 让 Claude 列出 token 过期窗口、connection pooling 上限、idempotency 要求等高频失败点\n- 在 Claude Code 中演示了 OAuth2 token refresh、Twilio API key 轮换、JWT 微服务校验三种 authentication flow 的生成方式，且要求实现走 environment variable，不允许写死 credentials\n- 完成实现后用 Claude 生成针对性测试，覆盖 rate limit 复现、schema 契约校验、长会话中的 token 刷新，再由 Claude Code 写 commit message 与 PR 描述完成发布\n\n## 具体怎么实现\n\nAnthropic 把整套 API 集成动作分成两段。第一段在 Claude.ai 完成，工程师把第三方 API 的 documentation 粘贴进对话，让 Claude 输出 \"integration risks ranked by likelihood\" 这种带优先级的清单，把抽象建议落到具体动作上，例如 \"为 429 响应加 exponential backoff 并加 jitter，防止 thundering herd\"。webhook 与 polling 的选型、OAuth flow 在多步 checkout 中过期的原因、Stripe webhook signature 校验缺漏，都在这一阶段被识别出来。第二段切换到 Claude Code，安装命令是 `npm install -g @anthropic-ai/claude-code`，进入项目根目录执行 `claude` 启动 agent。Claude Code 会分析整个 codebase 与已有 utility，生成与现有模式风格一致的 typed client，把 retry 与 backoff 接入项目已有的工具函数，再把 OAuth2 token refresh、API key 轮换、JWT 校验等 authentication 实现落到正确的文件位置。\n\n测试与发布也由 agent 承担。工程师以 \"Create tests that reproduce this rate limit scenario\"、\"Generate contract tests for schema validation\" 之类的指令调起 Claude Code，它会在仓库里写测试、跑测试、定位失败原因，然后用一条 \"Commit these API changes and open a PR\" 完成 commit message 与 PR description 的撰写。文章给出的 schema 演进策略是维护多版本 client，加 schema validation 提前发现破坏性变更，再让 Claude Code 在新旧版本间生成 adapter 层保留向后兼容。整套流程的逻辑是把 production debugging 中累积的隐性知识前移到设计阶段，由 Claude 来承担 documentation 读写、failure mode 枚举、boilerplate 实现这些重复性脑力消耗。\n",
       "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
       "publishedAt": null,
       "discoveredAt": "2026-05-21T02:43:37.981Z"
