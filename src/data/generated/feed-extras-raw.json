@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-21T15:32:43.907Z",
+  "fetchedAt": "2026-05-21T19:57:20.433Z",
   "items": [
     {
       "source": "arxiv",
@@ -10,7 +10,7 @@
       "summary": "Pretrained diffusion models serve as frozen teachers feeding downstream pipelines such as text-to-3D, single-step distillation, and data attribution. The teacher gradients these pipelines consume are Monte Carlo (MC) expectations over noise levels and Gaussian noise samples; their estimator varianc…",
       "category": "cs.LG",
       "publishedAt": "2026-05-20T17:59:52Z",
-      "discoveredAt": "2026-05-21T15:32:43.904Z"
+      "discoveredAt": "2026-05-21T19:57:20.428Z"
     },
     {
       "source": "arxiv",
@@ -21,7 +21,7 @@
       "summary": "Scaling test-time compute by iteratively updating a latent state has emerged as a powerful paradigm for reasoning. Yet the internal mechanisms that enable these iterative models to generalize beyond memorized patterns remain unclear. We hypothesize that generalizable reasoning arises from learning …",
       "category": "cs.LG",
       "publishedAt": "2026-05-20T17:59:48Z",
-      "discoveredAt": "2026-05-21T15:32:43.904Z"
+      "discoveredAt": "2026-05-21T19:57:20.428Z"
     },
     {
       "source": "arxiv",
@@ -32,7 +32,7 @@
       "summary": "Currently, enhancing Unified Multimodal Models (UMMs) with image understanding, generation, and editing capabilities mainly relies on mixed multi-task training. Due to inherent task conflicts, such strategy requires complex multi-stage pipelines, massive data mixing, and balancing tricks, merely re…",
       "category": "cs.CV",
       "publishedAt": "2026-05-20T17:59:42Z",
-      "discoveredAt": "2026-05-21T15:32:43.904Z"
+      "discoveredAt": "2026-05-21T19:57:20.428Z"
     },
     {
       "source": "arxiv",
@@ -43,7 +43,7 @@
       "summary": "Hyperparameter transfer allows extrapolating optimal optimization hyperparameters from small to large scales, making it critical for training large language models (LLMs). This is done either by fitting a scaling law to the hyperparameters or by a judicious choice of parameterization, such as Maxim…",
       "category": "cs.LG",
       "publishedAt": "2026-05-20T17:59:40Z",
-      "discoveredAt": "2026-05-21T15:32:43.904Z"
+      "discoveredAt": "2026-05-21T19:57:20.428Z"
     },
     {
       "source": "arxiv",
@@ -54,7 +54,7 @@
       "summary": "Equivariant graph neural network (GNN) methods for antibody complementarity-determining region (CDR) design achieve the highest sequence recovery but suffer from severe vocabulary collapse. The current best GNN methods over-predict very few amino acids, such as tyrosine and glycine, while ignoring …",
       "category": "cs.LG",
       "publishedAt": "2026-05-20T17:59:16Z",
-      "discoveredAt": "2026-05-21T15:32:43.904Z"
+      "discoveredAt": "2026-05-21T19:57:20.428Z"
     },
     {
       "source": "arxiv",
@@ -65,7 +65,7 @@
       "summary": "Discrete diffusion models excel at visual synthesis but rely on slow, iterative decoding. Existing single-step distillation methods attempt to bypass this bottleneck, either by training auxiliary score networks that effectively double compute, or by introducing specialized parameterizations and mul…",
       "category": "cs.CV",
       "publishedAt": "2026-05-20T17:59:10Z",
-      "discoveredAt": "2026-05-21T15:32:43.904Z"
+      "discoveredAt": "2026-05-21T19:57:20.428Z"
     },
     {
       "source": "arxiv",
@@ -76,7 +76,7 @@
       "summary": "Precise measurement of the kinematic Sunyaev-Zel'dovich (kSZ) effect - a probe of the large-scale distribution of baryonic matter, a key observable for cosmological inference - requires accurate reconstruction of galaxy velocities from spectroscopic surveys. The signal-to-noise ratio (SNR) of kSZ m…",
       "category": "astro-ph.CO",
       "publishedAt": "2026-05-20T17:59:05Z",
-      "discoveredAt": "2026-05-21T15:32:43.904Z"
+      "discoveredAt": "2026-05-21T19:57:20.428Z"
     },
     {
       "source": "arxiv",
@@ -87,7 +87,7 @@
       "summary": "Deep research, in which an agent searches the open web, collects evidence, and derives an answer through extended reasoning, is a prominent use case for frontier language models. Frontier deep research products score high on existing benchmarks, making it difficult to distinguish their capabilities…",
       "category": "cs.AI",
       "publishedAt": "2026-05-20T17:59:03Z",
-      "discoveredAt": "2026-05-21T15:32:43.904Z"
+      "discoveredAt": "2026-05-21T19:57:20.429Z"
     },
     {
       "source": "arxiv",
@@ -98,7 +98,7 @@
       "summary": "Recent advances in artificial intelligence (AI) have accelerated the growth of both human-authored and AI-generated research outputs, placing increasing strain on traditional academic publishing systems and challenging the scalability of conference- and journal-centered paradigms amid rising submis…",
       "category": "cs.AI",
       "publishedAt": "2026-05-20T17:59:03Z",
-      "discoveredAt": "2026-05-21T15:32:43.904Z"
+      "discoveredAt": "2026-05-21T19:57:20.429Z"
     },
     {
       "source": "arxiv",
@@ -109,7 +109,7 @@
       "summary": "Visual Question Answering (VQA) benchmarks have largely emphasized perception-based tasks that can be solved from visual content alone. In contrast, many real-world scenarios require external knowledge that is not directly observable in the image to answer correctly. We introduce WikiVQABench, a hu…",
       "category": "cs.CV",
       "publishedAt": "2026-05-20T17:58:24Z",
-      "discoveredAt": "2026-05-21T15:32:43.905Z"
+      "discoveredAt": "2026-05-21T19:57:20.429Z"
     },
     {
       "source": "arxiv",
@@ -120,7 +120,7 @@
       "summary": "Pose-driven full-body avatars built on neural rendering produce high-quality novel views of a captured subject. Yet loose clothing and other dynamic elements deform in ways pose alone cannot explain: the same pose can correspond to many different states, because their motion depends on history, ine…",
       "category": "cs.CV",
       "publishedAt": "2026-05-20T17:58:03Z",
-      "discoveredAt": "2026-05-21T15:32:43.905Z"
+      "discoveredAt": "2026-05-21T19:57:20.429Z"
     },
     {
       "source": "arxiv",
@@ -131,7 +131,7 @@
       "summary": "Relational prediction tasks are fundamental in many real-world applications, where data are naturally stored in relational databases (RDBs). Relational Deep Learning (RDL) addresses this problem by modeling RDBs as graphs and applying graph neural networks (GNNs) for end-to-end learning. However, t…",
       "category": "cs.LG",
       "publishedAt": "2026-05-20T17:56:09Z",
-      "discoveredAt": "2026-05-21T15:32:43.905Z"
+      "discoveredAt": "2026-05-21T19:57:20.429Z"
     },
     {
       "source": "arxiv",
@@ -142,7 +142,7 @@
       "summary": "View-conditioned 3D generators such as SAM 3D, TRELLIS and Hunyuan3D produce high-quality object reconstructions from a single view, but real-world visual observation often arrives as long monocular streams. Naively applying these generators to each streaming frame independently leads to severe tem…",
       "category": "cs.CV",
       "publishedAt": "2026-05-20T17:55:16Z",
-      "discoveredAt": "2026-05-21T15:32:43.905Z"
+      "discoveredAt": "2026-05-21T19:57:20.429Z"
     },
     {
       "source": "arxiv",
@@ -153,7 +153,7 @@
       "summary": "Computer-use agents (CUA) automate tasks specified with natural language such as \"order the cheapest item from Taco Bell\" by generating sequences of calls to tools such as click, type, and scroll on a browser. Current implementations follow a sequential fetch-screenshot-execute loop where each iter…",
       "category": "cs.LG",
       "publishedAt": "2026-05-20T17:54:27Z",
-      "discoveredAt": "2026-05-21T15:32:43.905Z"
+      "discoveredAt": "2026-05-21T19:57:20.429Z"
     },
     {
       "source": "arxiv",
@@ -164,7 +164,7 @@
       "summary": "Reinforcement learning with verifiable rewards (RLVR) has become a dominant paradigm for improving reasoning in large language models (LLMs), yet the underlying geometry of the resulting parameter trajectories remains underexplored. In this work, we demonstrate that RLVR weight trajectories are ext…",
       "category": "cs.LG",
       "publishedAt": "2026-05-20T17:53:20Z",
-      "discoveredAt": "2026-05-21T15:32:43.905Z"
+      "discoveredAt": "2026-05-21T19:57:20.429Z"
     },
     {
       "source": "arxiv",
@@ -175,7 +175,7 @@
       "summary": "Reinforcement learning from verifiable rewards (RLVR) has emerged as a central technique for improving the reasoning capabilities of large language models. Despite its effectiveness, how response-level rewards translate into token-level probability changes remains poorly understood. We introduce a …",
       "category": "cs.LG",
       "publishedAt": "2026-05-20T17:53:09Z",
-      "discoveredAt": "2026-05-21T15:32:43.905Z"
+      "discoveredAt": "2026-05-21T19:57:20.429Z"
     },
     {
       "source": "arxiv",
@@ -186,7 +186,7 @@
       "summary": "Although existing video editing methods are generally feasible, they often require many costly iterations and still struggle to deliver high-quality yet satisfying editing results. We attribute this limitation to the prevalent data-to-data paradigm, which is less compatible with modern generative m…",
       "category": "cs.CV",
       "publishedAt": "2026-05-20T17:52:10Z",
-      "discoveredAt": "2026-05-21T15:32:43.905Z"
+      "discoveredAt": "2026-05-21T19:57:20.429Z"
     },
     {
       "source": "arxiv",
@@ -197,7 +197,7 @@
       "summary": "In model-driven engineering, metamodel evolution leads to the need to adapt corresponding grammars to maintain consistency, which typically requires tedious manual work. Existing rule-based methods can achieve partial automation but have limitations when handling complex grammar scenarios. This pap…",
       "category": "cs.CL",
       "publishedAt": "2026-05-20T17:51:51Z",
-      "discoveredAt": "2026-05-21T15:32:43.905Z"
+      "discoveredAt": "2026-05-21T19:57:20.430Z"
     },
     {
       "source": "arxiv",
@@ -208,7 +208,7 @@
       "summary": "We present Mem-$π$, a framework for adaptive memory in large language model (LLM) agents, where useful guidance is generated on demand rather than retrieved from external memory stores. Existing memory-augmented agents typically rely on similarity-based retrieval from episodic memory banks or skill…",
       "category": "cs.CL",
       "publishedAt": "2026-05-20T17:51:05Z",
-      "discoveredAt": "2026-05-21T15:32:43.905Z"
+      "discoveredAt": "2026-05-21T19:57:20.430Z"
     },
     {
       "source": "arxiv",
@@ -219,7 +219,7 @@
       "summary": "Global Navigation Satellite Systems (GNSS) are widely used to provide position, velocity, and timing (PVT) information for various applications, including transportation, location-based communication services, and intelligent agriculture. In urban canyons, high-rise buildings and narrow streets can…",
       "category": "cs.LG",
       "publishedAt": "2026-05-20T17:50:14Z",
-      "discoveredAt": "2026-05-21T15:32:43.905Z"
+      "discoveredAt": "2026-05-21T19:57:20.430Z"
     },
     {
       "source": "arxiv",
@@ -230,7 +230,7 @@
       "summary": "Autonomous manipulation systems have achieved remarkable capabilities, yet the integration of human expertise with diffusion-based policies in shared control remains relatively unexplored. In this paper, we propose Human-In-The-Loop Diffusion (HITL-D), a shared control framework that enhances user …",
       "category": "cs.RO",
       "publishedAt": "2026-05-20T17:49:56Z",
-      "discoveredAt": "2026-05-21T15:32:43.906Z"
+      "discoveredAt": "2026-05-21T19:57:20.430Z"
     },
     {
       "source": "arxiv",
@@ -241,7 +241,7 @@
       "summary": "Suppose a planner has a pre-trained simulator of a sequential decision problem and the option to run real experiments in the field. The simulator is cheap to query but inherits confounding and drift from its calibration data. Experimentation is unbiased but consumes one real unit per trial. We stud…",
       "category": "cs.AI",
       "publishedAt": "2026-05-20T17:48:14Z",
-      "discoveredAt": "2026-05-21T15:32:43.906Z"
+      "discoveredAt": "2026-05-21T19:57:20.430Z"
     },
     {
       "source": "arxiv",
@@ -252,7 +252,7 @@
       "summary": "Statistical decision algorithms are increasingly deployed in domains where ground-truth labels are hard to obtain, such as hiring, university admissions, and content moderation. In these settings, models are typically trained on historical human evaluations -- for example, using past hiring decisio…",
       "category": "cs.LG",
       "publishedAt": "2026-05-20T17:46:08Z",
-      "discoveredAt": "2026-05-21T15:32:43.906Z"
+      "discoveredAt": "2026-05-21T19:57:20.430Z"
     },
     {
       "source": "arxiv",
@@ -263,7 +263,7 @@
       "summary": "We introduce ProtoPathway, an interpretable-by-design multimodal framework for cancer survival prediction that unifies whole slide imaging and transcriptomics through encoders producing biologically grounded representations on both sides of the fusion. On the histopathology side, $K$ learnable morp…",
       "category": "cs.CV",
       "publishedAt": "2026-05-20T17:43:43Z",
-      "discoveredAt": "2026-05-21T15:32:43.906Z"
+      "discoveredAt": "2026-05-21T19:57:20.431Z"
     },
     {
       "source": "arxiv",
@@ -274,7 +274,7 @@
       "summary": "As AI agents increasingly contribute to code development and maintenance, there is still limited empirical evidence on the quality and risk characteristics of their changes in real-world projects, particularly for refactoring-oriented contributions. It remains unclear how agent-authored refactoring…",
       "category": "cs.SE",
       "publishedAt": "2026-05-20T17:43:36Z",
-      "discoveredAt": "2026-05-21T15:32:43.906Z"
+      "discoveredAt": "2026-05-21T19:57:20.431Z"
     },
     {
       "source": "arxiv",
@@ -285,7 +285,7 @@
       "summary": "Universal approximation theorems provide a mathematical explanation for the expressive power of neural networks. They assert that, under mild conditions on the activation function, feedforward neural networks are dense in broad function classes, such as continuous functions on compact subsets of $\\…",
       "category": "cs.LG",
       "publishedAt": "2026-05-20T17:42:34Z",
-      "discoveredAt": "2026-05-21T15:32:43.906Z"
+      "discoveredAt": "2026-05-21T19:57:20.431Z"
     },
     {
       "source": "arxiv",
@@ -296,7 +296,7 @@
       "summary": "Interpretable autonomous driving planners depend not only on generating explanations, but also on those explanations remaining reliable under real-world sensor degradation. In this paper we present a controlled perturbation study of Vision-Language-Action (VLA) robustness in autonomous driving, eva…",
       "category": "cs.RO",
       "publishedAt": "2026-05-20T17:34:02Z",
-      "discoveredAt": "2026-05-21T15:32:43.906Z"
+      "discoveredAt": "2026-05-21T19:57:20.431Z"
     },
     {
       "source": "arxiv",
@@ -307,7 +307,7 @@
       "summary": "Vision-language models (VLMs) are increasingly being explored for video game quality assurance, especially gameplay glitch detection. Most existing evaluations, however, treat glitches as static visual anomalies, asking models to detect failures from a single frame. We argue that this framing misse…",
       "category": "cs.CV",
       "publishedAt": "2026-05-20T17:32:26Z",
-      "discoveredAt": "2026-05-21T15:32:43.906Z"
+      "discoveredAt": "2026-05-21T19:57:20.431Z"
     },
     {
       "source": "arxiv",
@@ -318,7 +318,7 @@
       "summary": "Modern LLMs typically require multistage training pipelines to achieve strong downstream performance, with post-training serving as the main interface for adapting open-weight models. We introduce torchtune, a PyTorch-native library designed to streamline the post-training lifecycle of LLMs, enabli…",
       "category": "cs.LG",
       "publishedAt": "2026-05-20T17:32:08Z",
-      "discoveredAt": "2026-05-21T15:32:43.906Z"
+      "discoveredAt": "2026-05-21T19:57:20.431Z"
     },
     {
       "source": "arxiv",
@@ -329,7 +329,7 @@
       "summary": "Atmospheric turbulence severely degrades video quality by introducing distortions such as geometric warping, blur, and temporal flickering, posing significant challenges to both visual clarity and temporal consistency. Current state-of-the-art methods are based on transformer, 3D architectures and …",
       "category": "cs.CV",
       "publishedAt": "2026-05-20T17:28:49Z",
-      "discoveredAt": "2026-05-21T15:32:43.906Z"
+      "discoveredAt": "2026-05-21T19:57:20.431Z"
     },
     {
       "source": "arxiv",
@@ -340,7 +340,7 @@
       "summary": "Standard approaches to forecasting the weekly number of earthquakes on a spatial grid rely on the Poisson distribution with a single global dispersion assumption. We show that this assumption is systematically violated in seismic data from Central Asia (2010-2024), where a likelihood-ratio test wit…",
       "category": "physics.geo-ph",
       "publishedAt": "2026-05-20T17:27:27Z",
-      "discoveredAt": "2026-05-21T15:32:43.906Z"
+      "discoveredAt": "2026-05-21T19:57:20.431Z"
     },
     {
       "source": "arxiv",
@@ -351,7 +351,7 @@
       "summary": "Graph Neural Networks (GNNs) have become the de facto standard for learning on relational data. While traditional GNNs' message passing is well suited for vector-valued node features, there are cases in which node features are better represented by probability distributions than real vectors. Concr…",
       "category": "cs.LG",
       "publishedAt": "2026-05-20T17:26:32Z",
-      "discoveredAt": "2026-05-21T15:32:43.906Z"
+      "discoveredAt": "2026-05-21T19:57:20.431Z"
     },
     {
       "source": "arxiv",
@@ -362,7 +362,7 @@
       "summary": "Video Virtual Try-On (VVT) aims to seamlessly replace a garment on a person in a video with a new one. While existing methods have made significant strides in maintaining temporal consistency, they are predominantly confined to non-interactive scenarios where models merely showcase garments. This l…",
       "category": "cs.CV",
       "publishedAt": "2026-05-20T17:23:32Z",
-      "discoveredAt": "2026-05-21T15:32:43.906Z"
+      "discoveredAt": "2026-05-21T19:57:20.431Z"
     },
     {
       "source": "arxiv",
@@ -373,7 +373,7 @@
       "summary": "Tactile-based reinforcement learning (RL) is currently hindered by fragmented research and a focus on over-saturated orientation tasks. We introduce v2 of the Robot Tactile Olympiad (\\texttt{roto 2.0}), a GPU-parallelised benchmark designed to standardise tactile-based RL across four distinct robot…",
       "category": "cs.RO",
       "publishedAt": "2026-05-20T17:22:33Z",
-      "discoveredAt": "2026-05-21T15:32:43.906Z"
+      "discoveredAt": "2026-05-21T19:57:20.431Z"
     },
     {
       "source": "arxiv",
@@ -384,7 +384,7 @@
       "summary": "We study the task of agnostic learning of multiclass linear classifiers under the Gaussian distribution. Given labeled examples $(x, y)$ from a distribution over $\\mathbb{R}^d \\times [k]$, with Gaussian $x$-marginal, the goal is to output a hypothesis whose error is comparable to that of the best $…",
       "category": "cs.LG",
       "publishedAt": "2026-05-20T17:19:30Z",
-      "discoveredAt": "2026-05-21T15:32:43.906Z"
+      "discoveredAt": "2026-05-21T19:57:20.432Z"
     },
     {
       "source": "arxiv",
@@ -395,7 +395,7 @@
       "summary": "Large language model (LLM) inference has become a dominant workload in modern data centers, driving significant GPU utilization and energy consumption. While prior systems optimize throughput and latency by batching, scheduling, and parallelism, they largely treat GPU power as a static constraint r…",
       "category": "cs.AI",
       "publishedAt": "2026-05-20T17:19:20Z",
-      "discoveredAt": "2026-05-21T15:32:43.906Z"
+      "discoveredAt": "2026-05-21T19:57:20.432Z"
     },
     {
       "source": "arxiv",
@@ -406,7 +406,7 @@
       "summary": "One-shot magnitude pruning can cause severe accuracy collapse in the high-sparsity regime, even when the pruning mask preserves the largest weights. We argue that this failure reflects a granularity mismatch in post-pruning repair. Under global magnitude pruning, nearly collapsed channels can coexi…",
       "category": "cs.LG",
       "publishedAt": "2026-05-20T17:19:01Z",
-      "discoveredAt": "2026-05-21T15:32:43.906Z"
+      "discoveredAt": "2026-05-21T19:57:20.432Z"
     },
     {
       "source": "arxiv",
@@ -417,7 +417,7 @@
       "summary": "As LLMs continue to scale, improving training efficiency increasingly depends on using data more effectively. Data selection addresses this problem by allocating a limited training budget to samples that best promote a target behavior. Existing methods usually represent the target behavior with a s…",
       "category": "cs.LG",
       "publishedAt": "2026-05-20T17:15:43Z",
-      "discoveredAt": "2026-05-21T15:32:43.907Z"
+      "discoveredAt": "2026-05-21T19:57:20.432Z"
     },
     {
       "source": "arxiv",
@@ -428,7 +428,7 @@
       "summary": "Motion capture is the gold standard for measuring human movement, but clinical use remains limited by cost, technical complexity, and privacy concerns. AIGaitor is a privacy-preserving, cloud-free motion analysis system that runs markerless monocular motion-capture pipelines and downstream deep-lea…",
       "category": "cs.CV",
       "publishedAt": "2026-05-20T17:14:57Z",
-      "discoveredAt": "2026-05-21T15:32:43.907Z"
+      "discoveredAt": "2026-05-21T19:57:20.432Z"
     },
     {
       "source": "arxiv",
@@ -439,7 +439,7 @@
       "summary": "Reaction condition recommendation sits immediately after retrosynthetic disconnection selection, and in practice, chemists require both accurate predictions and the precedents that justify them. We present HiRes (Hierarchical Reaction Representations), a retrieval-augmented condition recommendation…",
       "category": "cs.LG",
       "publishedAt": "2026-05-20T17:14:46Z",
-      "discoveredAt": "2026-05-21T15:32:43.907Z"
+      "discoveredAt": "2026-05-21T19:57:20.432Z"
     },
     {
       "source": "hf-papers",
@@ -450,18 +450,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.054Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "fcc470ee7f72485d",
-      "title": "Enhancing Train-Free Infinite-Frame Generation for Consistent Long Videos",
-      "url": "https://huggingface.co/papers/2605.18233",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.811Z"
     },
     {
       "source": "hf-papers",
@@ -472,18 +461,18 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.811Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "985c2dab9f15a5e8",
-      "title": "OScaR: The Occam's Razor for Extreme KV Cache Quantization in LLMs and Beyond",
-      "url": "https://huggingface.co/papers/2605.19660",
+      "id": "fcc470ee7f72485d",
+      "title": "Enhancing Train-Free Infinite-Frame Generation for Consistent Long Videos",
+      "url": "https://huggingface.co/papers/2605.18233",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.811Z"
     },
     {
       "source": "hf-papers",
@@ -494,7 +483,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.811Z"
     },
     {
       "source": "hf-papers",
@@ -505,7 +494,18 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.811Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "985c2dab9f15a5e8",
+      "title": "OScaR: The Occam's Razor for Extreme KV Cache Quantization in LLMs and Beyond",
+      "url": "https://huggingface.co/papers/2605.19660",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T19:57:02.811Z"
     },
     {
       "source": "hf-papers",
@@ -516,7 +516,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.811Z"
     },
     {
       "source": "hf-papers",
@@ -527,7 +527,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.811Z"
     },
     {
       "source": "hf-papers",
@@ -538,7 +538,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.811Z"
     },
     {
       "source": "hf-papers",
@@ -549,7 +549,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.811Z"
     },
     {
       "source": "hf-papers",
@@ -560,7 +560,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
     },
     {
       "source": "hf-papers",
@@ -571,7 +571,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
     },
     {
       "source": "hf-papers",
@@ -582,7 +582,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
     },
     {
       "source": "hf-papers",
@@ -593,29 +593,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "9bdaaa9b95dd40bf",
-      "title": "Evaluating Temporal Semantic Caching and Workflow Optimization in Agentic Plan-Execute Pipelines",
-      "url": "https://huggingface.co/papers/2605.20630",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "0752af2769343982",
-      "title": "On the limits and opportunities of AI reviewers: Reviewing the reviews of Nature-family papers with 45 expert scientists",
-      "url": "https://huggingface.co/papers/2605.20668",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
     },
     {
       "source": "hf-papers",
@@ -626,7 +604,29 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "9bdaaa9b95dd40bf",
+      "title": "Evaluating Temporal Semantic Caching and Workflow Optimization in Agentic Plan-Execute Pipelines",
+      "url": "https://huggingface.co/papers/2605.20630",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "0752af2769343982",
+      "title": "On the limits and opportunities of AI reviewers: Reviewing the reviews of Nature-family papers with 45 expert scientists",
+      "url": "https://huggingface.co/papers/2605.20668",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
     },
     {
       "source": "hf-papers",
@@ -637,7 +637,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
     },
     {
       "source": "hf-papers",
@@ -648,7 +648,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
     },
     {
       "source": "hf-papers",
@@ -659,29 +659,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "66f873f8273886a9",
-      "title": "PanoWorld: A Generative Spatial World Model for Consistent Whole-House Panorama Synthesis",
-      "url": "https://huggingface.co/papers/2605.17916",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "d8ab093bc0b579ff",
-      "title": "The Unlearnability Phenomenon in RLVR for Language Models",
-      "url": "https://huggingface.co/papers/2605.16787",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
     },
     {
       "source": "hf-papers",
@@ -692,62 +670,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "d6dfcd5040660c41",
-      "title": "Conditional Equivalence of DPO and RLHF: Implicit Assumption, Failure Modes, and Provable Alignment",
-      "url": "https://huggingface.co/papers/2605.20834",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "e9a647899dc0f450",
-      "title": "SpecBench: Measuring Reward Hacking in Long-Horizon Coding Agents",
-      "url": "https://huggingface.co/papers/2605.21384",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "02fa20f871f49eba",
-      "title": "Mem-π: Adaptive Memory through Learning When and What to Generate",
-      "url": "https://huggingface.co/papers/2605.21463",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "88715f1162cbe35b",
-      "title": "UniT: Unified Geometry Learning with Group Autoregressive Transformer",
-      "url": "https://huggingface.co/papers/2605.21131",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "d03c0587fd3c31cd",
-      "title": "PlanningBench: Generating Scalable and Verifiable Planning Data for Evaluating and Training Large Language Models",
-      "url": "https://huggingface.co/papers/2605.20873",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
     },
     {
       "source": "hf-papers",
@@ -758,18 +681,117 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "66f873f8273886a9",
+      "title": "PanoWorld: A Generative Spatial World Model for Consistent Whole-House Panorama Synthesis",
+      "url": "https://huggingface.co/papers/2605.17916",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "1b06d7f9586b3e9e",
+      "title": "Learning from Language Feedback via Variational Policy Distillation",
+      "url": "https://huggingface.co/papers/2605.15113",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "d8ab093bc0b579ff",
+      "title": "The Unlearnability Phenomenon in RLVR for Language Models",
+      "url": "https://huggingface.co/papers/2605.16787",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "d6dfcd5040660c41",
+      "title": "Conditional Equivalence of DPO and RLHF: Implicit Assumption, Failure Modes, and Provable Alignment",
+      "url": "https://huggingface.co/papers/2605.20834",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "e9a647899dc0f450",
+      "title": "SpecBench: Measuring Reward Hacking in Long-Horizon Coding Agents",
+      "url": "https://huggingface.co/papers/2605.21384",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "02fa20f871f49eba",
+      "title": "Mem-π: Adaptive Memory through Learning When and What to Generate",
+      "url": "https://huggingface.co/papers/2605.21463",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "88715f1162cbe35b",
+      "title": "UniT: Unified Geometry Learning with Group Autoregressive Transformer",
+      "url": "https://huggingface.co/papers/2605.21131",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "cb489a09d8dd34cd",
+      "title": "SaaSBench: Exploring the Boundaries of Coding Agents in Long-Horizon Enterprise SaaS Engineering",
+      "url": "https://huggingface.co/papers/2605.17526",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "d03c0587fd3c31cd",
+      "title": "PlanningBench: Generating Scalable and Verifiable Planning Data for Evaluating and Training Large Language Models",
+      "url": "https://huggingface.co/papers/2605.20873",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
       "id": "7eb4c62d8374d5b4",
-      "title": "LongMINT: Evaluating Memory under Multi-Target Interference in Long-Horizon Agent Systems",
+      "title": "MINTEval: Evaluating Memory under Multi-Target Interference in Long-Horizon Agent Systems",
       "url": "https://huggingface.co/papers/2605.18565",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
     },
     {
       "source": "hf-papers",
@@ -780,7 +802,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
     },
     {
       "source": "hf-papers",
@@ -791,7 +813,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
     },
     {
       "source": "hf-papers",
@@ -802,7 +824,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
     },
     {
       "source": "hf-papers",
@@ -813,7 +835,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
     },
     {
       "source": "hf-papers",
@@ -824,7 +846,18 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-21T15:32:26.055Z"
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "9b8294d47e3d5278",
+      "title": "Lost in the Folds: When Cross-Validation Is Not a Deep Ensemble for Uncertainty Estimation",
+      "url": "https://huggingface.co/papers/2605.18329",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T19:57:02.812Z"
     }
   ]
 }
