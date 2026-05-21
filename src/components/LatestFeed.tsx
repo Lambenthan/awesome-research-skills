@@ -1,39 +1,70 @@
 import Link from "next/link";
 import { latest } from "@/lib/data";
-import { getGroupMeta, groupRssForHome, pickHero } from "@/lib/rss-groups";
+import { getGroupMeta, itemsInGroup, pickHero } from "@/lib/rss-groups";
 import { HeroFeedCard } from "@/components/HeroFeedCard";
 import { TimeDisplay } from "@/components/TimeDisplay";
 import { RssRow } from "@/components/rss/RssRow";
 import type { HnItem, LatestRepo } from "@/lib/types";
 
-// Home feed shows the first N items per group with a "View all" link to
-// /latest/{group}. Dropped from 12 → 8 on 2026-05-21 after studying
-// anthropic.com/news (hero + 4-card strip) and openai.com (6-card rows).
-// 8 lets each group take roughly one fold-height without overwhelming
-// the visitor before they reach the next group.
-const HOME_GROUP_LIMIT = 8;
+// Four main content blocks shown side-by-side in the sampler grid. OSS
+// is intentionally not here — it lives in the bottom discovery row with
+// HackerNews and GitHub trending, which match its "indie / surfacing"
+// vibe better than the editorial main blocks.
+const SAMPLER_GROUP_IDS = [
+  "news",
+  "engineering",
+  "research",
+  "paper",
+] as const;
+const SAMPLER_PICKS_PER_BLOCK = 3;
+const BOTTOM_OSS_LIMIT = 8;
 
 /**
  * Renders the latest snapshot built by scripts/extract-content.mjs at CI
  * time. Visitors load static JSON only — no external API calls from the
  * browser. Freshness is controlled by the workflow cron in
  * .github/workflows/deploy.yml.
+ *
+ * Layout (top → bottom):
+ *
+ *   1. snapshot meta bar (built X ago · N items)
+ *   2. editorial hero — single most prominent recent item with og:image
+ *   3. sampler grid — 4 columns of {News / Engineering / Research /
+ *      Paper}, each showing 3 latest items + "View all →"
+ *   4. discovery row — 3 columns of {OSS / HackerNews / GitHub trending}
+ *   5. footer note explaining the data pipeline
+ *
+ * Reference: anthropic.com/news + openai.com home (2026-05-21 snapshot).
+ * OpenAI's home uses similar 6-card-per-row stacked sections; this
+ * compresses it to 3 picks per block in 4 columns since 5 vendor groups
+ * × 8 items left a long scroll where Research / Paper got buried.
  */
 export function LatestFeed() {
   const fetchedAt = latest.fetchedAt;
   const hn = latest.hn;
   const gh = latest.gh;
   const rss = latest.rss ?? [];
-
   const total = hn.length + gh.length + rss.length;
+
   const hero = pickHero(rss);
-  const heroGroupMeta = hero
-    ? getGroupMeta(hero.contentType) ?? null
-    : null;
-  const groups = groupRssForHome(rss, hero?.id);
+  const heroGroupMeta = hero ? getGroupMeta(hero.contentType) ?? null : null;
+
+  const samplerBlocks = SAMPLER_GROUP_IDS.map((id) => {
+    const meta = getGroupMeta(id);
+    if (!meta) return null;
+    const groupItems = itemsInGroup(rss, id);
+    const items = hero?.id
+      ? groupItems.filter((it) => it.id !== hero.id).slice(0, SAMPLER_PICKS_PER_BLOCK)
+      : groupItems.slice(0, SAMPLER_PICKS_PER_BLOCK);
+    return { meta, items, total: groupItems.length };
+  }).filter((b): b is NonNullable<typeof b> => b !== null && b.items.length > 0);
+
+  const ossItems = itemsInGroup(rss, "oss")
+    .filter((it) => it.id !== hero?.id)
+    .slice(0, BOTTOM_OSS_LIMIT);
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-14">
       <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-rule pb-3">
         <div className="flex items-baseline gap-3">
           <span className="eyebrow-strong">Snapshot</span>
@@ -63,64 +94,94 @@ export function LatestFeed() {
         />
       )}
 
-      {rss.length > 0 &&
-        groups.map((group) => {
-          const visible = group.items.slice(0, HOME_GROUP_LIMIT);
-          const hasMore = group.items.length > HOME_GROUP_LIMIT;
-          const accent = `var(${group.accentVar})`;
-          return (
-            <section key={group.id}>
-              <div
-                className="mb-5 flex items-baseline justify-between border-b-2 pb-3"
-                style={{ borderColor: accent }}
-              >
-                <h2 className="font-serif text-[22px] leading-tight text-ink">
-                  <span
-                    aria-hidden="true"
-                    className="mr-3 inline-block h-[10px] w-[10px] -translate-y-[2px] rounded-full"
-                    style={{ background: accent }}
-                  />
+      {samplerBlocks.length > 0 && (
+        <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 xl:grid-cols-4">
+          {samplerBlocks.map(({ meta, items, total: blockTotal }) => {
+            const accent = `var(${meta.accentVar})`;
+            return (
+              <section key={meta.id} className="flex flex-col">
+                <div
+                  className="mb-4 flex items-baseline justify-between border-b-2 pb-2"
+                  style={{ borderColor: accent }}
+                >
                   <Link
-                    href={`/latest/${group.id}`}
-                    className="rounded transition hover:text-ember focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
+                    href={`/latest/${meta.id}`}
+                    className="font-serif text-[18px] leading-tight text-ink rounded transition hover:text-ember focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
                   >
-                    {group.label}
-                  </Link>{" "}
-                  <em className="text-ember">· {group.subtitle}</em>
-                </h2>
-                <span className="eyebrow">{group.items.length} items</span>
-              </div>
-              <p className="mb-6 max-w-3xl text-[13px] leading-[1.7] text-ink-muted">
-                {group.blurb}
-              </p>
-              <ul className="grid grid-cols-1 gap-x-10 gap-y-7 lg:grid-cols-2">
-                {visible.map((it) => (
-                  <RssRow key={it.id} item={it} showReadHint />
-                ))}
-              </ul>
-              {hasMore && (
-                <div className="mt-6 border-t border-rule pt-4">
+                    <span
+                      aria-hidden="true"
+                      className="mr-2 inline-block h-[8px] w-[8px] -translate-y-[2px] rounded-full"
+                      style={{ background: accent }}
+                    />
+                    {meta.label}
+                  </Link>
+                  <span className="eyebrow text-ink-subtle">{blockTotal}</span>
+                </div>
+                <ul className="flex-1 space-y-6">
+                  {items.map((it) => (
+                    <RssRow key={it.id} item={it} />
+                  ))}
+                </ul>
+                <div className="mt-5 border-t border-rule pt-3">
                   <Link
-                    href={`/latest/${group.id}`}
-                    className="eyebrow rounded text-ember transition hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
+                    href={`/latest/${meta.id}`}
+                    className="eyebrow text-ember rounded transition hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
                   >
-                    查看全部 {group.items.length} 条{" "}
+                    查看全部 {blockTotal} 条{" "}
                     <span aria-hidden="true">→</span>
                   </Link>
                 </div>
-              )}
-            </section>
-          );
-        })}
+              </section>
+            );
+          })}
+        </div>
+      )}
 
-      <div className="grid grid-cols-1 gap-x-12 gap-y-12 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-x-10 gap-y-12 lg:grid-cols-3">
+        {ossItems.length > 0 && (
+          <section className="flex flex-col">
+            <div
+              className="mb-4 flex items-baseline justify-between border-b-2 pb-2"
+              style={{ borderColor: "var(--color-heather)" }}
+            >
+              <Link
+                href="/latest/oss"
+                className="font-serif text-[20px] leading-tight text-ink rounded transition hover:text-ember focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
+              >
+                <span
+                  aria-hidden="true"
+                  className="mr-2 inline-block h-[8px] w-[8px] -translate-y-[2px] rounded-full"
+                  style={{ background: "var(--color-heather)" }}
+                />
+                OSS
+              </Link>
+              <span className="eyebrow text-ink-subtle">
+                {itemsInGroup(rss, "oss").length} items
+              </span>
+            </div>
+            <ul className="flex-1 space-y-5">
+              {ossItems.map((it) => (
+                <RssRow key={it.id} item={it} />
+              ))}
+            </ul>
+            <div className="mt-5 border-t border-rule pt-3">
+              <Link
+                href="/latest/oss"
+                className="eyebrow text-ember rounded transition hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
+              >
+                查看全部 <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </section>
+        )}
+
         {hn.length > 0 && (
           <section>
-            <div className="mb-5 flex items-baseline justify-between border-b border-rule pb-3">
-              <h2 className="font-serif text-[22px] leading-tight text-ink">
+            <div className="mb-4 flex items-baseline justify-between border-b border-rule pb-2">
+              <h2 className="font-serif text-[20px] leading-tight text-ink">
                 Hacker News · AI
               </h2>
-              <span className="eyebrow">{hn.length} items</span>
+              <span className="eyebrow text-ink-subtle">{hn.length}</span>
             </div>
             <ul className="space-y-5">
               {hn.map((it) => (
@@ -132,11 +193,11 @@ export function LatestFeed() {
 
         {gh.length > 0 && (
           <section>
-            <div className="mb-5 flex items-baseline justify-between border-b border-rule pb-3">
-              <h2 className="font-serif text-[22px] leading-tight text-ink">
+            <div className="mb-4 flex items-baseline justify-between border-b border-rule pb-2">
+              <h2 className="font-serif text-[20px] leading-tight text-ink">
                 GitHub · 上升中
               </h2>
-              <span className="eyebrow">{gh.length} items</span>
+              <span className="eyebrow text-ink-subtle">{gh.length}</span>
             </div>
             <ul className="space-y-5">
               {gh.map((r) => (
