@@ -196,14 +196,23 @@ function pickCategory(c) {
 async function fetchHtml(source) {
   const res = await fetchWithRetry(source.url, { headers: { "User-Agent": UA } });
   const html = await res.text();
-  // Find <a href="/news/..."> ... </a> blocks. Anthropic uses two layouts:
+  // Find <a href="<pathPrefix>..."> ... </a> blocks. pathPrefix comes from
+  // selector.item like `a[href^="/news/"]` → `/news/`. Defaults to `/news/`
+  // for backward compatibility with the original Anthropic-only design.
+  // Layout variants observed on anthropic.com:
   //   - FeaturedGrid: title in <h2>, summary in <p>, category in
   //     <span class="caption bold">
   //   - PublicationList: title in <span class="...title body-3">, category
   //     in <span class="...subject body-3">, no summary
   // Both have <time class="...date...">.
-  const anchorRe =
-    /<a[^>]+href="(\/news\/[^"#?]+)"[^>]*>([\s\S]*?)<\/a>/g;
+  const selItem = source.selector?.item || 'a[href^="/news/"]';
+  const prefixMatch = selItem.match(/href\^="([^"]+)"/);
+  const pathPrefix = prefixMatch ? prefixMatch[1] : "/news/";
+  const escapedPrefix = pathPrefix.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const anchorRe = new RegExp(
+    `<a[^>]+href="(${escapedPrefix}[^"#?]+)"[^>]*>([\\s\\S]*?)</a>`,
+    "g",
+  );
   const seen = new Set();
   const out = [];
   let m;

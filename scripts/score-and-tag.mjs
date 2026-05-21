@@ -460,6 +460,30 @@ async function main() {
     merged.set(it.id, it);
   }
 
+  // Refresh raw-side metadata on cached entries. Source-side fields
+  // (source id, sourceName, publishedAt) can change between runs — e.g.
+  // when a feed source gets renamed or split — and we don't want the
+  // cached score to lock us into stale labels. The LLM-derived fields
+  // (cleanedTitle / score / category / cn) stay untouched.
+  const rawByIdForRefresh = new Map(rawItems.map((it) => [it.id, it]));
+  for (const [id, scored] of merged) {
+    const raw = rawByIdForRefresh.get(id);
+    if (!raw) continue;
+    if (
+      scored.source !== raw.source ||
+      scored.sourceName !== raw.sourceName ||
+      (raw.publishedAt && scored.publishedAt !== raw.publishedAt)
+    ) {
+      merged.set(id, {
+        ...scored,
+        source: raw.source,
+        sourceName: raw.sourceName,
+        url: raw.url,
+        publishedAt: raw.publishedAt ?? scored.publishedAt,
+      });
+    }
+  }
+
   // Prune entries whose source item no longer exists in any raw input.
   const rawIds = new Set(rawItems.map((i) => i.id));
   for (const id of [...merged.keys()]) {

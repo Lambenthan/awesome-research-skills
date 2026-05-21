@@ -30,6 +30,9 @@ export type RssGroupMeta = {
 export const SOURCE_GROUP_MAP: Record<string, string> = {
   OpenAI: "labs",
   Anthropic: "labs",
+  "Anthropic News": "labs",
+  "Anthropic Research": "labs",
+  "Anthropic Engineering": "labs",
   "Google AI": "labs",
   DeepMind: "labs",
   NVIDIA: "labs",

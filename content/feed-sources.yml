@@ -79,13 +79,20 @@ sources:
       keyword_filter: '\b(ai|llm|deep[- ]learning|generative|model|gpt|llama|gemma|inference|training|rag|agent|robotics|cuda|tensorrt|nim|nvidia[- ]ai|copilot|chatbot|transformer|neural)\b'
       max_items: 500
 
-  - id: anthropic
-    name: Anthropic
+  # Anthropic 自己把对外发布拆成四个渠道，这里也按对应路径拆四个源。
+  # 这样 /latest 上每条都带各自的渠道标签，读者一眼能分清是公司公告、
+  # 学术研究、工程博客还是产品博客。
+  #
+  #   anthropic-news        anthropic.com/news        公司公告 / 产品发布 / 政策 / 安全声明
+  #   anthropic-research    anthropic.com/research    研究论文与 alignment / interpretability 报告
+  #   anthropic-engineering anthropic.com/engineering 工程实践 / 故障复盘 / 技术博客
+  #   claude-com            claude.com/blog           Claude 产品博客 / 客户案例 / prompt 指南
+  - id: anthropic-news
+    name: Anthropic News
     type: html
     url: https://www.anthropic.com/news
     detailBase: https://www.anthropic.com
     selector:
-      # 条目锚点：<a href="/news/..."> 包含 h2 + time + p
       item: 'a[href^="/news/"]'
       title: h2
       time: time
@@ -95,8 +102,64 @@ sources:
       mode: sitemap
       sitemaps:
         - https://www.anthropic.com/sitemap.xml
-      url_pattern: '^https://www\.anthropic\.com/(news|research|engineering)/[^/]+/?$'
-      max_items: 500
+      url_pattern: '^https://www\.anthropic\.com/news/[^/]+/?$'
+      max_items: 400
+
+  - id: anthropic-research
+    name: Anthropic Research
+    type: html
+    url: https://www.anthropic.com/research
+    detailBase: https://www.anthropic.com
+    selector:
+      item: 'a[href^="/research/"]'
+      title: h2
+      time: time
+      summary: p
+      category: span.caption
+    archive:
+      mode: sitemap
+      sitemaps:
+        - https://www.anthropic.com/sitemap.xml
+      url_pattern: '^https://www\.anthropic\.com/research/[^/]+/?$'
+      max_items: 300
+
+  - id: anthropic-engineering
+    name: Anthropic Engineering
+    type: html
+    url: https://www.anthropic.com/engineering
+    detailBase: https://www.anthropic.com
+    selector:
+      item: 'a[href^="/engineering/"]'
+      title: h2
+      time: time
+      summary: p
+      category: span.caption
+    archive:
+      mode: sitemap
+      sitemaps:
+        - https://www.anthropic.com/sitemap.xml
+      url_pattern: '^https://www\.anthropic\.com/engineering/[^/]+/?$'
+      max_items: 200
+
+  - id: claude-com
+    name: claude.com
+    type: html
+    url: https://claude.com/blog
+    detailBase: https://claude.com
+    selector:
+      # claude.com/blog 的列表页用 webflow CMS 模板，标题在 <a> 邻近兄弟节点，
+      # 实时列表页大概率抓不出来；以 sitemap 走档案为准，slug-to-title 兜底。
+      item: 'a[href^="/blog/"]'
+      title: h2
+      time: time
+      summary: p
+      category: span
+    archive:
+      mode: sitemap
+      sitemaps:
+        - https://claude.com/sitemap.xml
+      url_pattern: '^https://claude\.com/blog/[^/]+/?$'
+      max_items: 300
 
   - id: mistral
     name: Mistral
