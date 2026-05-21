@@ -367,6 +367,34 @@ async function saveStarHistory(history) {
 }
 
 /**
+ * Append a star reading into the history, merging into the most recent
+ * snapshot if it's <12h old (so a partial earlier run gets upgraded by a
+ * later full run). Prunes snapshots older than HISTORY_RETAIN_MS.
+ * Mutates `history` in place. Returns the snapshot it wrote into.
+ */
+function appendOrMergeSnapshot(history, newStarsMap) {
+  if (Object.keys(newStarsMap).length === 0) return null;
+  const now = Date.now();
+  const iso = new Date(now).toISOString();
+  const last = history.snapshots[history.snapshots.length - 1];
+  const lastAt = last ? Date.parse(last.fetchedAt) : 0;
+  let target;
+  if (last && now - lastAt < 12 * 60 * 60 * 1000) {
+    last.stars = { ...last.stars, ...newStarsMap };
+    last.fetchedAt = iso;
+    target = last;
+  } else {
+    target = { fetchedAt: iso, stars: { ...newStarsMap } };
+    history.snapshots.push(target);
+  }
+  const cutoff = now - HISTORY_RETAIN_MS;
+  history.snapshots = history.snapshots.filter(
+    (s) => Date.parse(s.fetchedAt) >= cutoff,
+  );
+  return target;
+}
+
+/**
  * Given the snapshots array, find the most recent snapshot taken at least
  * DELTA_WINDOW_MS ago for the given repo, and return current - old.
  * Returns null if no eligible historical reading exists yet.
@@ -439,22 +467,10 @@ async function extractRepos(cn) {
   }
   await saveJsonCache(REPO_CACHE_FILE, cache);
 
-  // Snapshot retention: one entry per ~day. If the last snapshot is <12h old,
-  // merge current readings into it (so a partial earlier run gets upgraded by
-  // a later full run). Otherwise append a new snapshot. Then prune old.
+  // Snapshot retention: one entry per ~day, merging within a 12h window.
+  // The gh-search block below adds more repos to the same snapshot.
   if (Object.keys(currentSnapshot.stars).length > 0) {
-    const lastSnap = history.snapshots[history.snapshots.length - 1];
-    const lastAt = lastSnap ? Date.parse(lastSnap.fetchedAt) : 0;
-    if (lastSnap && Date.now() - lastAt < 12 * 60 * 60 * 1000) {
-      lastSnap.stars = { ...lastSnap.stars, ...currentSnapshot.stars };
-      lastSnap.fetchedAt = currentSnapshot.fetchedAt;
-    } else {
-      history.snapshots.push(currentSnapshot);
-    }
-    const cutoff = Date.now() - HISTORY_RETAIN_MS;
-    history.snapshots = history.snapshots.filter(
-      (s) => Date.parse(s.fetchedAt) >= cutoff,
-    );
+    appendOrMergeSnapshot(history, currentSnapshot.stars);
     await saveStarHistory(history);
     const latest = history.snapshots[history.snapshots.length - 1];
     console.log(
@@ -617,19 +633,54 @@ async function fetchLatest() {
       }
     }
     await saveJsonCache(GH_SEARCH_CACHE_FILE, ghSearchCache);
-    out.gh = [...all.values()]
-      .sort((a, b) => (b.stargazers_count ?? 0) - (a.stargazers_count ?? 0))
-      .slice(0, 15)
-      .map((it) => ({
-        id: it.id,
-        fullName: it.full_name,
-        description: it.description || "",
-        url: it.html_url,
-        stars: it.stargazers_count ?? 0,
-        pushedAt: it.pushed_at,
-        createdAt: it.created_at,
-        language: it.language || null,
-      }));
+
+    // Add search-result repos to the same star history that extractRepos
+    // populates. This is what makes the section a real 7-day rising
+    // list instead of a static "high-star + recently pushed" snapshot.
+    // First 7 days after deploy: history has no eligible old reading yet,
+    // so every item's delta is null and the sort falls back to absolute
+    // stars. Once the window fills, real delta drives the order.
+    const candidates = [...all.values()];
+    const ghHistory = await loadStarHistory();
+    const ghStarsMap = {};
+    for (const c of candidates) {
+      if (typeof c.stargazers_count === "number") {
+        ghStarsMap[c.full_name] = c.stargazers_count;
+      }
+    }
+    appendOrMergeSnapshot(ghHistory, ghStarsMap);
+    await saveStarHistory(ghHistory);
+
+    const enriched = candidates.map((c) => {
+      const delta = computeStarsDelta7d(
+        ghHistory.snapshots,
+        c.full_name,
+        c.stargazers_count ?? 0,
+      );
+      return { repo: c, delta };
+    });
+    enriched.sort((a, b) => {
+      // Items with delta first, sorted by delta desc. Items without
+      // delta (cold start or freshly-discovered repo) fall to the bottom,
+      // sorted by absolute stars desc so the list isn't empty before the
+      // history window fills.
+      if (a.delta !== null && b.delta !== null) return b.delta - a.delta;
+      if (a.delta !== null) return -1;
+      if (b.delta !== null) return 1;
+      return (b.repo.stargazers_count ?? 0) - (a.repo.stargazers_count ?? 0);
+    });
+
+    out.gh = enriched.slice(0, 15).map(({ repo, delta }) => ({
+      id: repo.id,
+      fullName: repo.full_name,
+      description: repo.description || "",
+      url: repo.html_url,
+      stars: repo.stargazers_count ?? 0,
+      starsDelta7d: delta ?? undefined,
+      pushedAt: repo.pushed_at,
+      createdAt: repo.created_at,
+      language: repo.language || null,
+    }));
   } catch (err) {
     console.warn(`  latest: GH ${err.message}`);
   }
@@ -786,12 +837,17 @@ async function main() {
   const cn = await loadCnSummaries();
   const cnCount = Object.keys(cn).length;
   if (cnCount > 0) console.log(`  cn-summaries: ${cnCount} entries loaded`);
-  const [skills, repos, articles, latest] = await Promise.all([
+  // extractRepos and fetchLatest both write scripts/star-history.json
+  // (extractRepos records curated stars, fetchLatest records gh-search
+  // result stars for the 7-day rising sort). Running them in parallel
+  // hits a last-writer-wins race that drops the loser's stars from the
+  // snapshot. Serialize them; the other two are independent.
+  const [skills, articles] = await Promise.all([
     extractSkills(cn),
-    extractRepos(cn),
     extractArticles(cn),
-    fetchLatest(),
   ]);
+  const repos = await extractRepos(cn);
+  const latest = await fetchLatest();
   await fs.writeFile(
     path.join(OUT_DIR, "skills.json"),
     JSON.stringify(skills, null, 2),

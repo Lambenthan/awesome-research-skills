@@ -113,6 +113,11 @@ export type LatestRepo = {
   description: string;
   url: string;
   stars: number;
+  /** Stars gained in the last ~7 days, computed from star-history.json
+   *  snapshots in scripts/extract-content.mjs. Undefined for the first
+   *  ~7 days after a repo first appears in the search results (no
+   *  eligible historical reading yet). */
+  starsDelta7d?: number;
   pushedAt: string;
   createdAt: string;
   language: string | null;

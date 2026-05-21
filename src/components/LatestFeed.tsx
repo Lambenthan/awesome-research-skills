@@ -195,10 +195,14 @@ export function LatestFeed() {
           <section>
             <div className="mb-4 flex items-baseline justify-between border-b border-rule pb-2">
               <h2 className="font-serif text-[20px] leading-tight text-ink">
-                GitHub · 上升中
+                GitHub · 7 天上升
               </h2>
               <span className="eyebrow text-ink-subtle">{gh.length}</span>
             </div>
+            <p className="mb-4 text-[11.5px] leading-[1.6] text-ink-subtle">
+              5 个 AI topic 下 star &gt; 100、近 60 天有 push 的仓库, 按 7 天
+              star 增量倒排. 没历史读数的项目兜底按总 star 排.
+            </p>
             <ul className="space-y-5">
               {gh.map((r) => (
                 <GhRow key={r.id} item={r} />
@@ -259,6 +263,7 @@ function HnRow({ item }: { item: HnItem }) {
 
 function GhRow({ item }: { item: LatestRepo }) {
   const [owner, name] = item.fullName.split("/");
+  const delta = formatDelta(item.starsDelta7d);
   return (
     <li>
       <a
@@ -274,6 +279,11 @@ function GhRow({ item }: { item: LatestRepo }) {
           </h3>
           <span className="shrink-0 font-serif text-[14px] text-ember tabular-nums">
             <span aria-hidden="true">★</span> {formatStars(item.stars)}
+            {delta && (
+              <span className="ml-2 text-[11px] text-ember/80">
+                {delta} / 7d
+              </span>
+            )}
           </span>
         </div>
         {item.description && (
@@ -296,4 +306,10 @@ function GhRow({ item }: { item: LatestRepo }) {
 function formatStars(n: number) {
   if (n >= 1000) return `${(n / 1000).toFixed(n >= 10000 ? 0 : 1)}k`;
   return String(n);
+}
+
+function formatDelta(d?: number) {
+  if (d === undefined || d === null || d < 20) return null;
+  if (d >= 1000) return `+${(d / 1000).toFixed(1)}k`;
+  return `+${d}`;
 }
