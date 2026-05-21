@@ -93,6 +93,21 @@
   --space-s: clamp(2rem, 1.5vw + 1.4rem, 3rem);
   --space-m: clamp(3.5rem, 3.5vw + 2rem, 6rem);
   --space-l: clamp(7rem, 9vw + 4rem, 14rem);
+
+  /* Motion tokens — derived from anthropic.com's actual numbers
+     (2026-05-21 inspection). They run GSAP power3.out which equals
+     cubic-bezier(0.16, 1, 0.3, 1) in CSS land. Entrance translateY
+     starts at 18px (their measured 17.66); hover transitions are
+     200ms ease, kept short and unfussy. */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quad: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-reveal: 720ms;
+  --dur-reveal-long: 1100ms;
+  --dur-hover: 200ms;
+  --y-rise: 18px;
+  --stagger-tight: 80ms;
+  --stagger-base: 110ms;
+  --stagger-loose: 160ms;
 }
 
 html,
@@ -179,31 +194,169 @@ body {
   border: 1px solid var(--color-rule);
   border-radius: 4px;
   transition:
-    background 220ms ease,
-    border-color 220ms ease,
-    transform 220ms cubic-bezier(0.22, 0.61, 0.36, 1),
-    box-shadow 220ms ease;
+    background var(--dur-hover) ease,
+    border-color var(--dur-hover) ease,
+    transform var(--dur-hover) var(--ease-out),
+    box-shadow var(--dur-hover) ease;
   will-change: transform;
 }
 .card:hover {
   background: var(--color-cream-elevated);
   border-color: var(--color-rule-strong);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px -16px rgba(20, 20, 19, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px -18px rgba(20, 20, 19, 0.18);
 }
 
-/* Scroll reveal — IntersectionObserver flips data-revealed. */
+/* Link-arrow utility — arrow ("→" character) slides right when a
+   parent.group is hovered. Wrap the arrow itself in <span
+   className="link-arrow">→</span>. Matches anthropic's link-affordance
+   pattern (200ms ease, ~3-4px translate). */
+.link-arrow {
+  display: inline-block;
+  transition: transform var(--dur-hover) var(--ease-out);
+}
+.group:hover .link-arrow,
+a:hover > .link-arrow,
+button:hover > .link-arrow {
+  transform: translateX(3px);
+}
+
+/* Animated underline — slides in from the left edge when the link
+   is hovered. Stays as long as the link is hovered; no overshoot.
+   Apply to inline text links inside prose. */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size var(--dur-hover) var(--ease-out);
+  padding-bottom: 1px;
+}
+.link-underline:hover,
+.group:hover .link-underline {
+  background-size: 100% 1px;
+}
+
+/* Scroll reveal — IntersectionObserver flips data-revealed.
+   Easing + rise distance mirror anthropic.com's GSAP power3.out
+   timeline (see inspection notes in :root motion tokens). */
 .reveal {
   opacity: 0;
-  transform: translateY(14px);
+  transform: translateY(var(--y-rise));
   transition:
-    opacity 720ms cubic-bezier(0.22, 0.61, 0.36, 1),
-    transform 720ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    opacity var(--dur-reveal) var(--ease-out),
+    transform var(--dur-reveal) var(--ease-out);
   will-change: opacity, transform;
 }
 .reveal[data-revealed="true"] {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Stagger container — children inside a .reveal-stagger get an
+   automatic incremental delay through CSS custom property index.
+   Use as <div className="reveal-stagger"><Reveal>...</Reveal>...</div>
+   with --stagger-step controlling the cadence (defaults to
+   --stagger-base). Each child .reveal reads its own --i and
+   multiplies. */
+.reveal-stagger {
+  --stagger-step: var(--stagger-base);
+}
+.reveal-stagger > .reveal {
+  transition-delay: calc(var(--i, 0) * var(--stagger-step));
+}
+
+/* Hairline divider — a thin line that scales out from the center on
+   reveal, used as a quiet section opener under big mission H2s.
+   Compose with .reveal so it ties into the IntersectionObserver. */
+.hairline {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  background: transparent;
+  overflow: hidden;
+}
+.hairline::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-rule-strong);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 1200ms var(--ease-out);
+}
+.reveal[data-revealed="true"] .hairline::after,
+.hairline.is-revealed::after {
+  transform: scaleX(1);
+}
+
+/* Soft dark-to-cream fade — sits at the bottom of a dark hero so the
+   page transition into the cream main body isn't a hard edge. 16px
+   tall gradient; subtle, not a parallax effect. */
+.dark-hero-fade {
+  height: 24px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(20, 20, 19, 0.5) 50%,
+    transparent 100%
+  );
+  margin-top: -24px;
+  position: relative;
+  pointer-events: none;
+}
+
+/* Trajectory SVG — the /research hero centerpiece. The polyline draws
+   itself once the SVG enters viewport, then four intervention markers
+   fade in with stagger. Total reveal ~3.6s, intentionally slow to let
+   the eye trace each peak. */
+.trajectory {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.trajectory .trajectory-path {
+  stroke-dasharray: 2400;
+  stroke-dashoffset: 2400;
+  transition: stroke-dashoffset 2800ms cubic-bezier(0.65, 0, 0.35, 1);
+  transition-delay: 400ms;
+}
+.trajectory[data-active="true"] .trajectory-path {
+  stroke-dashoffset: 0;
+}
+.trajectory .trajectory-marker {
+  opacity: 0;
+  transition: opacity 700ms var(--ease-out);
+  transition-delay: var(--marker-delay, 1600ms);
+}
+.trajectory[data-active="true"] .trajectory-marker {
+  opacity: 1;
+}
+
+/* SplitReveal — used by the hero H1 to fade each word individually.
+   Words sit inline-block so transform doesn't pull surrounding
+   layout. Visible state is set by the parent's data-revealed flag. */
+.split-reveal {
+  display: inline-block;
+}
+.split-reveal-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(calc(var(--y-rise) * 1.4));
+  transition:
+    opacity var(--dur-reveal-long) var(--ease-out),
+    transform var(--dur-reveal-long) var(--ease-out);
+  will-change: opacity, transform;
+  transition-delay: calc(var(--word-index, 0) * 70ms);
+}
+.split-reveal[data-revealed="true"] .split-reveal-word {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Keep the space between words from collapsing on inline-block. */
+.split-reveal-space {
+  display: inline-block;
+  width: 0.28em;
 }
 
 /* Markdown body styling for item detail pages (skill bodies, README excerpts). */
@@ -309,9 +462,15 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
+  .reveal,
+  .split-reveal-word,
+  .trajectory .trajectory-marker {
     opacity: 1 !important;
     transform: none !important;
+    transition: none !important;
+  }
+  .trajectory .trajectory-path {
+    stroke-dashoffset: 0 !important;
     transition: none !important;
   }
   .card,

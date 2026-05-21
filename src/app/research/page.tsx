@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { NavBar } from "@/components/NavBar";
 import { Reveal } from "@/components/Reveal";
+import { SplitReveal } from "@/components/SplitReveal";
+import { TrajectoryDiagram } from "@/components/TrajectoryDiagram";
 import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata = {
@@ -16,56 +18,73 @@ export default function ResearchProgramPage() {
       <NavBar />
 
       {/* Dark Glasswing-style hero. cream serif H1 sits on ink background.
-          Spans nearly a full viewport on desktop. */}
+          Spans nearly a full viewport on desktop. A research-meaningful
+          SVG trajectory sits to the right on lg+, beneath the text on
+          smaller widths. */}
       <section className="bg-ink text-cream">
-        <div className="mx-auto max-w-[88rem] px-6 pt-20 pb-24 sm:pt-28 sm:pb-36">
-          <Reveal>
-            <p className="eyebrow text-cream/60">Research Program</p>
-          </Reveal>
-          <Reveal delay={120}>
-            <h1 className="mt-7 font-serif text-[clamp(2.75rem,6vw,5rem)] leading-[1.05] tracking-[-0.02em] text-cream">
-              人格因果学
-            </h1>
-          </Reveal>
-          <Reveal delay={220}>
-            <p className="mt-5 font-serif italic text-[clamp(1.1rem,1.4vw,1.35rem)] text-cream/70">
-              Personality Causality
-            </p>
-          </Reveal>
-          <Reveal delay={340}>
-            <p className="mt-10 max-w-2xl font-fluid-lede leading-[1.7] text-cream/85">
-              把因果识别的语汇移植到不能做随机化实验的研究对象：单一历史人物的全集语料、长时段日记、一份不可重复的话语数据。研究单位是个体，研究时点是事件，研究证据是文本。
-            </p>
-          </Reveal>
-          <Reveal delay={460}>
-            <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3">
-              <a
-                href="#ongoing"
-                className="eyebrow text-cream transition hover:text-ember focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
-              >
-                Ongoing studies <span aria-hidden="true">↓</span>
-              </a>
-              <a
-                href="#method"
-                className="eyebrow text-cream/60 transition hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
-              >
-                Method
-              </a>
-              <a
-                href="#extensions"
-                className="eyebrow text-cream/60 transition hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
-              >
-                Extensions
-              </a>
-              <a
-                href="#appendix"
-                className="eyebrow text-cream/60 transition hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
-              >
-                Appendix
-              </a>
+        <div className="mx-auto max-w-[88rem] px-6 pt-20 pb-20 sm:pt-28 sm:pb-28">
+          <div className="grid gap-x-12 gap-y-16 lg:grid-cols-[3fr_4fr] lg:items-center">
+            <div>
+              <Reveal>
+                <p className="eyebrow text-cream/60">Research Program</p>
+              </Reveal>
+              <SplitReveal
+                as="h1"
+                text="人格因果学"
+                className="mt-7 font-serif text-[clamp(2.75rem,6vw,5rem)] leading-[1.05] tracking-[-0.02em] text-cream"
+              />
+              <Reveal delay={220}>
+                <p className="mt-5 font-serif italic text-[clamp(1.1rem,1.4vw,1.35rem)] text-cream/70">
+                  Personality Causality
+                </p>
+              </Reveal>
+              <Reveal delay={340}>
+                <p className="mt-10 max-w-2xl font-fluid-lede leading-[1.7] text-cream/85">
+                  把因果识别的语汇移植到不能做随机化实验的研究对象：单一历史人物的全集语料、长时段日记、一份不可重复的话语数据。研究单位是个体，研究时点是事件，研究证据是文本。
+                </p>
+              </Reveal>
+              <Reveal delay={460}>
+                <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3">
+                  <a
+                    href="#ongoing"
+                    className="eyebrow text-cream transition hover:text-ember focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
+                  >
+                    Ongoing studies <span aria-hidden="true">↓</span>
+                  </a>
+                  <a
+                    href="#method"
+                    className="eyebrow text-cream/60 transition hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
+                  >
+                    Method
+                  </a>
+                  <a
+                    href="#extensions"
+                    className="eyebrow text-cream/60 transition hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
+                  >
+                    Extensions
+                  </a>
+                  <a
+                    href="#appendix"
+                    className="eyebrow text-cream/60 transition hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
+                  >
+                    Appendix
+                  </a>
+                </div>
+              </Reveal>
             </div>
-          </Reveal>
+
+            <Reveal delay={400} className="lg:pl-6">
+              <figure>
+                <TrajectoryDiagram />
+                <figcaption className="mt-5 max-w-md font-serif italic text-[13px] leading-[1.7] text-cream/55">
+                  苏轼 65 年话语演化轨迹示意。四个标注点是研究里识别出的干预年份，1094 惠州那一段是程序里最大的话语断裂。
+                </figcaption>
+              </figure>
+            </Reveal>
+          </div>
         </div>
+        {/* Soft ink→cream fade so the section edge isn't a hard cut. */}
+        <div className="dark-hero-fade" />
       </section>
 
       <main className="mx-auto w-full max-w-[88rem] flex-1 px-6 pt-12 pb-24">
@@ -255,7 +274,10 @@ function StudyCard({
         {body}
       </p>
       <p className="mt-6 eyebrow text-ember opacity-70 transition group-hover:opacity-100">
-        阅读全书 <span aria-hidden="true">→</span>
+        阅读全书{" "}
+        <span aria-hidden="true" className="link-arrow">
+          →
+        </span>
       </p>
     </Link>
   );
@@ -286,7 +308,7 @@ function BookLink({ title, href }: { title: string; href: string }) {
         <span>{title}</span>
         <span
           aria-hidden="true"
-          className="text-ink-subtle transition group-hover:text-ember"
+          className="link-arrow text-ink-subtle transition group-hover:text-ember"
         >
           →
         </span>

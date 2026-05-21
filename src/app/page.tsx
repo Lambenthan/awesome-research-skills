@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
+import { Hairline } from "@/components/Hairline";
 import { LiveCallout } from "@/components/LiveCallout";
 import { NavBar } from "@/components/NavBar";
 import { Reveal } from "@/components/Reveal";
 import { SectionPreview } from "@/components/SectionPreview";
+import { SplitReveal } from "@/components/SplitReveal";
 import { articles, meta, notes, repos, skills } from "@/lib/data";
 import { SECTION_META } from "@/lib/sections";
 
@@ -48,11 +50,11 @@ export default function Home() {
           <Reveal>
             <p className="eyebrow">Field Notes · 田野笔记</p>
           </Reveal>
-          <Reveal delay={120}>
-            <h1 className="mt-7 font-sans text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[1.05] tracking-[-0.025em] text-ink">
-              通过 AI 拓展科研方法的边界
-            </h1>
-          </Reveal>
+          <SplitReveal
+            as="h1"
+            text="通过 AI 拓展科研方法的边界"
+            className="mt-7 font-sans text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[1.05] tracking-[-0.025em] text-ink"
+          />
           <Reveal delay={260}>
             <p className="mt-7 font-serif italic text-[clamp(1rem,1.3vw,1.25rem)] text-ink-muted">
               晨瀚宇 · Independent research at the edge of AI &amp; methodology
@@ -71,11 +73,11 @@ export default function Home() {
               Featured · Research Program
             </p>
           </Reveal>
-          <Reveal delay={100}>
-            <h2 className="mt-6 font-serif text-[clamp(3rem,7vw,6rem)] leading-[1.02] tracking-[-0.028em] text-ink">
-              人格因果学
-            </h2>
-          </Reveal>
+          <SplitReveal
+            as="h2"
+            text="人格因果学"
+            className="mt-6 font-serif text-[clamp(3rem,7vw,6rem)] leading-[1.02] tracking-[-0.028em] text-ink"
+          />
           <Reveal delay={200}>
             <p className="mt-4 font-serif italic text-[clamp(1.1rem,1.4vw,1.5rem)] text-ink-muted">
               Personality Causality
@@ -89,9 +91,12 @@ export default function Home() {
           <Reveal delay={440}>
             <Link
               href="/research"
-              className="mt-10 inline-flex items-baseline gap-2 eyebrow text-ember transition hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
+              className="group mt-10 inline-flex items-baseline gap-2 eyebrow text-ember transition hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
             >
-              Read the program <span aria-hidden="true">→</span>
+              Read the program{" "}
+              <span aria-hidden="true" className="link-arrow">
+                →
+              </span>
             </Link>
           </Reveal>
         </div>
@@ -127,10 +132,12 @@ export default function Home() {
 
       {/* Mission statement as a single oversized H2 — anthropic.com
           uses the same pattern with their "At Anthropic, we build AI
-          to serve humanity's long-term well-being." line. */}
+          to serve humanity's long-term well-being." line. A hairline
+          above the H2 expands from center on reveal. */}
       <section className="border-b border-rule bg-cream-surface/30">
         <div className="mx-auto max-w-[88rem] px-6 py-32 sm:py-40">
-          <Reveal>
+          <Hairline className="mb-12 max-w-[12rem]" />
+          <Reveal delay={200}>
             <h2 className="font-serif text-[clamp(2rem,4vw,4rem)] leading-[1.12] tracking-[-0.02em] text-ink">
               在原本不能做实验的研究对象上，把因果识别的语汇还原回去。
             </h2>
