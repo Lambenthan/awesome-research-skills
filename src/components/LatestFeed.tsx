@@ -1,11 +1,17 @@
 import Link from "next/link";
 import { latest } from "@/lib/data";
-import { groupRss } from "@/lib/rss-groups";
+import { getGroupMeta, groupRssForHome, pickHero } from "@/lib/rss-groups";
+import { HeroFeedCard } from "@/components/HeroFeedCard";
 import { TimeDisplay } from "@/components/TimeDisplay";
 import { RssRow } from "@/components/rss/RssRow";
 import type { HnItem, LatestRepo } from "@/lib/types";
 
-const HOME_GROUP_LIMIT = 12;
+// Home feed shows the first N items per group with a "View all" link to
+// /latest/{group}. Dropped from 12 → 8 on 2026-05-21 after studying
+// anthropic.com/news (hero + 4-card strip) and openai.com (6-card rows).
+// 8 lets each group take roughly one fold-height without overwhelming
+// the visitor before they reach the next group.
+const HOME_GROUP_LIMIT = 8;
 
 /**
  * Renders the latest snapshot built by scripts/extract-content.mjs at CI
@@ -20,6 +26,11 @@ export function LatestFeed() {
   const rss = latest.rss ?? [];
 
   const total = hn.length + gh.length + rss.length;
+  const hero = pickHero(rss);
+  const heroGroupMeta = hero
+    ? getGroupMeta(hero.contentType) ?? null
+    : null;
+  const groups = groupRssForHome(rss, hero?.id);
 
   return (
     <div className="space-y-12">
@@ -45,8 +56,15 @@ export function LatestFeed() {
         </div>
       )}
 
+      {hero && (
+        <HeroFeedCard
+          item={hero}
+          accentVar={heroGroupMeta?.accentVar ?? "--color-ember"}
+        />
+      )}
+
       {rss.length > 0 &&
-        groupRss(rss).map((group) => {
+        groups.map((group) => {
           const visible = group.items.slice(0, HOME_GROUP_LIMIT);
           const hasMore = group.items.length > HOME_GROUP_LIMIT;
           const accent = `var(${group.accentVar})`;

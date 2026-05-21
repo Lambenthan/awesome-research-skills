@@ -32,6 +32,11 @@ export type RssGroupMeta = {
   accentVar: string;
 };
 
+/**
+ * Canonical order — used for /latest top-nav, sitemap, and anywhere the
+ * "logical depth-of-research" axis matters. From deepest (Research) to
+ * widest (OSS).
+ */
 export const GROUP_ORDER: RssGroupMeta[] = [
   {
     id: "research",
@@ -75,8 +80,46 @@ export const GROUP_ORDER: RssGroupMeta[] = [
   },
 ];
 
+/**
+ * Home page order — News first, then Engineering, then the longer-tail
+ * Research / Paper / OSS. Studied anthropic.com/news and openai.com on
+ * 2026-05-21: both put product/news content highest on the home and bury
+ * research deeper. Visitor traffic skews to News so it leads here too;
+ * the canonical GROUP_ORDER still drives nav + sitemap.
+ */
+export const HOME_GROUP_ORDER: string[] = [
+  "news",
+  "engineering",
+  "research",
+  "paper",
+  "oss",
+];
+
 export function groupIdOf(contentType: string | undefined): string {
   return contentType ?? "news";
+}
+
+/**
+ * Pick a single editorial hero for the /latest home page. Preference
+ * order: highest score with an og:image and a publishedAt within the
+ * last 30 days → highest score with an image (any age) → highest score
+ * regardless of image → first item. Returns null only for an empty list.
+ */
+export function pickHero(rss: LatestRss[]): LatestRss | null {
+  if (rss.length === 0) return null;
+  const now = Date.now();
+  const thirtyDays = 30 * 24 * 60 * 60 * 1000;
+  const recent = rss.filter((it) => {
+    if (it.score < 4 || !it.image) return false;
+    const t = it.publishedAt ? Date.parse(it.publishedAt) : NaN;
+    return Number.isFinite(t) && now - t <= thirtyDays;
+  });
+  if (recent.length > 0) return recent[0]; // already publishedAt desc
+  const anyImage = rss.find((it) => it.score >= 4 && it.image);
+  if (anyImage) return anyImage;
+  const highScore = rss.find((it) => it.score >= 4);
+  if (highScore) return highScore;
+  return rss[0];
 }
 
 export function getGroupMeta(id: string): RssGroupMeta | undefined {
@@ -85,7 +128,8 @@ export function getGroupMeta(id: string): RssGroupMeta | undefined {
 
 /**
  * Bucket rss[] by content-type group, preserving each bucket's original
- * (publishedAt desc) order. Empty buckets are dropped.
+ * (publishedAt desc) order. Empty buckets are dropped. Group ordering
+ * follows GROUP_ORDER (canonical depth-of-research order).
  */
 export function groupRss(
   rss: LatestRss[],
@@ -99,6 +143,30 @@ export function groupRss(
   return GROUP_ORDER.filter((g) => (bucket[g.id]?.length ?? 0) > 0).map(
     (g) => ({ ...g, items: bucket[g.id] }),
   );
+}
+
+/**
+ * Variant of groupRss for the /latest home feed. Orders groups by
+ * HOME_GROUP_ORDER (News first) and optionally excludes one item id
+ * (the hero card slot) so it doesn't render twice.
+ */
+export function groupRssForHome(
+  rss: LatestRss[],
+  excludeId?: string,
+): Array<RssGroupMeta & { items: LatestRss[] }> {
+  const bucket: Record<string, LatestRss[]> = {};
+  for (const it of rss) {
+    if (excludeId && it.id === excludeId) continue;
+    const gid = groupIdOf(it.contentType);
+    if (!bucket[gid]) bucket[gid] = [];
+    bucket[gid].push(it);
+  }
+  return HOME_GROUP_ORDER
+    .map((id) => GROUP_ORDER.find((g) => g.id === id))
+    .filter(
+      (g): g is RssGroupMeta => !!g && (bucket[g.id]?.length ?? 0) > 0,
+    )
+    .map((g) => ({ ...g, items: bucket[g.id] }));
 }
 
 /**
