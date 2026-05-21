@@ -138,7 +138,9 @@ export function LatestFeed() {
         <code className="font-mono text-[11px] text-ink-muted">
           scripts/extract-feed.mjs
         </code>{" "}
-        从 HackerNews Algolia、GitHub Search 与 8 家 AI lab 一手发布源抓取，过
+        从 HackerNews Algolia、GitHub Search 与一手发布源 (含 Anthropic
+        News / Research / Engineering、claude.com/blog、OpenAI、Google AI、
+        DeepMind、NVIDIA、Meta AI、xAI、Mistral 以及中文厂商) 抓取，过
         LLM 打分归类后 commit 回仓库随构建部署。访客 0 外部请求。
       </p>
     </div>

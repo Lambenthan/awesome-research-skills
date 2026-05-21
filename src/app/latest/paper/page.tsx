@@ -5,15 +5,15 @@ import { NavBar } from "@/components/NavBar";
 import { latest } from "@/lib/data";
 import { getGroupMeta, itemsInGroup } from "@/lib/rss-groups";
 
-const GROUP_ID = "oss";
+const GROUP_ID = "paper";
 
 export const metadata = {
-  title: "OSS · Latest — Field Notes",
+  title: "Paper · Latest — Field Notes",
   description:
-    "GitHub 上活跃的 AI 开源项目与 r/LocalLLaMA、r/MachineLearning 上发酵的工具原型。",
+    "arXiv 上 cs.AI、cs.CL、cs.LG、cs.CV 的最新预印本，HuggingFace Papers 当日精选，以及 Nature 等期刊上的 AI 相关研究。",
 };
 
-export default function OssPage() {
+export default function PaperPage() {
   const meta = getGroupMeta(GROUP_ID);
   if (!meta) notFound();
   const items = itemsInGroup(latest.rss ?? [], GROUP_ID);

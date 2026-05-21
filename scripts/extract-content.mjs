@@ -48,6 +48,74 @@ const CACHE_TTL_MS = 24 * 60 * 60 * 1000;
 const HISTORY_RETAIN_MS = 30 * 24 * 60 * 60 * 1000;
 const DELTA_WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
 
+// ───────────────────────────────────────────────────────────────────────────
+// rss item classification — runs once at build time, output is written to
+// latest.json so /latest routes can group + filter in pure static code.
+//
+// contentType drives the 5 top-level /latest groups (Research / Paper /
+// Engineering / News / OSS). vendor collapses same-company source variants
+// (Anthropic News / Research / Engineering / claude.com → "Anthropic") for
+// filter chip display.
+// ───────────────────────────────────────────────────────────────────────────
+
+const PAPER_SOURCES = new Set(["arXiv", "HuggingFace Papers", "Nature"]);
+const RESEARCH_SOURCES = new Set([
+  "Anthropic Research",
+  "research.google",
+  "correr-zhou.github.io",
+]);
+const ENGINEERING_SOURCES = new Set(["Anthropic Engineering"]);
+const OSS_SOURCES = new Set([
+  "GitHub",
+  "r/LocalLLaMA",
+  "r/MachineLearning",
+]);
+
+// claude.com/blog post slugs that read as engineering / best-practice
+// content rather than product/company news. Pulled from the rescued
+// content audit on 2026-05-21; matches both the slug verbatim and any
+// slug containing one of these substrings.
+const CLAUDE_COM_ENG_PATTERN =
+  /best-practices|prompt-engineering|computer-use|browser-use|building-agents|how-to-create|complete-guide|how-claude-code-works|context-management|hooks|subagents|multi-agent|onboarding-claude-code|extending-claude|claude-code-plugins|claude-api-skill|skill-creator|seeing-like-an-agent|lessons-from|patterns|making-claude-a-better|harnessing-claudes-intelligence|prompt-caching|fix-software-bugs|optimize-code|preview-review-and-merge/i;
+
+function classifyContentType(item) {
+  const src = item.sourceName || "";
+  const url = item.url || "";
+  const slug = url.replace(/[?#].*$/, "").replace(/\/$/, "").split("/").pop() || "";
+
+  if (PAPER_SOURCES.has(src)) return "paper";
+  if (RESEARCH_SOURCES.has(src)) return "research";
+  if (ENGINEERING_SOURCES.has(src)) return "engineering";
+  if (OSS_SOURCES.has(src)) return "oss";
+
+  // claude.com/blog is mixed — split by slug heuristic.
+  if (src === "claude.com" || src === "code.claude.com") {
+    if (CLAUDE_COM_ENG_PATTERN.test(slug)) return "engineering";
+    return "news";
+  }
+
+  // Default: vendor news / product announcements. Covers OpenAI,
+  // Anthropic News, Google AI, DeepMind, NVIDIA, Meta AI, xAI, Mistral,
+  // and all Chinese vendors. DeepMind technically posts research too,
+  // but lumping into News is the pragmatic call until the feed exposes
+  // a per-post research vs. news flag.
+  return "news";
+}
+
+const ANTHROPIC_FAMILY = new Set([
+  "Anthropic News",
+  "Anthropic Research",
+  "Anthropic Engineering",
+  "claude.com",
+  "code.claude.com",
+]);
+
+function vendorOf(sourceName) {
+  if (!sourceName) return "未知";
+  if (ANTHROPIC_FAMILY.has(sourceName)) return "Anthropic";
+  return sourceName;
+}
+
 const FRONTMATTER_RE = /^---\s*\n([\s\S]*?)\n---\s*\n?/;
 
 async function readYaml(file) {
@@ -627,6 +695,8 @@ async function fetchLatest() {
         id: it.id,
         source: it.source,
         sourceName: it.sourceName,
+        vendor: vendorOf(it.sourceName),
+        contentType: classifyContentType(it),
         title: it.title,
         url: it.url,
         summary: it.summary || "",

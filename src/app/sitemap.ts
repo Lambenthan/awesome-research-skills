@@ -28,9 +28,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/reading",
     "/notes",
     "/latest",
-    "/latest/labs",
-    "/latest/cn-vendors",
-    "/latest/academia",
+    "/latest/research",
+    "/latest/paper",
+    "/latest/engineering",
+    "/latest/news",
     "/latest/oss",
   ]) {
     entries.push({ url: url(path), lastModified: NOW, priority: 0.8 });

@@ -13,6 +13,8 @@ function mkItem(over: Partial<LatestRss> = {}): LatestRss {
     id: Math.random().toString(36).slice(2, 10),
     source: "test",
     sourceName: "OpenAI",
+    vendor: "OpenAI",
+    contentType: "news",
     title: "x",
     url: "https://example.com/x",
     summary: "",
@@ -26,38 +28,27 @@ function mkItem(over: Partial<LatestRss> = {}): LatestRss {
 }
 
 describe("groupIdOf", () => {
-  it("maps known lab sourceNames to labs", () => {
-    expect(groupIdOf("OpenAI")).toBe("labs");
-    expect(groupIdOf("Anthropic")).toBe("labs");
-    expect(groupIdOf("DeepMind")).toBe("labs");
+  it("passes through known contentType values", () => {
+    expect(groupIdOf("research")).toBe("research");
+    expect(groupIdOf("paper")).toBe("paper");
+    expect(groupIdOf("engineering")).toBe("engineering");
+    expect(groupIdOf("news")).toBe("news");
+    expect(groupIdOf("oss")).toBe("oss");
   });
 
-  it("maps Chinese vendors to cn-vendors", () => {
-    expect(groupIdOf("Alibaba Cloud")).toBe("cn-vendors");
-    expect(groupIdOf("HuggingFace")).toBe("cn-vendors");
-    expect(groupIdOf("Xiaomi")).toBe("cn-vendors");
-  });
-
-  it("maps academia sources", () => {
-    expect(groupIdOf("arXiv")).toBe("academia");
-    expect(groupIdOf("Nature")).toBe("academia");
-    expect(groupIdOf("HuggingFace Papers")).toBe("academia");
-  });
-
-  it("maps GitHub + Reddit to oss", () => {
-    expect(groupIdOf("GitHub")).toBe("oss");
-    expect(groupIdOf("r/LocalLLaMA")).toBe("oss");
-  });
-
-  it("falls back to oss for unknown sources", () => {
-    expect(groupIdOf("UnknownFancyVendor")).toBe("oss");
+  it("falls back to news for missing contentType", () => {
+    expect(groupIdOf(undefined)).toBe("news");
   });
 });
 
 describe("getGroupMeta", () => {
-  it("returns labs meta", () => {
-    const m = getGroupMeta("labs");
-    expect(m?.label).toBe("AI Labs");
+  it("returns research meta", () => {
+    const m = getGroupMeta("research");
+    expect(m?.label).toBe("Research");
+  });
+  it("returns paper meta", () => {
+    const m = getGroupMeta("paper");
+    expect(m?.label).toBe("Paper");
   });
   it("returns undefined for unknown group", () => {
     expect(getGroupMeta("nope")).toBeUndefined();
@@ -65,24 +56,25 @@ describe("getGroupMeta", () => {
 });
 
 describe("groupRss", () => {
-  it("buckets items by source group and drops empty buckets", () => {
+  it("buckets items by contentType and drops empty buckets", () => {
     const items = [
-      mkItem({ sourceName: "OpenAI" }),
-      mkItem({ sourceName: "Anthropic" }),
-      mkItem({ sourceName: "GitHub" }),
+      mkItem({ contentType: "news" }),
+      mkItem({ contentType: "news" }),
+      mkItem({ contentType: "oss" }),
     ];
     const groups = groupRss(items);
-    expect(groups.map((g) => g.id)).toEqual(["labs", "oss"]);
+    expect(groups.map((g) => g.id)).toEqual(["news", "oss"]);
     expect(groups[0].items).toHaveLength(2);
     expect(groups[1].items).toHaveLength(1);
   });
 
-  it("preserves GROUP_ORDER even when all four groups are populated", () => {
+  it("preserves GROUP_ORDER even when all five groups are populated", () => {
     const items = [
-      mkItem({ sourceName: "OpenAI" }),
-      mkItem({ sourceName: "HuggingFace" }),
-      mkItem({ sourceName: "Nature" }),
-      mkItem({ sourceName: "GitHub" }),
+      mkItem({ contentType: "research" }),
+      mkItem({ contentType: "paper" }),
+      mkItem({ contentType: "engineering" }),
+      mkItem({ contentType: "news" }),
+      mkItem({ contentType: "oss" }),
     ];
     const ids = groupRss(items).map((g) => g.id);
     expect(ids).toEqual(GROUP_ORDER.map((g) => g.id));
@@ -90,14 +82,15 @@ describe("groupRss", () => {
 });
 
 describe("itemsInGroup", () => {
-  it("returns only items whose source maps to the requested group", () => {
+  it("returns only items whose contentType matches the requested group", () => {
     const items = [
-      mkItem({ sourceName: "OpenAI" }),
-      mkItem({ sourceName: "GitHub" }),
-      mkItem({ sourceName: "DeepMind" }),
+      mkItem({ contentType: "news" }),
+      mkItem({ contentType: "oss" }),
+      mkItem({ contentType: "research" }),
     ];
-    expect(itemsInGroup(items, "labs")).toHaveLength(2);
+    expect(itemsInGroup(items, "news")).toHaveLength(1);
     expect(itemsInGroup(items, "oss")).toHaveLength(1);
-    expect(itemsInGroup(items, "academia")).toHaveLength(0);
+    expect(itemsInGroup(items, "research")).toHaveLength(1);
+    expect(itemsInGroup(items, "paper")).toHaveLength(0);
   });
 });

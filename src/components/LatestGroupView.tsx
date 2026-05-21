@@ -9,13 +9,19 @@ import type { LatestRss } from "@/lib/types";
 import type { RssGroupMeta } from "@/lib/rss-groups";
 
 /**
- * Full-list view for a single rss group (Labs / 中文厂商 / 学术 / OSS).
+ * Full-list view for a single rss content-type group (Research / Paper /
+ * Engineering / News / OSS).
  *
- * Adds client-side search + source filter chips. Items are sorted by
- * publishedAt desc in extract-content.mjs and bucketed by year-month
- * here for editorial rhythm. Source chips appear when the group has
- * more than one source name (Labs has 8+ — the filters matter; 学术
- * has 4, still worth filtering).
+ * Two filter chip rows independently narrow the list:
+ *   - 厂商 (item.vendor): Anthropic family is merged ("Anthropic News" +
+ *     "Anthropic Research" + "Anthropic Engineering" + "claude.com" all
+ *     surface as "Anthropic"). Other vendors map 1:1 from sourceName.
+ *   - 主题 (item.category): the LLM-derived 18 subject tags (大模型 /
+ *     Agent / 编程工具 / ...). Hidden in groups where the spread is
+ *     trivial (Paper is mostly 大模型 / 训练).
+ *
+ * Items are publishedAt-desc sorted by extract-content.mjs and bucketed
+ * by year-month here for editorial rhythm.
  */
 export function LatestGroupView({
   group,
@@ -25,12 +31,25 @@ export function LatestGroupView({
   items: LatestRss[];
 }) {
   const [query, setQuery] = useState("");
-  const [activeSource, setActiveSource] = useState<string>("all");
+  const [activeVendor, setActiveVendor] = useState<string>("all");
+  const [activeCategory, setActiveCategory] = useState<string>("all");
 
-  const sources = useMemo(() => {
+  const vendors = useMemo(() => {
     const counts = new Map<string, number>();
     for (const it of items) {
-      counts.set(it.sourceName, (counts.get(it.sourceName) ?? 0) + 1);
+      const v = it.vendor || it.sourceName;
+      counts.set(v, (counts.get(v) ?? 0) + 1);
+    }
+    return [...counts.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .map(([name, count]) => ({ name, count }));
+  }, [items]);
+
+  const categories = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const it of items) {
+      if (!it.category) continue;
+      counts.set(it.category, (counts.get(it.category) ?? 0) + 1);
     }
     return [...counts.entries()]
       .sort((a, b) => b[1] - a[1])
@@ -40,12 +59,15 @@ export function LatestGroupView({
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return items.filter((it) => {
-      if (activeSource !== "all" && it.sourceName !== activeSource) return false;
+      const v = it.vendor || it.sourceName;
+      if (activeVendor !== "all" && v !== activeVendor) return false;
+      if (activeCategory !== "all" && it.category !== activeCategory)
+        return false;
       if (!q) return true;
       const hay = `${it.title} ${it.cn ?? ""} ${it.summary ?? ""} ${it.sourceName} ${it.category ?? ""}`.toLowerCase();
       return hay.includes(q);
     });
-  }, [items, query, activeSource]);
+  }, [items, query, activeVendor, activeCategory]);
 
   const byMonth = useMemo(() => groupByMonth(filtered), [filtered]);
 
@@ -106,21 +128,42 @@ export function LatestGroupView({
             </button>
           )}
         </div>
-        {sources.length > 1 && (
+        {vendors.length > 1 && (
           <div className="flex flex-wrap items-center gap-2">
+            <span className="eyebrow shrink-0 mr-1 text-ink-subtle">厂商</span>
             <FilterChip
-              active={activeSource === "all"}
-              onClick={() => setActiveSource("all")}
+              active={activeVendor === "all"}
+              onClick={() => setActiveVendor("all")}
             >
               全部 <span className="text-ink-subtle">{items.length}</span>
             </FilterChip>
-            {sources.map((s) => (
+            {vendors.map((s) => (
               <FilterChip
                 key={s.name}
-                active={activeSource === s.name}
-                onClick={() => setActiveSource(s.name)}
+                active={activeVendor === s.name}
+                onClick={() => setActiveVendor(s.name)}
               >
                 {s.name} <span className="text-ink-subtle">{s.count}</span>
+              </FilterChip>
+            ))}
+          </div>
+        )}
+        {categories.length > 1 && (
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="eyebrow shrink-0 mr-1 text-ink-subtle">主题</span>
+            <FilterChip
+              active={activeCategory === "all"}
+              onClick={() => setActiveCategory("all")}
+            >
+              全部
+            </FilterChip>
+            {categories.map((c) => (
+              <FilterChip
+                key={c.name}
+                active={activeCategory === c.name}
+                onClick={() => setActiveCategory(c.name)}
+              >
+                {c.name} <span className="text-ink-subtle">{c.count}</span>
               </FilterChip>
             ))}
           </div>

@@ -5,15 +5,15 @@ import { NavBar } from "@/components/NavBar";
 import { latest } from "@/lib/data";
 import { getGroupMeta, itemsInGroup } from "@/lib/rss-groups";
 
-const GROUP_ID = "cn-vendors";
+const GROUP_ID = "news";
 
 export const metadata = {
-  title: "中文厂商 · Latest — Field Notes",
+  title: "News · Latest — Field Notes",
   description:
-    "阿里通义、月之暗面、小米、智谱、字节、腾讯等中文厂商的模型与产品发布。",
+    "OpenAI、Anthropic、Google AI、DeepMind、NVIDIA、Meta AI、xAI、Mistral 与中文厂商的产品发布、能力更新与企业合作公告。",
 };
 
-export default function CnVendorsPage() {
+export default function NewsPage() {
   const meta = getGroupMeta(GROUP_ID);
   if (!meta) notFound();
   const items = itemsInGroup(latest.rss ?? [], GROUP_ID);

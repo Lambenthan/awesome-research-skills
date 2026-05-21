@@ -122,6 +122,15 @@ export type LatestRss = {
   id: string;
   source: string;
   sourceName: string;
+  // Display-level vendor — collapses same-company source variants
+  // (e.g. "Anthropic News" / "Anthropic Research" / "Anthropic Engineering"
+  // / "claude.com" all surface as "Anthropic"). Source stays available
+  // for forensic detail.
+  vendor: string;
+  // Functional content type, classified deterministically in
+  // scripts/extract-content.mjs from sourceName + URL pattern + slug
+  // heuristics. Drives the /latest top-level grouping.
+  contentType: "research" | "paper" | "engineering" | "news" | "oss";
   title: string;
   url: string;
   summary: string;

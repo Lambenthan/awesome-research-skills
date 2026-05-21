@@ -1,19 +1,25 @@
 import type { LatestRss } from "./types";
 
 /**
- * RSS source → group mapping for /latest page sectioning.
+ * RSS content-type → group mapping for /latest page sectioning.
  *
- * Four buckets:
- *   - labs       OpenAI / Anthropic / Google AI / DeepMind / NVIDIA /
- *                Mistral / Meta AI / xAI plus Anthropic sub-domains
- *   - cn-vendors Alibaba, Moonshot, Xiaomi, Tencent, ByteDance, Zhipu,
- *                01.AI, MiniMax, Qwen and HuggingFace-hosted CN models
- *   - academia   arXiv, Nature, research.google, group research pages
- *   - oss        GitHub independent projects, indie tools (fallback)
+ * Five buckets, classified deterministically at build time
+ * (scripts/extract-content.mjs::classifyContentType) and stored on each
+ * item as `contentType`:
  *
- * The discovery layer (whether an item was found via lab feed or via
- * AIGCLINK) is not exposed in the group taxonomy — visitors see
- * "中文厂商" the same way they see "AI Labs".
+ *   research    — lab research blogs (Anthropic Research, research.google, ...)
+ *   paper       — academic preprints (arXiv, HuggingFace Papers, Nature)
+ *   engineering — technical how-tos / best practices (Anthropic Engineering,
+ *                 claude.com/blog 工程类博客)
+ *   news        — vendor product launches / company news (OpenAI, Anthropic
+ *                 News, Google AI, NVIDIA, Meta AI, xAI, Mistral, CN vendors,
+ *                 claude.com 产品类博客)
+ *   oss         — indie open-source projects (GitHub repos, r/LocalLLaMA,
+ *                 r/MachineLearning)
+ *
+ * Vendor (e.g., "Anthropic" merging News + Research + Engineering +
+ * claude.com) is a separate filter axis exposed on each group page via
+ * chip rows in LatestGroupView.
  */
 
 export type RssGroupMeta = {
@@ -21,89 +27,56 @@ export type RssGroupMeta = {
   label: string;
   subtitle: string;
   blurb: string;
-  /** CSS var name from globals.css palette (--color-cactus / etc). Used
-   *  by section headers to render a small accent bar so the four groups
-   *  are visually distinguishable beyond just their label text. */
+  /** CSS var name from globals.css palette. Used for the small accent
+   *  bar on section headers so groups are visually distinguishable. */
   accentVar: string;
-};
-
-export const SOURCE_GROUP_MAP: Record<string, string> = {
-  OpenAI: "labs",
-  Anthropic: "labs",
-  "Anthropic News": "labs",
-  "Anthropic Research": "labs",
-  "Anthropic Engineering": "labs",
-  "Google AI": "labs",
-  DeepMind: "labs",
-  NVIDIA: "labs",
-  Mistral: "labs",
-  "Meta AI": "labs",
-  xAI: "labs",
-  "claude.com": "labs",
-  "code.claude.com": "labs",
-
-  "Alibaba Cloud": "cn-vendors",
-  "Moonshot Kimi": "cn-vendors",
-  "Zhipu AI": "cn-vendors",
-  "01.AI": "cn-vendors",
-  StepFun: "cn-vendors",
-  ByteDance: "cn-vendors",
-  MiniMax: "cn-vendors",
-  Xiaomi: "cn-vendors",
-  Tencent: "cn-vendors",
-  Qwen: "cn-vendors",
-  HuggingFace: "cn-vendors",
-  "mimo.xiaomi.com": "cn-vendors",
-  ModelScope: "cn-vendors",
-
-  arXiv: "academia",
-  Nature: "academia",
-  "research.google": "academia",
-  "correr-zhou.github.io": "academia",
-  "HuggingFace Papers": "academia",
-
-  GitHub: "oss",
-  "r/LocalLLaMA": "oss",
-  "r/MachineLearning": "oss",
 };
 
 export const GROUP_ORDER: RssGroupMeta[] = [
   {
-    id: "labs",
-    label: "AI Labs",
-    subtitle: "厂商一手发布",
+    id: "research",
+    label: "Research",
+    subtitle: "lab research blogs",
     blurb:
-      "OpenAI、Anthropic、DeepMind、Google AI、NVIDIA、Mistral、Meta AI、xAI 的官方公告，覆盖新模型与新能力发布。",
-    accentVar: "--color-cloud",
-  },
-  {
-    id: "cn-vendors",
-    label: "中文厂商",
-    subtitle: "Chinese vendors",
-    blurb:
-      "阿里通义、月之暗面、小米、智谱、字节、腾讯等中文厂商的模型与产品发布，含 HuggingFace 上托管的中文模型卡。",
-    accentVar: "--color-coral",
-  },
-  {
-    id: "academia",
-    label: "学术",
-    subtitle: "research & papers",
-    blurb:
-      "arXiv 预印本、Nature 等期刊以及研究机构博客（research.google 等）的 AI 相关原始研究。",
+      "Anthropic、Google、DeepMind 等实验室的研究博客与对外发布的研究成果，覆盖 alignment、interpretability、scaling 等方向的工程化研究记录。",
     accentVar: "--color-cactus",
   },
   {
-    id: "oss",
-    label: "开源 OSS",
-    subtitle: "indie projects",
+    id: "paper",
+    label: "Paper",
+    subtitle: "preprints & journals",
     blurb:
-      "GitHub 上的独立开源项目，多为个人或小团队发起的工具与原型。长存的高 star 项目整理在 /ai 下按主题归组。",
+      "arXiv 上的 AI 相关预印本、HuggingFace Papers 当日精选与 Nature 等期刊发布的原始研究论文。",
+    accentVar: "--color-cloud",
+  },
+  {
+    id: "engineering",
+    label: "Engineering",
+    subtitle: "技术博客 / 最佳实践",
+    blurb:
+      "Anthropic Engineering 与 claude.com/blog 的工程类博客，含 prompt engineering、Computer Use、Claude Code、Skills 与 MCP 的最佳实践指南与故障复盘。",
+    accentVar: "--color-coral",
+  },
+  {
+    id: "news",
+    label: "News",
+    subtitle: "厂商一手公告",
+    blurb:
+      "OpenAI、Anthropic、Google AI、DeepMind、NVIDIA、Meta AI、xAI、Mistral 以及阿里、月之暗面、字节、智谱等厂商的产品发布、能力更新与企业合作公告。",
+    accentVar: "--color-ember",
+  },
+  {
+    id: "oss",
+    label: "OSS",
+    subtitle: "indie open source",
+    blurb:
+      "GitHub 上的独立开源 AI 项目与 r/LocalLLaMA、r/MachineLearning 社区里发酵的工具原型。",
     accentVar: "--color-heather",
   },
 ];
 
-export function groupIdOf(sourceName: string): string {
-  return SOURCE_GROUP_MAP[sourceName] ?? "oss";
+export function groupIdOf(contentType: string | undefined): string {
+  return contentType ?? "news";
 }
 
 export function getGroupMeta(id: string): RssGroupMeta | undefined {
@@ -111,15 +84,15 @@ export function getGroupMeta(id: string): RssGroupMeta | undefined {
 }
 
 /**
- * Bucket rss[] by group, preserving each bucket's original (score-sorted)
- * order. Empty buckets are dropped.
+ * Bucket rss[] by content-type group, preserving each bucket's original
+ * (publishedAt desc) order. Empty buckets are dropped.
  */
 export function groupRss(
   rss: LatestRss[],
 ): Array<RssGroupMeta & { items: LatestRss[] }> {
   const bucket: Record<string, LatestRss[]> = {};
   for (const it of rss) {
-    const gid = groupIdOf(it.sourceName);
+    const gid = groupIdOf(it.contentType);
     if (!bucket[gid]) bucket[gid] = [];
     bucket[gid].push(it);
   }
@@ -129,9 +102,9 @@ export function groupRss(
 }
 
 /**
- * All rss items in a specific group, score-sorted (already done by
- * extract-content.mjs, so this is a simple filter).
+ * All rss items in a specific group, already publishedAt-desc sorted by
+ * extract-content.mjs.
  */
 export function itemsInGroup(rss: LatestRss[], groupId: string): LatestRss[] {
-  return rss.filter((it) => groupIdOf(it.sourceName) === groupId);
+  return rss.filter((it) => groupIdOf(it.contentType) === groupId);
 }

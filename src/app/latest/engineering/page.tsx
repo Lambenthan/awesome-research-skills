@@ -5,15 +5,15 @@ import { NavBar } from "@/components/NavBar";
 import { latest } from "@/lib/data";
 import { getGroupMeta, itemsInGroup } from "@/lib/rss-groups";
 
-const GROUP_ID = "labs";
+const GROUP_ID = "engineering";
 
 export const metadata = {
-  title: "AI Labs · Latest — Field Notes",
+  title: "Engineering · Latest — Field Notes",
   description:
-    "OpenAI、Anthropic、DeepMind、Google AI、NVIDIA、Mistral、Meta AI、xAI 的官方公告完整列表。",
+    "Anthropic Engineering 与 claude.com/blog 的工程类博客，含 prompt engineering、Computer Use、Claude Code、Skills、MCP 等技术博客与最佳实践。",
 };
 
-export default function LabsPage() {
+export default function EngineeringPage() {
   const meta = getGroupMeta(GROUP_ID);
   if (!meta) notFound();
   const items = itemsInGroup(latest.rss ?? [], GROUP_ID);

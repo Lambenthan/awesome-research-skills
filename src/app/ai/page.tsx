@@ -41,7 +41,7 @@ export default function AiIndex() {
                     href="/latest/oss"
                     className="text-ember underline decoration-ember/40 underline-offset-2 transition hover:decoration-ember"
                   >
-                    Latest · 开源 OSS
+                    Latest · OSS
                   </Link>
                   。
                 </p>

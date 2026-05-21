@@ -5,15 +5,15 @@ import { NavBar } from "@/components/NavBar";
 import { latest } from "@/lib/data";
 import { getGroupMeta, itemsInGroup } from "@/lib/rss-groups";
 
-const GROUP_ID = "academia";
+const GROUP_ID = "research";
 
 export const metadata = {
-  title: "学术 · Latest — Field Notes",
+  title: "Research · Latest — Field Notes",
   description:
-    "arXiv 预印本、Nature 等期刊以及研究机构博客的 AI 相关原始研究。",
+    "Anthropic Research、research.google 等实验室研究博客的完整列表，覆盖 alignment、interpretability、scaling 等方向。",
 };
 
-export default function AcademiaPage() {
+export default function ResearchPage() {
   const meta = getGroupMeta(GROUP_ID);
   if (!meta) notFound();
   const items = itemsInGroup(latest.rss ?? [], GROUP_ID);
