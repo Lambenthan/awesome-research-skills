@@ -1,6 +1,34 @@
 {
-  "fetchedAt": "2026-05-21T03:39:36.438Z",
+  "fetchedAt": "2026-05-21T03:52:49.867Z",
   "items": [
+    {
+      "source": "openai",
+      "sourceName": "OpenAI",
+      "id": "71afac265db7ba22",
+      "title": "OpenAI 更新模型规范 Model Spec",
+      "url": "https://openai.com/index/sharing-the-latest-model-spec/",
+      "summary": "",
+      "category": "安全",
+      "publishedAt": "2026-05-21T02:45:24.323Z",
+      "discoveredAt": "2026-05-17T15:40:00.238Z",
+      "originalTitle": "Sharing The Latest Model Spec",
+      "score": 3,
+      "cn": "OpenAI 发布了最新版 Model Spec，这是一份指导模型行为与安全对齐的规范文档。新版在规则清晰度、边界案例处理以及开发者可控性上做了调整，旨在让模型在遵循人类指令与保持安全底线之间取得更好平衡。对于关注 AI 安全治理与模型行为设计的从业者来说，这份文档提供了 OpenAI 当前对模型行为约束的官方立场。"
+    },
+    {
+      "source": "openai",
+      "sourceName": "OpenAI",
+      "id": "687f75100be8e4e4",
+      "title": "OpenAI 更新研究索引页面",
+      "url": "https://openai.com/research/index/",
+      "summary": "",
+      "category": "其他",
+      "publishedAt": "2026-05-21T02:44:39.477Z",
+      "discoveredAt": "2026-05-17T15:40:00.238Z",
+      "originalTitle": "Index",
+      "score": 1,
+      "cn": "OpenAI 更新了其研究索引页面，该页面汇总了公司发布的研究论文、博客文章和技术报告。此次更新可能涉及内容重组或新增条目，但未披露具体变更细节。对于关注 OpenAI 研究动态的用户，这是一个获取最新成果的入口。"
+    },
     {
       "source": "openai",
       "sourceName": "OpenAI",
@@ -9,7 +37,7 @@
       "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/",
       "summary": "",
       "category": "评测",
-      "publishedAt": "2026-05-21T02:43:05.321Z",
+      "publishedAt": "2026-05-21T02:44:25.717Z",
       "discoveredAt": "2026-05-20T20:16:50.270Z",
       "originalTitle": "Model Disproves Discrete Geometry Conjecture",
       "score": 5,
@@ -772,48 +800,6 @@
       "cn": "OpenAI 发布了一份关于前沿 AI 监管的政策声明，阐述了公司在人工智能治理和安全方面的立场。文件讨论了如何平衡创新与风险管控，以及建立国际监管框架的必要性。这属于政策表态类内容，不涉及具体技术或产品发布。"
     },
     {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "4d9f819090bcce58",
-      "title": "HalBench 发布：针对大模型谄媚与幻觉的开放式评测基准",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1tizvih/halbench_i_built_a_custom_sycophancy_and/",
-      "summary": "||0.64| |:-|:-| # HalBench Results: TL;DR: I built **HalBench**, an open benchmark for LLM sycophancy and hallucination. 3,200 false-premise prompts × 4 models = 12,800 graded responses. Validated against a human reader on 100 random items. Sonnet 4.6 &gt; Grok 4.3 &gt; GPT-5.4 &gt; Gemini 3.1 Pro,…",
-      "category": "评测",
-      "publishedAt": "2026-05-20T21:35:16.000Z",
-      "discoveredAt": "2026-05-21T02:46:22.345Z",
-      "originalTitle": "HalBench: I built a custom sycophancy and hallucination benchmark and tested 4 frontier models (Sonnet 4.6, Grok 4.3, GPT 5.4 and Gemini 3.1 Pro), looking for input on what OSS models to run next!",
-      "score": 4,
-      "cn": "HalBench 是一个专门用于评测大模型谄媚与幻觉行为的开源基准。开发者构建了 3200 条带有错误前提的提示词，覆盖四种主流前沿模型（Sonnet 4.6、Grok 4.3、GPT-5.4 与 Gemini 3.1 Pro），生成 12800 条回复并逐一评分，同时用人工抽样验证了评分一致性。结果显示 Sonnet 4.6 在该测试中表现最优。项目现已开放，作者邀请社区推荐开源模型加入后续评测轮次。"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "5ecdf9ef34068874",
-      "title": "Cohere 发布 Command-A 系列开源模型",
-      "url": "https://v.redd.it/3ez116nl0d2h1",
-      "summary": "Hey everyone, Nick Frosst here from Cohere. A few months ago Aidan (my cofounder) [left a comment](https://www.reddit.com/r/LocalLLaMA/comments/1rf8nou/comment/o8rkdrf/) in here about our Command series and how we were working on some more powerful, open-weights models behind the scenes. We just la…",
-      "category": "大模型",
-      "publishedAt": "2026-05-20T21:25:50.000Z",
-      "discoveredAt": "2026-05-21T02:46:22.344Z",
-      "originalTitle": "Re. what ever happened to Cohere’s Command-A series of models?",
-      "score": 5,
-      "cn": "Cohere 联合创始人 Nick Frosst 在 Reddit 上宣布，公司正式发布 Command-A 系列模型。该系列是 Cohere 此前预告的更强开源权重模型，旨在提升企业级文本生成与指令跟随能力。Command-A 的推出填补了 Cohere 在开源大模型领域的重要空白，为开发者提供了新的选择。"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "2851113d51ba9edc",
-      "title": "Qwen 宣布将发布 27B 参数新模型",
-      "url": "https://i.redd.it/g5uabdvdic2h1.jpeg",
-      "summary": "[They are waiting for the exact roadmap](https://x.com/xiong_hui_chen/status/2057166364436295748?s=46&amp;t=VsPxsExZv-12iLtnmcTpdg)",
-      "category": "大模型",
-      "publishedAt": "2026-05-20T19:44:24.000Z",
-      "discoveredAt": "2026-05-21T02:46:22.344Z",
-      "originalTitle": "Qwen will release another 27B with high probability",
-      "score": 5,
-      "cn": "Qwen 在社交平台上披露，下一个版本将为 27B 参数规模的模型，概率很高，团队正等待最终的路线图确认。这意味着此前长期缺位的 20B–30B 参数量级将迎来一个重量级开源选手，对于本地部署和中等规模推理需求是直接利好。"
-    },
-    {
       "source": "google-ai",
       "sourceName": "Google AI",
       "id": "02632956ebdcc20d",
@@ -826,34 +812,6 @@
       "originalTitle": "100 things we announced at I/O 2026",
       "score": 5,
       "cn": "Google I/O 2026 开发者大会上，Google 发布 Gemini Omni、Google Antigravity、Universal Cart 等一系列 AI 产品与平台更新。从多模态模型到全新交互体验，覆盖搜索、开发工具和应用场景，显示出 Google 在 AI 基础设施与产品落地的全面布局。"
-    },
-    {
-      "source": "openai",
-      "sourceName": "OpenAI",
-      "id": "687f75100be8e4e4",
-      "title": "OpenAI 更新研究索引页面",
-      "url": "https://openai.com/research/index/",
-      "summary": "",
-      "category": "其他",
-      "publishedAt": "2026-05-20T19:03:54.623Z",
-      "discoveredAt": "2026-05-17T15:40:00.238Z",
-      "originalTitle": "Index",
-      "score": 1,
-      "cn": "OpenAI 更新了其研究索引页面，该页面汇总了公司发布的研究论文、博客文章和技术报告。此次更新可能涉及内容重组或新增条目，但未披露具体变更细节。对于关注 OpenAI 研究动态的用户，这是一个获取最新成果的入口。"
-    },
-    {
-      "source": "openai",
-      "sourceName": "OpenAI",
-      "id": "71afac265db7ba22",
-      "title": "OpenAI 更新模型规范 Model Spec",
-      "url": "https://openai.com/index/sharing-the-latest-model-spec/",
-      "summary": "",
-      "category": "安全",
-      "publishedAt": "2026-05-20T19:03:35.178Z",
-      "discoveredAt": "2026-05-17T15:40:00.238Z",
-      "originalTitle": "Sharing The Latest Model Spec",
-      "score": 3,
-      "cn": "OpenAI 发布了最新版 Model Spec，这是一份指导模型行为与安全对齐的规范文档。新版在规则清晰度、边界案例处理以及开发者可控性上做了调整，旨在让模型在遵循人类指令与保持安全底线之间取得更好平衡。对于关注 AI 安全治理与模型行为设计的从业者来说，这份文档提供了 OpenAI 当前对模型行为约束的官方立场。"
     },
     {
       "source": "arxiv",
@@ -1430,20 +1388,6 @@
       "cn": "HiRes 是一种面向化学反应条件推荐的检索增强方法，在逆合成断键选择之后，为化学家同时提供准确的预测结果和支撑该预测的文献先例。该方法通过层次化反应表征，将先例记忆以可检视的方式融入推荐流程，兼顾精度与可解释性。相关工作已发表于 arXiv。"
     },
     {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "5d179918e5153f6c",
-      "title": "llama.cpp 更新 MTP draft path 后端采样",
-      "url": "https://github.com/ggml-org/llama.cpp/pull/23287",
-      "summary": "improved MTP performance",
-      "category": "编程工具",
-      "publishedAt": "2026-05-20T17:14:09.000Z",
-      "discoveredAt": "2026-05-21T02:46:22.345Z",
-      "originalTitle": "Move to backend sampling for MTP draft path by gaugarg-nv · Pull Request #23287 · ggml-org/llama.cpp",
-      "score": 3,
-      "cn": "llama.cpp 项目合并了一个优化 MTP 预测路径的 Pull Request，将采样操作移入后端处理。这一改动减少了推理过程中的数据传输和 CPU 开销，在保持生成质量的同时提升了解码速度，尤其适合需要连续多 token 预测的场景。"
-    },
-    {
       "source": "nvidia",
       "sourceName": "NVIDIA",
       "id": "ae362949419e3f08",
@@ -1458,62 +1402,6 @@
       "cn": "NVIDIA 与 Dell Technologies 联合发布企业级 AI Agent 方案，将 NVIDIA 的加速计算与 AI 软件栈整合到 Dell 的服务器与存储产品线中。该方案旨在帮助企业快速部署和运行基于 agent 的智能工作流，覆盖从模型推理到数据管道的全链路。双方的合作降低了企业引入 AI agent 的硬件与运维门槛，为传统行业的大规模智能化提供了可复用的基础设施参考架构。"
     },
     {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "8520427742972701",
-      "title": "ByteShape 发布 Qwen 3.6 35B GGUF 量化版本并对比 NTP 与 MTP 性能",
-      "url": "https://i.redd.it/xjctv0okab2h1.png",
-      "summary": "Hey r/LocalLLaMA, We’ve released our ByteShape Qwen 3.6 35B GGUF quantizations in two families: standard NTP (Next Token Prediction or non-MTP) and MTP. [Blog](https://byteshape.com/blogs/Qwen3.6-35B-A3B/) / [Download NTP Models](https://huggingface.co/byteshape/Qwen3.6-35B-A3B-GGUF) / [Download MT…",
-      "category": "大模型",
-      "publishedAt": "2026-05-20T15:42:29.000Z",
-      "discoveredAt": "2026-05-21T02:46:22.344Z",
-      "originalTitle": "Qwen 3.6 35B GGUF: NTP vs MTP quantization results across GPUs and CPUs",
-      "score": 3,
-      "cn": "ByteShape 推出了 Qwen 3.6 35B 模型的 GGUF 量化版本，分为标准 NTP 和 MTP 两个系列。他们在多款 GPU 和 CPU 上进行了性能对比测试，结果展示了不同量化方案在吞吐量和内存占用上的差异。这对需要在本地部署该模型的用户具有参考价值。"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "727de0c0ed3ddbbd",
-      "title": "Cohere 发布 Command-A-Plus-05-2026 BF16 模型",
-      "url": "https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16",
-      "summary": "",
-      "category": "大模型",
-      "publishedAt": "2026-05-20T15:41:41.000Z",
-      "discoveredAt": "2026-05-21T02:46:22.344Z",
-      "originalTitle": "CohereLabs/command-a-plus-05-2026-bf16 · Hugging Face",
-      "score": 5,
-      "cn": "Cohere 开源了 Command-A-Plus-05-2026 模型的 BF16 权重，这是其新一代语言模型，专注于企业级任务和长上下文处理。该模型在多项基准测试中展现出竞争力，并延续了 Cohere 对可部署性和效率的重视。开发者可通过 Hugging Face 直接获取权重，用于本地推理或微调。"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "5e1e5f11bf52b727",
-      "title": "AMD 发布 Ryzen AI Halo PC，128GB 内存售价 3999 美元",
-      "url": "https://videocardz.com/newz/amd-ryzen-ai-halo-pc-will-cost-3999-with-128gb-memory-on-board",
-      "summary": "",
-      "category": "其他",
-      "publishedAt": "2026-05-20T14:35:47.000Z",
-      "discoveredAt": "2026-05-21T02:46:22.344Z",
-      "originalTitle": "AMD Ryzen AI Halo PC will cost 3999$ with 128GB memory on board",
-      "score": 4,
-      "cn": "AMD 正式推出 Ryzen AI Halo PC，配备 128GB 统一内存，定价 3999 美元。这款面向本地大模型推理的桌面设备，将高容量内存与 AMD 的 AI 加速能力结合，为开发者提供了在本地运行大型语言模型的硬件选项，无需依赖云端 API。"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "56f6d591f6996419",
-      "title": "HuggingFace 更新基准数据集筛选功能，支持按模型大小过滤",
-      "url": "https://i.redd.it/tkn4s42soa2h1.png",
-      "summary": "Quite useful to see which model under 32B performs best on swebenchverified for example. [https://huggingface.co/datasets?benchmark=benchmark:official&amp;sort=trending](https://huggingface.co/datasets?benchmark=benchmark:official&amp;sort=trending)",
-      "category": "评测",
-      "publishedAt": "2026-05-20T13:33:38.000Z",
-      "discoveredAt": "2026-05-21T02:46:22.344Z",
-      "originalTitle": "HuggingFace benchmark datasets now let you filter by model size",
-      "score": 3,
-      "cn": "HuggingFace 基准数据集页面新增了按模型参数量筛选的功能。用户可以直接限定模型规模范围，查看在 SWE-bench Verified 等评测上的表现，例如找出 32B 以下的最佳模型。这一改动简化了跨尺寸模型的对比流程。"
-    },
-    {
       "source": "anthropic-research",
       "sourceName": "Anthropic Research",
       "id": "09e2dacb42d1928b",
@@ -1526,62 +1414,6 @@
       "originalTitle": "Teaching Claude Why",
       "score": 4,
       "cn": "Anthropic 发布了一项名为 Teaching Claude Why 的研究，旨在提升模型在推理过程中的可解释性。该工作通过让 Claude 在生成答案时同步输出决策理由，帮助用户理解模型为何做出特定判断。这一方向对于构建更透明、可信的 AI 系统具有实际意义，也为后续模型行为调试提供了新工具。"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "09c4861862b2998a",
-      "title": "llama.cpp 社区贡献者提交 Gemma 4 MTP 支持 PR",
-      "url": "https://github.com/ggml-org/llama.cpp/pull/23398",
-      "summary": "Gemma 4 MTP from u/am17an It’s a work in progress so you have to compile it yourself, and you shouldn’t expect it to work 😉",
-      "category": "大模型",
-      "publishedAt": "2026-05-20T12:08:46.000Z",
-      "discoveredAt": "2026-05-21T02:46:22.345Z",
-      "originalTitle": "[WIP] Gemma 4 MTP",
-      "score": 3,
-      "cn": "llama.cpp 社区用户 am17an 提交了一个工作进展中的 PR，为 Gemma 4 添加 MTP（多 token 预测）支持。目前该功能需要自行编译，且作者提醒不要期望它能直接运行。这是一个面向开发者的早期实验性集成，展示了社区对 Gemma 4 新能力的快速跟进。"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "75b48443602553bf",
-      "title": "RTX 5080 运行 Qwen3.6 35B MoE 达 128K 上下文，56 tok/s",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1tiixql/rtx_5080_16gb_qwen36_35b_moe_at_128k_context_56/",
-      "summary": "MTP (Multi-Token Prediction) just merged into mainline llama.cpp at b9190. I promised u/WarthogConfident4039 a Qwen3.6 benchmarking round. Three configs, tested at real coding-agent context lengths (not just 512 tokens). The main finding surprised me. **TL;DR: 35B Q4\\_K\\_XL, no MTP,** `--fit-target…",
-      "category": "大模型",
-      "publishedAt": "2026-05-20T11:33:58.000Z",
-      "discoveredAt": "2026-05-21T02:46:22.346Z",
-      "originalTitle": "RTX 5080 16GB: Qwen3.6 35B MoE at 128k context — 56 tok/s, and why MTP doesn't help",
-      "score": 4,
-      "cn": "一位用户实测 Qwen3.6 35B MoE 混合专家模型在 RTX 5080 上的推理性能，以 128K 上下文长度运行时达到了 56 tok/s 的生成速度。他同时测试了 MTP（多 token 预测）效果，结论是 MTP 在这一配置下没有带来额外收益。该测试在实际 coding agent 场景的长上下文条件下完成，而非仅 512 token 的短文本基准，为本地部署大模型的社区提供了有价值的性能参考。"
-    },
-    {
-      "source": "reddit-machinelearning",
-      "sourceName": "r/MachineLearning",
-      "id": "e3df60e13b67c7cf",
-      "title": "博主发布球面流形机器学习技术笔记",
-      "url": "https://eesuck1.github.io/machine-learning-on-spherical-manifold/",
-      "summary": "Hi, I'm interested in geometric deep learning (due to Michael M. Bronstein's book and Maurice Weiler's PhD thesis), and in order not to write projects to nowhere, I decided to keep a technical blog. I started with a short note about machine learning on spherical manifolds, but it's a pretty simple …",
-      "category": "其他",
-      "publishedAt": "2026-05-20T08:13:57.000Z",
-      "discoveredAt": "2026-05-21T02:46:24.763Z",
-      "originalTitle": "Machine Learning on Spherical Manifold [R]",
-      "score": 3,
-      "cn": "一位几何深度学习爱好者受 Bronstein 著作与 Weiler 博士论文启发，撰写了一篇关于球面流形机器学习的短篇技术笔记。文章从基础概念切入，适合对非欧几里得空间下深度学习感兴趣的读者作为入门参考。"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "96f0f33987144618",
-      "title": "Qwen 3.7 Max 在 Artificial Analysis 榜单中位列第五",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1tie6gy/qwen37_max_scored_by_artificial_analysis_27b35b/",
-      "summary": "https://preview.redd.it/42ak5qmus82h1.png?width=1133&amp;format=png&amp;auto=webp&amp;s=744ea3dfc06c83d0c4d8aa128c39b3238b17d7be Qwen 3.7 Max sitting at 5th, pretty much on par with GPT 5.4 (xhigh) and a notch above the just released Gemini 3.5 Flash. On the other end, we see DSV4 Flash and Qwen3.6…",
-      "category": "评测",
-      "publishedAt": "2026-05-20T07:18:51.000Z",
-      "discoveredAt": "2026-05-21T02:46:22.345Z",
-      "originalTitle": "Qwen3.7 Max scored by Artificial Analysis, 27B/35B waiting room",
-      "score": 3,
-      "cn": "Artificial Analysis 发布 Qwen 3.7 Max 的评测结果，该模型在综合能力榜单中排名第五，与 GPT 5.4 的水平相当，略高于刚发布的 Gemini 3.5 Flash。同时，小尺寸的 27B/35B 版本尚在排队待测。这一成绩展现了 Qwen 系列在持续追赶头部闭源模型方面的进展，也为开源社区带来了新的性能参考。"
     },
     {
       "source": "openai",
@@ -1764,20 +1596,6 @@
       "originalTitle": "What Parameter Golf Taught Us",
       "score": 4,
       "cn": "OpenAI 发布了一篇技术博客，总结了他们在“参数高尔夫”实验”中的发现。所谓参数高尔夫，指的是通过精细调整模型参数来优化性能的过程。文章分享了在训练和推理过程中对参数设置的经验教训，以及这些调整如何影响模型的行为和输出质量。这些经验对于理解大模型的行为规律和提升实际应用效果具有参考价值。"
-    },
-    {
-      "source": "reddit-localllama",
-      "sourceName": "r/LocalLLaMA",
-      "id": "47dab6ef9244cba9",
-      "title": "LM Studio 更新支持 MTP 推测解码",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1ti99an/lm_studio_finally_added_support_for_mtp/",
-      "summary": "https://preview.redd.it/1uuzjm0ll72h1.png?width=923&amp;format=png&amp;auto=webp&amp;s=1af7d7594be1e08ff7ad6797e2bc53e9410769a3 update to 0.4.14 Build 2 (Beta) and make sure your llama.cpp engine is 2.15.0 https://preview.redd.it/x0vdwjb3n72h1.png?width=742&amp;format=png&amp;auto=webp&amp;s=6367de…",
-      "category": "大模型",
-      "publishedAt": "2026-05-20T03:10:58.000Z",
-      "discoveredAt": "2026-05-21T02:46:22.346Z",
-      "originalTitle": "LM Studio finally added support for MTP Speculative Decoding",
-      "score": 4,
-      "cn": "LM Studio 在 0.4.14 Build 2 测试版中加入了 MTP 推测解码支持，要求 llama.cpp 引擎版本为 2.15.0。这一更新让本地大模型推理在特定场景下获得更快的生成速度，对需要低延迟响应的应用有明显帮助。用户可通过更新客户端并切换引擎版本直接体验，无需额外配置。"
     },
     {
       "source": "openai",
@@ -1976,18 +1794,18 @@
       "cn": "OpenAI 发布了关于 Codex 安全运行的官方指南，旨在帮助开发者在实际应用中降低代码生成模型带来的风险。指南涵盖了输入过滤、输出审查、权限控制等关键环节，并提供了针对恶意代码生成、数据泄露等场景的防护建议。这是 OpenAI 在 AI 安全对齐方面的一次具体实践，为使用 Codex 构建生产级应用的团队提供了可操作的参考框架。"
     },
     {
-      "source": "reddit-machinelearning",
-      "sourceName": "r/MachineLearning",
-      "id": "17ca53e4b13a507e",
-      "title": "研究者发布 9.8M 文档的 Indic 多语言语料库",
-      "url": "https://reddit.com/r/MachineLearning/comments/1th4po3/released_a_free_98m_doc_indic_multilingual_corpus/",
-      "summary": "Built this over the past few weeks as part of a multilingual research project. Figured I'd share it here. Check it out! \\~9.8M web documents across 11 languages — hi, bn, ta, te, mr, gu, kn, ml, pa, ur, en. \\~8.4B tokens. CC0 license. 🤗 [https://huggingface.co/datasets/AM0908/indic-hplt-v1](https:…",
-      "category": "训练",
-      "publishedAt": "2026-05-18T23:09:33.000Z",
-      "discoveredAt": "2026-05-21T02:46:24.763Z",
-      "originalTitle": "Released a free 9.8M doc Indic multilingual corpus — Hindi, Bengali, Tamil, Telugu + 7 more (CC0, HuggingFace) [P]",
+      "source": "anthropic-news",
+      "sourceName": "Anthropic News",
+      "id": "d6a5d4f63a420bd9",
+      "title": "KPMG 与 Anthropic 达成战略合作，将 Claude 接入核心业务",
+      "url": "https://www.anthropic.com/news/anthropic-kpmg",
+      "summary": "",
+      "category": "其他",
+      "publishedAt": "2026-05-19T00:00:00.000Z",
+      "discoveredAt": "2026-05-20T03:38:59.619Z",
+      "originalTitle": "KPMG integrates Claude across its core business and workforce of more than 276,000 in strategic alliance",
       "score": 4,
-      "cn": "一位研究者近日在 HuggingFace 上发布了 Indic-HPLT-v1，一个包含 9.8M 网页文档、约 84 亿 token 的印度多语言语料库，覆盖印地语、孟加拉语、泰米尔语、泰卢固语等 11 种语言，采用 CC0 许可协议。该语料库来自数周的多语言研究项目，旨在为低资源语言 NLP 提供高质量训练数据，可直接用于预训练或微调。"
+      "cn": "KPMG 与 Anthropic 建立战略联盟，将 Claude 集成到拥有超过 276,000 名员工的全球核心业务流程中。这一合作标志着企业级 AI 在大型专业服务机构的规模化落地，涉及审计、咨询、税务等多个业务线的智能化改造，为 LLM 在合规要求高的行业应用提供了参考路径。"
     },
     {
       "source": "deepmind",
@@ -2032,20 +1850,6 @@
       "cn": "OpenAI 推出 Computer Using Agent，一个能够直接操作电脑图形界面的智能体。该 agent 可以像人类一样观察屏幕、移动光标、点击按钮和输入文本，从而完成填写表单、操作软件等一系列需要 GUI 交互的任务。与以往依赖 API 或命令行的方式不同，CUA 以视觉理解为基础，绕过了接口限制，为办公自动化、软件测试等场景提供了更直接的方案。"
     },
     {
-      "source": "anthropic-news",
-      "sourceName": "Anthropic News",
-      "id": "d6a5d4f63a420bd9",
-      "title": "KPMG 与 Anthropic 达成战略合作，将 Claude 接入核心业务",
-      "url": "https://www.anthropic.com/news/anthropic-kpmg",
-      "summary": "",
-      "category": "其他",
-      "publishedAt": "2026-05-18T16:00:00.000Z",
-      "discoveredAt": "2026-05-20T03:38:59.619Z",
-      "originalTitle": "KPMG integrates Claude across its core business and workforce of more than 276,000 in strategic alliance",
-      "score": 4,
-      "cn": "KPMG 与 Anthropic 建立战略联盟，将 Claude 集成到拥有超过 276,000 名员工的全球核心业务流程中。这一合作标志着企业级 AI 在大型专业服务机构的规模化落地，涉及审计、咨询、税务等多个业务线的智能化改造，为 LLM 在合规要求高的行业应用提供了参考路径。"
-    },
-    {
       "source": "openai",
       "sourceName": "OpenAI",
       "id": "24cd9dd18b7f91c5",
@@ -2058,34 +1862,6 @@
       "originalTitle": "Introducing O3 And O4 Mini",
       "score": 5,
       "cn": "OpenAI 正式推出新一代推理模型 O3  O3 及其轻量化版本 O4 Mini。O3 在数学、编程及科学推理任务上实现了显著性能提升，而 O4 Mini 则以更低的计算成本提供了接近旗舰模型的推理能力。这两款模型均采用强化学习与链式思维技术，进一步巩固了 OpenAI 在高级推理领域的领先地位。"
-    },
-    {
-      "source": "reddit-machinelearning",
-      "sourceName": "r/MachineLearning",
-      "id": "c13b4517d77c5ec5",
-      "title": "NYU LeCun 团队提出 Sub-JEPA 改进 LeWorldModel",
-      "url": "https://reddit.com/r/MachineLearning/comments/1tgn3bz/subjepa_a_simple_fix_to_lecun_groups_leworldmodel/",
-      "summary": "**World models** learn compact latent representations for planning without pixel reconstruction. LeWorldModel (LeWM), from LeCun's group at NYU, achieves stable end-to-end JEPA training by enforcing an isotropic Gaussian prior over the full latent space. **The flaw:** real environment dynamics live…",
-      "category": "世界模型",
-      "publishedAt": "2026-05-18T13:44:05.000Z",
-      "discoveredAt": "2026-05-21T02:46:24.763Z",
-      "originalTitle": "Sub-JEPA: a simple fix to LeCun group's LeWorldModel that consistently improves performance [P]",
-      "score": 4,
-      "cn": "NYU LeCun 团队在 LeWorldModel 基础上提出 Sub-JEPA，通过修正全潜空间各向同性高斯先验的缺陷，显著提升了世界模型在规划任务中的表现。该方法不依赖像素重建，直接学习紧凑的潜表征，并在多个环境动力学基准上取得一致改进。这一简单修复为 JEPA 框架的端到端训练提供了更稳健的路径。"
-    },
-    {
-      "source": "reddit-machinelearning",
-      "sourceName": "r/MachineLearning",
-      "id": "d98531af6b8d69e5",
-      "title": "Hugging Face 团队发起 PapersWithCode 复活项目",
-      "url": "https://reddit.com/r/MachineLearning/comments/1tgmwqr/reviving_paperswithcode_by_hugging_face_p/",
-      "summary": "Hi, Niels here from the open-source team at Hugging Face. Like many others, I was a huge fan of paperswithcode. Sadly, that website is no longer maintained after its acquisition by Meta. Hence, I've been working on reviving it. I obviously use AI agents to parse papers at scale and automatically ge…",
-      "category": "其他",
-      "publishedAt": "2026-05-18T13:37:11.000Z",
-      "discoveredAt": "2026-05-21T02:46:24.763Z",
-      "originalTitle": "Reviving PapersWithCode (by Hugging Face) [P]",
-      "score": 3,
-      "cn": "Hugging Face 开源团队成员 Niels 公开了一个社区驱动的项目，旨在复活因被 Meta 收购后停更的论文代码追踪网站 PapersWithCode。该项目利用 AI agent 批量解析论文摘要，自动提取方法、数据集与代码链接，并尝试重建一个可维护的论文-代码对应关系数据库。项目目前处于早期建设阶段，代码与数据均计划开源，欢迎社区贡献和反馈。"
     },
     {
       "source": "openai",
@@ -2172,6 +1948,20 @@
       "cn": "DeepMind 推出 WaveNet，一种基于深度神经网络的原始音频波形生成模型。WaveNet 能够直接对语音信号进行建模，生成比传统参数合成和拼接合成更自然、更流畅的语音。该模型通过自回归方式逐样本预测音频，在多个语种的语音合成任务中显著降低了自然度与人类语音的差距，为 TTS 领域带来了突破性进展。"
     },
     {
+      "source": "anthropic-news",
+      "sourceName": "Anthropic News",
+      "id": "9c0ddb2d59a6955e",
+      "title": "Anthropic 收购 Stainless",
+      "url": "https://www.anthropic.com/news/anthropic-acquires-stainless",
+      "summary": "",
+      "category": "编程工具",
+      "publishedAt": "2026-05-18T00:00:00.000Z",
+      "discoveredAt": "2026-05-19T03:38:07.759Z",
+      "originalTitle": "Anthropic acquires Stainless",
+      "score": 3,
+      "cn": "Anthropic 收购了 API 工具公司 Stainless，后者专注于 SDK 生成和接口文档编写。Stainless 的技术将用于改进 Claude 模型的 API 质量，为开发者提供更稳定的调用体验。"
+    },
+    {
       "source": "deepmind",
       "sourceName": "DeepMind",
       "id": "c120575d799b8685",
@@ -2212,20 +2002,6 @@
       "originalTitle": "Introducing Google Antigravity 2.0",
       "score": 5,
       "cn": "DeepMind 推出 Google Antigravity 2.0，在反重力技术方向取得新进展。该项目延续了对非推进式悬浮力场的控制探索，新版本在系统稳定性与操控精度上有所提升，为未来交通与空间基建提供了技术储备。"
-    },
-    {
-      "source": "anthropic-news",
-      "sourceName": "Anthropic News",
-      "id": "9c0ddb2d59a6955e",
-      "title": "Anthropic 收购 Stainless",
-      "url": "https://www.anthropic.com/news/anthropic-acquires-stainless",
-      "summary": "",
-      "category": "编程工具",
-      "publishedAt": "2026-05-17T16:00:00.000Z",
-      "discoveredAt": "2026-05-19T03:38:07.759Z",
-      "originalTitle": "Anthropic acquires Stainless",
-      "score": 3,
-      "cn": "Anthropic 收购了 API 工具公司 Stainless，后者专注于 SDK 生成和接口文档编写。Stainless 的技术将用于改进 Claude 模型的 API 质量，为开发者提供更稳定的调用体验。"
     },
     {
       "source": "openai",
@@ -2739,7 +2515,7 @@
       "url": "https://www.anthropic.com/news/pwc-expanded-partnership",
       "summary": "",
       "category": "其他",
-      "publishedAt": "2026-05-13T16:00:00.000Z",
+      "publishedAt": "2026-05-14T00:00:00.000Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z",
       "originalTitle": "PwC is deploying Claude to build technology, execute deals, and reinvent enterprise functions for clients",
       "score": 2,
@@ -2753,7 +2529,7 @@
       "url": "https://www.anthropic.com/news/gates-foundation-partnership",
       "summary": "",
       "category": "其他",
-      "publishedAt": "2026-05-13T16:00:00.000Z",
+      "publishedAt": "2026-05-14T00:00:00.000Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z",
       "originalTitle": "Anthropic forms $200 million partnership with the Gates Foundation",
       "score": 2,
@@ -2767,7 +2543,7 @@
       "url": "https://www.anthropic.com/research/2028-ai-leadership",
       "summary": "",
       "category": "其他",
-      "publishedAt": "2026-05-13T16:00:00.000Z",
+      "publishedAt": "2026-05-14T00:00:00.000Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z",
       "originalTitle": "2028 Ai Leadership",
       "score": 1,
@@ -2837,7 +2613,7 @@
       "url": "https://www.anthropic.com/news/claude-for-small-business",
       "summary": "",
       "category": "大模型",
-      "publishedAt": "2026-05-12T16:00:00.000Z",
+      "publishedAt": "2026-05-13T00:00:00.000Z",
       "discoveredAt": "2026-05-17T13:22:25.414Z",
       "originalTitle": "Introducing Claude for Small Business",
       "score": 3,
@@ -3193,6 +2969,20 @@
       "cn": "OpenAI 在 API 中上线了新一代实时语音模型，能够同时完成推理、翻译和转录任务。这些模型旨在让语音交互更自然、更智能，开发者可以直接调用，为应用注入更接近人类对话的语音能力。"
     },
     {
+      "source": "anthropic-research",
+      "sourceName": "Anthropic Research",
+      "id": "9792028e02ebeab0",
+      "title": "Anthropic 发布 Natural Language Autoencoders 研究",
+      "url": "https://www.anthropic.com/research/natural-language-autoencoders",
+      "summary": "",
+      "category": "大模型",
+      "publishedAt": "2026-05-07T00:00:00.000Z",
+      "discoveredAt": "2026-05-17T15:40:00.238Z",
+      "originalTitle": "Natural Language Autoencoders",
+      "score": 5,
+      "cn": "Anthropic 提出 Natural Language Autoencoders，一种将模型内部表征无损翻译为可读文本的新方法。该方法通过训练自编码器将高维神经元激活映射到自然语言描述，使研究者能直接阅读模型在推理时的“思考过程”。相比传统探针或激活编辑，这一技术保留了完整语义信息，为理解大模型内部机制提供了更透明的工具。"
+    },
+    {
       "source": "github",
       "sourceName": "GitHub",
       "id": "9490666391e9013b",
@@ -3221,6 +3011,20 @@
       "cn": "OpenAI 为 ChatGPT 新增 Trusted Contact 功能，这是一项可选的安全机制。当系统检测到用户存在严重的自伤风险时，会自动通知用户指定的信任联系人，以便及时获得帮助。该功能在隐私保护与危机干预之间寻求平衡，不主动监控对话内容，仅在模型判断风险达到阈值时触发通知。"
     },
     {
+      "source": "anthropic-research",
+      "sourceName": "Anthropic Research",
+      "id": "411a3bbb252a4f90",
+      "title": "Anthropic 公布研究所研究议程",
+      "url": "https://www.anthropic.com/research/anthropic-institute-agenda",
+      "summary": "",
+      "category": "大模型",
+      "publishedAt": "2026-05-07T00:00:00.000Z",
+      "discoveredAt": "2026-05-17T15:40:00.238Z",
+      "originalTitle": "Anthropic Institute Agenda",
+      "score": 3,
+      "cn": "Anthropic 于 2026 年 5 月 7 日发布其研究所的研究议程，详细规划了在 AI 安全、可解释性、对齐等关键方向上的后续工作。该议程旨在系统性地推动前沿模型的能力提升与风险缓解，为未来技术迭代提供学术框架。"
+    },
+    {
       "source": "google-ai",
       "sourceName": "Google AI",
       "id": "d8f125a2dd67d0d2",
@@ -3233,6 +3037,20 @@
       "originalTitle": "Google Cloud",
       "score": 2,
       "cn": "Google Cloud 宣布了基础设施与云平台的最新更新，涵盖计算、存储、网络等核心服务的优化。此次更新旨在提升企业级应用的性能与可靠性，并扩展全球部署能力。具体产品功能和可用地区详情可参考官方文档。"
+    },
+    {
+      "source": "anthropic-research",
+      "sourceName": "Anthropic Research",
+      "id": "65f18ea852a9c8ff",
+      "title": "Anthropic 向开源社区捐赠 Petri 项目",
+      "url": "https://www.anthropic.com/research/donating-open-source-petri",
+      "summary": "",
+      "category": "其他",
+      "publishedAt": "2026-05-07T00:00:00.000Z",
+      "discoveredAt": "2026-05-17T15:40:00.238Z",
+      "originalTitle": "Donating Open Source Petri",
+      "score": 1,
+      "cn": "Anthropic 将内部用于大规模 AI 训练的 Petri 项目捐赠给开源社区。Petri 专注于调度与运行海量计算任务，旨在帮助研究机构和企业更高效地管理分布式训练。开源后，Petri 将接受更广泛的外部审查与协作，长期有望提升训练基础设施的透明度与可靠性。"
     },
     {
       "source": "openai",
@@ -3275,48 +3093,6 @@
       "originalTitle": "Understanding Neural Networks Through Sparse Circuits",
       "score": 4,
       "cn": "OpenAI 发表了一篇关于通过稀疏电路理解神经网络内部机制的研究。该方法将网络分解为稀疏连接的子电路，使每个子电路对应特定的计算功能，从而提升模型的可解释性。实验表明，稀疏电路能够揭示模型在推理、记忆等任务中的内部运作方式，为神经网络的黑箱问题提供了一种新的分析工具。"
-    },
-    {
-      "source": "anthropic-research",
-      "sourceName": "Anthropic Research",
-      "id": "9792028e02ebeab0",
-      "title": "Anthropic 发布 Natural Language Autoencoders 研究",
-      "url": "https://www.anthropic.com/research/natural-language-autoencoders",
-      "summary": "",
-      "category": "大模型",
-      "publishedAt": "2026-05-06T16:00:00.000Z",
-      "discoveredAt": "2026-05-17T15:40:00.238Z",
-      "originalTitle": "Natural Language Autoencoders",
-      "score": 5,
-      "cn": "Anthropic 提出 Natural Language Autoencoders，一种将模型内部表征无损翻译为可读文本的新方法。该方法通过训练自编码器将高维神经元激活映射到自然语言描述，使研究者能直接阅读模型在推理时的“思考过程”。相比传统探针或激活编辑，这一技术保留了完整语义信息，为理解大模型内部机制提供了更透明的工具。"
-    },
-    {
-      "source": "anthropic-research",
-      "sourceName": "Anthropic Research",
-      "id": "411a3bbb252a4f90",
-      "title": "Anthropic 公布研究所研究议程",
-      "url": "https://www.anthropic.com/research/anthropic-institute-agenda",
-      "summary": "",
-      "category": "大模型",
-      "publishedAt": "2026-05-06T16:00:00.000Z",
-      "discoveredAt": "2026-05-17T15:40:00.238Z",
-      "originalTitle": "Anthropic Institute Agenda",
-      "score": 3,
-      "cn": "Anthropic 于 2026 年 5 月 7 日发布其研究所的研究议程，详细规划了在 AI 安全、可解释性、对齐等关键方向上的后续工作。该议程旨在系统性地推动前沿模型的能力提升与风险缓解，为未来技术迭代提供学术框架。"
-    },
-    {
-      "source": "anthropic-research",
-      "sourceName": "Anthropic Research",
-      "id": "65f18ea852a9c8ff",
-      "title": "Anthropic 向开源社区捐赠 Petri 项目",
-      "url": "https://www.anthropic.com/research/donating-open-source-petri",
-      "summary": "",
-      "category": "其他",
-      "publishedAt": "2026-05-06T16:00:00.000Z",
-      "discoveredAt": "2026-05-17T15:40:00.238Z",
-      "originalTitle": "Donating Open Source Petri",
-      "score": 1,
-      "cn": "Anthropic 将内部用于大规模 AI 训练的 Petri 项目捐赠给开源社区。Petri 专注于调度与运行海量计算任务，旨在帮助研究机构和企业更高效地管理分布式训练。开源后，Petri 将接受更广泛的外部审查与协作，长期有望提升训练基础设施的透明度与可靠性。"
     },
     {
       "source": "deepmind",
@@ -3445,6 +3221,20 @@
       "cn": "OpenAI 发布了 GPT-5.5 Instant 的系统卡，详细披露了该模型在安全评估、偏见测试和性能边界上的表现。系统卡是模型上线前的重要文档，涵盖红队测试结果、能力限制以及使用建议。GPT-5.5 Instant 作为 GPT-5 系列的快速推理版本，在保持低延迟的同时提升了多轮对话和工具调用能力。此次公开系统卡也延续了 OpenAI 在模型透明度上的承诺。"
     },
     {
+      "source": "anthropic-news",
+      "sourceName": "Anthropic News",
+      "id": "29276d540e65a684",
+      "title": "Anthropic 推出面向金融服务的 Agent 方案",
+      "url": "https://www.anthropic.com/news/finance-agents",
+      "summary": "",
+      "category": "Agent",
+      "publishedAt": "2026-05-05T00:00:00.000Z",
+      "discoveredAt": "2026-05-17T03:07:12.778Z",
+      "originalTitle": "Agents for financial services",
+      "score": 4,
+      "cn": "Anthropic 发布了一套面向金融服务的 agent 解决方案，旨在将 Claude 模型的能力融入银行、保险、投资等业务场景。该方案支持自动化合规审查、客户咨询、风险分析等任务，通过多步骤推理和工具调用提升效率。Anthropic 强调其在安全性与可解释性上的设计，以满足金融监管要求。"
+    },
+    {
       "source": "google-ai",
       "sourceName": "Google AI",
       "id": "4e60ba9595b8ef99",
@@ -3457,20 +3247,6 @@
       "originalTitle": "The latest AI news we announced in April 2026",
       "score": 3,
       "cn": "Google 在其官方博客汇总了 2026 年 4 月的 AI 研究与产品进展，涵盖模型能力提升、新工具上线及生态合作动态。此次公告未披露单一重大发布，而是呈现本月多个团队在语音、视觉与推荐系统方面的增量改进。对于关注 Google AI 整体走势的从业者，这是一份值得翻阅的月度快报。"
-    },
-    {
-      "source": "anthropic-news",
-      "sourceName": "Anthropic News",
-      "id": "29276d540e65a684",
-      "title": "Anthropic 推出面向金融服务的 Agent 方案",
-      "url": "https://www.anthropic.com/news/finance-agents",
-      "summary": "",
-      "category": "Agent",
-      "publishedAt": "2026-05-04T16:00:00.000Z",
-      "discoveredAt": "2026-05-17T03:07:12.778Z",
-      "originalTitle": "Agents for financial services",
-      "score": 4,
-      "cn": "Anthropic 发布了一套面向金融服务的 agent 解决方案，旨在将 Claude 模型的能力融入银行、保险、投资等业务场景。该方案支持自动化合规审查、客户咨询、风险分析等任务，通过多步骤推理和工具调用提升效率。Anthropic 强调其在安全性与可解释性上的设计，以满足金融监管要求。"
     },
     {
       "source": "google-ai",
@@ -3508,7 +3284,7 @@
       "url": "https://www.anthropic.com/news/enterprise-ai-services-company",
       "summary": "",
       "category": "其他",
-      "publishedAt": "2026-05-03T16:00:00.000Z",
+      "publishedAt": "2026-05-04T00:00:00.000Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z",
       "originalTitle": "Building a new enterprise AI services company with Blackstone, Hellman &amp; Friedman, and Goldman Sachs",
       "score": 2,
@@ -5510,7 +5286,7 @@
       "url": "https://www.anthropic.com/research/claude-personal-guidance",
       "summary": "",
       "category": "Agent",
-      "publishedAt": "2026-04-29T16:00:00.000Z",
+      "publishedAt": "2026-04-30T00:00:00.000Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z",
       "originalTitle": "Claude Personal Guidance",
       "score": 3,
@@ -5529,6 +5305,20 @@
       "originalTitle": "Rtx Ai Garage Gtc 2026 Nemoclaw",
       "score": 3,
       "cn": "NVIDIA 在 GTC 2026 上通过 RTX AI Garage 项目展示了 Nemoclaw，这是一个面向开发者的 AI 应用案例或工具。该演示旨在展示 RTX 平台在 AI 推理和本地部署上的能力，帮助开发者快速上手构建实际应用。具体技术细节尚未完全公开，但体现了 NVIDIA 在推动 AI 落地方面的持续投入。"
+    },
+    {
+      "source": "anthropic-research",
+      "sourceName": "Anthropic Research",
+      "id": "9c1e3ee1fc71bf1b",
+      "title": "Anthropic 推出 BioMysteryBench 评估 Claude 生物信息学能力",
+      "url": "https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench",
+      "summary": "",
+      "category": "评测",
+      "publishedAt": "2026-04-29T00:00:00.000Z",
+      "discoveredAt": "2026-05-17T15:40:00.238Z",
+      "originalTitle": "Evaluating Claude For Bioinformatics With BioMysteryBench",
+      "score": 4,
+      "cn": "Anthropic 发布 BioMysteryBench，一个专门用于评估大语言模型在生物信息学领域推理能力的基准测试。该基准包含从序列比对到基因组注释的多样化任务，旨在衡量 Claude 等模型在真实科研场景中的表现。初步结果显示，Claude 在部分任务上接近专家水平，但在复杂多步骤分析中仍有提升空间。这一工作为 AI 辅助生物医学研究提供了更细致的评估工具。"
     },
     {
       "source": "nvidia",
@@ -5573,20 +5363,6 @@
       "cn": "NVIDIA 推出面向早期宇宙天文学研究的 AI GPU 方案，将 GPU 加速计算与深度学习应用于星系形成、宇宙再电离等前沿课题。该工作负载针对天文模拟与观测数据的高通量处理需求进行优化，利用大规模并行计算提升数值模拟和图像分析的效率。这一方向表明 GPU 在高能天文与计算宇宙学领域的渗透正在加速，为研究人员提供了新的工具支撑。"
     },
     {
-      "source": "anthropic-research",
-      "sourceName": "Anthropic Research",
-      "id": "9c1e3ee1fc71bf1b",
-      "title": "Anthropic 推出 BioMysteryBench 评估 Claude 生物信息学能力",
-      "url": "https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench",
-      "summary": "",
-      "category": "评测",
-      "publishedAt": "2026-04-28T16:00:00.000Z",
-      "discoveredAt": "2026-05-17T15:40:00.238Z",
-      "originalTitle": "Evaluating Claude For Bioinformatics With BioMysteryBench",
-      "score": 4,
-      "cn": "Anthropic 发布 BioMysteryBench，一个专门用于评估大语言模型在生物信息学领域推理能力的基准测试。该基准包含从序列比对到基因组注释的多样化任务，旨在衡量 Claude 等模型在真实科研场景中的表现。初步结果显示，Claude 在部分任务上接近专家水平，但在复杂多步骤分析中仍有提升空间。这一工作为 AI 辅助生物医学研究提供了更细致的评估工具。"
-    },
-    {
       "source": "anthropic-news",
       "sourceName": "Anthropic News",
       "id": "7244f9fff96d6ecf",
@@ -5599,6 +5375,19 @@
       "originalTitle": "An update on our election safeguards",
       "score": 1,
       "cn": "Anthropic 发布了一份关于选举安全措施的更新报告，回顾了公司在 2026 年选举周期中为防范 AI 滥用所采取的行动。报告介绍了其政策框架、模型行为限制以及针对选举相关内容的监控机制。Anthropic 表示将继续与监管机构合作，确保其模型在选举期间不被用于误导选民或传播虚假信息。"
+    },
+    {
+      "source": "anthropic-news",
+      "sourceName": "Anthropic News",
+      "id": "1c2272f9572d4fa7",
+      "title": "Claude for Creative Work",
+      "url": "https://www.anthropic.com/news/claude-for-creative-work",
+      "summary": "",
+      "category": "大模型",
+      "publishedAt": "2026-04-28T00:00:00.000Z",
+      "discoveredAt": "2026-05-17T03:07:12.778Z",
+      "score": 4,
+      "cn": "Anthropic 推出 Claude for Creative Work，为创意工作者提供专门的写作、剧本、广告文案等场景支持。该版本在保持 Claude 原有对话能力基础上，针对叙事结构、角色一致性、风格控制等创作需求做了定向优化，并内置了多轮协作改稿的工作流。对于需要长期维护复杂文本项目的编剧、小说家和内容团队来说，这是一个更贴合实际创作习惯的产品形态。"
     },
     {
       "source": "anthropic-news",
@@ -5641,19 +5430,6 @@
       "originalTitle": "OpenAI刚刚发布了新模型：GPT-5.4-Cyber，专门为网络安全防御微调的GPT-5.4变体，为将发布的更强模型做准备",
       "score": 4,
       "cn": "OpenAI 发布 GPT-5.4-Cyber，这是 GPT-5.4 的微调变体，专门面向网络安全防御场景。模型新增了二进制逆向工程能力，无需源代码即可分析编译软件，同时降低了安全相关任务的拒绝边界，减少误拒。该模型面向 TAC 计划的网络安全防御者，需申请使用，是 OpenAI 在安全领域的一次针对性能力扩展。"
-    },
-    {
-      "source": "anthropic-news",
-      "sourceName": "Anthropic News",
-      "id": "1c2272f9572d4fa7",
-      "title": "Claude for Creative Work",
-      "url": "https://www.anthropic.com/news/claude-for-creative-work",
-      "summary": "",
-      "category": "大模型",
-      "publishedAt": "2026-04-27T16:00:00.000Z",
-      "discoveredAt": "2026-05-17T03:07:12.778Z",
-      "score": 4,
-      "cn": "Anthropic 推出 Claude for Creative Work，为创意工作者提供专门的写作、剧本、广告文案等场景支持。该版本在保持 Claude 原有对话能力基础上，针对叙事结构、角色一致性、风格控制等创作需求做了定向优化，并内置了多轮协作改稿的工作流。对于需要长期维护复杂文本项目的编剧、小说家和内容团队来说，这是一个更贴合实际创作习惯的产品形态。"
     },
     {
       "source": "openai",
@@ -6475,7 +6251,7 @@
       "url": "https://www.anthropic.com/research/81k-economics",
       "summary": "",
       "category": "大模型",
-      "publishedAt": "2026-04-21T16:00:00.000Z",
+      "publishedAt": "2026-04-22T00:00:00.000Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z",
       "originalTitle": "81k Economics",
       "score": 5,
@@ -6489,7 +6265,7 @@
       "url": "https://www.anthropic.com/research/economic-index-survey-announcement",
       "summary": "",
       "category": "其他",
-      "publishedAt": "2026-04-21T16:00:00.000Z",
+      "publishedAt": "2026-04-22T00:00:00.000Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z",
       "originalTitle": "Economic Index Survey Announcement",
       "score": 2,
@@ -6651,6 +6427,20 @@
       "cn": "英伟达发布 Lyra 2.0 世界生成模型，将视频生成与 3D 重建结合，解决了 AI 生成 3D 世界时场景持久一致性的难题。模型支持单张图片启动，用户可在场景中移动时持续生成新内容，并能返回已探索区域。通过逐帧 3D 几何路由缓解空间遗忘，利用自增强训练对抗长程漂移，视觉质量与 3D 一致性表现良好。生成的 3D 世界可直接导出为 3DGS 和网格，已开源。"
     },
     {
+      "source": "anthropic-news",
+      "sourceName": "Anthropic News",
+      "id": "8ffed2502175348b",
+      "title": "Anthropic 发布 Claude Opus 4.7",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "summary": "Our latest Opus model brings stronger performance across coding, agents, vision, and multi-step tasks, with greater thoroughness and consistency on the work that matters most.",
+      "category": "大模型",
+      "publishedAt": "2026-04-16T00:00:00.000Z",
+      "discoveredAt": "2026-05-17T03:07:12.778Z",
+      "originalTitle": "Introducing Claude Opus 4.7",
+      "score": 5,
+      "cn": "Anthropic 今日发布 Claude Opus 4.7，在编程、agent、视觉和多步推理任务上均有显著提升。新模型在关键工作上更加彻底和一致，延续了 Opus 系列在复杂场景下的表现优势。此次更新没有引入全新架构，但通过训练优化和规模扩展压榨出了更强的实际能力，为开发者提供了更可靠的底层推理引擎。"
+    },
+    {
       "source": "github",
       "sourceName": "GitHub",
       "id": "27b6e466d4b31554",
@@ -6791,20 +6581,6 @@
       "cn": "DeepMind 推出新一代语音合成模型 Gemini 3.1 Flash TTS，核心创新在于引入细粒度音频标签，允许开发者精确调节语气、节奏、停顿等表达参数，从而生成更自然、富有情感的 AI 语音。该模型面向需要高质量有声内容的应用场景，如播客、有声书、虚拟助手等，在保留 Gemini 系列流畅性的基础上，大幅提升了语音表达的细腻度和可控性。"
     },
     {
-      "source": "anthropic-news",
-      "sourceName": "Anthropic News",
-      "id": "8ffed2502175348b",
-      "title": "Anthropic 发布 Claude Opus 4.7",
-      "url": "https://www.anthropic.com/news/claude-opus-4-7",
-      "summary": "Our latest Opus model brings stronger performance across coding, agents, vision, and multi-step tasks, with greater thoroughness and consistency on the work that matters most.",
-      "category": "大模型",
-      "publishedAt": "2026-04-15T16:00:00.000Z",
-      "discoveredAt": "2026-05-17T03:07:12.778Z",
-      "originalTitle": "Introducing Claude Opus 4.7",
-      "score": 5,
-      "cn": "Anthropic 今日发布 Claude Opus 4.7，在编程、agent、视觉和多步推理任务上均有显著提升。新模型在关键工作上更加彻底和一致，延续了 Opus 系列在复杂场景下的表现优势。此次更新没有引入全新架构，但通过训练优化和规模扩展压榨出了更强的实际能力，为开发者提供了更可靠的底层推理引擎。"
-    },
-    {
       "source": "anthropic-engineering",
       "sourceName": "Anthropic Engineering",
       "id": "77ae700ce1f2f401",
@@ -6859,6 +6635,20 @@
       "originalTitle": "Narasimhan Board",
       "score": 1,
       "cn": "Anthropic 宣布 Narasimhan 加入公司董事会。这一人事变动属于公司治理层面的常规调整，不涉及产品、技术或模型能力的更新。"
+    },
+    {
+      "source": "anthropic-research",
+      "sourceName": "Anthropic Research",
+      "id": "60d9c4aaedfc9ccc",
+      "title": "Anthropic 发布 Automated Alignment Researchers 研究",
+      "url": "https://www.anthropic.com/research/automated-alignment-researchers",
+      "summary": "",
+      "category": "安全",
+      "publishedAt": "2026-04-14T00:00:00.000Z",
+      "discoveredAt": "2026-05-17T15:40:00.238Z",
+      "originalTitle": "Automated Alignment Researchers",
+      "score": 5,
+      "cn": "Anthropic 发布 Automated Alignment Researchers 研究，探索用 AI 系统自动执行对齐研究任务。该项目旨在让语言模型自主设计并运行实验，以发现和修复其他模型的安全漏洞，减少对人类研究者的依赖。Anthropic 认为，自动化对齐研究可能是应对未来超级智能对齐挑战的关键路径。"
     },
     {
       "source": "correr-zhou.github.io",
@@ -6929,20 +6719,6 @@
       "originalTitle": "Building Effective Agents",
       "score": 4,
       "cn": "Anthropic 近日发布了一篇题为《构建有效 Agent》的深度研究报告，梳理了 agent 框架的实践经验与设计原则。文中将 agent 划分为简单工作流与自主 agent 两种基本形态，并针对各常见模式给出了构建建议与适用场景分析，尤其在 agent 规模扩展与工具链集成方面提供了具体案例。整体上，这篇报告更偏重工程落地与最佳实践提炼，适合有 agent 实现经验的团队参考。"
-    },
-    {
-      "source": "anthropic-research",
-      "sourceName": "Anthropic Research",
-      "id": "60d9c4aaedfc9ccc",
-      "title": "Anthropic 发布 Automated Alignment Researchers 研究",
-      "url": "https://www.anthropic.com/research/automated-alignment-researchers",
-      "summary": "",
-      "category": "安全",
-      "publishedAt": "2026-04-13T16:00:00.000Z",
-      "discoveredAt": "2026-05-17T15:40:00.238Z",
-      "originalTitle": "Automated Alignment Researchers",
-      "score": 5,
-      "cn": "Anthropic 发布 Automated Alignment Researchers 研究，探索用 AI 系统自动执行对齐研究任务。该项目旨在让语言模型自主设计并运行实验，以发现和修复其他模型的安全漏洞，减少对人类研究者的依赖。Anthropic 认为，自动化对齐研究可能是应对未来超级智能对齐挑战的关键路径。"
     },
     {
       "source": "deepmind",
@@ -14240,6 +14016,20 @@
       "originalTitle": "Accelerating Scientific Research",
       "score": 3,
       "cn": "Anthropic面向各学科研究人员推出专项计划，让科学家更便捷地利用Claude等语言模型加速科研进程。该计划在人机协作、实验设计、数据分析和论文撰写等环节引入AI，帮助缩短科研周期并推动跨学科创新。大模型在科学发现中的辅助角色正在变得越发关键。"
+    },
+    {
+      "source": "anthropic-research",
+      "sourceName": "Anthropic Research",
+      "id": "edfe31dccbe38301",
+      "title": "Anthropic 发布 2025 年 9 月经济指数报告",
+      "url": "https://www.anthropic.com/research/anthropic-economic-index-september-2025-report",
+      "summary": "",
+      "category": "其他",
+      "publishedAt": "2026-01-15T01:06:36.000Z",
+      "discoveredAt": "2026-05-21T03:46:28.674Z",
+      "originalTitle": "Anthropic Economic Index September 2025 Report",
+      "score": 3,
+      "cn": "Anthropic 发布 2025 年 9 月经济指数报告，基于 Claude 的使用数据分析了 AI 对各行业岗位任务的影响。报告按职业类别和任务类型拆解了自动化、增强与新兴工作的分布趋势，为理解 AI 在劳动力市场中的渗透节奏提供了实证视角。"
     },
     {
       "source": "mistral",
@@ -25584,6 +25374,20 @@
     {
       "source": "nvidia",
       "sourceName": "NVIDIA",
+      "id": "0e97b8d0e022667b",
+      "title": "NVIDIA 与可口可乐、WPP 合作在 Omniverse 平台引入生成式 AI",
+      "url": "https://blogs.nvidia.com/blog/coca-cola-wpp-omniverse-generative-ai/",
+      "summary": "",
+      "category": "其他",
+      "publishedAt": "2024-12-12T20:09:33.000Z",
+      "discoveredAt": "2026-05-21T03:46:28.674Z",
+      "originalTitle": "Coca Cola Wpp Omniverse Generative Ai",
+      "score": 3,
+      "cn": "NVIDIA 宣布与可口可乐和广告集团 WPP 达成合作，将生成式 AI 整合到 Omniverse 平台中，用于品牌营销和内容创作。这项合作旨在利用 NVIDIA 的 AI 和实时渲染技术，帮助品牌方在虚拟环境中快速生成广告素材和产品视觉内容，提升创意工作流程的效率与规模化能力。"
+    },
+    {
+      "source": "nvidia",
+      "sourceName": "NVIDIA",
       "id": "4ada10ee0f30a7a0",
       "title": "NVIDIA 与 Oracle 联合推出 AI 数据处理方案",
       "url": "https://blogs.nvidia.com/blog/oracle-ai-data-processing/",
@@ -32730,6 +32534,90 @@
       "editorOverride": true
     },
     {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "985c2dab9f15a5e8",
+      "title": "OScaR 提出极端 KV Cache 量化方法 Occam's Razor",
+      "url": "https://huggingface.co/papers/2605.19660",
+      "summary": "",
+      "category": "大模型",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T03:49:21.583Z",
+      "originalTitle": "OScaR: The Occam's Razor for Extreme KV Cache Quantization in LLMs and Beyond",
+      "score": 4,
+      "cn": "OScaR 是一篇来自 HuggingFace 论文，探讨大模型推理中 KV Cache 的极端压缩问题。其核心思路借鉴奥卡姆剃刀原则，在保持模型精度的前提下大幅降低 KV Cache 的内存占用。该方法适用于规模日益增长的 LLM 部署场景，有助于在资源受限环境中提升推理效率，同时为更激进的量化策略提供了理论基础。"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "d6dfcd5040660c41",
+      "title": "论文揭示 DPO 与 RLHF 的条件等价性与潜在失效模式",
+      "url": "https://huggingface.co/papers/2605.20834",
+      "summary": "",
+      "category": "训练",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T03:49:21.583Z",
+      "originalTitle": "Conditional Equivalence of DPO and RLHF: Implicit Assumption, Failure Modes, and Provable Alignment",
+      "score": 4,
+      "cn": "Hugging Face 推出一项理论性研究，系统分析了 DPO 与 RLHF 两种主流对齐方法的等价条件与失效模式。论文指出，在隐式假设成立时二者可互推，但实际场景中假设常被打破，导致训练不稳定或对齐偏误。研究还给出了可证明的对齐保障条件，对改进偏好优化流程具有指导意义。"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "9d20995c459d7001",
+      "title": "HRM-Text 提出高效预训练方法，超越单纯规模扩展",
+      "url": "https://huggingface.co/papers/2605.20613",
+      "summary": "",
+      "category": "训练",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T03:49:21.583Z",
+      "originalTitle": "HRM-Text: Efficient Pretraining Beyond Scaling",
+      "score": 4,
+      "cn": "HRM-Text 论文提出一种语言模型预训练优化方法，动态调整训练数据组成与模型容量间的匹配关系。在相同计算量下，该方法使模型下游任务表现得到改善。研究者展示了不同规模上的加速效果，为预训练策略改进提供了实证依据。"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "5721add6afdaa83f",
+      "title": "iTryOn 提出空间语义引导的视频虚拟试穿方法",
+      "url": "https://huggingface.co/papers/2605.21431",
+      "summary": "",
+      "category": "图像模型",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T03:49:21.583Z",
+      "originalTitle": "iTryOn: Mastering Interactive Video Virtual Try-On with Spatial-Semantic Guidance",
+      "score": 4,
+      "cn": "iTryOn 提出一种基于空间语义引导的交互式视频虚拟试穿方法。该方法在保持人物姿态和背景不变的前提下，将服装自然转移到视频中的人体上。研究者通过空间语义特征对齐和时序一致性约束，使得生成的试穿效果在细节纹理和动作连贯性上都有不错表现。这项工作为电商场景下的动态试穿提供了一种新的技术路径，也展示了多模态语义在视频编辑中的应用潜力。"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "d83021b023ccc855",
+      "title": "互补自蒸馏方法增强 LLM 上下文完整性",
+      "url": "https://huggingface.co/papers/2605.20258",
+      "summary": "",
+      "category": "安全",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T03:49:21.583Z",
+      "originalTitle": "It Takes Two: Complementary Self-Distillation for Contextual Integrity in LLMs",
+      "score": 4,
+      "cn": "一项新研究提出互补自蒸馏技术，旨在提升大语言模型在处理长上下文时的完整性。该方法通过让模型同时学习保留原始上下文和抵抗干扰信息，有效缓解上下文遗忘和注入问题。实验表明，该技术在不显著增加推理成本的前提下，增强了模型对上下文的忠实度，为提升 LLM 在实际应用中的可靠性提供了新思路。"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "7eb4c62d8374d5b4",
+      "title": "LongMINT 提出长期 agent 系统多目标干扰下的记忆评测",
+      "url": "https://huggingface.co/papers/2605.18565",
+      "summary": "",
+      "category": "评测",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T03:49:21.583Z",
+      "originalTitle": "LongMINT: Evaluating Memory under Multi-Target Interference in Long-Horizon Agent Systems",
+      "score": 4,
+      "cn": "LongMINT 是一个面向长期 agent 系统的评测基准，聚焦于多目标信息在记忆中的相互干扰问题。在长时间交互中，agent 需要在多个会话和任务间准确保持并调用上下文，而当前主流 benchmark 对此覆盖不足。研究团队设计了合成与半真实场景，量化 agent 在处理交错信息时的记忆遗忘与混淆程度，为评估 agent 在更真实长程任务中的稳健性提供了标准化测试手段。"
+    },
+    {
       "source": "mistral",
       "sourceName": "Mistral",
       "id": "435451114e08b7a1",
@@ -35928,6 +35816,34 @@
       "score": 3,
       "cn": "Anthropic 在博客中介绍了将外部 API 接入 Claude 对话的方法。内容聚焦于 function calling 与工具调用机制，包括参数 schema 设计、错误响应处理、批量调用与异步任务的协调。文章还讨论了如何让 Claude 在多轮对话中维持 API 调用上下文，避免状态丢失。对于希望让 Claude 直接读取业务系统数据并完成端到端任务的团队，这份指南给出可复用的代码模式与常见陷阱的规避建议。",
       "editorOverride": true
+    },
+    {
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "id": "cbd16f3f785366a5",
+      "title": "Meta 发布 Llama 模型使用量增长数据",
+      "url": "https://ai.meta.com/blog/llama-usage-doubled-may-through-july-2024/",
+      "summary": "",
+      "category": "其他",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T03:46:28.674Z",
+      "originalTitle": "Llama Usage Doubled May Through July 2024",
+      "score": 3,
+      "cn": "Meta 公布旗下 Llama 大语言模型在 2024 年 5 月至 7 月期间使用量翻倍。这一增长反映出开源大模型在企业与研究领域的采用正在加速，Meta 持续通过 Llama 系列巩固其在开源 AI 生态中的地位。"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "3b0c5197b9997e52",
+      "title": "研究重新思考大视觉语言模型在胸部X光推理中的视觉归因",
+      "url": "https://huggingface.co/papers/2605.20158",
+      "summary": "",
+      "category": "大模型",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-21T03:49:21.583Z",
+      "originalTitle": "Rethinking Visual Attribution for Chest X-ray Reasoning in Large Vision Language Models",
+      "score": 3,
+      "cn": "一项新研究聚焦于大视觉语言模型在胸部X光片推理任务中的视觉归因问题。研究者提出了一种改进的归因方法，旨在让模型在解读医学影像时更准确地定位关键区域，从而提升诊断推理的可解释性和可靠性。这项工作为医学影像与语言模型结合提供了新的思路。"
     },
     {
       "source": "xai",
