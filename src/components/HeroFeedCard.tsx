@@ -19,7 +19,6 @@ export function HeroFeedCard({
   item: LatestRss;
   accentVar: string;
 }) {
-  const when = item.publishedAt ?? item.discoveredAt;
   const accent = `var(${accentVar})`;
 
   return (
@@ -68,7 +67,12 @@ export function HeroFeedCard({
             {item.category && (
               <span className="eyebrow text-ink-muted">{item.category}</span>
             )}
-            <TimeDisplay iso={when} className="text-[11px] text-ink-subtle" />
+            {item.publishedAt && (
+              <TimeDisplay
+                iso={item.publishedAt}
+                className="text-[11px] text-ink-subtle"
+              />
+            )}
           </div>
           <h2 className="display mt-4 text-[clamp(1.75rem,2.4vw,2.5rem)] leading-[1.15] text-ink transition group-hover:text-ember">
             {item.title}

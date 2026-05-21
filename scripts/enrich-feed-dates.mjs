@@ -24,9 +24,15 @@ const projectRoot = path.resolve(__dirname, "..");
 const FEED_RAW = path.join(projectRoot, "src/data/generated/feed-raw.json");
 const OUT = path.join(projectRoot, "src/data/generated/feed-dates.json");
 
-const CONCURRENCY = 3;
+const CONCURRENCY = parseInt(process.env.CONCURRENCY ?? "4", 10);
 const TIMEOUT_MS = 25_000;
-const MAX_NEW_PER_RUN = parseInt(process.env.MAX_NEW ?? "20", 10);
+// Per CLAUDE.md "Operating principles (HARD)" rule 2: enrich-feed-dates
+// is the codified fallback for missing publishedAt and must default to
+// uncapped. CI passes MAX_NEW as a throttle to bound a single cron run;
+// locally the default is Infinity so backfills happen in one go.
+const MAX_NEW_PER_RUN = process.env.MAX_NEW
+  ? parseInt(process.env.MAX_NEW, 10)
+  : Infinity;
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
 
@@ -74,6 +80,40 @@ async function extractDate(page) {
     const text = t?.textContent?.trim();
     if (text) {
       const parsed = Date.parse(text);
+      if (!Number.isNaN(parsed)) return new Date(parsed).toISOString();
+    }
+
+    // 5) Text date near the h1 — covers Meta AI (混淆 class)
+    //    <h1>...</h1> ... <span>April 8, 2026</span>
+    //    Anything else with the article-title pattern.
+    const dateRe =
+      /^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* \d{1,2},?\s+20\d{2}$/;
+    const h1 = document.querySelector("h1");
+    if (h1) {
+      const scope = h1.parentElement ?? document.body;
+      const cands = scope.querySelectorAll("span, p, div, time, em, i");
+      for (const el of Array.from(cands)) {
+        const t = el.textContent?.trim() ?? "";
+        if (t.length > 30) continue; // article body, skip
+        if (!dateRe.test(t)) continue;
+        const parsed = Date.parse(t);
+        if (!Number.isNaN(parsed)) {
+          return new Date(parsed).toISOString();
+        }
+      }
+    }
+
+    // 6) Last resort — first standalone date string anywhere in body.
+    //    Risky (could pick up an in-body example date), so only used
+    //    when steps 1-5 all missed. Scope to the article container if
+    //    one exists (most blog templates), otherwise body.
+    const article =
+      document.querySelector("article, main, [role='main']") || document.body;
+    const inline = article.innerHTML?.match(
+      /(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* \d{1,2},?\s+20\d{2}/,
+    );
+    if (inline) {
+      const parsed = Date.parse(inline[0]);
       if (!Number.isNaN(parsed)) return new Date(parsed).toISOString();
     }
 

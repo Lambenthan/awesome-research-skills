@@ -85,6 +85,12 @@ jobs:
       # pay the playwright cost for new items each run.
       - name: Enrich missing publishedAt
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        # MAX_NEW caps a single cron run to bound wall time on a large
+        # backfill; script default is uncapped (see enrich-feed-dates.mjs).
+        # First few cron runs after a big new-source import will chew
+        # through the backlog at 80 / 6h until the cache fills.
+        env:
+          MAX_NEW: "80"
         run: npm run enrich-feed-dates
         continue-on-error: true
 

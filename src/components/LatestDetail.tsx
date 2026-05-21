@@ -28,7 +28,7 @@ function hostnameOf(url: string) {
 
 export function LatestDetail({ item }: { item: LatestRss }) {
   const host = hostnameOf(item.url);
-  const dateText = formatDate(item.publishedAt ?? item.discoveredAt);
+  const dateText = item.publishedAt ? formatDate(item.publishedAt) : null;
   const hasDetail = !!item.detail && item.detail.trim().length > 0;
 
   return (
@@ -61,7 +61,7 @@ export function LatestDetail({ item }: { item: LatestRss }) {
           <dl className="mx-auto mt-2 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[12.5px] text-ink-subtle">
             <Pair label="域名" value={<code translate="no" className="font-mono text-[12px] text-ink">{host}</code>} />
             <Pair label="评分" value={`${item.score} · ${SCORE_LABEL[item.score] ?? "—"}`} />
-            <Pair label={item.publishedAt ? "发布" : "收录"} value={dateText} />
+            {dateText && <Pair label="发布" value={dateText} />}
           </dl>
         </Reveal>
         <Reveal delay={380}>

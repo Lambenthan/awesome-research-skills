@@ -9,7 +9,12 @@ import { useEffect, useState } from "react";
  * appears on the next paint after mount.
  *
  * Use anywhere we previously called formatShortDate(iso) inline:
- *   <TimeDisplay iso={item.publishedAt ?? item.discoveredAt} />
+ *   {item.publishedAt && <TimeDisplay iso={item.publishedAt} />}
+ *
+ * Only feed item.publishedAt — we don't surface discoveredAt as a
+ * display date (per CLAUDE.md, the only user-facing time is the
+ * source's own publish time). discoveredAt stays in data as a sort
+ * tiebreaker and sitemap lastModified fallback.
  */
 export function TimeDisplay({
   iso,

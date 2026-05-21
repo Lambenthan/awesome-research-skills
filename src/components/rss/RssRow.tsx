@@ -18,7 +18,6 @@ export function RssRow({
   item: LatestRss;
   showReadHint?: boolean;
 }) {
-  const when = item.publishedAt ?? item.discoveredAt;
   return (
     <li>
       <Link
@@ -28,7 +27,12 @@ export function RssRow({
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <span className="eyebrow-strong text-ember">{item.sourceName}</span>
           <span className="eyebrow">{item.category}</span>
-          <TimeDisplay iso={when} className="text-[11px] text-ink-subtle" />
+          {item.publishedAt && (
+            <TimeDisplay
+              iso={item.publishedAt}
+              className="text-[11px] text-ink-subtle"
+            />
+          )}
         </div>
         <h3 className="mt-2 font-serif text-[17px] leading-snug text-ink transition group-hover:text-ember">
           {item.title}

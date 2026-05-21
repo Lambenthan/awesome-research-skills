@@ -29,6 +29,55 @@ take a screenshot, then make the call from observed behavior.
 Skip this only for purely structural / data-pipeline work where there
 is no visual question.
 
+## Operating principles (HARD)
+
+Two rules govern every content / data adjustment in this repo. They
+apply by default to every task and override generic instincts. Don't
+let a single ad-hoc request collapse them — if a user request seems
+to push past one of these, surface the tension first.
+
+**1. Existing content → do it yourself, no LLM API calls.**
+When fixing or rewriting items already on the site (cn 导读, deep
+dive, date enrichment, classification, vendor tagging, sourceName
+migration, etc), use your own reading + deterministic tools:
+
+- Read / Edit / Write files directly
+- `curl` / Jina markdown for HTML extraction
+- Page DOM parsing inside sub-agents (Claude Code instances, not
+  external API calls)
+- `scripts/` deterministic logic (regex, sort, dedupe, schema merge)
+
+Never shell out to OpenRouter, Anthropic SDK, GitHub Models, or any
+other external LLM endpoint to regenerate content that already exists
+in `src/data/generated/` or `content/*.yml`. Parallelize via sub-agents
+(`Agent` tool) when work is independent — those are your own Claude
+Code instances, not external API.
+
+**2. New content / future updates → harden the mechanism in code.**
+When adding a new source, field, content type, or any contract the
+system might encounter again on the next cron run, fix it at the
+mechanism level, not as a one-off patch:
+
+- `scripts/extract-feed.mjs` / `extract-content.mjs`: always populate
+  the canonical fields (`publishedAt`, `vendor`, `contentType`, etc).
+  Don't leave a gap that "the next manual run will fix"
+- `scripts/enrich-feed-dates.mjs`: the codified fallback when list
+  pages omit a date — should default to uncapped or near-uncapped
+  locally, MAX_NEW only as a CI throttle
+- `content/feed-detail.yml` / `feed-score-overrides.yml`: codified
+  slots for hand-written content, merged into the pipeline output
+- `src/lib/types.ts`: add fields to the type definition so future
+  items must declare them
+
+Examples of what NOT to do: re-running a one-time LLM rescore on
+items that didn't pass quality gates without first updating the
+gate; writing a manual cn导读 fix that won't be re-applied if the
+pipeline re-scores the item; adding a new source whose `publishedAt`
+extraction is "we'll deal with it later".
+
+These two rules are non-negotiable. If a task can't be done under
+both rules, flag the conflict to the user before proceeding.
+
 ## What this site is
 
 A Chinese-flavored research directory. Live at <https://lambenthan.github.io/field-notes/>.
