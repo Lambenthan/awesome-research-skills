@@ -21,6 +21,12 @@ $$
 
 </Definition>
 
+<ChapterFigure
+  src="/notes/statistical-methods/hlm-multilevel-modeling/figures/chap03_null_model_concept.png"
+  alt="空模型加性结构示意"
+  caption="空模型的三源加性结构：每名学生的分数 y_ik 等于全样本固定基线 β₀、班级随机偏差 u_k 与学生个体波动 e_ik 的代数和。两个随机分量相互独立，方差分别是班级间方差 τ² 与班级内方差 σ²。"
+/>
+
 把这条公式翻成话：每名学生的分数等于一个总基线 $\beta_0$，加上他所在班级的"班级偏差" $u_k$，再加上他个人在班里的"个体波动" $e_{ik}$。$\beta_0 = 486.30$ 就是全样本数学均值的估计；$u_k$ 是某个班相对这条基线高几分还是低几分；$e_{ik}$ 是某名学生相对班级均值的余下偏离。三个量的加和给出每名学生的分数预测。
 
 ```r
@@ -62,6 +68,12 @@ ranef_class <- ranef(m0)$tch         # 337 个班的 BLUP
 </Interpretation>
 
 ## BLUP 与收缩：班均值被全样本均值"拉"回
+
+<ChapterFigure
+  src="/notes/statistical-methods/hlm-multilevel-modeling/figures/chap03_blup_concept.png"
+  alt="BLUP 收缩公式的输入—输出流程"
+  caption="BLUP 收缩公式的输入—输出结构：原始偏差按一个介于 0 与 1 之间的权重被拉回总均值方向。权重由班级人数 n_k 与两层方差比共同决定——人数越多、班级方差占比越大，权重越接近 1（信原始偏差）；人数越少、班级方差占比越小，权重越接近 0（信全样本均值）。虚线提示原始偏差经过权重缩放后才到达 BLUP。"
+/>
 
 <Definition title="BLUP" label="def:blup">
 

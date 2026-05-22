@@ -33,6 +33,12 @@ $$
 
 </Definition>
 
+<ChapterFigure
+  src="/notes/statistical-methods/hlm-multilevel-modeling/figures/chap07_cross_interaction_concept.png"
+  alt="跨层交互的合流结构"
+  caption="跨层交互的合流结构：班级层处理变量 D_k 与学生层协变量 x_ik 在乘积处合流，得到跨层交互项。系数 β₃ 度量 x_ik 取 1 时处理效应相对 x_ik 取 0 时多出多少——β₃ > 0 意味着低 SES 学生从小班受益更多，β₃ < 0 反之。"
+/>
+
 公式里 $\beta_3$ 是这一章的核心。如果 $\beta_3 > 0$，意味着低 SES 学生（$x_{ik} = 1$）受小班照顾更多；如果 $\beta_3 < 0$，意味着低 SES 学生反而受益更少；如果 $\beta_3 \approx 0$，说明小班对所有学生一视同仁。
 
 **为什么这叫"跨层"交互？** 因为 $D_k$ 在班级层取值，$x_{ik}$ 在学生层取值，两者乘起来跨越了模型的两个层级。如果是 $x_{ik} \times z_{ik}$ 这种"两个学生层变量"的乘积，就叫层内交互；如果是 $D_k \times W_k$ 这种"两个班级层变量"的乘积，就是班级层内的交互。跨层是教育统计里最常见也最有政策含义的一类。
