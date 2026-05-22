@@ -82,6 +82,61 @@ const cib2 = (n: number, slug: string, displayNum: string, title: string): Chapt
     import(`@/content/notes/causal-inference-methods/causal-inference-book-v2/chap-${n}.mdx`),
 });
 
+const zeng = (n: number, slug: string, displayNum: string, title: string): ChapterMeta => ({
+  categorySlug: "personality-causal",
+  itemSlug: "zengguofan-trajectory",
+  slug,
+  num: n,
+  displayNum,
+  title,
+  load: () =>
+    import(`@/content/notes/personality-causal/zengguofan-trajectory/chap-${n}.mdx`),
+});
+
+const guyw = (n: number, slug: string, displayNum: string, title: string): ChapterMeta => ({
+  categorySlug: "personality-causal",
+  itemSlug: "guyanwu-trajectory",
+  slug,
+  num: n,
+  displayNum,
+  title,
+  load: () =>
+    import(`@/content/notes/personality-causal/guyanwu-trajectory/chap-${n}.mdx`),
+});
+
+const hlm = (n: number, slug: string, displayNum: string, title: string): ChapterMeta => ({
+  categorySlug: "statistical-methods",
+  itemSlug: "hlm-multilevel-modeling",
+  slug,
+  num: n,
+  displayNum,
+  title,
+  load: () =>
+    import(`@/content/notes/statistical-methods/hlm-multilevel-modeling/chap-${n}.mdx`),
+});
+
+const meta = (n: number, slug: string, displayNum: string, title: string): ChapterMeta => ({
+  categorySlug: "statistical-methods",
+  itemSlug: "meta-analysis-bcg",
+  slug,
+  num: n,
+  displayNum,
+  title,
+  load: () =>
+    import(`@/content/notes/statistical-methods/meta-analysis-bcg/chap-${n}.mdx`),
+});
+
+const cc = (n: number, slug: string, displayNum: string, title: string): ChapterMeta => ({
+  categorySlug: "research-engineering",
+  itemSlug: "claude-code-paper-writing",
+  slug,
+  num: n,
+  displayNum,
+  title,
+  load: () =>
+    import(`@/content/notes/research-engineering/claude-code-paper-writing/chap-${n}.mdx`),
+});
+
 export const CHAPTERS: ChapterMeta[] = [
   // Yangming (人格因果学)
   ym(0, "chapter-0", "0", "阳明生平与心学概览"),
@@ -135,6 +190,64 @@ export const CHAPTERS: ChapterMeta[] = [
   cib2(8, "chapter-8", "8", "结果稳不稳：敏感性分析与未测量混杂"),
   cib2(9, "chapter-9", "9", "谁获益谁受害：因果森林与处理效应异质性"),
   cib2(10, "chapter-10", "10", "全书汇总：九种方法的终极对比"),
+  // ZengGuofan (人格因果学)
+  zeng(0, "chapter-0", "0", "曾国藩生平与晚清政局概览"),
+  zeng(1, "chapter-1", "1", "1853 创湘军事件与人格军事化重组（中断时间序列）"),
+  zeng(2, "chapter-2", "2", "概念分布散度：李鸿章与左宗棠双外部对照"),
+  zeng(3, "chapter-3", "3", "断点检测：让数据自报转折点"),
+  zeng(4, "chapter-4", "4", "合成控制：用稳定概念构造创湘军反事实"),
+  zeng(5, "chapter-5", "5", "跨收信人人格分析：收信人固定效应回归"),
+  zeng(6, "chapter-6", "6", "方法论附录：单被试历史人物因果推断的诚实边界"),
+  zeng(7, "chapter-7", "7", "日级 ITS 旗舰：日记 5554 日条目重审四个 treatment"),
+  // GuYanwu (人格因果学)
+  guyw(0, "chapter-0", "0", "顾炎武生平与明清易代背景"),
+  guyw(1, "chapter-1", "1", "数据集编年问题：诗集 5 时段切分与日知录无编年"),
+  guyw(2, "chapter-2", "2", "1660 北上事件 ITS：易代后 16 年延迟反思"),
+  guyw(3, "chapter-3", "3", "跨作者散度：顾 vs 王 vs 黄 易代三遗民对照"),
+  guyw(4, "chapter-4", "4", "跨文体画像：日知录 vs 文集 vs 诗集"),
+  guyw(5, "chapter-5", "5", "9 主题画像：顾炎武的经世学者底色"),
+  guyw(6, "chapter-6", "6", "方法论附录 + 四案例跨被试假说总结"),
+  // HLM (统计方法实践)
+  hlm(0, "chapter-0", "0", "前言：从单层 OLS 到三层模型的十种刀法"),
+  hlm(1, "chapter-1", "1", "问题与数据：Tennessee STAR 班额实验"),
+  hlm(2, "chapter-2", "2", "嵌套数据与组内相关 ICC"),
+  hlm(3, "chapter-3", "3", "空模型：随机截距与方差分解"),
+  hlm(4, "chapter-4", "4", "学生层协变量"),
+  hlm(5, "chapter-5", "5", "班级层协变量与处理效应"),
+  hlm(6, "chapter-6", "6", "随机斜率"),
+  hlm(7, "chapter-7", "7", "跨层交互"),
+  hlm(8, "chapter-8", "8", "三层模型"),
+  hlm(9, "chapter-9", "9", "模型诊断"),
+  hlm(10, "chapter-10", "10", "方法对比与结论"),
+  // Meta Analysis (统计方法实践)
+  meta(0, "chapter-0", "0", "前言：同一份 BCG 数据的十种估计策略"),
+  meta(1, "chapter-1", "1", "问题与数据：BCG 与全球结核"),
+  meta(2, "chapter-2", "2", "PRISMA 与系统综述流程"),
+  meta(3, "chapter-3", "3", "效应量：从 2x2 表到 log RR"),
+  meta(4, "chapter-4", "4", "固定效应模型"),
+  meta(5, "chapter-5", "5", "随机效应模型"),
+  meta(6, "chapter-6", "6", "异质性诊断"),
+  meta(7, "chapter-7", "7", "亚组分析与 meta 回归"),
+  meta(8, "chapter-8", "8", "发表偏倚"),
+  meta(9, "chapter-9", "9", "敏感性分析"),
+  meta(10, "chapter-10", "10", "全书汇总"),
+  // Claude Code 科研手记 (研究工程)
+  cc(1, "chapter-1", "1", "Claude Code 简介与适用场景"),
+  cc(2, "chapter-2", "2", "上下文与记忆机制"),
+  cc(3, "chapter-3", "3", "提示词的使用经验"),
+  cc(4, "chapter-4", "4", "文献调研与管理"),
+  cc(5, "chapter-5", "5", "章节写作"),
+  cc(6, "chapter-6", "6", "图表制作"),
+  cc(7, "chapter-7", "7", "引用与参考文献"),
+  cc(8, "chapter-8", "8", "格式排版与文件管理"),
+  cc(9, "chapter-9", "9", "Skills 的安装与自建"),
+  cc(10, "chapter-10", "10", "并行 Agent"),
+  cc(11, "chapter-11", "11", "Hooks 自动化触发器"),
+  cc(12, "chapter-12", "12", "MCP 工具扩展"),
+  cc(13, "chapter-13", "13", "科研写作的基本要求"),
+  cc(14, "chapter-14", "14", "人机分工的边界"),
+  cc(15, "chapter-15", "15", "科研 Skill 的设计纪律"),
+  cc(16, "chapter-16", "16", "从一篇论文到长期工作习惯"),
 ];
 
 export function getChaptersForItem(
