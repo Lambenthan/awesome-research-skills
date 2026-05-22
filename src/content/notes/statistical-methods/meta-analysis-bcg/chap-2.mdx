@@ -60,6 +60,12 @@ PRISMA_save(plot, filename = "figure/chap02_prisma_flow.pdf",
             filetype = "PDF", overwrite = TRUE)
 ```
 
+<ChapterFigure
+  src="/notes/statistical-methods/meta-analysis-bcg/figures/chap02_prisma_flow.png"
+  alt="PRISMA 2020 四阶段流程图模板"
+  caption="PRISMA 2020 流程图模板。本书 dat.bcg 的 13 项最终纳入研究对应底部 n = 13 框；中间阶段 n = ? 为模板占位符，读者在做自己的系统综述时填入对应数字。本图由 R 包 PRISMA2020 直接生成，符合 Page et al. 2021 的报告规范。"
+/>
+
 PRISMA 流程图的价值有两层。第一层是**可复现性**：换一个团队按同样的检索式和筛选标准重新走一遍流程，应该能得到接近的最终研究列表。如果两次结果差异巨大，说明流程的某个环节没记录清楚。第二层是**透明审稿**：审稿人和读者扫一眼流程图就能定位到可疑环节。比如最后纳入只有 3 项研究但识别阶段就有 5000 条记录，意味着排除率超过 99%，纳入标准可能过严，或者检索关键词不准确。
 
 ## PICO 框架与检索式构造

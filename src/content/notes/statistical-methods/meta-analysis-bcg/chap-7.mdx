@@ -111,7 +111,11 @@ ggplot(es, aes(x = ablat, y = yi)) +
   labs(x = "绝对纬度（度）", y = "log RR")
 ```
 
-Bubble plot 展示纬度对 log RR 的影响。气泡大小与随机效应权重成正比；红色实线为 meta 回归拟合，浅红带为 95% CI。13 项研究沿一条向下的斜率分布，$R^2 = 75.6\%$。
+<ChapterFigure
+  src="/notes/statistical-methods/meta-analysis-bcg/figures/chap07_bubble_ablat.png"
+  alt="纬度对 log RR 的 bubble plot"
+  caption="Bubble plot 展示纬度对 log RR 的影响。气泡大小与随机效应权重成正比；红色实线为 meta 回归拟合，浅红带为 95% CI。13 项研究沿一条向下的斜率分布，R² = 75.6%。"
+/>
 
 **为什么纬度能解释这么多？** Colditz 1994 给出的生物学解释是：BCG 是把活的减毒分枝杆菌打进人体诱导免疫记忆，但低纬度热带地区的环境里有大量与结核分枝杆菌长得很像的非结核分枝杆菌，当地居民从小通过呼吸、皮肤接触等渠道暴露在这些"近亲"细菌里，免疫系统已经"自然认识"了结核杆菌的家族特征。BCG 多打一针的边际收益就很有限。高纬度地区缺乏这种环境暴露，BCG 才能从零开始建立免疫。这是一个生物学假设，meta 回归只是给这个假设提供数字支持。
 

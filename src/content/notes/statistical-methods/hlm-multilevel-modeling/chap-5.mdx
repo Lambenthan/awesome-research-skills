@@ -120,6 +120,12 @@ m6 <- lmer(math ~ cltype + sex_F + eth_B + ses_F + exp_c + (1 | tch),
 
 把这层意思放到森林图里：横轴是小班相对常班的分数提升，每一行是一个模型。OLS 的横线最短，HLM 系列的横线长 2.4 倍，但所有点估计都集中在 8 分附近。
 
+<ChapterFigure
+  src="/notes/statistical-methods/hlm-multilevel-modeling/figures/chap05_treatment_forest.png"
+  alt="不同模型设定下小班效应的森林图"
+  caption="小班效应在不同模型设定下的森林图：点估计在 7.68 到 8.21 之间高度集中，但 95% CI 宽度在 OLS 和 HLM 之间差异显著。"
+/>
+
 ## 班级层方差被 cltype 解释了多少
 
 加完 `cltype` 之后还要做一件事——看看班级层方差有没有被它解释一部分。如果 `cltype` 真的把班际差异的一部分"咬掉了"，那 $\sigma^2_{\text{class}}$ 应该比 M3 小。下表给出真实数字。
@@ -156,6 +162,12 @@ M4 的 $\sigma^2_{\text{class}} = 685$ 比 M3 的 649 还**大**，相对 M3 的
 ## 班级 BLUP 的变化：班际差异在解释什么之后还剩多少
 
 第 3 章解释过班级 BLUP 是什么——每个班的"被收缩过的"随机截距估计。一个有意思的对比是 M4 的 BLUP（仅 `cltype`）跟 M5 的 BLUP（加了学生协变量）之间有没有变化。
+
+<ChapterFigure
+  src="/notes/statistical-methods/hlm-multilevel-modeling/figures/chap05_blup_compare.png"
+  alt="加入学生层协变量后 M4 与 M5 的班级 BLUP 散点对比"
+  caption="加入学生层协变量后的班级 BLUP 收缩。横轴是 M4 的班级 BLUP，纵轴是 M5 的班级 BLUP；两者高度相关但 M5 的散点稍向 0 收紧，说明学生背景能解释一部分班际差异。"
+/>
 
 把 M4 与 M5 的班级 BLUP 画成散点图，两者高度相关，散点近似落在 $y = x$ 直线上，但整体略向 0 方向收紧。解读是：M4 的 BLUP 包含了"学生组成不同造成的班级均值偏移"，M5 把学生协变量纳入固定效应后，这部分偏移被剥离出去，剩下的 BLUP 更接近"老师本身的特质 + 班级氛围"那一块。
 

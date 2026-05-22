@@ -140,6 +140,18 @@ $$
 
 把这个结论可视化：两条平行的折线把不同班级类型 $\times$ SES 的预测分数串起来，两条线之间的距离近乎一致，从常班走到小班时两条线都向上倾斜，倾斜幅度几乎相同——这就是"交互不显著"的几何样貌。再把两个跨层交互项的系数与 95% CI 画成森林图，CI 完全跨过 0，与 p 值结论一致。
 
+<ChapterFigure
+  src="/notes/statistical-methods/hlm-multilevel-modeling/figures/chap07_interaction.png"
+  alt="班级类型与 SES 的跨层交互预测分数"
+  caption="班级类型 × 学生 SES 的预测分数。两条线如果平行说明交互不存在；本数据中两条线接近平行，小班对低 SES 与非低 SES 学生的提升几乎一致。"
+/>
+
+<ChapterFigure
+  src="/notes/statistical-methods/hlm-multilevel-modeling/figures/chap07_interaction_coef.png"
+  alt="两个跨层交互项的系数与 95% CI 森林图"
+  caption="两个跨层交互项的系数与 95% CI。两条 CI 都跨过 0，统计学上不显著。"
+/>
+
 ## 交互项不显著的雷区：检验功效低不等于不存在
 
 跨层交互的 p 值不显著之外，还有一个常被忽略的统计学问题——**跨层交互项的检验功效通常很低**。本节讲清楚这件事。

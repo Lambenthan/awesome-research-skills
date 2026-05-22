@@ -89,9 +89,21 @@ $$
 
 回到 STAR 的全样本数字：337 个班的原始均值标准差是 28.59，BLUP 标准差是 24.29，整体收缩了 $(28.59 - 24.29)/28.59 = 15\%$。BLUP 的范围从 $-71.04$ 到 $+85.16$，开根号一下，$\sqrt{\tau^2} = \sqrt{689} = 26.25$，跟 BLUP SD = 24.29 接近——理论上 BLUP SD 应该略小于 $\sqrt{\tau^2}$，因为收缩让方差被吃掉一点。
 
+<ChapterFigure
+  src="/notes/statistical-methods/hlm-multilevel-modeling/figures/chap03_blup_shrinkage.png"
+  alt="337 个班级的原始均值与 BLUP 估计对比"
+  caption="337 个班级的原始均值（橙色）与 BLUP 估计（蓝色）。每条灰线连接同一个班的两个估计；样本量小或极端的班向全样本均值收缩更多。"
+/>
+
 把 337 个班按原始均值排好，每个班画一对点（原始均值与 BLUP），两端最极端的几个班向中间收缩得最显眼，中间一带的班几乎没动。这跟 BLUP 公式给出的逻辑完全对应——极端值更可能是抽样偶然，应该被拉回去。
 
 BLUP 这个概念是 1950 年 Henderson 在康奈尔大学农学院提出来的，原本是给牛奶产量遗传值的预测用的。育种学家面对的问题跟教育研究面对的问题数学形式相同：从有限观测里估计每头母牛、每个班级的"真实潜力"，要兼顾"自身观测"和"群体先验"。Robinson 1991 年在 *Statistical Science* 上写过一篇 BLUP 历史综述，是这条线索的标准参考。
+
+<ChapterFigure
+  src="/notes/statistical-methods/hlm-multilevel-modeling/figures/chap03_variance_decomp.png"
+  alt="空模型班级间与班级内方差分解"
+  caption="空模型方差分解：班级间方差 689（30.2%）与班级内方差 1,595（69.8%）。"
+/>
 
 ## REML vs ML：两种估计方法在多层模型里的分工
 

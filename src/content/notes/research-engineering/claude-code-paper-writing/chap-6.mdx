@@ -76,6 +76,12 @@ Draw.io 是开源矢量绘图工具，专为流程图、架构图设计，底层
 
 前一天调好四十多分钟的图，无法恢复。
 
+<ChapterFigure
+  src="/notes/research-engineering/claude-code-paper-writing/figures/chap06/01_drawio_session_lost.png"
+  alt="Draw.io session 丢失与从 XML 文件恢复的做法"
+  caption="Draw.io session 丢失与从 XML 文件恢复的做法：session 只在内存，必须导出 XML 才能跨对话续编"
+/>
+
 Draw.io MCP 的 session 是临时的，存于内存，不会自动保存到磁盘。关闭 Claude Code 或切换到新对话 turn，session 即消失。同一次对话中反复修改、导出、查看一切正常，显得图已"保存"，但实际上只存在 session 内存中，从未写入文件。
 
 <Trap title="每次修改满意后立即把 XML 保存到本地">

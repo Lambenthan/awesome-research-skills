@@ -81,7 +81,19 @@ sd(school_blup)
 
 </Interpretation>
 
+<ChapterFigure
+  src="/notes/statistical-methods/hlm-multilevel-modeling/figures/chap09_resid_vs_fit.png"
+  alt="学生层残差与拟合值散点图"
+  caption="学生层残差 vs 拟合值（三层 + 全协变量主模型）。理想情形是残差围绕零线均匀散布，方差不随拟合值变化。"
+/>
+
 读残差 vs 拟合值这张图的方法是看横向带状的均匀程度。理想情形是散点像水平的香肠，中线在零附近，宽度沿横轴稳定。本数据的散点确实大致呈水平带状，loess 平滑曲线靠近零线，没有明显的弯曲或漏斗形。这告诉我们模型的固定效应结构（`cltype` + 学生协变量）大致捕捉了"学生分数随这些预测变量怎么变"的趋势，残差里没有系统性的未解释模式。
+
+<ChapterFigure
+  src="/notes/statistical-methods/hlm-multilevel-modeling/figures/chap09_qq.png"
+  alt="学生层残差 QQ 图"
+  caption="学生层残差 QQ 图。横轴是标准正态理论分位数，纵轴是残差实际分位数。"
+/>
 
 QQ 图判断正态性的方法是看散点是否沿对角线排开。中间段贴得越紧越接近正态，两端偏离越远尾部就越肥。本数据 QQ 图主体非常贴线，覆盖大约 $-2$ 到 $+2$ 个标准正态分位数的区间；只在两端约 $-3$ 与 $+3$ 之外有少量偏离，表现为低端略低于理论值、高端略高于理论值。这是**尾部稍翘但不严重**的典型形态。
 
@@ -155,6 +167,12 @@ loo_results <- map_dfr(candidate, function(k) {
 10 个候选班全部跑完，删除任何一个班之后小班效应的估计在 **8.57 到 8.89** 之间漂移，对应 $\Delta_k$ 范围 $-0.27$ 到 $+0.05$。也就是说，最极端的删除也只让小班效应改变 0.27 分，相对原始估计 8.84 漂移不到 4%，远小于 SE = 2.63。主结论**对单个班级的删除高度稳健**：没有任何一个班单独在驱动"小班 +8.84 分"这个结论，它是 323 个班共同支撑出来的稳定估计。
 
 </Interpretation>
+
+<ChapterFigure
+  src="/notes/statistical-methods/hlm-multilevel-modeling/figures/chap09_loo.png"
+  alt="leave-one-class-out 敏感性分析森林图"
+  caption="leave-one-class-out 敏感性分析。每行删除一个候选班级，红点是该子样本的小班效应估计，蓝色误差棒是 95% CI，红色虚线是完整样本估计 8.84。"
+/>
 
 读 leave-one-class-out 森林图的方法是看红点离虚线远不远。所有 10 个红点都贴在虚线附近，CI 宽度也跟原始估计接近。如果某个红点显著偏离虚线，意味着那个班对主结论有"杠杆性"影响，需要进一步调查它的特殊性（是否数据录入错误、是否极端 outlier 班）。本数据没有这种现象。
 

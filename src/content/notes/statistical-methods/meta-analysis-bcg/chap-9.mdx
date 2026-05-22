@@ -31,7 +31,11 @@ print(loo)
 
 </Interpretation>
 
-Leave-one-out 敏感性分析的 forest plot 上，每一行是去掉对应研究后的合并 RR 与 95% CI。红色虚线为完整 13 项合并 RR $=0.49$。所有 LOO 估计都在 CI 内徘徊，结论稳健。
+<ChapterFigure
+  src="/notes/statistical-methods/meta-analysis-bcg/figures/chap09_leave1out.png"
+  alt="dat.bcg 的 leave-one-out 敏感性分析 forest plot"
+  caption="Leave-one-out 敏感性分析。每一行是去掉对应研究后的合并 RR 与 95% CI。红色虚线为完整 13 项合并 RR = 0.49。所有 LOO 估计都在 CI 内徘徊，结论稳健。"
+/>
 
 ## 累积 meta 分析
 
@@ -69,7 +73,11 @@ print(cum)
 
 </Interpretation>
 
-累积 meta 分析的 forest plot 显示证据累积过程：1973 年前点估计稳定在 $\mathrm{RR} \approx 0.33$，1980 年 TPT Madras 加入后升到 0.45，最终稳定在 0.49。
+<ChapterFigure
+  src="/notes/statistical-methods/meta-analysis-bcg/figures/chap09_cumul.png"
+  alt="dat.bcg 的累积 meta 分析 forest plot"
+  caption="累积 meta 分析。每一行是截至该研究为止的合并 RR 与 95% CI。证据累积过程显示 1973 年前点估计稳定在 RR ≈ 0.33，1980 年 TPT Madras 加入后升到 0.45，最终稳定在 0.49。"
+/>
 
 ## 影响诊断
 
@@ -120,7 +128,11 @@ Cook's distance 最大的两项是 4 号 Hart & Sutherland 1977（$D = 0.227$）
 
 </Interpretation>
 
-`metafor` 的 `plot.infl` 输出八个面板，分别展示 rstudent、DFFITS、Cook's D、cov.r、tau²-deletion、QE-deletion、hat、weight。BCG 数据所有研究的指标都在常用阈值内。
+<ChapterFigure
+  src="/notes/statistical-methods/meta-analysis-bcg/figures/chap09_influence.png"
+  alt="dat.bcg 的 plot.infl 八面板影响诊断"
+  caption="metafor 的 plot.infl 输出。八个面板分别展示 rstudent、DFFITS、Cook's D、cov.r、tau²-deletion、QE-deletion、hat、weight。BCG 数据所有研究的指标都在常用阈值内。"
+/>
 
 <Trap title="事后剔除研究换取更好看的结论" label="thm:09-cherrypicking">
 

@@ -202,13 +202,25 @@ REML + HK 给出合并 $\mathrm{RR} = 0.489$，95% CI $[0.33,\ 0.73]$，95% PI $
 
 ## Forest plot 带预测区间
 
-随机效应 forest plot 通常在合并菱形下方加一根额外的横线代表 PI，方便临床读者直接读出"未来研究的可能效应范围"。`metafor` 通过参数 `addpred = TRUE` 自动添加这一行。底部菱形为合并 RR $=0.49$（95% CI $0.33$–$0.73$），其下方水平横线为 95% 预测区间 $[0.136,\ 1.76]$，跨过 1，提示未来研究的不确定性远大于合并 CI 暗示的程度。
+随机效应 forest plot 通常在合并菱形下方加一根额外的横线代表 PI，方便临床读者直接读出"未来研究的可能效应范围"。`metafor` 通过参数 `addpred = TRUE` 自动添加这一行。
+
+<ChapterFigure
+  src="/notes/statistical-methods/meta-analysis-bcg/figures/chap05_forest_re.png"
+  alt="13 项 BCG 试验随机效应 REML+HK 模型 forest plot"
+  caption="13 项 BCG 试验随机效应（REML + HK）模型 forest plot。底部菱形为合并 RR = 0.49（95% CI 0.33–0.73），其下方水平横线为 95% 预测区间 [0.136, 1.76]，跨过 1，提示未来研究的不确定性远大于合并 CI 暗示的程度。"
+/>
 
 <Trap title="把 PI 当 CI 解读 / 异质性极高时只报合并均值" label="thm:05-fe-vs-re-misuse">
 
 随机效应模型有两个常被混淆的雷区。第一是**把 PI 当 CI 解读**。论文里读到"95% interval = [0.13, 1.76]"，不知道是 CI 还是 PI 就草率引用，会得到完全相反的结论。CI 描述合并均值的不确定性，PI 描述未来研究的不确定性。报告时必须明确标注。第二是**在异质性极高时报告 RE 合并均值**。当 $I^2 > 85\%$，不同研究的真实效应很可能本质上不同，合并的 $\mu$ 可能对应不到任何实际场景。BCG 数据 $I^2 = 92\%$，单一合并 $\mathrm{RR} = 0.49$ 只是统计意义上的全球平均，不能直接解读为"在我所在的地区 BCG 把风险降低 51%"。正确做法是配合第 7 章的亚组与 meta 回归，解释异质性来源。
 
 </Trap>
+
+<ChapterFigure
+  src="/notes/statistical-methods/meta-analysis-bcg/figures/chap05_methods_compare.png"
+  alt="FE 与三种 RE 估计的合并 RR 与 95% CI 横向对比"
+  caption="FE-IV、FE-MH 与三种随机效应估计（DL、REML、REML+HK）在 dat.bcg 上的合并 RR 与 95% CI 横向对比。FE 给出 RR ≈ 0.65 且 CI 很窄，三种 RE 估计的点估计几乎重合在 0.49，CI 宽度逐级放大；REML+HK 给出最宽 CI [0.33, 0.73]，承认 k = 13 与 I² = 92% 下应有的不确定性。"
+/>
 
 **第 5 章到这里收束**。三种 RE 估计（DL、REML、REML+HK）给出几乎相同的点估计 $\mathrm{RR} = 0.49$，CI 宽度从 DL 的 $[0.35, 0.70]$ 一路扩到 REML+HK 的 $[0.33, 0.73]$。比 FE-IV 的 $[0.60, 0.70]$ 显著更宽是合理的：RE 模型承认研究本来就不一样，CI 必须把这种差异纳入不确定性。
 
