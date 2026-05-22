@@ -47,6 +47,51 @@
           { "num": "5", "title": "跨体裁人格分析：体裁固定效应回归与代笔诊断" },
           { "num": "6", "title": "方法论附录：六种方法的假设核查与 claim 降级" }
         ]
+      },
+      {
+        "itemSlug": "zengguofan-trajectory",
+        "title": "曾国藩轨迹",
+        "subtitle": "用因果推断与文本计量重读曾国藩家书与日记 32 年",
+        "author": "Chanw",
+        "date": "2026-05",
+        "version": "v1.0",
+        "pages": 37,
+        "kind": "研究纲要",
+        "cover": "/notes/personality-causal/zengguofan/cover.png",
+        "pdf": "/notes/personality-causal/zengguofan/zengguofan-trajectory.pdf",
+        "cn": "以《曾国藩家书》与日记 5,554 日条目为单一语料，把 1853 年创办湘军视作可识别的人格军事化重组干预点，依次用中断时间序列、合成控制、断点检测与收信人固定效应回归还原其 32 年话语演化。李鸿章与左宗棠的双外部对照排除时代潮流的混淆。第 7 章把分析颗粒度推到日级，五千多日的日记条目让单被试因果识别第一次有了密度足够支撑事件研究的样本。",
+        "chapters": [
+          { "num": "0", "title": "曾国藩生平与晚清政局概览" },
+          { "num": "1", "title": "1853 创湘军事件与人格军事化重组（中断时间序列）" },
+          { "num": "2", "title": "概念分布散度：李鸿章与左宗棠双外部对照" },
+          { "num": "3", "title": "断点检测：让数据自报转折点" },
+          { "num": "4", "title": "合成控制：用稳定概念构造创湘军反事实" },
+          { "num": "5", "title": "跨收信人人格分析：收信人固定效应回归" },
+          { "num": "6", "title": "方法论附录：单被试历史人物因果推断的诚实边界" },
+          { "num": "7", "title": "日级 ITS 旗舰：日记 5554 日条目重审四个 treatment" }
+        ]
+      },
+      {
+        "itemSlug": "guyanwu-trajectory",
+        "title": "亭林轨迹",
+        "subtitle": "用因果推断与文本计量重读顾炎武日知录与亭林诗文集",
+        "author": "Chanw",
+        "date": "2026-05",
+        "version": "v1.0",
+        "pages": 23,
+        "kind": "研究纲要",
+        "cover": "/notes/personality-causal/guyanwu/cover.png",
+        "pdf": "/notes/personality-causal/guyanwu/guyanwu-trajectory.pdf",
+        "cn": "以《日知录》与《亭林诗文集》为语料，把 1660 年顾炎武北上事件作为干预点，识别易代之痛在 16 年延迟后才呈现出的反思。与王夫之、黄宗羲双外部对照构成易代三遗民的散度比较。这本案例的难点在数据本身：诗集编年清晰可做 5 段切分，《日知录》却无编年，于是用主题画像与跨文体对照补足时序。第 6 章把四个人格因果案例放在一起，给出跨被试的假说总结。",
+        "chapters": [
+          { "num": "0", "title": "顾炎武生平与明清易代背景" },
+          { "num": "1", "title": "数据集编年问题：诗集 5 时段切分与日知录无编年" },
+          { "num": "2", "title": "1660 北上事件 ITS：易代后 16 年延迟反思" },
+          { "num": "3", "title": "跨作者散度：顾 vs 王 vs 黄 易代三遗民对照" },
+          { "num": "4", "title": "跨文体画像：日知录 vs 文集 vs 诗集" },
+          { "num": "5", "title": "9 主题画像：顾炎武的经世学者底色" },
+          { "num": "6", "title": "方法论附录 + 四案例跨被试假说总结" }
+        ]
       }
     ]
   },
@@ -62,11 +107,11 @@
         "author": "Chanw",
         "date": "2026-05",
         "version": "v1.0",
-        "pages": 64,
+        "pages": 78,
         "kind": "应用工具书",
         "cover": "/notes/accounting-empirical/fraud-detection/cover.png",
         "pdf": "/notes/accounting-empirical/fraud-detection/fraud-detection.pdf",
-        "cn": "以 Bao et al. 2020 公开复制包为基准样本，覆盖 1991–2014 年约 144,000 个 firm-year 观测、AAER 二元标签与 Compustat 财务变量。十章对应十种检测方法，从 Beneish M-Score 与 Dechow F-Score 的规则基线，到 LASSO 与随机森林、XGBoost 与 RUSBoost、表格深度学习与 MD&A 文本特征、最后用 SHAP 给方法选择决策树。每章末维护一张累积对比表，AUC、NDCG@k、Recall@1% 全口径累积报告。",
+        "cn": "以 Bao et al. 2020 公开复制包为基准样本，覆盖 1991–2014 年约 144,000 个 firm-year 观测、AAER 二元标签与 Compustat 财务变量。十章对应十种检测方法，从 Beneish M-Score 与 Dechow F-Score 的规则基线，到 LASSO 与随机森林、XGBoost 与 RUSBoost、表格深度学习与 MD&A 文本特征，最后用 SHAP 给方法选择决策树。每章末维护一张累积对比表，AUC、NDCG@k、Recall@1% 全口径累积报告。",
         "chapters": [
           { "num": "0", "title": "前言：同一份数据，十种刀法" },
           { "num": "1", "title": "问题与数据：AAER 与上市公司舞弊检测" },
@@ -88,7 +133,7 @@
         "author": "Chanw",
         "date": "2026-05",
         "version": "v1.0",
-        "pages": 78,
+        "pages": 64,
         "kind": "应用工具书",
         "cover": "/notes/accounting-empirical/earnings-management/cover.png",
         "pdf": "/notes/accounting-empirical/earnings-management/earnings-management.pdf",
@@ -121,9 +166,9 @@
         "author": "Chanw",
         "date": "2026-04",
         "version": "v2.0",
-        "pages": 124,
+        "pages": 109,
         "kind": "应用工具书",
-        "cover": "/notes/causal-inference-methods/causal-inference-book-v2/cover.jpg",
+        "cover": "/notes/causal-inference-methods/causal-inference-book-v2/cover.png",
         "pdf": "/notes/causal-inference-methods/causal-inference-book-v2/causal-inference-book-v2.pdf",
         "cn": "以 Connors 等人 1996 年 JAMA 发表的右心导管观察性研究为基准样本，覆盖五所教学医院 5,735 名 ICU 危重症患者、49 个变量、高度非随机的处理分配与 180 天死亡结局。十章对应九种因果推断方法，从回归调整与 G 计算的参数基线，到倾向得分匹配、IPW 与重叠权重，再到 AIPW、DML 与 TMLE 的双重稳健与机器学习增强，最后用因果森林揭示个体化处理效应。每章末维护一张累积对比表，第 8 章用 E-value 与 sensemakr 量化结论对未测量混杂的稳健性。",
         "chapters": [
@@ -138,6 +183,103 @@
           { "num": "8", "title": "结果稳不稳：敏感性分析与未测量混杂" },
           { "num": "9", "title": "谁获益谁受害：因果森林与处理效应异质性" },
           { "num": "10", "title": "全书汇总：九种方法的终极对比" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "statistical-methods",
+    "label": "统计方法实践",
+    "summary": "围绕一份真实数据集，把同一统计方法家族里多个模型并联演练并累积对比，看每种模型在 R 实现下的差异、假设依赖与适用边界。两本书分别聚焦多层模型（Tennessee STAR 班额实验）与 Meta 分析（BCG 结核疫苗试验）。",
+    "items": [
+      {
+        "itemSlug": "hlm-multilevel-modeling",
+        "title": "多层模型实践",
+        "subtitle": "基于 Tennessee STAR 班额实验的方法演练与 R 语言实现",
+        "author": "Chanw",
+        "date": "2026-05",
+        "version": "v1.0",
+        "pages": 66,
+        "kind": "应用工具书",
+        "cover": "/notes/statistical-methods/hlm-multilevel-modeling/cover.png",
+        "pdf": "/notes/statistical-methods/hlm-multilevel-modeling/hlm-multilevel-modeling.pdf",
+        "cn": "以 Tennessee STAR 班额实验中 6,325 名学生 × 79 所学校的嵌套面板为单一数据集，把多层模型从最简单的 ICC 与空模型，一路推到学生 / 班级 / 学校三层结构、随机斜率与跨层交互。同一组学生数学成绩在十种模型下的处理效应估计各有差异，章末维护一张累积对比表。R 语言侧选 lme4 与 lmerTest 实现，每章给出系数解读与可证伪的稳健性边界。",
+        "chapters": [
+          { "num": "0", "title": "前言：从单层 OLS 到三层模型的十种刀法" },
+          { "num": "1", "title": "问题与数据：Tennessee STAR 班额实验" },
+          { "num": "2", "title": "嵌套数据与组内相关 ICC" },
+          { "num": "3", "title": "空模型：随机截距与方差分解" },
+          { "num": "4", "title": "学生层协变量" },
+          { "num": "5", "title": "班级层协变量与处理效应" },
+          { "num": "6", "title": "随机斜率" },
+          { "num": "7", "title": "跨层交互" },
+          { "num": "8", "title": "三层模型" },
+          { "num": "9", "title": "模型诊断" },
+          { "num": "10", "title": "方法对比与结论" }
+        ]
+      },
+      {
+        "itemSlug": "meta-analysis-bcg",
+        "title": "Meta 分析实践",
+        "subtitle": "基于 BCG 疫苗试验的方法演练与 R 语言实现",
+        "author": "Chanw",
+        "date": "2026-05",
+        "version": "v1.0",
+        "pages": 55,
+        "kind": "应用工具书",
+        "cover": "/notes/statistical-methods/meta-analysis-bcg/cover.png",
+        "pdf": "/notes/statistical-methods/meta-analysis-bcg/meta-analysis-bcg.pdf",
+        "cn": "以 1948–1985 年 13 项 BCG 疫苗对照试验（约 36 万受试者）为单一数据集，把 Meta 分析从 2×2 表与效应量计算起步，经固定效应、随机效应、异质性诊断、亚组分析、meta 回归、发表偏倚识别与敏感性分析，把同一份汇总结论在多种估计策略下做并联验证。R 语言侧选 metafor 与 meta 两个生态实现，章末累计对比每种模型在异质性 I² ≈ 78% 这一中等偏高情境下的稳健性表现。",
+        "chapters": [
+          { "num": "0", "title": "前言：同一份 BCG 数据的十种估计策略" },
+          { "num": "1", "title": "问题与数据：BCG 与全球结核" },
+          { "num": "2", "title": "PRISMA 与系统综述流程" },
+          { "num": "3", "title": "效应量：从 2x2 表到 log RR" },
+          { "num": "4", "title": "固定效应模型" },
+          { "num": "5", "title": "随机效应模型" },
+          { "num": "6", "title": "异质性诊断" },
+          { "num": "7", "title": "亚组分析与 meta 回归" },
+          { "num": "8", "title": "发表偏倚" },
+          { "num": "9", "title": "敏感性分析" },
+          { "num": "10", "title": "全书汇总" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "research-engineering",
+    "label": "研究工程",
+    "summary": "把 Claude Code、Skills、MCP、Hooks 等大模型工程能力嵌入科研写作流程的经验集合，处理从单篇论文到长期工作习惯之间的衔接问题。",
+    "items": [
+      {
+        "itemSlug": "claude-code-paper-writing",
+        "title": "Claude Code 科研手记",
+        "subtitle": "用 Claude Code 辅助科研写作的经验与教训",
+        "author": "Chanw",
+        "date": "2026-05",
+        "version": "v1.0",
+        "pages": 130,
+        "kind": "工程手记",
+        "cover": "/notes/research-engineering/claude-code-paper-writing/cover.png",
+        "pdf": "/notes/research-engineering/claude-code-paper-writing/claude-code-paper-writing.pdf",
+        "cn": "用 Claude Code 辅助科研写作的 16 章经验手记。前八章按写作流程从前到后讲：Claude Code 自身的上下文与记忆机制、提示词使用、文献调研、章节写作、图表制作、引用、排版与版本管理。后八章讲扩展层：Skills 的安装与自建、并行 Agent、Hooks 与 MCP，再回到科研写作的基本要求、人机分工边界与 Skill 设计纪律。每章以真实论文写作流程中遇到的问题作为切片，附录给出可直接套用的提示词、文件结构与流程清单。",
+        "chapters": [
+          { "num": "1", "title": "Claude Code 简介与适用场景" },
+          { "num": "2", "title": "上下文与记忆机制" },
+          { "num": "3", "title": "提示词的使用经验" },
+          { "num": "4", "title": "文献调研与管理" },
+          { "num": "5", "title": "章节写作" },
+          { "num": "6", "title": "图表制作" },
+          { "num": "7", "title": "引用与参考文献" },
+          { "num": "8", "title": "格式排版与文件管理" },
+          { "num": "9", "title": "Skills 的安装与自建" },
+          { "num": "10", "title": "并行 Agent" },
+          { "num": "11", "title": "Hooks 自动化触发器" },
+          { "num": "12", "title": "MCP 工具扩展" },
+          { "num": "13", "title": "科研写作的基本要求" },
+          { "num": "14", "title": "人机分工的边界" },
+          { "num": "15", "title": "科研 Skill 的设计纪律" },
+          { "num": "16", "title": "从一篇论文到长期工作习惯" }
         ]
       }
     ]

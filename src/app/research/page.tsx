@@ -221,6 +221,14 @@ export default function ResearchProgramPage() {
                   title="苏轼轨迹"
                   href="/notes/personality-causal/sushi-trajectory"
                 />
+                <BookLink
+                  title="曾国藩轨迹"
+                  href="/notes/personality-causal/zengguofan-trajectory"
+                />
+                <BookLink
+                  title="亭林轨迹"
+                  href="/notes/personality-causal/guyanwu-trajectory"
+                />
               </BookGroup>
               <BookGroup label="会计实证方法">
                 <BookLink
@@ -236,6 +244,22 @@ export default function ResearchProgramPage() {
                 <BookLink
                   title="因果推断实践"
                   href="/notes/causal-inference-methods/causal-inference-book-v2"
+                />
+              </BookGroup>
+              <BookGroup label="统计方法实践">
+                <BookLink
+                  title="多层模型实践"
+                  href="/notes/statistical-methods/hlm-multilevel-modeling"
+                />
+                <BookLink
+                  title="Meta 分析实践"
+                  href="/notes/statistical-methods/meta-analysis-bcg"
+                />
+              </BookGroup>
+              <BookGroup label="研究工程">
+                <BookLink
+                  title="Claude Code 科研手记"
+                  href="/notes/research-engineering/claude-code-paper-writing"
                 />
               </BookGroup>
             </div>
