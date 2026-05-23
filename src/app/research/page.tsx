@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { NavBar } from "@/components/NavBar";
 import { Reveal } from "@/components/Reveal";
 import { SplitReveal } from "@/components/SplitReveal";
-import { ParallaxParticles } from "@/components/ParallaxParticles";
+import { ParticleTree } from "@/components/ParticleTree";
 import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata = {
@@ -70,10 +70,10 @@ export default function ResearchProgramPage() {
             <Reveal delay={400} className="lg:pl-6">
               <figure>
                 <div className="relative aspect-[5/3] w-full overflow-hidden">
-                  <ParallaxParticles />
+                  <ParticleTree />
                 </div>
                 <figcaption className="mt-5 max-w-md font-serif italic text-[13px] leading-[1.7] text-cream/55">
-                  视差的天文原型：太阳居中，三条椭圆轨道各带一颗行星，背后是远中近三层星空。鼠标移动时，前景星位移最大、远景星几乎不动——这就是真天文里恒星视差的样子。
+                  1,500 颗粒子沿螺旋圆锥分布而成的形态，Three.js 渲染、UnrealBloom 后处理。同一组粒子可以平滑变形到其它图形——大模型生成 Three.js 代码时常见的基础构造。
                 </figcaption>
               </figure>
             </Reveal>
