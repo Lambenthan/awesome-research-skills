@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { Hairline } from "@/components/Hairline";
+import { HeroParticles } from "@/components/HeroParticles";
 import { LiveCallout } from "@/components/LiveCallout";
 import { NavBar } from "@/components/NavBar";
 import { Reveal } from "@/components/Reveal";
@@ -44,9 +45,12 @@ export default function Home() {
 
       {/* Hero — short declarative slogan in sans, no lede paragraph.
           Echoes anthropic.com hero pattern of a single weighty
-          statement instead of a marketing pitch. */}
-      <section className="border-b border-rule">
-        <div className="mx-auto max-w-[88rem] px-6 pt-24 pb-20 sm:pt-32 sm:pb-28">
+          statement instead of a marketing pitch. A faint two-tone
+          particle backdrop adds texture without competing with the H1;
+          relative + overflow-hidden contain the canvas. */}
+      <section className="relative overflow-hidden border-b border-rule">
+        <HeroParticles />
+        <div className="relative z-10 mx-auto max-w-[88rem] px-6 pt-24 pb-20 sm:pt-32 sm:pb-28">
           <Reveal>
             <p className="eyebrow">Field Notes · 田野笔记</p>
           </Reveal>
