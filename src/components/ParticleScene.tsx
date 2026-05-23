@@ -118,37 +118,6 @@ export function ParticleScene({ className = "" }: { className?: string }) {
     const pointTexture = new THREE.CanvasTexture(sprite);
     pointTexture.colorSpace = THREE.SRGBColorSpace;
 
-    // A single, very soft warm halo behind Lucy. Adds subtle volume to
-    // the void without competing with her silhouette or polluting the
-    // edges with bloom haze. This is the only backdrop element — the
-    // rest of the atmosphere comes from Lucy's own bloom.
-    const nebulaCanvas = document.createElement("canvas");
-    nebulaCanvas.width = 256;
-    nebulaCanvas.height = 256;
-    const nctx = nebulaCanvas.getContext("2d");
-    if (nctx) {
-      const g = nctx.createRadialGradient(128, 128, 0, 128, 128, 128);
-      g.addColorStop(0, "rgba(255, 215, 160, 0.18)");
-      g.addColorStop(0.35, "rgba(200, 120, 80, 0.06)");
-      g.addColorStop(0.75, "rgba(80, 40, 30, 0.01)");
-      g.addColorStop(1, "rgba(0, 0, 0, 0)");
-      nctx.fillStyle = g;
-      nctx.fillRect(0, 0, 256, 256);
-    }
-    const nebulaTex = new THREE.CanvasTexture(nebulaCanvas);
-    nebulaTex.colorSpace = THREE.SRGBColorSpace;
-    const nebulaMat = new THREE.SpriteMaterial({
-      map: nebulaTex,
-      transparent: true,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-      opacity: 0.55,
-    });
-    const nebula = new THREE.Sprite(nebulaMat);
-    nebula.scale.set(340, 260, 1);
-    nebula.position.set(0, -15, -120);
-    scene.add(nebula);
-
     // Cloud particles — populated once Lucy loads
     let cloud: THREE.Points | null = null;
     let basePositions: Float32Array | null = null;
@@ -411,12 +380,8 @@ export function ParticleScene({ className = "" }: { className?: string }) {
         }
       }
 
-      // Halo breathing — alpha-fix pass below masks corner haze, so we
-      // can let the nebula breathe at full visual interest
-      nebula.material.opacity = 0.5 + Math.sin(now * 0.0006) * 0.08;
-
-      // Bloom breathing — same envelope; corner contribution is
-      // alpha-masked out so strength can stay cinematic
+      // Bloom breathing — corner contribution is alpha-masked out so
+      // strength can stay cinematic without lifting the empty bg
       bloom.strength = 0.55 + Math.sin(now * 0.0008) * 0.06;
 
       composer.render();
@@ -443,8 +408,6 @@ export function ParticleScene({ className = "" }: { className?: string }) {
       parent.removeEventListener("mousemove", onMove);
       parent.removeEventListener("mouseleave", onLeave);
       ro.disconnect();
-      nebulaTex.dispose();
-      nebulaMat.dispose();
       pointTexture.dispose();
       if (cloud) {
         cloud.geometry.dispose();
