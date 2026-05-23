@@ -9,7 +9,6 @@ const REPO_URL = "https://github.com/Lambenthan/field-notes";
 const LEARN_PATH = (process.env.NEXT_PUBLIC_BASE_PATH || "") + "/learn/";
 
 const NAV_LINKS = [
-  { href: "/research", label: "Research" },
   { href: SECTION_META.skills.href, label: SECTION_META.skills.eyebrow },
   { href: SECTION_META.ai.href, label: SECTION_META.ai.eyebrow },
   { href: SECTION_META.reading.href, label: SECTION_META.reading.eyebrow },

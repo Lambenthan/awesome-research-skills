@@ -79,17 +79,17 @@ export default function Home() {
           </Reveal>
           <SplitReveal
             as="h2"
-            text="Parallax"
+            text="视差"
             className="mt-6 font-serif text-[clamp(3rem,7vw,6rem)] leading-[1.02] tracking-[-0.028em] text-ink"
           />
           <Reveal delay={200}>
             <p className="mt-4 font-serif italic text-[clamp(1.1rem,1.4vw,1.5rem)] text-ink-muted">
-              视差研究计划
+              Parallax
             </p>
           </Reveal>
           <Reveal delay={320}>
             <p className="mt-8 max-w-2xl font-fluid-lede leading-[1.7] text-ink">
-              在不能做随机化实验的研究对象上，把多个观测视角并联起来，让方法间的差异本身构成证据。
+              用最新的大模型从不同观测视角去做以前做不了的研究。
             </p>
           </Reveal>
           <Reveal delay={440}>

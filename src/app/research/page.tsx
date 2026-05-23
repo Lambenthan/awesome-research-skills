@@ -3,13 +3,13 @@ import { Footer } from "@/components/Footer";
 import { NavBar } from "@/components/NavBar";
 import { Reveal } from "@/components/Reveal";
 import { SplitReveal } from "@/components/SplitReveal";
-import { TrajectoryDiagram } from "@/components/TrajectoryDiagram";
+import { ParallaxParticles } from "@/components/ParallaxParticles";
 import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata = {
-  title: "Parallax · 视差研究计划 — Field Notes",
+  title: "视差 · Parallax — Field Notes",
   description:
-    "在不能做随机化实验的研究对象上，把多个观测视角并联起来，让方法间的差异本身构成证据。人格、会计、医学、教育、统计方法可以共用一套语汇。",
+    "用最新大模型从不同观测视角去做以前做不了的研究。苏轼作品里的情感变化、长时段日记里的态度漂移、临床记录里的隐性混杂——以前难以触达的维度，现在多视角并联起来可读。",
 };
 
 export default function ResearchProgramPage() {
@@ -30,17 +30,17 @@ export default function ResearchProgramPage() {
               </Reveal>
               <SplitReveal
                 as="h1"
-                text="Parallax"
+                text="视差"
                 className="mt-7 font-serif text-[clamp(2.75rem,6vw,5rem)] leading-[1.05] tracking-[-0.02em] text-cream"
               />
               <Reveal delay={220}>
                 <p className="mt-5 font-serif italic text-[clamp(1.1rem,1.4vw,1.35rem)] text-cream/70">
-                  视差研究计划
+                  Parallax
                 </p>
               </Reveal>
               <Reveal delay={340}>
                 <p className="mt-10 max-w-2xl font-fluid-lede leading-[1.7] text-cream/85">
-                  在不能做随机化实验的研究对象上，把多个观测视角并联起来，让方法间的差异本身构成证据。从单一历史人物到 ICU 危重症患者、从财务面板到班额实验，研究对象在变，方法语汇可以共用。
+                  用最新的大模型从不同观测视角去做以前做不了的研究。苏轼作品里的情感变化、长时段日记里的态度漂移、临床记录里的隐性混杂——以前难以触达的维度，现在多视角并联起来可读。
                 </p>
               </Reveal>
               <Reveal delay={460}>
@@ -69,9 +69,11 @@ export default function ResearchProgramPage() {
 
             <Reveal delay={400} className="lg:pl-6">
               <figure>
-                <TrajectoryDiagram />
+                <div className="relative aspect-[5/3] w-full overflow-hidden">
+                  <ParallaxParticles />
+                </div>
                 <figcaption className="mt-5 max-w-md font-serif italic text-[13px] leading-[1.7] text-cream/55">
-                  Parallax 的一个具体例子：苏轼 65 年话语演化里，从中断时间序列与外部对照两个视角识别出 1094 惠州为最大话语断裂，1080 黄州只是经典叙事高估的节点。
+                  视差的视觉化：同一条研究对象的轨迹在两个观测视角下错位呈现，前景层与背景层之间的连线把"位移"本身画出来。鼠标横向移动时，错位会跟着张开或收拢。
                 </figcaption>
               </figure>
             </Reveal>
@@ -98,7 +100,7 @@ export default function ResearchProgramPage() {
           </Reveal>
           <Reveal delay={100}>
             <h2 className="mt-5 font-serif text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.015em] text-ink">
-              不能做实验的研究对象怎么识别因果
+              用大模型做以前做不了的研究
             </h2>
           </Reveal>
           <Reveal delay={200}>
@@ -107,7 +109,10 @@ export default function ResearchProgramPage() {
                 视差在天文学里是测距的常用工具。从地球轨道两端看同一颗星，恒星相对远处星空有一个微小位移，由这个位移可以反推出它的距离。整套推断不需要把那颗星拽到实验台上做对照，多视角的差异本身就是证据。
               </p>
               <p>
-                同样的思路可以移植到不能做随机化实验的研究对象上。单一历史人物的全集语料、ICU 危重症患者的临床记录、上市公司多年的财务面板、Tennessee 班额实验里 6 千名学生的成绩、BCG 疫苗 13 项试验的合并样本，都是研究者不能换一组对象重做的自然实验记录。能换的是观测视角——同一份数据，多套识别方法并联看下去，方法间的差异反过来构成证据。
+                这份研究计划关心的不只是因果识别这一块儿，而是怎么把"以前难以触达的维度"用大模型撬开。苏轼八千多篇作品里逐篇的情感强度、忧愤色彩、自省程度，曾国藩三十一年家书里逐封的家庭口吻 vs 军务口吻、教化指令 vs 自责语气，顾炎武未编年文本里逐条的主题归属与时代锚定——这些维度在没有大模型的年代要么靠人工逐篇打标签（不可扩展），要么靠词典法粗略统计（粒度不够），现在可以用 LLM 给出逐文档的结构化标注，再让多种识别方法在这些新维度上并联演练。
+              </p>
+              <p>
+                研究范围由此从历史人物延伸到 ICU 临床记录、上市公司财务面板、班额实验与 Meta 分析合并样本。研究对象在变，方法语汇可以共用：一组结构化标注 + 一份不可重做的真实数据 + 多套识别策略 + 多个外部对照。
               </p>
             </div>
           </Reveal>
@@ -120,16 +125,16 @@ export default function ResearchProgramPage() {
           </Reveal>
           <Reveal delay={100}>
             <h2 className="mt-5 font-serif text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.015em] text-ink">
-              单数据集 × 多种方法并联 × 累积对比
+              大模型作为新一层观测视角
             </h2>
           </Reveal>
           <Reveal delay={200}>
             <div className="mt-7 space-y-5 font-fluid-body leading-[1.85] text-ink">
               <p>
-                每条研究线都有一份统一研究对象 + 多套识别方法并联的工作样本。人格因果学用王阳明、苏轼、曾国藩、顾炎武四位历史人物的全集语料；因果推断方法学用 Connors 等人 1996 年发表的右心导管 5,735 例 ICU 数据；会计实证用 Bao 等人 2020 公开复制包与 Compustat 面板；多层模型实践用 Tennessee STAR 班额实验的三层嵌套面板；Meta 分析实践用 1948–1985 年 13 项 BCG 疫苗对照试验。
+                LLM 进入研究流程不是替换原有计量方法，而是给同一份数据多加一层观测视角。苏轼集 6,375 篇逐篇过一遍大模型，可以拿到八个人格维度评分、九个核心主题归属、跨体裁语气基线；曾国藩家书 1,482 封逐封标注收信人、口吻、教化／军务密度；右心导管 5,735 例的医生 free-text 临床备注转成结构化处理动机变量。这些是以前要么没办法做、要么做完粒度不够的标注层，现在有了，就成了新的因变量与协变量来源。
               </p>
               <p>
-                每种方法各有假设。中断时间序列要求趋势可外推，合成控制依赖平行假设，倾向得分匹配关注共同支撑，AIPW 同时校正结果模型与处理模型，多层模型靠组间方差换样本独立性假设。把假设并联列出，让方法间的差异反过来构成证据——同一份结论在多个识别策略下都站得住，才算可信。每本书的章末都维护一张累积对比表，把每种方法的估计值、识别假设、稳健性边界放在一起读。
+                有了这层标注，原本的因果识别方法仍然有效，而且能问出更精细的问题。中断时间序列不再只看词频跳跃，可以看情感强度的 level shift；合成控制可以围绕"自省维度"构造反事实而非围绕表层词袋；多层模型可以把"班级口吻"作为 Level-2 协变量分离它对处理效应的调节。每本书章末维护一张累积对比表，把每种方法的估计值、识别假设、稳健性边界、以及它对 LLM 标注稳健性的依赖一并放在一起读。
               </p>
             </div>
           </Reveal>
@@ -142,7 +147,7 @@ export default function ResearchProgramPage() {
           </Reveal>
           <Reveal delay={100}>
             <h2 className="mt-5 font-serif text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.015em] text-ink">
-              五条进行中的研究线
+              五条进行中的研究兴趣
             </h2>
           </Reveal>
 
