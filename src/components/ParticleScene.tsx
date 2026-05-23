@@ -85,6 +85,9 @@ export function ParticleScene({ className = "" }: { className?: string }) {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ReinhardToneMapping;
     renderer.toneMappingExposure = 2.2;
+    // Opaque clear set to exactly bg-ink (#141413). Reinhard tonemap is
+    // near-linear on values this small, so the displayed bg matches the
+    // surrounding hero with no perceptible seam.
     renderer.setClearColor(0x010101, 1);
 
     let width = parent.clientWidth;
@@ -111,42 +114,36 @@ export function ParticleScene({ className = "" }: { className?: string }) {
     const pointTexture = new THREE.CanvasTexture(sprite);
     pointTexture.colorSpace = THREE.SRGBColorSpace;
 
-    // Background starfield — sparse, faint, distant
-    const STAR_COUNT = 800;
-    const starGeo = new THREE.BufferGeometry();
-    const starPos = new Float32Array(STAR_COUNT * 3);
-    const starCol = new Float32Array(STAR_COUNT * 3);
-    const cream = new THREE.Color(0xfff4e0);
-    const ember = new THREE.Color(0xc15f3c);
-    const heather = new THREE.Color(0xb6b0d2);
-    for (let i = 0; i < STAR_COUNT; i++) {
-      const r = 1500 + Math.random() * 1500;
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.acos(2 * Math.random() - 1);
-      starPos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
-      starPos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
-      starPos[i * 3 + 2] = r * Math.cos(phi);
-      const roll = Math.random();
-      const c =
-        roll < 0.1 ? heather : roll < 0.3 ? ember : cream;
-      const dim = 0.35 + Math.random() * 0.5;
-      starCol[i * 3] = c.r * dim;
-      starCol[i * 3 + 1] = c.g * dim;
-      starCol[i * 3 + 2] = c.b * dim;
+    // A single, very soft warm halo behind Lucy. Adds subtle volume to
+    // the void without competing with her silhouette or polluting the
+    // edges with bloom haze. This is the only backdrop element — the
+    // rest of the atmosphere comes from Lucy's own bloom.
+    const nebulaCanvas = document.createElement("canvas");
+    nebulaCanvas.width = 256;
+    nebulaCanvas.height = 256;
+    const nctx = nebulaCanvas.getContext("2d");
+    if (nctx) {
+      const g = nctx.createRadialGradient(128, 128, 0, 128, 128, 128);
+      g.addColorStop(0, "rgba(255, 215, 160, 0.18)");
+      g.addColorStop(0.35, "rgba(200, 120, 80, 0.06)");
+      g.addColorStop(0.75, "rgba(80, 40, 30, 0.01)");
+      g.addColorStop(1, "rgba(0, 0, 0, 0)");
+      nctx.fillStyle = g;
+      nctx.fillRect(0, 0, 256, 256);
     }
-    starGeo.setAttribute("position", new THREE.BufferAttribute(starPos, 3));
-    starGeo.setAttribute("color", new THREE.BufferAttribute(starCol, 3));
-    const starMat = new THREE.PointsMaterial({
-      size: 2.6,
-      vertexColors: true,
-      map: pointTexture,
+    const nebulaTex = new THREE.CanvasTexture(nebulaCanvas);
+    nebulaTex.colorSpace = THREE.SRGBColorSpace;
+    const nebulaMat = new THREE.SpriteMaterial({
+      map: nebulaTex,
       transparent: true,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
-      sizeAttenuation: false,
+      opacity: 0.7,
     });
-    const stars = new THREE.Points(starGeo, starMat);
-    scene.add(stars);
+    const nebula = new THREE.Sprite(nebulaMat);
+    nebula.scale.set(360, 280, 1);
+    nebula.position.set(0, -10, -120);
+    scene.add(nebula);
 
     // Cloud particles — populated once Lucy loads
     let cloud: THREE.Points | null = null;
@@ -202,9 +199,12 @@ export function ParticleScene({ className = "" }: { className?: string }) {
           burstOrigins[i * 3] = r * Math.sin(phi) * Math.cos(theta);
           burstOrigins[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
           burstOrigins[i * 3 + 2] = r * Math.cos(phi);
-          livePositions[i * 3] = burstOrigins[i * 3];
-          livePositions[i * 3 + 1] = burstOrigins[i * 3 + 1];
-          livePositions[i * 3 + 2] = burstOrigins[i * 3 + 2];
+          // Seed live at base so the initial paint (before rAF ticks)
+          // already shows Lucy in shape — for bg-tab preloads and the
+          // first composer.render() right after the asset loads.
+          livePositions[i * 3] = basePositions[i * 3];
+          livePositions[i * 3 + 1] = basePositions[i * 3 + 1];
+          livePositions[i * 3 + 2] = basePositions[i * 3 + 2];
         }
 
         const cloudGeo = new THREE.BufferGeometry();
@@ -217,6 +217,8 @@ export function ParticleScene({ className = "" }: { className?: string }) {
         // a sprinkle of ember for "ornament" highlights
         const colors = new Float32Array(particleCount * 3);
         const c = new THREE.Color();
+        const cream = new THREE.Color(0xfff4e0);
+        const ember = new THREE.Color(0xc15f3c);
         for (let i = 0; i < particleCount; i++) {
           const y = basePositions[i * 3 + 1] / 60; // -1..1 normalized
           const t = (y + 1) * 0.5; // 0 (bottom) .. 1 (top)
@@ -280,6 +282,7 @@ export function ParticleScene({ className = "" }: { className?: string }) {
       0.78,
     );
     composer.addPass(bloom);
+
 
     let raf = 0;
     let mouseX = 0;
@@ -375,11 +378,12 @@ export function ParticleScene({ className = "" }: { className?: string }) {
         }
       }
 
-      // Slow auto-rotation of starfield for depth
-      stars.rotation.y = (now - startedAt) * 0.00002;
+      // Halo breathing — barely perceptible, just enough to keep the
+      // void from feeling static
+      nebula.material.opacity = 0.6 + Math.sin(now * 0.0006) * 0.08;
 
-      // Bloom breathing
-      bloom.strength = 0.88 + Math.sin(now * 0.0008) * 0.1;
+      // Bloom breathing — same params as the original working scene
+      bloom.strength = 0.34 + Math.sin(now * 0.0008) * 0.05;
 
       composer.render();
       raf = requestAnimationFrame(animate);
@@ -405,8 +409,8 @@ export function ParticleScene({ className = "" }: { className?: string }) {
       parent.removeEventListener("mousemove", onMove);
       parent.removeEventListener("mouseleave", onLeave);
       ro.disconnect();
-      starGeo.dispose();
-      starMat.dispose();
+      nebulaTex.dispose();
+      nebulaMat.dispose();
       pointTexture.dispose();
       if (cloud) {
         cloud.geometry.dispose();
