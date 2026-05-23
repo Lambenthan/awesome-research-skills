@@ -3,11 +3,6 @@ import { SECTION_META } from "@/lib/sections";
 
 const REPO_URL = "https://github.com/Lambenthan/field-notes";
 
-// /learn/ lives under /public/learn/ as a pre-built static site (learn-claude-code).
-// Next's <Link> would try client-routing into it and miss; <a> with the basePath
-// prefixed manually navigates the browser straight to the static index.html.
-const LEARN_PATH = (process.env.NEXT_PUBLIC_BASE_PATH || "") + "/learn/";
-
 const NAV_LINKS = [
   { href: SECTION_META.skills.href, label: SECTION_META.skills.eyebrow },
   { href: SECTION_META.ai.href, label: SECTION_META.ai.eyebrow },
@@ -38,12 +33,6 @@ export function NavBar() {
               {l.label}
             </Link>
           ))}
-          <a
-            href={LEARN_PATH}
-            className="eyebrow transition hover:text-ink"
-          >
-            Learn
-          </a>
         </nav>
         <div className="flex items-center gap-5">
           <Link
@@ -76,9 +65,6 @@ export function NavBar() {
             {l.label}
           </Link>
         ))}
-        <a href={LEARN_PATH} className="eyebrow transition hover:text-ink">
-          Learn
-        </a>
         <Link href="/search" className="eyebrow transition hover:text-ink">
           Search
         </Link>
