@@ -83,12 +83,14 @@ export function ParticleScene({ className = "" }: { className?: string }) {
       preserveDrawingBuffer: true,
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.toneMapping = THREE.ReinhardToneMapping;
-    renderer.toneMappingExposure = 2.2;
-    // Opaque clear set to exactly bg-ink (#141413). Reinhard tonemap is
-    // near-linear on values this small, so the displayed bg matches the
-    // surrounding hero with no perceptible seam.
-    renderer.setClearColor(0x010101, 1);
+    // No tonemap: the clearColor passes through unmodified to the canvas,
+    // so the bg matches bg-ink (#141413) exactly with zero seam against
+    // the surrounding hero. Lucy's densest regions clip to pure white,
+    // which matches the highlight-blowout aesthetic of the source video
+    // rather than working against it.
+    renderer.toneMapping = THREE.NoToneMapping;
+    renderer.toneMappingExposure = 1.0;
+    renderer.setClearColor(0x141413, 1);
 
     let width = parent.clientWidth;
     let height = parent.clientHeight;
@@ -277,9 +279,9 @@ export function ParticleScene({ className = "" }: { className?: string }) {
     composer.addPass(new RenderPass(scene, camera));
     const bloom = new UnrealBloomPass(
       new THREE.Vector2(width, height),
-      0.35,
-      0.6,
-      0.78,
+      0.5,
+      0.55,
+      0.65,
     );
     composer.addPass(bloom);
 
@@ -382,8 +384,9 @@ export function ParticleScene({ className = "" }: { className?: string }) {
       // void from feeling static
       nebula.material.opacity = 0.6 + Math.sin(now * 0.0006) * 0.08;
 
-      // Bloom breathing — same params as the original working scene
-      bloom.strength = 0.34 + Math.sin(now * 0.0008) * 0.05;
+      // Bloom breathing — slightly stronger than tonemapped version
+      // since NoToneMapping means raw colors without HDR rolloff
+      bloom.strength = 0.5 + Math.sin(now * 0.0008) * 0.06;
 
       composer.render();
       raf = requestAnimationFrame(animate);
