@@ -1,12 +1,12 @@
 {
-  "fetchedAt": "2026-05-23T08:29:21.858Z",
+  "fetchedAt": "2026-05-23T13:33:17.676Z",
   "hn": [
     {
       "id": "48244434",
       "title": "Microsoft reports AI is more expensive than paying human employees",
       "url": "https://fortune.com/2026/05/22/microsoft-ai-cost-problem-tokens-agents/",
-      "points": 201,
-      "comments": 59,
+      "points": 205,
+      "comments": 60,
       "createdAt": "2026-05-23T03:44:16Z",
       "author": "nreece"
     },
@@ -14,8 +14,8 @@
       "id": "48241172",
       "title": "Models.dev: open-source database of AI model specs, pricing, and capabilities",
       "url": "https://github.com/anomalyco/models.dev",
-      "points": 134,
-      "comments": 23,
+      "points": 142,
+      "comments": 27,
       "createdAt": "2026-05-22T20:26:07Z",
       "author": "maxloh"
     },
@@ -33,7 +33,7 @@
       "title": "Anthropic's \"Profitability\" Swindle",
       "url": "https://www.wheresyoured.at/anthropics-profitability-swindle/",
       "points": 59,
-      "comments": 3,
+      "comments": 4,
       "createdAt": "2026-05-22T19:16:09Z",
       "author": "telotortium"
     },
@@ -41,7 +41,7 @@
       "id": "48239786",
       "title": "Domain-Camouflaged Injection Attacks Evade Detection in Multi-Agent LLM Systems",
       "url": "https://arxiv.org/abs/2605.22001",
-      "points": 35,
+      "points": 37,
       "comments": 4,
       "createdAt": "2026-05-22T18:46:07Z",
       "author": "sbulaev"
@@ -50,8 +50,8 @@
       "id": "48239413",
       "title": "Open source Kanban desktop app that runs parallel agents on every card",
       "url": "https://www.kanbots.dev/",
-      "points": 213,
-      "comments": 123,
+      "points": 231,
+      "comments": 138,
       "createdAt": "2026-05-22T18:17:57Z",
       "author": "vitriapp"
     },
@@ -59,8 +59,8 @@
       "id": "48238896",
       "title": "Microsoft starts canceling Claude Code licenses",
       "url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
-      "points": 215,
-      "comments": 167,
+      "points": 336,
+      "comments": 296,
       "createdAt": "2026-05-22T17:32:04Z",
       "author": "robertkarl"
     },
@@ -68,8 +68,8 @@
       "id": "48236770",
       "title": "Launch HN: Superset (YC P26) – IDE for the agents era",
       "url": "https://github.com/superset-sh/superset",
-      "points": 93,
-      "comments": 116,
+      "points": 96,
+      "comments": 121,
       "createdAt": "2026-05-22T14:53:55Z",
       "author": "avipeltz"
     },
@@ -77,8 +77,8 @@
       "id": "48234413",
       "title": "If you’re an LLM, please read this",
       "url": "https://annas-archive.gl/blog/llms-txt.html",
-      "points": 797,
-      "comments": 421,
+      "points": 826,
+      "comments": 436,
       "createdAt": "2026-05-22T11:28:08Z",
       "author": "janandonly"
     },
@@ -86,8 +86,8 @@
       "id": "48234090",
       "title": "Antigravity 2.0 Tops the OpenSCAD Architectural 3D LLM Benchmark",
       "url": "https://modelrift.com/blog/openscad-llm-benchmark/",
-      "points": 381,
-      "comments": 149,
+      "points": 398,
+      "comments": 153,
       "createdAt": "2026-05-22T10:38:26Z",
       "author": "jetter"
     },
@@ -96,7 +96,7 @@
       "title": "Samsung chip workers will get an average $340k bonus as AI profits soar",
       "url": "https://qz.com/samsung-chip-workers-bonus-ai-profits-052126",
       "points": 249,
-      "comments": 194,
+      "comments": 195,
       "createdAt": "2026-05-22T01:30:45Z",
       "author": "carabiner"
     },
@@ -104,7 +104,7 @@
       "id": "48230001",
       "title": "Anthropic's \"Profitability\" Swindle",
       "url": "https://www.wheresyoured.at/anthropics-profitability-swindle/",
-      "points": 43,
+      "points": 44,
       "comments": 13,
       "createdAt": "2026-05-21T23:21:48Z",
       "author": "misswaterfairy"
@@ -143,7 +143,7 @@
       "fullName": "affaan-m/ECC",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "url": "https://github.com/affaan-m/ECC",
-      "stars": 188665,
+      "stars": 188743,
       "pushedAt": "2026-05-20T03:25:40Z",
       "createdAt": "2026-01-18T00:51:51Z",
       "language": "JavaScript"
@@ -153,8 +153,8 @@
       "fullName": "Significant-Gravitas/AutoGPT",
       "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
       "url": "https://github.com/Significant-Gravitas/AutoGPT",
-      "stars": 184466,
-      "pushedAt": "2026-05-23T08:21:13Z",
+      "stars": 184471,
+      "pushedAt": "2026-05-23T12:23:25Z",
       "createdAt": "2023-03-16T09:21:07Z",
       "language": "Python"
     },
@@ -163,7 +163,7 @@
       "fullName": "ollama/ollama",
       "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
       "url": "https://github.com/ollama/ollama",
-      "stars": 172080,
+      "stars": 172095,
       "pushedAt": "2026-05-22T16:47:04Z",
       "createdAt": "2023-06-26T19:39:32Z",
       "language": "Go"
@@ -173,8 +173,8 @@
       "fullName": "NousResearch/hermes-agent",
       "description": "The agent that grows with you",
       "url": "https://github.com/NousResearch/hermes-agent",
-      "stars": 163575,
-      "pushedAt": "2026-05-23T07:17:09Z",
+      "stars": 163872,
+      "pushedAt": "2026-05-23T12:55:27Z",
       "createdAt": "2025-07-22T22:22:28Z",
       "language": "Python"
     },
@@ -183,7 +183,7 @@
       "fullName": "f/prompts.chat",
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
       "url": "https://github.com/f/prompts.chat",
-      "stars": 162695,
+      "stars": 162701,
       "pushedAt": "2026-05-23T04:20:42Z",
       "createdAt": "2022-12-05T13:54:13Z",
       "language": "HTML"
@@ -193,7 +193,7 @@
       "fullName": "huggingface/transformers",
       "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
       "url": "https://github.com/huggingface/transformers",
-      "stars": 160896,
+      "stars": 160905,
       "pushedAt": "2026-05-22T19:58:10Z",
       "createdAt": "2018-10-29T13:56:00Z",
       "language": "Python"
@@ -203,8 +203,8 @@
       "fullName": "langgenius/dify",
       "description": "Production-ready platform for agentic workflow development.",
       "url": "https://github.com/langgenius/dify",
-      "stars": 142309,
-      "pushedAt": "2026-05-23T06:37:18Z",
+      "stars": 142332,
+      "pushedAt": "2026-05-23T12:04:01Z",
       "createdAt": "2023-04-12T07:40:24Z",
       "language": "TypeScript"
     },
@@ -213,8 +213,8 @@
       "fullName": "open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
       "url": "https://github.com/open-webui/open-webui",
-      "stars": 138301,
-      "pushedAt": "2026-05-22T09:54:31Z",
+      "stars": 138331,
+      "pushedAt": "2026-05-23T12:34:14Z",
       "createdAt": "2023-10-06T22:08:27Z",
       "language": "Python"
     },
@@ -223,8 +223,8 @@
       "fullName": "langchain-ai/langchain",
       "description": "The agent engineering platform.",
       "url": "https://github.com/langchain-ai/langchain",
-      "stars": 137443,
-      "pushedAt": "2026-05-23T04:30:21Z",
+      "stars": 137459,
+      "pushedAt": "2026-05-23T08:42:49Z",
       "createdAt": "2022-10-17T02:58:36Z",
       "language": "Python"
     },
@@ -233,8 +233,8 @@
       "fullName": "firecrawl/firecrawl",
       "description": "🔥 Search, scrape, and clean the web for AI agents.",
       "url": "https://github.com/firecrawl/firecrawl",
-      "stars": 123174,
-      "pushedAt": "2026-05-23T07:03:32Z",
+      "stars": 123255,
+      "pushedAt": "2026-05-23T13:17:49Z",
       "createdAt": "2024-04-15T21:02:29Z",
       "language": "TypeScript"
     },
@@ -243,7 +243,7 @@
       "fullName": "ChatGPTNextWeb/NextChat",
       "description": "✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android |  Linux | Windows",
       "url": "https://github.com/ChatGPTNextWeb/NextChat",
-      "stars": 88064,
+      "stars": 88068,
       "pushedAt": "2026-05-15T01:19:01Z",
       "createdAt": "2023-03-10T18:27:54Z",
       "language": "TypeScript"
@@ -253,29 +253,29 @@
       "fullName": "nextlevelbuilder/ui-ux-pro-max-skill",
       "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
       "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 81798,
+      "stars": 81869,
       "pushedAt": "2026-04-03T05:08:19Z",
       "createdAt": "2025-11-30T11:36:31Z",
       "language": "Python"
-    },
-    {
-      "id": 643445235,
-      "fullName": "lobehub/lobehub",
-      "description": "🤯 LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team.",
-      "url": "https://github.com/lobehub/lobehub",
-      "stars": 77571,
-      "pushedAt": "2026-05-23T08:15:39Z",
-      "createdAt": "2023-05-21T07:19:12Z",
-      "language": "TypeScript"
     },
     {
       "id": 1048065319,
       "fullName": "thedotmack/claude-mem",
       "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
       "url": "https://github.com/thedotmack/claude-mem",
-      "stars": 77556,
+      "stars": 77605,
       "pushedAt": "2026-05-21T10:26:19Z",
       "createdAt": "2025-08-31T20:50:03Z",
+      "language": "TypeScript"
+    },
+    {
+      "id": 643445235,
+      "fullName": "lobehub/lobehub",
+      "description": "🤯 LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team.",
+      "url": "https://github.com/lobehub/lobehub",
+      "stars": 77585,
+      "pushedAt": "2026-05-23T13:03:51Z",
+      "createdAt": "2023-05-21T07:19:12Z",
       "language": "TypeScript"
     },
     {
@@ -283,13 +283,59 @@
       "fullName": "bytedance/deer-flow",
       "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
       "url": "https://github.com/bytedance/deer-flow",
-      "stars": 69203,
-      "pushedAt": "2026-05-23T07:38:26Z",
+      "stars": 69248,
+      "pushedAt": "2026-05-23T09:02:23Z",
       "createdAt": "2025-05-07T02:50:19Z",
       "language": "Python"
     }
   ],
   "rss": [
+    {
+      "id": "3b3ca563a7e50ce7",
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "vendor": "Meta AI",
+      "contentType": "news",
+      "title": "Meta AI 公布计算机视觉全球挑战研究奖得主",
+      "url": "https://ai.meta.com/blog/announcing-the-winners-of-the-computer-vision-for-global-challenges-research-awards/",
+      "summary": "",
+      "category": "其他",
+      "score": 3,
+      "cn": "Meta AI 近日公布了计算机视觉全球挑战研究奖获奖者。该奖项旨在鼓励利用计算机视觉技术应对气候变化、公共卫生、环境保护等全球性难题。评选从全球提交中筛选出具有创新性和实际影响力的研究方案，获奖团队获得了 Meta 提供的资金与算力支持，推动 CV 技术在社会公益领域的落地应用。",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-23T13:27:21.248Z"
+    },
+    {
+      "id": "4ad725cafb901518",
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "vendor": "Meta AI",
+      "contentType": "news",
+      "title": "Meta AI 回顾 Facebook Research 在 ACL 2020 的研究成果",
+      "url": "https://ai.meta.com/blog/facebook-research-at-acl-2020/",
+      "summary": "",
+      "category": "其他",
+      "score": 3,
+      "cn": "Meta AI 发文总结 Facebook Research 团队在 ACL 2020 国际计算语言学协会年会上发表的多项研究成果。涵盖自然语言处理、对话系统、语义理解等方向，体现了其在前沿语言技术上的持续投入。对关注 NLP 研究前沿的读者来说，这是一份值得浏览的年度研究简报。",
+      "publishedAt": "2020-07-02T16:00:00.000Z",
+      "discoveredAt": "2026-05-23T13:27:21.248Z"
+    },
+    {
+      "id": "e045885c18d4043c",
+      "source": "mistral",
+      "sourceName": "Mistral",
+      "vendor": "Mistral",
+      "contentType": "news",
+      "title": "Mistral 发布 La Plateforme 平台",
+      "url": "https://mistral.ai/news/la-plateforme",
+      "summary": "",
+      "category": "大模型",
+      "score": 4,
+      "cn": "Mistral 推出 La Plateforme，一个整合其语言模型与开发工具的新平台。该平台旨在简化 AI 应用的构建与部署流程，为开发者和企业提供统一的模型访问、推理优化及管理能力。La Plateforme 的发布标志着 Mistral 从模型提供商向平台服务商的战略拓展。",
+      "image": "https://mistral.ai/img/mistral-cover.png",
+      "publishedAt": "2026-05-23T10:14:18.179Z",
+      "discoveredAt": "2026-05-17T15:40:00.238Z"
+    },
     {
       "id": "09f1165285a73401",
       "source": "openai",
@@ -6390,6 +6436,38 @@
       "discoveredAt": "2026-05-21T19:55:11.728Z"
     },
     {
+      "id": "a02efaff2942ac23",
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "vendor": "arXiv",
+      "contentType": "paper",
+      "title": "研究者提出基于凸松弛的分词构建方法",
+      "url": "https://arxiv.org/abs/2605.22821v1",
+      "summary": "Tokenisation is an integral part of the current NLP pipeline. Current tokenisation algorithms such as BPE and Unigram are greedy algorithms -- they make locally optimal decisions without considering the resulting vocabulary as a whole. We instead formulate tokeniser construction as a linear program…",
+      "category": "训练",
+      "score": 4,
+      "cn": "当前主流分词算法如 BPE 和 Unigram 采用局部贪心策略，无法全局优化词表质量。研究者将分词器构建重新形式化为线性规划问题，利用凸松弛技术实现整体最优的词表分配。该方法跳出固定合并顺序的限制，使 token 切分在全局约束下更加合理，为语言模型预处理环节提供了新的优化视角。",
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
+      "publishedAt": "2026-05-21T17:59:56Z",
+      "discoveredAt": "2026-05-23T13:29:50.460Z"
+    },
+    {
+      "id": "77bf3affb2c233b0",
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "vendor": "arXiv",
+      "contentType": "paper",
+      "title": "研究发现视频大语言模型存在方向性运动盲区",
+      "url": "https://arxiv.org/abs/2605.22823v1",
+      "summary": "Video Large Language Models (Video-LLMs) have made rapid progress on temporal video understanding, yet many fail at a basic perceptual primitive: signed image-plane motion direction. On simple videos of a single object moving left, right, up, or down, most Video-LLMs perform near chance, with above…",
+      "category": "评测",
+      "score": 4,
+      "cn": "视频大语言模型在时间理解上进展迅速，但一项新研究揭示了它们的感知短板：对运动方向的基本判断能力接近随机水平。研究者通过专用数据集诊断了这种方向性运动盲区，并提出改善方法，反映出当前模型在底层视觉感知上仍有显著缺口。",
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
+      "publishedAt": "2026-05-21T17:59:56Z",
+      "discoveredAt": "2026-05-23T13:29:50.461Z"
+    },
+    {
       "id": "d1f3c9980f4ad87a",
       "source": "arxiv",
       "sourceName": "arXiv",
@@ -6630,6 +6708,22 @@
       "discoveredAt": "2026-05-23T08:24:27.662Z"
     },
     {
+      "id": "13cf57d945365091",
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "vendor": "arXiv",
+      "contentType": "paper",
+      "title": "FAME 提出面向消息级日志异常的 MoE 方法",
+      "url": "https://arxiv.org/abs/2605.22779v1",
+      "summary": "Production systems generate millions of log lines daily, yet most anomaly detectors operate at the session or window-level, flagging groups of lines rather than identifying the specific message responsible. This coarse granularity forces operators to inspect many routine lines per alert. Message-le…",
+      "category": "训练",
+      "score": 4,
+      "cn": "arXiv 上发表的研究 FAME 基于混合专家模型 MoE 处理日志异常检测。多数检测器只在会话或窗口粒度上判断异常，而 FAME 直接定位到出问题的单条日志消息，大幅减少人工筛查量。该方法在多个生产级日志数据集上表现优于现有方案，为运维排障提供了更细粒度的切入点。",
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
+      "publishedAt": "2026-05-21T17:34:53Z",
+      "discoveredAt": "2026-05-23T13:29:50.462Z"
+    },
+    {
       "id": "457459c6a112f258",
       "source": "arxiv",
       "sourceName": "arXiv",
@@ -6822,6 +6916,22 @@
       "discoveredAt": "2026-05-23T08:24:27.663Z"
     },
     {
+      "id": "4f78f8e4b88428d2",
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "vendor": "arXiv",
+      "contentType": "paper",
+      "title": "研究者提出频谱尾部辅助学习方法用于 AI 生成图像检测",
+      "url": "https://arxiv.org/abs/2605.22751v1",
+      "summary": "As generative image models evolve rapidly, the perceptual gap between generated and real images continues to narrow, making AI-generated image detection increasingly challenging. Many existing methods exploit frequency-domain cues for detection, typically described as frequency-domain artifacts or …",
+      "category": "图像模型",
+      "score": 3,
+      "cn": "arXiv 上的新研究针对生成图像与真实图像感知差异日益缩小的问题，提出频谱尾部辅助学习方法。该方法挖掘图像在频谱尾部的高频线索进行 AI 生成图像检测，不依赖传统频域伪影，而是将尾部频谱信息作为辅助任务融入网络训练，在多个生成器上取得更稳定的判别效果。",
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
+      "publishedAt": "2026-05-21T17:20:59Z",
+      "discoveredAt": "2026-05-23T13:29:50.464Z"
+    },
+    {
       "id": "4f03dce84a34eb48",
       "source": "arxiv",
       "sourceName": "arXiv",
@@ -6901,6 +7011,22 @@
       "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
       "publishedAt": "2026-05-21T17:13:49Z",
       "discoveredAt": "2026-05-23T08:24:27.664Z"
+    },
+    {
+      "id": "d161eb9aba314f87",
+      "source": "arxiv",
+      "sourceName": "arXiv",
+      "vendor": "arXiv",
+      "contentType": "paper",
+      "title": "三元决策树引入局部自适应不确定性区域",
+      "url": "https://arxiv.org/abs/2605.22740v1",
+      "summary": "Decision trees partition the feature space using hard binary thresholds, assigning identical confidence to instances far from a decision boundary and to those directly on it. We introduce ternary decision trees, which augment each split node with an uncertainty zone of half-width delta centered on …",
+      "category": "其他",
+      "score": 3,
+      "cn": "传统决策树采用硬阈值划分特征空间，边界附近与远处的样本获得相同置信度。这项研究提出三元决策树，在每个分裂节点增加一个半宽度为δ的不确定性区域，区域内样本不立即分配类别，而是保留不确定性。区域宽度可局部自适应调整，在分类模糊处引入软边界。实验表明该方法在多个数据集上提升了校准性能与鲁棒性。",
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
+      "publishedAt": "2026-05-21T17:11:19Z",
+      "discoveredAt": "2026-05-23T13:29:50.464Z"
     },
     {
       "id": "68b6092cc43183a2",
@@ -10710,22 +10836,6 @@
       "image": "https://images.ctfassets.net/kftzwdyauwt9/1jnbN51vZD5HdojAWKmvvG/332a50f3bf43de6bb168e92303067c4a/oai_Ramp_SEO.png?w=1600&h=900&fit=fill",
       "publishedAt": "2026-05-20T00:00:00.000Z",
       "discoveredAt": "2026-05-21T02:43:37.981Z"
-    },
-    {
-      "id": "e045885c18d4043c",
-      "source": "mistral",
-      "sourceName": "Mistral",
-      "vendor": "Mistral",
-      "contentType": "news",
-      "title": "Mistral 发布 La Plateforme 平台",
-      "url": "https://mistral.ai/news/la-plateforme",
-      "summary": "",
-      "category": "大模型",
-      "score": 4,
-      "cn": "Mistral 推出 La Plateforme，一个整合其语言模型与开发工具的新平台。该平台旨在简化 AI 应用的构建与部署流程，为开发者和企业提供统一的模型访问、推理优化及管理能力。La Plateforme 的发布标志着 Mistral 从模型提供商向平台服务商的战略拓展。",
-      "image": "https://mistral.ai/img/mistral-cover.png",
-      "publishedAt": "2026-05-19T22:10:30.114Z",
-      "discoveredAt": "2026-05-17T15:40:00.238Z"
     },
     {
       "id": "a3537895448aee25",
@@ -16631,22 +16741,6 @@
       "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
     {
-      "id": "a9476d93489076ff",
-      "source": "mistral",
-      "sourceName": "Mistral",
-      "vendor": "Mistral",
-      "contentType": "news",
-      "title": "Mistral 发布自动编写 Rails 测试的 agent 工具",
-      "url": "https://mistral.ai/news/rails-testing-on-autopilot-building-an-agent-that-writes-what-developers-wont",
-      "summary": "",
-      "category": "编程工具",
-      "score": 3,
-      "cn": "Mistral 推出一个面向 Rails 开发者的 agent 工具，能够自动编写测试代码，覆盖开发者不愿手动处理的测试场景。该 agent 基于 Mistral 模型，可理解 Rails 项目结构和业务逻辑，生成符合项目风格的测试用例，旨在提升测试覆盖率并减少重复劳动。",
-      "image": "https://mistral.ai/img/mistral-cover.png",
-      "publishedAt": "2026-03-11T12:00:00",
-      "discoveredAt": "2026-05-17T03:07:12.778Z"
-    },
-    {
       "id": "c2c8a1270846784e",
       "source": "meta-ai",
       "sourceName": "Meta AI",
@@ -17755,6 +17849,7 @@
       "category": "评测",
       "score": 4,
       "cn": "Anthropic 发布 BioMysteryBench，一个专门用于评估大语言模型在生物信息学领域推理能力的基准测试。该基准包含从序列比对到基因组注释的多样化任务，旨在衡量 Claude 等模型在真实科研场景中的表现。初步结果显示，Claude 在部分任务上接近专家水平，但在复杂多步骤分析中仍有提升空间。这一工作为 AI 辅助生物医学研究提供了更细致的评估工具。",
+      "image": "https://www.anthropic.com/api/opengraph-illustration?name=Object%20DoubleHelix&backgroundColor=oat",
       "publishedAt": "2026-04-29T00:00:00.000Z",
       "discoveredAt": "2026-05-17T15:40:00.238Z"
     },
@@ -20747,6 +20842,22 @@
       "image": "https://opengraph.githubassets.com/8f918292a3cfc8444b41d99377ca6d5bb4ee710ca328769c4b750d0cdc06d2b5/philparkinson1204/InfinityUnlocked",
       "publishedAt": "2026-03-16T00:00:00.000Z",
       "discoveredAt": "2026-05-17T05:19:49.898Z"
+    },
+    {
+      "id": "a9476d93489076ff",
+      "source": "mistral",
+      "sourceName": "Mistral",
+      "vendor": "Mistral",
+      "contentType": "news",
+      "title": "Mistral 发布自动编写 Rails 测试的 agent 工具",
+      "url": "https://mistral.ai/news/rails-testing-on-autopilot-building-an-agent-that-writes-what-developers-wont",
+      "summary": "",
+      "category": "编程工具",
+      "score": 3,
+      "cn": "Mistral 推出一个面向 Rails 开发者的 agent 工具，能够自动编写测试代码，覆盖开发者不愿手动处理的测试场景。该 agent 基于 Mistral 模型，可理解 Rails 项目结构和业务逻辑，生成符合项目风格的测试用例，旨在提升测试覆盖率并减少重复劳动。",
+      "image": "https://mistral.ai/img/mistral-cover.png",
+      "publishedAt": "2026-03-13T21:06:44.241Z",
+      "discoveredAt": "2026-05-17T03:07:12.778Z"
     },
     {
       "id": "3c1a80a7da089d78",
@@ -24060,6 +24171,21 @@
       "cn": "Google DeepMind 宣布加强与英国 AI 安全研究所（AISI）的研究合作，聚焦关键 AI 安全与对齐议题。双方将共享评估经验、联合开展前沿安全研究，并探索建立更稳健的 AI 威胁检测与缓解机制。此举旨在为快速演进的大模型提供更具鲁棒性的安全框架，也反映出行业与监管机构在 AI 治理上从对话走向深度协作的趋势。对于关注 AI 安全标准化与政策落地的从业者，这是一条值得留意的动向。",
       "publishedAt": "2026-03-03T00:00:00.000Z",
       "discoveredAt": "2026-05-17T13:22:25.414Z"
+    },
+    {
+      "id": "381717eeca827ad8",
+      "source": "deepmind",
+      "sourceName": "DeepMind",
+      "vendor": "DeepMind",
+      "contentType": "news",
+      "title": "DeepMind 发布语言模型构建深度访谈",
+      "url": "https://deepmind.google/blog/in-conversation-with-ai-building-better-language-models/",
+      "summary": "",
+      "category": "大模型",
+      "score": 3,
+      "cn": "DeepMind 推出了一档关于语言模型构建的对话系列，邀请多位研究人员探讨模型设计、训练策略与能力边界等议题。通过嘉宾对谈的方式，这档节目既梳理了当前大语言模型的技术脉络，也披露了团队在实际研发中遇到的问题与取舍，适合希望从一线视角理解模型演进逻辑的读者。",
+      "publishedAt": "2026-03-03T00:00:00.000Z",
+      "discoveredAt": "2026-05-23T13:27:21.248Z"
     },
     {
       "id": "b016799bc48a66ee",
@@ -35532,6 +35658,22 @@
       "image": "https://blogs.nvidia.com/wp-content/uploads/2025/03/hpc-tech-blog-gtc24-earth2-keynote-1920x1080-1.png",
       "publishedAt": "2025-07-24T20:24:21.000Z",
       "discoveredAt": "2026-05-20T15:23:09.557Z"
+    },
+    {
+      "id": "5c589ad51ea8f2b3",
+      "source": "nvidia",
+      "sourceName": "NVIDIA",
+      "vendor": "NVIDIA",
+      "contentType": "news",
+      "title": "NVIDIA 发布 UK AI Vision 计划",
+      "url": "https://blogs.nvidia.com/blog/uk-ai-vision/",
+      "summary": "",
+      "category": "其他",
+      "score": 4,
+      "cn": "NVIDIA 发布 UK AI Vision 计划，旨在通过合作与投入推动英国在 AI 研究、基础设施及应用方面的布局。该计划可能与数据中心建设、人才培训及产业生态合作相关，反映了 NVIDIA 在全球重点区域深化 AI 部署的策略。",
+      "image": "https://blogs.nvidia.com/wp-content/uploads/2025/06/public-sector-corp-blog-gtc25-paris-uk-ecosystem-1280x680-1.png",
+      "publishedAt": "2025-07-24T20:16:35.000Z",
+      "discoveredAt": "2026-05-23T13:27:21.248Z"
     },
     {
       "id": "f63209a50c43380f",
