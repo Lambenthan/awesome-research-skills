@@ -5,6 +5,8 @@ import * as THREE from "three";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
+import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
+import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
 
 /**
  * Minimal binary PLY vertex parser. Reads the header, extracts vertex
@@ -79,19 +81,18 @@ export function ParticleScene({ className = "" }: { className?: string }) {
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
-      alpha: false,
+      alpha: true,
       preserveDrawingBuffer: true,
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    // No tonemap: the clearColor passes through unmodified to the canvas.
-    // Bloom adds a small uniform lift to edges from mip-blur averaging,
-    // so the canvas's actual edge color lands a few units above the raw
-    // clear. The /research hero section's CSS bg is set to #1a1a1a to
-    // match this empirical edge color — the result is a single uniform
-    // horizontal band across text + canvas with no visible seam.
-    renderer.toneMapping = THREE.NoToneMapping;
-    renderer.toneMappingExposure = 1.0;
-    renderer.setClearColor(0x1a1a1a, 1);
+    // Transparent canvas: the surrounding bg-ink shows through directly,
+    // so there is no canvas bg color to mismatch. Reinhard tonemap is
+    // kept for Lucy's HDR rolloff. The alphaFix pass below derives alpha
+    // from rendered luminance so the canvas is opaque where particles or
+    // nebula appear and transparent everywhere else.
+    renderer.toneMapping = THREE.ReinhardToneMapping;
+    renderer.toneMappingExposure = 2.2;
+    renderer.setClearColor(0x000000, 0);
 
     let width = parent.clientWidth;
     let height = parent.clientHeight;
@@ -141,11 +142,11 @@ export function ParticleScene({ className = "" }: { className?: string }) {
       transparent: true,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
-      opacity: 0.35,
+      opacity: 0.55,
     });
     const nebula = new THREE.Sprite(nebulaMat);
-    nebula.scale.set(280, 220, 1);
-    nebula.position.set(0, -20, -120);
+    nebula.scale.set(340, 260, 1);
+    nebula.position.set(0, -15, -120);
     scene.add(nebula);
 
     // Cloud particles — populated once Lucy loads
@@ -274,17 +275,46 @@ export function ParticleScene({ className = "" }: { className?: string }) {
       0.5,
     );
 
-    // Composer + bloom
+    // Composer pipeline:
+    //   RenderPass → bloom → alphaFix → OutputPass
+    // The alphaFix sets canvas alpha from rendered luminance so dark
+    // areas become transparent (letting the surrounding bg-ink show
+    // through). OutputPass applies the SRGB encoding step so colors
+    // land at the right intensity on the canvas.
     const composer = new EffectComposer(renderer);
     composer.setSize(width, height);
     composer.addPass(new RenderPass(scene, camera));
     const bloom = new UnrealBloomPass(
       new THREE.Vector2(width, height),
-      0.3,
-      0.25,
-      0.85,
+      0.55,
+      0.55,
+      0.65,
     );
     composer.addPass(bloom);
+
+    const alphaFix = new ShaderPass({
+      uniforms: { tDiffuse: { value: null } },
+      vertexShader: `
+        varying vec2 vUv;
+        void main() {
+          vUv = uv;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+      `,
+      fragmentShader: `
+        uniform sampler2D tDiffuse;
+        varying vec2 vUv;
+        void main() {
+          vec4 t = texture2D(tDiffuse, vUv);
+          float lum = dot(t.rgb, vec3(0.299, 0.587, 0.114));
+          float a = smoothstep(0.0, 0.05, lum);
+          gl_FragColor = vec4(t.rgb, a);
+        }
+      `,
+    });
+    composer.addPass(alphaFix);
+
+    composer.addPass(new OutputPass());
 
 
     let raf = 0;
@@ -381,14 +411,13 @@ export function ParticleScene({ className = "" }: { className?: string }) {
         }
       }
 
-      // Halo breathing — kept dim so the nebula does not feed bloom
-      // haze back into the canvas corners
-      nebula.material.opacity = 0.28 + Math.sin(now * 0.0006) * 0.05;
+      // Halo breathing — alpha-fix pass below masks corner haze, so we
+      // can let the nebula breathe at full visual interest
+      nebula.material.opacity = 0.5 + Math.sin(now * 0.0006) * 0.08;
 
-      // Bloom breathing — tightly bounded; only the brightest Lucy
-      // pixels exceed threshold so edge lift stays below human visual
-      // threshold against bg-ink
-      bloom.strength = 0.28 + Math.sin(now * 0.0008) * 0.04;
+      // Bloom breathing — same envelope; corner contribution is
+      // alpha-masked out so strength can stay cinematic
+      bloom.strength = 0.55 + Math.sin(now * 0.0008) * 0.06;
 
       composer.render();
       raf = requestAnimationFrame(animate);

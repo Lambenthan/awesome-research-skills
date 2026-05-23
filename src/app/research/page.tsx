@@ -21,7 +21,7 @@ export default function ResearchProgramPage() {
           Spans nearly a full viewport on desktop. A research-meaningful
           SVG trajectory sits to the right on lg+, beneath the text on
           smaller widths. */}
-      <section className="bg-[#1a1a1a] text-cream">
+      <section className="bg-ink text-cream">
         <div className="mx-auto max-w-[88rem] px-6 pt-20 pb-20 sm:pt-28 sm:pb-28">
           <div className="grid gap-x-12 gap-y-16 lg:grid-cols-[3fr_4fr] lg:items-center">
             <div>
