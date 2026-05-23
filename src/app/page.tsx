@@ -79,17 +79,17 @@ export default function Home() {
           </Reveal>
           <SplitReveal
             as="h2"
-            text="人格因果学"
+            text="Parallax"
             className="mt-6 font-serif text-[clamp(3rem,7vw,6rem)] leading-[1.02] tracking-[-0.028em] text-ink"
           />
           <Reveal delay={200}>
             <p className="mt-4 font-serif italic text-[clamp(1.1rem,1.4vw,1.5rem)] text-ink-muted">
-              Personality Causality
+              视差研究计划
             </p>
           </Reveal>
           <Reveal delay={320}>
             <p className="mt-8 max-w-2xl font-fluid-lede leading-[1.7] text-ink">
-              把因果识别的语汇移植到不能做随机化实验的研究对象。
+              在不能做随机化实验的研究对象上，把多个观测视角并联起来，让方法间的差异本身构成证据。
             </p>
           </Reveal>
           <Reveal delay={440}>
@@ -121,13 +121,13 @@ export default function Home() {
           <Reveal delay={220}>
             <div className="mt-8 space-y-5 font-fluid-body leading-[1.9] text-ink">
               <p>
-                研究方法在人格、会计与因果推断医学三个领域的交汇处。我关心方法本身的边界——什么样的研究对象本来不能做随机化实验，用哪些识别策略可以重新可解。
+                研究方法在人格、会计、医学、教育与公共卫生五个领域的交汇处。Parallax 是这套工作的总命名，关心的是方法本身的边界——什么样的研究对象本来不能做随机化实验，把哪几个观测视角并联起来可以重新可解。
               </p>
               <p>
-                近两年我在做一种统一的练习：单一数据集 × 多种方法并联演练 × 章末累积对比。第一份研究处理王阳明与苏轼的全集语料，把贬谪当作可识别的人格干预点；第二份在 Compustat / AAER 面板上比较舞弊检测与盈余管理的方法谱系；第三份在 Connors 等人 1996 年发表的右心导管数据上比较九种因果推断方法。
+                近两年我把这套工作方式陆续在十份数据上演练。王阳明、苏轼、曾国藩、顾炎武四位历史人物的全集语料上，把廷杖、贬谪、创军、易代视作可识别的人格干预点；Bao 等人 2020 年公开复制包与 Compustat 面板上，把舞弊检测的十种刀法与盈余管理的十种 DA 度量横向对照；Connors 等人 1996 年发表的右心导管数据上，让九种因果推断方法在同一个 ICU 死亡结局上各自给出估计；Tennessee STAR 班额实验上把多层模型从空模型推到三层结构；BCG 疫苗 13 项试验合并样本上把 Meta 分析从效应量经异质性诊断推到发表偏倚。
               </p>
               <p>
-                这份网站收录我用过的工具、读过的论文、写过的书稿，与每天跟踪的 AI 一手动态。
+                这份网站收录我用过的工具、读过的论文、写过的十本书稿，与每天跟踪的 AI 一手动态。
               </p>
             </div>
           </Reveal>
