@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { NavBar } from "@/components/NavBar";
 import { Reveal } from "@/components/Reveal";
 import { SplitReveal } from "@/components/SplitReveal";
-import { ParticleTree } from "@/components/ParticleTree";
+import { ParticleScene } from "@/components/ParticleScene";
 import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata = {
@@ -70,10 +70,10 @@ export default function ResearchProgramPage() {
             <Reveal delay={400} className="lg:pl-6">
               <figure>
                 <div className="relative aspect-[5/3] w-full overflow-hidden">
-                  <ParticleTree />
+                  <ParticleScene />
                 </div>
                 <figcaption className="mt-5 max-w-md font-serif italic text-[13px] leading-[1.7] text-cream/55">
-                  1,500 颗粒子沿螺旋圆锥分布而成的形态，Three.js 渲染、UnrealBloom 后处理。同一组粒子可以平滑变形到其它图形——大模型生成 Three.js 代码时常见的基础构造。
+                  Stanford 三维扫描的 Lucy 雕像，10 万颗顶点逐颗绘成发光粒子，相机沿环绕样条漫游。研究里 LLM 给出的逐文档结构化标注，同样是把高维原貌还原成可被各种识别方法读取的密集采样。
                 </figcaption>
               </figure>
             </Reveal>
