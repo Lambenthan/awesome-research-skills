@@ -83,14 +83,15 @@ export function ParticleScene({ className = "" }: { className?: string }) {
       preserveDrawingBuffer: true,
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    // No tonemap: the clearColor passes through unmodified to the canvas,
-    // so the bg matches bg-ink (#141413) exactly with zero seam against
-    // the surrounding hero. Lucy's densest regions clip to pure white,
-    // which matches the highlight-blowout aesthetic of the source video
-    // rather than working against it.
+    // No tonemap: the clearColor passes through unmodified to the canvas.
+    // Bloom adds a small uniform lift to edges from mip-blur averaging,
+    // so the canvas's actual edge color lands a few units above the raw
+    // clear. The /research hero section's CSS bg is set to #1a1a1a to
+    // match this empirical edge color — the result is a single uniform
+    // horizontal band across text + canvas with no visible seam.
     renderer.toneMapping = THREE.NoToneMapping;
     renderer.toneMappingExposure = 1.0;
-    renderer.setClearColor(0x141413, 1);
+    renderer.setClearColor(0x1a1a1a, 1);
 
     let width = parent.clientWidth;
     let height = parent.clientHeight;
@@ -140,11 +141,11 @@ export function ParticleScene({ className = "" }: { className?: string }) {
       transparent: true,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
-      opacity: 0.7,
+      opacity: 0.35,
     });
     const nebula = new THREE.Sprite(nebulaMat);
-    nebula.scale.set(360, 280, 1);
-    nebula.position.set(0, -10, -120);
+    nebula.scale.set(280, 220, 1);
+    nebula.position.set(0, -20, -120);
     scene.add(nebula);
 
     // Cloud particles — populated once Lucy loads
@@ -279,9 +280,9 @@ export function ParticleScene({ className = "" }: { className?: string }) {
     composer.addPass(new RenderPass(scene, camera));
     const bloom = new UnrealBloomPass(
       new THREE.Vector2(width, height),
-      0.5,
-      0.55,
-      0.65,
+      0.3,
+      0.25,
+      0.85,
     );
     composer.addPass(bloom);
 
@@ -380,13 +381,14 @@ export function ParticleScene({ className = "" }: { className?: string }) {
         }
       }
 
-      // Halo breathing — barely perceptible, just enough to keep the
-      // void from feeling static
-      nebula.material.opacity = 0.6 + Math.sin(now * 0.0006) * 0.08;
+      // Halo breathing — kept dim so the nebula does not feed bloom
+      // haze back into the canvas corners
+      nebula.material.opacity = 0.28 + Math.sin(now * 0.0006) * 0.05;
 
-      // Bloom breathing — slightly stronger than tonemapped version
-      // since NoToneMapping means raw colors without HDR rolloff
-      bloom.strength = 0.5 + Math.sin(now * 0.0008) * 0.06;
+      // Bloom breathing — tightly bounded; only the brightest Lucy
+      // pixels exceed threshold so edge lift stays below human visual
+      // threshold against bg-ink
+      bloom.strength = 0.28 + Math.sin(now * 0.0008) * 0.04;
 
       composer.render();
       raf = requestAnimationFrame(animate);
