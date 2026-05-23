@@ -3,17 +3,24 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Two layers of particles tracing the same sinusoidal envelope but
- * separated by a vertical offset and a small phase lag — the offset
- * visualizes parallax displacement between two observation viewpoints
- * looking at the same underlying object. Thin lines connect each
- * paired dot, making the displacement legible at a glance.
+ * A small "solar-system-from-overhead" particle scene that visualizes
+ * stellar parallax. Composition:
  *
- * Mouse-over on the hero increases the displacement gradually (the
- * "viewpoint" widens). prefers-reduced-motion paints a static frame.
+ *   - 150 far-background stars (very small, faint, almost don't move)
+ *   - 36 mid-distance stars (small, somewhat brighter)
+ *   - 8 nearby foreground stars (large, ember+cream mix, big parallax)
+ *   - One ember sun at the geometric anchor with a soft halo + a
+ *     bright cream pinprick at its core
+ *   - Three faint dashed elliptical orbits, each carrying one planet
+ *     particle that revolves at its own pace
  *
- * Designed to sit inside the /research dark hero figure slot where
- * the trajectory SVG used to live. Canvas fills its parent.
+ * The three star layers respond to pointer position at different
+ * scales (≈ 5 / 14 / 32 px max). Move the cursor and the close stars
+ * shift visibly while the distant ones barely budge — this is what
+ * stellar parallax actually looks like through a telescope.
+ *
+ * Honors prefers-reduced-motion (paints a single static frame).
+ * ResizeObserver re-spawns the field when the container changes size.
  */
 export function ParallaxParticles({ className = "" }: { className?: string }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -30,11 +37,35 @@ export function ParallaxParticles({ className = "" }: { className?: string }) {
     let width = 0;
     let height = 0;
 
-    const COUNT = 64;
-    const phases: number[] = [];
+    type Star = {
+      x: number;
+      y: number;
+      r: number;
+      alpha: number;
+      hue: "cream" | "ember";
+      twinkle: number;
+    };
+    type Planet = {
+      orbitA: number;
+      orbitB: number;
+      angle: number;
+      speed: number;
+      r: number;
+      hue: "cream" | "ember";
+      alpha: number;
+    };
+
+    const far: Star[] = [];
+    const mid: Star[] = [];
+    const near: Star[] = [];
+    const planets: Planet[] = [];
+
+    let mouseX = 0.5;
+    let mouseY = 0.5;
+    let smoothX = 0.5;
+    let smoothY = 0.5;
     let t = 0;
-    let targetParallax = 1; // multiplier for displacement
-    let parallax = 1;
+    let raf = 0;
 
     function resize() {
       const rect = parent!.getBoundingClientRect();
@@ -47,84 +78,178 @@ export function ParallaxParticles({ className = "" }: { className?: string }) {
       ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
+    function rand(min: number, max: number) {
+      return min + Math.random() * (max - min);
+    }
+
     function spawn() {
-      phases.length = 0;
-      for (let i = 0; i < COUNT; i++) {
-        phases.push((i / COUNT) * Math.PI * 4);
+      far.length = 0;
+      mid.length = 0;
+      near.length = 0;
+      planets.length = 0;
+
+      // far layer: dense, tiny, faint star field
+      for (let i = 0; i < 160; i++) {
+        far.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          r: rand(0.3, 1.0),
+          alpha: rand(0.25, 0.55),
+          hue: Math.random() < 0.9 ? "cream" : "ember",
+          twinkle: Math.random() * Math.PI * 2,
+        });
+      }
+
+      // mid layer: stars at intermediate "distance"
+      for (let i = 0; i < 38; i++) {
+        mid.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          r: rand(0.9, 1.6),
+          alpha: rand(0.45, 0.75),
+          hue: Math.random() < 0.78 ? "cream" : "ember",
+          twinkle: Math.random() * Math.PI * 2,
+        });
+      }
+
+      // near layer: a few prominent nearby stars (high parallax)
+      for (let i = 0; i < 9; i++) {
+        near.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          r: rand(1.8, 3.0),
+          alpha: rand(0.85, 1.0),
+          hue: i < 4 ? "ember" : "cream",
+          twinkle: Math.random() * Math.PI * 2,
+        });
+      }
+
+      // three elliptical orbits with one planet each, anchored at center
+      const baseR = Math.min(width, height);
+      planets.push({
+        orbitA: baseR * 0.22,
+        orbitB: baseR * 0.13,
+        angle: rand(0, Math.PI * 2),
+        speed: 0.0058,
+        r: 1.7,
+        hue: "ember",
+        alpha: 0.92,
+      });
+      planets.push({
+        orbitA: baseR * 0.34,
+        orbitB: baseR * 0.21,
+        angle: rand(0, Math.PI * 2),
+        speed: 0.0034,
+        r: 2.1,
+        hue: "cream",
+        alpha: 0.88,
+      });
+      planets.push({
+        orbitA: baseR * 0.46,
+        orbitB: baseR * 0.30,
+        angle: rand(0, Math.PI * 2),
+        speed: 0.0021,
+        r: 1.5,
+        hue: "ember",
+        alpha: 0.75,
+      });
+    }
+
+    function colorFor(hue: "cream" | "ember", alpha: number) {
+      return hue === "ember"
+        ? `rgba(193, 95, 60, ${alpha})`
+        : `rgba(245, 244, 237, ${alpha})`;
+    }
+
+    function drawStarLayer(
+      arr: Star[],
+      offsetX: number,
+      offsetY: number,
+      twinkleAmp: number,
+    ) {
+      for (const s of arr) {
+        const a = Math.max(
+          0,
+          s.alpha + Math.sin(t * 0.018 + s.twinkle) * twinkleAmp,
+        );
+        ctx!.beginPath();
+        ctx!.arc(s.x + offsetX, s.y + offsetY, s.r, 0, Math.PI * 2);
+        ctx!.fillStyle = colorFor(s.hue, a);
+        ctx!.fill();
       }
     }
 
     function paint() {
       ctx!.clearRect(0, 0, width, height);
-      const midY = height / 2;
-      const amplitudeA = Math.min(height * 0.22, 70);
-      const amplitudeB = amplitudeA * 0.85;
-      const offset = 22 * parallax;
 
-      const aPos: { x: number; y: number }[] = [];
-      const bPos: { x: number; y: number }[] = [];
-      const drift = (t * 0.32) % (width + 80);
+      const px = smoothX - 0.5;
+      const py = smoothY - 0.5;
 
-      for (let i = 0; i < COUNT; i++) {
-        const baseX = (i / (COUNT - 1)) * (width + 80) - 40;
-        const x = (baseX + drift) % (width + 80) - 40;
-        const yA =
-          midY + Math.sin(phases[i] + t * 0.0085) * amplitudeA;
-        const yB =
-          midY + Math.sin(phases[i] + t * 0.0085 - 0.55) * amplitudeB + offset;
-        aPos.push({ x, y: yA });
-        bPos.push({ x, y: yB });
-      }
+      // far ── tiny parallax shift, looks fixed
+      drawStarLayer(far, px * 5, py * 4, 0.06);
 
-      // axis baseline (very faint)
-      ctx!.strokeStyle = "rgba(245, 244, 237, 0.06)";
-      ctx!.lineWidth = 1;
-      ctx!.setLineDash([2, 6]);
-      ctx!.beginPath();
-      ctx!.moveTo(0, midY + 10);
-      ctx!.lineTo(width, midY + 10);
-      ctx!.stroke();
-      ctx!.setLineDash([]);
+      // orbital scene + mid stars anchored to the canvas center with
+      // a mid-strength parallax offset
+      const midOX = px * 14;
+      const midOY = py * 10;
+      drawStarLayer(mid, midOX, midOY, 0.1);
 
-      // parallax connector lines
-      ctx!.lineWidth = 0.6;
-      for (let i = 0; i < COUNT; i++) {
-        const dx = aPos[i].x - bPos[i].x;
-        const dy = aPos[i].y - bPos[i].y;
-        const len = Math.hypot(dx, dy);
-        const alpha = Math.min(0.22, 0.08 + len / 600);
-        ctx!.strokeStyle = `rgba(245, 244, 237, ${alpha})`;
+      const cx = width * 0.5 + midOX;
+      const cy = height * 0.5 + midOY;
+
+      // orbit ellipses (faint dashed)
+      ctx!.strokeStyle = "rgba(245, 244, 237, 0.10)";
+      ctx!.lineWidth = 0.75;
+      ctx!.setLineDash([2, 5]);
+      for (const p of planets) {
         ctx!.beginPath();
-        ctx!.moveTo(aPos[i].x, aPos[i].y);
-        ctx!.lineTo(bPos[i].x, bPos[i].y);
+        ctx!.ellipse(cx, cy, p.orbitA, p.orbitB, 0, 0, Math.PI * 2);
         ctx!.stroke();
       }
+      ctx!.setLineDash([]);
 
-      // background layer (cream, small, faint)
-      for (const p of bPos) {
+      // sun: soft ember halo + bright cream core
+      const sunPulse = 1 + Math.sin(t * 0.02) * 0.07;
+      const sunR = 26 * sunPulse;
+      const grad = ctx!.createRadialGradient(cx, cy, 0, cx, cy, sunR);
+      grad.addColorStop(0, "rgba(193, 95, 60, 0.95)");
+      grad.addColorStop(0.35, "rgba(193, 95, 60, 0.55)");
+      grad.addColorStop(0.7, "rgba(193, 95, 60, 0.16)");
+      grad.addColorStop(1, "rgba(193, 95, 60, 0)");
+      ctx!.fillStyle = grad;
+      ctx!.beginPath();
+      ctx!.arc(cx, cy, sunR, 0, Math.PI * 2);
+      ctx!.fill();
+      ctx!.beginPath();
+      ctx!.arc(cx, cy, 3.2, 0, Math.PI * 2);
+      ctx!.fillStyle = "rgba(245, 244, 237, 0.97)";
+      ctx!.fill();
+
+      // planets on their orbits
+      for (const p of planets) {
+        const x = cx + Math.cos(p.angle) * p.orbitA;
+        const y = cy + Math.sin(p.angle) * p.orbitB;
         ctx!.beginPath();
-        ctx!.arc(p.x, p.y, 1.1, 0, Math.PI * 2);
-        ctx!.fillStyle = "rgba(245, 244, 237, 0.5)";
+        ctx!.arc(x, y, p.r, 0, Math.PI * 2);
+        ctx!.fillStyle = colorFor(p.hue, p.alpha);
         ctx!.fill();
       }
 
-      // foreground layer (ember, larger, more solid)
-      for (const p of aPos) {
-        ctx!.beginPath();
-        ctx!.arc(p.x, p.y, 2.0, 0, Math.PI * 2);
-        ctx!.fillStyle = "rgba(193, 95, 60, 0.92)";
-        ctx!.fill();
-      }
+      // near foreground stars: largest parallax
+      drawStarLayer(near, px * 32, py * 22, 0.14);
     }
 
     function step() {
       t += 1;
-      parallax += (targetParallax - parallax) * 0.04;
+      smoothX += (mouseX - smoothX) * 0.05;
+      smoothY += (mouseY - smoothY) * 0.05;
+      for (const p of planets) {
+        p.angle += p.speed;
+      }
       paint();
       raf = requestAnimationFrame(step);
     }
 
-    let raf = 0;
     resize();
     spawn();
     paint();
@@ -134,13 +259,12 @@ export function ParallaxParticles({ className = "" }: { className?: string }) {
 
     function onMove(e: MouseEvent) {
       const rect = parent!.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width;
-      // x ∈ [0,1] → parallax multiplier ∈ [0.6, 2.0]
-      const clamped = Math.max(0, Math.min(1, x));
-      targetParallax = 0.6 + clamped * 1.4;
+      mouseX = (e.clientX - rect.left) / rect.width;
+      mouseY = (e.clientY - rect.top) / rect.height;
     }
     function onLeave() {
-      targetParallax = 1;
+      mouseX = 0.5;
+      mouseY = 0.5;
     }
 
     parent.addEventListener("mousemove", onMove);

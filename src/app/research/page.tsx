@@ -73,7 +73,7 @@ export default function ResearchProgramPage() {
                   <ParallaxParticles />
                 </div>
                 <figcaption className="mt-5 max-w-md font-serif italic text-[13px] leading-[1.7] text-cream/55">
-                  视差的视觉化：同一条研究对象的轨迹在两个观测视角下错位呈现，前景层与背景层之间的连线把"位移"本身画出来。鼠标横向移动时，错位会跟着张开或收拢。
+                  视差的天文原型：太阳居中，三条椭圆轨道各带一颗行星，背后是远中近三层星空。鼠标移动时，前景星位移最大、远景星几乎不动——这就是真天文里恒星视差的样子。
                 </figcaption>
               </figure>
             </Reveal>
