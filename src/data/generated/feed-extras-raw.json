@@ -1,17 +1,6 @@
 {
-  "fetchedAt": "2026-05-23T19:16:50.929Z",
+  "fetchedAt": "2026-05-24T03:44:01.250Z",
   "items": [
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "39cfb9e8ea3e4ab4",
-      "title": "TransitLM: A Large-Scale Dataset and Benchmark for Map-Free Transit Route Generation",
-      "url": "https://huggingface.co/papers/2605.22355",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
@@ -21,7 +10,18 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.421Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "39cfb9e8ea3e4ab4",
+      "title": "TransitLM: A Large-Scale Dataset and Benchmark for Map-Free Transit Route Generation",
+      "url": "https://huggingface.co/papers/2605.22355",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.421Z"
     },
     {
       "source": "hf-papers",
@@ -32,7 +32,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.421Z"
     },
     {
       "source": "hf-papers",
@@ -43,7 +43,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.421Z"
     },
     {
       "source": "hf-papers",
@@ -54,7 +54,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.421Z"
     },
     {
       "source": "hf-papers",
@@ -65,7 +65,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.421Z"
     },
     {
       "source": "hf-papers",
@@ -76,7 +76,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.421Z"
     },
     {
       "source": "hf-papers",
@@ -87,7 +87,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.421Z"
     },
     {
       "source": "hf-papers",
@@ -98,29 +98,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "0537e8a1a22f3863",
-      "title": "WorldKV: Efficient World Memory with World Retrieval and Compression",
-      "url": "https://huggingface.co/papers/2605.22718",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "1a77c62d4d436207",
-      "title": "Spreadsheet-RL: Advancing Large Language Model Agents on Realistic Spreadsheet Tasks via Reinforcement Learning",
-      "url": "https://huggingface.co/papers/2605.22642",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.421Z"
     },
     {
       "source": "hf-papers",
@@ -131,7 +109,29 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.421Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "0537e8a1a22f3863",
+      "title": "WorldKV: Efficient World Memory with World Retrieval and Compression",
+      "url": "https://huggingface.co/papers/2605.22718",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "1a77c62d4d436207",
+      "title": "Spreadsheet-RL: Advancing Large Language Model Agents on Realistic Spreadsheet Tasks via Reinforcement Learning",
+      "url": "https://huggingface.co/papers/2605.22642",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -142,7 +142,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -153,7 +153,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -164,7 +164,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -175,7 +175,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -186,7 +186,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -197,7 +197,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -208,7 +208,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -219,51 +219,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "11369b1c9f5f0977",
-      "title": "GenEvolve: Self-Evolving Image Generation Agents via Tool-Orchestrated Visual Experience Distillation",
-      "url": "https://huggingface.co/papers/2605.21605",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "79e28df26f790af6",
-      "title": "Forecasting Downstream Performance of LLMs With Proxy Metrics",
-      "url": "https://huggingface.co/papers/2605.18607",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "5cc920ce74fd8c54",
-      "title": "KVServe: Service-Aware KV Cache Compression for Communication-Efficient Disaggregated LLM Serving",
-      "url": "https://huggingface.co/papers/2605.13734",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "4bca0b2757b13042",
-      "title": "One Sentence, One Drama: Personalized Short-Form Drama Generation via Multi-Agent Systems",
-      "url": "https://huggingface.co/papers/2605.22144",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -274,7 +230,51 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "11369b1c9f5f0977",
+      "title": "GenEvolve: Self-Evolving Image Generation Agents via Tool-Orchestrated Visual Experience Distillation",
+      "url": "https://huggingface.co/papers/2605.21605",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "79e28df26f790af6",
+      "title": "Forecasting Downstream Performance of LLMs With Proxy Metrics",
+      "url": "https://huggingface.co/papers/2605.18607",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "5cc920ce74fd8c54",
+      "title": "KVServe: Service-Aware KV Cache Compression for Communication-Efficient Disaggregated LLM Serving",
+      "url": "https://huggingface.co/papers/2605.13734",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "4bca0b2757b13042",
+      "title": "One Sentence, One Drama: Personalized Short-Form Drama Generation via Multi-Agent Systems",
+      "url": "https://huggingface.co/papers/2605.22144",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -285,51 +285,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "55c1d8765b801935",
-      "title": "Swift Sampling: Selecting Temporal Surprises via Taylor Series",
-      "url": "https://huggingface.co/papers/2605.22678",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "aab1029ddd60740c",
-      "title": "LoREnc: Low-Rank Encryption for Securing Foundation Models and LoRA Adapters",
-      "url": "https://huggingface.co/papers/2605.13163",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "938e58a0199dd3aa",
-      "title": "Segment Anything with Motion, Geometry, and Semantic Adaptation for Complex Nonlinear Visual Object Tracking",
-      "url": "https://huggingface.co/papers/2605.22538",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "ac3edf3e884ffac9",
-      "title": "SceneAligner: 3D-Grounded Floorplan Localization in the Wild",
-      "url": "https://huggingface.co/papers/2605.22581",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -340,7 +296,51 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "ac3edf3e884ffac9",
+      "title": "SceneAligner: 3D-Grounded Floorplan Localization in the Wild",
+      "url": "https://huggingface.co/papers/2605.22581",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "55c1d8765b801935",
+      "title": "Swift Sampling: Selecting Temporal Surprises via Taylor Series",
+      "url": "https://huggingface.co/papers/2605.22678",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "aab1029ddd60740c",
+      "title": "LoREnc: Low-Rank Encryption for Securing Foundation Models and LoRA Adapters",
+      "url": "https://huggingface.co/papers/2605.13163",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "938e58a0199dd3aa",
+      "title": "Segment Anything with Motion, Geometry, and Semantic Adaptation for Complex Nonlinear Visual Object Tracking",
+      "url": "https://huggingface.co/papers/2605.22538",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -351,29 +351,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "4fe8033ba3b7f119",
-      "title": "Diversed Model Discovery via Structured Table Discovery",
-      "url": "https://huggingface.co/papers/2605.22766",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "9512e6bc380b5a29",
-      "title": "Rule2DRC: Benchmarking LLM Agents for DRC Script Synthesis with Execution-Guided Test Generation",
-      "url": "https://huggingface.co/papers/2605.15669",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -384,40 +362,29 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "eb08fa9269207039",
-      "title": "\"I didn't Make the Micro Decisions\": Measuring, Inducing, and Exposing Goal-Level AI Contributions in Collaboration",
-      "url": "https://huggingface.co/papers/2605.21363",
+      "id": "4fe8033ba3b7f119",
+      "title": "Diversed Model Discovery via Structured Table Discovery",
+      "url": "https://huggingface.co/papers/2605.22766",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "4ed1e8b4898eacf9",
-      "title": "Live Music Diffusion Models: Efficient Fine-Tuning and Post-Training of Interactive Diffusion Music Generators",
-      "url": "https://huggingface.co/papers/2605.22717",
+      "id": "9512e6bc380b5a29",
+      "title": "Rule2DRC: Benchmarking LLM Agents for DRC Script Synthesis with Execution-Guided Test Generation",
+      "url": "https://huggingface.co/papers/2605.15669",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "dd9410f79701f230",
-      "title": "AnyMo: Geometry-Aware Setup-Agnostic Modeling of Human Motion in the Wild",
-      "url": "https://huggingface.co/papers/2605.22715",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -428,62 +395,18 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
       "sourceName": "HuggingFace Papers",
-      "id": "5e22829a0e78a14e",
-      "title": "From Reasoning Chains to Verifiable Subproblems: Curriculum Reinforcement Learning Enables Credit Assignment for LLM Reasoning",
-      "url": "https://huggingface.co/papers/2605.22074",
+      "id": "eb08fa9269207039",
+      "title": "\"I didn't Make the Micro Decisions\": Measuring, Inducing, and Exposing Goal-Level AI Contributions in Collaboration",
+      "url": "https://huggingface.co/papers/2605.21363",
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "5086cb1352a9c627",
-      "title": "DecQ: Detail-Condensing Queries for Enhanced Reconstruction and Generation in Representation Autoencoders",
-      "url": "https://huggingface.co/papers/2605.22777",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "702566131fcb6502",
-      "title": "Same Architecture, Different Capacity: Optimizer-Induced Spectral Scaling Laws",
-      "url": "https://huggingface.co/papers/2605.21803",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "6f3e9be9df4ff26d",
-      "title": "Platonic Representations in the Human Brain: Unsupervised Recovery of Universal Geometry",
-      "url": "https://huggingface.co/papers/2605.20496",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
-    },
-    {
-      "source": "hf-papers",
-      "sourceName": "HuggingFace Papers",
-      "id": "dc978f1bb17ae719",
-      "title": "Lean Refactor: Multi-Objective Controllable Proof Optimization via Agentic Strategy Search",
-      "url": "https://huggingface.co/papers/2605.20244",
-      "summary": "",
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -494,7 +417,84 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "4ed1e8b4898eacf9",
+      "title": "Live Music Diffusion Models: Efficient Fine-Tuning and Post-Training of Interactive Diffusion Music Generators",
+      "url": "https://huggingface.co/papers/2605.22717",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "dd9410f79701f230",
+      "title": "AnyMo: Geometry-Aware Setup-Agnostic Modeling of Human Motion in the Wild",
+      "url": "https://huggingface.co/papers/2605.22715",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "5e22829a0e78a14e",
+      "title": "From Reasoning Chains to Verifiable Subproblems: Curriculum Reinforcement Learning Enables Credit Assignment for LLM Reasoning",
+      "url": "https://huggingface.co/papers/2605.22074",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "5086cb1352a9c627",
+      "title": "DecQ: Detail-Condensing Queries for Enhanced Reconstruction and Generation in Representation Autoencoders",
+      "url": "https://huggingface.co/papers/2605.22777",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "702566131fcb6502",
+      "title": "Same Architecture, Different Capacity: Optimizer-Induced Spectral Scaling Laws",
+      "url": "https://huggingface.co/papers/2605.21803",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "6f3e9be9df4ff26d",
+      "title": "Platonic Representations in the Human Brain: Unsupervised Recovery of Universal Geometry",
+      "url": "https://huggingface.co/papers/2605.20496",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
+    },
+    {
+      "source": "hf-papers",
+      "sourceName": "HuggingFace Papers",
+      "id": "dc978f1bb17ae719",
+      "title": "Lean Refactor: Multi-Objective Controllable Proof Optimization via Agentic Strategy Search",
+      "url": "https://huggingface.co/papers/2605.20244",
+      "summary": "",
+      "category": "paper",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -505,7 +505,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -516,7 +516,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -527,7 +527,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     },
     {
       "source": "hf-papers",
@@ -538,7 +538,7 @@
       "summary": "",
       "category": "paper",
       "publishedAt": null,
-      "discoveredAt": "2026-05-23T19:14:58.829Z"
+      "discoveredAt": "2026-05-24T03:43:31.422Z"
     }
   ]
 }

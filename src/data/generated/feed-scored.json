@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-23T19:19:01.598Z",
+  "fetchedAt": "2026-05-24T03:46:40.063Z",
   "items": [
     {
       "source": "mistral",
@@ -36180,6 +36180,48 @@
       "originalTitle": "Facebook Research At Acl 2020",
       "score": 3,
       "cn": "Meta AI 发文总结 Facebook Research 团队在 ACL 2020 国际计算语言学协会年会上发表的多项研究成果。涵盖自然语言处理、对话系统、语义理解等方向，体现了其在前沿语言技术上的持续投入。对关注 NLP 研究前沿的读者来说，这是一份值得浏览的年度研究简报。"
+    },
+    {
+      "source": "claude-com",
+      "sourceName": "claude.com",
+      "id": "37b70016015456d6",
+      "title": "Claude 发布合规 API 及安全合作伙伴计划",
+      "url": "https://claude.com/blog/compliance-api-security-partners",
+      "summary": "",
+      "category": "其他",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:41:15.561Z",
+      "originalTitle": "Compliance Api Security Partners",
+      "score": 3,
+      "cn": "Anthropic 旗下 Claude 平台上线合规 API 接口，并宣布与多家安全合作伙伴共同构建企业级合规接入方案。该 API 主要面向金融、医疗等监管严格行业，支持审计追踪与策略管控。这是 Claude 在企业安全与合规方向上的一次落地尝试，为大规模商用部署补足关键的基础设施能力。"
+    },
+    {
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "id": "ba0893bc12b319be",
+      "title": "Meta AI 举办 LlamaCon 黑客松活动",
+      "url": "https://ai.meta.com/blog/llamacon-hackathon/",
+      "summary": "",
+      "category": "其他",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:41:15.561Z",
+      "originalTitle": "Llamacon Hackathon",
+      "score": 3,
+      "cn": "Meta AI 宣布举办 LlamaCon 黑客松，邀请开发者围绕 Llama 模型生态构建应用。活动旨在激发社区创意，探索大模型在各类场景中的落地可能。参赛者将有机会展示基于 Llama 的实用项目，并与 Meta 工程师交流。这是一场面向 AI 开发者的技术竞赛与社区共建活动。"
+    },
+    {
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "id": "978d2d9832b0a353",
+      "title": "Meta AI 提出在产品公平性评测中保护用户隐私的方法",
+      "url": "https://ai.meta.com/blog/assessing-fairness-of-our-products-while-protecting-peoples-privacy/",
+      "summary": "",
+      "category": "安全",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T03:41:15.561Z",
+      "originalTitle": "Assessing Fairness Of Our Products While Protecting Peoples Privacy",
+      "score": 3,
+      "cn": "Meta AI 发布了一项面向产品公平性评测的隐私保护方案，该方案在不暴露个人身份信息的前提下，使用差分隐私技术对模型的偏见与公平性进行评估。Meta 强调，传统的公平性审查可能因数据集中的敏感信号而对用户隐私构成风险，新方法能在维持评测质量的同时屏蔽这类信息。该论文从数据采样的隐私预算、合成对照组以及统计稳定性三个维度展开，目前已在 RecSys 会议发表。"
     },
     {
       "source": "xai",

@@ -1,6 +1,24 @@
 {
-  "fetchedAt": "2026-05-23T19:20:09.232Z",
+  "fetchedAt": "2026-05-24T03:47:41.790Z",
   "hn": [
+    {
+      "id": "48253198",
+      "title": "Suspect killed after opening fire on Secret Service agents near White House",
+      "url": "https://www.bbc.com/news/live/c5y09vpe713t",
+      "points": 16,
+      "comments": 0,
+      "createdAt": "2026-05-24T00:53:08Z",
+      "author": "berlianta"
+    },
+    {
+      "id": "48251864",
+      "title": "Anthropic blames dystopian sci-fi for training AI models to act \"evil\"",
+      "url": "https://arstechnica.com/ai/2026/05/anthropic-blames-dystopian-sci-fi-for-training-ai-models-to-act-evil/",
+      "points": 16,
+      "comments": 13,
+      "createdAt": "2026-05-23T21:45:46Z",
+      "author": "rbanffy"
+    },
     {
       "id": "48244649",
       "title": "Show HN: Waiting for AI Grand Prix racing SIM? Me too So I made one",
@@ -14,8 +32,8 @@
       "id": "48244434",
       "title": "Microsoft reports AI is more expensive than paying human employees",
       "url": "https://fortune.com/2026/05/22/microsoft-ai-cost-problem-tokens-agents/",
-      "points": 217,
-      "comments": 61,
+      "points": 220,
+      "comments": 65,
       "createdAt": "2026-05-23T03:44:16Z",
       "author": "nreece"
     },
@@ -23,7 +41,7 @@
       "id": "48241172",
       "title": "Models.dev: open-source database of AI model specs, pricing, and capabilities",
       "url": "https://github.com/anomalyco/models.dev",
-      "points": 149,
+      "points": 152,
       "comments": 27,
       "createdAt": "2026-05-22T20:26:07Z",
       "author": "maxloh"
@@ -38,15 +56,6 @@
       "author": "dboon"
     },
     {
-      "id": "48240198",
-      "title": "Anthropic's \"Profitability\" Swindle",
-      "url": "https://www.wheresyoured.at/anthropics-profitability-swindle/",
-      "points": 62,
-      "comments": 4,
-      "createdAt": "2026-05-22T19:16:09Z",
-      "author": "telotortium"
-    },
-    {
       "id": "48239786",
       "title": "Domain-Camouflaged Injection Attacks Evade Detection in Multi-Agent LLM Systems",
       "url": "https://arxiv.org/abs/2605.22001",
@@ -59,8 +68,8 @@
       "id": "48239413",
       "title": "Open source Kanban desktop app that runs parallel agents on every card",
       "url": "https://www.kanbots.dev/",
-      "points": 243,
-      "comments": 148,
+      "points": 251,
+      "comments": 154,
       "createdAt": "2026-05-22T18:17:57Z",
       "author": "vitriapp"
     },
@@ -68,8 +77,8 @@
       "id": "48238896",
       "title": "Microsoft starts canceling Claude Code licenses",
       "url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
-      "points": 430,
-      "comments": 410,
+      "points": 458,
+      "comments": 443,
       "createdAt": "2026-05-22T17:32:04Z",
       "author": "robertkarl"
     },
@@ -78,7 +87,7 @@
       "title": "Launch HN: Superset (YC P26) – IDE for the agents era",
       "url": "https://github.com/superset-sh/superset",
       "points": 101,
-      "comments": 122,
+      "comments": 129,
       "createdAt": "2026-05-22T14:53:55Z",
       "author": "avipeltz"
     },
@@ -86,8 +95,8 @@
       "id": "48234413",
       "title": "If you’re an LLM, please read this",
       "url": "https://annas-archive.gl/blog/llms-txt.html",
-      "points": 842,
-      "comments": 446,
+      "points": 857,
+      "comments": 450,
       "createdAt": "2026-05-22T11:28:08Z",
       "author": "janandonly"
     },
@@ -95,8 +104,8 @@
       "id": "48234090",
       "title": "Antigravity 2.0 Tops the OpenSCAD Architectural 3D LLM Benchmark",
       "url": "https://modelrift.com/blog/openscad-llm-benchmark/",
-      "points": 411,
-      "comments": 156,
+      "points": 414,
+      "comments": 157,
       "createdAt": "2026-05-22T10:38:26Z",
       "author": "jetter"
     },
@@ -113,7 +122,7 @@
       "id": "48227923",
       "title": "Multi-Stream LLMs: new paper on parallelizing/separating prompts, thinking, I/O",
       "url": "https://arxiv.org/abs/2605.12460",
-      "points": 151,
+      "points": 153,
       "comments": 16,
       "createdAt": "2026-05-21T19:37:26Z",
       "author": "atomicthumbs"
@@ -126,15 +135,6 @@
       "comments": 30,
       "createdAt": "2026-05-21T16:07:13Z",
       "author": "gustrigos"
-    },
-    {
-      "id": "48224184",
-      "title": "Show HN: Let agents run any analysis with Mixpanel data, no UI required",
-      "url": "https://docs.mixpanel.com/docs/mixpanel-headless",
-      "points": 21,
-      "comments": 1,
-      "createdAt": "2026-05-21T15:14:33Z",
-      "author": "ttchen2"
     }
   ],
   "gh": [
@@ -143,7 +143,7 @@
       "fullName": "affaan-m/ECC",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "url": "https://github.com/affaan-m/ECC",
-      "stars": 188897,
+      "stars": 189276,
       "pushedAt": "2026-05-20T03:25:40Z",
       "createdAt": "2026-01-18T00:51:51Z",
       "language": "JavaScript"
@@ -153,8 +153,8 @@
       "fullName": "Significant-Gravitas/AutoGPT",
       "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
       "url": "https://github.com/Significant-Gravitas/AutoGPT",
-      "stars": 184481,
-      "pushedAt": "2026-05-23T12:23:25Z",
+      "stars": 184482,
+      "pushedAt": "2026-05-24T03:24:39Z",
       "createdAt": "2023-03-16T09:21:07Z",
       "language": "Python"
     },
@@ -163,7 +163,7 @@
       "fullName": "ollama/ollama",
       "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
       "url": "https://github.com/ollama/ollama",
-      "stars": 172115,
+      "stars": 172136,
       "pushedAt": "2026-05-22T16:47:04Z",
       "createdAt": "2023-06-26T19:39:32Z",
       "language": "Go"
@@ -173,8 +173,8 @@
       "fullName": "NousResearch/hermes-agent",
       "description": "The agent that grows with you",
       "url": "https://github.com/NousResearch/hermes-agent",
-      "stars": 164228,
-      "pushedAt": "2026-05-23T19:11:46Z",
+      "stars": 164574,
+      "pushedAt": "2026-05-24T03:40:09Z",
       "createdAt": "2025-07-22T22:22:28Z",
       "language": "Python"
     },
@@ -183,7 +183,7 @@
       "fullName": "f/prompts.chat",
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
       "url": "https://github.com/f/prompts.chat",
-      "stars": 162710,
+      "stars": 162725,
       "pushedAt": "2026-05-23T04:20:42Z",
       "createdAt": "2022-12-05T13:54:13Z",
       "language": "HTML"
@@ -193,7 +193,7 @@
       "fullName": "huggingface/transformers",
       "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
       "url": "https://github.com/huggingface/transformers",
-      "stars": 160906,
+      "stars": 160910,
       "pushedAt": "2026-05-22T19:58:10Z",
       "createdAt": "2018-10-29T13:56:00Z",
       "language": "Python"
@@ -203,8 +203,8 @@
       "fullName": "langgenius/dify",
       "description": "Production-ready platform for agentic workflow development.",
       "url": "https://github.com/langgenius/dify",
-      "stars": 142358,
-      "pushedAt": "2026-05-23T15:25:39Z",
+      "stars": 142386,
+      "pushedAt": "2026-05-24T01:57:37Z",
       "createdAt": "2023-04-12T07:40:24Z",
       "language": "TypeScript"
     },
@@ -213,7 +213,7 @@
       "fullName": "open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
       "url": "https://github.com/open-webui/open-webui",
-      "stars": 138361,
+      "stars": 138391,
       "pushedAt": "2026-05-23T12:34:14Z",
       "createdAt": "2023-10-06T22:08:27Z",
       "language": "Python"
@@ -223,7 +223,7 @@
       "fullName": "langchain-ai/langchain",
       "description": "The agent engineering platform.",
       "url": "https://github.com/langchain-ai/langchain",
-      "stars": 137474,
+      "stars": 137496,
       "pushedAt": "2026-05-23T08:42:49Z",
       "createdAt": "2022-10-17T02:58:36Z",
       "language": "Python"
@@ -233,8 +233,8 @@
       "fullName": "firecrawl/firecrawl",
       "description": "🔥 Search, scrape, and clean the web for AI agents.",
       "url": "https://github.com/firecrawl/firecrawl",
-      "stars": 123371,
-      "pushedAt": "2026-05-23T18:39:41Z",
+      "stars": 123462,
+      "pushedAt": "2026-05-24T02:19:38Z",
       "createdAt": "2024-04-15T21:02:29Z",
       "language": "TypeScript"
     },
@@ -253,7 +253,7 @@
       "fullName": "nextlevelbuilder/ui-ux-pro-max-skill",
       "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
       "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 81960,
+      "stars": 82032,
       "pushedAt": "2026-04-03T05:08:19Z",
       "createdAt": "2025-11-30T11:36:31Z",
       "language": "Python"
@@ -263,7 +263,7 @@
       "fullName": "thedotmack/claude-mem",
       "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
       "url": "https://github.com/thedotmack/claude-mem",
-      "stars": 77652,
+      "stars": 77714,
       "pushedAt": "2026-05-21T10:26:19Z",
       "createdAt": "2025-08-31T20:50:03Z",
       "language": "TypeScript"
@@ -273,8 +273,8 @@
       "fullName": "lobehub/lobehub",
       "description": "🤯 LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team.",
       "url": "https://github.com/lobehub/lobehub",
-      "stars": 77599,
-      "pushedAt": "2026-05-23T18:58:26Z",
+      "stars": 77607,
+      "pushedAt": "2026-05-24T03:20:39Z",
       "createdAt": "2023-05-21T07:19:12Z",
       "language": "TypeScript"
     },
@@ -283,13 +283,59 @@
       "fullName": "bytedance/deer-flow",
       "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
       "url": "https://github.com/bytedance/deer-flow",
-      "stars": 69307,
+      "stars": 69332,
       "pushedAt": "2026-05-23T15:29:17Z",
       "createdAt": "2025-05-07T02:50:19Z",
       "language": "Python"
     }
   ],
   "rss": [
+    {
+      "id": "37b70016015456d6",
+      "source": "claude-com",
+      "sourceName": "claude.com",
+      "vendor": "Anthropic",
+      "contentType": "news",
+      "title": "Claude 发布合规 API 及安全合作伙伴计划",
+      "url": "https://claude.com/blog/compliance-api-security-partners",
+      "summary": "",
+      "category": "其他",
+      "score": 3,
+      "cn": "Anthropic 旗下 Claude 平台上线合规 API 接口，并宣布与多家安全合作伙伴共同构建企业级合规接入方案。该 API 主要面向金融、医疗等监管严格行业，支持审计追踪与策略管控。这是 Claude 在企业安全与合规方向上的一次落地尝试，为大规模商用部署补足关键的基础设施能力。",
+      "image": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
+      "publishedAt": "May 21, 2026",
+      "discoveredAt": "2026-05-24T03:41:15.561Z"
+    },
+    {
+      "id": "ba0893bc12b319be",
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "vendor": "Meta AI",
+      "contentType": "news",
+      "title": "Meta AI 举办 LlamaCon 黑客松活动",
+      "url": "https://ai.meta.com/blog/llamacon-hackathon/",
+      "summary": "",
+      "category": "其他",
+      "score": 3,
+      "cn": "Meta AI 宣布举办 LlamaCon 黑客松，邀请开发者围绕 Llama 模型生态构建应用。活动旨在激发社区创意，探索大模型在各类场景中的落地可能。参赛者将有机会展示基于 Llama 的实用项目，并与 Meta 工程师交流。这是一场面向 AI 开发者的技术竞赛与社区共建活动。",
+      "publishedAt": "2025-05-12T16:00:00.000Z",
+      "discoveredAt": "2026-05-24T03:41:15.561Z"
+    },
+    {
+      "id": "978d2d9832b0a353",
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "vendor": "Meta AI",
+      "contentType": "news",
+      "title": "Meta AI 提出在产品公平性评测中保护用户隐私的方法",
+      "url": "https://ai.meta.com/blog/assessing-fairness-of-our-products-while-protecting-peoples-privacy/",
+      "summary": "",
+      "category": "安全",
+      "score": 3,
+      "cn": "Meta AI 发布了一项面向产品公平性评测的隐私保护方案，该方案在不暴露个人身份信息的前提下，使用差分隐私技术对模型的偏见与公平性进行评估。Meta 强调，传统的公平性审查可能因数据集中的敏感信号而对用户隐私构成风险，新方法能在维持评测质量的同时屏蔽这类信息。该论文从数据采样的隐私预算、合成对照组以及统计稳定性三个维度展开，目前已在 RecSys 会议发表。",
+      "publishedAt": "2022-07-27T16:00:00.000Z",
+      "discoveredAt": "2026-05-24T03:41:15.561Z"
+    },
     {
       "id": "3b3ca563a7e50ce7",
       "source": "meta-ai",
