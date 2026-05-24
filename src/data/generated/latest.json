@@ -1,12 +1,39 @@
 {
-  "fetchedAt": "2026-05-24T08:37:03.943Z",
+  "fetchedAt": "2026-05-24T13:34:27.952Z",
   "hn": [
+    {
+      "id": "48255593",
+      "title": "Greg Brockman: Inside the 72 Hours That Almost Killed OpenAI",
+      "url": "https://fs.blog/knowledge-project-podcast/greg-brockman/",
+      "points": 90,
+      "comments": 54,
+      "createdAt": "2026-05-24T08:29:38Z",
+      "author": "prakashqwerty"
+    },
+    {
+      "id": "48254993",
+      "title": "Local LLMs perform better when you teach them to ask before they answer",
+      "url": "https://www.xda-developers.com/local-llm-clarifying-questions-system-prompt/",
+      "points": 23,
+      "comments": 6,
+      "createdAt": "2026-05-24T06:40:34Z",
+      "author": "froh"
+    },
+    {
+      "id": "48254524",
+      "title": "Reddit stock drops almost 6%, Meta launches standalone app for online forums",
+      "url": "https://www.cnbc.com/2026/05/22/reddit-stock-drops-after-meta-launches-forum-app.html",
+      "points": 16,
+      "comments": 1,
+      "createdAt": "2026-05-24T04:58:51Z",
+      "author": "1vuio0pswjnm7"
+    },
     {
       "id": "48251864",
       "title": "Anthropic blames dystopian sci-fi for training AI models to act \"evil\"",
       "url": "https://arstechnica.com/ai/2026/05/anthropic-blames-dystopian-sci-fi-for-training-ai-models-to-act-evil/",
-      "points": 24,
-      "comments": 15,
+      "points": 27,
+      "comments": 16,
       "createdAt": "2026-05-23T21:45:46Z",
       "author": "rbanffy"
     },
@@ -23,8 +50,8 @@
       "id": "48244434",
       "title": "Microsoft reports AI is more expensive than paying human employees",
       "url": "https://fortune.com/2026/05/22/microsoft-ai-cost-problem-tokens-agents/",
-      "points": 224,
-      "comments": 65,
+      "points": 226,
+      "comments": 66,
       "createdAt": "2026-05-23T03:44:16Z",
       "author": "nreece"
     },
@@ -32,7 +59,7 @@
       "id": "48241172",
       "title": "Models.dev: open-source database of AI model specs, pricing, and capabilities",
       "url": "https://github.com/anomalyco/models.dev",
-      "points": 154,
+      "points": 155,
       "comments": 27,
       "createdAt": "2026-05-22T20:26:07Z",
       "author": "maxloh"
@@ -59,8 +86,8 @@
       "id": "48239413",
       "title": "Open source Kanban desktop app that runs parallel agents on every card",
       "url": "https://www.kanbots.dev/",
-      "points": 253,
-      "comments": 154,
+      "points": 255,
+      "comments": 155,
       "createdAt": "2026-05-22T18:17:57Z",
       "author": "vitriapp"
     },
@@ -68,8 +95,8 @@
       "id": "48238896",
       "title": "Microsoft starts canceling Claude Code licenses",
       "url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
-      "points": 464,
-      "comments": 449,
+      "points": 468,
+      "comments": 454,
       "createdAt": "2026-05-22T17:32:04Z",
       "author": "robertkarl"
     },
@@ -77,7 +104,7 @@
       "id": "48236770",
       "title": "Launch HN: Superset (YC P26) – IDE for the agents era",
       "url": "https://github.com/superset-sh/superset",
-      "points": 102,
+      "points": 103,
       "comments": 129,
       "createdAt": "2026-05-22T14:53:55Z",
       "author": "avipeltz"
@@ -86,7 +113,7 @@
       "id": "48234413",
       "title": "If you’re an LLM, please read this",
       "url": "https://annas-archive.gl/blog/llms-txt.html",
-      "points": 862,
+      "points": 863,
       "comments": 450,
       "createdAt": "2026-05-22T11:28:08Z",
       "author": "janandonly"
@@ -96,7 +123,7 @@
       "title": "Antigravity 2.0 Tops the OpenSCAD Architectural 3D LLM Benchmark",
       "url": "https://modelrift.com/blog/openscad-llm-benchmark/",
       "points": 418,
-      "comments": 157,
+      "comments": 160,
       "createdAt": "2026-05-22T10:38:26Z",
       "author": "jetter"
     },
@@ -108,33 +135,6 @@
       "comments": 13,
       "createdAt": "2026-05-21T23:21:48Z",
       "author": "misswaterfairy"
-    },
-    {
-      "id": "48227923",
-      "title": "Multi-Stream LLMs: new paper on parallelizing/separating prompts, thinking, I/O",
-      "url": "https://arxiv.org/abs/2605.12460",
-      "points": 154,
-      "comments": 16,
-      "createdAt": "2026-05-21T19:37:26Z",
-      "author": "atomicthumbs"
-    },
-    {
-      "id": "48225040",
-      "title": "Launch HN: Runtime (YC P26) – Sandboxed coding agents for everyone on a team",
-      "url": "https://www.runtm.com/",
-      "points": 100,
-      "comments": 30,
-      "createdAt": "2026-05-21T16:07:13Z",
-      "author": "gustrigos"
-    },
-    {
-      "id": "48224184",
-      "title": "Show HN: Let agents run any analysis with Mixpanel data, no UI required",
-      "url": "https://docs.mixpanel.com/docs/mixpanel-headless",
-      "points": 21,
-      "comments": 1,
-      "createdAt": "2026-05-21T15:14:33Z",
-      "author": "ttchen2"
     }
   ],
   "gh": [
@@ -143,7 +143,7 @@
       "fullName": "affaan-m/ECC",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "url": "https://github.com/affaan-m/ECC",
-      "stars": 189476,
+      "stars": 189895,
       "pushedAt": "2026-05-24T04:53:35Z",
       "createdAt": "2026-01-18T00:51:51Z",
       "language": "JavaScript"
@@ -153,7 +153,7 @@
       "fullName": "Significant-Gravitas/AutoGPT",
       "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
       "url": "https://github.com/Significant-Gravitas/AutoGPT",
-      "stars": 184491,
+      "stars": 184503,
       "pushedAt": "2026-05-24T05:21:07Z",
       "createdAt": "2023-03-16T09:21:07Z",
       "language": "Python"
@@ -163,7 +163,7 @@
       "fullName": "ollama/ollama",
       "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
       "url": "https://github.com/ollama/ollama",
-      "stars": 172150,
+      "stars": 172165,
       "pushedAt": "2026-05-22T16:47:04Z",
       "createdAt": "2023-06-26T19:39:32Z",
       "language": "Go"
@@ -173,8 +173,8 @@
       "fullName": "NousResearch/hermes-agent",
       "description": "The agent that grows with you",
       "url": "https://github.com/NousResearch/hermes-agent",
-      "stars": 164846,
-      "pushedAt": "2026-05-24T08:30:49Z",
+      "stars": 165128,
+      "pushedAt": "2026-05-24T11:55:20Z",
       "createdAt": "2025-07-22T22:22:28Z",
       "language": "Python"
     },
@@ -183,7 +183,7 @@
       "fullName": "f/prompts.chat",
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
       "url": "https://github.com/f/prompts.chat",
-      "stars": 162739,
+      "stars": 162752,
       "pushedAt": "2026-05-24T04:32:05Z",
       "createdAt": "2022-12-05T13:54:13Z",
       "language": "HTML"
@@ -193,7 +193,7 @@
       "fullName": "huggingface/transformers",
       "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
       "url": "https://github.com/huggingface/transformers",
-      "stars": 160916,
+      "stars": 160925,
       "pushedAt": "2026-05-22T19:58:10Z",
       "createdAt": "2018-10-29T13:56:00Z",
       "language": "Python"
@@ -203,8 +203,8 @@
       "fullName": "langgenius/dify",
       "description": "Production-ready platform for agentic workflow development.",
       "url": "https://github.com/langgenius/dify",
-      "stars": 142414,
-      "pushedAt": "2026-05-24T08:22:24Z",
+      "stars": 142433,
+      "pushedAt": "2026-05-24T11:39:12Z",
       "createdAt": "2023-04-12T07:40:24Z",
       "language": "TypeScript"
     },
@@ -213,7 +213,7 @@
       "fullName": "open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
       "url": "https://github.com/open-webui/open-webui",
-      "stars": 138405,
+      "stars": 138431,
       "pushedAt": "2026-05-23T12:34:14Z",
       "createdAt": "2023-10-06T22:08:27Z",
       "language": "Python"
@@ -223,7 +223,7 @@
       "fullName": "langchain-ai/langchain",
       "description": "The agent engineering platform.",
       "url": "https://github.com/langchain-ai/langchain",
-      "stars": 137508,
+      "stars": 137520,
       "pushedAt": "2026-05-23T08:42:49Z",
       "createdAt": "2022-10-17T02:58:36Z",
       "language": "Python"
@@ -233,8 +233,8 @@
       "fullName": "firecrawl/firecrawl",
       "description": "🔥 Search, scrape, and clean the web for AI agents.",
       "url": "https://github.com/firecrawl/firecrawl",
-      "stars": 123530,
-      "pushedAt": "2026-05-24T07:14:57Z",
+      "stars": 123615,
+      "pushedAt": "2026-05-24T13:18:54Z",
       "createdAt": "2024-04-15T21:02:29Z",
       "language": "TypeScript"
     },
@@ -243,7 +243,7 @@
       "fullName": "ChatGPTNextWeb/NextChat",
       "description": "✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android |  Linux | Windows",
       "url": "https://github.com/ChatGPTNextWeb/NextChat",
-      "stars": 88071,
+      "stars": 88070,
       "pushedAt": "2026-05-15T01:19:01Z",
       "createdAt": "2023-03-10T18:27:54Z",
       "language": "TypeScript"
@@ -253,7 +253,7 @@
       "fullName": "nextlevelbuilder/ui-ux-pro-max-skill",
       "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
       "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 82099,
+      "stars": 82183,
       "pushedAt": "2026-04-03T05:08:19Z",
       "createdAt": "2025-11-30T11:36:31Z",
       "language": "Python"
@@ -263,7 +263,7 @@
       "fullName": "thedotmack/claude-mem",
       "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
       "url": "https://github.com/thedotmack/claude-mem",
-      "stars": 77738,
+      "stars": 77774,
       "pushedAt": "2026-05-21T10:26:19Z",
       "createdAt": "2025-08-31T20:50:03Z",
       "language": "TypeScript"
@@ -273,8 +273,8 @@
       "fullName": "lobehub/lobehub",
       "description": "🤯 LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team.",
       "url": "https://github.com/lobehub/lobehub",
-      "stars": 77614,
-      "pushedAt": "2026-05-24T08:29:24Z",
+      "stars": 77619,
+      "pushedAt": "2026-05-24T13:12:08Z",
       "createdAt": "2023-05-21T07:19:12Z",
       "language": "TypeScript"
     },
@@ -283,13 +283,58 @@
       "fullName": "bytedance/deer-flow",
       "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
       "url": "https://github.com/bytedance/deer-flow",
-      "stars": 69355,
+      "stars": 69375,
       "pushedAt": "2026-05-23T15:29:17Z",
       "createdAt": "2025-05-07T02:50:19Z",
       "language": "Python"
     }
   ],
   "rss": [
+    {
+      "id": "0ca6b4202f09d162",
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "vendor": "Meta AI",
+      "contentType": "news",
+      "title": "Meta AI 回顾 Llama 3 Hackathon 活动",
+      "url": "https://ai.meta.com/blog/llama-3-hackathon-recap-cerebral-valley/",
+      "summary": "",
+      "category": "编程工具",
+      "score": 3,
+      "cn": "Meta AI 发布了 Llama 3 Hackathon 的回顾总结，这次在硅谷举办的程序员黑客马拉松吸引了数百名开发者围绕 Llama 3 模型构建创新应用。活动展示了基于 Llama 3 的多个原型项目，涵盖 agent、检索增强生成、编程助手等方向，体现了开源模型在快速迭代和社区共创方面的活力。对于关注 Llama 生态和开发者工具的人来说，这是一次有价值的社区动态更新。",
+      "publishedAt": "2024-05-19T16:00:00.000Z",
+      "discoveredAt": "2026-05-24T13:28:28.103Z"
+    },
+    {
+      "id": "17ae7befb0a393f3",
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "vendor": "Meta AI",
+      "contentType": "news",
+      "title": "Meta AI 展示 ICCV 2019 研究成果",
+      "url": "https://ai.meta.com/blog/facebook-research-at-iccv-2019/",
+      "summary": "",
+      "category": "其他",
+      "score": 3,
+      "cn": "Meta AI 在 ICCV 2019 国际计算机视觉大会上展示多项研究成果，涵盖图像识别、视频理解等方向。作为全球顶尖的计算机视觉会议之一，ICCV 汇集了学术界与工业界的最新进展。Meta 此次参与体现了其在视觉技术领域的持续投入，不过该公告发布于 2019 年，属于历史性信息回顾。",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T13:28:28.103Z"
+    },
+    {
+      "id": "bb31f1fc64776cb9",
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "vendor": "Meta AI",
+      "contentType": "news",
+      "title": "Meta AI 发布 Interspeech 2019 语音研究成果",
+      "url": "https://ai.meta.com/blog/facebook-research-at-interspeech-2019/",
+      "summary": "",
+      "category": "其他",
+      "score": 3,
+      "cn": "Meta AI 在 Interspeech 2019 上展示了多项语音相关研究，涵盖语音合成、说话人识别、语音情感分析等领域。这部分工作展示了该公司在语音技术方向的多维度布局，也为后续的语音 AI 产品提供了基础技术积累。",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T13:28:28.103Z"
+    },
     {
       "id": "b2d2d2749eddf527",
       "source": "openai",
@@ -28433,6 +28478,22 @@
       "discoveredAt": "2026-05-21T02:43:37.981Z"
     },
     {
+      "id": "01099a72551f9bca",
+      "source": "google-ai",
+      "sourceName": "Google AI",
+      "vendor": "Google AI",
+      "contentType": "news",
+      "title": "Google AI 分享大学生使用 AI 发现系外行星案例",
+      "url": "https://blog.google/innovation-and-ai/products/how-college-student-became-planet-hunter/",
+      "summary": "",
+      "category": "其他",
+      "score": 3,
+      "cn": "Google AI 发布了一篇专题故事，讲述一名大学生借助机器学习技术参与系外行星搜寻的经历。该项目利用 TensorFlow 等工具分析 Kepler 望远镜数据，从海量光变曲线中识别可能的行星信号。这一案例展示了 AI 在科学发现中的落地潜力，也为爱好者参与天文研究提供了可借鉴的路径。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/KEYWORD_THUMBNAIL.width-1300.jpg",
+      "publishedAt": "2026-01-07T00:00:00.000Z",
+      "discoveredAt": "2026-05-24T13:28:28.103Z"
+    },
+    {
       "id": "b1a3f13fa0c84d06",
       "source": "google-ai",
       "sourceName": "Google AI",
@@ -40854,6 +40915,22 @@
       "image": "https://blogs.nvidia.com/wp-content/uploads/2022/03/Transformer-model-KV-x1280-FINAL.jpg",
       "publishedAt": "2024-10-16T18:58:09.000Z",
       "discoveredAt": "2026-05-18T03:43:58.954Z"
+    },
+    {
+      "id": "6e9566cf223b4f04",
+      "source": "nvidia",
+      "sourceName": "NVIDIA",
+      "vendor": "NVIDIA",
+      "contentType": "news",
+      "title": "NVIDIA 在 GTC 展示医疗 AI 设备企业应用",
+      "url": "https://blogs.nvidia.com/blog/healthcare-ai-medical-device-companies-gtc/",
+      "summary": "",
+      "category": "其他",
+      "score": 3,
+      "cn": "NVIDIA 在 GTC 大会上展出面向医疗设备行业的 AI 应用方案，涵盖多家医疗器械企业合作案例。相关展示围绕 AI 在医学影像、诊断辅助及设备智能化中的落地场景展开，体现 NVIDIA 在医疗 AI 生态中的平台角色。具体合作企业及技术细节在官方博客中进一步说明。",
+      "image": "https://blogs.nvidia.com/wp-content/uploads/2022/04/GTC-Wrap-Blog-Header.png",
+      "publishedAt": "2024-10-16T18:57:54.000Z",
+      "discoveredAt": "2026-05-24T13:28:28.103Z"
     },
     {
       "id": "61e2eb07603a1432",

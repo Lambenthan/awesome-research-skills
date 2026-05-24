@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-24T08:35:57.789Z",
+  "fetchedAt": "2026-05-24T13:33:29.260Z",
   "items": [
     {
       "source": "openai",
@@ -15725,6 +15725,20 @@
     {
       "source": "google-ai",
       "sourceName": "Google AI",
+      "id": "01099a72551f9bca",
+      "title": "Google AI 分享大学生使用 AI 发现系外行星案例",
+      "url": "https://blog.google/innovation-and-ai/products/how-college-student-became-planet-hunter/",
+      "summary": "",
+      "category": "其他",
+      "publishedAt": "2026-01-07T00:00:00.000Z",
+      "discoveredAt": "2026-05-24T13:28:28.103Z",
+      "originalTitle": "How College Student Became Planet Hunter",
+      "score": 3,
+      "cn": "Google AI 发布了一篇专题故事，讲述一名大学生借助机器学习技术参与系外行星搜寻的经历。该项目利用 TensorFlow 等工具分析 Kepler 望远镜数据，从海量光变曲线中识别可能的行星信号。这一案例展示了 AI 在科学发现中的落地潜力，也为爱好者参与天文研究提供了可借鉴的路径。"
+    },
+    {
+      "source": "google-ai",
+      "sourceName": "Google AI",
       "id": "b1a3f13fa0c84d06",
       "title": "Google 发布硬件、软件与 AI 整合方案",
       "url": "https://blog.google/innovation-and-ai/products/the-best-hardware-software-and-ai-together/",
@@ -26561,6 +26575,20 @@
     {
       "source": "nvidia",
       "sourceName": "NVIDIA",
+      "id": "6e9566cf223b4f04",
+      "title": "NVIDIA 在 GTC 展示医疗 AI 设备企业应用",
+      "url": "https://blogs.nvidia.com/blog/healthcare-ai-medical-device-companies-gtc/",
+      "summary": "",
+      "category": "其他",
+      "publishedAt": "2024-10-16T18:57:54.000Z",
+      "discoveredAt": "2026-05-24T13:28:28.103Z",
+      "originalTitle": "Healthcare Ai Medical Device Companies Gtc",
+      "score": 3,
+      "cn": "NVIDIA 在 GTC 大会上展出面向医疗设备行业的 AI 应用方案，涵盖多家医疗器械企业合作案例。相关展示围绕 AI 在医学影像、诊断辅助及设备智能化中的落地场景展开，体现 NVIDIA 在医疗 AI 生态中的平台角色。具体合作企业及技术细节在官方博客中进一步说明。"
+    },
+    {
+      "source": "nvidia",
+      "sourceName": "NVIDIA",
       "id": "61e2eb07603a1432",
       "title": "NVIDIA 与 AI Sweden 合作推进 NLP 研究",
       "url": "https://blogs.nvidia.com/blog/ai-sweden-nlp/",
@@ -36585,6 +36613,48 @@
       "originalTitle": "Assessing Fairness Of Our Products While Protecting Peoples Privacy",
       "score": 3,
       "cn": "Meta AI 发布了一项面向产品公平性评测的隐私保护方案，该方案在不暴露个人身份信息的前提下，使用差分隐私技术对模型的偏见与公平性进行评估。Meta 强调，传统的公平性审查可能因数据集中的敏感信号而对用户隐私构成风险，新方法能在维持评测质量的同时屏蔽这类信息。该论文从数据采样的隐私预算、合成对照组以及统计稳定性三个维度展开，目前已在 RecSys 会议发表。"
+    },
+    {
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "id": "0ca6b4202f09d162",
+      "title": "Meta AI 回顾 Llama 3 Hackathon 活动",
+      "url": "https://ai.meta.com/blog/llama-3-hackathon-recap-cerebral-valley/",
+      "summary": "",
+      "category": "编程工具",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T13:28:28.103Z",
+      "originalTitle": "Llama 3 Hackathon Recap Cerebral Valley",
+      "score": 3,
+      "cn": "Meta AI 发布了 Llama 3 Hackathon 的回顾总结，这次在硅谷举办的程序员黑客马拉松吸引了数百名开发者围绕 Llama 3 模型构建创新应用。活动展示了基于 Llama 3 的多个原型项目，涵盖 agent、检索增强生成、编程助手等方向，体现了开源模型在快速迭代和社区共创方面的活力。对于关注 Llama 生态和开发者工具的人来说，这是一次有价值的社区动态更新。"
+    },
+    {
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "id": "17ae7befb0a393f3",
+      "title": "Meta AI 展示 ICCV 2019 研究成果",
+      "url": "https://ai.meta.com/blog/facebook-research-at-iccv-2019/",
+      "summary": "",
+      "category": "其他",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T13:28:28.103Z",
+      "originalTitle": "Facebook Research At Iccv 2019",
+      "score": 3,
+      "cn": "Meta AI 在 ICCV 2019 国际计算机视觉大会上展示多项研究成果，涵盖图像识别、视频理解等方向。作为全球顶尖的计算机视觉会议之一，ICCV 汇集了学术界与工业界的最新进展。Meta 此次参与体现了其在视觉技术领域的持续投入，不过该公告发布于 2019 年，属于历史性信息回顾。"
+    },
+    {
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "id": "bb31f1fc64776cb9",
+      "title": "Meta AI 发布 Interspeech 2019 语音研究成果",
+      "url": "https://ai.meta.com/blog/facebook-research-at-interspeech-2019/",
+      "summary": "",
+      "category": "其他",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T13:28:28.103Z",
+      "originalTitle": "Facebook Research At Interspeech 2019",
+      "score": 3,
+      "cn": "Meta AI 在 Interspeech 2019 上展示了多项语音相关研究，涵盖语音合成、说话人识别、语音情感分析等领域。这部分工作展示了该公司在语音技术方向的多维度布局，也为后续的语音 AI 产品提供了基础技术积累。"
     },
     {
       "source": "xai",
