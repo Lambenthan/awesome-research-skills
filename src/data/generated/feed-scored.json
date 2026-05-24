@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-24T13:33:29.260Z",
+  "fetchedAt": "2026-05-24T19:23:28.417Z",
   "items": [
     {
       "source": "openai",
@@ -36655,6 +36655,20 @@
       "originalTitle": "Facebook Research At Interspeech 2019",
       "score": 3,
       "cn": "Meta AI 在 Interspeech 2019 上展示了多项语音相关研究，涵盖语音合成、说话人识别、语音情感分析等领域。这部分工作展示了该公司在语音技术方向的多维度布局，也为后续的语音 AI 产品提供了基础技术积累。"
+    },
+    {
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "id": "208ff9e462d6b6c4",
+      "title": "Meta AI 用 Llama 为巴西学生提供学业辅导",
+      "url": "https://ai.meta.com/blog/llama-oracle-help-students-in-brazil/",
+      "summary": "",
+      "category": "其他",
+      "publishedAt": null,
+      "discoveredAt": "2026-05-24T19:19:04.040Z",
+      "originalTitle": "Llama Oracle Help Students In Brazil",
+      "score": 3,
+      "cn": "Meta AI 将 Llama 模型接入巴西学生辅导场景。该项目在部分学校试点，大语言模型为学生提供个性化学习支持，对教育资源较匮乏的地区有实际价值。"
     },
     {
       "source": "xai",

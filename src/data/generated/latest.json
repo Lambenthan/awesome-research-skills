@@ -1,21 +1,39 @@
 {
-  "fetchedAt": "2026-05-24T13:34:27.952Z",
+  "fetchedAt": "2026-05-24T19:24:26.408Z",
   "hn": [
     {
-      "id": "48255593",
-      "title": "Greg Brockman: Inside the 72 Hours That Almost Killed OpenAI",
-      "url": "https://fs.blog/knowledge-project-podcast/greg-brockman/",
-      "points": 90,
-      "comments": 54,
-      "createdAt": "2026-05-24T08:29:38Z",
-      "author": "prakashqwerty"
+      "id": "48259784",
+      "title": "Claude Is Not Your Architect. Stop Letting It Pretend",
+      "url": "https://www.hollandtech.net/claude-is-not-your-architect/",
+      "points": 24,
+      "comments": 9,
+      "createdAt": "2026-05-24T18:28:11Z",
+      "author": "cdrnsf"
+    },
+    {
+      "id": "48256953",
+      "title": "DeepSeek reasonix, DeepSeek native coding agent with high caching and low cost",
+      "url": "https://esengine.github.io/DeepSeek-Reasonix/",
+      "points": 231,
+      "comments": 131,
+      "createdAt": "2026-05-24T13:02:06Z",
+      "author": "Alifatisk"
+    },
+    {
+      "id": "48256912",
+      "title": "Constraint Decay: The Fragility of LLM Agents in Back End Code Generation",
+      "url": "https://arxiv.org/abs/2605.06445",
+      "points": 102,
+      "comments": 55,
+      "createdAt": "2026-05-24T12:55:53Z",
+      "author": "wek"
     },
     {
       "id": "48254993",
       "title": "Local LLMs perform better when you teach them to ask before they answer",
       "url": "https://www.xda-developers.com/local-llm-clarifying-questions-system-prompt/",
-      "points": 23,
-      "comments": 6,
+      "points": 29,
+      "comments": 10,
       "createdAt": "2026-05-24T06:40:34Z",
       "author": "froh"
     },
@@ -23,7 +41,7 @@
       "id": "48254524",
       "title": "Reddit stock drops almost 6%, Meta launches standalone app for online forums",
       "url": "https://www.cnbc.com/2026/05/22/reddit-stock-drops-after-meta-launches-forum-app.html",
-      "points": 16,
+      "points": 19,
       "comments": 1,
       "createdAt": "2026-05-24T04:58:51Z",
       "author": "1vuio0pswjnm7"
@@ -32,8 +50,8 @@
       "id": "48251864",
       "title": "Anthropic blames dystopian sci-fi for training AI models to act \"evil\"",
       "url": "https://arstechnica.com/ai/2026/05/anthropic-blames-dystopian-sci-fi-for-training-ai-models-to-act-evil/",
-      "points": 27,
-      "comments": 16,
+      "points": 30,
+      "comments": 17,
       "createdAt": "2026-05-23T21:45:46Z",
       "author": "rbanffy"
     },
@@ -50,7 +68,7 @@
       "id": "48244434",
       "title": "Microsoft reports AI is more expensive than paying human employees",
       "url": "https://fortune.com/2026/05/22/microsoft-ai-cost-problem-tokens-agents/",
-      "points": 226,
+      "points": 227,
       "comments": 66,
       "createdAt": "2026-05-23T03:44:16Z",
       "author": "nreece"
@@ -59,7 +77,7 @@
       "id": "48241172",
       "title": "Models.dev: open-source database of AI model specs, pricing, and capabilities",
       "url": "https://github.com/anomalyco/models.dev",
-      "points": 155,
+      "points": 156,
       "comments": 27,
       "createdAt": "2026-05-22T20:26:07Z",
       "author": "maxloh"
@@ -68,7 +86,7 @@
       "id": "48240454",
       "title": "Linux Sound Subsystem Also Seeing Many Fixes Driven by AI/LLMs",
       "url": "https://www.phoronix.com/news/Linux-7.1-Sound-Many-Fixes",
-      "points": 31,
+      "points": 32,
       "comments": 3,
       "createdAt": "2026-05-22T19:34:37Z",
       "author": "dboon"
@@ -86,8 +104,8 @@
       "id": "48239413",
       "title": "Open source Kanban desktop app that runs parallel agents on every card",
       "url": "https://www.kanbots.dev/",
-      "points": 255,
-      "comments": 155,
+      "points": 257,
+      "comments": 156,
       "createdAt": "2026-05-22T18:17:57Z",
       "author": "vitriapp"
     },
@@ -95,8 +113,8 @@
       "id": "48238896",
       "title": "Microsoft starts canceling Claude Code licenses",
       "url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
-      "points": 468,
-      "comments": 454,
+      "points": 474,
+      "comments": 459,
       "createdAt": "2026-05-22T17:32:04Z",
       "author": "robertkarl"
     },
@@ -104,8 +122,8 @@
       "id": "48236770",
       "title": "Launch HN: Superset (YC P26) – IDE for the agents era",
       "url": "https://github.com/superset-sh/superset",
-      "points": 103,
-      "comments": 129,
+      "points": 104,
+      "comments": 132,
       "createdAt": "2026-05-22T14:53:55Z",
       "author": "avipeltz"
     },
@@ -113,28 +131,10 @@
       "id": "48234413",
       "title": "If you’re an LLM, please read this",
       "url": "https://annas-archive.gl/blog/llms-txt.html",
-      "points": 863,
+      "points": 869,
       "comments": 450,
       "createdAt": "2026-05-22T11:28:08Z",
       "author": "janandonly"
-    },
-    {
-      "id": "48234090",
-      "title": "Antigravity 2.0 Tops the OpenSCAD Architectural 3D LLM Benchmark",
-      "url": "https://modelrift.com/blog/openscad-llm-benchmark/",
-      "points": 418,
-      "comments": 160,
-      "createdAt": "2026-05-22T10:38:26Z",
-      "author": "jetter"
-    },
-    {
-      "id": "48230001",
-      "title": "Anthropic's \"Profitability\" Swindle",
-      "url": "https://www.wheresyoured.at/anthropics-profitability-swindle/",
-      "points": 46,
-      "comments": 13,
-      "createdAt": "2026-05-21T23:21:48Z",
-      "author": "misswaterfairy"
     }
   ],
   "gh": [
@@ -143,7 +143,7 @@
       "fullName": "affaan-m/ECC",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "url": "https://github.com/affaan-m/ECC",
-      "stars": 189895,
+      "stars": 190384,
       "pushedAt": "2026-05-24T04:53:35Z",
       "createdAt": "2026-01-18T00:51:51Z",
       "language": "JavaScript"
@@ -153,8 +153,8 @@
       "fullName": "Significant-Gravitas/AutoGPT",
       "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
       "url": "https://github.com/Significant-Gravitas/AutoGPT",
-      "stars": 184503,
-      "pushedAt": "2026-05-24T05:21:07Z",
+      "stars": 184515,
+      "pushedAt": "2026-05-24T19:14:03Z",
       "createdAt": "2023-03-16T09:21:07Z",
       "language": "Python"
     },
@@ -163,7 +163,7 @@
       "fullName": "ollama/ollama",
       "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
       "url": "https://github.com/ollama/ollama",
-      "stars": 172165,
+      "stars": 172190,
       "pushedAt": "2026-05-22T16:47:04Z",
       "createdAt": "2023-06-26T19:39:32Z",
       "language": "Go"
@@ -173,8 +173,8 @@
       "fullName": "NousResearch/hermes-agent",
       "description": "The agent that grows with you",
       "url": "https://github.com/NousResearch/hermes-agent",
-      "stars": 165128,
-      "pushedAt": "2026-05-24T11:55:20Z",
+      "stars": 165478,
+      "pushedAt": "2026-05-24T14:47:44Z",
       "createdAt": "2025-07-22T22:22:28Z",
       "language": "Python"
     },
@@ -183,7 +183,7 @@
       "fullName": "f/prompts.chat",
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
       "url": "https://github.com/f/prompts.chat",
-      "stars": 162752,
+      "stars": 162762,
       "pushedAt": "2026-05-24T04:32:05Z",
       "createdAt": "2022-12-05T13:54:13Z",
       "language": "HTML"
@@ -193,7 +193,7 @@
       "fullName": "huggingface/transformers",
       "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
       "url": "https://github.com/huggingface/transformers",
-      "stars": 160925,
+      "stars": 160930,
       "pushedAt": "2026-05-22T19:58:10Z",
       "createdAt": "2018-10-29T13:56:00Z",
       "language": "Python"
@@ -203,7 +203,7 @@
       "fullName": "langgenius/dify",
       "description": "Production-ready platform for agentic workflow development.",
       "url": "https://github.com/langgenius/dify",
-      "stars": 142433,
+      "stars": 142467,
       "pushedAt": "2026-05-24T11:39:12Z",
       "createdAt": "2023-04-12T07:40:24Z",
       "language": "TypeScript"
@@ -213,7 +213,7 @@
       "fullName": "open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
       "url": "https://github.com/open-webui/open-webui",
-      "stars": 138431,
+      "stars": 138474,
       "pushedAt": "2026-05-23T12:34:14Z",
       "createdAt": "2023-10-06T22:08:27Z",
       "language": "Python"
@@ -223,7 +223,7 @@
       "fullName": "langchain-ai/langchain",
       "description": "The agent engineering platform.",
       "url": "https://github.com/langchain-ai/langchain",
-      "stars": 137520,
+      "stars": 137543,
       "pushedAt": "2026-05-23T08:42:49Z",
       "createdAt": "2022-10-17T02:58:36Z",
       "language": "Python"
@@ -233,7 +233,7 @@
       "fullName": "firecrawl/firecrawl",
       "description": "🔥 Search, scrape, and clean the web for AI agents.",
       "url": "https://github.com/firecrawl/firecrawl",
-      "stars": 123615,
+      "stars": 123718,
       "pushedAt": "2026-05-24T13:18:54Z",
       "createdAt": "2024-04-15T21:02:29Z",
       "language": "TypeScript"
@@ -243,7 +243,7 @@
       "fullName": "ChatGPTNextWeb/NextChat",
       "description": "✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android |  Linux | Windows",
       "url": "https://github.com/ChatGPTNextWeb/NextChat",
-      "stars": 88070,
+      "stars": 88075,
       "pushedAt": "2026-05-15T01:19:01Z",
       "createdAt": "2023-03-10T18:27:54Z",
       "language": "TypeScript"
@@ -253,7 +253,7 @@
       "fullName": "nextlevelbuilder/ui-ux-pro-max-skill",
       "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
       "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 82183,
+      "stars": 82259,
       "pushedAt": "2026-04-03T05:08:19Z",
       "createdAt": "2025-11-30T11:36:31Z",
       "language": "Python"
@@ -263,7 +263,7 @@
       "fullName": "thedotmack/claude-mem",
       "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
       "url": "https://github.com/thedotmack/claude-mem",
-      "stars": 77774,
+      "stars": 77822,
       "pushedAt": "2026-05-21T10:26:19Z",
       "createdAt": "2025-08-31T20:50:03Z",
       "language": "TypeScript"
@@ -273,8 +273,8 @@
       "fullName": "lobehub/lobehub",
       "description": "🤯 LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team.",
       "url": "https://github.com/lobehub/lobehub",
-      "stars": 77619,
-      "pushedAt": "2026-05-24T13:12:08Z",
+      "stars": 77630,
+      "pushedAt": "2026-05-24T19:15:04Z",
       "createdAt": "2023-05-21T07:19:12Z",
       "language": "TypeScript"
     },
@@ -283,13 +283,28 @@
       "fullName": "bytedance/deer-flow",
       "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
       "url": "https://github.com/bytedance/deer-flow",
-      "stars": 69375,
+      "stars": 69405,
       "pushedAt": "2026-05-23T15:29:17Z",
       "createdAt": "2025-05-07T02:50:19Z",
       "language": "Python"
     }
   ],
   "rss": [
+    {
+      "id": "208ff9e462d6b6c4",
+      "source": "meta-ai",
+      "sourceName": "Meta AI",
+      "vendor": "Meta AI",
+      "contentType": "news",
+      "title": "Meta AI 用 Llama 为巴西学生提供学业辅导",
+      "url": "https://ai.meta.com/blog/llama-oracle-help-students-in-brazil/",
+      "summary": "",
+      "category": "其他",
+      "score": 3,
+      "cn": "Meta AI 将 Llama 模型接入巴西学生辅导场景。该项目在部分学校试点，大语言模型为学生提供个性化学习支持，对教育资源较匮乏的地区有实际价值。",
+      "publishedAt": "2025-08-26T16:00:00.000Z",
+      "discoveredAt": "2026-05-24T19:19:04.040Z"
+    },
     {
       "id": "0ca6b4202f09d162",
       "source": "meta-ai",
