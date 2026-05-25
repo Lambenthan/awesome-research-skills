@@ -1,29 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Source_Serif_4, Geist_Mono } from "next/font/google";
+import { Fraunces, Lato, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "katex/dist/katex.min.css";
 
-// Anthropic uses proprietary Styrene B (sans) + Tiempos Text (serif). We
-// declare those names first in the font-family stack so users who happen to
-// have them installed get the real experience; everyone else falls back to
-// the closest free equivalents: Geist (Vercel) and Source Serif 4 (Adobe).
-// next/font self-hosts these and exposes them as CSS variables we feed into
-// @theme inside globals.css.
+// Typography reference: maggieappleton.com. She uses commercial Canela
+// (paid Commercial Type) for serif headers + body, Lato for UI / sans /
+// metadata. We substitute Canela with Fraunces — the closest free
+// transitional serif on Google Fonts, variable across opsz 9-144 and
+// weight 100-900, with similar warmth and high stroke contrast. Lato is
+// kept verbatim. Mono uses Geist Mono since Maggie's site barely uses
+// monospace and Geist Mono renders crisply across editors and pages.
 //
-// Mona Sans (GitHub's Styrene-similar font) was the first pick but isn't yet
-// in next/font/google's catalog. Geist is the second-closest free analog and
-// fully supported.
-const geist = Geist({
+// All three are self-hosted by next/font and exposed as CSS variables
+// that @theme picks up inside globals.css.
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-geist",
+  variable: "--font-fraunces",
   display: "swap",
+  axes: ["opsz", "SOFT"],
 });
 
-const sourceSerif = Source_Serif_4({
+const lato = Lato({
   subsets: ["latin"],
-  variable: "--font-source-serif",
+  variable: "--font-lato",
   display: "swap",
-  axes: ["opsz"],
+  weight: ["400", "700"],
 });
 
 const geistMono = Geist_Mono({
@@ -94,7 +95,7 @@ export default function RootLayout({
   return (
     <html
       lang="zh-Hans"
-      className={`${geist.variable} ${sourceSerif.variable} ${geistMono.variable} antialiased`}
+      className={`${fraunces.variable} ${lato.variable} ${geistMono.variable} antialiased`}
     >
       <head>
         {/*

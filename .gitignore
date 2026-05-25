@@ -42,3 +42,8 @@ next-env.d.ts
 
 # build-time content cache (GitHub API responses)
 /scripts/.cache/
+
+# dev screenshots captured by scripts/screenshot-dev.mjs for visual
+# comparison against design references — local working set, not for
+# repo history
+/docs/screenshots/

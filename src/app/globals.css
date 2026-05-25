@@ -1,93 +1,113 @@
 @import "tailwindcss";
 
 @theme {
-  /* Anthropic-flavor cream / black / ember palette */
-  --color-cream: #f5f4ed;
-  --color-cream-surface: #fafaf7;
-  --color-cream-elevated: #ffffff;
-  --color-cream-hover: #efece2;
+  /* maggieappleton.com palette — warm cream surfaces, soft-black ink, a
+     signature deep maroon for accents and a teal that picks up the M
+     logo. Tokens keep their old names (cream / ink / ember) so the
+     existing components don't need to change; only the values shift. */
+  --color-cream: #f6f5f1;          /* page bg — warm canvas */
+  --color-cream-surface: #fcfbf7;  /* card surface — one tick lighter */
+  --color-cream-elevated: #ffffff; /* full white for overlays */
+  --color-cream-hover: #efece2;    /* hover wash on quiet surfaces */
 
-  --color-ink: #141413;
-  --color-ink-muted: #5e5b54;
-  --color-ink-subtle: #908d83;
+  --color-ink: #353534;            /* body text — warm near-black */
+  --color-ink-muted: #4a4a46;      /* slightly stronger emphasis */
+  --color-ink-subtle: #73706d;     /* warm muted gray */
+  --color-meta: #8e8f94;           /* cool gray for metadata */
+  --color-meta-light: #afb0b6;     /* sub-meta / dividers */
 
-  --color-rule: #e3dfd2;
-  --color-rule-strong: #c8c4b5;
+  --color-rule: rgba(53, 53, 52, 0.08);
+  --color-rule-strong: rgba(53, 53, 52, 0.16);
 
-  --color-ember: #c15f3c;
-  --color-ember-soft: #d8826a;
-  --color-ember-tint: rgba(193, 95, 60, 0.08);
+  /* "ember" used to mean an orange anthropic-flavor accent. It now
+     carries the maroon Maggie uses for links and highlights — kept
+     under the same token name so existing components inherit the new
+     accent without code changes. */
+  --color-ember: #5f023e;          /* deep maroon — links, highlights */
+  --color-ember-soft: #8a2660;     /* desaturated maroon for hover */
+  --color-ember-tint: rgba(95, 2, 62, 0.08);
 
-  /* Accent palette — borrowed from anthropic.com's swatch set, kept
-     muted to play nicely with the cream/ink base. Used for /latest
-     group theming and any per-section accent need that ember alone
-     can't carry. */
-  --color-cactus: #bcd1ca;   /* mint, used by 学术 */
-  --color-coral:  #ebcece;   /* nude pink, used by 中文厂商 */
-  --color-fig:    #c46686;   /* magenta, hot accent */
-  --color-heather: #cbcadb;  /* lavender, used by 开源 OSS */
-  --color-cloud:  #b0aea5;   /* warm grey, used by AI Labs */
+  /* Secondary accent — teal, the right wing of Maggie's M logo. Used
+     sparingly for chips, the live "Latest" callout dot, occasional
+     emphasis where maroon would dominate. */
+  --color-teal: #04a5bb;
+  --color-teal-soft: #6dc6d3;
+  --color-teal-tint: rgba(4, 165, 187, 0.1);
+
+  /* Highlighter yellow — for the word-highlight span in the hero,
+     mimicking the soft mustard wash behind "Maggie" in her own hero. */
+  --color-marker: #f4d575;
+  --color-marker-soft: rgba(244, 213, 117, 0.55);
+
+  /* /latest category-theming swatches — repurposed to play with the
+     new cream + maroon + teal base. Each is a desaturated tone so
+     chips read as label color, not loud paint. */
+  --color-cactus: #bcd1ca;   /* mint — 学术 */
+  --color-coral:  #ebcece;   /* nude pink — 中文厂商 */
+  --color-fig:    #c46686;   /* berry — hot accent */
+  --color-heather: #cbcadb;  /* lavender — 开源 OSS */
+  --color-cloud:  #b0aea5;   /* warm grey — AI Labs */
 
   /* Typography
      ─────────────────────────────────────────────────────────────────────
-     Latin: Anthropic's proprietary Tiempos Text + Styrene B first so any
-     visitor who has them installed gets the authentic look; otherwise
-     Source Serif 4 (≈ Tiempos) and Geist (≈ Styrene), both self-hosted
-     by next/font.
+     Latin serif: Maggie's site uses commercial Canela. Closest free
+     substitute is Fraunces — same transitional warmth, variable across
+     opsz 9-144 / weight 100-900, similar high stroke contrast. Loaded
+     via next/font/google as --font-fraunces.
 
-     CJK: LXGW WenKai Screen — the screen-optimized variant of 霞鹜文楷.
-     Same kaiti aesthetic as the regular WenKai but with stroke widths
-     tuned to render crisply at small UI sizes. Browsers do per-glyph
-     font matching, so Latin chars come from the Latin stack and Han
-     chars come from LXGW WenKai Screen automatically.
+     Latin sans: Maggie uses Lato verbatim; we do the same via
+     --font-lato. Lato falls through to system humanist sans where it
+     isn't loaded.
+
+     CJK: LXGW WenKai Screen — screen-optimized 霞鹜文楷, stroke widths
+     tuned for crisp small-UI rendering. Browsers do per-glyph matching,
+     so Latin chars come from Fraunces/Lato and Han chars come from
+     WenKai automatically.
      ───────────────────────────────────────────────────────────────────── */
   --font-serif:
-    "Tiempos Text", "Tiempos Headline", var(--font-source-serif),
+    var(--font-fraunces), "Canela Text", "Canela Deck",
     "LXGW WenKai Screen", "LXGW WenKai", "霞鹜文楷",
     "Songti SC", "STSong", Georgia, serif;
   --font-sans:
-    "Styrene B Web", "Styrene B", "Söhne", var(--font-geist),
-    -apple-system, BlinkMacSystemFont,
+    var(--font-lato), "Lato", -apple-system, BlinkMacSystemFont,
     "LXGW WenKai Screen", "LXGW WenKai", "霞鹜文楷",
     "PingFang SC", "Source Han Sans SC", "Noto Sans CJK SC",
     "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --font-mono:
     var(--font-geist-mono), ui-monospace, "SF Mono", "JetBrains Mono",
     monospace;
-  /* For places that want extra-elegant kaiti (long-form prose maybe):
-     `font-family: var(--font-cn-display)` falls back through the Light
-     weight if you load it, else uses regular Screen. */
   --font-cn-display:
     "LXGW WenKai", "LXGW WenKai Screen", "霞鹜文楷", serif;
 
   /* ────────────────────────────────────────────────────────────────────
-     Fluid type + space scale (anthropic.com pattern).
-     Each value is `clamp(min, intrinsic-fluid, max)` so layout breathes
-     between 360px viewport and 1432px without breakpoint jumps.
+     Fluid type + space scale. Sizes now follow maggieappleton.com's
+     actual measured scale (82/56/29/22/16/15/13) with fluid clamps
+     between mobile and 1440px desktop.
 
-     Type scale (use as text-[var(--type-…)] in Tailwind utility classes
-     or directly via font-size CSS):
-       --type-eyebrow      10.5px
-       --type-body         15→17px  (regular paragraph)
-       --type-lede         16→18px  (intro paragraph below display)
-       --type-h3           17→20px
-       --type-h2           22→32px
-       --type-h1           36→52px  (display)
-       --type-h1-xl        44→64px  (extra-large display, hero)
+     Type scale:
+       --type-eyebrow      12px       small uppercase Lato label
+       --type-meta         13→15px    Lato metadata line under cards
+       --type-body         15→17px    body (Lato or Fraunces)
+       --type-lede         18→22px    intro paragraph / card subtitle
+       --type-h3           20→29px    sub-section headers
+       --type-h2           28→44px    section heads
+       --type-h1           38→56px    page hero ("Essays" / "Notes")
+       --type-h1-xl        48→82px    home hero ("Maggie makes...")
 
-     Space scale:
-       --space-xs   1.5→2rem      block padding inside small cards
-       --space-s    2→3rem        between sub-sections
-       --space-m    3.5→6rem      major section spacing (anth medium)
-       --space-l    7→14rem       hero / between landing slices
+     Space scale (unchanged):
+       --space-xs   1.5→2rem
+       --space-s    2→3rem
+       --space-m    3.5→6rem
+       --space-l    7→14rem
      ──────────────────────────────────────────────────────────────────── */
-  --type-eyebrow: 10.5px;
+  --type-eyebrow: 12px;
+  --type-meta: clamp(13px, 0.4vw + 12px, 15px);
   --type-body: clamp(15px, 0.5vw + 13px, 17px);
-  --type-lede: clamp(16px, 0.5vw + 14px, 18px);
-  --type-h3: clamp(17px, 0.75vw + 15px, 20px);
-  --type-h2: clamp(22px, 1.5vw + 18px, 32px);
-  --type-h1: clamp(36px, 2.5vw + 24px, 52px);
-  --type-h1-xl: clamp(44px, 3.5vw + 28px, 64px);
+  --type-lede: clamp(18px, 0.7vw + 16px, 22px);
+  --type-h3: clamp(20px, 1vw + 17px, 29px);
+  --type-h2: clamp(28px, 2vw + 20px, 44px);
+  --type-h1: clamp(38px, 2.5vw + 26px, 56px);
+  --type-h1-xl: clamp(48px, 4.5vw + 28px, 82px);
 
   --space-xs: clamp(1.5rem, 0.5vw + 1.3rem, 2rem);
   --space-s: clamp(2rem, 1.5vw + 1.4rem, 3rem);
@@ -115,31 +135,57 @@ body {
   background: var(--color-cream);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  letter-spacing: -0.005em;
-  font-feature-settings: "kern", "ss01", "cv11";
+  font-feature-settings: "kern";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: rgba(193, 95, 60, 0.22);
+  background: var(--color-marker-soft);
   color: var(--color-ink);
 }
 
-/* Editorial display headline — uses the serif stack with optical sizing
-   tilted toward the headline axis. Default size is the h1 fluid scale;
-   page-specific overrides can apply text-[…] utility on top. */
+/* Editorial display headline — uses Fraunces at large opsz so the
+   serifs sharpen and contrast grows. Letter-spacing slightly tightened.
+   Page-specific overrides can apply text-[…] utility on top. */
 .display {
   font-family: var(--font-serif);
   font-optical-sizing: auto;
-  font-variation-settings: "opsz" 60;
-  letter-spacing: -0.022em;
+  font-variation-settings: "opsz" 96, "SOFT" 50;
+  letter-spacing: -0.014em;
   line-height: 1.06;
-  font-weight: 450;
+  font-weight: 500;
   font-size: var(--type-h1);
+  color: var(--color-ink);
+  text-wrap: balance;
 }
 
 .display-xl {
   font-size: var(--type-h1-xl);
   line-height: 1.04;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  letter-spacing: -0.018em;
+  font-weight: 500;
+  text-wrap: balance;
+}
+
+/* Highlighter mark — wraps a word in the display H1 with a soft mustard
+   wash, mimicking maggieappleton.com's hero where "Maggie" sits on a
+   yellow background. Use as <mark className="marker">word</mark>. */
+.marker {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 12%,
+    var(--color-marker-soft) 12%,
+    var(--color-marker-soft) 92%,
+    transparent 92%
+  );
+  color: inherit;
+  padding: 0 0.06em;
+  border-radius: 1px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 /* Utility helpers for fluid scale outside Tailwind. Use as
@@ -160,26 +206,28 @@ body {
 
 .display em {
   font-style: italic;
-  font-variation-settings: "opsz" 60;
+  font-variation-settings: "opsz" 96, "SOFT" 100;
   font-weight: 400;
   color: var(--color-ember);
 }
 
-/* Eyebrow / smallcaps label, used for metadata and section headers */
+/* Eyebrow — Lato uppercase metadata. Maggie uses this style for
+   "ESSAYS · 9 MONTHS AGO" lines under card titles and for the small
+   "BACK TO GARDEN" link above section heroes. */
 .eyebrow {
   font-family: var(--font-sans);
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-weight: 500;
-  font-size: 10.5px;
-  color: var(--color-ink-subtle);
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  font-size: 11.5px;
+  color: var(--color-meta);
 }
 
 .eyebrow-strong {
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-weight: 600;
-  font-size: 11px;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-size: 12px;
   color: var(--color-ink);
 }
 
@@ -188,23 +236,37 @@ body {
   border-color: var(--color-rule);
 }
 
-/* Card shell — used by skill + repo cards alike. */
+/* Card shell — paper-on-paper, with Maggie's signature multi-layer
+   shadow. The shadow uses warm rust rgba (40,10,0) rather than pure
+   black so it reads as soft paper drop, not flat material. Border is
+   removed in favor of pure shadow lift. */
 .card {
   background: var(--color-cream-surface);
-  border: 1px solid var(--color-rule);
-  border-radius: 4px;
+  border: none;
+  border-radius: 6.4px;
+  box-shadow:
+    rgba(40, 10, 0, 0.016) 0.2px 0.2px 0.8px -10px,
+    rgba(40, 10, 0, 0.02)  0.4px 0.4px 2px -10px,
+    rgba(40, 10, 0, 0.024) 0.8px 0.8px 3.8px -10px,
+    rgba(40, 10, 0, 0.03)  1.3px 1.3px 6.7px -10px,
+    rgba(40, 10, 0, 0.035) 2.5px 2.5px 12.5px -10px,
+    rgba(40, 10, 0, 0.05)  6px   6px   30px  -10px;
   transition:
     background var(--dur-hover) ease,
-    border-color var(--dur-hover) ease,
     transform var(--dur-hover) var(--ease-out),
     box-shadow var(--dur-hover) ease;
   will-change: transform;
 }
 .card:hover {
   background: var(--color-cream-elevated);
-  border-color: var(--color-rule-strong);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px -18px rgba(20, 20, 19, 0.18);
+  transform: translateY(-2px);
+  box-shadow:
+    rgba(30, 10, 10, 0.04) 1px 0.9px 2.3px -3px,
+    rgba(30, 10, 10, 0.05) 2.4px 2.2px 5.5px -3px,
+    rgba(30, 10, 10, 0.06) 4.5px 4.1px 10.4px -3px,
+    rgba(30, 10, 10, 0.07) 8px 7.4px 18.5px -3px,
+    rgba(30, 10, 10, 0.08) 15px 13.8px 34.7px -3px,
+    rgba(30, 10, 10, 0.18) 36px 33px 83px -3px;
 }
 
 /* Link-arrow utility — arrow ("→" character) slides right when a

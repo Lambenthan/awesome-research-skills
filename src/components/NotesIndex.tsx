@@ -37,13 +37,10 @@ export function NotesIndex({ categories }: { categories: NoteCategory[] }) {
     <section className="border-t border-rule">
       <div className="mx-auto grid max-w-[88rem] grid-cols-12 gap-6 px-6 py-24 sm:py-32">
         <div className="col-span-12 md:col-span-4">
-          <p className="eyebrow text-ink-subtle">Research Notes</p>
+          <p className="eyebrow text-ink-subtle">Research</p>
           <h2 className="display mt-5 text-[clamp(2rem,3.5vw,3rem)] text-ink">
-            写过的书稿
+            我的研究兴趣
           </h2>
-          <p className="mt-5 max-w-md text-[14px] leading-[1.75] text-ink-muted">
-            围绕因果推断、文本计量与人格心理学交叉方向的研究草稿与方法笔记。每篇以工作论文或方法纲要形式发布，可在浏览器内打开。
-          </p>
           <div className="mt-8 flex items-baseline gap-3">
             <span className="font-serif text-[44px] leading-none text-ink">
               {total}
